@@ -1,8 +1,8 @@
-================
-openWISP2 - Docs
-================
+========================
+OpenWISP 2 Documentation
+========================
 
-The content of this repository **is designed and aimed** to help out all the **new contributors** entering in the organization.
+The content of this repository **is designed and aimed** to help out all the **new contributors** to get involved in `OpenWISP <http://openwisp.org>`_.
 The repo is under build and we welcome any new contributor in maintaining the documentation and glossary.
 
 How to Build the Docs
@@ -12,15 +12,15 @@ How to Build the Docs
 
 2. Clone this repository using the following command::
 
-  git clone https://github.com/openwisp/openwisp2-docs.git
+    git clone https://github.com/openwisp/openwisp2-docs.git
 
 3. Install sphinx on your local machine using::
 
-  pip install -r requirements.txt
+    pip install -r requirements.txt
 
 4. Build HTML::
 
-  make html
+    make html
 
 5. Open the HTML files directory on your local machine.
 
