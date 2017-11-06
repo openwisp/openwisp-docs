@@ -26,4 +26,4 @@ How to Build the Docs
 
 - If any help regarding installing and using `sphinx` and `reStructured Text` is required then please visit this `link <http://www.sphinx-doc.org/en/stable/tutorial.html>`_.
 
-- Feel free to post any doubt or comment by creating issues or chatting on `gitter channel <https://gitter.im/openwisp/general>`_.
+- Feel free to post any doubt or comment through our `support channels <http://openwisp.org/support.html>`_.
