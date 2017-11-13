@@ -1,4 +1,4 @@
-Welcome to Newcomer's Guide's documentation!
+Welcome to OpenWISP2 Documentation
 ============================================
 
 Contents:
@@ -6,9 +6,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   /glossary/ansible-openwisp2
-   /Setup/dev
-   /Setup/users
+   setup
+   technologies
+   structure
+   components
+   contributing
+   glossary
 
 
 

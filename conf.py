@@ -54,9 +54,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Newcomer\'s Guide'
-copyright = '2017, openWISP'
-author = 'openWISP'
+project = 'OpenWISP2 Documentation'
+copyright = '2017, OpenWISP'
+author = 'OpenWISP'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
