@@ -17,13 +17,13 @@ Ansible role that installs the `openwisp2 <https://github.com/openwisp/ansible-o
 django-netjsonconfig
 ********************
 
-Configuration manager for embedded devices, implemented as a reusable django-app
+`Configuration manager <https://github.com/openwisp/django-netjsonconfig/>`_ for embedded devices, implemented as a reusable django-app.
 
 *****************
 django-freeradius
 *****************
 
-Django reusable app that provides an admin interface to a freeradius database
+Django reusable `app <https://github.com/openwisp/django-freeradius/>`_  that provides an admin interface to a freeradius database.
 
 *****
 LEDE
