@@ -16,7 +16,7 @@ Technologies Involved
 
 - `NetJSON <http://netjson.org/>`_
 
-  NetJSON is a data interchange format based on `JSON<http://json.org/>`_ designed to ease the development of software tools for computer networks.
+  NetJSON is a data interchange format based on `JSON <http://json.org/>`_ designed to ease the development of software tools for computer networks.
 
 - `JSON <http://json.org/>`_
 
