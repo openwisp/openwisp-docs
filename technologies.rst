@@ -33,3 +33,11 @@ Technologies Involved
 - `OpenWRT <https://openwrt.org/>`_
 
   OpenWrt is an open source project for embedded operating system based on Linux, primarily used on embedded devices to route network traffic.
+
+- `Lua <https://www.lua.org/>`_
+
+  Lua is a lightweight, multi-paradigm programming language designed primarily for embedded systems and clients. Lua is cross-platform, since the interpreter is written in ANSI C, and has a relatively simple C API.
+
+- `Shell <https://www.shellscript.sh/>`_
+
+  A shell script is a computer program designed to be run by the Unix shell, a command-line interpreter. The various dialects of shell scripts are considered to be scripting languages. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
