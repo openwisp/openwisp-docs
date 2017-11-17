@@ -7,6 +7,7 @@ Contents:
    :maxdepth: 2
 
    user/quickstart
+   values
    general/technologies
    general/structure
    general/components
