@@ -25,6 +25,12 @@ django-freeradius
 
 Django reusable `app <https://github.com/openwisp/django-freeradius/>`_  that provides an admin interface to a freeradius database.
 
+***********
+django-x509
+***********
+
+Reusable django `app <https://github.com/openwisp/django-x509/>`_ implementing x509 PKI(Public Key Infrastructure) certificates management.
+
 *****
 LEDE
 *****
@@ -48,6 +54,12 @@ OpenWISP
 ********
 
 `OpenWISP <http://openwisp.org/>`_ is a software platform that can be used to implement a complete Wi-Fi service.
+
+***************
+openwisp-config
+***************
+
+OpenWRT / LEDE configuration `agent <https://github.com/openwisp/openwisp-config/>`_ for the new OpenWISP 2 Controller.
 
 *******
 OpenWRT
