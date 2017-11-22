@@ -5,8 +5,9 @@ Glossary
 Ansible
 *******
 
-`Ansible <https://www.ansible.com/>`_ is a very popular python library that
-is generally used to automate install and update software on linux based servers.
+`Ansible <https://www.ansible.com/>`_ is a very popular software automation tool written in python
+that is generally used for automating software provisioning, configuration management
+and application deployment.
 
 *****************
 ansible-openwisp2
