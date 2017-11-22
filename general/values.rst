@@ -7,12 +7,12 @@ What is OpenWISP?
 -----------------
 
 OpenWISP is a software platform designed to ease and automate the management of networks, with a special
-focus on wireless networks, mainly public wifi, mesh networks, community networks and IoT scenarios.
+focus on wireless networks, mainly used in public wifi, mesh networks, community networks and IoT scenarios.
 
-OpenWISP 2, launched in December 2016 and gradually replacing OpenWISP 1, is the new generation of
-the software which aims to build an ecosystem of applications and tools that make it easy for
-developers to build custom networking applications in order to bring innovation in the communities
-of the world that most need it.
+OpenWISP 2, launched in December 2016, is the new generation of the software which is gradually
+replacing OpenWISP 1 and aims to build an ecosystem of applications and tools that make it easy for
+developers to build custom networking applications in order to bring innovation in the network
+infrastructure of communities that most need it.
 
 History
 -------
