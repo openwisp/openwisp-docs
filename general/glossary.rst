@@ -67,12 +67,7 @@ designed to ease the development of software tools for computer networks.
 OpenWISP
 ********
 
-`OpenWISP <http://openwisp.org/>`_ is an application and an ecosystem of software
-tools that can be used to build, deploy and manage computer networks with low cost
-hardware.
-
-It is commonly used in scenarios like Public WiFi, Mesh Networks and IoT
-(Internet of Things).
+See :ref:`what_is_openwisp`
 
 ***************
 openwisp-config
