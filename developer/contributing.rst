@@ -24,25 +24,25 @@ Our main development branch is master it's our central development branch. Your 
 
 1. Create a new branch for your development and a self-descriptive branch name:
 
-      git pull origin master
-      git checkout master
-      git checkout -b your-branch-name
+     git pull origin master
+     git checkout master
+     git checkout -b your-branch-name
 
 2. Commit and push code of your branch:
 
-      - Commits should be descriptive in nature, the message should be self-explanatory.
-      - Please make sure your code is following our coding style or our project's style. Code should be well formatted.
-      - Before committing and pushing the changes , test the code on your local machine first.
-      - After pushing your branch code, make a Pull Request of that corresponding change of yours which should contain a descriptive meassage and mention the issue number too(if there is one). Example- "Fixes #123".
+- Commits should be descriptive in nature, the message should be self-explanatory.
+- Please make sure your code is following our coding style or our project's style. Code should be well formatted.
+- Before committing and pushing the changes , test the code on your local machine first.
+- After pushing your branch code, make a Pull Request of that corresponding change of yours which should contain a descriptive meassage and mention the issue number too(if there is one). Example- "Fixes #123".
 
-          git commit -m "your message here"
-          git push <remote name> <branch name>
+      git commit -m "your message here"
+      git push <remote name> <branch name>
 
 3. After pushing the code make your Pull Request:
 
-      - From your forked repository of the project select your branch and click "New Pull Request". Check if everythind is accordingly and write a descriptive meassage for the PR.
-      - After submitting your PR, check back again whether your PR has passed our required tests. If the tests fails check what the eroor is andask for help if you don't understand what the error is.
-      - If the tests are passed maintainers will review the PR and will ask you to change anything as and when required.
-      - Once everything is fine with us we'll merge your Pull Request.
+- From your forked repository of the project select your branch and click "New Pull Request". Check if everythind is accordingly and write a descriptive meassage for the PR.
+- After submitting your PR, check back again whether your PR has passed our required tests. If the tests fails check what the eroor is andask for help if you don't understand what the error is.
+- If the tests are passed maintainers will review the PR and will ask you to change anything as and when required.
+- Once everything is fine with us we'll merge your Pull Request.
 
 Thanks for contributing to our organization :) .
