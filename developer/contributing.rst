@@ -1,7 +1,7 @@
 Contributing guidelines
 =======================
 
-We are glad that you choose this organization to give your time to and contribute. Thank you for your interest incontributing to OpenWISP.
+We are glad that you chose this organization to give your time to and contribute. Thank you for your interest in contributing to OpenWISP.
 
 Settings things up
 ------------------
@@ -15,18 +15,20 @@ Visit any repository and then to try to explore the project's codebase. Use it a
 
 If you are unable to find anything on your own to be worked upon, don't worry we got your back. Visit that project's **Issues** tab and explore those issues that might interests you, comment on the issue thread and we'll help you get along with that.
 
-If neither of the above works for you please post your views on our `gitter channel. <https://gitter.im/openwisp/general>`_
+If neither of the above works for you, please post your views on our `gitter channel. <https://gitter.im/openwisp/general>`_
 
 Steps to Submit your Code or Changes
 ------------------------------------
 
 Our main development branch is master it's our central development branch. Your code should be pushed from a different branch and then it is merged into master after proper review from the project maintainers.
 
-1. Create a new branch for your development and a self-descriptive branch name:
+1. Create a new branch for your development and a self-descriptive branch name.
 
+     ```
      git pull origin master
      git checkout master
      git checkout -b your-branch-name
+     ```
 
 2. Commit and push code of your branch:
 
@@ -35,8 +37,10 @@ Our main development branch is master it's our central development branch. Your 
 - Before committing and pushing the changes , test the code on your local machine first.
 - After pushing your branch code, make a Pull Request of that corresponding change of yours which should contain a descriptive meassage and mention the issue number too(if there is one). Example- "Fixes #123".
 
+     ```
       git commit -m "your message here"
       git push <remote name> <branch name>
+     ```
 
 3. After pushing the code make your Pull Request:
 
