@@ -22,13 +22,13 @@ Steps to Submit your Code or Changes
 
 Our main development branch is master it's our central development branch. Your code should be pushed from a different branch and then it is merged into master after proper review from the project maintainers.
 
-  1. Create a new branch for your development and a self-descriptive branch name:
+1. Create a new branch for your development and a self-descriptive branch name:
 
       git pull origin master
       git checkout master
       git checkout -b your-branch-name
 
-  2. Commit and push code of your branch:
+2. Commit and push code of your branch:
 
       - Commits should be descriptive in nature, the message should be self-explanatory.
       - Please make sure your code is following our coding style or our project's style. Code should be well formatted.
@@ -38,7 +38,7 @@ Our main development branch is master it's our central development branch. Your 
           git commit -m "your message here"
           git push <remote name> <branch name>
 
-  3. After pushing the code make your Pull Request:
+3. After pushing the code make your Pull Request:
 
       - From your forked repository of the project select your branch and click "New Pull Request". Check if everythind is accordingly and write a descriptive meassage for the PR.
       - After submitting your PR, check back again whether your PR has passed our required tests. If the tests fails check what the eroor is andask for help if you don't understand what the error is.
