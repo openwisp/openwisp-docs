@@ -13,6 +13,7 @@ Contents:
    general/components
    general/glossary
    developer/contributing
+   developer/google_code_in
 
 Indices and tables
 ==================
