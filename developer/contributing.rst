@@ -1,4 +1,4 @@
-Contributing guidelines
+ Contributing guidelines
 =======================
 
 We are glad that you chose this organization to give your time to and contribute. Thank you for your interest in contributing to OpenWISP.
@@ -44,8 +44,8 @@ Our main development branch is master it's our central development branch. Your 
 
 3. After pushing the code make your Pull Request:
 
-- From your forked repository of the project select your branch and click "New Pull Request". Check if everythind is accordingly and write a descriptive meassage for the PR.
-- After submitting your PR, check back again whether your PR has passed our required tests. If the tests fails check what the eroor is andask for help if you don't understand what the error is.
+- From your forked repository of the project select your branch and click "New Pull Request". Check if everything is accordingly and write a descriptive meassage for the PR.
+- After submitting your PR, check back again whether your PR has passed our required tests. If the tests fails check what the error is and ask for help if you don't understand what the error is.
 - If the tests are passed maintainers will review the PR and will ask you to change anything as and when required.
 - Once everything is fine with us we'll merge your Pull Request.
 
