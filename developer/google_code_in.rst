@@ -1,7 +1,7 @@
 Google Code-in
 ==============
 
-This page contains resources for Google Code-in students.
+This page contains resources for Google Code-in students. The links given here will help you to learn technologies that are currently being used in OpenWISP. The credit for the resources goes to the original creators.
 
 *********
 Resources
@@ -15,4 +15,4 @@ Programming languages and frameworks:
 	- `Javascript <https://www.tutorialspoint.com/javascript/>`_
 
 Networking concepts:
-	- Introduction to networking `terminology <http://do.co/1jALSLI/>`_
+	- Introduction to networking `terminology <https://goo.gl/YG3RLd>`_
