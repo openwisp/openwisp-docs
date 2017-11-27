@@ -11,10 +11,10 @@ Programming languages and frameworks:
 	- `Python <http://www.diveintopython3.net/>`_
 	- `Django <https://docs.djangoproject.com/en/1.11/>`_
 	- `Lua <https://www.youtube.com/watch?v=iMacxZQMPXs/>`_
-	- [SHELL](#shell)
+	- SHELL
 		- `Shell video Tutorial <https://www.youtube.com/watch?v=hwrnmQumtPw/>`_
 		- `Shell Documentation <https://www.shellscript.sh/>`_
-	- [Javascript](#Javascript)
+	- Javascript
 		- `Javascript <https://www.tutorialspoint.com/javascript/>`_
 		- `Javascript <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide>`_
 
