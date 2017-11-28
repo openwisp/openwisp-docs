@@ -1,6 +1,9 @@
 Google Code-in
 ==============
 
+.. image:: ../images/gci/gci.png
+     :align: center
+
 .. note::
   `OpenWISP is a mentoring organization for the Google Code-In 2017
   <https://codein.withgoogle.com/organizations/openwisp/>`_.
@@ -16,6 +19,8 @@ OpenWISP is the right organization for you.
 
 How to run a successful GCI
 ---------------------------
+
+.. image:: ../images/gci/success.jpg
 
 Have you read the `contest rules
 <https://developers.google.com/open-source/gci/resources/contest-rules>`_ yet?
@@ -34,6 +39,8 @@ to OpenWISP and don't be cold like a robot! Stay human :-).
 
 How to become an OpenWISP star
 ------------------------------
+
+.. image:: ../images/gci/star.jpg
 
 Here's a few quick tricks you can use to become a star in our community:
 
