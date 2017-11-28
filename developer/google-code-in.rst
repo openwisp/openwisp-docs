@@ -69,8 +69,10 @@ Here's a few quick tricks you can use to become a star in our community:
 Time to start hacking
 ---------------------
 
-If you are not familiar with the following concepts yet, take the time to
-read these resources, it will help you to speed up your raise to the top!
+.. image:: ../images/gci/technology.gif
+
+If you are not familiar with the following concepts and technologies yet, take the time to
+read these resources, it will help you to speed up and raise to the top!
 
 Programming languages and frameworks:
 	- `Python <http://www.diveintopython3.net/>`_ (book)
@@ -86,3 +88,8 @@ Configuration management:
 	- Introduction to `configuration management <https://goo.gl/3YTQgg>`_
 	- Writing Ansible `playbooks <https://goo.gl/R2XptC>`_
 	- Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch
+
+We wish you good luck for the contest!
+
+.. image:: ../images/gci/good_luck.jpg
+
