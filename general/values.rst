@@ -1,5 +1,5 @@
-Values and Goals of the OpenWISP Community
-==========================================
+Values and Goals of OpenWISP
+============================
 
 .. _what_is_openwisp:
 
