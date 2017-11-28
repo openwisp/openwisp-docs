@@ -43,9 +43,9 @@ Here's a few quick tricks you can use to become a star in our community:
 - be patient in the interaction with your mentors, we are all volunteers, we are
   taking our time to mentor you from our free time which we usually spend family
   and loved ones
-- we know our documentation is incomplete and fragmented, we are working hard to
-  fix it; if you find a passage that is not clear or you have an idea about
-  how to improve it, **please let us know!**
+- we know `our documentation <https://github.com/openwisp/openwisp2-docs>`_ is
+  incomplete and fragmented, we are working hard to improve it; if you find a passage
+  that is not clear or you have an idea about how to improve it, **please let us know!**
 - the same happens with the software, if you see something which looks like a bug,
   reach out, even if it's not a bug your feedback will help us to improve
 - if we ask you to open an issue in one of our github repository, please take at
