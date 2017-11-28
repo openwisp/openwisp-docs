@@ -89,4 +89,14 @@ Configuration management:
 	- Writing Ansible `playbooks <https://goo.gl/R2XptC>`_
 	- Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch
 
+FAQs
+----
+
+Please refer to the Google Code-in `FAQs <https://developers.google.com/open-source/gci/faq>`_ before participating.
+
+.. note::
+  You can ask for help whenever needed, but please don't copy someone else's work. Google Code-in has zero tolerance
+  policy regarding cheating and plagiarism. There are some tasks which require a creative mind like designing logos and
+  T-shirts, which you need to do by yourself. Remember, learning is more important than winning.
+
 We wish you good luck for the contest!
