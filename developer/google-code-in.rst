@@ -69,7 +69,7 @@ Programming languages and frameworks:
 	- `Python <http://www.diveintopython3.net/>`_ (book)
 	- `Django <https://docs.djangoproject.com/en/1.11/>`_ (official documentation)
 	- `Lua <https://www.youtube.com/watch?v=iMacxZQMPXs/>`_ (video tutorial)
-	- `Shell <https://www.youtube.com/watch?v=hwrnmQumtPw/>`_ (video turial)
+	- `Shell <https://www.youtube.com/watch?v=hwrnmQumtPw/>`_ (video tutorial)
 	- `Javascript <https://www.tutorialspoint.com/javascript/>`_ (tutorial)
 
 Networking concepts:
