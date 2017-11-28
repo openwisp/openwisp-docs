@@ -90,6 +90,3 @@ Configuration management:
 	- Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch
 
 We wish you good luck for the contest!
-
-.. image:: ../images/gci/good_luck.jpg
-
