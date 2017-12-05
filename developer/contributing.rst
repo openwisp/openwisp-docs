@@ -112,4 +112,34 @@ After pushing your changes to your fork, prepare a new Pull Request
   ensure to follow up with this type of operations
 - once everything is fine with us we'll merge your PR
 
+4. Avoiding unnecessary changes
+-------------------------------
+
+- While making changes to the required files, then saving it and comitting it,
+  different contributors often find that there occur same changes that they have
+  not made and those changes gets committed with the desired change that the person
+  wants to make.
+
+- These unnecessary changes should be evaluated first and then the commit should
+  be made.
+
+- These changes generally occur due to different settings and customizations
+  of your editor that you are working with. These changes are produced on their own
+  as soon as you save a file. Examples are - Introducing new lines, remocing and
+  adding spaces, etc.
+
+- To avoid such changes please check yor editor settings first. If this sort of
+  behaviour persists please use any command line editor like VIM, etc.
+
+5. Style guide enforcement tool
+-------------------------------
+
+- OpenWISP uses `flake8 <https://pypi.python.org/pypi/flake8>`_ as it's style guide
+  enforcement tool or source code checker.
+
+- Please make sure you follow this code style while making changes to any
+  of the OpenWISP's Python file.
+
+- To know more about flake visit `this page. <http://flake8.pycqa.org/en/latest/>`_
+
 Thanks for contributing to OpenWISP!
