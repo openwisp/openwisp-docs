@@ -14,7 +14,7 @@ How to build the docs
 
 2. Clone this repository using the following command::
 
-    git clone https://github.com/<your-fork>/openwisp2-docs.git
+    git clone https://github.com/<your-username>/openwisp2-docs.git
 
 3. Install sphinx on your local machine using::
 
