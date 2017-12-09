@@ -91,7 +91,7 @@ We mainly use two type of licenses:
   percentage of the companies and individuals using them will contribute back even if not explicitly
   forced by the license
 
-We beleive in transparency and also work towards in making this very place as more of a
+We believe in transparency and also work towards in making this very place as more of a
 **Community** than a **Top Down Organization** by warmly welcoming any new participant, contributor and user.
 
 We want our community to be supportive, friendly and highly collaborative, with the aim of making
