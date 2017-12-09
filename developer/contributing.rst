@@ -6,7 +6,7 @@ We are glad and thankful that you want to contribute to OpenWISP.
 Please read these guidelines carefully, it will help you and us
 to save precious time later.
 
-Settings things up
+Setting things up
 ~~~~~~~~~~~~~~~~~~
 
 Please follow up the instructions in the README of the repository to
@@ -88,7 +88,7 @@ Moreover, keep in mind the following guidelines:
   and automatically with the automated test suite if applicable
 - after pushing your branch code, make a pull-request of that
   corresponding change of yours which should contain a descriptive
-  meassage and mention the issue number as suggested in the example above
+  message and mention the issue number as suggested in the example above
 
 3. Create pull-request
 ----------------------
@@ -128,7 +128,7 @@ After pushing your changes to your fork, prepare a new Pull Request
   as soon as you save a file. Examples are - Introducing new lines, remocing and
   adding spaces, etc.
 
-- To avoid such changes please check yor editor settings first. If this sort of
+- To avoid such changes please check your editor settings first. If this sort of
   behaviour persists please use any command line editor like VIM, etc.
 
 5. Style guide enforcement tool
