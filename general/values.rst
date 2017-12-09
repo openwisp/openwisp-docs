@@ -53,7 +53,7 @@ For these reasons, **fighting digital divide, both primary (lack of infrastructu
 We believe `Net Neutrality <https://en.wikipedia.org/wiki/Net_neutrality>`_ to be beneficial to the
 internet because it allows everyone to have a fair treatment (non discrimination) to their private communications.
 
-The very virst public wifi networks that have been built with OpenWISP in Italy follow this
+The very first public wifi networks that have been built with OpenWISP in Italy follow this
 principle very strictly: **no content filtering of any type is allowed on these network, no
 special privilege is given to any private network**.
 
@@ -65,7 +65,7 @@ or tutorial that aims at implementing solutions that go against Net Neutrality**
 
 **We believe that privacy is very important for a healthy and well functioning society**.
 
-The very virst public wifi networks that have been built with OpenWISP in Italy follow this
+The very first public wifi networks that have been built with OpenWISP in Italy follow this
 principle very strictly: **traffic logs are stored only for the period of time mandated by law
 and personal data is never sold to third parties**.
 
@@ -91,7 +91,7 @@ We mainly use two type of licenses:
   percentage of the companies and individuals using them will contribute back even if not explicitly
   forced by the license
 
-We beleive in transparency and also work towards in making this very place as more of a
+We believe in transparency and also work towards in making this very place as more of a
 **Community** than a **Top Down Organization** by warmly welcoming any new participant, contributor and user.
 
 We want our community to be supportive, friendly and highly collaborative, with the aim of making
