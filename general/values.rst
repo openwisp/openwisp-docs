@@ -65,7 +65,7 @@ or tutorial that aims at implementing solutions that go against Net Neutrality**
 
 **We believe that privacy is very important for a healthy and well functioning society**.
 
-The very virst public wifi networks that have been built with OpenWISP in Italy follow this
+The very first public wifi networks that have been built with OpenWISP in Italy follow this
 principle very strictly: **traffic logs are stored only for the period of time mandated by law
 and personal data is never sold to third parties**.
 
