@@ -53,7 +53,7 @@ For these reasons, **fighting digital divide, both primary (lack of infrastructu
 We believe `Net Neutrality <https://en.wikipedia.org/wiki/Net_neutrality>`_ to be beneficial to the
 internet because it allows everyone to have a fair treatment (non discrimination) to their private communications.
 
-The very virst public wifi networks that have been built with OpenWISP in Italy follow this
+The very first public wifi networks that have been built with OpenWISP in Italy follow this
 principle very strictly: **no content filtering of any type is allowed on these network, no
 special privilege is given to any private network**.
 
