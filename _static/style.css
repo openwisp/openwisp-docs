@@ -1,0 +1,74 @@
+.wy-side-nav-search>a.icon img.logo, .wy-side-nav-search .wy-dropdown>a.icon img.logo {
+    width: 220px;
+}
+
+.wy-side-nav-search {
+    background-color: #000000;
+}
+
+.wy-nav-content a {
+    color: #FF5252;
+}
+
+.wy-nav-content a:hover {
+    color: #D32F2F;
+}
+
+.wy-nav-content a:visited {
+    color: #B71C1C;
+}
+
+.wy-nav-side {
+    background-color: #da4b37;
+}
+
+.wy-nav-top {
+    background-color: #da4b37;
+}
+
+.wy-menu a {
+    color: #ecf0f1;
+    padding: .5045em 1.618em;
+}
+
+.wy-menu a:hover {
+    background-color: #df5d43;
+}
+
+.wy-menu a:active {
+    background-color: #cf3f2b;
+    color: #bdc3c7;
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: #4C4C4C;
+}
+
+.wy-side-nav-search>div.version {
+    color: #9E9E9E;
+}
+
+.toctree-l1.current .current {
+    background-color: #d8321c;
+    color: #ecf0f1;
+}
+
+.toctree-l1.current .current:hover {
+    background-color: #e67e22;
+}
+
+.wy-menu-vertical li.current ul {
+    background-color: #e3c6c2;
+}
+
+.wy-menu-vertical li.toctree-l2.current>a {
+    background-color: #dda9a2;
+}
+
+.wy-menu-vertical li.current a:hover {
+    background-color: #d89188;
+}
+
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current>a {
+    border: none;
+}

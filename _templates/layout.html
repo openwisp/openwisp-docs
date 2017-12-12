@@ -1,5 +1,7 @@
 {% extends "!layout.html" %}
-
+{% block extrahead %}
+    <link href="{{ pathto("_static/style.css", True) }}" rel="stylesheet" type="text/css">
+{% endblock %}
 {% block footer %}
 {{ super() }}
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46086503-11"></script>
