@@ -48,27 +48,44 @@
     color: #9E9E9E;
 }
 
-.toctree-l1.current .current {
+.toctree-l1.current .current,
+.toctree-l1.current .current:hover {
     background-color: #d8321c;
     color: #ecf0f1;
-}
-
-.toctree-l1.current .current:hover {
-    background-color: #e67e22;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .wy-menu-vertical li.current ul {
-    background-color: #e3c6c2;
+    background-color: rgba(225,71,59, 0.95);
+}
+
+.wy-menu-vertical li.current a {
+    color: #fff;
 }
 
 .wy-menu-vertical li.toctree-l2.current>a {
-    background-color: #dda9a2;
+    background-color: #e1473b;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .wy-menu-vertical li.current a:hover {
-    background-color: #d89188;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a{
+    background: #f16155;
 }
 
 .wy-menu-vertical li.on a, .wy-menu-vertical li.current>a {
     border: none;
+}
+
+.wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand {
+    color: #fff;
+}
+
+.wy-menu-vertical li{
+    margin: -1px 0 -1px -1px
 }
