@@ -125,7 +125,7 @@ After pushing your changes to your fork, prepare a new Pull Request
 
 - These changes generally occur due to different settings and customizations
   of your editor that you are working with. These changes are produced on their own
-  as soon as you save a file. Examples are - Introducing new lines, remocing and
+  as soon as you save a file. Examples are - Introducing new lines, removing and
   adding spaces, etc.
 
 - To avoid such changes please check your editor settings first. If this sort of
