@@ -48,7 +48,7 @@ Here's a few quick tricks you can use to become a star in our community:
   are you on our side?
 - study and follow closely the :doc:`contributing guidelines <../developer/contributing>`
 - be patient in the interaction with your mentors, we are all volunteers, we are
-  taking our time to mentor you from our free time which we usually spend family
+  taking our time to mentor you from our free time which we usually spend with family
   and loved ones
 - we know `our documentation <https://github.com/openwisp/openwisp2-docs>`_ is
   incomplete and fragmented, we are working hard to improve it; if you find a passage
