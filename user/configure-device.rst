@@ -5,8 +5,8 @@ This page will guide you through the installation of
 `openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a device
 which supports `OpenWRT <https://openwrt.org/>`_ or `LEDE <https://lede-project.org>`_.
 
-For simplicity, we will be installing it in a Virtual Machine running
-`LEDE <https://lede-project.org>`_, an OpenWRT-based Linux OS.
+If you don't have a physical device available but you still want to try out OpenWISP,
+you can use a Virtual Machine running `LEDE <https://lede-project.org>`_, an OpenWRT-based Linux OS.
 
 1. Install OpenWISP2
 --------------------
@@ -14,12 +14,12 @@ For simplicity, we will be installing it in a Virtual Machine running
 You can install OpenWISP2 by using ansible, as shown by the guide in
 `this page <https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_
 
-2. Install LEDE
----------------
+2. Installing LEDE on VirtualBox
+--------------------------------
 
 .. note::
-    **You may skip this part if you plan on installing openwisp-config on an
-    actual device.**
+    **You may skip this part if you plan on installing openwisp-config on a
+    physical device.**
 
 Download ``combined-ext4.img.gz`` from `this
 page <https://downloads.lede-project.org/snapshots/targets/x86/64>`__. The
@@ -56,11 +56,6 @@ the terminal.
 
 Installation
 ~~~~~~~~~~~~
-
-.. note::
-
-    An installation guide is also available
-    `here <https://github.com/openwisp/openwisp-config#install-precompiled-package>`__.
 
 Run the following commands on your device:
 
@@ -111,10 +106,10 @@ You will see the default config file, something like the following:
 
 Uncomment and change the following fields:
 
-- ``url``: The hostname of your OpenWISP2 controller
-- ``verify_ssl``: Set to ``0`` if your controller's SSL certificate is
-  self-signed
-- ``shared_secret``: Get it from OpenWISP2's admin panel, located at the
+- ``url``: the hostname of your OpenWISP2 controller
+- ``verify_ssl``: set to ``0`` if your controller's SSL certificate is
+  self-signed; in production you will need a valid SSL certificate to keep your instance secure
+- ``shared_secret``: you can retrieve this from OpenWISP2 admin panel, in the
   Organization settings. The list of organizations is available at
   ``/admin/openwisp_users/organization/``.
 
