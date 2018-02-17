@@ -22,9 +22,13 @@ How to run a successful Google Summer of Code
 
 .. image:: ../images/gci/success.jpg
 
+**First of all: PLEASE, PLEASE, read all the information contained in this page
+(including links!)** because this will save everybody involved a lot of time.
+We would rather spend our time coding than repeating the same stuff over and over.
+
 Have you read the `Student manual
 <https://developers.google.com/open-source/gsoc/resources/guide#student_guide>`_ yet?
-If not, please do! It's a treasure trove of suggestions that will help you a lot!
+If not, please do **because it's a MUST if you want to be successful**!
 
 **Communication with the rest of the community** is vital for a successful
 Google Summer of Code, please join `our communication channels
