@@ -14,6 +14,7 @@ Contents:
    general/components
    general/glossary
    developer/contributing
+   developer/google-summer-of-code
    developer/google-code-in
 
 Indices and tables
