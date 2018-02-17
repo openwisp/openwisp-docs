@@ -1,6 +1,9 @@
 Google Summer of Code
 =====================
 
+.. image:: ../images/gsoc/gsoc2017.png
+     :align: center
+
 .. note::
   `OpenWISP is a mentoring organization for the Google Summer of Code 2018
   <https://summerofcode.withgoogle.com/organizations/4855677718102016/>`_.
@@ -17,6 +20,8 @@ OpenWISP is the right organization for you.
 How to run a successful Google Summer of Code
 ---------------------------------------------
 
+.. image:: ../images/gci/success.jpg
+
 Have you read the `Student manual
 <https://developers.google.com/open-source/gsoc/resources/guide#student_guide>`_ yet?
 If not, please do! It's a treasure trove of suggestions that will help you a lot!
@@ -31,6 +36,8 @@ to OpenWISP and don't be cold like a robot! Stay human :-).
 
 How to become an OpenWISP star
 ------------------------------
+
+.. image:: ../images/gci/star.jpg
 
 Here's a few quick tricks you can use to become a star in our community:
 
@@ -62,6 +69,8 @@ Here's a few quick tricks you can use to become a star in our community:
 
 Time to start hacking
 ---------------------
+
+.. image:: ../images/gci/technology.gif
 
 If you are not familiar with the following concepts yet, take the time to
 read these resources, it will help you to speed up your raise to the top!
