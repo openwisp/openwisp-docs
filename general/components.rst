@@ -1,2 +1,0 @@
-Components of OpenWISP2
-=======================

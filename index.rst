@@ -11,8 +11,6 @@ Contents:
    general/values
    general/help-us
    general/technologies
-   general/structure
-   general/components
    general/glossary
    developer/contributing
    developer/google-summer-of-code
