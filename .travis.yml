@@ -1,0 +1,17 @@
+language: python
+sudo: false
+
+cache: pip
+
+python:
+  - "3.4"
+  - "2.7"
+
+branches:
+  only:
+    - master
+
+install:
+  - pip install -r requirements.txt
+
+script: make html
