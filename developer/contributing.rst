@@ -26,6 +26,11 @@ don't worry we got your back. Visit that project's **Issues** tab and
 explore those issues that might interests you, comment on the issue
 thread and we'll help you get along with that.
 
+We also use an agile development tool, namely Taiga. You may head over
+to the `project page <https://tree.taiga.io/project/nemesisdesign-openwisp>`_
+and explorer some issues and epics over there too. If you have certain
+interesting ideas, you may contribute those in Taiga.
+
 If neither of the above works for you, please get in touch with us
 via `our communication channels <http://openwisp.org/support.html>`_.
 
@@ -56,12 +61,22 @@ Create a new branch for your patch, use a self-descriptive name, eg:
 
 Please follow our commit message style, eg:
 
+If the issue is present on Taiga, use following commit style:
+
 ::
 
-    [module/file/feature] Short description #issue
+    [module/file/feature] Short description TG-[Taiga issue number] #closed
 
     Long description here.
-    Fixes #issue
+
+If the issue is present on Github, use following commit style:
+
+::
+
+    [module/file/feature] Short description #issue-number
+
+    Long description here.
+    Fixes #issue-number
 
 Here's a real world example from `one of our modules
 <https://github.com/openwisp/django-netjsonconfig/commit/7a5dad9f97e708b89149c2765f8298c5a94b652b>`_:
