@@ -12,6 +12,7 @@ Contents:
    general/help-us
    general/technologies
    general/glossary
+   general/code-of-conduct
    developer/contributing
    developer/google-summer-of-code
    developer/google-code-in
