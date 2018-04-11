@@ -88,7 +88,9 @@ Javascript Code Conventions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - OpenWISP follows standard JavaScript coding style conventions that are generally
-  followed and accepted in most of the projects.
+  accepted or the ones that are mentioned in
+  `JSlint <https://github.com/openwisp/django-freeradius/blob/master/.jslintrc>`_ file.
+  To know more about JSlint please see `this <https://www.jslint.com/help.html>`_.
 
 - Proper structure and indentations should be maintained in code and descriptive
   function and variable name should be used so that code is more readable and
@@ -113,3 +115,6 @@ Openwrt Related Code Convention
 
 - For adding new files to your patch please refer this link on how to structure your files
   and patches `Adding new files <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
+
+Thanks for your effort to read the above guidelines. We are happy that you took
+your time out to contribute to this community.
