@@ -1,23 +1,21 @@
 Style Conventions
 =================
 
-We are thankful that you took your time to contribute to this community.
-
 This document is about what style conventions you should follow
 and keep in mind while programming in different languages and contributing to
-the codebase of this organisation.
+the codebase of this organisation OpenWISP.
 
 Steps to Commit your Code or Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our main development branch is master it's our central development
+Our main development branch is master, it's our central development
 branch.
 
 Your code should be pushed from a different branch and then it is
 merged into master after proper review from the project maintainers.
 
-1. Create a new branch
-----------------------
+1. Branch naming guidelines
+---------------------------
 
 Create a new branch for your patch, use a self-descriptive name, eg:
 
@@ -29,8 +27,8 @@ Create a new branch for your patch, use a self-descriptive name, eg:
   # if you prefer a descriptive name
   git checkout -b autoregistration
 
-2. Commit and push
-------------------
+2. Commit message style guidelines
+----------------------------------
 
 Please follow our commit message style, eg:
 
@@ -68,6 +66,8 @@ Moreover, keep in mind the following guidelines:
   corresponding change of yours which should contain a descriptive
   message and mention the issue number as suggested in the example above
 
+If you are a new contributor, and want detailed description on Contributing guidelines
+please head over to this `page <http://openwisp.io/docs/developer/contributing.html>`_
 
 Python Code conventions
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,8 +81,11 @@ Python Code conventions
 - Please make sure you follow this code style while making changes to any
   of the OpenWISP's Python file.
 
-- To know more about flake visit `this page. <http://flake8.pycqa.org/en/latest/>`_.
+- To know more about flake visit `this page. <http://flake8.pycqa.org/en/latest/>`_
 
+- OpenWISP also uses `isort <https://pypi.python.org/pypi/isort>`_ to manage its codebase
+  in a definite order. To know more about its use, please head over to this
+  `page <http://isort.readthedocs.io/en/latest/>`_.
 
 Javascript Code Conventions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,8 +103,7 @@ Javascript Code Conventions
   <https://www.w3schools.com/js/js_conventions.asp>`_ link for proper
   explanation and wonderful examples.
 
-
-Openwrt Related Code Convention
+OpenWRT Related Code Convention
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - OpenWISP follows the standard OpenWRT coding style conventions as stated by
