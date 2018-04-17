@@ -29,17 +29,17 @@ thread and we'll help you get along with that.
 If neither of the above works for you, please get in touch with us
 via `our communication channels <http://openwisp.org/support.html>`_.
 
-Steps to Submit your Code or Changes
+Steps to Commit your Code or Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our main development branch is master it's our central development
+Our main development branch is master, it's our central development
 branch.
 
 Your code should be pushed from a different branch and then it is
 merged into master after proper review from the project maintainers.
 
-1. Create a new branch
-----------------------
+1. Branch naming guidelines
+---------------------------
 
 Create a new branch for your patch, use a self-descriptive name, eg:
 
@@ -51,8 +51,8 @@ Create a new branch for your patch, use a self-descriptive name, eg:
   # if you prefer a descriptive name
   git checkout -b autoregistration
 
-2. Commit and push
-------------------
+2. Commit message style guidelines
+----------------------------------
 
 Please follow our commit message style, eg:
 
@@ -131,8 +131,14 @@ After pushing your changes to your fork, prepare a new Pull Request
 - To avoid such changes please check your editor settings first. If this sort of
   behaviour persists please use any command line editor like VIM, etc.
 
-5. Style guide enforcement tool
--------------------------------
+Coding Style Conventions
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Python Code conventions
+--------------------------
+
+- For proper python coding conventions one should read `PEP 8 -- Style Guide for
+  Python Code <https://www.python.org/dev/peps/pep-0008/>`_.
 
 - OpenWISP uses `flake8 <https://pypi.python.org/pypi/flake8>`_ as it's style guide
   enforcement tool or source code checker.
@@ -142,4 +148,40 @@ After pushing your changes to your fork, prepare a new Pull Request
 
 - To know more about flake visit `this page. <http://flake8.pycqa.org/en/latest/>`_
 
-Thanks for contributing to OpenWISP!
+- OpenWISP also uses `isort <https://pypi.python.org/pypi/isort>`_ to manage its codebase
+  in a definite order. To know more about its use, please head over to this
+  `page <http://isort.readthedocs.io/en/latest/>`_.
+
+2. Javascript Code Conventions
+------------------------------
+
+- OpenWISP follows standard JavaScript coding style conventions that are generally
+  accepted or the ones that are mentioned in
+  `JSlint <https://github.com/openwisp/django-freeradius/blob/master/.jslintrc>`_ file.
+  To know more about JSlint please see `this <https://www.jslint.com/help.html>`_.
+
+- Proper structure and indentations should be maintained in code and descriptive
+  function and variable name should be used so that code is more readable and
+  self explanatory.
+
+- Please follow this `JavaScript Style Guide and Coding Conventions
+  <https://www.w3schools.com/js/js_conventions.asp>`_ link for proper
+  explanation and wonderful examples.
+
+3. OpenWRT Related Code Convention
+----------------------------------
+
+- OpenWISP follows the standard OpenWRT coding style conventions as stated by
+  OpenWRT.
+
+- If you want ot work with patches in OpenWRT please refer the following link for yourself
+  to get started `Working with Patches <https://wiki.openwrt.org/doc/devel/patches>`_.
+
+- For reference on how to name the patches in OpenWRT please visit the given link
+  `Naming patches <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
+
+- For adding new files to your patch please refer this link on how to structure your files
+  and patches `Adding new files <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
+
+Thanks for your effort to read the above guidelines. We are happy that you took
+your time out to contribute to this community.
