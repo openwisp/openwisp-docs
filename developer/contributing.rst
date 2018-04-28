@@ -29,7 +29,9 @@ thread and we'll help you get along with that.
 We also use an agile development tool, namely Taiga. You may head over
 to the `project page <https://tree.taiga.io/project/nemesisdesign-openwisp>`_
 and explorer some issues and epics over there too. If you have certain
-interesting ideas, you may contribute those in Taiga.
+interesting ideas, you may contribute those in Taiga **note**: we also started
+experimenting with a `general github kanban board
+<https://github.com/orgs/openwisp/projects/3>`_.
 
 If neither of the above works for you, please get in touch with us
 via `our communication channels <http://openwisp.org/support.html>`_.
@@ -59,7 +61,16 @@ Create a new branch for your patch, use a self-descriptive name, eg:
 2. Commit message style guidelines
 ----------------------------------
 
-Please follow our commit message style, eg:
+**Please follow our commit message style conventions**.
+
+If the issue is present on Github, use following commit style:
+
+::
+
+    [module/file/feature] Short description #<issue-number>
+
+    Long description here.
+    Fixes #<issue-number>
 
 If the issue is present on Taiga, use following commit style:
 
@@ -69,16 +80,7 @@ If the issue is present on Taiga, use following commit style:
 
     Long description here.
 
-If the issue is present on Github, use following commit style:
-
-::
-
-    [module/file/feature] Short description #issue-number
-
-    Long description here.
-    Fixes #issue-number
-
-Here's a real world example from `one of our modules
+Here's a real world commit message example from `one of our modules
 <https://github.com/openwisp/django-netjsonconfig/commit/7a5dad9f97e708b89149c2765f8298c5a94b652b>`_:
 
 ::
@@ -105,8 +107,8 @@ Moreover, keep in mind the following guidelines:
   corresponding change of yours which should contain a descriptive
   message and mention the issue number as suggested in the example above
 
-3. Create pull-request
-----------------------
+3. Pull-Request guidelines
+--------------------------
 
 After pushing your changes to your fork, prepare a new Pull Request
 (from now on we will shorten it often to just *PR*):
