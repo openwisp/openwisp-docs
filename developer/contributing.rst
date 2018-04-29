@@ -119,73 +119,57 @@ After pushing your changes to your fork, prepare a new Pull Request
 4. Avoiding unnecessary changes
 -------------------------------
 
-- While making changes to the required files, then saving it and comitting it,
+- while making changes to the required files, then saving it and comitting it,
   different contributors often find that there occur same changes that they have
   not made and those changes gets committed with the desired change that the person
-  wants to make.
-
-- These unnecessary changes should be evaluated first and then the commit should
-  be made.
-
-- These changes generally occur due to different settings and customizations
+  wants to make
+- these unnecessary changes should be evaluated first and then the commit should
+  be made
+- these changes generally occur due to different settings and customizations
   of your editor that you are working with. These changes are produced on their own
   as soon as you save a file. Examples are - Introducing new lines, removing and
-  adding spaces, etc.
-
-- To avoid such changes please check your editor settings first. If this sort of
-  behaviour persists please use any command line editor like VIM, etc.
+  adding spaces, etc
+- to avoid such changes please check your editor settings first. If this sort of
+  behaviour persists please use any command line editor like VIM, etc
 
 Coding Style Conventions
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Python Code conventions
+1. Python code conventions
 --------------------------
 
-- For proper python coding conventions one should read `PEP 8 -- Style Guide for
-  Python Code <https://www.python.org/dev/peps/pep-0008/>`_.
+- OpenWISP follows `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_.
+- OpenWISP uses `flake8 <http://flake8.pycqa.org/en/latest/>`_ to automatically check the quality
+  of the python code being committed, each python repo has a ``runflake8`` script
+  that you can launch with ``./runflake8``
+- OpenWISP also uses `isort <http://isort.readthedocs.io/en/latest/>`_ to sort import
+  in a specifc predictable order; each python repo has a ``runisort`` script
+  that you can launch with ``./runisort``
 
-- OpenWISP uses `flake8 <https://pypi.python.org/pypi/flake8>`_ as it's style guide
-  enforcement tool or source code checker.
-
-- Please make sure you follow this code style while making changes to any
-  of the OpenWISP's Python file.
-
-- To know more about flake visit `this page. <http://flake8.pycqa.org/en/latest/>`_
-
-- OpenWISP also uses `isort <https://pypi.python.org/pypi/isort>`_ to manage its codebase
-  in a definite order. To know more about its use, please head over to this
-  `page <http://isort.readthedocs.io/en/latest/>`_.
-
-2. Javascript Code Conventions
+2. Javascript code conventions
 ------------------------------
 
 - OpenWISP follows standard JavaScript coding style conventions that are generally
-  accepted or the ones that are mentioned in
-  `JSlint <https://github.com/openwisp/django-freeradius/blob/master/.jslintrc>`_ file.
-  To know more about JSlint please see `this <https://www.jslint.com/help.html>`_.
-
-- Proper structure and indentations should be maintained in code and descriptive
-  function and variable name should be used so that code is more readable and
-  self explanatory.
-
-- Please follow this `JavaScript Style Guide and Coding Conventions
+  accepted or the ones that are specified in
+  `.jslintrc files <https://github.com/openwisp/django-freeradius/blob/master/.jslintrc>`_;
+  find out more about `JSlint here <https://www.jslint.com/help.html>`_
+- please follow this `JavaScript Style Guide and Coding Conventions
   <https://www.w3schools.com/js/js_conventions.asp>`_ link for proper
-  explanation and wonderful examples.
+  explanation and wonderful examples
 
-3. OpenWRT Related Code Convention
+3. OpenWRT related conventions
 ----------------------------------
 
-- OpenWISP follows the standard OpenWRT coding style conventions as stated by
-  OpenWRT.
+OpenWISP follows the standard OpenWRT coding style conventions of OpenWRT:
 
-- If you want ot work with patches in OpenWRT please refer the following link for yourself
-  to get started `Working with Patches <https://wiki.openwrt.org/doc/devel/patches>`_.
+- `Working with Patches <https://wiki.openwrt.org/doc/devel/patches>`_
+- `Naming patches <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_
+- `Adding new files <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
 
-- For reference on how to name the patches in OpenWRT please visit the given link
-  `Naming patches <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
+Thank You
+~~~~~~~~~
 
-- For adding new files to your patch please refer this link on how to structure your files
-  and patches `Adding new files <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
+If you follow these guidelines closely your contribution will
+have a very positive impact on the OpenWISP project.
 
-Thanks for your effort to read the above guidelines. We are happy that you took
-your time out to contribute to this community.
+Thanks a lot for your patience.
