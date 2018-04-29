@@ -80,7 +80,7 @@ not get this at first glance and they will start looking for the numbers of star
 
 Yes, we know it sounds silly, but since it doesn't cost you anything, it would be
 really useful if you could **take a look at our projects on github** and **star
-the ones you find most interesting** for you.
+the ones you find most interesting**.
 
 4. Write to the mailing list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,10 +130,13 @@ on custom setups or development of new features, **you may hire somebody which
 very active in the community** so they can help you achieve what you need.
 
 **Hiring a specialist is usually more effective than trying to figure it out alone**:
-specialists know OpenWISp very well, they can suggest what are the best ways to
+specialists know OpenWISP very well, they can suggest what are the best ways to
 accomplish something with the least effort, with the highest quality and in the
 least time at the least cost. Moreover, they will produce solutions that can
 also be shared with the rest of the community and become part of the OpenWISP ecosystem.
+
+To find an OpenWISP expert, look in our `communication channels
+<http://openwisp.org/support.html>`_, especially the mailing list.
 
 9. Contribute technically
 ~~~~~~~~~~~~~~~~~~~~~~~~~
