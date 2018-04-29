@@ -29,6 +29,9 @@ For this reason a clear choice towards open software and operating systems and t
 every modification, update and improvement to the community was made.
 The same approach was adopted for the knowledge and the experience acquired within the project.
 
+From then on, OpenWISP has been adopted by many other Italian and European cities
+and thanks to **OpenWISP 2** our best practices are now being adopted globally.
+
 Core Values
 -----------
 
