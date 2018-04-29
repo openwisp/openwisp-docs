@@ -107,15 +107,19 @@ We encourage anyone who shares our values to get in touch with us via our
 5. Software reusability means long term sustainability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Long time contributors of OpenWISP experienced first hand the consequences of dealing with
-unflexible monolithic applications which were hardly reusable outside of the narrow scope for
+Long time contributors of **OpenWISP experienced first hand the consequences of dealing with
+unflexible monolithic applications** which were hardly reusable outside of the narrow scope for
 which they were designed.
 
-We have seen countless projects born with great promises, developing their code from scratch and
-then fading into oblivion, only to notice the same vicious cycle begin again some time later in
-some other area of the globe.
+**We have seen countless projects born with great promises, developing their code from scratch and
+then fading into oblivion**, only to notice the same vicious cycle begin again some time later in
+some other area of the globe; think about it: **what a waste of human effort, energy and resources**!
 
-For this reason, OpenWISP 2 has a strong focus on modularity and reusability.
+For this reason, **OpenWISP 2 has a strong focus on modularity and reusability** and follows
+the **best practices developed in the Unix world** as described in `The Art of Unix Programming
+<http://www.catb.org/esr/writings/taoup/html/>`_ by `Eric S. Raymond
+<https://en.wikipedia.org/wiki/Eric_S._Raymond>`_.
+
 The core OpenWISP 2 modules are licensed and built in a way that makes it possible for developers
 not involved in OpenWISP to include these modules in their own applications (according to their licenses).
 
@@ -123,7 +127,7 @@ This is leading to the creation of an ecosystem of modern networking software to
 attracting developers from all over the world.
 
 The mutual interest of the people who use, modify, share, resell and contribute to these modules is
-our foundation for long term sustainability.
+our foundation for **long term sustainability**.
 
 Goals
 -----
