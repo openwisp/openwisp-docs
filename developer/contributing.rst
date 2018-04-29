@@ -6,38 +6,33 @@ We are glad and thankful that you want to contribute to OpenWISP.
 Please read these guidelines carefully, it will help you and us
 to save precious time later.
 
-Setting things up
+Introduce yourself
 ~~~~~~~~~~~~~~~~~~
 
-Please follow up the instructions in the README of the repository to
-which you want to contribute to, so that you can set up the project.
+It won't hurt to join `our main communication channels <http://openwisp.org/support.html>`_
+and introduce yourself; you can take advantage of your introduction to share feedback,
+share your OpenWISP derivative work, ask questions or announce your intentions.
 
-Finding Something to Work
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Look for open issues
+~~~~~~~~~~~~~~~~~~~~
 
-Visit any repository and then to try to explore the project's codebase.
-Use it and give us your opinion about any change that might be helpful
-to you as well as to us. If you find any bug or error or something
-that is worth mentioning please create an **issue** regarding that
-bug or error.
+Check out the `OpenWISP Contributor's Board <https://github.com/orgs/openwisp/projects/3>`_,
+this is a kanban board integrated with github were we place the most important
+issues we are working on.
 
-If you are unable to find anything on your own to be worked upon,
-don't worry we got your back. Visit that project's **Issues** tab and
-explore those issues that might interests you, comment on the issue
-thread and we'll help you get along with that.
+If there's anything you don't understand regarding the board, don't hesitate
+to ask questions in our `general chat <https://gitter.im/openwisp/general>`_.
 
-We also use an agile development tool, namely Taiga. You may head over
-to the `project page <https://tree.taiga.io/project/nemesisdesign-openwisp>`_
-and explorer some issues and epics over there too. If you have certain
-interesting ideas, you may contribute those in Taiga **note**: we also started
-experimenting with a `general github kanban board
-<https://github.com/orgs/openwisp/projects/3>`_.
+Setup
+~~~~~
 
-If neither of the above works for you, please get in touch with us
-via `our communication channels <http://openwisp.org/support.html>`_.
+Once you have chosen an issue to work on, read the ``README`` of the repository
+in which the issue has been opened and follow the setup instructions, each module
+has its own specific instructions and we highly suggest you to read as much as
+possible.
 
-Steps to Commit your Code or Changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to commit your changes properly
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Our main development branch is master, it's our central development
 branch.
@@ -71,14 +66,6 @@ If the issue is present on Github, use following commit style:
 
     Long description here.
     Fixes #<issue-number>
-
-If the issue is present on Taiga, use following commit style:
-
-::
-
-    [module/file/feature] Short description TG-[Taiga issue number] #closed
-
-    Long description here.
 
 Here's a real world commit message example from `one of our modules
 <https://github.com/openwisp/django-netjsonconfig/commit/7a5dad9f97e708b89149c2765f8298c5a94b652b>`_:
