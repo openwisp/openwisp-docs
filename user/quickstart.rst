@@ -12,8 +12,11 @@ Follow the step by step `ansible-openwisp2 tutorial
 2. Install openwisp-config on your devices
 ------------------------------------------
 
-Install `openwisp-config <https://github.com/openwisp/openwisp-config#install-precompiled-package>`_
-on your OpenWRT / LEDE devices.
+Here's a guide on :doc:`how to install openwisp-config on OpenWRT
+and connect it to OpenWISP <./configure-device>`.
+
+If you don't have a physical OpenWRT-compatible device at hand, you can install
+OpenWRT/LEDE in a VirtualBox VM, that's also covered by the guide.
 
 3. Watch video demonstrations
 -----------------------------
