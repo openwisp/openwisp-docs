@@ -1,31 +1,32 @@
-Installing LEDE and connecting it to OpenWISP2
-==============================================
+Connect OpenWRT to OpenWISP2
+============================
 
 This page will guide you through the installation of
 `openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a device
-which supports `OpenWRT <https://openwrt.org/>`_ or `LEDE <https://lede-project.org>`_.
+which supports `OpenWRT <https://openwrt.org/>`_.
 
 If you don't have a physical device available but you still want to try out OpenWISP,
-you can use a Virtual Machine running `LEDE <https://lede-project.org>`_, an OpenWRT-based Linux OS.
+you can use a Virtual Machine.
 
 1. Install OpenWISP2
 --------------------
 
-You can install OpenWISP2 by using ansible, as shown by the guide in
-`this page <https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_
+Refer to the  `OpenWISP 2 installation tutorial
+<https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_
 
-2. Installing LEDE on VirtualBox
+2. Install OpenWRT on VirtualBox
 --------------------------------
 
 .. note::
-    **You may skip this part if you plan on installing openwisp-config on a
+    **You can skip this part if you plan on installing openwisp-config on a
     physical device.**
 
 Download ``combined-ext4.img.gz`` from `this
 page <https://downloads.lede-project.org/snapshots/targets/x86/64>`__. The
 other images may not work well.
 
-Extract the downloaded file and convert the image file to a VirtualBox disk:
+Extract the downloaded file and convert the image file to a `VirtualBox
+<https://www.virtualbox.org/>`_ disk:
 
 .. code-block:: bash
 
@@ -48,11 +49,11 @@ the terminal.
 .. note::
 
     Continue with the procedures in
-    `this guide <https://lede-project.org/docs/user-guide/virtualbox-vm>`_.
+    `the OpenWRT virtualbox guide <https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm>`_.
     It's required to enable SSH access and connect the VM to the internet.
 
-3. Install openwisp-config on your LEDE instance
-------------------------------------------------
+3. Install openwisp-config on your OpenWRT instance
+---------------------------------------------------
 
 Installation
 ~~~~~~~~~~~~
@@ -64,10 +65,9 @@ Run the following commands on your device:
     opkg update
     opkg install <URL>
 
-Replace ``<URL>`` with the link to one of the latest build, available
-`here <http://downloads.openwisp.org/openwisp-config/latest/>`__. For this
-guide, let's choose the ``openssl`` package, but any of them should work the
-same.
+Replace ``<URL>`` with the link to one of the latest build, available on
+`downloads.openwisp.org <http://downloads.openwisp.org/openwisp-config/latest/>`__.
+For this guide, let's choose the ``openssl`` variant.
 
 Configuration
 ~~~~~~~~~~~~~
@@ -119,18 +119,20 @@ Save the file and start openwisp-config:
 
     /etc/init.d/openwisp_config start
 
-Your LEDE instance should register itself to your openwisp2 controller. Check
-the devices menu on the admin panel to make sure your LEDE instance is
+Your OpenWRT instance should register itself to your openwisp2 controller.
+Check the devices menu on the admin panel to make sure your OpenWRT instance is
 registered.
 
-Compiling your own LEDE/OpenWRT image
--------------------------------------
+Compile your own OpenWRT image
+------------------------------
 
-You may want to compile a custom LEDE/OpenWRT image to save time on configuring
+You may want to compile a custom OpenWRT image to save time on configuring
 new devices. By compiling a custom image, you can pre-install openwisp-config,
-including your configurations (e.g. ``shared_secret``), so that you wouldn't have
-to go through the configuration process again. This will be very useful if you
-want to manage many devices.
+including your configurations (e.g. ``url`` and ``shared_secret``), so that you
+won't have to go through the configuration process again.
 
-A guide on how to do it is available
-`here <https://github.com/openwisp/openwisp-config#compiling-a-custom-lede--openwrt-image>`_.
+This will make you save a lot of time if you need to manage many devices!
+
+A guide on `how to compile a custom OpenWRT image available in the
+openwisp-config documentation
+<https://github.com/openwisp/openwisp-config#compiling-a-custom-lede--openwrt-image>`_.
