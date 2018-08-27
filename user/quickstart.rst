@@ -6,7 +6,11 @@ Quickstart
 1. Install the OpenWISP 2 server
 --------------------------------
 
-Follow the step by step `ansible-openwisp2 tutorial
+If you want to install for testing purposes we suggest
+to use `vagrant-openwisp2 <https://github.com/openwisp/vagrant-openwisp2>`_.
+
+If you want to find out how to deploy OpenWISP for production usage,
+follow the step by step `ansible-openwisp2 tutorial
 <https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_.
 
 2. Install openwisp-config on your devices
