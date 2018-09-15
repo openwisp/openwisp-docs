@@ -66,7 +66,7 @@ Run the following commands on your device:
     opkg install <URL>
 
 Replace ``<URL>`` with the link to one of the latest build, available on
-`downloads.openwisp.org <http://downloads.openwisp.org/openwisp-config/latest/>`__.
+`downloads.openwisp.io <http://downloads.openwisp.io/openwisp-config/latest/>`__.
 For this guide, let's choose the ``openssl`` variant.
 
 Configuration
