@@ -20,33 +20,25 @@ Ansible role that installs the `openwisp2
 django-netjsonconfig
 ********************
 
-`Configuration manager <https://github.com/openwisp/django-netjsonconfig/>`_
-for embedded devices, implemented as a reusable django-app.
+This is the `configuration management module of OpenWISP
+<https://github.com/openwisp/django-netjsonconfig/>`_,
+implemented as a reusable django-app.
 
 *****************
 django-freeradius
 *****************
 
-`django-freeradius <https://github.com/openwisp/django-freeradius/>`_ is a
-reusable django app that provides an admin interface to a freeradius database.
+This is the `Freeradius management web interface module of OpenWISP
+<https://github.com/openwisp/django-freeradius/>`_, implemented as a
+reusable django app.
 
 ***********
 django-x509
 ***********
 
-`django-x509 <https://github.com/openwisp/django-x509/>`_ is a reusable django
-app implementing x509 PKI(Public Key Infrastructure) certificates management.
-
-****
-LEDE
-****
-
-The `LEDE <https://lede-project.org/>`_ Project
-(“Linux Embedded Development Environment”) is a Linux operating system
-based on OpenWRT.
-
-It is a complete replacement for the vendor-supplied firmware of a wide range
-of wireless routers and non-network devices.
+This is the `Publik Key Infrastructure management module of OpenWISP
+<https://github.com/openwisp/django-x509/>`_, implemented as a reusable django
+app.
 
 ************
 Mesh Network
