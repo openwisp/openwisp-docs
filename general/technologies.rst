@@ -1,43 +1,54 @@
-=====================
-Technologies Involved
-=====================
+======================
+Main Technologies Used
+======================
 
-- `Python <https://www.python.org/>`_
+Python
+------
 
-  It is used as the basic language to serve the project. It is a very common nowadays in computer science and has a wide variety of applications.
+`Python <https://www.python.org/>`_ it's the main programming language
+used by the server side application (web admin, API, controller, workers).
 
-- `Django <https://www.djangoproject.com/>`_
+In the past OpenWISP was built in Ruby On Rails, but we later switched to Python
+because it's much more suited to networking and it has a wider pool of potential
+contributors.
 
-  It is the web framework based on Python language. It is the basis of this project and all the inteface is provided through this framework.
+Django
+------
 
-- `Ansible <https://www.ansible.com/>`_
+`Django <https://www.djangoproject.com/>`_ is one of the most popular
+web frameworks for Python language.
 
-  Ansible is software that automates software provisioning, configuration management, and application deployment.
+It is used extensively in our modules. Django allows rapid development and has
+a very rich ecosystem.
 
-- `NetJSON <http://netjson.org/>`_
+Ansible
+-------
 
-  NetJSON is a data interchange format based on `JSON <http://json.org/>`_ designed to ease the development of software tools for computer networks.
+We use `Ansible <https://www.ansible.com/>`_ to provide an automated procedure
+to deploy OpenWISP and to compile a custom OpenWRT image.
 
-- `JSON <http://json.org/>`_
+NetJSON
+-------
 
-  JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.
+`NetJSON <http://netjson.org/>`_ is a data interchange format based on
+`JSON <http://json.org/>`_ designed to ease the development of
+software tools for computer networks.
 
-- `LEDE <https://lede-project.org/>`_
+OpenWRT
+-------
 
-  The LEDE Project (“Linux Embedded Development Environment”) is a Linux operating system based on OpenWrt. It is a complete replacement for the vendor-supplied firmware of a wide range of wireless routers and non-network devices.People install LEDE because they believe it works better than the stock firmware from their vendor. They find it is more stable, offers more features, is more secure and has better support.
+`OpenWRT <https://openwrt.org/>`_ is an linux distribution designed for
+embedded systems, routers and networking in general.
 
-- `OpenWISP <http://openwisp.org/>`_
+It has a very skilled community and it is used as a base by many hardware vendors
+(Technicolor, Ubiquiti Networks, Linksys, Teltonika and many others).
 
-  OpenWISP is a software platform that can be used to implement a complete Wi-Fi service.
+Lua
+---
 
-- `OpenWRT <https://openwrt.org/>`_
+`Lua <https://www.lua.org/>`_ is a lightweight, multi-paradigm programming
+language designed primarily for embedded systems and clients.
 
-  OpenWrt is an open source project for embedded operating system based on Linux, primarily used on embedded devices to route network traffic.
+Lua is cross-platform, since the interpreter is written in ANSI C, and has a relatively simple C API.
 
-- `Lua <https://www.lua.org/>`_
-
-  Lua is a lightweight, multi-paradigm programming language designed primarily for embedded systems and clients. Lua is cross-platform, since the interpreter is written in ANSI C, and has a relatively simple C API.
-
-- `Shell <https://www.shellscript.sh/>`_
-
-  A shell script is a computer program designed to be run by the Unix shell, a command-line interpreter. The various dialects of shell scripts are considered to be scripting languages. Typical operations performed by shell scripts include file manipulation, program execution, and printing text.
+It is the official scripting language of OpenWRT.
