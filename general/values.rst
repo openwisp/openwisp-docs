@@ -17,20 +17,7 @@ infrastructure of communities that most need it.
 History
 -------
 
-In the summer of 2008 the Province of Rome decided to start a free public Wi-Fi network to be spread
-over its 5352 SQ KM territory including Rome and 120 other cities for a total of about 4.5 million inhabitants.
-
-The main objective of the project, called ProvinciaWiFi (later renamed WiFi Metropolitano), was to
-take a decisive step to reduce the existing digital divide by fostering and facilitating the use of ICT by citizens.
-
-From the outset it was decided to commit the project to a completely open philosophy.
-
-For this reason a clear choice towards open software and operating systems and the availability of
-every modification, update and improvement to the community was made.
-The same approach was adopted for the knowledge and the experience acquired within the project.
-
-From then on, OpenWISP has been adopted by many other Italian and European cities
-and thanks to **OpenWISP 2** our best practices are now being adopted globally.
+`See the History page on our website <http://openwisp.org/history.html>`_.
 
 Core Values
 -----------
