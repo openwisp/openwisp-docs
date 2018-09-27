@@ -6,22 +6,6 @@ You don't need necessarily to be a programmer in order to help out.
 An apparently insignificant action can have a very positive impact on the project
 and in this page we'll explain why it's in your interest to help the project grow.
 
-We are volunteers
------------------
-
-As you may have noticed, the community is growing a lot in terms of users, although
-the number of volunteers that are actively helping out the project is not growing.
-
-Our resources are very limited beacuse OpenWISP has been living solely on volunteer
-contributions since the beginning of 2018.
-
-This means that:
-
-- we won't be able to fix bugs quickly
-- we won't be able to implement the amazing feature you need or are thinking about
-- we won't able to reply very fast to all the support questions
-- we won't be able to write very detailed user documentation and tutorials
-
 Are you using OpenWISP for your organization?
 ---------------------------------------------
 
