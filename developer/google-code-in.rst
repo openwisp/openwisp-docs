@@ -66,6 +66,86 @@ Here's a few quick tricks you can use to become a star in our community:
 - try to participate in the community, if a fellow member is in need of help and
   you know how to help him, please do so, we will reward you
 
+Evaluation criteria
+-------------------
+
+These are the evaluation criterias we will use to decide the finalist and
+vote for the winners.
+
+Progression of Skills
+~~~~~~~~~~~~~~~~~~~~~
+
+Students should start with simple tasks and gradually progress to more difficult
+tasks.
+
+**Hint**: push yourself gradually to harder tasks once you become confident.
+Leave easy tasks for beginners.
+
+Quality over Quantity
+~~~~~~~~~~~~~~~~~~~~~
+
+We care more about the quality and impact of your work rather than the quantity
+of completed tasks.
+
+**How we define quality?**
+
+Strict adherence to our :doc:`contributing guidelines <../developer/contributing>`,
+clean readable code, simplicity, elegance, good commit messages.
+
+**How we define impact?**
+
+Adding a new feature that was highly requested by the community, improving the UX,
+improve the documentation to help newcomers, anything that facilitates the life
+of our users has a positive impact on the community.
+
+**Hint**: find out where the highest impact can be made.
+Some tasks are more important than others.
+
+Community
+~~~~~~~~~
+
+Open source is not only about producing code, being active in the community
+(mailing list, chat, github), helping out fellow students and helping out new
+users who ask beginner questions is also very important to maintain a healthy
+community.
+
+**Hint**: fully embrace the open source community, be helpful to one another.
+This is the true spirit of open source development.
+
+Gradual Independence
+~~~~~~~~~~~~~~~~~~~~
+
+Over time we expect you to improve and need less micro-managing from mentors,
+we expect you to become more independent and learn to solve problems on your own.
+
+**Hint**: do your own research before asking obvious questions; search in the
+mailing list, in the documentation, on github, on google. Send tasks for review
+only when you consider your work of good quality. You don't need to rush, keep
+in mind we value more quality and impact rather than number of completed tasks.
+
+Learn to use OpenWISP
+~~~~~~~~~~~~~~~~~~~~~
+
+The best contributors are those who actively use the software;
+students may not have a specific need to use OpenWISP but they can simulate it
+in order to learn.
+
+**Hint**: we will appreciate students who will demonstrate good knowledge of how OpenWISP
+can be used and will help us to write more documentation and tutorials on how to use it.
+
+Full stack knowledge
+~~~~~~~~~~~~~~~~~~~~
+
+OpenWISP is really a full-stack software project, there's everything: python,
+django, javascript, openwrt, lua, shell scripting, openvpn, freeradius, ansible.
+
+The best contributors are not afraid to learn new technologies and contribute on
+different fronts.
+
+**Hint**: we will appreciate students who will spend effort in improving their
+skills on multiple fronts, rather than focusing exclusively on one specific
+technology or programming language.
+
 Time to start hacking
 ---------------------
 
