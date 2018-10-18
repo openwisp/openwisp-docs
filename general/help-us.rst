@@ -21,52 +21,7 @@ performed by a sufficient number of people.**
 How to help
 -----------
 
-1. Social media
-~~~~~~~~~~~~~~~
-
-If you are using OpenWISP, it's very useful to let the world know about it by
-sharing a public post on social media using the `#openwisp` hashtag.
-
-We also have a `twitter account <https://twitter.com/openwisp>`_ and a
-`facebook page <https://www.facebook.com/OpenWISP/>`_ you can follow to help us
-share news about our community.
-
-If more people talk about OpenWISP on social media, we increase the chance
-that those who have the will and technical skills to contribute will hear
-about its existence.
-
-2. Blogging
-~~~~~~~~~~~
-
-Write a blog post about how you are using OpenWISP!
-
-It would be great if you could explain the reasons for which you chose OpenWISP,
-the traits you like about it and the traits you don't like about it.
-
-This is **VERY** helpful not only for the core developers but also for potential
-readers that may find your blog post and read about your use case: maybe they
-have the same use case and they want to know if OpenWISP is a good fit for them.
-
-A concise, straight to the point blog post with some images and screenshots will
-go a long way in attracting new people into the community.
-
-3. Stars on github
-~~~~~~~~~~~~~~~~~~
-
-Unfortunately, when evaluating a project, a disproportionate amount of people
-look at the github stars as a method of evaluation on how popular a project is
-and if they don't see many stars they discard the idea of using it.
-
-OpenWISP is composed of many modules and for that reason we don't have a single super
-popular github repository with thousands of stars, but when new users and developers
-look at `our github organization page <https://github.com/openwisp>`_ they may
-not get this at first glance and they will start looking for the numbers of stars.
-
-Yes, we know it sounds silly, but since it doesn't cost you anything, it would be
-really useful if you could **take a look at our projects on github** and **star
-the ones you find most interesting**.
-
-4. Write to the mailing list
+1. Write to the mailing list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `mailing list <http://openwisp.org/support.html>`_ is a great place to ask
@@ -85,12 +40,71 @@ When subscribing to the mailing list, we suggest to choose one of these options:
   messages to a dedicated folder
 - receive a periodic summary (abridged or digest)
 
-5. Documentation
+2. Send feedback
+~~~~~~~~~~~~~~~~
+
+When you use OpenWISP, you may find ideas about improvements, new features or you
+may incur in bugs.
+
+It's very helpful to us if you send us your feedback in some way.
+The preferred way to send feedback is to use the `mailing list <http://openwisp.org/support.html>`_,
+but you can send feedback in any way you want.
+
+If you have found a bug we will likely ask you to open a bug report in a specific
+github repository, if you can follow up with this activity it will be
+very helpful to us.
+
+3. Stars on github
+~~~~~~~~~~~~~~~~~~
+
+Unfortunately, when evaluating a project, a disproportionate amount of people
+look at the github stars as a method of evaluation on how popular a project is
+and if they don't see many stars they discard the idea of using it.
+
+OpenWISP is composed of many modules and for that reason we don't have a single super
+popular github repository with thousands of stars, but when new users and developers
+look at `our github organization page <https://github.com/openwisp>`_ they may
+not get this at first glance and they will start looking for the numbers of stars.
+
+Yes, we know it sounds silly, but since it doesn't cost you anything, it would be
+really useful if you could **take a look at our projects on github** and **star
+the ones you find most interesting**.
+
+3. Documentation
 ~~~~~~~~~~~~~~~~
 
 If you find anything in this documentation that you think may be improved,
 please edit the document on github and send us a pull request, alternatively
 you can file a bug report or write to the `support channels <http://openwisp.org/support.html>`_.
+
+4. Social media
+~~~~~~~~~~~~~~~
+
+If you are using OpenWISP, it's very useful to let the world know about it by
+sharing a public post on social media using the `#openwisp` hashtag.
+
+We also have a `twitter account <https://twitter.com/openwisp>`_ and a
+`facebook page <https://www.facebook.com/OpenWISP/>`_ you can follow to help us
+share news about our community.
+
+If more people talk about OpenWISP on social media, we increase the chance
+that those who have the will and technical skills to contribute will hear
+about its existence.
+
+5. Blogging
+~~~~~~~~~~~
+
+Write a blog post about how you are using OpenWISP!
+
+It would be great if you could explain the reasons for which you chose OpenWISP,
+the traits you like about it and the traits you don't like about it.
+
+This is **VERY** helpful not only for the core developers but also for potential
+readers that may find your blog post and read about your use case: maybe they
+have the same use case and they want to know if OpenWISP is a good fit for them.
+
+A concise, straight to the point blog post with some images and screenshots will
+go a long way in attracting new people into the community.
 
 6. Conferences & Meetups
 ~~~~~~~~~~~~~~~~~~~~~~~~
