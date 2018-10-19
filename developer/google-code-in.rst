@@ -69,7 +69,7 @@ Here's a few quick tricks you can use to become a star in our community:
 Evaluation criteria
 -------------------
 
-These are the evaluation criterias we will use to decide the finalist and
+These are the evaluation criteria we will use to select our finalists and
 vote for the winners.
 
 Progression of Skills
