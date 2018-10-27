@@ -26,6 +26,10 @@ Have you read the `contest rules
 <https://developers.google.com/open-source/gci/resources/contest-rules>`_ yet?
 If not, please do!
 
+.. danger::
+  **Students**: please do not share your personal information (full name, age, location)
+  during the program for safety reasons. This is also a new rule established since 2018.
+
 The most important thing to keep in mind is that you may claim only one task at
 time and if you decide you don't want to work on it anymore is totally fine
 but **please** communicate it to your mentors and remove yourself from the task
@@ -72,6 +76,22 @@ Evaluation criteria
 These are the evaluation criteria we will use to select our finalists and
 vote for the winners.
 
+Be patient
+~~~~~~~~~~
+
+Mentors are volunteers and they have their own obligations to attend.
+
+Avoid asking them continously to review your task.
+You are in a queue and you need to wait at least 24 hours as indicated in the
+GCI guidelines
+
+**Hint**: optimize your time!
+
+1. ensure the work you submit is of high quality before submitting it
+2. if it takes some time for your task to be reviewed, don't sit idle,
+   read our documentation, try OpenWISP, start working on other
+   tasks which allow multiple instances
+
 Progression of Skills
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -112,6 +132,17 @@ community.
 **Hint**: fully embrace the open source community, be helpful to one another.
 This is the true spirit of open source development.
 
+Help us to grow
+~~~~~~~~~~~~~~~
+
+Caring for the community also means helping it to grow.
+
+Growing is important because it will allow us to have more mentors in the future
+so we will able to help out more students.
+
+**Hint**: try to do some of the easiest actions described in
+:doc:`Help us to grow <../general/help-us>`.
+
 Gradual Independence
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -132,6 +163,19 @@ in order to learn.
 
 **Hint**: we will appreciate students who will demonstrate good knowledge of how OpenWISP
 can be used and will help us to write more documentation and tutorials on how to use it.
+
+Learn to use OpenWRT
+~~~~~~~~~~~~~~~~~~~~
+
+OpenWRT is one of the most important technologies in OpenWISP, therefore
+we consider important that students learn the basics of how it works and
+how OpenWISP can control it.
+
+**Hint**: start with using a virtual instance of OpenWRT in virtualbox, then
+when you feel ready get a `cheap OpenWRT compatible device
+<https://forum.openwrt.org/t/cheap-openwrt-hardware-to-move-first-steps-with-openwrt/23569>`_
+that you can use for testing and development. A full list of the OpenWRT compatible
+hardware is available in the official `OpenWRT Website <https://openwrt.org/toh/start>`_.
 
 Full stack knowledge
 ~~~~~~~~~~~~~~~~~~~~
@@ -170,7 +214,7 @@ Configuration management:
 	- Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch
 
 FAQs
-----
+====
 
 Please refer to the Google Code-in `FAQs <https://developers.google.com/open-source/gci/faq>`_ before participating.
 
@@ -179,4 +223,18 @@ Please refer to the Google Code-in `FAQs <https://developers.google.com/open-sou
   policy regarding cheating and plagiarism. There are some tasks which require a creative mind like designing logos and
   T-shirts, which you need to do by yourself. Remember, learning is more important than winning.
 
-We wish you good luck for the contest!
+How can I apply as mentor?
+--------------------------
+
+Thank you a lot for wanting to be a GCI mentor!
+
+OpenWISP Mentors need to be able to guide students, hence they need to have at
+least a basic knowledge of how OpenWISP works and having contributed actively
+to the codebase is highly recommended.
+
+If you want to apply, introduce yourself in our `general chat
+<https://gitter.im/openwisp/general>`_, let us know
+how you are using OpenWISP and how you contributed to it.
+
+If you haven't contributed yet, we highly suggest you to
+:doc:`get started now <../developer/contributing>`.
