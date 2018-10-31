@@ -22,7 +22,7 @@ Refer to the  `OpenWISP 2 installation tutorial
     physical device.**
 
 Download ``combined-ext4.img.gz`` from `this
-page <https://downloads.lede-project.org/snapshots/targets/x86/64>`__. The
+page <https://downloads.openwrt.org/releases/18.06.1/targets/x86/64/>`__. The
 other images may not work well.
 
 Extract the downloaded file and convert the image file to a `VirtualBox
