@@ -22,7 +22,7 @@ Refer to the  `OpenWISP 2 installation tutorial
     physical device.**
 
 Download ``combined-ext4.img.gz`` from `this
-page <https://downloads.lede-project.org/snapshots/targets/x86/64>`__. The
+page <https://downloads.openwrt.org/releases/18.06.1/targets/x86/64/>`__. The
 other images may not work well.
 
 Extract the downloaded file and convert the image file to a `VirtualBox
@@ -30,14 +30,14 @@ Extract the downloaded file and convert the image file to a `VirtualBox
 
 .. code-block:: bash
 
-    VBoxManage convertfromraw --format VDI lede-x86-64-combined-ext4.img lede-x86-64-combined-ext4.vdi
+    VBoxManage convertfromraw --format VDI openwrt-18.06.1-x86-64-combined-ext4.img openwrt-18.06.1-x86-64-combined-ext4.vdi
 
 If you encounter an error about ``VERR_ID_INVALID_SIZE``, you need to pad the
 image with the following command:
 
 .. code-block:: bash
 
-    dd if=lede-x86-64-combined-ext4.img of=lede-padded.img bs=128000 conv=sync
+    dd if=openwrt-18.06.1-x86-64-combined-ext4.img of=openwrt-18.06.1-x86-64-padded.img bs=128000 conv=sync
 
 And then try to convert the padded image using the previous command.
 

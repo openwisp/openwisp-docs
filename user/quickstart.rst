@@ -20,7 +20,7 @@ Here's a guide on :doc:`how to install openwisp-config on OpenWRT
 and connect it to OpenWISP <./configure-device>`.
 
 If you don't have a physical OpenWRT-compatible device at hand, you can install
-OpenWRT/LEDE in a VirtualBox VM, that's also covered by the guide.
+OpenWRT in a VirtualBox VM, that's also covered by the guide.
 
 3. Watch video demonstrations
 -----------------------------

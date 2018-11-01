@@ -145,7 +145,7 @@ Are you skilled in one of the following areas?
 - networking
 - graphic design
 - frontend development
-- OpenWRT/LEDE
+- OpenWRT
 - technical writing
 
 If yes, you can help us greatly. Find out more about this subject in
