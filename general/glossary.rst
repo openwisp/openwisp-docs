@@ -67,7 +67,7 @@ openwisp-config
 ***************
 
 `openwisp-config <https://github.com/openwisp/openwisp-config/>`_ is the
-agent for OpenWRT / LEDE that allows OpenWISP 2 to remotely send configuration updates.
+agent for OpenWRT that allows OpenWISP 2 to remotely send configuration updates.
 
 *******
 OpenWRT
