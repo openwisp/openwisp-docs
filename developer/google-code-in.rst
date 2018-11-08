@@ -214,7 +214,7 @@ Configuration management:
 	- Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch
 
 FAQs
-====
+----
 
 Please refer to the Google Code-in `FAQs <https://developers.google.com/open-source/gci/faq>`_ before participating.
 
@@ -224,7 +224,7 @@ Please refer to the Google Code-in `FAQs <https://developers.google.com/open-sou
   T-shirts, which you need to do by yourself. Remember, learning is more important than winning.
 
 How can I apply as mentor?
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Thank you a lot for wanting to be a GCI mentor!
 
