@@ -50,7 +50,13 @@ the terminal.
 
     Continue with the procedures in
     `the OpenWRT virtualbox guide <https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm>`_.
-    It's required to enable SSH access and connect the VM to the internet.
+    It's required to enable SSH access and connect the VM to the internet. 
+
+    Note that both Adapter1 and Adapter2 use "Adapter Type: Intel PRO/1000 MT Desktop". Also, please do 
+    not use the same IP Address that you used for the local OpenWISP website you hosted before. That 
+    suggested change applies only when you boot into the OpenWRT device as per the description of the 
+    above link (for example, if you set 192.168.56.2 as the IP Address of your local OpenWISP website, 
+    please use another IP such as 192.168.56.3 for the IP Address of the OpenWRT device). 
 
 3. Install openwisp-config on your OpenWRT instance
 ---------------------------------------------------
@@ -76,7 +82,8 @@ Once it's installed, we need to configure it to connect to our OpenWISP2
 controller. To do that, edit the config file located at
 ``/etc/config/openwisp``.
 
-You will see the default config file, something like the following:
+You will see the default config file, something like the following 
+(if your instance lacks some of the lines in the following, please add them):
 
 ::
 
@@ -93,8 +100,8 @@ You will see the default config file, something like the following:
         #option merge_config '1'
         #option test_config '1'
         #option test_script '/usr/sbin/mytest'
-        option uuid ''
-        option key ''
+        #option uuid ''
+        #option key ''
         list unmanaged 'system.@led'
         list unmanaged 'network.loopback'
         list unmanaged 'network.@switch'
@@ -106,7 +113,8 @@ You will see the default config file, something like the following:
 
 Uncomment and change the following fields:
 
-- ``url``: the hostname of your OpenWISP2 controller
+- ``url``: the hostname of your OpenWISP2 controller (for example, if you are hosting your OpenWISP
+  server locally and you set the IP Address to "192.168.56.2", the url would be "https://192.168.56.2/").
 - ``verify_ssl``: set to ``0`` if your controller's SSL certificate is
   self-signed; in production you will need a valid SSL certificate to keep your instance secure
 - ``shared_secret``: you can retrieve this from OpenWISP2 admin panel, in the
