@@ -16,4 +16,5 @@ install:
   - pip install --no-cache-dir -U -r requirements.txt
 
 script:
+  - ./check_line_length.py
   - ./runsphinx-build
