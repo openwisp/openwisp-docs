@@ -18,8 +18,14 @@ software, its documentation and keep alive the `support channels
 **Even small and apparently meaningless actions can make a big difference if
 performed by a sufficient number of people.**
 
+.. note::
+  **if you need commercial support for your business**, see the paragraph about
+  `Commercial support and funding development <commercial_support_>`_.
+
 How to help
 -----------
+
+.. _mailing_list:
 
 1. Write to the mailing list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,6 +40,17 @@ can find.
 For this reason, **using the mailing list for support questions should be
 preferred over the main chat**.
 
+.. warning::
+  Please be mindful that **over 400 people read the mailing list** and **discussion
+  are indexed forever**, for these reasons you should:
+
+   - keep the focus of the discussion technical
+   - avoid unrelevant comments
+   - be mindful about what you write
+   - keep the tone calm and constructive
+   - be respectful to the volunteers who reply in their free time
+   - avoid generating noise
+
 When subscribing to the mailing list, we suggest to choose one of these options:
 
 - receive all emails by creating a filter in your mailbox which moves the
@@ -47,7 +64,7 @@ When you use OpenWISP, you may find ideas about improvements, new features or yo
 may incur in bugs.
 
 It's very helpful to us if you send us your feedback in some way.
-The preferred way to send feedback is to use the `mailing list <http://openwisp.org/support.html>`_,
+The preferred way to send feedback is to use the `mailing list <mailing_list_>`_,
 but you can send feedback in any way you want.
 
 If you have found a bug we will likely ask you to open a bug report in a specific
@@ -120,12 +137,33 @@ By participating actively in the `support channels <http://openwisp.org/support.
 you can also help us a lot: the welcoming level of an open source community
 is a key factor in attracting a good numbers of contributors.
 
-8. Fund development
-~~~~~~~~~~~~~~~~~~~
+8. Contribute technically
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Are you skilled in one of the following areas?
+
+- technical writing
+- python
+- networking
+- graphic/web design
+- frontend development
+- OpenWRT
+- Freeradius
+- linux
+- devops
+
+If yes, you can help us greatly. Find out more about this subject in
+:doc:`How to contribute to OpenWISP <../developer/contributing>`.
+
+.. _commercial_support:
+
+9. Commercial support and funding development
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **If your company uses OpenWISP for its business** and needs professional support
-on custom setups or development of new features, **you may hire somebody which
-very active in the community** so they can help you achieve what you need.
+on custom setups, development of new features or commercial support,
+**you can hire somebody which very active in the community** so they can help
+you achieve what you need.
 
 **Hiring a specialist is usually more effective than trying to figure it out alone**:
 specialists know OpenWISP very well, they can suggest what are the best ways to
@@ -135,18 +173,3 @@ also be shared with the rest of the community and become part of the OpenWISP ec
 
 To find an OpenWISP expert, look in our `communication channels
 <http://openwisp.org/support.html>`_, especially the mailing list.
-
-9. Contribute technically
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Are you skilled in one of the following areas?
-
-- python backend
-- networking
-- graphic design
-- frontend development
-- OpenWRT
-- technical writing
-
-If yes, you can help us greatly. Find out more about this subject in
-:doc:`How to contribute to OpenWISP <../developer/contributing>`.
