@@ -124,7 +124,7 @@ Uncomment and change the following fields:
 
 - ``url``: the hostname of your OpenWISP2 controller (for example, if
   you are hosting your OpenWISP server locally and you set the IP Address
-  to "192.168.56.2", the url would be "https://192.168.56.2/").
+  to "192.168.56.2", the url would be ``https://192.168.56.2/``).
 - ``verify_ssl``: set to ``0`` if your controller's SSL certificate is
   self-signed; in production you will need a valid SSL certificate to
   keep your instance secure
