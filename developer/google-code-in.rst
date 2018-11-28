@@ -62,7 +62,7 @@ Here's a few quick tricks you can use to become a star in our community:
   if you find a passage that is not clear or you have an idea about how
   to improve it, **please let us know!**
 - the same happens with the software, if you see something which looks
-  like a bug, reach out, even if it's not a bug your feedback will help 
+  like a bug, reach out, even if it's not a bug your feedback will help
   us to improve
 - if we ask you to open an issue in one of our github repository, please
   take at least 5 minutes of time to write a proper bug report
@@ -73,7 +73,7 @@ Here's a few quick tricks you can use to become a star in our community:
 - try using OpenWISP in real use case scenarios (find out if there's a
   free wifi community near your area), spend time reading its code,
   ask questions
-- try to participate in the community, if a fellow member is in need of 
+- try to participate in the community, if a fellow member is in need of
   help and you know how to help him, please do so, we will reward you
 
 Evaluation criteria
@@ -211,7 +211,7 @@ take the time to read these resources, it will help you to speed up and
 raise to the top!
 
 Programming languages and frameworks:
-  
+
   - `Python <http://www.diveintopython3.net/>`_ (book)
   - `Django <https://docs.djangoproject.com/en/1.11/>`_ (official documentation)
   - `Lua <https://www.youtube.com/watch?v=iMacxZQMPXs/>`_ (video tutorial)
@@ -219,11 +219,11 @@ Programming languages and frameworks:
   - `Javascript <https://www.tutorialspoint.com/javascript/>`_ (tutorial)
 
 Networking concepts:
-	
+
   - Introduction to networking `terminology <https://goo.gl/YG3RLd>`_
 
 Configuration management:
-	
+
   - Introduction to `configuration management <https://goo.gl/3YTQgg>`_
   - Writing Ansible `playbooks <https://goo.gl/R2XptC>`_
   - Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch

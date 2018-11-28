@@ -51,7 +51,7 @@ Here's a few quick tricks you can use to become a star in our community:
   <../general/values>`, are you on our side?
 - study and follow closely the :doc:`contributing guidelines
   <../developer/contributing>`
-- be patient in the interaction with your mentors, we are all 
+- be patient in the interaction with your mentors, we are all
   volunteers, we are taking our time to mentor you from our free time
   which we usually spend family and loved ones
 - we know our documentation is incomplete and fragmented, we are working
@@ -85,7 +85,7 @@ If you are not familiar with the following concepts yet, take the time to
 read these resources, it will help you to speed up your raise to the top!
 
 Programming languages and frameworks:
-	
+
   - `Python <http://www.diveintopython3.net/>`_ (book)
   - `Django <https://docs.djangoproject.com/en/1.11/>`_
     (official documentation)
@@ -95,11 +95,11 @@ Programming languages and frameworks:
   - `Javascript <https://www.tutorialspoint.com/javascript/>`_ (tutorial)
 
 Networking concepts:
-	
+
   - Introduction to networking `terminology <https://goo.gl/YG3RLd>`_
 
 Configuration management:
-	
+
   - Introduction to `configuration management <https://goo.gl/3YTQgg>`_
   - Writing Ansible `playbooks <https://goo.gl/R2XptC>`_
   - Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch

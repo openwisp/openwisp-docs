@@ -67,7 +67,7 @@ When you use OpenWISP, you may find ideas about improvements, new features
 or you may incur in bugs.
 
 It's very helpful to us if you send us your feedback in some way.
-The preferred way to send feedback is to use the 
+The preferred way to send feedback is to use the
 `mailing list <http://openwisp.org/support.html>`_, but you can send
 feedback in any way you want.
 
@@ -85,7 +85,7 @@ using it.
 
 OpenWISP is composed of many modules and for that reason we don't have
 a single super popular github repository with thousands of stars, but
-when new users and developers look at 
+when new users and developers look at
 `our github organization page <https://github.com/openwisp>`_ they may
 not get this at first glance and they will start looking for the numbers
 of stars.

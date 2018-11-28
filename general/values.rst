@@ -145,10 +145,10 @@ Goals
 -----
 
 - Help to solve the problem of lack of internet connectivity by making
-  it easy to deploy and manage low cost network infrastructure all over 
+  it easy to deploy and manage low cost network infrastructure all over
   the world
 - Bring innovation in the networking software world by emphasizing
-  automation, modularity, reusability, flexibility, extensibility and 
+  automation, modularity, reusability, flexibility, extensibility and
   collaboration
 - Create an ecosystem of software tools that can be used to create
   infinite OpenWISP derivatives that can be used to make human
@@ -160,6 +160,6 @@ Goals
   `Raspbian <https://github.com/openwisp/netjsonconfig/tree/raspbian>`_
   and `AirOS <https://github.com/openwisp/netjsonconfig/tree/airos>`_)
 - Provide good documentation both for users and developers
-- Create web interfaces that are easy to use even for people who have 
+- Create web interfaces that are easy to use even for people who have
   limited experience with computer networking concepts (**note**: we are
   very far from reaching this goal as of end of 2017)

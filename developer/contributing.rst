@@ -129,11 +129,11 @@ After pushing your changes to your fork, prepare a new Pull Request
 - these unnecessary changes should be evaluated first and then the
   commit should be made
 - these changes generally occur due to different settings and
-  customizations of your editor that you are working with. These changes 
-  are produced on their own as soon as you save a file. Examples are - 
+  customizations of your editor that you are working with. These changes
+  are produced on their own as soon as you save a file. Examples are -
   Introducing new lines, removing and adding spaces, etc
 - to avoid such changes please check your editor settings first. If this
-  sort of behaviour persists please use any command line editor like 
+  sort of behaviour persists please use any command line editor like
   VIM, etc
 
 Coding Style Conventions
@@ -144,7 +144,7 @@ Coding Style Conventions
 
 - OpenWISP follows `PEP 8 -- Style Guide for Python Code
   <https://www.python.org/dev/peps/pep-0008/>`_.
-- OpenWISP uses `flake8 <http://flake8.pycqa.org/en/latest/>`_ to 
+- OpenWISP uses `flake8 <http://flake8.pycqa.org/en/latest/>`_ to
   automatically check the quality of the python code being committed,
   each python repo has a ``runflake8`` script that you can launch with
   ``./runflake8``
@@ -172,7 +172,7 @@ OpenWISP follows the standard OpenWRT coding style conventions of OpenWRT:
   <https://wiki.openwrt.org/doc/devel/patches>`_
 - `Naming patches
   <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_
-- `Adding new files 
+- `Adding new files
   <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
 
 Thank You

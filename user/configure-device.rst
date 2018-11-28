@@ -2,10 +2,10 @@ Connect OpenWRT to OpenWISP2
 ============================
 
 This page will guide you through the installation of
-`openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a 
+`openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a
 device which supports `OpenWRT <https://openwrt.org/>`_.
 
-If you don't have a physical device available but you still want to try 
+If you don't have a physical device available but you still want to try
 out OpenWISP, you can use a Virtual Machine.
 
 1. Install OpenWISP2
@@ -22,7 +22,7 @@ Refer to the  `OpenWISP 2 installation tutorial
     a physical device.**
 
 Download ``combined-ext4.img.gz`` from `this
-page <https://downloads.openwrt.org/releases/18.06.1/targets/x86/64/>`__. 
+page <https://downloads.openwrt.org/releases/18.06.1/targets/x86/64/>`__.
 The other images may not work well.
 
 Extract the downloaded file and convert the image file to a `VirtualBox
@@ -30,23 +30,23 @@ Extract the downloaded file and convert the image file to a `VirtualBox
 
 .. code-block:: bash
 
-    VBoxManage convertfromraw --format VDI 
-    openwrt-18.06.1-x86-64-combined-ext4.img 
+    VBoxManage convertfromraw --format VDI
+    openwrt-18.06.1-x86-64-combined-ext4.img
     openwrt-18.06.1-x86-64-combined-ext4.vdi
 
-If you encounter an error about ``VERR_ID_INVALID_SIZE``, you need to 
+If you encounter an error about ``VERR_ID_INVALID_SIZE``, you need to
 pad the image with the following command:
 
 .. code-block:: bash
 
-    dd if=openwrt-18.06.1-x86-64-combined-ext4.img 
+    dd if=openwrt-18.06.1-x86-64-combined-ext4.img
     of=openwrt-18.06.1-x86-64-padded.img bs=128000 conv=sync
 
 And then try to convert the padded image using the previous command.
 
-Next, open up VirtualBox and create a VM. Load up the VDI and then start 
-the machine. If done correctly, it should boot to a GRUB menu and then 
-proceed with initialization. When the text stops scrolling, simply press 
+Next, open up VirtualBox and create a VM. Load up the VDI and then start
+the machine. If done correctly, it should boot to a GRUB menu and then
+proceed with initialization. When the text stops scrolling, simply press
 Enter to activate the terminal.
 
 .. note::
@@ -57,13 +57,13 @@ Enter to activate the terminal.
     It's required to enable SSH access and connect the VM to the internet.
 
     Note that both Adapter1 and Adapter2 use
-    "Adapter Type: Intel PRO/1000 MT Desktop". Also, please do 
+    "Adapter Type: Intel PRO/1000 MT Desktop". Also, please do
     not use the same IP Address that you used for the local OpenWISP
     website you hosted before. That suggested change applies only when
-    you boot into the OpenWRT device as per the description of the 
+    you boot into the OpenWRT device as per the description of the
     above link (for example, if you set 192.168.56.2 as the IP Address
     of your local OpenWISP website, please use another IP such as
-    192.168.56.3 for the IP Address of the OpenWRT device). 
+    192.168.56.3 for the IP Address of the OpenWRT device).
 
 
 3. Install openwisp-config on your OpenWRT instance
@@ -79,7 +79,7 @@ Run the following commands on your device:
     opkg update
     opkg install <URL>
 
-Replace ``<URL>`` with the link to one of the latest build, 
+Replace ``<URL>`` with the link to one of the latest build,
 available on `downloads.openwisp.io <http://downloads.openwisp.io/openwisp-config/latest/>`__.
 For this guide, let's choose the ``openssl`` variant.
 
@@ -90,7 +90,7 @@ Once it's installed, we need to configure it to connect to our OpenWISP2
 controller. To do that, edit the config file located at
 ``/etc/config/openwisp``.
 
-You will see the default config file, something like the following 
+You will see the default config file, something like the following
 (if your instance lacks some of the lines in the following,
 please add them):
 
@@ -128,7 +128,7 @@ Uncomment and change the following fields:
 - ``verify_ssl``: set to ``0`` if your controller's SSL certificate is
   self-signed; in production you will need a valid SSL certificate to
   keep your instance secure
-- ``shared_secret``: you can retrieve this from OpenWISP2 admin panel, in 
+- ``shared_secret``: you can retrieve this from OpenWISP2 admin panel, in
   the Organization settings. The list of organizations is available at
   ``/admin/openwisp_users/organization/``.
 
@@ -139,15 +139,15 @@ Save the file and start openwisp-config:
     /etc/init.d/openwisp_config start
 
 Your OpenWRT instance should register itself to your openwisp2 controller.
-Check the devices menu on the admin panel to make sure your OpenWRT 
+Check the devices menu on the admin panel to make sure your OpenWRT
 instance is registered.
 
 Compile your own OpenWRT image
 ------------------------------
 
 You may want to compile a custom OpenWRT image to save time on configuring
-new devices. By compiling a custom image, you can pre-install 
-openwisp-config, including your configurations (e.g. ``url`` and 
+new devices. By compiling a custom image, you can pre-install
+openwisp-config, including your configurations (e.g. ``url`` and
 ``shared_secret``), so that you won't have to go through the configuration
 process again.
 

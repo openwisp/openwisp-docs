@@ -6,7 +6,7 @@ Quickstart
 1. Install the OpenWISP 2 server
 --------------------------------
 
-If you want to install for testing purposes we suggest to use 
+If you want to install for testing purposes we suggest to use
 `vagrant-openwisp2 <https://github.com/openwisp/vagrant-openwisp2>`_.
 
 If you want to find out how to deploy OpenWISP for production usage,
@@ -29,8 +29,8 @@ install OpenWRT in a VirtualBox VM, that's also covered by the guide.
 
     <p>
         <iframe width="560"
-                height="315" 
-                src="https://www.youtube.com/embed/MY097Y2cPQ0" 
+                height="315"
+                src="https://www.youtube.com/embed/MY097Y2cPQ0"
                 frameborder="0"
                 allowfullscreen>
         </iframe>
