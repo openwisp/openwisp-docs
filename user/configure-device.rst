@@ -156,3 +156,9 @@ This will make you save a lot of time if you need to manage many devices!
 A guide on `how to compile a custom OpenWRT image available in the
 openwisp-config documentation
 <https://github.com/openwisp/openwisp-config#compiling-a-custom-openwrt-image>`_.
+
+A guide on :doc:`template configurations and sample configurations 
+is available at the Template Configurations section of this documentation  <./template>`.
+
+
+ 

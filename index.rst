@@ -7,6 +7,7 @@ Contents:
    :maxdepth: 2
 
    user/quickstart
+   user/template
    user/configure-device
    general/values
    general/help-us
