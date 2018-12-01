@@ -14,6 +14,7 @@ Contents:
    general/glossary
    general/code-of-conduct
    developer/contributing
+   developer/python-django-devtools-reference
    developer/google-summer-of-code
    developer/google-code-in
 
