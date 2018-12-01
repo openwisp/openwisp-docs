@@ -1,0 +1,20 @@
+language: python
+sudo: false
+cache: pip
+
+python:
+  - "3.5"
+
+branches:
+  only:
+    - master
+
+before-install:
+  - pip install -U pip wheel
+
+install:
+  - pip install --no-cache-dir -U -r requirements.txt
+
+script:
+  - ./check_line_length.py
+  - ./runsphinx-build
