@@ -216,9 +216,9 @@ for installing OpenWISP Controller must be followed. The commands
 To start the development server, run ``python manage.py runserver_plus``
 which will provide more debugging information.
 
-Also, ``ipython`` can be used alongside ``shell_plus`` by running the command
-``./manage.py shell_plus --ipython`` in the terminal. This will provide
-an interactive shell for running code in Python.
+Also, ``ipython`` can be used alongside ``shell_plus`` by running the
+command ``./manage.py shell_plus --ipython`` in the terminal. This will
+provide an interactive shell for running code in Python.
 
 To debug the code, ``ipdb`` can be used. Commands similar to
 ``ipdb mymodule.py`` may be used to carry out that process. A
@@ -231,11 +231,11 @@ to be added to our current module, i.e ``openwisp-controller``. To begin,
 the lines ``'debug_toolbar'`` and
 ``'debug_toolbar.middleware.DebugToolbarMiddleware'`` need to be added
 to the ``INSTALLED_APPS`` and to the ``MIDDLEWARE`` settings respectively
-and the line ``INTERNAL_IPS = ('127.0.0.1')`` should be added too, otherwise
-the django debug toolbar won't be displayed. We also need to import
-``django_extensions`` and add it to our ``INSTALLED_APPS`` setting but
-this is already done in ``settings.py``. Here's what ``local_settings.py``
-will roughly look like at the end:
+and the line ``INTERNAL_IPS = ('127.0.0.1')`` should be added too,
+otherwise the django debug toolbar won't be displayed. We also need to
+import ``django_extensions`` and add it to our ``INSTALLED_APPS`` setting
+but this is already done in ``settings.py``. Here's what
+``local_settings.py`` will roughly look like at the end:
 
 .. code-block:: python
 
