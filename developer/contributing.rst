@@ -146,11 +146,18 @@ Coding Style Conventions
   <https://www.python.org/dev/peps/pep-0008/>`_.
 - OpenWISP uses `flake8 <http://flake8.pycqa.org/en/latest/>`_ to
   automatically check the quality of the python code being committed,
-  each python repo has a ``runflake8`` script that you can launch with
+  each python repo has either a ``flake8`` configuration defined in
+  ``setup.cfg`` or a ``runflake8`` script that you can launch with
   ``./runflake8``
 - OpenWISP also uses `isort <http://isort.readthedocs.io/en/latest/>`_
   to sort import in a specifc predictable order; each python repo has
   a ``runisort`` script that you can launch with ``./runisort``
+
+.. note::
+
+  If you want to learn more about our usage of python and django,
+  we suggest reading :doc:`Hacking OpenWISP: Python and Django
+  <../developer/hacking-openwisp-python-django>`
 
 2. Javascript code conventions
 ------------------------------
