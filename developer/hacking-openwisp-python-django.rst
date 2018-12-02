@@ -2,11 +2,11 @@ Hacking OpenWISP: Python and Django
 ===================================
 
 In this page we aim to help users and contributors who want to work on the
-internal code of OpenWISP in the folowing ways:
+internal code of OpenWISP in the following ways:
 
-1. by explaining **why OpenWISP uses python and django** as its main
+1. by explaining **why OpenWISP uses Python and Django** as its main
    technologies for the backend application
-2. by introducing some python tools and django extensions which are
+2. by introducing some Python tools and Django extensions which are
    **extremely useful during development and debugging**.
 
 Why Python?
@@ -16,28 +16,28 @@ Why Python?
 programming language for general-purpose programming which emphasizes
 productivity, fast prototyping and high readability.
 
-It is very widely used these days, to the point that even famous
+It is very widely used these days, to the point where even famous
 organizations like Google, Mozilla and Dropbox make extensive use of it
-in for their systems.
+for their systems.
 
-**Here's the main reasons for which OpenWISP is written in Python:**
+**Here are the main reasons why OpenWISP is written in Python:**
 
-- is widely used in the networking and configuration management
+- it is widely used in the networking and configuration management
   world, famous libraries such as
   `networkx <https://networkx.github.io>`_,
   `ansible <https://www.ansible.com>`_,
   `salt <https://docs.saltstack.com/en/latest/topics/>`_,
   `paramiko <http://www.paramiko.org>`_ and
   `fabric <http://www.fabfile.org>`_ are written in Python, this allows
-  our users to work with a programming language with which they are
-  already familiar
-- finding developers who know python is very easy and allows the community
+  our users to work with a programming language which they are
+  already familiar with
+- finding developers who know Python is very easy and allows the community
   to grow and help to improve the OpenWISP software ecosystem over time
 - Python allows great flexibility and extensibility, this in turns allows
   OpenWISP to be hackable and highly customizable, which is one of the
   goals of OpenWISP 2, the major rewrite of the project
 
-**Resources for learning python**:
+**Resources for learning Python**:
 
 - `LearnPython.org <https://www.learnpython.org>`_
 - `SoloLearn <https://www.sololearn.com>`_ (a detailed beginner course)
@@ -45,7 +45,7 @@ in for their systems.
 .. note::
   The first version of OpenWISP was written in Ruby.
 
-  OpenWISP 2 was rewritten in python because Ruby
+  OpenWISP 2 was rewritten in Python because Ruby
   developers are more scarce and this caused the project to stagnate.
   The fact that Python is widely used in the networking world was also
   an important factor in the decision.
@@ -65,10 +65,10 @@ design.
   high profile companies
 - security vulnerabilities are usually privately disclosed to the
   developers and quickly fixed
-- being popular, it's easy to find python developers who have
-  experience with django and can get up to speed very fast in
+- being popular, it's easy to find Python developers who have
+  experience with Django and can get up to speed very fast in
   contributing to OpenWISP
-- django projects are easily customizable by editing a ``settings.py``
+- Django projects are easily customizable by editing a ``settings.py``
   file, this allows OpenWISP to design its modules so that these can be
   imported into larger, more complex and customized applications,
   allowing to create customized network management solutions;
@@ -77,7 +77,7 @@ design.
   to their needs they can use it as a base to avoid re-developing a lot
   of code from scratch
 
-**Resources for learning django**:
+**Resources for learning Django**:
 
 - `Official Basic Django Tutorial <https://www.djangoproject.com/start/>`_
 - `DjangoGirls Tutorial <https://tutorial.djangogirls.org/en/>`_
@@ -95,7 +95,7 @@ is a powerful and flexible toolkit for building Web APIs and it's used
 and trusted by internationally recognised companies including Mozilla,
 Red Hat, Heroku, and Eventbrite.
 
-Here are some reasons for which OpenWISP uses Django REST framework:
+Here are some reasons why OpenWISP uses Django REST framework:
 
 - simplicity, flexibility, quality, and test coverage of source code
 - powerful serialization engine compatible with both ORM and non-ORM
@@ -137,15 +137,15 @@ More details including installation and updates can be found on the
 As for `ipdb <https://github.com/gotcha/ipdb>`_, it allows to use the
 ``ipython`` shell when using the python debugger (known as ``pdb``).
 
-Try to drop this line in a django project (or an OpenWISP module),
+Try to drop this line in a Django project (or an OpenWISP module),
 for example in a ``settings.py`` file:
 
 .. code-block:: python
 
     import ipdb; ipdb.set_trace()
 
-Now load the django development server and have fun while learning how
-to do debug python code!
+Now load the Django development server and have fun while learning how
+to do debug Python code!
 
 Django Extensions
 ~~~~~~~~~~~~~~~~~
@@ -153,7 +153,7 @@ Django Extensions
 `Django Extensions <https://django-extensions.readthedocs.io/>`_ is a
 collection of extensions for the Django Framework. These include
 management commands, additional database fields, admin extensions and
-much more but we will focus on 3 of them for now, namely
+much more. We will focus on three of them for now, namely
 ``shell_plus``, ``runserver_plus``, ``show_urls``.
 
 Django Extensions can be installed with:
@@ -164,14 +164,14 @@ Django Extensions can be installed with:
 
 `shell_plus
 <django-extensions.readthedocs.io/en/latest/shell_plus.html>`_:
-django shell with autoloading of the apps database models and subclasses
+Django shell with autoloading of the apps database models and subclasses
 of user-defined classes.
 
 `runserver_plus
 <django-extensions.readthedocs.io/en/latest/runserver_plus.html>`_:
 typical runserver with Werkzeug debugger baked in.
 
-``show_urls``: shows the registered URLs of a django project.
+``show_urls``: shows the registered URLs of a Django project.
 
 Django Debug Toolbar
 ~~~~~~~~~~~~~~~~~~~~
@@ -216,22 +216,22 @@ for installing OpenWISP Controller must be followed. The commands
 To start the development server, run ``python manage.py runserver_plus``
 which will provide more debugging information.
 
-Also, ``ipython`` can be used along ``shell_plus`` by running the command
+Also, ``ipython`` can be used alongside ``shell_plus`` by running the command
 ``./manage.py shell_plus --ipython`` in the terminal. This will provide
-an interactive shell for running code in python.
+an interactive shell for running code in Python.
 
 To debug the code, ``ipdb`` can be used. Commands similar to
 ``ipdb mymodule.py`` may be used to carry out that process. A
 list of lines where errors have been found or lines which can be further
 optimized will be returned.
 
-Lastly, ``django-debug-toolbar`` may be used along to display information
+Lastly, ``django-debug-toolbar`` may be used to display information
 about processes occuring on the website. To achieve that, some code needs
 to be added to our current module, i.e ``openwisp-controller``. To begin,
 the lines ``'debug_toolbar'`` and
 ``'debug_toolbar.middleware.DebugToolbarMiddleware'`` need to be added
 to the ``INSTALLED_APPS`` and to the ``MIDDLEWARE`` settings respectively
-and the line ``INTERNAL_IPS = ('127.0.0.1')`` should be mentioned else
+and the line ``INTERNAL_IPS = ('127.0.0.1')`` should be added too, otherwise
 the django debug toolbar won't be displayed. We also need to import
 ``django_extensions`` and add it to our ``INSTALLED_APPS`` setting but
 this is already done in ``settings.py``. Here's what ``local_settings.py``
@@ -271,7 +271,7 @@ tutorial but this is already present in the last lines of ``urls.py``:
               url(r'^__debug__/', include(debug_toolbar.urls))
       ]
 
-Now when opening ``http://127.0.0.1:8000`` in the browser and entering the
+When you open ``http://127.0.0.1:8000`` in the browser now and enter the
 credentials we created earlier, you should see something like the
 following screenshot:
 
@@ -279,5 +279,5 @@ following screenshot:
    :scale: 50%
    :align: center
 
-Now that you know some basics, you can now experiment and try to use these
+Now that you know some basics, you can experiment and try to use these
 tricks on some other OpenWISP module.
