@@ -18,3 +18,11 @@ install:
 script:
   - ./check_line_length.py
   - ./runsphinx-build
+  - |
+    if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+      # gets commit message of last commit before pull request merge
+      COMMIT_MESSAGE=$(git log $TRAVIS_PULL_REQUEST_SHA --format=%B -n 1)
+      printf "Checking commit message:\n\n"
+      printf "$COMMIT_MESSAGE\n\n"
+      checkcommit --message "$COMMIT_MESSAGE"
+    fi
