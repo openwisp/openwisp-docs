@@ -8,6 +8,7 @@ Contents:
 
    user/quickstart
    user/configure-device
+   user/configuration-templates
    general/values
    general/help-us
    general/technologies
