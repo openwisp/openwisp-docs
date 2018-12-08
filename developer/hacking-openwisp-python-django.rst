@@ -4,9 +4,9 @@ Hacking OpenWISP: Python and Django
 In this page we aim to help users and contributors who want to work on the
 internal code of OpenWISP in the following ways:
 
-1. by explaining **why OpenWISP uses Python and Django** as its main
+1. By explaining **why OpenWISP uses Python and Django** as its main
    technologies for the backend application
-2. by introducing some Python tools and Django extensions which are
+2. By introducing some Python tools and Django extensions which are
    **extremely useful during development and debugging**.
 
 Why Python?
@@ -59,13 +59,13 @@ design.
 
 **In OpenWISP we chose Django mainly for these reasons:**
 
-- it has a rich ecosystem and pluggable apps which allow us to get a lot
+- It has a rich ecosystem and pluggable apps which allow us to get a lot
   done very fast
-- it has been battle tested over many years by a high amount of people and
+- It has been battle tested over many years by a high amount of people and
   high profile companies
-- security vulnerabilities are usually privately disclosed to the
+- Security vulnerabilities are usually privately disclosed to the
   developers and quickly fixed
-- being popular, it's easy to find Python developers who have
+- Being popular, it's easy to find Python developers who have
   experience with Django and can get up to speed very fast in
   contributing to OpenWISP
 - Django projects are easily customizable by editing a ``settings.py``
@@ -97,14 +97,14 @@ Red Hat, Heroku, and Eventbrite.
 
 Here are some reasons why OpenWISP uses Django REST framework:
 
-- simplicity, flexibility, quality, and test coverage of source code
-- powerful serialization engine compatible with both ORM and non-ORM
+- Simplicity, flexibility, quality, and test coverage of source code
+- Powerful serialization engine compatible with both ORM and non-ORM
   data sources
-- clean, simple, views for Resources, using Django's new class based
+- Clean, simple, views for Resources, using Django's new class based
   views
 - HTTP response handling, content type negotiation using HTTP Accept
   headers
-- publishing of metadata along with querysets
+- Publishing of metadata along with querysets
 
 **Resources for learning Django REST Framework**:
 
@@ -197,7 +197,7 @@ These tools can be added to an OpenWISP development environment and
 significantly improve the efficiency and experience while developing.
 Let's do a walkthrough of how to use them in `OpenWISP Controller
 <https://github.com/openwisp/openwisp-controller>`_ as an example. In the
-``tests/`` folder, ``local_settings_example.py`` must be copied and
+``tests/`` folder, ``local_settings.example.py`` must be copied and
 renamed to ``local_settings.py`` which we will use for customization.
 This technique can be used in other OpenWISP development environments too.
 
@@ -207,7 +207,8 @@ This technique can be used in other OpenWISP development environments too.
   cp local_settings_example.py local_settings.py
 
 To start, the `steps <https://github.com/openwisp/openwisp-controller>`_
-for installing OpenWISP Controller must be followed. The commands
+for installing OpenWISP Controller must be followed. The command
+``pipenv install --dev`` then the commands
 ``pipenv run ./manage.py migrate`` and
 ``pipenv run ./manage.py createsuperuser`` must be run and
 ``SPATIALITE_LIBRARY_PATH`` should be specified in the

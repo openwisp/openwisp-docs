@@ -148,7 +148,7 @@ Coding Style Conventions
   automatically check the quality of the python code being committed,
   each python repo has either a ``flake8`` configuration defined in
   ``setup.cfg`` or a ``runflake8`` script that you can launch with
-  ``./runflake8``
+  ``flake8`` or ``./runflake8`` respectively.
 - OpenWISP also uses `isort <http://isort.readthedocs.io/en/latest/>`_
   to sort import in a specifc predictable order; each python repo has
   a ``runisort`` script that you can launch with ``./runisort``
