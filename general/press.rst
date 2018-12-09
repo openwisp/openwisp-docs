@@ -142,14 +142,12 @@ Research and publications:
 Logos and Graphic material
 --------------------------
 
-OpenWISP Logo (Black Foreground)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:download:`OpenWISP Logo (Black Foreground) </assets/design/openwisp.org.svg>`
 
 .. image:: /assets/design/openwisp.org.svg
    :align: center
 
-OpenWISP Logo (White Foreground)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:download:`OpenWISP Logo (White Foreground) </assets/design/openwisp-logo.svg>`
 
 .. raw:: html
 
