@@ -12,7 +12,7 @@ Contents:
    general/help-us
    general/technologies
    general/glossary
-   general/press-and-publications
+   general/press
    general/code-of-conduct
    developer/contributing
    developer/google-summer-of-code

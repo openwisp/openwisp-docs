@@ -1,88 +1,94 @@
-Press and Publications
-======================
+Press
+=====
 
-In this page, we aim to provide you links to presentations and popular
-blog posts about OpenWISP.
+In this page we aim to collect the following:
+
+- presentations, blog posts and academic publications
+  in which OpenWISP is either the main subject or it's mentioned
+- logos and other design files
 
 Presentations:
 --------------
 
-IETF Meeting 103 Bangkok
-^^^^^^^^^^^^^^^^^^^^^^^^
+OpenWISP: a Hackable Network Management System for the 21st Century
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Slides by Federico Capoano for `IETF Meeting <https://www.ietf.org>`_ 103
+Presented by Federico Capoano at the `IETF Meeting 103 Bangkok
+<https://www.ietf.org/how/meetings/103/>`_:
 
 - `slides <https://datatracker.ietf.org/meeting/103/materials/slides-103-
   gaia-openwisp-a-hackable-network-management-system-for-the-21st-
   centry-00>`__
 
 django-freeradius at PyCon Italia 2018
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Talk by Fiorella De Luca at `PyCon Italia
-<https://www.pycon.it/en/>`__ 2018
+Presented by Fiorella De Luca at `PyCon Italy
+<https://www.pycon.it/en/>`__ 2018:
 
 - `video <https://www.youtube.com/watch?v=Yapdso_6EGA>`__
 - `abstract <https://www.pycon.it/conference/talks/django-freeradius>`__
 
-OpenWRT Summit 2017 
-^^^^^^^^^^^^^^^^^^^
+OpenWISP 2: the modular configuration manager for OpenWRT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Talk and slides by Federico Capoano at `OpenWRT Summit
-<http://openwrtsummit.org>`__ 2017
+Presented by Federico Capoano at `OpenWRT Summit
+<http://openwrtsummit.org>`__ 2017 in Prague:
 
 - `video <https://www.youtube.com/watch?v=n531yTtJimU>`__
 - `slides <http://static.nemesisdesign.net/openwisp2-openwrt-summit-
   2017/>`__
 
-PyCon Italia 2017
-^^^^^^^^^^^^^^^^^
+Applying the Unix Philosophy to Django projects: a report from the real world
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Talk and slides by Federico Capoano at `PyCon Italia
-<https://www.pycon.it/en/>`__ 2017
+Presented by Federico Capoano at `PyCon Italy 2017
+<https://www.pycon.it/conference/talks/
+applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`_:
 
-- `video <https://www.youtube.com/watch?v=tm7Opg3QyZk>`__
-- `slides <https://www.pycon.it/conference/talks/applying-the-unix-
-  philosophy-to-django-projects-a-report-from-the-real-world>`__
+- `video <https://www.youtube.com/watch?v=tm7Opg3QyZk>`_
+- `slides
+  <https://www.slideshare.net/FedericoCapoano
+  /applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`_
 
 Opening Proprietary Networks with OpenWISP
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Lightning talk by Federico Capoano at `DjangoCon Europe 2017
-<https://2017.djangocon.eu/>`_
+<https://2017.djangocon.eu/>`_:
 
 - `slides <https://www.slideshare.net/FedericoCapoano/opening-propietary-
   networks-with-openwisp>`__
 
-FOSDEM 2017
-^^^^^^^^^^^
+OpenWISP2 a self hosted solution to control OpenWRT/LEDE devices
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Talk by Federico Capoano at `FOSDEM <https://fosdem.org/>`_ 2017 in
-Brussels
+Brussels:
 
 - `video <https://www.youtube.com/watch?v=lGiW-uA4Btk>`__
 - `abstract <https://archive.fosdem.org/2017/schedule/event/openwisp2>`__
 
 Do you really need to fork OpenWRT?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Presented at `OpenWRT Summit <http://openwrtsummit.org>`__ 2015 in Dublin
+Presented at `OpenWRT Summit <http://openwrtsummit.org>`__ 2015 in Dublin:
 
 - `video <https://www.youtube.com/watch?v=2uioGZuITbA>`__
 
 OpenWISP GARR Conference 2011
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Interview for `GARR Conference <https://www.garr.it/en/>`_
-presented by Davide Guerri (in Italian)
+presented by Davide Guerri (in Italian):
 
 - `video <https://www.youtube.com/watch?v=4mxiupJNPKo>`__
 
 OpenWISP e Progetti WiFi Nazionali
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Interview for `GARRTV <https://www.garr.tv>`_ by Davide Guerri
-(in Italian)
+(in Italian):
 
 - `video <https://www.youtube.com/watch?v=4AE7XSTPCT0>`__
 
@@ -118,35 +124,37 @@ Blog Posts:
 Research and publications:
 --------------------------
 
-- `Network Infrastructure as Commons
-  <https://github.com/openwisp/openwisp2-docs/blob/master/assets/
-  documents/netCommons.pdf>`_
-- `Bottom-up Broadband Initiatives in the Commons for Europe Project
-  <https://github.com/openwisp/openwisp2-docs/blob/master/assets/
-  documents/arxiv.org.pdf>`_
-- `Free Europe WiFi by Justel Pizarro
-  <https://github.com/openwisp/openwisp2-docs/blob/master/assets/
-  documents/JustelPizarro_2013.pdf>`_ (in Spanish)
-- `Bottom-up Broadband: Free Software Philosophy Applied to Networking
-  Initiatives
-  <https://github.com/openwisp/openwisp2-docs/blob/master/assets/documents
-  /dtic.upf.edu.pdf>`_
-- `Study of commons organizations and creation of an environment
-  collaborative for the initiative "Bottom up Broadband"
-  <https://github.com/openwisp/openwisp2-docs/blob/master/assets/
-  documents/upcommons.upc.edu.pdf>`_ (in Catalan)
+- :download:`Network Infrastructure as Commons
+  </assets/documents/netCommons.pdf>`
+- :download:`Bottom-up Broadband Initiatives in the Commons for Europe Project
+  </assets/documents/arxiv.org.pdf>`
+- :download:`Free Europe WiFi by Justel Pizarro
+  </assets/documents/JustelPizarro_2013.pdf>` (in Spanish)
+- :download:`Bottom-up Broadband: Free Software Philosophy Applied to
+  Networking Initiatives
+  </assets/documents/dtic.upf.edu.pdf>`
+- :download:`Study of community organizations and the creation of a collaborative
+  environment for the initiative "Bottom up Broadband"
+  </assets/documents/upcommons.upc.edu.pdf>` (in Catalan)
+- :download:`Control and management of Wi-Fi networks
+  </assets/documents/control-and-management-of-wifi-networks.pdf>` (in Slovenian)
 
 Logos and Graphic material
 --------------------------
 
-OpenWISP Logo with a Black Foreground:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OpenWISP Logo (Black Foreground)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: /assets/design/openwisp.org.svg
    :align: center
 
-OpenWISP Logo with a White Foreground:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OpenWISP Logo (White Foreground)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /assets/design/openwisp-logo.svg
-   :align: center
+.. raw:: html
+
+  <div align="center" class="align-center">
+    <img alt="../_images/openwisp-logo.svg"
+         src="../_images/openwisp-logo.svg"
+         style="background:#000;padding:25px;margin-bottom:24px" />
+  </div>
