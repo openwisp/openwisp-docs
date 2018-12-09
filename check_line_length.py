@@ -6,7 +6,8 @@ import os
 import re
 import sys
 
-LIMIT = 75
+LIMIT_TEXT = 75
+LIMIT_CODE = 114
 
 
 def check_url(line):
@@ -24,14 +25,38 @@ def check_line_length(file_path):
     interrupts execution with exit code 1 otherwise
     """
     file = file_path.split('/')[-1]
+    limit_type = 'text'
+    limit = 0
+    errors = []
     with open(file_path) as f:
         lines = f.readlines()
     for (line_number, line) in enumerate(lines, start=1):
+        is_code = re.search(r'code-block', line)
+        if is_code:
+            limit_type = 'code'
+            check_first_character = False
+        if limit_type == 'code':
+            limit = LIMIT_CODE
+            if check_first_character:
+                leading_spaces = len(line) - len(line.lstrip())
+                if not leading_spaces and len(line) > 1:
+                    limit_type = 'text'
+                    limit = LIMIT_TEXT
+        else:
+            limit_type = 'text'
+            limit = LIMIT_TEXT
         length = len(line)
-        if length > LIMIT and check_url(line) is not True:
-            print('line {} in file {} is longer '
-                  'than {} characters'.format(line_number, file, LIMIT))
-            sys.exit(1)
+        if length > limit and check_url(line) is not True:
+            errors.append('line {} in file {} is longer '
+                          'than {} characters'.format(line_number, file, limit))
+        check_first_character = True
+    if len(errors):
+        body = 'The document line length exceeds the right limit.\n'
+        body += 'Please check the length of the document.\n\n'
+        for error in errors:
+            body += '- {}\n'.format(error)
+        print(body)
+        sys.exit(1)
 
 
 def main():
