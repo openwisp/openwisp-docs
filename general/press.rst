@@ -152,7 +152,7 @@ Logos and Graphic material
 .. raw:: html
 
   <div align="center" class="align-center">
-    <img alt="../_images/openwisp-logo.svg"
-         src="../_images/openwisp-logo.svg"
+    <img alt="../_downloads/openwisp-logo.svg"
+         src="../_downloads/openwisp-logo.svg"
          style="background:#000;padding:25px;margin-bottom:24px" />
   </div>
