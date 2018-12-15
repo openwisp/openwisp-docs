@@ -124,6 +124,8 @@ Blog Posts:
 Research and publications:
 --------------------------
 
+- :download:`Monitoring Community Networks: Report on Experimentations on
+  Community Networks </assets/documents/netcommons-monitoring-2017-12-28.pdf>`
 - :download:`Network Infrastructure as Commons
   </assets/documents/netCommons.pdf>`
 - :download:`Bottom-up Broadband Initiatives in the Commons for Europe Project
@@ -138,6 +140,10 @@ Research and publications:
   </assets/documents/upcommons.upc.edu.pdf>` (in Catalan)
 - :download:`Control and management of Wi-Fi networks
   </assets/documents/control-and-management-of-wifi-networks.pdf>` (in Slovenian)
+- **IEEE publication**: `ProvinciaWiFi: A 1000 hotspot free, public, open source Wi-Fi network
+  <https://ieeexplore.ieee.org/document/6381720>`_
+- :download:`OpenWISP, an original open source solution for the diffusion
+  of wifi services </assets/documents/openwisp-garr.pdf>` (in Italian)
 
 Logos and Graphic material
 --------------------------
