@@ -39,17 +39,15 @@ Presented by Federico Capoano at `OpenWRT Summit
 - `slides <http://static.nemesisdesign.net/openwisp2-openwrt-summit-
   2017/>`__
 
-Applying the Unix Philosophy to Django projects: a report from the real world
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Applying the Unix Philosophy to Django projects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Presented by Federico Capoano at `PyCon Italy 2017
-<https://www.pycon.it/conference/talks/
-applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`_:
+<https://www.pycon.it/conference/talks/applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`_:
 
 - `video <https://www.youtube.com/watch?v=tm7Opg3QyZk>`_
 - `slides
-  <https://www.slideshare.net/FedericoCapoano
-  /applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`_
+  <https://www.slideshare.net/FedericoCapoano/applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`_
 
 Opening Proprietary Networks with OpenWISP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,8 +90,8 @@ Interview for `GARRTV <https://www.garr.tv>`_ by Davide Guerri
 
 - `video <https://www.youtube.com/watch?v=4AE7XSTPCT0>`__
 
-Blog Posts:
------------
+Blog Posts
+----------
 
 - `How Bottom-up Broadband will overcome the ‘last mile’ problem
   <https://blog.p2pfoundation.net/how-bottom-up-broadband-will-overcome-
@@ -121,39 +119,44 @@ Blog Posts:
   /wifimetropolitano/openwisp-la-soluzione-open-source-la-diffusione-
   servizi-wifi/>`_ (in Italian)
 
-Research and publications:
---------------------------
+Research and publications
+-------------------------
 
 - :download:`Monitoring Community Networks: Report on Experimentations on
-  Community Networks </assets/documents/netcommons-monitoring-2017-12-28.pdf>`
+  Community Networks
+  </assets/documents/netcommons-monitoring-2017-12-28.pdf>`
 - :download:`Network Infrastructure as Commons
   </assets/documents/netCommons.pdf>`
-- :download:`Bottom-up Broadband Initiatives in the Commons for Europe Project
+- :download:`Bottom-up Broadband Initiatives in
+  the Commons for Europe Project
   </assets/documents/arxiv.org.pdf>`
 - :download:`Free Europe WiFi by Justel Pizarro
   </assets/documents/JustelPizarro_2013.pdf>` (in Spanish)
-- :download:`Bottom-up Broadband: Free Software Philosophy Applied to
-  Networking Initiatives
+- :download:`Bottom-up Broadband: Free Software Philosophy
+  Applied to Networking Initiatives
   </assets/documents/dtic.upf.edu.pdf>`
-- :download:`Study of community organizations and the creation of a collaborative
-  environment for the initiative "Bottom up Broadband"
+- :download:`Study of community organizations and the creation
+  of a collaborative environment for the initiative "Bottom up Broadband"
   </assets/documents/upcommons.upc.edu.pdf>` (in Catalan)
 - :download:`Control and management of Wi-Fi networks
-  </assets/documents/control-and-management-of-wifi-networks.pdf>` (in Slovenian)
-- **IEEE publication**: `ProvinciaWiFi: A 1000 hotspot free, public, open source Wi-Fi network
-  <https://ieeexplore.ieee.org/document/6381720>`_
+  </assets/documents/control-and-management-of-wifi-networks.pdf>`
+  (in Slovenian)
+- **IEEE publication**: `ProvinciaWiFi: A 1000 hotspot free, public,
+  open source Wi-Fi network <https://ieeexplore.ieee.org/document/6381720>`_
 - :download:`OpenWISP, an original open source solution for the diffusion
   of wifi services </assets/documents/openwisp-garr.pdf>` (in Italian)
 
 Logos and Graphic material
 --------------------------
 
-:download:`OpenWISP Logo (Black Foreground) </assets/design/openwisp.org.svg>`
+:download:`OpenWISP Logo (Black Foreground)
+</assets/design/openwisp.org.svg>`
 
 .. image:: /assets/design/openwisp.org.svg
    :align: center
 
-:download:`OpenWISP Logo (White Foreground) </assets/design/openwisp-logo.svg>`
+:download:`OpenWISP Logo (White Foreground)
+</assets/design/openwisp-logo.svg>`
 
 .. raw:: html
 
