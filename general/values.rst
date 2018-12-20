@@ -85,8 +85,8 @@ We mainly use two type of licenses:
 - **GPLv3**: we use this license for the software modules which we think
   have a potentially high commercial value for ISPs and private companies,
   our aim in using this license is to avoid the inclusion of these tools
-  and modules in propietary closed source solutions, which would result
-  in private companies profitting from the work of our community without
+  and modules in proprietary closed source solutions, which would result
+  in private companies profiting from the work of our community without
   contributing back to it
 - **BSD3** and **MIT**: we use these two very permissive licenses for
   experimental and innovative software modules which are very useful
