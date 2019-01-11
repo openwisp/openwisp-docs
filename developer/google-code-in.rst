@@ -212,7 +212,7 @@ raise to the top!
 
 Programming languages and frameworks:
 
-  - `Python <http://www.diveintopython3.net/>`_ (book)
+  - `Python <https://runestone.academy/runestone/static/pythonds/index.html>`_ (book)
   - `Django <https://docs.djangoproject.com/en/1.11/>`_ (official documentation)
   - `Lua <https://www.youtube.com/watch?v=iMacxZQMPXs/>`_ (video tutorial)
   - `Shell <https://www.youtube.com/watch?v=hwrnmQumtPw/>`_ (video tutorial)
