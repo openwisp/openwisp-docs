@@ -18,6 +18,11 @@ the vendor device configuration and helps you swap out devices
 from different vendors or simply dealing with incompatible
 configuration files.
 
+Follow the quickstart :ref: `Quickstart` to learn how to
+set up a test instance of the controller, how to install
+the daemon on your device and eventually graduate
+everything to your production environment.
+
 Contents:
 
 .. toctree::
