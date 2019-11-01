@@ -30,7 +30,9 @@ Extract the downloaded file and convert the image file to a `VirtualBox
 
 .. code-block:: bash
 
-    VBoxManage convertfromraw --format VDI openwrt-18.06.1-x86-64-combined-ext4.img openwrt-18.06.1-x86-64-combined-ext4.vdi
+    VBoxManage convertfromraw --format VDI \
+    openwrt-18.06.1-x86-64-combined-ext4.img \
+    openwrt-18.06.1-x86-64-combined-ext4.vdi
 
 If you encounter an error about ``VERR_ID_INVALID_SIZE``, you need to
 pad the image with the following command:
