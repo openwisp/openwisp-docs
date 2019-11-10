@@ -2,11 +2,11 @@
 OpenWISP 2 Documentation
 ========================
 
-This repository aims to help out **new users and contributors** to get 
+This repo aims to help out **new users and contributors** to get 
 start using and getting involved in `OpenWISP <http://openwisp.org>`_.
 
-This repo at this stage is pretty much a work in progress, so 
-contributions, feedback and suggestions are very welcome.
+This repository, at this stage is pretty much a work in progress, so 
+contributions, feedback and suggestions are welcome.
 
 How to build the docs
 ---------------------
