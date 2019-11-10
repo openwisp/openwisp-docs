@@ -5,7 +5,7 @@ OpenWISP 2 Documentation
 This repository aims to help out **new users and contributors** to get 
 start using and getting involved in `OpenWISP <http://openwisp.org>`_.
 
-This repo at this stage is pretty much a work in progress, so 
+This repository at its current stage is pretty much a work in progress, so 
 contributions, feedback and suggestions are very welcome.
 
 How to build the docs
@@ -31,7 +31,7 @@ Need help?
 ----------
 
 - If any help regarding installing and using `sphinx` and 
-  `reStructured Text` is required then please visit this 
+  `reStructured Text` is required then please visit the link below: 
   `link <http://www.sphinx-doc.org/en/stable/tutorial.html>`_.
 
 - Feel free to post any doubt or comment through our `support channels 
