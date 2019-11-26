@@ -257,3 +257,26 @@ OpenWISP and how you contributed to it.
 
 If you haven't contributed yet, we highly suggest you to :doc:`get
 started now <../developer/contributing>`.
+
+Suspension of mentors
+~~~~~~~~~~~~~~~~~~~~~
+
+Once a mentor has been accepted we assume that the mentor will
+contribute, according to their available free time, until the
+conclusion of the program.
+
+The contribution shall be in good faith, always prioritizing
+the interests of the students and the goals of our organization.
+
+A mentor account may be revoked if these general principles are not
+followed, more specifically:
+
+- if the mentor disappears without justification for more than 2 weeks;
+  in this case the account can be resumed once the mentor comes back
+  into activity
+- if it's felt the participation of the mentor is not in good faith
+  and or not helpful for the students (for example, it's ascertained
+  that the mentors are not putting effort in reviewing and sending
+  feedback to the students, preferring to accept tasks with very
+  shallow or non-existent reviews, just with the goal of scoring
+  mentored tasks)
