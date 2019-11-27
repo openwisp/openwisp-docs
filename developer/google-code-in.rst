@@ -5,7 +5,7 @@ Google Code-in
      :align: center
 
 .. note::
-  `OpenWISP is a mentoring organization for the Google Code-In 2018
+  `OpenWISP is a mentoring organization for the Google Code-In 2019
   <https://codein.withgoogle.com/organizations/openwisp/>`_.
 
 If you are reading this page you are probably considering OpenWISP
