@@ -242,6 +242,21 @@ participating.
   mind like designing logos and T-shirts, which you need to do by
   yourself. Remember, learning is more important than winning.
 
+Communication of sensitive issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you noticed something that you think is not right, for example:
+a student cheating, a  mentor behaving inappropriately or any
+other issue you don't feel comfortable discussing in public,
+please get in touch with an organization administrator, the
+organization admins for the 2019 edition are:
+
+- 2stacks
+- hispanico
+- atb00ker
+- cappe87
+- nemesisdesign
+
 How can I apply as mentor?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
