@@ -266,11 +266,13 @@ tutorial but this is already present in the last lines of ``urls.py``:
 
 .. code-block:: python
 
+    from django.conf import settings
+    import debug_toolbar
+
     if settings.DEBUG and 'debug_toolbar' in settings.INSTALLED_APPS:
-        import debug_toolbar
-          urlpatterns += [
-              url(r'^__debug__/', include(debug_toolbar.urls))
-      ]
+        urlpatterns += [
+            url(r'^__debug__/', include(debug_toolbar.urls))
+        ]
 
 When you open ``http://127.0.0.1:8000`` in the browser now and enter the
 credentials we created earlier, you should see something like the
