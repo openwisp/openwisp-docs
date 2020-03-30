@@ -88,17 +88,18 @@ Here's a real world commit message example from `one of our modules
     Fixes #57
 
 Moreover, keep in mind the following guidelines:
-- commits should be descriptive in nature, the message should 
-explain the nature of the change
+
+- commits should be descriptive in nature, the message should
+  explain the nature of the change
 - make sure to follow the code style used in the module
-you are contributing to
+  you are contributing to
 - before committing and pushing the changes, test the code both manually
-and automatically with the automated test suite if applicable
+  and automatically with the automated test suite if applicable
 - after pushing your branch code, make a pull-request of that
-corresponding change of yours which should contain a descriptive
-message and mention the issue number as suggested in the example above
-- try to keep commits to a minimum. If you work on one issue squash any 
-commits you have made into one informative commit.
+  corresponding change of yours which should contain a descriptive
+  message and mention the issue number as suggested in the example above
+- try to keep commits to a minimum. If you work on one issue squash any
+  commits you have made into one informative commit.
 
 3. Pull-Request guidelines
 --------------------------
