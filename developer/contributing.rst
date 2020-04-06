@@ -146,16 +146,29 @@ Coding Style Conventions
 1. Python code conventions
 --------------------------
 
-- OpenWISP follows `PEP 8 -- Style Guide for Python Code
-  <https://www.python.org/dev/peps/pep-0008/>`_.
-- OpenWISP uses `flake8 <http://flake8.pycqa.org/en/latest/>`_ to
+OpenWISP follows `PEP 8 -- Style Guide for Python Code
+<https://www.python.org/dev/peps/pep-0008/>`_ and uses the following automatic
+tools to check code conventions:
+
+- `flake8 <http://flake8.pycqa.org/en/latest/>`_ is used to
   automatically check the quality of the python code being committed,
   each python repo has either a ``flake8`` configuration defined in
   ``setup.cfg`` or a ``runflake8`` script that you can launch with
   ``flake8`` or ``./runflake8`` respectively.
-- OpenWISP also uses `isort <http://isort.readthedocs.io/en/latest/>`_
+- `isort <http://isort.readthedocs.io/en/latest/>`_ is used in order
   to sort import in a specifc predictable order; each python repo has
   a ``runisort`` script that you can launch with ``./runisort``
+- Lastly, `black <https://black.readthedocs.io/en/stable/>`_ is used to
+  automatically format the code according to our conventions.
+
+For your convenience, we provide the following scripts available in the
+`openwisp-utils <https://github.com/openwisp/openwisp-utils>`_ repository:
+
+- ``openwisp-qa-format`` formats your Python code according to the
+  OpenWISP standards.
+- ``openwisp-utils-qa-checks`` is run by Travis CI to check your Python
+  code quality and style standard. You can run it yourself as well in
+  order to detect mistakes before Travis does.
 
 .. note::
 
