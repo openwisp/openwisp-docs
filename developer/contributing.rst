@@ -19,7 +19,7 @@ Look for open issues
 
 Check out the `OpenWISP Contributor's Board
 <https://github.com/orgs/openwisp/projects/3>`_, this is a kanban board
-integrated with github were we place the most important issues we are
+integrated with github where we place the most important issues we are
 working on.
 
 If there's anything you don't understand regarding the
