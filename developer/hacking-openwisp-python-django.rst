@@ -232,7 +232,7 @@ to be added to our current module, i.e ``openwisp-controller``. To begin,
 the lines ``'debug_toolbar'`` and
 ``'debug_toolbar.middleware.DebugToolbarMiddleware'`` need to be added
 to the ``INSTALLED_APPS`` and to the ``MIDDLEWARE`` settings respectively
-and the line ``INTERNAL_IPS = ('127.0.0.1')`` should be added too,
+and the line ``INTERNAL_IPS = ['127.0.0.1']`` should be added too,
 otherwise the django debug toolbar won't be displayed. We also need to
 import ``django_extensions`` and add it to our ``INSTALLED_APPS`` setting
 but this is already done in ``settings.py``. Here's what
@@ -251,7 +251,7 @@ but this is already done in ``settings.py``. Here's what
         'debug_toolbar.middleware.DebugToolbarMiddleware'
     ]
 
-    INTERNAL_IPS = ('127.0.0.1')
+    INTERNAL_IPS = ['127.0.0.1']
 
 To complete the process, the Debug Toolbar’s URL needs to be added
 to the URLconf of ``openwisp-controller`` as shown in `this
