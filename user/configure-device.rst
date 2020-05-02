@@ -17,43 +17,11 @@ Refer to the  `OpenWISP 2 installation tutorial
 2. Install OpenWRT on VirtualBox
 --------------------------------
 
-.. note::
-    **You can skip this part if you plan on installing openwisp-config on
-    a physical device.**
-
-Download ``combined-ext4.img.gz`` from `this
-page <https://downloads.openwrt.org/releases/18.06.1/targets/x86/64/>`__.
-The other images may not work well.
-
-Extract the downloaded file and convert the image file to a `VirtualBox
-<https://www.virtualbox.org/>`_ disk:
-
-.. code-block:: bash
-
-    VBoxManage convertfromraw --format VDI \
-    openwrt-18.06.1-x86-64-combined-ext4.img \
-    openwrt-18.06.1-x86-64-combined-ext4.vdi
-
-If you encounter an error about ``VERR_ID_INVALID_SIZE``, you need to
-pad the image with the following command:
-
-.. code-block:: bash
-
-    dd if=openwrt-18.06.1-x86-64-combined-ext4.img \
-    of=openwrt-18.06.1-x86-64-padded.img bs=128000 conv=sync
-
-And then try to convert the padded image using the previous command.
-
-Next, open up VirtualBox and create a VM. Load up the VDI and then start
-the machine. If done correctly, it should boot to a GRUB menu and then
-proceed with initialization. When the text stops scrolling, simply press
-Enter to activate the terminal.
+Follow the `OpenWrt on VirtualBox Howto
+<https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm>`_.
 
 .. note::
 
-    Continue with the procedures in
-
-    `the OpenWRT virtualbox guide <https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm>`_.
     It's required to enable SSH access and connect the VM to the internet.
 
     Note that both Adapter1 and Adapter2 use
@@ -72,16 +40,14 @@ Enter to activate the terminal.
 Installation
 ~~~~~~~~~~~~
 
-Run the following commands on your device:
+Install openwisp-config in your device. For this guide, we will choose the
+``openssl`` variant but you have other variants available on
+`downloads.openwisp.io <http://downloads.openwisp.io/openwisp-config/latest/>`__.
 
 .. code-block:: bash
 
     opkg update
-    opkg install <URL>
-
-Replace ``<URL>`` with the link to one of the latest build,
-available on `downloads.openwisp.io <http://downloads.openwisp.io/openwisp-config/latest/>`__.
-For this guide, let's choose the ``openssl`` variant.
+    opkg install http://downloads.openwisp.io/openwisp-config/latest/openwisp-config-openssl_0.4.6a-1_all.ipk
 
 Configuration
 ~~~~~~~~~~~~~
@@ -106,37 +72,46 @@ please add them):
         #option shared_secret ''
         #option consistent_key '1'
         #option mac_interface 'eth0'
+        #option management_interface 'tun0'
         #option merge_config '1'
         #option test_config '1'
         #option test_script '/usr/sbin/mytest'
-        #option uuid ''
-        #option key ''
-        list unmanaged 'system.@led'
-        list unmanaged 'network.loopback'
-        list unmanaged 'network.@switch'
-        list unmanaged 'network.@switch_vlan'
+        #option hardware_id_script '/usr/sbin/read_hw_id'
+        #option hardware_id_key '1'
+        option uuid ''
+        option key ''
         # curl options
         #option connect_timeout '15'
         #option max_time '30'
         #option capath '/etc/ssl/certs'
+        #option cacert '/etc/ssl/certs/ca-certificates.crt'
+        # hooks
+        #option pre_reload_hook '/usr/sbin/my_pre_reload_hook'
+        #option post_reload_hook '/usr/sbin/my_post_reload_hook'
 
 Uncomment and change the following fields:
 
 - ``url``: the hostname of your OpenWISP2 controller (for example, if
   you are hosting your OpenWISP server locally and you set the IP Address
-  to "192.168.56.2", the url would be ``https://192.168.56.2/``).
-- ``verify_ssl``: set to ``0`` if your controller's SSL certificate is
+  to "192.168.56.2", the url would be ``https://192.168.56.2``).
+- ``verify_ssl``: set to ``'0'`` if your controller's SSL certificate is
   self-signed; in production you will need a valid SSL certificate to
   keep your instance secure
 - ``shared_secret``: you can retrieve this from OpenWISP2 admin panel, in
   the Organization settings. The list of organizations is available at
   ``/admin/openwisp_users/organization/``.
 
+.. note::
+
+    For development or testing purposes you will usually use the local
+    IP address where you are running openwisp
+    (e.g. ``http://192.168.1.34:8000``)
+
 Save the file and start openwisp-config:
 
 .. code-block:: bash
 
-    /etc/init.d/openwisp_config start
+    /etc/init.d/openwisp_config restart
 
 Your OpenWRT instance should register itself to your openwisp2 controller.
 Check the devices menu on the admin panel to make sure your OpenWRT
