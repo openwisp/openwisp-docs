@@ -103,8 +103,10 @@ Uncomment and change the following fields:
 
 .. note::
 
-    For development or testing purposes you will usually use the local
-    IP address where you are running openwisp
+    When testing or developing using the Django development server
+    directly from your computer, make sure the server listens on all
+    interfaces (``./manage.py runserver 0.0.0.0:8000``) and then just
+    point openwisp to use your local IP address
     (e.g. ``http://192.168.1.34:8000``)
 
 Save the file and start openwisp-config:
