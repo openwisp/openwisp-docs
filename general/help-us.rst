@@ -20,7 +20,7 @@ alive the `support channels <http://openwisp.org/support.html>`_.
 if performed by a sufficient number of people.**
 
 .. note::
-  **if you need commercial support for your business**, see the paragraph
+  **If you need commercial support for your business**, see the paragraph
   about `Commercial support and funding development
   <commercial_support_>`_.
 
@@ -94,7 +94,7 @@ Yes, we know it sounds silly, but since it doesn't cost you anything,
 it would be really useful if you could **take a look at our projects on
 github** and **star the ones you find most interesting**.
 
-3. Documentation
+4. Documentation
 ~~~~~~~~~~~~~~~~
 
 If you find anything in this documentation that you think may be
@@ -102,7 +102,7 @@ improved, please edit the document on github and send us a pull request,
 alternatively you can file a bug report or write to the
 `support channels <http://openwisp.org/support.html>`_.
 
-4. Social media
+5. Social media
 ~~~~~~~~~~~~~~~
 
 If you are using OpenWISP, it's very useful to let the world know about
@@ -116,7 +116,7 @@ If more people talk about OpenWISP on social media, we increase the
 chance that those who have the will and technical skills to contribute
 will hear about its existence.
 
-5. Blogging
+6. Blogging
 ~~~~~~~~~~~
 
 Write a blog post about how you are using OpenWISP!
@@ -134,14 +134,14 @@ A concise, straight to the point blog post with some images and
 screenshots will go a long way in attracting new people into the
 community.
 
-6. Conferences & Meetups
+7. Conferences & Meetups
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you like to share your knowledge at conferences and meetups, you
 may cite OpenWISP in one of your presentations or lightining talks,
 you may also show some of its featues, if relevant.
 
-7. Participate
+8. Participate
 ~~~~~~~~~~~~~~
 
 By participating actively in the `support channels
@@ -149,7 +149,7 @@ By participating actively in the `support channels
 welcoming level of an open source community is a key factor in attracting
 a good numbers of contributors.
 
-8. Contribute technically
+9. Contribute technically
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Are you skilled in one of the following areas?
@@ -169,8 +169,8 @@ If yes, you can help us greatly. Find out more about this subject in
 
 .. _commercial_support:
 
-9. Commercial support and funding development
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10. Commercial support and funding development
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **If your company uses OpenWISP for its business** and needs professional
 support on custom setups, development of new features or commercial
