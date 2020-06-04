@@ -166,7 +166,7 @@ For your convenience, we provide the following scripts available in the
 
 - ``openwisp-qa-format`` formats your Python code according to the
   OpenWISP standards.
-- ``openwisp-utils-qa-checks`` is run by Travis CI to check your Python
+- ``openwisp-qa-check`` is run by Travis CI to check your Python
   code quality and style standard. You can run it yourself as well in
   order to detect mistakes before Travis does.
 
