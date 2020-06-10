@@ -53,9 +53,11 @@ Create a new branch for your patch, use a self-descriptive name, eg:
 ::
 
   git pull origin master
-  # if there's an issue for your patch
-  git checkout -b issues/48
-  # if you prefer a descriptive name
+  # if there's an issue your patch addresses
+  git checkout -b issues/48-issue-title-shortened
+
+  # if there is no issue for your branch, (we suggest creating one anyway)
+  # use a descriptive name
   git checkout -b autoregistration
 
 2. Commit message style guidelines
