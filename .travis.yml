@@ -17,5 +17,5 @@ install:
 
 script:
   - ./check_line_length.py
-  - openwisp-utils-qa-checks --skip-checkmigrations
+  - openwisp-qa-check --skip-checkmigrations
   - ./runsphinx-build
