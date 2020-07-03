@@ -106,8 +106,8 @@ with the aim of making the software useful to the broadest possible
 audience - **as long as our core values are not distorted or ignored**.
 
 We encourage anyone who shares our values to get in touch with us via
-our `support channels <http://openwisp.org/support.html>`_ and :doc:
-`contribute to the project <../developer/contributing>` however they can,
+our `support channels <http://openwisp.org/support.html>`_ and :doc:`contribute
+to the project <../developer/contributing>` however they can,
 according to their means and available free time.
 
 5. Software reusability means long term sustainability

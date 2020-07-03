@@ -19,7 +19,7 @@ Look for open issues
 
 Check out the `OpenWISP Contributor's Board
 <https://github.com/orgs/openwisp/projects/3>`_, this is a kanban board
-integrated with github were we place the most important issues we are
+integrated with github where we place the most important issues we are
 working on.
 
 If there's anything you don't understand regarding the
@@ -53,9 +53,11 @@ Create a new branch for your patch, use a self-descriptive name, eg:
 ::
 
   git pull origin master
-  # if there's an issue for your patch
-  git checkout -b issues/48
-  # if you prefer a descriptive name
+  # if there's an issue your patch addresses
+  git checkout -b issues/48-issue-title-shortened
+
+  # if there is no issue for your branch, (we suggest creating one anyway)
+  # use a descriptive name
   git checkout -b autoregistration
 
 2. Commit message style guidelines
@@ -88,17 +90,18 @@ Here's a real world commit message example from `one of our modules
     Fixes #57
 
 Moreover, keep in mind the following guidelines:
-- commits should be descriptive in nature, the message should 
-explain the nature of the change
+
+- commits should be descriptive in nature, the message should
+  explain the nature of the change
 - make sure to follow the code style used in the module
-you are contributing to
+  you are contributing to
 - before committing and pushing the changes, test the code both manually
-and automatically with the automated test suite if applicable
+  and automatically with the automated test suite if applicable
 - after pushing your branch code, make a pull-request of that
-corresponding change of yours which should contain a descriptive
-message and mention the issue number as suggested in the example above
-- try to keep commits to a minimum. If you work on one issue squash any 
-commits you have made into one informative commit.
+  corresponding change of yours which should contain a descriptive
+  message and mention the issue number as suggested in the example above
+- try to keep commits to a minimum. If you work on one issue squash any
+  commits you have made into one informative commit.
 
 3. Pull-Request guidelines
 --------------------------
@@ -145,16 +148,29 @@ Coding Style Conventions
 1. Python code conventions
 --------------------------
 
-- OpenWISP follows `PEP 8 -- Style Guide for Python Code
-  <https://www.python.org/dev/peps/pep-0008/>`_.
-- OpenWISP uses `flake8 <http://flake8.pycqa.org/en/latest/>`_ to
+OpenWISP follows `PEP 8 -- Style Guide for Python Code
+<https://www.python.org/dev/peps/pep-0008/>`_ and uses the following automatic
+tools to check code conventions:
+
+- `flake8 <http://flake8.pycqa.org/en/latest/>`_ is used to
   automatically check the quality of the python code being committed,
   each python repo has either a ``flake8`` configuration defined in
   ``setup.cfg`` or a ``runflake8`` script that you can launch with
   ``flake8`` or ``./runflake8`` respectively.
-- OpenWISP also uses `isort <http://isort.readthedocs.io/en/latest/>`_
+- `isort <http://isort.readthedocs.io/en/latest/>`_ is used in order
   to sort import in a specifc predictable order; each python repo has
   a ``runisort`` script that you can launch with ``./runisort``
+- Lastly, `black <https://black.readthedocs.io/en/stable/>`_ is used to
+  automatically format the code according to our conventions.
+
+For your convenience, we provide the following scripts available in the
+`openwisp-utils <https://github.com/openwisp/openwisp-utils>`_ repository:
+
+- ``openwisp-qa-format`` formats your Python code according to the
+  OpenWISP standards.
+- ``openwisp-qa-check`` is run by Travis CI to check your Python
+  code quality and style standard. You can run it yourself as well in
+  order to detect mistakes before Travis does.
 
 .. note::
 

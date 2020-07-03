@@ -8,6 +8,7 @@ Contents:
 
    user/quickstart
    user/configure-device
+   user/configuration-variables
    user/vpn
    general/values
    general/help-us

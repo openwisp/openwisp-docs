@@ -21,11 +21,31 @@ web frameworks for Python language.
 It is used extensively in our modules. Django allows rapid development
 and has a very rich ecosystem.
 
+Node.js and React JS
+--------------------
+
+`NodeJS <https://nodejs.org/en/>`_ is javascript runtime to build
+JS based applications.
+
+In OpenWISP it's used as a base for frontend applications
+along with `React <https://reactjs.org/>`_, like
+`openwisp-wifi-login-pages <https://github.com/openwisp/openwisp-wifi-login-pages/>`_.
+
 Ansible
 -------
 
 We use `Ansible <https://www.ansible.com/>`_ to provide an automated
-procedure to deploy OpenWISP and to compile a custom OpenWRT image.
+procedure to `deploy OpenWISP <https://github.com/openwisp/ansible-openwisp2>`_
+and to `compile custom OpenWRT images for different
+organizations <https://github.com/openwisp/ansible-openwisp2-imagegenerator>`_.
+
+Docker
+------
+
+We use docker in
+`docker-openwisp <https://github.com/openwisp/docker-openwisp>`_,
+which aims to ease the deployment of OpenWISP in a
+containerized infrastructure.
 
 NetJSON
 -------
