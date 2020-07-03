@@ -47,8 +47,10 @@ def check_line_length(file_path):
             limit = LIMIT_TEXT
         length = len(line)
         if length > limit and check_url(line) is not True:
-            errors.append('line {} in file {} is longer '
-                          'than {} characters'.format(line_number, file, limit))
+            errors.append(
+                'line {} in file {} is longer '
+                'than {} characters'.format(line_number, file, limit)
+            )
         check_first_character = True
     if len(errors):
         body = 'The document line length exceeds the right limit.\n'
