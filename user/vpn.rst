@@ -150,16 +150,16 @@ configuration in ``/etc/openvpn/server.conf``
     ``server.conf`` file using the **Preview Configuration** option
     at the Top.
 
-VPN Templates
--------------
+Preparing the configuration template for VPN Clients
+----------------------------------------------------
 
-Creating a VPN Template
-~~~~~~~~~~~~~~~~~~~~~~~
+Create VPN Template
+~~~~~~~~~~~~~~~~~~~
 
-On your openwisp dashboard go to ``/admin/config/template/add/``
+On your openwisp dashboard go to ``/admin/config/template/add/``.
 
 Change **Type** to :guilabel:`VPN-client`.
-For **VPN** select the VPN you created.
+For **VPN** select the VPN you created in the previous steps.
 
 You can further toggle `Enabled by default <#default-templates>`_
 and `Auto certificate <#auto-client-certificates>`_
@@ -186,5 +186,5 @@ Default Templates
 **Default**: ``False``
 
 Default templates are automatically added to newly created devices of
-the organisation of the template. If no organisation is specified, the
-template is added to all the organisations.
+the organization of the template. If no organization is specified, the
+template is added to all devices of all the organizations.
