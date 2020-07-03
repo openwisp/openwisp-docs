@@ -1,2 +1,4 @@
 # Sphinx documentation
 _build/
+
+.vscode/
