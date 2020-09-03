@@ -19,3 +19,8 @@ script:
   - ./check_line_length.py
   - openwisp-qa-check --skip-checkmigrations
   - ./runsphinx-build
+
+notifications:
+  # will post a summary as a comment on github in case of failure
+  webhooks: https://www.travisbuddy.com/
+  on_success: never
