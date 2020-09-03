@@ -114,8 +114,8 @@ Blog Posts
 - `Uniurb at the Google Summer of Code with OpenWISP2 and Marco
   <https://uniamo.uniurb.it/uniurb-google-summer-of-code-openwisp2/>`_
   (in Italian)
-- `Post by the Metrpolitan City of Rome
-  <http://www.cittametropolitanaroma.gov.it/homepage/elenco-siti-tematici
+- `Post by the Metropolitan City of Rome
+  <http://www.cittametropolitanaroma.it/homepage/elenco-siti-tematici
   /wifimetropolitano/openwisp-la-soluzione-open-source-la-diffusione-
   servizi-wifi/>`_ (in Italian)
 
