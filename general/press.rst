@@ -118,6 +118,9 @@ Blog Posts
   <http://www.cittametropolitanaroma.it/homepage/elenco-siti-tematici
   /wifimetropolitano/openwisp-la-soluzione-open-source-la-diffusione-
   servizi-wifi/>`_ (in Italian)
+- `Introducing OpenWISP Monitoring: Google Summer of Code 2020
+  Project report <https://medium.com/@nepython/openwisp-monitoring-
+  gsoc-2020-project-report-332441961629>`_
 
 Research and publications
 -------------------------
