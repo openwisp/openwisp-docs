@@ -121,6 +121,7 @@ Blog Posts
 - `Introducing OpenWISP Monitoring: Google Summer of Code 2020
   Project report <https://medium.com/@nepython/openwisp-monitoring-
   gsoc-2020-project-report-332441961629>`_
+- `GSOC 2017: adding AirOS support to netjsonconfig <https://edoput.github.io/openwispgsoc/>`_
 
 Research and publications
 -------------------------
