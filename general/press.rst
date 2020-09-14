@@ -122,6 +122,8 @@ Blog Posts
   Project report <https://medium.com/@nepython/openwisp-monitoring-
   gsoc-2020-project-report-332441961629>`_
 - `GSOC 2017: adding AirOS support to netjsonconfig <https://edoput.github.io/openwispgsoc/>`_
+- `GSoC 2017 @ OpenWISP: Raspbian backend for OpenWISP 2
+  <https://medium.com/@ritwickdsouza/gsoc-openwisp-raspbian-backend-for-openwisp-2-61ff91843362>`_
 
 Research and publications
 -------------------------
