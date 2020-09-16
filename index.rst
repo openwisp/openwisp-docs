@@ -20,10 +20,3 @@ Contents:
    developer/hacking-openwisp-python-django
    developer/google-summer-of-code
    developer/google-code-in
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
