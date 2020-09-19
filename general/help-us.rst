@@ -174,8 +174,8 @@ If yes, you can help us greatly. Find out more about this subject in
 
 **If your company uses OpenWISP for its business** and needs professional
 support on custom setups, development of new features or commercial
-support, **you can hire somebody which very active in the community** so
-they can help you achieve what you need.
+support, **you can hire a specialist which very active in the community**
+so they can help you achieve what you need.
 
 **Hiring a specialist is usually more effective than trying to figure it
 out alone**: specialists know OpenWISP very well, they can suggest what
@@ -184,5 +184,12 @@ highest quality and in the least time at the least cost. Moreover, they
 will produce solutions that can also be shared with the rest of the
 community and become part of the OpenWISP ecosystem.
 
-To find an OpenWISP expert, look in our `communication channels
-<http://openwisp.org/support.html>`_, especially the mailing list.
+.. raw:: html
+
+    <p>
+        If you want us to help you in getting in touch
+        with OpenWISP specialists, please write to:
+        <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#111;&#112;&#101;&#110;&#119;&#105;&#115;&#112;&#046;&#105;&#111;">
+            &#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#111;&#112;&#101;&#110;&#119;&#105;&#115;&#112;&#046;&#105;&#111;
+        </a>
+    </p>
