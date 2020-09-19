@@ -7,8 +7,8 @@ In this page we aim to collect the following:
   in which OpenWISP is either the main subject or it's mentioned
 - logos and other design files
 
-Presentations:
---------------
+Presentations
+-------------
 
 OpenWISP: a Hackable Network Management System for the 21st Century
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -118,12 +118,36 @@ Blog Posts
   <http://www.cittametropolitanaroma.it/homepage/elenco-siti-tematici
   /wifimetropolitano/openwisp-la-soluzione-open-source-la-diffusione-
   servizi-wifi/>`_ (in Italian)
-- `Introducing OpenWISP Monitoring: Google Summer of Code 2020
-  Project report <https://medium.com/@nepython/openwisp-monitoring-
-  gsoc-2020-project-report-332441961629>`_
-- `GSOC 2017: adding AirOS support to netjsonconfig <https://edoput.github.io/openwispgsoc/>`_
-- `GSoC 2017 @ OpenWISP: Raspbian backend for OpenWISP 2
-  <https://medium.com/@ritwickdsouza/gsoc-openwisp-raspbian-backend-for-openwisp-2-61ff91843362>`_
+
+Google Summer of Code Blog Posts
+--------------------------------
+
+2020 Students
+~~~~~~~~~~~~~
+
+- `Introducing OpenWISP Monitoring: Project report <https://medium.com/@nepython/openwisp-monitoring-gsoc-2020-project-report-332441961629>`_ by Hardik Jain (nepython).
+- `Merge django reusable-apps <https://medium.com/@atb00ker/merge-openwisp-django-modules-project-report-e8959049d496>`_ by Ajay Tripathi (atb00ker).
+- `OpenWISP Notifications Module <https://medium.com/@pandafy/openwisp-notifications-6c11ae577994>`_ by Gagan Deep (pandafy).
+
+2019 Students
+~~~~~~~~~~~~~
+
+- `Dockerization of OpenWISP <https://medium.com/@atb00ker/docker-openwisp-9b2040f03966>`_ by Ajay Tripathi (atb00ker).
+- `Project Report: NetJSONGraph.js Library of OpenWISP <https://medium.com/@zhongliwang48/project-report-netjsongraph-js-library-of-openwisp-d05ef95757d8>`_ by KuTuGu.
+
+2018 Students
+~~~~~~~~~~~~~
+
+- `OpenWISP IPAM: IP Address Management tool for OpenWISP2 <https://gist.github.com/anurag-ks/75d033c9652c559b065f9cc6320ea707>`_ by Anurag Sharma.
+
+2017 Students
+~~~~~~~~~~~~~
+
+- `Adding AirOS support to netjsonconfig <https://edoput.github.io/openwispgsoc/>`_ by Edoardo Putti.
+- `Building a Javascript Based Configuration UI for OpenWISP <https://medium.com/@gastonche/building-a-javascript-based-configuration-ui-for-openwisp-5eab15088a55>`_ by Nkhoh Gaston Che.
+- `OpenWISP 2 Network Topology <https://medium.com/@rohithasrk/openwisp-2-network-topology-gsoc-17-4765008ccba>`_ by Rohith A. S. R. K.
+- `Google Summer of Code 2017 Django-freeradius <https://delucafiorella2602.wordpress.com/>`_ by Fiorella De Luca.
+- `Raspbian backend for OpenWISP 2 <https://medium.com/@ritwickdsouza/gsoc-openwisp-raspbian-backend-for-openwisp-2-61ff91843362>`_ by Ritwick DSouza.
 
 Research and publications
 -------------------------
