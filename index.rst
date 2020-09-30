@@ -20,3 +20,4 @@ Contents:
    developer/hacking-openwisp-python-django
    developer/google-summer-of-code
    developer/google-code-in
+   developer/hacktoberfest
