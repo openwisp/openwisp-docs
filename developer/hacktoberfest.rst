@@ -5,7 +5,7 @@ Hacktoberfest
      :align: center
 
 .. note::
-  OpenWISP partcipates to `Hactoberfest 2020
+  OpenWISP partcipates in `Hactoberfest 2020
   <https://hacktoberfest.digitalocean.com/>`_!
 
 If you are reading this page you are probably considering OpenWISP
