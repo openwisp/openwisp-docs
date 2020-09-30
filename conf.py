@@ -262,7 +262,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'openwisp2-docs.tex', 'OpenWISP2', 'OpenWISP Community', 'manual'),
+    (master_doc, 'openwisp2-docs.tex', 'OpenWISP2', 'OpenWISP Community', 'manual')
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -323,7 +323,7 @@ texinfo_documents = [
         'OpenWISP2 Documentation',
         'Comprehensive user and developer documentation for OpenWISP2.',
         'Miscellaneous',
-    ),
+    )
 ]
 
 # Documents to append as an appendix to all manuals.

@@ -14,11 +14,11 @@ before-install:
 
 install:
   - pip install --no-cache-dir -U -r requirements.txt
+  - pip install pylinkvalidator
 
 script:
   - ./check_line_length.py
-  - openwisp-qa-check --skip-checkmigrations
-  - ./runsphinx-build
+  - ./run-qa-checks
 
 notifications:
   # will post a summary as a comment on github in case of failure
