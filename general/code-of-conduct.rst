@@ -97,7 +97,8 @@ a temporary ban or permanent expulsion from the community without warning
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are being harassed, noticed that someone else is being harassed, or
-have any other concerns, please contact community organizers immediately.
+have any other concerns, please
+`contact community organizers immediately <#contact-info>`_.
 
 Additionally, community organizers are available to aid community
 members to engage with local law enforcement or to otherwise help
@@ -109,9 +110,12 @@ the person experiencing distress.
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you feel you have been falsely or unfairly accused of violating this
-Code of Conduct, you should notify OpenWISP with a short explanation of
-your grievance. Your grievance will be handled in accordance with our
-existing governing policies.
+Code of Conduct, you should
+`get in touch with the OpenWISP community managers <#contact-info>`_
+by sending a short explanation of your grievance.
+
+Your grievance will be handled in accordance with
+our existing governing policies.
 
 8. Scope
 ~~~~~~~~
@@ -128,9 +132,13 @@ when such behavior has the potential to adversely affect the safety and
 well-being of community members.
 
 9. Contact info
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
-`OpenWISP Support Channels <http://openwisp.org/support.html>`_
+.. raw:: html
+
+    <p>
+        <a href="mailto:&#099;&#111;&#100;&#101;&#111;&#102;&#099;&#111;&#110;&#100;&#117;&#099;&#116;&#064;&#111;&#112;&#101;&#110;&#119;&#105;&#115;&#112;&#046;&#105;&#111;">&#099;&#111;&#100;&#101;&#111;&#102;&#099;&#111;&#110;&#100;&#117;&#099;&#116;&#064;&#111;&#112;&#101;&#110;&#119;&#105;&#115;&#112;&#046;&#105;&#111;</a>.
+    </p>
 
 10. License and attribution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
