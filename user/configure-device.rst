@@ -47,7 +47,7 @@ Install openwisp-config in your device. For this guide, we will choose the
 .. code-block:: bash
 
     opkg update
-    opkg install http://downloads.openwisp.io/openwisp-config/latest/openwisp-config-openssl_0.4.6a-1_all.ipk
+    opkg install http://downloads.openwisp.io/openwisp-config/latest/openwisp-config-openssl_0.5.0a-1_all.ipk
 
 Configuration
 ~~~~~~~~~~~~~
