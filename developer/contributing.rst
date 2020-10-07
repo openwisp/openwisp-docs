@@ -103,10 +103,10 @@ Moreover, keep in mind the following guidelines:
 - make sure to send one pull request for each feature. Each feature
   should contain one commit. If you make multiple commits for a single
   feature/bug-fix, squash them to a single commit providing an 
-  informative commit message after you get done with the required changes.
-- in case of big features in which multiple related features needs to be 
-  implemented, make single commit per feature having proper commit 
-  message in a single PR.
+  informative commit message after you are done with the required changes.
+- in case of big features in which multiple related features/changes needs
+  to be implemented, multiple commits (one commit per feature)
+  in a single PR can be accepted.
 
 3. Pull-Request guidelines
 --------------------------
