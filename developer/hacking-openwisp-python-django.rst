@@ -163,12 +163,12 @@ Django Extensions can be installed with:
     pip install django-extensions
 
 `shell_plus
-<django-extensions.readthedocs.io/en/latest/shell_plus.html>`_:
+<https://django-extensions.readthedocs.io/en/latest/shell_plus.html>`_:
 Django shell with autoloading of the apps database models and subclasses
 of user-defined classes.
 
 `runserver_plus
-<django-extensions.readthedocs.io/en/latest/runserver_plus.html>`_:
+<https://django-extensions.readthedocs.io/en/latest/runserver_plus.html>`_:
 typical runserver with Werkzeug debugger baked in.
 
 ``show_urls``: shows the registered URLs of a Django project.
@@ -255,7 +255,7 @@ but this is already done in ``settings.py``. Here's what
 
 To complete the process, the Debug Toolbar’s URL needs to be added
 to the URLconf of ``openwisp-controller`` as shown in `this
-<django-debug-toolbar.readthedocs.io/en/latest/installation.html>`_
+<https://django-debug-toolbar.readthedocs.io/en/latest/installation.html>`_
 tutorial but this is already present in the last lines of ``urls.py``:
 
 .. code-block:: python

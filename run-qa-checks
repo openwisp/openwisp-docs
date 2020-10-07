@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+# openwisp-utils checks
+#This is done first to ignore build directories for openwisp-utils checks
+openwisp-qa-check \
+    --skip-checkmigrations \
+    --skip-checkmakemigrations\
+    --skip-isort \
+    --skip-flake8 \
+    --skip-black
+
+echo ''
+echo 'Checking documentation build status'
+./runsphinx-build
+
+# check for broken link
+python -m http.server 8001 &> /dev/null & pid=$!
+sleep 4
+pylinkvalidate.py http://localhost:8001/_build/
+kill "${pid}"

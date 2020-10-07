@@ -184,6 +184,7 @@ Logos and Graphic material
 
 .. image:: /assets/design/openwisp-logo-black.svg
    :align: center
+   :alt: openwisp
 
 :download:`OpenWISP Logo (White Foreground)
 </assets/design/openwisp-logo.svg>`
@@ -191,8 +192,8 @@ Logos and Graphic material
 .. raw:: html
 
   <div align="center" class="align-center">
-    <img alt="../_downloads/openwisp-logo.svg"
-         src="../_downloads/openwisp-logo.svg"
+    <img alt="openWisp"
+         src="https://github.com/openwisp/openwisp2-docs/blob/master/assets/design/openwisp-logo.svg?raw=true"
          style="background:#000;padding:25px;margin-bottom:24px" />
   </div>
 
@@ -201,3 +202,4 @@ Logos and Graphic material
 
 .. image:: /assets/design/openwisp.org.svg
    :align: center
+   :alt: openwisp
