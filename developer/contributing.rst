@@ -100,8 +100,13 @@ Moreover, keep in mind the following guidelines:
 - after pushing your branch code, make a pull-request of that
   corresponding change of yours which should contain a descriptive
   message and mention the issue number as suggested in the example above
-- try to keep commits to a minimum. If you work on one issue squash any
-  commits you have made into one informative commit.
+- make sure to send one pull request for each feature. Each feature
+  should contain one commit. If you make multiple commits for a single
+  feature/bug-fix, squash them to a single commit providing an 
+  informative commit message after you are done with the required changes.
+- in case of big features in which multiple related features/changes needs
+  to be implemented, multiple commits (one commit per feature)
+  in a single PR can be accepted.
 
 3. Pull-Request guidelines
 --------------------------
