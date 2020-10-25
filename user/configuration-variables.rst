@@ -5,17 +5,20 @@ Sometimes the configuration is not exactly equal on all the devices,
 some parameters are unique to each device or need to be changed
 by the user.
 
-In these cases it is possible to use configuration variables in conjunction
-with templates, this feature is also known as *configuration context*, think of
+In these cases it is possible to use configuration variables in
+conjunction with templates, this feature is also known as
+*configuration context*, think of
 it like a dictionary which is passed to the function which renders the
-configuration, so that it can fill variables according to the passed context.
+configuration, so that it can fill variables according to the passed
+context.
 
 The different ways in which variables are defined are described below.
 
 Predefined device variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Each device gets the following attributes passed as configuration variables:
+Each device gets the following attributes passed as configuration
+variables:
 
 * ``id``
 * ``key``
@@ -35,12 +38,13 @@ variables and their values, as shown in the example below:
 Template default values
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-It's possible to specify the default values of variables defined in a template.
+It's possible to specify the default values of variables
+defined in a template.
 
 This allows to achieve 2 goals:
 
-1. pass schema validation without errors (otherwise it would not be possible
-   to save the template in the first place)
+1. pass schema validation without errors (otherwise it would not be
+   possible to save the template in the first place)
 2. provide good default values that are valid in most cases but can be
    overridden in the device if needed
 
