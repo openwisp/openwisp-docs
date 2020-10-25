@@ -1,111 +1,111 @@
-Configuration variables/context in OpenWISP2
-============================================
+How to use configuration variables
+==================================
 
-What configuration variables are, why do we need them?
-------------------------------------------------------
+Sometimes the configuration is not exactly equal on all the devices,
+some parameters are unique to each device or need to be changed
+by the user.
 
-It's often needed for the configuration to differ a little between
-devices, we may need to use device specific values
-(like MAC address, or hostname) in it, in such situation
-it's not to possible to simply use static templates. 
-The configuration variables feature allows us to include in our config
-some default/automatically assigned variables
-and define our own ones in controller admin.
+In these cases it is possible to use configuration variables in conjunction
+with templates, this feature is also known as *configuration context*, think of
+it like a dictionary which is passed to the function which renders the
+configuration, so that it can fill variables according to the passed context.
 
-The set of all configuration variables is known as *context*.
+The different ways in which variables are defined are described below.
 
-Default context
----------------
+Predefined device variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Following variables are added automatically
-to the context of each device configuration:
+Each device gets the following attributes passed as configuration variables:
 
-- ``id`` - device's UUID
-- ``key`` - device's OpenWISP key
-- ``name`` - device's name in OpenWISP
-- ``mac_address`` - device's MAC address
+* ``id``
+* ``key``
+* ``name``
+* ``mac_address``
 
-Variables added automatically to context
-of each template:
+User defined device variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- ``id`` - template id
-- ``name`` - template name
+In the device configuration section you can find a section named
+"Configuration variables" where it is possible to define the configuration
+variables and their values, as shown in the example below:
 
-Variables added automatically to context
-of each VPN configuration:
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/master/docs/device-context.png
+   :alt: context
 
-- ``dh`` - Diffie-Hellman parameters
-- ``ca`` - CA's certificate
-- ``cert`` - own certificate
-- ``key`` - own private key
+Template default values
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Referencing variables in configuration
---------------------------------------
+It's possible to specify the default values of variables defined in a template.
 
-We can include variables in our configuration by simply writing
-``{{ variable_name }}`` or ``{{variable_name}}`` in it.
+This allows to achieve 2 goals:
 
-Usage example
-~~~~~~~~~~~~~
+1. pass schema validation without errors (otherwise it would not be possible
+   to save the template in the first place)
+2. provide good default values that are valid in most cases but can be
+   overridden in the device if needed
 
-Using following template 
-(JSON/advanced view notation - 'Advanced mode (raw JSON)' button)
-we can change OpenWISP connection settings on our devices
-without the need to manually set
-``UUID`` and ``key`` parameters:
+These default values will be overridden by the
+`User defined device variables <#user-defined-device-variables>`_.
 
-.. image:: ../images/config_variables/example1_json_view.png
+The default values of variables can be manipulated from the section
+"configuration variables" in the edit template page:
 
-After applying that template to our device
-we will get such configuration on it:
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/master/docs/template-default-values.png
+  :alt: default values
 
-.. image:: ../images/config_variables/example1_config_preview.png
+Global variables
+~~~~~~~~~~~~~~~~
 
-It is correct OpenWISP controller connection configuration
-and it is now automatically adapted to the details of every device
-we assign this template to.
+Variables can also be defined globally using the
+`OPENWISP_CONTROLLER_CONTEXT <https://github.com/openwisp/openwisp-controller#openwisp-controller-context>`_ setting.
 
-Custom variables
-----------------
+Example usage of variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We can define our custom variables per device in OpenWISP Controller by
-putting them in the ``context`` field  (`Device configuration details` tab
-in device change screen) as a JSON object:
+Here's a typical use case, the WiFi SSID and WiFi password.
+You don't want to define this for every device, but you may want to
+allow operators to easily change the SSID or WiFi password for a
+specific device without having to re-define the whole wifi interface
+to avoid duplicating information.
 
-.. image:: ../images/config_variables/context.png
+This would be the template:
 
-Variables may *only* contain alphanumeric characters and underscores.
+.. code-block:: json
 
-Usage example
-~~~~~~~~~~~~~
+    {
+        "interfaces": [
+            {
+                "type": "wireless",
+                "name": "wlan0",
+                "wireless": {
+                    "mode": "access_point",
+                    "radio": "radio0",
+                    "ssid": "{{wlan0_ssid}}",
+                    "encryption": {
+                        "protocol": "wpa2_personal",
+                        "key": "{{wlan0_password}}",
+                        "cipher": "auto"
+                    }
+                }
+            }
+        ]
+    }
 
-We may not want our access points to use the same SSIDs,
-it's possible to quickly append some text/number to them
-and in the same time leave the opportunity to change the base SSID
-using configuration variables.
+These would be the default values in the template:
 
-Creating template with SSID ``Apartment {{ apartment_id }}``,
-like in following picture (JSON/advanced view):
+.. code-block:: json
 
-.. image:: ../images/config_variables/example2_json_view.png
+    {
+        "wlan0_ssid": "SnakeOil PublicWiFi",
+        "wlan0_password": "Snakeoil_pwd!321654"
+    }
 
-and setting ``apartment_id`` variable to 1, 2, ... for our devices 
-will result in having *Apartment 1*, *Apartment 2*, ... wifi networks.
+The default values can then be overridden at
+`device level <#user-defined-device-variables>`_ if needed, eg:
 
-For example, applying our template to a device with following context:
+.. code-block:: json
 
-.. image:: ../images/config_variables/example2_context.png
-
-Will result in such configuration: 
-
-.. image:: ../images/config_variables/example2_config_preview.png
-
-The example above may look like an overkill if we are going to never
-change network names, but it may save lots of time if we wanted to
-e.g. append our apartment block name to all netwok SSIDs, or do any change
-to all the SSIDs at time.
-
-Note, that undefined variables will **not** be evaluated: not defining
-``apartment`` variable for some device using template described above
-will result in a wifi network named ``Apartment {{ apartment }}``.
-
+    {
+        "wlan0_ssid": "Room 23 ACME Hotel",
+        "wlan0_password": "room_23pwd!321654"
+    }
