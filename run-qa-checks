@@ -11,6 +11,8 @@ openwisp-qa-check \
     --skip-flake8 \
     --skip-black
 
+./check_line_length.py
+
 echo ''
 echo 'Checking documentation build status'
 ./runsphinx-build

@@ -17,7 +17,6 @@ install:
   - pip install pylinkvalidator
 
 script:
-  - ./check_line_length.py
   - ./run-qa-checks
 
 notifications:
