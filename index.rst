@@ -10,6 +10,7 @@ Contents:
    user/configure-device
    user/configuration-variables
    user/vpn
+   user/configure-push-updates
    general/values
    general/help-us
    general/technologies
