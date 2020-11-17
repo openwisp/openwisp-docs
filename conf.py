@@ -55,7 +55,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'OpenWISP2'
-copyright = '2017, OpenWISP'
+copyright = '2017-2020, OpenWISP'
 author = 'OpenWISP Community'
 
 # The version info for the project you're documenting, acts as replacement for
