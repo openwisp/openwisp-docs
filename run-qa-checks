@@ -9,7 +9,8 @@ openwisp-qa-check \
     --skip-checkmakemigrations\
     --skip-isort \
     --skip-flake8 \
-    --skip-black
+    --skip-black \
+    --skip-checkrst
 
 ./check_line_length.py
 
