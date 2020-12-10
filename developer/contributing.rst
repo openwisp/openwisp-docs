@@ -101,9 +101,10 @@ Moreover, keep in mind the following guidelines:
   corresponding change of yours which should contain a descriptive
   message and mention the issue number as suggested in the example above
 - make sure to send one pull request for each feature. Whenever changes
-  are requested during reviews, please send new commits (do not amend previous
-  commits), if multiple commits are present in a single pull request,
-  they will be squashed in a single commit by the maintainers before merging
+  are requested during reviews, please send new commits (do not amend
+  previous commits), if multiple commits are present in a single pull
+  request, they will be squashed in a single commit by the maintainers
+  before merging
 - in case of big features in which multiple related features/changes needs
   to be implemented, multiple commits (one commit per feature)
   in a single PR are acceptable.
@@ -154,8 +155,8 @@ Coding Style Conventions
 --------------------------
 
 OpenWISP follows `PEP 8 -- Style Guide for Python Code
-<https://www.python.org/dev/peps/pep-0008/>`_ and uses the following automatic
-tools to check code conventions:
+<https://www.python.org/dev/peps/pep-0008/>`_ and uses the following
+automatic tools to check code conventions:
 
 - `flake8 <http://flake8.pycqa.org/en/latest/>`_ is used to
   automatically check the quality of the python code being committed,

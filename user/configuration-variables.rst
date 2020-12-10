@@ -68,8 +68,8 @@ System defined variables
 
 Predefined device variables, global variables and other variables that
 are automatically managed by the system (eg: when using templates of
-type VPN-client) are displayed in the admin UI as *System Defined Variables*
-in read-only mode.
+type VPN-client) are displayed in the admin UI as
+*System Defined Variables* in read-only mode.
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/master/docs/system-defined-variables.png
    :alt: system defined variables
