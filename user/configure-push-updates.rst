@@ -8,6 +8,13 @@ update in the background) and/or `firmware upgrades (via the
 additional module openwisp-firmware-upgrader)
 <https://github.com/openwisp/openwisp-firmware-upgrader>`_.
 
+**Note**: If you have installed OpenWISP with the
+`ansible-openwisp2 role <https://galaxy.ansible.com/openwisp/openwisp2>`_
+then you can skip the following steps.
+The Ansible role automatically creates a default template to update
+``authorized_keys`` on networking devices using the
+default access credentials.
+
 1. Generate SSH key
 ~~~~~~~~~~~~~~~~~~~
 
