@@ -158,18 +158,16 @@ OpenWISP follows `PEP 8 -- Style Guide for Python Code
 <https://www.python.org/dev/peps/pep-0008/>`_ and uses the following
 automatic tools to check code conventions:
 
-- `flake8 <http://flake8.pycqa.org/en/latest/>`_ is used to
-  automatically check the quality of the python code being committed,
-  each python repo has either a ``flake8`` configuration defined in
-  ``setup.cfg`` or a ``runflake8`` script that you can launch with
-  ``flake8`` or ``./runflake8`` respectively.
 - `isort <http://isort.readthedocs.io/en/latest/>`_ is used in order
-  to sort import in a specifc predictable order; each python repo has
-  a ``runisort`` script that you can launch with ``./runisort``
-- Lastly, `black <https://black.readthedocs.io/en/stable/>`_ is used to
+  to sort import in a specifc predictable order.
+- `black <https://black.readthedocs.io/en/stable/>`_ is used to
   automatically format the code according to our conventions.
 
-For your convenience, we provide the following scripts available in the
+For your convenience, we provide a script in every repository.
+- You can trigger this script with `./run-qa-checks` to initialize 
+  checks for these code conventions.
+
+We also provide the following scripts available in the
 `openwisp-utils <https://github.com/openwisp/openwisp-utils>`_ repository:
 
 - ``openwisp-qa-format`` formats your Python code according to the
