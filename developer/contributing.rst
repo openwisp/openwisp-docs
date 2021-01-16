@@ -22,6 +22,10 @@ Check out the `OpenWISP Contributor's Board
 integrated with github where we place the most important issues we are
 working on.
 
+You don't need to wait for the issue to be assigned to you. Just check if
+there is no work in progress pull request. Just leave a comment that you
+are on it to avoid someone else start working on it.
+
 If there's anything you don't understand regarding the
 board, don't hesitate to ask questions in our `general chat
 <https://gitter.im/openwisp/general>`_.
