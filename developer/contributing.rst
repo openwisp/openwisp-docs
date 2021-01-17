@@ -23,8 +23,10 @@ integrated with github where we place the most important issues we are
 working on.
 
 You don't need to wait for the issue to be assigned to you. Just check if
-there is no work in progress pull request. Just leave a comment that you
-are on it to avoid someone else start working on it.
+there is anyone else actively working on it (eg: an open pull request with
+recent activity).
+If nobody else is actively working on it, just announce your intention
+to work on it by leaving a comment in the issue.
 
 If there's anything you don't understand regarding the
 board, don't hesitate to ask questions in our `general chat
