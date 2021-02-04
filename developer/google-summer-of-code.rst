@@ -36,7 +36,7 @@ successful**!
 successful Google Summer of Code, please join `our communication channels
 <http://openwisp.org/support.html>`_, join our mailing list (receive all
 emails please, and filter them in your mail box so they are moved to an
-"OpenWISP" folder), present yourself on the mailing list and on chat,
+"OpenWISP" folder), `present yourself in our general chat <https://gitter.im/openwisp/general>`_,
 tell us who you are, what your values are, what is attracting to OpenWISP
 and don't be cold like a robot! Stay human :-).
 
