@@ -17,28 +17,34 @@ derivative work, ask questions or announce your intentions.
 Look for open issues
 ~~~~~~~~~~~~~~~~~~~~
 
-Check out the `OpenWISP Contributor's Board
-<https://github.com/orgs/openwisp/projects/3>`_, this is a kanban board
-integrated with github where we place the most important issues we are
-working on.
+Check out these two kanban boards:
 
-You don't need to wait for the issue to be assigned to you. Just check if
-there is anyone else actively working on it (eg: an open pull request with
-recent activity).
-If nobody else is actively working on it, just announce your intention
-to work on it by leaving a comment in the issue.
+- `OpenWISP Contributor's Board
+  <https://github.com/orgs/openwisp/projects/3>`_: lists
+  issues that are suited to newcomers.
+
+- `OpenWISP Priorities for next releases
+  <https://github.com/orgs/openwisp/projects/4>`_, lists
+  issues that are more urgently needed by the community and is
+  frequently used and reviewed by more seasoned contributors.
 
 If there's anything you don't understand regarding the
-board, don't hesitate to ask questions in our `general chat
-<https://gitter.im/openwisp/general>`_.
+board or a specific github issue, don't hesitate to ask questions in our
+`general chat <https://gitter.im/openwisp/general>`_.
+
+**You don't need to wait for the issue to be assigned to you.**
+Just check if there is anyone else actively working on it
+(eg: an open pull request with recent activity).
+If nobody else is actively working on it, **just announce your intention
+to work on it by leaving a comment in the issue**.
 
 Setup
 ~~~~~
 
 Once you have chosen an issue to work on, read the ``README`` of the
-repository in which the issue has been opened and follow the setup
-instructions, each module has its own specific instructions and we highly
-suggest you to read as much as possible.
+repository of the module you want to contribute to, follow the setup
+instructions, each module has its own specific instructions which we
+highly advise to read carefully.
 
 How to commit your changes properly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,10 +52,15 @@ How to commit your changes properly
 Our main development branch is master, it's our central development
 branch.
 
-you should open a pull request on github. The pull request will
-be merged only once the test build completes successfully
-(automated tests, code coverage check, style checks, etc.)
+You should open a pull request on github. The pull request will
+be merged only once the CI build completes successfully
+(automated tests, code coverage check, QA checks, etc.)
 and after project maintainers have reviewed and tested it.
+
+You can run QA checks locally by running ``./run-qa-checks`` in the
+top level directory of the repository you're working on.
+Every OpenWISP module should have this script
+(if a module doesn't have it, please open an issue on github).
 
 1. Branch naming guidelines
 ---------------------------
@@ -140,19 +151,18 @@ After pushing your changes to your fork, prepare a new Pull Request
 4. Avoiding unnecessary changes
 -------------------------------
 
-- while making changes to the required files, then saving it and
-  comitting it, different contributors often find that there occur same
-  changes that they have not made and those changes gets committed with
-  the desired change that the person wants to make
-- these unnecessary changes should be evaluated first and then the
-  commit should be made
-- these changes generally occur due to different settings and
-  customizations of your editor that you are working with. These changes
-  are produced on their own as soon as you save a file. Examples are -
-  Introducing new lines, removing and adding spaces, etc
-- to avoid such changes please check your editor settings first. If this
-  sort of behaviour persists please use any command line editor like
-  VIM, etc
+Keep your contribution focused and change the least amount
+of lines of code as possible needed to reach the goal you're working on.
+
+**Avoid changes unrelated** to the feature/bugfix/change
+you're working on.
+
+**Avoid changes related to white-space** (spaces, tabs, blank lines) by
+setting your editor as follows:
+
+- always add a blank line at the end of the file
+- clear empty lines containing only spaces or tabs
+- show white space (this will help you to spot unnecessary white space)
 
 Coding Style Conventions
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -161,28 +171,33 @@ Coding Style Conventions
 --------------------------
 
 OpenWISP follows `PEP 8 -- Style Guide for Python Code
-<https://www.python.org/dev/peps/pep-0008/>`_ and uses the following
-automatic tools to check code conventions:
+<https://www.python.org/dev/peps/pep-0008/>`_ and several
+other style conventions which can be enforced by using the
+following tools:
 
-- `flake8 <http://flake8.pycqa.org/en/latest/>`_ is used to
-  automatically check the quality of the python code being committed,
-  each python repo has either a ``flake8`` configuration defined in
-  ``setup.cfg`` or a ``runflake8`` script that you can launch with
-  ``flake8`` or ``./runflake8`` respectively.
-- `isort <http://isort.readthedocs.io/en/latest/>`_ is used in order
-  to sort import in a specifc predictable order; each python repo has
-  a ``runisort`` script that you can launch with ``./runisort``
-- Lastly, `black <https://black.readthedocs.io/en/stable/>`_ is used to
-  automatically format the code according to our conventions.
+- ``openwisp-qa-format``: this command is shipped in
+  `openwisp-utils <https://github.com/openwisp/openwisp-utils#openwisp-qa-format>`_,
+  a dependency used in every OpenWISP python module,
+  it formats the Python code according to the
+  OpenWISP style conventions, it's based on popular tools like:
+  `isort <http://isort.readthedocs.io/en/latest/>`_ and
+  `black <https://black.readthedocs.io/en/stable/>`_
+  (**please do not run black directly** but always call
+  ``openwisp-qa-format``)
+- ``./run-qa-checks``: it's a script present in the top level directory
+  of each OpenWISP module and performs all the QA checks that are specific
+  to each module. It mainly calls the ``openwisp-qa-check`` command,
+  which performs several common QA checks used across all OpenWISP modules
+  to ensure consistency (including `flake8 <http://flake8.pycqa.org/en/latest/>`_),
+  for more info consult the documentation of
+  `openwisp-qa-check <https://github.com/openwisp/openwisp-utils#openwisp-qa-format>`_
 
-For your convenience, we provide the following scripts available in the
-`openwisp-utils <https://github.com/openwisp/openwisp-utils>`_ repository:
 
-- ``openwisp-qa-format`` formats your Python code according to the
-  OpenWISP standards.
-- ``openwisp-qa-check`` is run by Travis CI to check your Python
-  code quality and style standard. You can run it yourself as well in
-  order to detect mistakes before Travis does.
+Keep in mind that the QA checks defined in the ``run-qa-checks`` script
+are also executed in the CI builds, which will fail if any QA check fails.
+
+To fix QA check failures, run ``openwisp-qa-format`` and apply manual
+fixes if needed until ``./run-qa-checks`` runs without errors.
 
 .. note::
 
