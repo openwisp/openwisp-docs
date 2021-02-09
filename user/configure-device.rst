@@ -5,26 +5,32 @@ This page will guide you through the installation of
 `openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a
 device which supports `OpenWRT <https://openwrt.org/>`_.
 
-If you don't have a physical device available but you still want to try
-out OpenWISP, you can use a Virtual Machine.
+**If you don't have a physical device available but you still want to try
+out OpenWISP, you can use a Virtual Machine**.
 
 1. Install OpenWISP2
 --------------------
 
 Refer to the  `OpenWISP 2 installation tutorial
-<https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_
+<https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_.
 
-2. Install OpenWRT on VirtualBox
---------------------------------
+2. Flash OpenWRT on a device
+----------------------------
 
-Follow the `OpenWrt on VirtualBox Howto
+If you have a physical OpenWRT compatible hardware, follow the
+instructions in the `official OpenWRT flashing guide
+<https://openwrt.org/docs/guide-user/installation/generic.flashing>`_.
+
+If you don't have a physical device, you can
+`install OpenWrt on a VirtualBox Virtual Machine
 <https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm>`_.
 
 .. note::
 
-    It's required to enable SSH access and connect the VM to the internet.
+    It's required to enable SSH access and connect the device or
+    VM to the internet.
 
-    Note that both Adapter1 and Adapter2 use
+    Note that when using Virtualbox, both Adapter1 and Adapter2 use
     "Adapter Type: Intel PRO/1000 MT Desktop". Also, please do
     not use the same IP Address that you used for the local OpenWISP
     website you hosted before. That suggested change applies only when
@@ -33,14 +39,13 @@ Follow the `OpenWrt on VirtualBox Howto
     of your local OpenWISP website, please use another IP such as
     192.168.56.3 for the IP Address of the OpenWRT device).
 
-
-3. Install openwisp-config on your OpenWRT instance
----------------------------------------------------
+3. Install openwisp-config
+--------------------------
 
 Installation
 ~~~~~~~~~~~~
 
-Install openwisp-config in your device. For this guide, we will choose the
+Install openwisp-config on your OpenWRT system. For this guide, we will choose the
 ``openssl`` variant but other variants with different TLS libraries are available on
 `downloads.openwisp.io <http://downloads.openwisp.io/openwisp-config/latest/>`__.
 
@@ -52,7 +57,7 @@ Install openwisp-config in your device. For this guide, we will choose the
 Configuration
 ~~~~~~~~~~~~~
 
-Once it's installed, we need to configure it to connect to our OpenWISP2
+Once openwisp-config is installed, we need to configure it to connect to our OpenWISP2
 controller. To do that, edit the config file located at
 ``/etc/config/openwisp``.
 
@@ -122,7 +127,7 @@ instance is registered.
 Compile your own OpenWRT image
 ------------------------------
 
-You may want to compile a custom OpenWRT image to save time on configuring
+You may want to compile a custom OpenWRT image to save time in configuring
 new devices. By compiling a custom image, you can pre-install
 openwisp-config, including your configurations (e.g. ``url`` and
 ``shared_secret``), so that you won't have to go through the configuration
