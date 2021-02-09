@@ -41,13 +41,13 @@ Installation
 ~~~~~~~~~~~~
 
 Install openwisp-config in your device. For this guide, we will choose the
-``openssl`` variant but you have other variants available on
+``openssl`` variant but other variants with different TLS libraries are available on
 `downloads.openwisp.io <http://downloads.openwisp.io/openwisp-config/latest/>`__.
 
 .. code-block:: bash
 
     opkg update
-    opkg install http://downloads.openwisp.io/openwisp-config/latest/openwisp-config-openssl_0.5.0a-1_all.ipk
+    opkg install http://downloads.openwisp.io/openwisp-config/2021-01-07-162007/openwisp-config-openssl_0.5.0-1_all.ipk
 
 Configuration
 ~~~~~~~~~~~~~
