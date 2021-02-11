@@ -158,7 +158,7 @@ Goals
   officially support only OpenWRT derivatives, but we do
   have 2 experimental configuration backends for
   `Raspbian <https://github.com/openwisp/netjsonconfig/tree/raspbian>`_
-  and `AirOS <https://github.com/openwisp/netjsonconfig/tree/airos>`_)
+  and `AirOS <https://github.com/edoput/netjsonconfig-airos>`_)
 - Provide good documentation both for users and developers
 - Create web interfaces that are easy to use even for people who have
   limited experience with computer networking concepts (**note**: we are
