@@ -36,9 +36,55 @@ successful**!
 successful Google Summer of Code, please join `our communication channels
 <http://openwisp.org/support.html>`_, join our mailing list (receive all
 emails please, and filter them in your mail box so they are moved to an
-"OpenWISP" folder), `present yourself in our general chat <https://gitter.im/openwisp/general>`_,
+"OpenWISP" folder),
+`present yourself in our general chat <https://gitter.im/openwisp/general>`_,
 tell us who you are, what your values are, what is attracting to OpenWISP
 and don't be cold like a robot! Stay human :-).
+
+Traits we look for in applicants
+--------------------------------
+
+We participate in GSoC because we believe it's a great opportunity
+for us to give back to Open Source by helping newcomers to get trained
+and thrive in this industry, but we also do it because we want to
+grow the pool of maintainers of our project so we can help a
+greater number of users to use OpenWISP successfully.
+
+Contributors who also become maintainers and start working
+professionally with OpenWISP are rare, but over time we found out the
+traits that are good leading indicators for contributors who are likely
+to become core members of our project, **here are the traits we look
+for in GSoC applicants which give a higher chance of getting selected**:
+
+- **Genuinely interested in networking**: we look for people who are
+  genuinely attracted in the topics we cover because we believe they
+  are the ones who most likely will benefit from
+  a long term contribution to our project.
+- **Participate actively**: they become active
+  participants of the community,
+  not just by submitting pull requests, but also
+  by helping new users or reviewing
+  patches of other less experienced contributors.
+- **Put effort in understanding**:
+  they put effort in understanding the problem
+  they need to solve and the outcomes that is
+  expected from them, which means
+  actively researching the problem, expand the
+  project idea with more details,
+  create a prototype, note down a list of
+  questions regarding points that
+  are not clear.
+- **Value the time of mentors**: they read carefully the description
+  of issues and put effort in understanding what they have to do,
+  when something is not clear they do not hesitate to explain the
+  problem carefully via email or on github.
+- **Parallelize tasks when waiting for a reply**: while they wait for
+  mentors to review or answer their questions, they start tackling
+  other issues for which they have enough information to get started,
+  in order to avoid staying idle.
+- **Value quality**: they ensure their work is of the highest quality and
+  doesn't break existing features of the system thanks to thorough testing
+  before flagging a patch as ready to be merged.
 
 How to become an OpenWISP star
 ------------------------------
@@ -103,3 +149,8 @@ Configuration management:
   - Introduction to `configuration management <https://goo.gl/3YTQgg>`_
   - Writing Ansible `playbooks <https://goo.gl/R2XptC>`_
   - Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch
+
+Project ideas
+-------------
+
+- :doc:`Project Ideas 2021 <../developer/gsoc-ideas-2021>`
