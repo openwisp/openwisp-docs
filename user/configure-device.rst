@@ -45,8 +45,10 @@ If you don't have a physical device, you can
 Installation
 ~~~~~~~~~~~~
 
-Install openwisp-config on your OpenWRT system. For this guide, we will choose the
-``openssl`` variant but other variants with different TLS libraries are available on
+Install openwisp-config on your OpenWRT system.
+For this guide, we will choose the
+``openssl`` variant but other variants with
+different TLS libraries are available on
 `downloads.openwisp.io <http://downloads.openwisp.io/openwisp-config/latest/>`__.
 
 .. code-block:: bash
@@ -57,7 +59,8 @@ Install openwisp-config on your OpenWRT system. For this guide, we will choose t
 Configuration
 ~~~~~~~~~~~~~
 
-Once openwisp-config is installed, we need to configure it to connect to our OpenWISP2
+Once openwisp-config is installed, we need to configure
+it to connect to our OpenWISP2
 controller. To do that, edit the config file located at
 ``/etc/config/openwisp``.
 
