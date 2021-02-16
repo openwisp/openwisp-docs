@@ -149,7 +149,7 @@ New General Navigation Menu and UX improvements
   Mostly **HTML**, **CSS** and **Javascript**, but also a bit of
   **Python** and **Django**.
 
-  **Mentors**: Federico Capoano.
+  **Mentors**: Ajay Tripathi, Federico Capoano.
 
 The OpenWISP Admin site has become the most important web interface
 of OpenWISP, but its usability has not improved much in the
@@ -219,7 +219,7 @@ OpenWISP REST API
   Languages and technologies used:
   **Python**, **Django**, **Django REST Framework**.
 
-  **Mentors**: Federico Capoano.
+  **Mentors**: Ajay Tripahi, Noumbissi Valere, Federico Capoano.
 
 The goal of this project is to add the much needed missing
 REST API endpoints for some of the django models of the oldest
@@ -282,7 +282,7 @@ Revamp Netengine and add its SNMP capability to OpenWISP Monitoring
   Languages and technologies used:
   **Python**, **Django**.
 
-  **Mentors**: Federico Capoano.
+  **Mentors**: Gagan Deep, Federico Capoano.
 
 The goal of this project is to add support for SNMP
 (Simple Network Monitoring Protocol) to OpenWISP Monitoring
@@ -323,7 +323,7 @@ Bring professional efficiency to OpenWISP WiFi Login Pages
   Languages and technologies used:
   **Javascript**, **React JS**, **NodeJS**, **HTML**, **CSS**.
 
-  **Mentors**: Federico Capoano.
+  **Mentors**: Noumbissi Valere, Federico Capoano.
 
 The goal of this project is to improve
 `OpenWISP WiFi Login Pages <https://github.com/openwisp/openwisp-wifi-login-pages>`__
