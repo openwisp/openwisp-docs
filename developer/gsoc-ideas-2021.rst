@@ -290,6 +290,10 @@ by using `netengine <https://github.com/openwisp/netengine>`_ a python
 library which aims to make easy to access monitoring information via
 different protocols.
 
+We do not need to maintain backward compatibility because this library
+at this stage, we have the freedom to change the library how we
+think is best.
+
 **Pre-requisites to work on this project**:
 
 The student should be familiar with
@@ -304,16 +308,26 @@ and should have a basic knowledge of
    The information in the list below is a draft and will be refined
    and improved during the month of February 2021.
 
-- Revamp the OpenWRT backend, compliant with NetJSON network monitoring
-- Revamp the backend for Ubiquiti (we either buy one
-  or leave one connected to a VPN)
-- Update tests to use mocks
-- Update docs
-- Remove unused code and docs
-- Modify openwisp-controller to allow setting the
-  management IP from the web UI
-- Add an SNMP check in openwisp-monitoring that pulls the
-  monitoring info and creates the device status and charts
+- Revamp the OpenWRT backend of `netengine <https://github.com/openwisp/netengine>`__,
+  making it compliant with `NetJSON DeviceMonitoring specification <https://netjson.org/rfc.html#rfc.section.6>`_
+- Revamp the backend for Ubiquiti making it compliant with
+  *NetJSON DeviceMonitoring* as well
+  (we will either buy one hardware model for the student or leave one
+  connected to a VPN)
+- Update the unit tests to reflect the changes, ensure all tests pass
+- Change tests to use mocks (``unittest.mock``): the tests right now
+  require the physical devices to be run, this is bad: we need to create
+  mocks that allow us to run the tests without the physical devices
+- Create a test build on github actions
+- Update docs to reflect the changes introduced in this project
+- Remove any code not being used anymore by the new implementation
+- Ensure the test coverage stays above 95%
+- Modify `OpenWISP Controller <https://github.com/openwisp/openwisp-controller>`__
+  to allow setting the management IP from the web UI
+- Add an SNMP check in
+  `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring>`__
+  that pulls the monitoring information and creates
+  the device status and charts
 
 Bring professional efficiency to OpenWISP WiFi Login Pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -345,18 +359,37 @@ and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
    The information in the list below is a draft and will be refined
    and improved during the month of February 2021.
 
-- implement gettext like translations
-- avoid having to repeat the whole configuration
-  (have a default which is used)
-- org-configurations > config and {slug}-configuration.yml > {slug}.yml,
-  backward compatible
-- proper server side logging
-- avoid having to repeat the URLs in the configuration
-- reusable token validation logic
-- increase test coverage to 90%
-- add basic browser tests with selenium:
-  - signup
-  - login
+- Implement gettext like translations: right now translations have to be
+  defined in the configuration file of each organization, repeating
+  the same text over and over, we should avoid this and store the
+  translations in a central place;
+
+  However, being able to customize the text for each organization is
+  a great feature and should still be possible if needed
+- Avoid having to repeat the whole configuration options:
+  right now the configuration of each organization contains a lot of
+  boilerplate. We shall introduce default configurations and ensure
+  the application works also when the configuration file of a specific
+  organization misses a piece of configuration.
+
+  When the ability of removing specific sections or fields is needed,
+  right now we resorted to deleting the specific part of the
+  configuration, but once we introduce this change we will have to ensure
+  the configuration options that would have been removed can be set
+  to ``null`` to obtain the same result
+- Rename the directory ``org-configurations`` to ``config``,
+  rename ``{slug}-configuration.yml`` to ``{slug}.yml``,
+  ensure backward compatibility is maintained
+- Implement `server side logging <https://github.com/openwisp/openwisp-wifi-login-pages/issues/82>`_
+  with a standard logger
+- Implement `reusable token validation logic <https://github.com/openwisp/openwisp-wifi-login-pages/issues/100>`_
+- Increase test coverage to 95%
+- Implement basic browser testing with selenium
+  for the following features:
+  - signup success
+  - signup failure (validation error)
+  - login success
+  - login failure
   - status
 
 Improve netjsongraph.js for its new release
@@ -390,17 +423,19 @@ and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
  TODO: Add screenshots of geo map and logical
  map of meshviewer, explain how to turn on both.
 
-- we want to make the geographic map feature
+- We want to make the geographic map feature
   and the logical map feature more similar to
   `MeshViewer <https://github.com/ffrgb/meshviewer>`_.
-- fix zoom animation: when the map is zoomed, there's a delay between the
+- Fix zoom animation: when the map is zoomed, there's a delay between the
   zoom of the map and the repositioning of the elements which
   looks pretty weird
-- add a clustering feature to the geographic map: when there are
+- Add a clustering feature to the geographic map: when there are
   multiple overlapping elements, group them as one point
-- update openwisp-network-topology to use the new version of this library
-- modify openwisp-network-topology to provide
-  `real time updates <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019#realtime-update>`_
+- Add support for showing the geographic map using GeoJSON
+- Update `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`__
+  to use the new version of this library
+- Modify `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`__
+  to provide `real time updates <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019#realtime-update>`_
 
 Keep in mind the underlying visualization library
 can be changed if needed.
