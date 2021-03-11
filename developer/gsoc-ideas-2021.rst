@@ -318,6 +318,7 @@ and should have a basic knowledge of
 - Change tests to use mocks (``unittest.mock``): the tests right now
   require the physical devices to be run, this is bad: we need to create
   mocks that allow us to run the tests without the physical devices
+- Port code to python >= 3.7
 - Create a test build on github actions
 - Update docs to reflect the changes introduced in this project
 - Remove any code not being used anymore by the new implementation
