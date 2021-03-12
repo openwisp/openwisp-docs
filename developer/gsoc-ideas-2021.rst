@@ -72,9 +72,10 @@ devices, this code collects monitoring information and sends it to the
 OpenWISP server in `NetJSON format <https://netjson.org/>`_ (see
 `Monitoring Scripts <https://github.com/openwisp/openwisp-monitoring#monitoring-scripts>`_).
 
-At the moment, this code is deployed using
-:doc:`Read our Google Summer of Code guidelines
-<../developer/google-summer-of-code>`,
+At the moment, this code is deployed using a
+:doc:`configuration template <../user/templates>` which is created with
+a `database migration <https://github.com/openwisp/openwisp-monitoring/blob/ee2271be25649c4c262e8eaf76b6fdc5d5d002ca/openwisp_monitoring/device/migrations/0002_create_template.py>`_
+when the monitoring module is installed,
 but we need to convert this existing code
 in a new OpenWRT package, well tested,
 documented and with a key improvement regarding its resiliency.
@@ -290,9 +291,8 @@ by using `netengine <https://github.com/openwisp/netengine>`_ a python
 library which aims to make easy to access monitoring information via
 different protocols.
 
-We do not need to maintain backward compatibility because this library
-at this stage, we have the freedom to change the library how we
-think is best.
+We do not need to maintain backward compatibility at this stage,
+we have the freedom to change the library how we think is best.
 
 **Pre-requisites to work on this project**:
 
@@ -306,7 +306,7 @@ and should have a basic knowledge of
 .. admonition:: draft
 
    The information in the list below is a draft and will be refined
-   and improved during the month of February 2021.
+   and improved during the months of February 2021 and March 2021.
 
 - Revamp the OpenWRT backend of `netengine <https://github.com/openwisp/netengine>`__,
   making it compliant with `NetJSON DeviceMonitoring specification <https://netjson.org/rfc.html#rfc.section.6>`_
@@ -358,7 +358,7 @@ and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
 .. admonition:: draft
 
    The information in the list below is a draft and will be refined
-   and improved during the month of February 2021.
+   and improved during the months of February 2021 and March 2021.
 
 - Implement gettext like translations: right now translations have to be
   defined in the configuration file of each organization, repeating
@@ -387,11 +387,12 @@ and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
 - Increase test coverage to 95%
 - Implement basic browser testing with selenium
   for the following features:
-  - signup success
-  - signup failure (validation error)
-  - login success
-  - login failure
-  - status
+
+   - signup success
+   - signup failure (validation error)
+   - login success
+   - login failure
+   - status
 
 Improve netjsongraph.js for its new release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -419,7 +420,7 @@ and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
 .. admonition:: draft
 
    The information in the list below is a draft and will be refined
-   and improved during the month of February 2021.
+   and improved during the months of February 2021 and March 2021.
 ..
  TODO: Add screenshots of geo map and logical
  map of meshviewer, explain how to turn on both.
