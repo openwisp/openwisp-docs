@@ -1,3 +1,4 @@
 sphinx
 sphinx_rtd_theme
+sphinx-notfound-page
 openwisp-utils[qa]>=0.5.0

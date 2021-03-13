@@ -35,6 +35,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
+    'notfound.extension',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -176,7 +177,7 @@ html_static_path = ['_static']
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
 #
-# html_use_smartypants = True
+# html_use_smartypants = 4True
 
 # Custom sidebar templates, maps document names to template names.
 #
@@ -430,3 +431,12 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+notfound_urls_prefix = '/docs/'
+notfound_context = {
+    'title': 'Page not found',
+    'body': (
+        '<h1>Page not found</h1>\n\nTry to start from the index or '
+        'perform a search for what you were looking for.'
+    ),
+}
