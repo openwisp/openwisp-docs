@@ -210,7 +210,7 @@ and should be familiar with
 - Add basic frontend tests with selenium:
     - Log in to the admin and ensure the menu is visible
     - Click on an element of the menu
-    - Got o a list page and check the filters
+    - Go to a list page and check the filters
 
 OpenWISP REST API
 ~~~~~~~~~~~~~~~~~
