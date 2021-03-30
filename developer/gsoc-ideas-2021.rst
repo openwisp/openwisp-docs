@@ -303,11 +303,6 @@ and should have a basic knowledge of
 
 **Measurable outcomes**:
 
-.. admonition:: draft
-
-   The information in the list below is a draft and will be refined
-   and improved during the months of February 2021 and March 2021.
-
 - Revamp the OpenWRT backend of `netengine <https://github.com/openwisp/netengine>`__,
   making it compliant with `NetJSON DeviceMonitoring specification <https://netjson.org/rfc.html#rfc.section.6>`_
 - Revamp the backend for Ubiquiti making it compliant with
@@ -354,11 +349,6 @@ The student should be familiar with
 and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
 
 **Measurable outcomes**:
-
-.. admonition:: draft
-
-   The information in the list below is a draft and will be refined
-   and improved during the months of February 2021 and March 2021.
 
 - Implement gettext like translations: right now translations have to be
   defined in the configuration file of each organization, repeating
