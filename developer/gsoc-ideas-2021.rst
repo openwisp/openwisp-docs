@@ -417,27 +417,44 @@ and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
 
 **Measurable outcomes**:
 
-.. admonition:: draft
-
-   The information in the list below is a draft and will be refined
-   and improved during the months of February 2021 and March 2021.
-..
- TODO: Add screenshots of geo map and logical
- map of meshviewer, explain how to turn on both.
-
 - We want to make the geographic map feature
   and the logical map feature more similar to
-  `MeshViewer <https://github.com/ffrgb/meshviewer>`_.
+  `MeshViewer <https://github.com/ffrgb/meshviewer>`_,
+  see the screenshots below for reference, you can find
+  a demo of this application in the repository just linked.
+
+.. image:: ../images/gsoc/ideas/mesh-viewer-map-view.png
+
+.. image:: ../images/gsoc/ideas/mesh-viewer-logic-view.png
+
 - Fix zoom animation: when the map is zoomed, there's a delay between the
   zoom of the map and the repositioning of the elements which
   looks pretty weird
 - Add a clustering feature to the geographic map: when there are
-  multiple overlapping elements, group them as one point
-- Add support for showing the geographic map using GeoJSON
+  multiple overlapping elements group them as one cluster:
+
+   - the cluster shall expand when it's hovered with the mouse
+   - the cluster shall expand when the map zoom increases
+   - the cluster may behave differently if the nodes have links to other nodes,
+     a solution which works well aesthetically should be found
+
+- Test the library on narrow screens and ensure quirks are fixed
+- Add support for loading map data using GeoJSON
+- Allow loading more than 1000 devices by using pagination,
+  load max 10K points by default (eg: ``maxPointsFetched``), make this
+  max value configurable
+- When more points are present than the configured ``maxPointsFetched`` value,
+  if the map is zoomed more than a specific level (which shall also be
+  configurable and have a good default), load more data from the API
+  by specifying geographic extent, implement a mocking server for this
+  feature on the server side
 - Update `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`__
   to use the new version of this library
 - Modify `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`__
   to provide `real time updates <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019#realtime-update>`_
+- Change the code of `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring>`__
+  so that the map dashboard is implemented
+  using this library instead of using its own custom implementation
 
 Keep in mind the underlying visualization library
 can be changed if needed.
