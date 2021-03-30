@@ -425,17 +425,17 @@ and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
 
    - the cluster shall expand when it's hovered with the mouse
    - the cluster shall expand when the map zoom increases
-   - the cluster may behave differently if the nodes have links to other nodes,
-     a solution which works well aesthetically should be found
+   - the cluster may behave differently if the nodes have links to other
+     nodes, a solution which works well aesthetically should be found
 
 - Test the library on narrow screens and ensure quirks are fixed
 - Add support for loading map data using GeoJSON
 - Allow loading more than 1000 devices by using pagination,
   load max 10K points by default (eg: ``maxPointsFetched``), make this
   max value configurable
-- When more points are present than the configured ``maxPointsFetched`` value,
-  if the map is zoomed more than a specific level (which shall also be
-  configurable and have a good default), load more data from the API
+- When more points are present than the configured ``maxPointsFetched``
+  value, if the map is zoomed more than a specific level (which shall also
+  be configurable and have a good default), load more data from the API
   by specifying geographic extent, implement a mocking server for this
   feature on the server side
 - Update `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`__
