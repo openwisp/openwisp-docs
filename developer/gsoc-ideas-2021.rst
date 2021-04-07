@@ -448,3 +448,31 @@ and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
 
 Keep in mind the underlying visualization library
 can be changed if needed.
+
+Second release of OpenWISP Monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. Important::
+
+  Languages and technologies used:
+  **Python**, **Django**.
+
+  **Mentors**: Gagan Deep, Federico Capoano.
+
+The goal of this project is to improve OpenWISP Monitoring
+by working on features and changes that have been noted down during the
+last year of usage of this module.
+
+**Pre-requisites to work on this project**:
+
+The student should be familiar with
+:doc:`OpenWISP Templates <../user/templates>`,
+`OpenWRT <https://openwrt.org>`_,
+`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
+and should have a basic knowledge of
+`NetJSON format <https://netjson.org/>`_.
+
+**Measurable outcomes**:
+
+See the `OpenWISP Monitoring 0.2 Release Milestone on Github
+<https://github.com/openwisp/openwisp-monitoring/milestone/2>`_.
