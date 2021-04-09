@@ -286,7 +286,7 @@ Revamp Netengine and add its SNMP capability to OpenWISP Monitoring
   **Mentors**: Gagan Deep, Federico Capoano.
 
 The goal of this project is to add support for SNMP
-(Simple Network Monitoring Protocol) to OpenWISP Monitoring
+(Simple Network Management Protocol) to OpenWISP Monitoring
 by using `netengine <https://github.com/openwisp/netengine>`_ a python
 library which aims to make easy to access monitoring information via
 different protocols.
