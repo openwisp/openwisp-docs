@@ -7,6 +7,7 @@ Contents:
    :maxdepth: 2
 
    user/quickstart
+   user/architecture
    user/configure-device
    user/templates
    user/configuration-variables
