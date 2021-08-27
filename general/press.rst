@@ -122,6 +122,11 @@ Blog Posts
 Google Summer of Code Blog Posts
 --------------------------------
 
+2021 Students
+~~~~~~~~~~~~~
+
+- `OpenWISP REST API <https://manishshah120.medium.com/openwisp-rest-api-gsoc21-project-report-f2c4e0a22673>`_ by Manish Kumar Shah (manishshah120).
+
 2020 Students
 ~~~~~~~~~~~~~
 
