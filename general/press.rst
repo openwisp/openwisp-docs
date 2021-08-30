@@ -128,6 +128,7 @@ Google Summer of Code Blog Posts
 - `OpenWISP REST API <https://manishshah120.medium.com/openwisp-rest-api-gsoc21-project-report-f2c4e0a22673>`_ by Manish Kumar Shah (manishshah120).
 - `OpenWRT OpenWISP Monitoring <https://dev.to/devkapilbansal/openwrt-openwisp-monitoring-2bmj>`_ by Kapil Bansal (devkapilbansal).
 - `OpenWISP WiFi Login Pages <https://codesankalp.medium.com/openwisp-wifi-login-pages-project-report-fbc77ff6cc8b>`_ by Sankalp (codesankalp).
+- `Modern UI/UX <https://medium.com/@niteshsinha1707/new-navigation-menu-and-ui-ux-improvements-project-report-a94c37514b7d>`_ by Nitesh Sinha (nitehsinha17).
 
 2020 Students
 ~~~~~~~~~~~~~
