@@ -129,6 +129,7 @@ Google Summer of Code Blog Posts
 - `OpenWRT OpenWISP Monitoring <https://dev.to/devkapilbansal/openwrt-openwisp-monitoring-2bmj>`_ by Kapil Bansal (devkapilbansal).
 - `OpenWISP WiFi Login Pages <https://codesankalp.medium.com/openwisp-wifi-login-pages-project-report-fbc77ff6cc8b>`_ by Sankalp (codesankalp).
 - `Modern UI/UX <https://medium.com/@niteshsinha1707/new-navigation-menu-and-ui-ux-improvements-project-report-a94c37514b7d>`_ by Nitesh Sinha (nitehsinha17).
+- `Revamp Netengine and add its SNMP capability to OpenWISP Monitoring <https://medium.com/@purhan/gsoc-2021-final-project-report-85dc49c59a87>`_ by Purhan Kaushik (purhan).
 
 2020 Students
 ~~~~~~~~~~~~~
