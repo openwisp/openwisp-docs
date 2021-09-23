@@ -5,7 +5,7 @@ Hacktoberfest
      :align: center
 
 .. note::
-  OpenWISP partcipates in `Hactoberfest 2020
+  OpenWISP partcipates in `Hactoberfest 2021
   <https://hacktoberfest.digitalocean.com/>`_!
 
 If you are reading this page you are probably considering OpenWISP
@@ -29,11 +29,11 @@ Avoid common pitfalls by reading our
 This will result in **your pull requests being merged faster**
 and less overhead for maintainers.
 
-2. Hacktoberfest Project Board
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. Project Board
+~~~~~~~~~~~~~~~~
 
-Look for issues in the
-`Hacktoberfest project board <https://github.com/orgs/openwisp/projects/12>`_.
+Look for issues labeled **hacktoberfest** or **good first issue** in the
+`OpenWISP Contributor's project board <https://github.com/orgs/openwisp/projects/3>`_.
 
 Feel free to ask question regarding points that are not clear, but
 please **ensure your questions are specific**.
