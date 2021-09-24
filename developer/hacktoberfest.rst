@@ -5,11 +5,11 @@ Hacktoberfest
      :align: center
 
 .. note::
-  OpenWISP partcipates in `Hactoberfest 2021
+  OpenWISP participates in `Hacktoberfest 2021
   <https://hacktoberfest.digitalocean.com/>`_!
 
 If you are reading this page you are probably considering OpenWISP
-as a possible organization to contribute for `Hactoberfest
+as a possible organization to contribute for `Hacktoberfest
 <https://hacktoberfest.digitalocean.com/>`_, welcome!
 
 If you are looking for a **friendly community** where **your contribution
@@ -35,7 +35,7 @@ and less overhead for maintainers.
 Look for issues labeled **hacktoberfest** or **good first issue** in the
 `OpenWISP Contributor's project board <https://github.com/orgs/openwisp/projects/3>`_.
 
-Feel free to ask question regarding points that are not clear, but
+Feel free to ask question regarding points which are not clear, but
 please **ensure your questions are specific**.
 
 3. Announce you're working on something
@@ -61,7 +61,7 @@ coordinate with the community.
 5. Help us to grow
 ~~~~~~~~~~~~~~~~~~
 
-Caring for Open Source also means helping its communities to grow.
+Caring for Open Source also means helping its communities grow.
 
 Growing is important because it will allow us to have more mentors in the
 future so **we will able to help out more contributors to
@@ -101,7 +101,7 @@ system).
 Please try to be constructive and patient when interacting with
 maintainers and contributors.
 
-If you feel you're not be treated fairly, please refer to the
+If you feel you're not treated fairly, please refer to the
 instructions for reporting unacceptable behavior in our
 :doc:`Code of Conduct <../general/code-of-conduct>`.
 
