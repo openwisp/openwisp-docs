@@ -51,6 +51,16 @@ For this guide, we will choose the
 different TLS libraries are available on
 `downloads.openwisp.io <http://downloads.openwisp.io/openwisp-config/latest/>`__.
 
+If you're running at least OpenWRT 19.07, you can install openwisp-config
+from the official OpenWRT packages:
+
+.. code-block:: bash
+
+    opkg update
+    opkg install openwisp-config
+
+Alternatively, you can install one of the latest builds from our website:
+
 .. code-block:: bash
 
     opkg update
