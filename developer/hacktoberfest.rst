@@ -32,8 +32,8 @@ and less overhead for maintainers.
 2. Project Board
 ~~~~~~~~~~~~~~~~
 
-Look for issues labeled **hacktoberfest** or **good first issue** in the
-`OpenWISP Contributor's project board <https://github.com/orgs/openwisp/projects/3>`_.
+Look for issues labeled **hacktoberfest** in the
+`OpenWISP Hacktoberfest Contributor's Board <https://github.com/orgs/openwisp/projects/3?card_filter_query=label%3Ahacktoberfest>`_..
 
 Feel free to ask question regarding points which are not clear, but
 please **ensure your questions are specific**.
@@ -78,9 +78,10 @@ Main Rules
 
 The aim of this program is to help participants learn to contribute to
 open source meaningfully, which for us means contributing to our mission
-and end goals: this can be done only by working on the issues that are
-listed in one of our
-`Github project boards <https://github.com/orgs/openwisp/projects>`_.
+and end goals. Since new contributors are not suited to work on critical
+tasks due to their inherent complexity, we prepared a list of easier and
+well defined issues that can be used to get started, please refer to our
+`OpenWISP Hacktoberfest Contributor's Board <https://github.com/orgs/openwisp/projects/3?card_filter_query=label%3Ahacktoberfest>`_.
 
 2. Spammy pull requests won't be accepted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
