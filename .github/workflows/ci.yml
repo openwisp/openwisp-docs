@@ -37,3 +37,17 @@ jobs:
 
       - name: QA checks
         run: ./run-qa-checks
+
+      - name: Setup Google Cloud
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCS_DOWNLOADS_SERVICE_ACCOUNT_JSON }}
+          project_id: ${{ secrets.GCS_PROJECT_ID }}
+          export_default_credentials: true
+
+      - name: Deploy pages to openwisp.io/docs
+        if: ${{ github.event_name=='push' }}
+        run: gsutil -m rsync -r ${{ env.SRC_URL }}/_build/html ${{ env.DST_URL }}
+        env:
+          SRC_URL: /home/runner/work/openwisp2-docs/openwisp2-docs
+          DST_URL: gs://${{ secrets.GCS_DOCS_BUCKET_NAME }}/docs
