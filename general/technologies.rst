@@ -21,6 +21,16 @@ web frameworks for Python language.
 It is used extensively in our modules. Django allows rapid development
 and has a very rich ecosystem.
 
+OpenWRT
+-------
+
+`OpenWRT <https://openwrt.org/>`_ is an linux distribution designed for
+embedded systems, routers and networking in general.
+
+It has a very skilled community and it is used as a base by many
+hardware vendors (Technicolor, Ubiquiti Networks, Linksys, Teltonika
+and many others).
+
 Node.js and React JS
 --------------------
 
@@ -53,16 +63,6 @@ NetJSON
 `NetJSON <http://netjson.org/>`_ is a data interchange format based on
 `JSON <http://json.org/>`_ designed to ease the development of software
 tools for computer networks.
-
-OpenWRT
--------
-
-`OpenWRT <https://openwrt.org/>`_ is an linux distribution designed for
-embedded systems, routers and networking in general.
-
-It has a very skilled community and it is used as a base by many
-hardware vendors (Technicolor, Ubiquiti Networks, Linksys, Teltonika
-and many others).
 
 Lua
 ---
