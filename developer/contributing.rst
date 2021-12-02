@@ -9,8 +9,8 @@ precious time later.
 Introduce yourself
 ~~~~~~~~~~~~~~~~~~
 
-It won't hurt to join `our main communication channels
-<http://openwisp.org/support.html>`_ and introduce yourself; you can take
+It won't hurt to join `our main communication channel
+<https://gitter.im/openwisp/general>`_ , `dev channel <https://gitter.im/openwisp/development>`_ and introduce yourself; you can take
 advantage of your introduction to share feedback, share your OpenWISP
 derivative work, ask questions or announce your intentions.
 
