@@ -134,7 +134,7 @@ read these resources, it will help you to speed up your raise to the top!
 
 Programming languages and frameworks:
 
-  - `Python <https://runestone.academy/runestone/static/pythonds/index.html>`_ (book)
+  - `Python <https://runestone.academy/ns/books/published/pythonds/index.html>`_ (book)
   - `Django <https://docs.djangoproject.com/en/1.11/>`_
     (official documentation)
   - `Lua <https://www.youtube.com/watch?v=iMacxZQMPXs/>`_ (video tutorial)
