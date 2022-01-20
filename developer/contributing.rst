@@ -13,7 +13,7 @@ It won't hurt to join `our main communication channel
 <https://gitter.im/openwisp/general>`_ and introduce yourself,
 although to coordinate with one another on technical matters we use
 `the development channel <https://gitter.im/openwisp/development>`_.
-use these two channels share feedback, share your OpenWISP
+Use these two channels share feedback, share your OpenWISP
 derivative work, ask questions or announce your intentions.
 
 Look for open issues
