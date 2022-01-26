@@ -24,3 +24,4 @@ Contents:
    developer/gsoc-ideas-2021
    developer/google-code-in
    developer/hacktoberfest
+   developer/next-release-priorities
