@@ -1,13 +1,52 @@
+/************
+* Scrollbar
+************/
+:root {
+    scrollbar-color: #777 #f1f1f1 !important;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #777;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
 .wy-side-nav-search>a.icon img.logo, .wy-side-nav-search .wy-dropdown>a.icon img.logo {
     width: 220px;
 }
 
 .wy-side-nav-search {
-    background-color: #000000;
+    background-color: #f9f9f9;
+}
+
+.wy-nav-top {
+    background-color: #f9f9f9;
+}
+
+.wy-nav-top a{
+    color: #df5d43;
+}
+
+.wy-nav-top i{
+    color: #777;
 }
 
 .wy-nav-content a {
-    color: #FF5252;
+    color: #df5d43;
 }
 
 .wy-nav-content a:hover {
@@ -19,29 +58,33 @@
 }
 
 .wy-nav-side {
-    background-color: #da4b37;
-}
-
-.wy-nav-top {
-    background-color: #da4b37;
+    background-color: #f9f9f9;
 }
 
 .wy-menu a {
-    color: #ecf0f1;
+    color: #777;
     padding: .5045em 1.618em;
 }
 
 .wy-menu a:hover {
-    background-color: #df5d43;
+    color: #df5d43;
+    background-color: #ffe5e5 ;
+}
+.wy-menu-vertical li.current a{
+    border: 0;
 }
 
 .wy-menu a:active {
-    background-color: #cf3f2b;
+    background-color: #ffe5e5;
     color: #bdc3c7;
 }
 
 .wy-side-nav-search input[type=text] {
-    border-color: #4C4C4C;
+    border-color: #eee;
+}
+
+.wy-side-nav-search input[type=text]:focus{
+    border: 1px solid rgb(0, 0, 0);
 }
 
 .wy-side-nav-search>div.version {
@@ -50,24 +93,58 @@
 
 .toctree-l1.current .current,
 .toctree-l1.current .current:hover {
-    background-color: #d8321c;
-    color: #ecf0f1;
+    background-color: #ffe5e5;
+    color: #df5d43;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .wy-menu-vertical li.current ul {
-    background-color: rgba(225,71,59, 0.95);
+    background-color: #fdf2f2f2;
+}
+
+.wy-menu-vertical li:hover{ 
+    background-color: #ffe5e5;
 }
 
 .wy-menu-vertical li.current a {
-    color: #fff;
+    color: #777;
+}
+
+.wy-menu-vertical li.current a:hover{
+    color: #df5d43;
+}
+
+.wy-menu-vertical li.toctree-l1.current[area-expanded="true"]{
+    color: #df5d43;
+    background-color: #ffe5e5;
+}
+
+.toctree-l1.current .current, .toctree-l1.current .current:hover{
+    border: 0;
+}
+.wy-menu-vertical li.toctree-l1.current>a{
+    border : 0;
+}
+.wy-menu-vertical li.toctree-l1.current>a:visited,
+.wy-menu-vertical li.toctree-l1.current>a:active{
+    color: #df5d43;
+    background-color: #ffe5e5;
+    border:0;
+}
+.wy-menu-vertical li.toctree-l2.current>a:visited,
+.wy-menu-vertical li.toctree-l2.current>a:active{
+    color: #df5d43;
+    background-color: #ffe5e5;
+}
+.wy-menu-vertical li.toctree-l3.current>a:visited
+.wy-menu-vertical li.toctree-l3.current>a:active{
+    color: #df5d43;
+    background-color: #ffe5e5;
 }
 
 .wy-menu-vertical li.toctree-l2.current>a {
-    background-color: #e1473b;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #ffe5e5;
 }
 
 .wy-menu-vertical li.current a:hover {
@@ -75,7 +152,7 @@
 }
 
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a{
-    background: #f16155;
+    background-color: #ffe5e5;
 }
 
 .wy-menu-vertical li.on a, .wy-menu-vertical li.current>a {
@@ -88,4 +165,38 @@
 
 .wy-menu-vertical li{
     margin: -1px 0 -1px -1px
+}
+.wy-menu-vertical li.current>a, .wy-menu-vertical li.on a{
+    color: #df5d43;
+    background-color: #ffe5e5;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a{
+    background-color: #fdf2f2f2;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a:hover{
+    background-color: #ffe5e5;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a[aria-expanded="true"]{
+    background-color: #ffe5e5;
+}
+
+/* PREVIOUS & NEXT BTN */
+
+body > div > section > div > div > footer > div.rst-footer-buttons > a.btn.btn-neutral.float-right{
+    color: #ffff !important;
+}
+
+body > div > section > div > div > footer > div.rst-footer-buttons > a.btn.btn-neutral.float-left{
+    color: #ffff !important;
+}
+
+.btn-neutral {
+    background-color: #333!important;
+}
+
+.btn-neutral:hover{
+    background-color: #999 !important;
 }
