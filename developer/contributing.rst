@@ -44,8 +44,8 @@ Priorities for the next release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When we are close to releasing a new major version of OpenWISP,
-we will encourage all contributors to focus on the
-`OpenWISP Priorities for next releases
+we will encourage all contributors to focus on the **To Do** column
+of the `OpenWISP Priorities for next releases
 <https://github.com/orgs/openwisp/projects/4>`_ board and filter
 the issues according to their expertise:
 
