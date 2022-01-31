@@ -40,6 +40,23 @@ Just check if there is anyone else actively working on it
 If nobody else is actively working on it, **just announce your intention
 to work on it by leaving a comment in the issue**.
 
+Priorities for the next release
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When we are close to releasing a new major version of OpenWISP,
+we will encourage all contributors to focus on the
+`OpenWISP Priorities for next releases
+<https://github.com/orgs/openwisp/projects/4>`_ board and filter
+the issues according to their expertise:
+
+- **Newcomer**: filter by `Good first issue
+  <https://github.com/orgs/openwisp/projects/4?card_filter_query=label%3A%22good+first+issue%22>`_
+  or `Hacktoberfest
+  <https://github.com/orgs/openwisp/projects/4?card_filter_query=label%3Ahacktoberfest>`_.
+
+- **Expert**: filter by `Important
+  <https://github.com/orgs/openwisp/projects/4?card_filter_query=label%3Aimportant>`_.
+
 Setup
 ~~~~~
 
