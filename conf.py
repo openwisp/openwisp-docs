@@ -56,7 +56,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'OpenWISP2'
-copyright = '2017-2021, OpenWISP'
+copyright = '2017-2022, OpenWISP'
 author = 'OpenWISP Community'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -149,7 +149,7 @@ html_theme = 'sphinx_rtd_theme'
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #
-html_logo = '_static/logo.svg'
+html_logo = 'assets/design/openwisp-logo-black.svg'
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
