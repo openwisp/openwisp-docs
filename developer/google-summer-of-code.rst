@@ -155,4 +155,4 @@ Configuration management:
 Project ideas
 -------------
 
-- :doc:`Project Ideas 2021 <../developer/gsoc-ideas-2021>`
+- :doc:`Project Ideas 2022 <../developer/gsoc-ideas-2022>`
