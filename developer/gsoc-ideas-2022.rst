@@ -106,8 +106,8 @@ Measurable outcomes
   - Integrate `ZeroTier Controller APIs <https://docs.zerotier.com/central/v1>`_
     in OpenWISP Controller to allow managing networks directly
     from OpenWISP.
-  - Write a step by step documentation which explains how to set up and use
-    the new ZeroTier VPN backend with a device.
+  - Write a step by step documentation which explains how to set up
+    and use the new ZeroTier VPN backend with a device.
   - GitHub Issues:
 
     - `openwisp-controller #604 : [feature] Add support for ZeroTier VPN backend <https://github.com/openwisp/openwisp-controller/issues/604>`_
@@ -229,9 +229,10 @@ the max bandwidth available (TCP test) and jitter (UDP).
 
 On a macro level, the check would work this way:
 
-1. openwisp connects to the device (only 1 check per device at time) via SSH
-   and launches iperf3 as a client, first in TCP mode, then in UDP mode,
-   iperf is launched with the ``-j`` flag to obtain json output
+1. openwisp connects to the device (only 1 check per device at time)
+   via SSH and launches iperf3 as a client, first in TCP mode,
+   then in UDP mode, iperf is launched with the ``-j``
+   flag to obtain json output
 2. the collected data is parsed and stored
    as a metric (bandwidth information and jitter)
 3. SSH connection is closed
@@ -241,11 +242,14 @@ Measurable outcomes
 
 The outcomes we expect from this project are the following:
 
-- create iperf check class, the check must use the connection module of openwisp-controller to connect to devices using SSH
-- If a device has no active Connection the check will be skipped and a warning logged
+- Create iperf check class, the check must use the connection
+  module of openwisp-controller to connect to devices using SSH
+- If a device has no active Connection the check will be skipped and
+  a warning logged
 - this check should be optional and disabled by default
 - we can run it by default every night
-- allow configuring the iperf server globally and by organization with a setting, eg:
+- allow configuring the iperf server globally and by
+  organization with a setting, eg:
 
 .. code-block:: python
 
@@ -254,18 +258,19 @@ The outcomes we expect from this project are the following:
         '<org-pk>': ['<ORG_IPERF_SERVER>']
     }
 
-- it shall be possible to specify a list of iperf servers, this is important
-  because on larger systems 1 server will not be enough
-- we have to implement a lock to allow only 1 iperf check per server at time
-  that is: for every server available,
+- it shall be possible to specify a list of iperf servers,
+  this is important because on larger systems 1 server will not be enough
+- we have to implement a lock to allow only 1 iperf check per
+  server at time that is: for every server available,
   `only 1 check can be performed at any one time
   <https://docs.celeryproject.org/en/latest/tutorials/task-cookbook.html#ensuring-a-task-is-only-executed-one-at-a-time>`_,
   so the lock has to take this account when calculating the cache-key
 - ssh into device, launch iperf TCP client, repeat for UDP,
   collect data of both tests in a data structure
-- handle failures, if server is down, we can store 0,
-  which would trigger an alert (investigate the alert settings functionality)
-- implement logic which creates the metric, chart and alert settings objects
+- handle failures, if server is down, we can store 0, which would
+  trigger an alert (investigate the alert settings functionality)
+- implement logic which creates the metric, chart and alert
+  settings objects
 - save data (tcp max bandwidth, UDP jitter)
 - document how this check works
 - document how to set up and use the check step by step
@@ -292,8 +297,8 @@ Improve UX of OpenWISP Monitoring
 The goal of this project is to improve OpenWISP Monitoring
 by working on features and changes that have been noted down during the
 last 2 years of usage of this module and have the aim of improving
-the user experience in analyzing the collected monitoring data,
-as well as the developer user experience in extracting data from the system.
+the user experience in analyzing the collected monitoring data, as well
+as the developer user experience in extracting data from the system.
 
 Pre-requisites to work on this project
 ######################################
@@ -348,11 +353,13 @@ Measurable outcomes
 
   - The old pull request has to be updated on the current code base
   - The merge conflicts have to be resolved
-  - All the tests must pass, new tests for new charts and metrics added to influxdb must be added
+  - All the tests must pass, new tests for new charts and
+    metrics added to influxdb must be added
     (see `[feature] Chart mobile (LTE/5G/UMTS/GSM) signal strength #270 <https://github.com/openwisp/openwisp-monitoring/pull/294>`_)
   - The usage shall be documented, we must make sure there's at
     least one dedicated CI build for **Elasticsearch**
-  - We must allow to install and use **Elasticsearch** instead of **InfluxDB**
+  - We must allow to install and use **Elasticsearch**
+    instead of **InfluxDB**
     from `ansible-openwisp2 <https://github.com/openwisp/ansible-openwisp2>`_
     and `docker-openwisp <https://github.com/openwisp/docker-openwisp/>`_
   - The requests to Elasticsearch shall be optimizesd as described in
@@ -360,11 +367,15 @@ Measurable outcomes
 
 - `Add support for InfluxDB 2.0 <https://github.com/openwisp/openwisp-monitoring/issues/274>`_
   as a new timeseries backend,
-  this way we can support both ``InfluxDB <= 1.8`` and ``InfluxDB >= 2.0``.
+  this way we can support both
+  ``InfluxDB <= 1.8`` and ``InfluxDB >= 2.0``.
 
-  - All the automated tests for **InfluxDB 1.8** must be replicated and must pass
+  - All the automated tests for **InfluxDB 1.8**
+    must be replicated and must pass
   - the usage and setup shall be documented
-  - We must make sure there's at least one dedicated CI build for Elasticsearch
-  - We must allow choosing between **InfluxDB 1.8** and **InfluxDB 2.0**
+  - We must make sure there's at least one
+    dedicated CI build for Elasticsearch
+  - We must allow choosing between
+    **InfluxDB 1.8** and **InfluxDB 2.0**
     from `ansible-openwisp2 <https://github.com/openwisp/ansible-openwisp2>`_
     and `docker-openwisp <https://github.com/openwisp/docker-openwisp/>`_.
