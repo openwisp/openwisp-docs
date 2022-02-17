@@ -55,8 +55,10 @@ General suggestions and warnings
 Project Ideas
 -------------
 
-Adding support for management of ZeroTier Tunnels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding support automatic management of ZeroTier Tunnels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/zerotier_logo_black.png
 
 .. Important::
 
@@ -69,9 +71,10 @@ Adding support for management of ZeroTier Tunnels
 `OpenWISP Controller <https://github.com/openwisp/openwisp-controller#openwisp-controller>`_
 already supports configuring **OpenVPN**, **WireGuard** and
 **VXLAN over WireGuard** tunnels. The goal of this project is to
-add support for another VPN backend, i.e. `ZeroTier <https://www.zerotier.com>`_.
+add support for another VPN backend: `ZeroTier <https://www.zerotier.com>`_.
 
-**Pre-requisites to work on this project**:
+Pre-requisites to work on this project
+######################################
 
 The contributor should be familiar with
 `ZeroTier <https://www.zerotier.com/>`__,
@@ -80,7 +83,8 @@ The contributor should be familiar with
 `OpenWISP Controller <https://github.com/openwisp/openwisp-controller#openwisp-controller>`_
 and `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology#openwisp-network-topology>`_
 
-**Measurable outcomes**:
+Measurable outcomes
+###################
 
 - Add support for ZeroTier in `netjsonconfig <https://netjsonconfig.openwisp.org/en/latest/>`_:
 
@@ -102,8 +106,8 @@ and `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-top
   - Integrate `ZeroTier Controller APIs <https://docs.zerotier.com/central/v1>`_
     in OpenWISP Controller to allow managing networks directly
     from OpenWISP.
-  - Write documentation for using ZeroTier VPN backend and using applying
-    a ZeroTier VPN template on a device.
+  - Write a step by step documentation which explains how to set up and use
+    the new ZeroTier VPN backend with a device.
   - GitHub Issues:
 
     - `openwisp-controller #604 : [feature] Add support for ZeroTier VPN backend <https://github.com/openwisp/openwisp-controller/issues/604>`_
@@ -124,6 +128,8 @@ and `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-top
 Improve netjsongraph.js for its new release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. image:: ../images/gsoc/ideas/netjsongraph-default.png
+
 .. Important::
 
   Languages and technologies used:
@@ -138,13 +144,15 @@ netjsongraph.js visualization library, which is has not been released yet
 and is available in the `gsoc2019 branch of netjsongraph.js on github
 <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019>`_.
 
-**Pre-requisites to work on this project**:
+Pre-requisites to work on this project
+######################################
 
 The student should be familiar with
 `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`__
 and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
 
-**Measurable outcomes**:
+Measurable outcomes
+###################
 
 - We want to make the geographic map feature
   and the logical map feature more similar to
@@ -190,6 +198,8 @@ can be changed if needed.
 
 Add iperf bandwidth monitoring check to OpenWISP Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/iperf3-cli.jpg
 
 .. Important::
 
@@ -251,19 +261,24 @@ The outcomes we expect from this project are the following:
   `only 1 check can be performed at any one time
   <https://docs.celeryproject.org/en/latest/tutorials/task-cookbook.html#ensuring-a-task-is-only-executed-one-at-a-time>`_,
   so the lock has to take this account when calculating the cache-key
-- ssh into device, launch iperf TCP client, repeat for UDP, collect data of both tests in a data structure
-- handle failures, if server is down, we can store 0, which would trigger an alert (investigate the alert settings functionality)
+- ssh into device, launch iperf TCP client, repeat for UDP,
+  collect data of both tests in a data structure
+- handle failures, if server is down, we can store 0,
+  which would trigger an alert (investigate the alert settings functionality)
 - implement logic which creates the metric, chart and alert settings objects
 - save data (tcp max bandwidth, UDP jitter)
 - document how this check works
-- document how to set up and use the check step by step (explain also how to set up a new iperf server)
+- document how to set up and use the check step by step
+  (explain also how to set up a new iperf server)
 - achieve at least 99% test coverage for the code added for this feature.
 
 **Github issue**:
 `[monitoring/checks] Add iperf check <https://github.com/openwisp/openwisp-monitoring/issues/120>`_.
 
-Improve OpenWISP Monitoring towards its third release
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Improve UX of OpenWISP Monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/openwisp-monitoring-chart.png
 
 .. Important::
 
@@ -276,18 +291,80 @@ Improve OpenWISP Monitoring towards its third release
 
 The goal of this project is to improve OpenWISP Monitoring
 by working on features and changes that have been noted down during the
-last 2 years of usage of this module.
+last 2 years of usage of this module and have the aim of improving
+the user experience in analyzing the collected monitoring data,
+as well as the developer user experience in extracting data from the system.
 
-**Pre-requisites to work on this project**:
+Pre-requisites to work on this project
+######################################
 
 The student should be familiar with
-:doc:`OpenWISP Templates <../user/templates>`,
-`OpenWRT <https://openwrt.org>`_,
 `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
 and should have a basic knowledge of
 `NetJSON format <https://netjson.org/>`_.
 
-**Measurable outcomes**:
+Measurable outcomes
+###################
 
-See the `OpenWISP Monitoring 0.3 Release Milestone on Github
-<https://github.com/openwisp/openwisp-monitoring/milestone/2>`_.
+- `[change] Reachable bar chart: show different color for barely reachable #301 <https://github.com/openwisp/openwisp-monitoring/issues/301>`_
+- `[feature] Charts: allow specifying range of dates #26 <https://github.com/openwisp/openwisp-monitoring/issues/26>`_
+- `[ux] Show size in (KB, MB or GB) adaptively in charts #87 <https://github.com/openwisp/openwisp-monitoring/issues/87>`_
+- `[feature] Zooming graphs: reload data in order to provide a detailed view #27 <https://github.com/openwisp/openwisp-monitoring/issues/27>`_
+- `[feature] Add REST API endpoints for device which include monitoring info #290 <https://github.com/openwisp/openwisp-monitoring/issues/290>`_
+- `[docs] Add quickstart tutorial to README #285 <https://github.com/openwisp/openwisp-monitoring/issues/285>`_
+- `[feature] Add possibility to connect to influxdb on unix domain socket #312 <https://github.com/openwisp/openwisp-monitoring/issues/312>`_
+
+Add more timeseries database clients to OpenWISP Monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/tsdb.png
+
+.. Important::
+
+  Languages and technologies used:
+  **Python**, **Django**, **InfluxDB**, **Elasticsearch**.
+
+  **Mentors**: Federico Capoano, Gagan Deep.
+
+  **Project size**: 175 hours.
+
+The goal of this project is to add more Timseries DB options to OpenWISP
+while keeping good maintainability.
+
+Pre-requisites to work on this project
+######################################
+
+The student should be familiar with
+`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
+and should have a basic knowledge of
+`NetJSON format <https://netjson.org/>`_, **InfluxDB** and **Elasticsearch**.
+
+Measurable outcomes
+###################
+
+- Complete the support to `Elasticsearch <https://github.com/elastic/elasticsearch>`_.
+  `Support to Elasticsearch was added in 2020 <https://github.com/openwisp/openwisp-monitoring/pull/164>`_
+  but was not completed.
+
+  - The old pull request has to be updated on the current code base
+  - The merge conflicts have to be resolved
+  - All the tests must pass, new tests for new charts and metrics added to influxdb must be added
+    (see `[feature] Chart mobile (LTE/5G/UMTS/GSM) signal strength #270 <https://github.com/openwisp/openwisp-monitoring/pull/294>`_)
+  - The usage shall be documented, we must make sure there's at
+    least one dedicated CI build for **Elasticsearch**
+  - We must allow to install and use **Elasticsearch** instead of **InfluxDB**
+    from `ansible-openwisp2 <https://github.com/openwisp/ansible-openwisp2>`_
+    and `docker-openwisp <https://github.com/openwisp/docker-openwisp/>`_
+  - The requests to Elasticsearch shall be optimizesd as described in
+    `[timeseries] Optimize elasticsearch #168 <https://github.com/openwisp/openwisp-monitoring/issues/168>`_.
+
+- `Add support for InfluxDB 2.0 <https://github.com/openwisp/openwisp-monitoring/issues/274>`_
+  as a new timeseries backend,
+  this way we can support both ``InfluxDB <= 1.8`` and ``InfluxDB >= 2.0``.
+
+  - All the automated tests for **InfluxDB 1.8** must be replicated and must pass
+  - the usage and setup shall be documented
+  - We must make sure there's at least one dedicated CI build for Elasticsearch
+  - We must allow choosing between **InfluxDB 1.8** and **InfluxDB 2.0**
+    from `ansible-openwisp2 <https://github.com/openwisp/ansible-openwisp2>`_
+    and `docker-openwisp <https://github.com/openwisp/docker-openwisp/>`_.
