@@ -148,6 +148,15 @@ body::-webkit-scrollbar {
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3>a[aria-expanded="true"]{
   background-color: #ffe5e5;
 }
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
+  background: #fdf2f2f2;
+}
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4>a:hover {
+  background: #ffe5e5;
+}
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4>a[aria-expanded="true"]{
+  background: #ffe5e5;
+}
 
 /* PREVIOUS & NEXT BTN */
 
