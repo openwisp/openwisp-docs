@@ -55,8 +55,8 @@ General suggestions and warnings
 Project Ideas
 -------------
 
-Adding support automatic management of ZeroTier Tunnels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding support for automatic management of ZeroTier Tunnels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/gsoc/ideas/zerotier_logo_black.png
 
@@ -66,6 +66,7 @@ Adding support automatic management of ZeroTier Tunnels
   Mostly **OpenWRT**, **Python**, **Django**, **ZeroTier**.
 
   **Mentors**: Gagan Deep (`pandafy <https://github.com/pandafy>`_), Federico Capoano.
+
   **Project size**: 350 hours.
 
 `OpenWISP Controller <https://github.com/openwisp/openwisp-controller#openwisp-controller>`_
@@ -92,8 +93,8 @@ Measurable outcomes
     in OpenWrt backend.
   - Add a ZeroTier backend that generates network configuration
     accepted by REST API endpoints of the ZeroTier Controller.
-  - Write documentation for generating ZeroTier configuration for
-    OpenWrt and ZeroTier Controller.
+  - Write documentation for generating configuration for
+    OpenWrt and ZeroTier Controller using netjsonconfig.
   - GitHub Issues:
 
     - `netjsonconfig #207: [feature] Add support for ZeroTier tunnels to OpenWRT backend <https://github.com/openwisp/netjsonconfig/issues/207>`_
@@ -114,7 +115,7 @@ Measurable outcomes
     - `openwisp-controller #606 : [feature] Authorize member in ZeroTier network when a new device is added <https://github.com/openwisp/openwisp-controller/issues/606>`_
     - `openwisp-controller #605 : [feature] Allow managing ZeroTier networks from OpenWISP <https://github.com/openwisp/openwisp-controller/issues/605>`_
 
-- Add a parser for `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology#openwisp-network-topology>`_
+- Add a parser in `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology#openwisp-network-topology>`_
   that can parse ZeroTier peer information.
 
   - Write documentation for using this parser to generate topology
