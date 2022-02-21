@@ -205,7 +205,7 @@ Add iperf bandwidth monitoring check to OpenWISP Monitoring
 .. Important::
 
   Languages and technologies used:
-  **Python**, **Django**.
+  **Python**, **Django**, **iperf3**.
 
   **Mentors**: Federico Capoano, Gagan Deep.
 
@@ -230,11 +230,11 @@ the max bandwidth available (TCP test) and jitter (UDP).
 
 On a macro level, the check would work this way:
 
-1. openwisp connects to the device (only 1 check per device at time)
+1. Openwisp connects to the device (only 1 check per device at time)
    via SSH and launches iperf3 as a client, first in TCP mode,
    then in UDP mode, iperf is launched with the ``-j``
    flag to obtain json output
-2. the collected data is parsed and stored
+2. The collected data is parsed and stored
    as a metric (bandwidth information and jitter)
 3. SSH connection is closed
 
@@ -247,9 +247,9 @@ The outcomes we expect from this project are the following:
   module of openwisp-controller to connect to devices using SSH
 - If a device has no active Connection the check will be skipped and
   a warning logged
-- this check should be optional and disabled by default
-- we can run it by default every night
-- allow configuring the iperf server globally and by
+- This check should be optional and disabled by default
+- We can run it by default every night
+- Allow configuring the iperf server globally and by
   organization with a setting, eg:
 
 .. code-block:: python
@@ -259,24 +259,24 @@ The outcomes we expect from this project are the following:
         '<org-pk>': ['<ORG_IPERF_SERVER>']
     }
 
-- it shall be possible to specify a list of iperf servers,
+- It shall be possible to specify a list of iperf servers,
   this is important because on larger systems 1 server will not be enough
-- we have to implement a lock to allow only 1 iperf check per
+- We have to implement a lock to allow only 1 iperf check per
   server at time that is: for every server available,
   `only 1 check can be performed at any one time
   <https://docs.celeryproject.org/en/latest/tutorials/task-cookbook.html#ensuring-a-task-is-only-executed-one-at-a-time>`_,
   so the lock has to take this account when calculating the cache-key
-- ssh into device, launch iperf TCP client, repeat for UDP,
+- SSH into device, launch iperf TCP client, repeat for UDP,
   collect data of both tests in a data structure
-- handle failures, if server is down, we can store 0, which would
+- Handle failures, if server is down, we can store 0, which would
   trigger an alert (investigate the alert settings functionality)
-- implement logic which creates the metric, chart and alert
+- Implement logic which creates the metric, chart and alert
   settings objects
-- save data (tcp max bandwidth, UDP jitter)
-- document how this check works
-- document how to set up and use the check step by step
+- Save data (tcp max bandwidth, UDP jitter)
+- Document how this check works
+- Document how to set up and use the check step by step
   (explain also how to set up a new iperf server)
-- achieve at least 99% test coverage for the code added for this feature.
+- Achieve at least 99% test coverage for the code added for this feature.
 
 **Github issue**:
 `[monitoring/checks] Add iperf check <https://github.com/openwisp/openwisp-monitoring/issues/120>`_.
@@ -373,7 +373,7 @@ Measurable outcomes
 
   - All the automated tests for **InfluxDB 1.8**
     must be replicated and must pass
-  - the usage and setup shall be documented
+  - The usage and setup shall be documented
   - We must make sure there's at least one
     dedicated CI build for Elasticsearch
   - We must allow choosing between
