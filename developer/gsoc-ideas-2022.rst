@@ -69,6 +69,8 @@ Adding support for automatic management of ZeroTier Tunnels
 
   **Project size**: 350 hours.
 
+  **Difficulty rate**: hard.
+
 `OpenWISP Controller <https://github.com/openwisp/openwisp-controller#openwisp-controller>`_
 already supports configuring **OpenVPN**, **WireGuard** and
 **VXLAN over WireGuard** tunnels. The goal of this project is to
@@ -77,15 +79,23 @@ add support for another VPN backend: `ZeroTier <https://www.zerotier.com>`_.
 Pre-requisites to work on this project
 ######################################
 
-The contributor should be familiar with
-`ZeroTier <https://www.zerotier.com/>`__,
-`OpenWRT <https://openwrt.org>`_,
-`netjsonconfig <https://netjsonconfig.openwisp.org/en/latest/>`_
-`OpenWISP Controller <https://github.com/openwisp/openwisp-controller#openwisp-controller>`_
-and `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology#openwisp-network-topology>`_
+The contributor must demonstrate good understanding of the following
+OpenWISP modules:
 
-Measurable outcomes
-###################
+- `netjsonconfig <https://netjsonconfig.openwisp.org/en/latest/>`_
+- `OpenWISP Controller <https://github.com/openwisp/openwisp-controller#openwisp-controller>`_
+- `OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology#openwisp-network-topology>`_
+
+Any merged patches on any of those modules is considered
+an important plus point.
+
+The contributor must also demonstrate familiarity with `ZeroTier <https://www.zerotier.com/>`__,
+and `OpenWRT <https://openwrt.org>`_, moreover, they should be willing to
+increase their experience with these technologies and show enthusiasm
+toward learning and implementing IT network automation.
+
+Expected outcomes
+#################
 
 - Add support for ZeroTier in `netjsonconfig <https://netjsonconfig.openwisp.org/en/latest/>`_:
 
@@ -136,9 +146,11 @@ Improve netjsongraph.js for its new release
   Languages and technologies used:
   **Javascript**, **NodeJS**, **HTML**, **CSS**
 
-  **Mentors**: Federico Capoano
+  **Mentors**: Federico Capoano (more mentors TBA).
 
   **Project size**: 350 hours.
+
+  **Difficulty rate**: medium/hard.
 
 The goal of this project is to improve the new version of the
 netjsongraph.js visualization library, which is has not been released yet
@@ -148,12 +160,16 @@ and is available in the `gsoc2019 branch of netjsongraph.js on github
 Pre-requisites to work on this project
 ######################################
 
-The student should be familiar with
-`OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`__
-and should be proficient with Javascript, React JS, NodeJS, HTML and CSS.
+The contributor should have a proven track record and experience with
+Javascript, React JS, NodeJS, HTML and CSS.
 
-Measurable outcomes
-###################
+Familiarity with
+`OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`__
+and `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring>`__
+is a plus.
+
+Expected outcomes
+#################
 
 - We want to make the geographic map feature
   and the logical map feature more similar to
@@ -207,19 +223,11 @@ Add iperf bandwidth monitoring check to OpenWISP Monitoring
   Languages and technologies used:
   **Python**, **Django**, **iperf3**.
 
-  **Mentors**: Federico Capoano, Gagan Deep.
+  **Mentors**: Federico Capoano, Gagan Deep (more mentors TBA).
 
   **Project size**: 175 hours.
 
-Pre-requisites to work on this project
-######################################
-
-The student should be familiar with
-`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
-Linux and iperf3.
-
-Goals
-#####
+  **Difficulty rate**: easy/medium.
 
 The goal of this project is to add a bandwidth test using ``iperf3``,
 using the active check mechanism of
@@ -230,7 +238,7 @@ the max bandwidth available (TCP test) and jitter (UDP).
 
 On a macro level, the check would work this way:
 
-1. Openwisp connects to the device (only 1 check per device at time)
+1. OpenWISP connects to the device (only 1 check per device at time)
    via SSH and launches iperf3 as a client, first in TCP mode,
    then in UDP mode, iperf is launched with the ``-j``
    flag to obtain json output
@@ -238,8 +246,15 @@ On a macro level, the check would work this way:
    as a metric (bandwidth information and jitter)
 3. SSH connection is closed
 
-Measurable outcomes
-###################
+Pre-requisites to work on this project
+######################################
+
+The student must demonstrate good understanding of
+`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
+and familiarity with Linux and iperf3.
+
+Expected outcomes
+#################
 
 The outcomes we expect from this project are the following:
 
@@ -291,9 +306,11 @@ Improve UX of OpenWISP Monitoring
   Languages and technologies used:
   **Python**, **Django**.
 
-  **Mentors**: Federico Capoano, Gagan Deep.
+  **Mentors**: Ajay Tripathi, Federico Capoano.
 
   **Project size**: 175 hours.
+
+  **Difficulty rate**: easy.
 
 The goal of this project is to improve OpenWISP Monitoring
 by working on features and changes that have been noted down during the
@@ -304,13 +321,13 @@ as the developer user experience in extracting data from the system.
 Pre-requisites to work on this project
 ######################################
 
-The student should be familiar with
-`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
+The student must demonstrate good understanding of
+`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
 and should have a basic knowledge of
 `NetJSON format <https://netjson.org/>`_.
 
-Measurable outcomes
-###################
+Expected outcomes
+#################
 
 - `[change] Reachable bar chart: show different color for barely reachable #301 <https://github.com/openwisp/openwisp-monitoring/issues/301>`_
 - `[feature] Charts: allow specifying range of dates #26 <https://github.com/openwisp/openwisp-monitoring/issues/26>`_
@@ -330,9 +347,11 @@ Add more timeseries database clients to OpenWISP Monitoring
   Languages and technologies used:
   **Python**, **Django**, **InfluxDB**, **Elasticsearch**.
 
-  **Mentors**: Federico Capoano, Gagan Deep.
+  **Mentors**: Federico Capoano, Gagan Deep (more mentors TBA).
 
   **Project size**: 175 hours.
+
+  **Difficulty rate**: medium.
 
 The goal of this project is to add more Timseries DB options to OpenWISP
 while keeping good maintainability.
@@ -340,13 +359,13 @@ while keeping good maintainability.
 Pre-requisites to work on this project
 ######################################
 
-The student should be familiar with
-`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
-and should have a basic knowledge of
+The student must demonstrate good understanding of
+`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
+and demonstrate basic knowledge of
 `NetJSON format <https://netjson.org/>`_, **InfluxDB** and **Elasticsearch**.
 
-Measurable outcomes
-###################
+Expected outcomes
+#################
 
 - Complete the support to `Elasticsearch <https://github.com/elastic/elasticsearch>`_.
   `Support to Elasticsearch was added in 2020 <https://github.com/openwisp/openwisp-monitoring/pull/164>`_
