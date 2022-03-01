@@ -42,6 +42,7 @@ jobs:
         run: ./run-qa-checks
 
       - name: Setup Google Cloud
+        if: ${{ github.event_name=='push' }}
         uses: google-github-actions/setup-gcloud@master
         with:
           service_account_key: ${{ secrets.GCS_DOWNLOADS_SERVICE_ACCOUNT_JSON }}
