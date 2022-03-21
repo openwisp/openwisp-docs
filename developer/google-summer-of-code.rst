@@ -5,8 +5,8 @@ Google Summer of Code
      :align: center
 
 .. note::
-  `OpenWISP is a mentoring organization for the Google Summer of Code 2021
-  <https://summerofcode.withgoogle.com/organizations/5736390714720256/>`_.
+  `OpenWISP is a mentoring organization for the Google Summer of Code 2022
+  <https://summerofcode.withgoogle.com/archive/2020/organizations/4717183558483968>`_.
 
 If you are reading this page you are probably considering OpenWISP
 as a possible mentoring organization for the `Google Summer of Code
