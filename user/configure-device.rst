@@ -46,15 +46,25 @@ Installation
 ~~~~~~~~~~~~
 
 Install openwisp-config on your OpenWRT system.
-For this guide, we will choose the
-``openssl`` variant but other variants with
-different TLS libraries are available on
-`downloads.openwisp.io <http://downloads.openwisp.io/openwisp-config/latest/>`__.
+For this guide.
+
+If you're running at least OpenWRT 19.07, you can install openwisp-config
+from the official OpenWRT packages:
 
 .. code-block:: bash
 
     opkg update
-    opkg install http://downloads.openwisp.io/openwisp-config/2021-01-07-162007/openwisp-config-openssl_0.5.0-1_all.ipk
+    opkg install openwisp-config
+
+Alternatively, you can install one of the latest builds from
+`downloads.openwisp.io <http://downloads.openwisp.io/?prefix=openwisp-config/>`_,
+copy the URL of the ipk file you want to download in your
+clipboard and then run the following commands on your OpenWrt device:
+
+.. code-block:: bash
+
+    opkg update
+    opkg install <URL-you-just-copied>
 
 Configuration
 ~~~~~~~~~~~~~

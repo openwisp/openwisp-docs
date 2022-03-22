@@ -5,11 +5,11 @@ Hacktoberfest
      :align: center
 
 .. note::
-  OpenWISP partcipates in `Hactoberfest 2020
+  OpenWISP participates in `Hacktoberfest 2021
   <https://hacktoberfest.digitalocean.com/>`_!
 
 If you are reading this page you are probably considering OpenWISP
-as a possible organization to contribute for `Hactoberfest
+as a possible organization to contribute for `Hacktoberfest
 <https://hacktoberfest.digitalocean.com/>`_, welcome!
 
 If you are looking for a **friendly community** where **your contribution
@@ -29,13 +29,13 @@ Avoid common pitfalls by reading our
 This will result in **your pull requests being merged faster**
 and less overhead for maintainers.
 
-2. Hacktoberfest Project Board
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. Project Board
+~~~~~~~~~~~~~~~~
 
-Look for issues in the
-`Hacktoberfest project board <https://github.com/orgs/openwisp/projects/12>`_.
+Look for issues labeled **hacktoberfest** in the
+`OpenWISP Hacktoberfest Contributor's Board <https://github.com/orgs/openwisp/projects/3?card_filter_query=label%3Ahacktoberfest>`_..
 
-Feel free to ask question regarding points that are not clear, but
+Feel free to ask question regarding points which are not clear, but
 please **ensure your questions are specific**.
 
 3. Announce you're working on something
@@ -61,7 +61,7 @@ coordinate with the community.
 5. Help us to grow
 ~~~~~~~~~~~~~~~~~~
 
-Caring for Open Source also means helping its communities to grow.
+Caring for Open Source also means helping its communities grow.
 
 Growing is important because it will allow us to have more mentors in the
 future so **we will able to help out more contributors to
@@ -78,9 +78,10 @@ Main Rules
 
 The aim of this program is to help participants learn to contribute to
 open source meaningfully, which for us means contributing to our mission
-and end goals: this can be done only by working on the issues that are
-listed in one of our
-`Github project boards <https://github.com/orgs/openwisp/projects>`_.
+and end goals. Since new contributors are not suited to work on critical
+tasks due to their inherent complexity, we prepared a list of easier and
+well defined issues that can be used to get started, please refer to our
+`OpenWISP Hacktoberfest Contributor's Board <https://github.com/orgs/openwisp/projects/3?card_filter_query=label%3Ahacktoberfest>`_.
 
 2. Spammy pull requests won't be accepted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,7 +102,7 @@ system).
 Please try to be constructive and patient when interacting with
 maintainers and contributors.
 
-If you feel you're not be treated fairly, please refer to the
+If you feel you're not treated fairly, please refer to the
 instructions for reporting unacceptable behavior in our
 :doc:`Code of Conduct <../general/code-of-conduct>`.
 

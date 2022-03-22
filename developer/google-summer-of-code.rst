@@ -5,8 +5,8 @@ Google Summer of Code
      :align: center
 
 .. note::
-  `OpenWISP is a mentoring organization for the Google Summer of Code 2021
-  <https://summerofcode.withgoogle.com/organizations/5736390714720256/>`_.
+  `OpenWISP is a mentoring organization for the Google Summer of Code 2022
+  <https://summerofcode.withgoogle.com/archive/2020/organizations/4717183558483968>`_.
 
 If you are reading this page you are probably considering OpenWISP
 as a possible mentoring organization for the `Google Summer of Code
@@ -134,7 +134,7 @@ read these resources, it will help you to speed up your raise to the top!
 
 Programming languages and frameworks:
 
-  - `Python <https://runestone.academy/runestone/static/pythonds/index.html>`_ (book)
+  - `Python <https://runestone.academy/ns/books/published/pythonds/index.html>`_ (book)
   - `Django <https://docs.djangoproject.com/en/1.11/>`_
     (official documentation)
   - `Lua <https://www.youtube.com/watch?v=iMacxZQMPXs/>`_ (video tutorial)
@@ -155,4 +155,4 @@ Configuration management:
 Project ideas
 -------------
 
-- :doc:`Project Ideas 2021 <../developer/gsoc-ideas-2021>`
+- :doc:`Project Ideas 2022 <../developer/gsoc-ideas-2022>`

@@ -10,7 +10,8 @@ openwisp-qa-check \
     --skip-isort \
     --skip-flake8 \
     --skip-black \
-    --skip-checkrst
+    --skip-checkrst \
+    --csslinter
 
 ./check_line_length.py
 

@@ -9,9 +9,11 @@ precious time later.
 Introduce yourself
 ~~~~~~~~~~~~~~~~~~
 
-It won't hurt to join `our main communication channels
-<http://openwisp.org/support.html>`_ and introduce yourself; you can take
-advantage of your introduction to share feedback, share your OpenWISP
+It won't hurt to join `our main communication channel
+<https://gitter.im/openwisp/general>`_ and introduce yourself,
+although to coordinate with one another on technical matters we use
+`the development channel <https://gitter.im/openwisp/development>`_.
+Use these two channels share feedback, share your OpenWISP
 derivative work, ask questions or announce your intentions.
 
 Look for open issues
@@ -37,6 +39,23 @@ Just check if there is anyone else actively working on it
 (eg: an open pull request with recent activity).
 If nobody else is actively working on it, **just announce your intention
 to work on it by leaving a comment in the issue**.
+
+Priorities for the next release
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When we are close to releasing a new major version of OpenWISP,
+we will encourage all contributors to focus on the **To Do** column
+of the `OpenWISP Priorities for next releases
+<https://github.com/orgs/openwisp/projects/4>`_ board and filter
+the issues according to their expertise:
+
+- **Newcomer**: filter by `Good first issue
+  <https://github.com/orgs/openwisp/projects/4?card_filter_query=label%3A%22good+first+issue%22>`_
+  or `Hacktoberfest
+  <https://github.com/orgs/openwisp/projects/4?card_filter_query=label%3Ahacktoberfest>`_.
+
+- **Expert**: filter by `Important
+  <https://github.com/orgs/openwisp/projects/4?card_filter_query=label%3Aimportant>`_.
 
 Setup
 ~~~~~
