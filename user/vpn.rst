@@ -12,7 +12,7 @@ via some other way, you can skip to
 `Step 4 <#importing-the-ca-and-the-server-ceritficate>`_
 
 .. note::
-    **This process is not auomated yet.**
+    **This process is not automated yet.**
 
 1. Install Ansible and required Ansible roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
