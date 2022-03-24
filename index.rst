@@ -7,16 +7,14 @@ Contents:
    :maxdepth: 2
 
    user/quickstart
-   user/architecture
    user/configure-device
    user/templates
    user/configuration-variables
    user/vpn
    user/configure-push-updates
+   general/architecture
    general/values
    general/help-us
-   general/technologies
-   general/glossary
    general/press
    general/code-of-conduct
    developer/contributing

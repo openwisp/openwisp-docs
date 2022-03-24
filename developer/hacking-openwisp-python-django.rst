@@ -9,6 +9,8 @@ internal code of OpenWISP in the following ways:
 2. By introducing some Python tools and Django extensions which are
    **extremely useful during development and debugging**.
 
+.. _why_python:
+
 Why Python?
 -----------
 
@@ -24,7 +26,7 @@ for their systems.
 
 - it is widely used in the networking and configuration management
   world, famous libraries such as
-  `networkx <https://networkx.github.io>`_,
+  `networkx <https://networkx.org/>`_,
   `ansible <https://www.ansible.com>`_,
   `salt <https://docs.saltstack.com/en/latest/topics/>`_,
   `paramiko <http://www.paramiko.org>`_ and
@@ -49,6 +51,8 @@ for their systems.
   developers are more scarce and this caused the project to stagnate.
   The fact that Python is widely used in the networking world was also
   an important factor in the decision.
+
+.. _why_django:
 
 Why Django?
 -----------
@@ -86,6 +90,8 @@ design.
 PS: if you are wondering why the second tutorial mentions the word
 "Girls", we suggest taking a look at
 `djangogirls.org <https://djangogirls.org/>`_.
+
+.. _why_DRF:
 
 Why Django REST framework?
 --------------------------
