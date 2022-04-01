@@ -15,21 +15,27 @@ most important dependencies and the way they interact with one another.
     elements to open the README or website of each module or technology
     used.
 
+    :download:`The Inkscape source file of the architecture diagram is
+    also available for download
+    </assets/design/architecture-diagram-inkscape.svg>`.
+
+    `Inkscape <https://inkscape.org/>`__ is an open source
+    vector editing software which has been used to produce this diagram.
+
 .. image:: ../images/architecture/openwisp-architecture.svg
    :target: ../_images/openwisp-architecture.svg
    :align: center
    :alt: OpenWISP Architecture Overview
 
-.. note::
-   :download:`The Inkscape source file of the architecture diagram is
-   also available for download
-   </assets/design/architecture-diagram-inkscape.svg>`.
-
-   `Inkscape <https://inkscape.org/>`__ is an open source
-   vector editing software which has been used to produce this diagram.
-
 OpenWISP Modules
 ----------------
+
+.. note::
+    If you want to know more about the motivations and philosophy
+    that have shaped the modular architecture of OpenWISP,
+    please see `Applying the Unix Philosophy to Django projects:
+    a report from the real world
+    <https://www.slideshare.net/FedericoCapoano/applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`__.
 
 Deployment
 ~~~~~~~~~~
