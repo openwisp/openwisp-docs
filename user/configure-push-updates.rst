@@ -37,7 +37,7 @@ Store the content of these files in a secure location.
 2. Save SSH private key in OpenWISP (access credentials)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/master/docs/add-ssh-credentials-private-key.png
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/docs/docs/add-ssh-credentials-private-key.png
   :alt: add SSH private key as access credential in OpenWISP
 
 From the first page of OpenWISP click on "Access credentials", then click
@@ -59,7 +59,7 @@ be added in the future).
 3. Add the public key to your devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/master/docs/add-authorized-ssh-keys-template.png
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/docs/docs/add-authorized-ssh-keys-template.png
   :alt: Add authorized SSH public keys template to OpenWISP (OpenWRT)
 
 Now we need to instruct your devices to allow OpenWISP accessing
