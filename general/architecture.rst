@@ -74,6 +74,9 @@ Server Side
   SSH connections, x509 PKI management, geographic maps and floorplans,
   programmable IP address management and subnet provisioning.
 
+  This module depends on several django apps or python libraries developed
+  or maintained by OpenWISP:
+
   - `netjsonconfig <https://github.com/openwisp/netjsonconfig>`__:
     configuration generation, validation and parsing.
   - `django-x509 <https://github.com/openwisp/django-x509>`__:
@@ -83,7 +86,8 @@ Server Side
     Geographic and indoor mapping features.
   - `openwisp-ipam <https://github.com/openwisp/openwisp-ipam>`__:
     IP and Subnet administration.
-
+  - `django-rest-framework-gis <https://github.com/openwisp/django-rest-framework-gis>`__:
+    GIS addons for Django REST Framework.
 
 - `OpenWISP Monitoring
   <https://github.com/openwisp/openwisp-monitoring>`__:
@@ -97,8 +101,16 @@ Server Side
   <https://github.com/openwisp/openwisp-network-topology>`_:
   Network topology collector and visualizer.
   Collects network topology datafrom dynamic mesh routing protocols or
-  other popular networking software like OpenVPN,allows to visualize the
+  other popular networking software like OpenVPN, allows to visualize the
   network graph and save daily snapshots that can be viewed in the future.
+
+  This module depends on a couple of libraries developed
+  and maintained by OpenWISP:
+
+  - `netdiff <https://github.com/openwisp/netdiff>`__:
+    network topology parsing.
+  - `netjsongraph.js <https://github.com/openwisp/netjsongraph.js>`__:
+    Javascript library for network graph visualization.
 
 - `OpenWISP Firmware Upgrader
   <https://github.com/openwisp/openwisp-firmware-upgrader>`_:
@@ -352,6 +364,8 @@ Other notable dependencies
   (used in OpenWISP Users)
 - `django-organizations <https://github.com/bennylope/django-organizations>`_
   (used in OpenWISP Users)
+- `django-swappable-models <https://github.com/openwisp/django-swappable-models>`_
+  (used in all the major Django modules)
 - `django-private-storage <https://github.com/edoburu/django-private-storage>`_
   (used in OpenWISP RADIUS and Firmware Upgrader)
 - `dj-rest-auth <https://github.com/iMerica/dj-rest-auth>`_
