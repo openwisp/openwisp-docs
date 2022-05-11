@@ -14,6 +14,7 @@ Contents:
    user/vpn
    user/configure-push-updates
    user/firmware-upgrades
+   user/network-topology
    general/architecture
    general/values
    general/help-us
