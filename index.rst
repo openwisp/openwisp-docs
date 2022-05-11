@@ -15,6 +15,7 @@ Contents:
    user/configure-push-updates
    user/firmware-upgrades
    user/network-topology
+   user/radius
    general/architecture
    general/values
    general/help-us
