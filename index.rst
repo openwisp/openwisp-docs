@@ -13,6 +13,7 @@ Contents:
    user/configuration-variables
    user/vpn
    user/configure-push-updates
+   user/firmware-upgrades
    general/architecture
    general/values
    general/help-us
