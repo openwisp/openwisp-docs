@@ -48,15 +48,7 @@ Installation
 Install openwisp-config on your OpenWRT system.
 For this guide.
 
-If you're running at least OpenWRT 19.07, you can install openwisp-config
-from the official OpenWRT packages:
-
-.. code-block:: bash
-
-    opkg update
-    opkg install openwisp-config
-
-Alternatively, you can install one of the latest builds from
+We recommend to install one of the latest stable builds from
 `downloads.openwisp.io <http://downloads.openwisp.io/?prefix=openwisp-config/>`_,
 copy the URL of the ipk file you want to download in your
 clipboard and then run the following commands on your OpenWrt device:
@@ -65,6 +57,14 @@ clipboard and then run the following commands on your OpenWrt device:
 
     opkg update
     opkg install <URL-you-just-copied>
+
+If you're running at least OpenWRT 19.07, you can install openwisp-config
+from the official OpenWRT packages:
+
+.. code-block:: bash
+
+    opkg update
+    opkg install openwisp-config
 
 Configuration
 ~~~~~~~~~~~~~
