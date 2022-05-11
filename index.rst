@@ -8,6 +8,7 @@ Contents:
 
    user/quickstart
    user/configure-device
+   user/monitoring
    user/templates
    user/configuration-variables
    user/vpn

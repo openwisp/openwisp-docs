@@ -1,8 +1,6 @@
 Quickstart
 ==========
 
-**Warning**: this document is still a work in progress.
-
 1. Install the OpenWISP server application
 ------------------------------------------
 
@@ -28,7 +26,14 @@ and connect it to OpenWISP <./configure-device>`.
 If you don't have a physical OpenWRT-compatible device at hand, you can
 install OpenWRT in a VirtualBox VM, that's also covered by the guide.
 
-3. Watch video demonstrations
+3. Install openwisp-monitoring on your devices
+----------------------------------------------
+
+If you want to take advantage of the features
+offered by the monitoring module of OpenWISP,
+read the :doc:`Monitoring Quickstart Guide <./monitoring>`.
+
+4. Watch video demonstrations
 -----------------------------
 
 .. raw:: html
@@ -42,7 +47,7 @@ install OpenWRT in a VirtualBox VM, that's also covered by the guide.
         </iframe>
     </p>
 
-4. Seek help
-------------
+5. Look for help
+----------------
 
-Seek help on our `support channels <http://openwisp.org/support.html>`_.
+See `support channels <http://openwisp.org/support.html>`_.
