@@ -12,6 +12,7 @@ Contents:
    user/templates
    user/configuration-variables
    user/vpn
+   user/wireguard
    user/configure-push-updates
    user/send-commands
    user/firmware-upgrades
