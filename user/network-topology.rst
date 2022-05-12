@@ -21,6 +21,10 @@ it
 `makes the monitoring system faster in detecting change to the network
 <https://github.com/openwisp/openwisp-network-topology/tree/1.0#integration-with-openwisp-controller-and-openwisp-monitoring>`_.
 
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
+
 Deploy instructions
 -------------------
 

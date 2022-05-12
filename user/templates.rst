@@ -11,6 +11,10 @@ This means that configuration can be defined only once for multiple
 devices, and if the need to update a specific piece of configuration
 arises, it can be easily achieved by updating the template.
 
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
+
 Template ordering and override
 ------------------------------
 

@@ -10,6 +10,10 @@ Monitoring
 has been introduced in OpenWISP 22.05 and focuses
 on allowing users to know the status of their devices at any given time.
 
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
+
 Deploy instructions
 -------------------
 

@@ -4,6 +4,10 @@ Firmware Upgrades
 OpenWISP Firmware Upgrader has been introduced in OpenWISP 20 and focuses
 on allowing users to maintain the firmware of their network devices up to date.
 
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
+
 Deploy instructions
 -------------------
 

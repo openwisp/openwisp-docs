@@ -1,5 +1,5 @@
-Connect OpenWRT to OpenWISP2
-============================
+Connect OpenWRT to OpenWISP
+===========================
 
 This page will guide you through the installation of
 `openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a
@@ -8,11 +8,15 @@ device which supports `OpenWRT <https://openwrt.org/>`_.
 **If you don't have a physical device available but you still want to try
 out OpenWISP, you can use a Virtual Machine**.
 
-1. Install OpenWISP2
---------------------
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
 
-Refer to the  `OpenWISP 2 installation tutorial
-<https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_.
+1. Install OpenWISP
+-------------------
+
+Refer to the instructions described in
+:ref:`Install the OpenWISP server application <install_server>`.
 
 2. Flash OpenWRT on a device
 ----------------------------

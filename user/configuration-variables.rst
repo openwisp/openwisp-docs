@@ -14,6 +14,10 @@ context.
 
 The different ways in which variables are defined are described below.
 
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
+
 Predefined device variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

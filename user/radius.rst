@@ -4,6 +4,10 @@ RADIUS
 OpenWISP RADIUS has been introduced in OpenWISP 22.05 and
 provides many features aimed at public WiFi services.
 
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
+
 Deploy instructions
 -------------------
 

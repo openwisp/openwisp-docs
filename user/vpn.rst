@@ -2,6 +2,9 @@ VPN-Client Automation
 =====================
 
 
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
 Installing VPN Server and importing the VPN configuration
 ---------------------------------------------------------
 

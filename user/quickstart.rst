@@ -1,6 +1,12 @@
 Quickstart
 ==========
 
+.. contents:: **Table of Contents**:
+   :backlinks: none
+   :depth: 3
+
+.. _install_server:
+
 1. Install the OpenWISP server application
 ------------------------------------------
 
