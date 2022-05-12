@@ -13,6 +13,7 @@ Contents:
    user/configuration-variables
    user/vpn
    user/configure-push-updates
+   user/send-commands
    user/firmware-upgrades
    user/network-topology
    user/radius
