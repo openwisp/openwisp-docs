@@ -1,6 +1,9 @@
 Hacking OpenWISP: Python and Django
 ===================================
 
+.. image:: ../images/intro/django-debug-toolbar.png
+   :align: center
+
 In this page we aim to help users and contributors who want to work on the
 internal code of OpenWISP in the following ways:
 
@@ -278,8 +281,7 @@ When you open ``http://127.0.0.1:8000`` in the browser now and enter the
 credentials we created earlier, you should see something like the
 following screenshot:
 
-.. image:: ../images/intro/DDT.jpg
-   :scale: 50%
+.. image:: ../images/intro/django-debug-toolbar.png
    :align: center
 
 Now that you know some basics, you can experiment and try to use these
