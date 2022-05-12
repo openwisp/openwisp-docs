@@ -1,5 +1,5 @@
-OpenWISP 2 Documentation
-========================
+OpenWISP Documentation
+======================
 
 Contents:
 
