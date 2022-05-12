@@ -16,6 +16,7 @@ Contents:
    user/firmware-upgrades
    user/network-topology
    user/radius
+   user/django-settings
    general/architecture
    general/values
    general/help-us
