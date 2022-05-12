@@ -1,14 +1,18 @@
-VPN-Client Automation
-=====================
+OpenVPN tunnel Automation
+=========================
 
+In this guide we will explore how to set up the automatic management
+of OpenVPN tunnels.
 
 .. contents:: **Table of Contents**:
    :backlinks: none
    :depth: 3
-Installing VPN Server and importing the VPN configuration
----------------------------------------------------------
 
-We will be installing VPN Server using `this ansible role <https://github.com/Stouts/Stouts.openvpn>`_
+Installing OpenVPN Server and importing the OpenVPN configuration
+-----------------------------------------------------------------
+
+We will be installing OpenVPN Server using
+`this ansible role Stouts.openvpn <https://github.com/Stouts/Stouts.openvpn>`_
 and then import the VPN configuration into OpenWISP. If you have
 already setup your VPN server or would like to install the VPN server
 via some other way, you can skip to
@@ -95,7 +99,6 @@ Run the ansible playbok using:
 .. code-block::  bash
 
     ansible-playbook -i hosts playbook.yml -b -k -K --become-method=su
-
 
 4. Importing the CA and the Server Ceritficate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
