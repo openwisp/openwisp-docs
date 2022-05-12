@@ -15,6 +15,7 @@ Contents:
    user/wireguard
    user/configure-push-updates
    user/send-commands
+   user/subnet-division-rules
    user/firmware-upgrades
    user/network-topology
    user/radius
