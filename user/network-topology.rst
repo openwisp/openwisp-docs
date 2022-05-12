@@ -7,9 +7,10 @@ Network Topology
 `OpenWISP Network Topology
 <https://github.com/openwisp/openwisp-network-topology/tree/1.0>`_
 is a network topology collector and visualizer
-web application and API, it allows to collect network topology data from different
-networking software (dynamic mesh routing protocols, OpenVPN), store it,
-visualize it, edit its details, it also provides hooks (a.k.a
+web application and API, it allows to collect network topology data
+from different networking software (dynamic mesh routing protocols,
+OpenVPN), store it, visualize it, edit its details, it also provides
+hooks (a.k.a
 `Django signals <https://docs.djangoproject.com/en/4.0/topics/signals/>`_)
 to execute code when the status of a link changes.
 
@@ -44,9 +45,10 @@ Quickstart Guide
 This module works by periodically collecting the network topology
 graph data of the `supported networking software or formats
 <https://github.com/openwisp/openwisp-network-topology/tree/1.0#available-features>`_.
-The data has to be either fetched by the application or received in POST API
-requests, therefore after deploying the application, additional steps are required
-to make the data collection and visualization work, read on to find out how.
+The data has to be either fetched by the application or received in
+POST API requests, therefore after deploying the application,
+additional steps are required to make the data collection and
+visualization work, read on to find out how.
 
 Creating a topology
 ^^^^^^^^^^^^^^^^^^^
@@ -56,12 +58,14 @@ Creating a topology
 1. Create a topology object by going to *Network Topology* > *Topologies*
    > *Add topology*.
 2. Give an appropriate label to the topology.
-3. Select the *topology format* from the dropdown menu. The *topology format*
-   determines which parser should be used to process topology data.
+3. Select the *topology format* from the dropdown menu.
+   The *topology format* determines which parser should be used
+   to process topology data.
 4. Select the *Strategy* for updating this topology.
 
-   - If you are using `FETCH strategy <https://github.com/openwisp/openwisp-network-topology/tree/1.0#fetch-strategy>`_, then enter the
-     URL for fetching topology data in the *Url* field.
+   - If you are using `FETCH strategy
+     <https://github.com/openwisp/openwisp-network-topology/tree/1.0#fetch-strategy>`_,
+     then enter the URL for fetching topology data in the *Url* field.
    - If you are using `RECEIVE strategy <https://github.com/openwisp/openwisp-network-topology/tree/1.0#receive-strategy>`_, you will get the
      *URL* for sending topology data. The *RECEIVE* strategy provides an
      additional field *expiration time*. This can be used to add delay in
@@ -76,11 +80,12 @@ Sending data for topology with RECEIVE strategy
 
    E.g., in our case the URL is ``http://127.0.0.1:8000/api/v1/network-topology/topology/d17e539a-1793-4be2-80a4-c305eca64fd8/receive/?key=cMGsvio8q0L0BGLd5twiFHQOqIEKI423``.
 
-2. Create a script (eg: ``/opt/send-topology.sh``) which sends the topology
-   data using ``POST``, in the example script below we are sending the
-   status log data of OpenVPN but the same code can be applied to other
-   formats by replacing ``cat /var/log/openvpn/tun0.stats`` with the
-   actual command which returns the network topology output:
+2. Create a script (eg: ``/opt/send-topology.sh``) which sends the
+   topology data using ``POST``, in the example script below we are
+   sending the status log data of OpenVPN but the same code can be
+   applied to other formats by replacing
+   ``cat /var/log/openvpn/tun0.stats`` with the actual command which
+   returns the network topology output:
 
 .. code-block:: shell
 
@@ -95,7 +100,8 @@ Sending data for topology with RECEIVE strategy
             http://127.0.0.1:8000/api/v1/network-topology/topology/d17e539a-1793-4be2-80a4-c305eca64fd8/receive/?key=cMGsvio8q0L0BGLd5twiFHQOqIEKI423
 
 3. Add the ``/opt/send-topology.sh`` script created in the previous step
-   to the crontab, here's an example which sends the topology data every 5 minutes:
+   to the crontab, here's an example which sends the topology
+   data every 5 minutes:
 
 .. code-block:: shell
 
@@ -119,8 +125,8 @@ Sending data for topology with RECEIVE strategy
 Find out more about OpenWISP Network Topology
 ---------------------------------------------
 
-For more information about the features offered by OpenWISP Network Topology
-we refer to the following sections of its README:
+For more information about the features offered by OpenWISP Network
+Topology we refer to the following sections of its documentation:
 
 - `List of the available features
   <https://github.com/openwisp/openwisp-network-topology/tree/1.0#available-features>`_

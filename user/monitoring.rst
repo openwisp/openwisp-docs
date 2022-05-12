@@ -65,12 +65,12 @@ and other actions like
 
 There are mainly two deployment scenarios for OpenWISP:
 
-1. the OpenWISP server is deployed on the public internet and the devices are
-   geographically distributed across different locations:
+1. the OpenWISP server is deployed on the public internet and the
+   devices are geographically distributed across different locations:
    **in this case a management tunnel is needed**
-2. the OpenWISP server is deployed on a computer/server which is located in
-   the same Layer 2 network (that is, in the same LAN) where the devices
-   are located.
+2. the OpenWISP server is deployed on a computer/server which is
+   located in the same Layer 2 network (that is, in the same LAN)
+   where the devices are located.
    **in this case a management tunnel is NOT needed**
 
 1. Public internet deployment
@@ -112,8 +112,9 @@ In this scenario, the following requirements are needed:
   which gets an IP address assigned to it and which is reachable from
   the OpenWISP server.
 
-- The devices must be configured to join the management tunnel automatically,
-  either via a pre-existing configuration in the firmware or via an
+- The devices must be configured to join the management
+  tunnel automatically, either via a pre-existing configuration in
+  the firmware or via an
   `OpenWISP Template <https://openwisp.io/docs/user/templates.html>`_.
 
 - The `openwisp-config <https://github.com/openwisp/openwisp-config>`_
@@ -123,7 +124,8 @@ In this scenario, the following requirements are needed:
   use the management IP for reaching the device.
 
   For example, if the *management interface* is named ``tun0``,
-  the openwisp-config configuration should look like the following example:
+  the openwisp-config configuration should look like the following
+  example:
 
 .. code-block:: text
 

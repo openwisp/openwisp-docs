@@ -65,12 +65,6 @@ add any python instruction to define and manipulate settings via the
             },
         }
 
-        OPENWISP_ADMIN_THEME_LINKS = [
-            {'type': 'text/css', 'href': '/static/admin/css/openwisp.css', 'rel': 'stylesheet', 'media': 'all'},
-            {'type': 'text/css', 'href': '/static/custom.css', 'rel': 'stylesheet', 'media': 'all'},
-            {'type': 'image/x-icon', 'href': '/static/favicon.png', 'rel': 'icon'}
-        ]
-
 This allows for great flexibility in configuring and extending OpenWISP,
 because additional custom modules can be added and configured too.
 

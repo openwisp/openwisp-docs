@@ -97,8 +97,10 @@ Required Templates
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/docs/docs/required-templates.png
   :alt: Required template example
 
-Required templates are similar to `Default templates <#default-templates>`__
-but cannot be unassigned from a device configuration, they can only be overridden.
+Required templates are similar to
+`Default templates <#default-templates>`__
+but cannot be unassigned from a device configuration,
+they can only be overridden.
 
 They will be always assigned earlier than default templates,
 so they can be overridden if needed.
