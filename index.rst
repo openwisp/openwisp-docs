@@ -19,6 +19,7 @@ Contents:
    user/firmware-upgrades
    user/network-topology
    user/radius
+   user/wifi-login-pages
    user/django-settings
    general/architecture
    general/values
