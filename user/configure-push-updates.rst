@@ -1,4 +1,4 @@
-How to configure push updates
+How to Configure Push Updates
 =============================
 
 Follow the procedure described below to enable secure SSH access

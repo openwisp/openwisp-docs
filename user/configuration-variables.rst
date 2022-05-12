@@ -1,4 +1,4 @@
-How to use configuration variables
+How to Use Configuration Variables
 ==================================
 
 Sometimes the configuration is not exactly equal on all the devices,
