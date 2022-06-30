@@ -50,6 +50,8 @@ are required to collect `metrics
 <https://github.com/openwisp/openwisp-monitoring/tree/1.0#openwisp_monitoring_metrics>`_
 like interface traffic, WiFi clients, CPU load, memory usage, etc.
 
+.. _openwisp_reach_devices:
+
 Make sure OpenWISP can reach your devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

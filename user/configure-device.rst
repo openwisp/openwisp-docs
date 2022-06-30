@@ -59,8 +59,10 @@ clipboard and then run the following commands on your OpenWrt device:
 
 .. code-block:: bash
 
+    cd /tmp  # /tmp runs in memory
+    wget <URL-you-just-copied>
     opkg update
-    opkg install <URL-you-just-copied>
+    opkg install ./<file-just-downloaded>
 
 If you're running at least OpenWRT 19.07, you can install openwisp-config
 from the official OpenWRT packages:
@@ -69,6 +71,9 @@ from the official OpenWRT packages:
 
     opkg update
     opkg install openwisp-config
+
+**We recommend installing from our latest builds or compiling your own
+firmware image**. The OpenWrt packages are not always up to date.
 
 Configuration
 ~~~~~~~~~~~~~
@@ -122,6 +127,11 @@ Uncomment and change the following fields:
 - ``shared_secret``: you can retrieve this from OpenWISP2 admin panel, in
   the Organization settings. The list of organizations is available at
   ``/admin/openwisp_users/organization/``.
+- ``management_interface``: the name of the interface which OpenWISP
+  can use to reach the device when it needs to,
+  for more information **we highly recommend to read**:
+  :ref:`how to make sure OpenWISP can reach your devices
+  <openwisp_reach_devices>`.
 
 .. note::
 
