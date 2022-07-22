@@ -65,7 +65,9 @@ Global variables
 ~~~~~~~~~~~~~~~~
 
 Variables can also be defined globally using the
-`OPENWISP_CONTROLLER_CONTEXT <https://github.com/openwisp/openwisp-controller#openwisp-controller-context>`_ setting.
+`OPENWISP_CONTROLLER_CONTEXT
+<https://github.com/openwisp/openwisp-controller#openwisp_controller_context>`_
+setting, see also :doc:`How to Edit Django Settings <./django-settings>`.
 
 System defined variables
 ~~~~~~~~~~~~~~~~~~~~~~~~
