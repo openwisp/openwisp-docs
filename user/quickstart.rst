@@ -5,6 +5,13 @@ Quickstart
    :backlinks: none
    :depth: 3
 
+0. Try the Demo
+---------------
+
+Before installing we recommend taking a look at
+`the OpenWISP Demo system <https://openwisp.org/demo.html>`_
+to get a quick overview.
+
 .. _install_server:
 
 1. Install the OpenWISP server application

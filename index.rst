@@ -1,6 +1,8 @@
 OpenWISP Documentation
 ======================
 
+**Need a quick overview?** `Try the OpenWISP Demo <https://openwisp.org/demo.html>`_.
+
 Contents:
 
 .. toctree::
