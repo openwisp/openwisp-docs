@@ -122,10 +122,10 @@ Blog Posts
 Google Summer of Code Blog Posts
 --------------------------------
 
-2022 Students
-~~~~~~~~~~~~~
+2022 Contributors
+~~~~~~~~~~~~~~~~~
 
-- `Add Iperf3 Check to OpenWISP Monitoring <https://aryamanz29.medium.com/iperf-check-to-openwisp-monitoring-gsoc22-project-report-2661eddd3f77>`_ by Aryaman (Aryamanz29).
+- `Iperf3 Check for OpenWISP Monitoring <https://aryamanz29.medium.com/iperf-check-to-openwisp-monitoring-gsoc22-project-report-2661eddd3f77>`_ by Aryaman (Aryamanz29).
 
 2021 Students
 ~~~~~~~~~~~~~
