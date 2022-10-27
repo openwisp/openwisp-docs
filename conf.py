@@ -55,8 +55,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
+from datetime import date
 project = 'OpenWISP'
-copyright = '2017-2022, OpenWISP'
+copyright = f'2017-{date.today().year}, OpenWISP'
 author = 'OpenWISP Community'
 
 # The version info for the project you're documenting, acts as replacement for
