@@ -1,6 +1,19 @@
 Google Summer of Code
 =====================
 
+.. raw:: html
+
+    <div style="text-align:center">
+      <iframe width="560" height="315"
+        src="https://www.youtube-nocookie.com/embed/bPH_JwceQa8"
+        title="GSoC: OpenWISP"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
 .. image:: ../images/gsoc/gsoc2017.png
      :align: center
 

@@ -32,7 +32,8 @@ def check_line_length(file_path):
         lines = f.readlines()
     for (line_number, line) in enumerate(lines, start=1):
         # special cases to ignore
-        if line.strip().startswith('<a') or line.strip().startswith('&#115'):
+        text = line.strip()
+        if text.startswith('<a') or text.startswith('&#115') or text.startswith('allow="'):
             continue
         is_code = re.search(r'code-block', line)
         if is_code:
