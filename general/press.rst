@@ -126,6 +126,7 @@ Google Summer of Code Blog Posts
 ~~~~~~~~~~~~~~~~~
 
 - `Iperf3 Check for OpenWISP Monitoring <https://aryamanz29.medium.com/iperf-check-to-openwisp-monitoring-gsoc22-project-report-2661eddd3f77>`_ by Aryaman (Aryamanz29).
+- `Improve netjsongraph.js for its new release <https://medium.com/@vaishnavnair365/improve-netjsongraph-js-for-its-new-release-project-report-b87002fcfe34>`_ by Vaishnav Nair (totallynotvaishnav)
 
 2021 Students
 ~~~~~~~~~~~~~
