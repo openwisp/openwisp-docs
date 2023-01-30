@@ -31,7 +31,6 @@ Contents:
    developer/contributing
    developer/hacking-openwisp-python-django
    developer/google-summer-of-code
-   developer/gsoc-ideas-2021
-   developer/gsoc-ideas-2022
+   developer/gsoc-ideas-2023
    developer/google-code-in
    developer/hacktoberfest
