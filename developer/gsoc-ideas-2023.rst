@@ -144,6 +144,75 @@ Expected outcomes
 
 - Achieve at least 99% test coverage for the code added for this feature.
 
+Improve User Experience and Flexibility of Firmware Upgrader Module
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2023/firmware.jpg
+
+.. Important::
+
+  Languages and technologies used:
+  **Python**, **Django**, **OpenWrt**.
+
+  **Mentors**: Federico Capoano (more mentors TBA).
+
+  **Project size**: 175 hours.
+
+  **Difficulty rate**: easy-medium.
+
+The goal of this project is to improve the Firmware Upgrader module
+to make its mass upgrade operation feature more versatile and to
+improve the user experience by showing progress in real time.
+
+Pre-requisites to work on this project
+######################################
+
+The applicant must demonstrate good understanding of Python, Django,
+Javascript and `OpenWISP Controller
+<https://github.com/openwisp/openwisp-controller#openwisp-controller>`__.
+
+They must demonstrate also a basic understanding of
+`OpenWISP Firmware Upgrader
+<https://github.com/openwisp/openwisp-firmware-upgrader#openwisp-firmware-upgrader>`__,
+OpenWrt and UI development.
+
+Prior experience with OpenWrt is not extremely required but welcome.
+
+Expected outcomes
+#################
+
+The applicant must open pull-requests for the following issues which must
+be merged by the final closing date of the program:
+
+- `[feature] REST API is missing endpoints for DeviceFirmware
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/208>`_
+- `[feature:UI] Show upgrade progress in real time in the UI
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/224>`_
+- `[feature] Allow to perform mass upgrade of devices by their group
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/213>`_
+- `[feature] Allow to perform mass upgrade of devices by their location
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/225>`_
+
+Each issue contains the details which the applicant needs to know
+in order to complete the project successfully.
+
+At each step of code changing the test coverage must be maintained stable
+and the documentation in the README must be kept up to date.
+
+Training Issues
+###############
+
+The applicant may warm up in the application phase by working
+on the following issues:
+
+- `[bug] FileNotFoundError when trying to delete an image
+  which links a non existing file
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/140>`_
+- `[change] Improve endpoints to download firmware images
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/69>`_
+- `[feature] Allow management of UpgradeOperation objects in the admin
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/145>`_
+
 Add more timeseries database clients to OpenWISP Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
