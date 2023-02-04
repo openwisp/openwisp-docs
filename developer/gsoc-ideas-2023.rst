@@ -26,7 +26,7 @@ General suggestions and warnings
 
 - **Project ideas describe the goals we want to achieve
   but may miss details that have to be defined during the project**:
-  we expect students to do their own research, propose solutions and be
+  we expect applicants to do their own research, propose solutions and be
   ready to deal with uncertainty and solve challenges that
   will come up during the project
 
@@ -40,7 +40,7 @@ General suggestions and warnings
   you made to OpenWISP that show you have the capability to succeed in the
   project idea you are applying for.
 
-- **Students who have either shown to have or have shown to be
+- **Applicants who have either shown to have or have shown to be
   fast learners for the required hard and soft skills by
   contributing to OpenWISP have a lot more chances of being accepted**:
   in order to get started contributing refer to the
@@ -166,7 +166,7 @@ while keeping good maintainability.
 Pre-requisites to work on this project
 ######################################
 
-The student must demonstrate good understanding of
+The applicant must demonstrate good understanding of
 `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
 and demonstrate basic knowledge of
 `NetJSON format <https://netjson.org/>`_, **InfluxDB** and **Elasticsearch**.
