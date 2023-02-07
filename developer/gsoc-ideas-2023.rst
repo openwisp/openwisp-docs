@@ -275,3 +275,47 @@ Expected outcomes
     **InfluxDB 1.8** and **InfluxDB 2.0**
     from `ansible-openwisp2 <https://github.com/openwisp/ansible-openwisp2>`_
     and `docker-openwisp <https://github.com/openwisp/docker-openwisp/>`_.
+
+Improve notification preference management in OpenWISP Notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2023/notification-preferences.png
+
+.. Important::
+
+  Languages and technologies used:
+  **Python**, **Django**, **JavaScript**, **HTML**
+
+  **Mentors**: Gagan Deep (`pandafy <https://github.com/pandafy>`_) (more mentors TBA).
+
+  **Project size**: 175 hours.
+
+  **Difficulty rate**: easy-medium.
+
+The goal of this project is to improve user experience for managing
+notification preferences.
+
+Pre-requisites to work on this project
+######################################
+
+The applicant must demonstrate good understanding of
+`OpenWISP Notifications <https://github.com/openwisp/openwisp-notifications#openwisp-notifications>`__,
+and it's integration in `OpenWISP Controller <https://github.com/openwisp/openwisp-controller#openwisp-controller>`_
+and `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`_.
+
+Expected outcomes
+#################
+
+The applicant must open pull-requests for the following issues which must
+be merged by the final closing date of the program:
+
+- `[feature] Add a dedicated view for managing notification preferences
+  <https://github.com/openwisp/openwisp-notifications/issues/110>`_
+- `[bug/feature] Allow disable all notifications
+  <https://github.com/openwisp/openwisp-notifications/issues/148>`_
+
+Each issue contains the details which the applicant needs to know
+in order to complete the project successfully.
+
+At each step of code changing the test coverage must be maintained stable
+and the documentation in the README must be kept up to date.
