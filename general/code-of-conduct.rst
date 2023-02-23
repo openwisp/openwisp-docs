@@ -38,7 +38,6 @@ to the fullest extent, we want to know.
 The following behaviors are expected and requested of all community
 members:
 
-
 - Participate in an authentic and active way. In doing so, you contribute
   to the health and longevity of this community.
 - Exercise consideration and respect in your speech and actions.
@@ -51,6 +50,15 @@ members:
   inconsequential.
 - Remember that community event venues may be shared with members of the
   public; please be respectful to all patrons of these locations.
+- Refrain from demanding and expecting maintainers to offer you free
+  support and/or free work. Maintainers are the most precious resources
+  an Open Source project has and are a scarce resource. Acknowledge
+  and recognize that they will not always be able to respond to all issues
+  and all community support requests.
+- Refrain from name-calling and disrespecting other people in the
+  community in any way, always maintain professional
+  and respectful behavior.
+- Explain your technical issues in detail before requesting support.
 
 4. Unacceptable Behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,6 +66,10 @@ members:
 The following behaviors are considered harassment and are unacceptable
 within our community:
 
+- Throwing tantrums and disrespectful behavior directed at other users
+  or maintainers in the public channels
+  (mailing list, public chat, github).
+- Posting Spam and/or off topic contents.
 - Violence, threats of violence or violent language directed
   against another person.
 - Sexist, racist, homophobic, transphobic,
