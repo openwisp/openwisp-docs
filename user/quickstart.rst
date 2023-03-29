@@ -9,7 +9,7 @@ Quickstart
 ---------------
 
 Before installing we recommend taking a look at
-`the OpenWISP Demo system <https://openwisp.org/demo.html>`_
+:doc:`the OpenWISP Demo system <../tutorials/demo>`
 to get a quick overview.
 
 .. _install_server:

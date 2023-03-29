@@ -23,6 +23,7 @@ Contents:
    user/radius
    user/wifi-login-pages
    user/django-settings
+   tutorials/demo
    general/architecture
    general/values
    general/help-us
