@@ -11,8 +11,8 @@ on:
 
 jobs:
   build:
-    name: Python==3.7
-    runs-on: ubuntu-20.04
+    name: Python==3.9
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: false
@@ -22,13 +22,13 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Set up Python 3.7
+      - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
-          python-version: 3.7
+          python-version: 3.9
 
       - name: Upgrade python system packages
-        run: pip install -U "pip==20.2.4" wheel
+        run: pip install -U pip wheel
 
       - name: Install test dependencies
         run: |
