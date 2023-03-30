@@ -120,6 +120,23 @@ device and install them, eg:
   or alternatively you can download the packages on your machine
   and from there upload them to your device via ``scp``.
 
+Once the packages are installed, copy the following contents to
+``/etc/config/openwisp``:
+
+.. code-block::
+
+  config controller 'http'
+      option url 'https://cloud.openwisp.io'
+      # the following shared secret is for the demo organization
+      option shared_secret 'nzXTd7qpXKPNdrWZDsYoMxbGpOrEVjeD'
+      option management_interface 'tun0'
+
+Once the configuration has been changed, you will need to restart
+the agent:
+
+.. code-block::
+
+    service openwisp_config restart
 Connecting your device to OpenWISP
 ----------------------------------
 
