@@ -2,8 +2,7 @@ OpenWISP Demo
 =============
 
 .. image:: ../images/demo/demo.png
-     :target: ../_images/demo.png
-     :align: center
+    :target: ../_images/demo.png
 
 .. contents:: **Table of Contents**:
    :backlinks: none
@@ -96,7 +95,8 @@ The easiest thing is to use the following commands:
     opkg install openwisp-monitoring
 
 However, if you want to install more recent versions of the packages
-you can use download the packages from downloads.openwisp.io on your
+you can use download the packages from
+`downloads.openwisp.io <http://downloads.openwisp.io/>`__ on your
 device and install them, eg:
 
 .. code-block::
@@ -124,7 +124,6 @@ Connecting your device to OpenWISP
 ----------------------------------
 
 .. image:: ../images/demo/lan-ports.jpg
-     :align: center
 
 Once your device is flashed, connect an ethernet cable from your LAN into
 one of the available LAN ports.
@@ -148,8 +147,7 @@ Registration
 ~~~~~~~~~~~~
 
 .. image:: ../images/demo/device-list-registered.png
-     :target: ../_images/device-list-registered.png
-     :align: center
+    :target: ../_images/device-list-registered.png
 
 Once the previous steps are executed correctly and the device can
 reach the internet, the device will register and you will be able to find
@@ -173,54 +171,55 @@ Health status
 ~~~~~~~~~~~~~
 
 .. image:: ../images/demo/health-status.png
-     :target: ../_images/health-status.png
-     :align: center
+    :target: ../_images/health-status.png
 
 Device Status
 ~~~~~~~~~~~~~
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-1.png
-     :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-1.png
-     :align: center
+    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-1.png
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-2.png
-    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-2.png
-    :align: center
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-2.png
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-3.png
-    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-3.png
-    :align: center
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-3.png
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-4.png
-    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-4.png
-    :align: center
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/device-status-4.png
 
 Charts
 ~~~~~~
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/uptime.png
-    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/uptime.png
-    :align: center
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/uptime.png
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/packet-loss.png
-    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/packet-loss.png
-    :align: center
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/packet-loss.png
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/rtt.png
-    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/rtt.png
-    :align: center
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/rtt.png
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/traffic.png
-    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/packet-loss.png
-    :align: center
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/traffic.png
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/wifi-clients.png
-    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/wifi-clients.png
-    :align: center
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/wifi-clients.png
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/cpu-load.png
-    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/cpu-load.png
-    :align: center
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/cpu-load.png
+
+The following charts are displayed only for devices
+with mobile connections (eg: 3G, LTE).
+
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/access-technology.png
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/access-technology.png
+
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/signal-strength.png
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/signal-strength.png
+
+.. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/signal-quality.png
+   :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/signal-quality.png
 
 Find out more information about the
 :doc:`Monitoring module of OpenWISP <../user/monitoring>`.
@@ -233,15 +232,9 @@ If you need help, you can write to the
 directly on "Contact support" as indicated in the screenshot below.
 
 .. image:: ../images/demo/contact-support.png
-     :target: ../_images/contact-support.png
-     :align: center
+    :target: ../_images/contact-support.png
 
 Next steps
 ----------
 
 More tutorials coming soon!
-
-Try Hotspot
-Try WPA Enterprise
-Try Network Topology Module
-Try Wireguard tunnel
