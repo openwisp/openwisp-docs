@@ -137,6 +137,7 @@ the agent:
 .. code-block::
 
     service openwisp_config restart
+
 Connecting your device to OpenWISP
 ----------------------------------
 
@@ -254,4 +255,5 @@ directly on "Contact support" as indicated in the screenshot below.
 Next steps
 ----------
 
-More tutorials coming soon!
+- Try the :doc:`WiFi Hotspot & Captive Portal (Public WiFi) <./hotspot>`
+  features
