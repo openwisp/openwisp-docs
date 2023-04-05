@@ -83,6 +83,8 @@ or if you have a custom firmware you do not want to lose, you can
 get the basic features working by downloading and installing the
 following packages on your device:
 
+- openvpn (management tunnel, needed for
+  active checks and push operations)
 - openwisp-config
 - openwisp-monitoring (and its dependency netjson-monitoring)
 
@@ -91,10 +93,14 @@ The easiest thing is to use the following commands:
 .. code-block::
 
     opkg update
+    # install OpenVPN
+    opkg install openvpn-wolfssl
+    # install OpenWISP agents
     opkg install openwisp-config
     opkg install openwisp-monitoring
 
-However, if you want to install more recent versions of the packages
+However, if you want to install more recent
+versions of the OpenWISP packages
 you can use download the packages from
 `downloads.openwisp.io <http://downloads.openwisp.io/>`__ on your
 device and install them, eg:
@@ -102,6 +108,8 @@ device and install them, eg:
 .. code-block::
 
     opkg update
+    # install OpenVPN anyway
+    opkg install openvpn-wolfssl
     cd /tmp
 
     # WARNING: the URL may change overtime, so verify the right URL
