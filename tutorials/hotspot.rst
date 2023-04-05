@@ -98,8 +98,8 @@ the credentials again, this link has temporary validity.
   about the magic link feature,
   Consult the
   `openwisp-users documentation <https://github.com/openwisp/openwisp-users#2-openwisp_usersapiauthenticationsesameauthentication>`_
-  (which discloses and links
-  to the documentation of the underlying open source
+  (which briefly provides more information
+  about the underlying open source
   library used to implement this feature).
 
 .. image:: ../images/demo/public-wifi-session-started.jpeg
@@ -110,7 +110,7 @@ the credentials again, this link has temporary validity.
 However, when using the demo account, the email will be sent to the
 email of the demo account, so if you want to try this feature, you
 will have to sign up for your own account or use the social login
-feature (both described below in this page).
+feature (scroll below to find out more information).
 
 Logging out
 ~~~~~~~~~~~
@@ -139,6 +139,72 @@ Session limits
 The default session limits built in the default OpenWISP RADIUS
 configuration are 300 MB daily traffic or 3 hours of daily surfing.
 
-To find out more about this topic please read:
-`Enforcing session limits
-<https://openwisp-radius.readthedocs.io/en/stable/user/enforcing_limits.html>`_.
+.. note::
+    To find out more technical information about this topic please read:
+    `OpenWISP RADIUS - Enforcing session limits
+    <https://openwisp-radius.readthedocs.io/en/stable/user/enforcing_limits.html>`_.
+
+Automatic Captive Portal Login
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The `WiFi Login Pages application
+<https://github.com/openwisp/openwisp-wifi-login-pages>`_
+allows those users who have logged in previously and who use a
+browser which supports cookies
+(not all mini-browsers that are used for captive portal log in do),
+to automatically login without entering credentials again.
+
+The short video below shows a demonstration of this feature.
+
+.. raw:: html
+
+    <p style="text-align: center">
+        <iframe
+          width="461"
+          height="820"
+          src="https://www.youtube.com/embed/wUTFte2at7o"
+          title="WiFi Captive Portal Auto Login Feature of OpenWISP"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+    </p>
+
+Sign up
+~~~~~~~
+
+.. image:: ../images/demo/signup.png
+  :target: ../_images/signup.png
+
+The screenshot above shows the sign up page of the OpenWISP Demo.
+
+Select the free plan, then insert dummy data
+(remember this data is deleted every day), but we recommend
+inserting a real email address so you can test the features
+which require receiving emails (eg: email confirmation,
+reset password, wifi session started notification).
+
+.. note::
+  The sign up process uses the
+  `OpenWISP RADIUS REST API
+  <https://openwisp-radius.readthedocs.io/en/stable/user/api.html#user-registration>`_
+  under the hood.
+
+Social Login
+~~~~~~~~~~~~
+
+.. image:: ../images/demo/social-login.png
+   :target: ../_images/social-login.png
+   :align: center
+
+Another way to sign up for a free account is to use the social login
+just click on any of the two social login buttons to initiate
+the process.
+
+Remember that your personal data is stored for less than 24 hours
+as the content of the demo system is reset every day.
+
+.. note::
+  To find out more technical information about this topic please read:
+  `OpenWISP RADIUS - Social Login
+  <https://openwisp-radius.readthedocs.io/en/stable/user/social_login.html>`_
