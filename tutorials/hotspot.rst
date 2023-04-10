@@ -1,10 +1,10 @@
 WiFi Hotspot & Captive Portal
 =============================
 
-A common use case in which OpenWISP is widely employed is
-**Public Wi-Fi**.
+OpenWISP is widely used as an **open source software** solution
+for **WiFi Hotspot Management** in **Public Wi-Fi** settings.
 
-In this tutorial we will explain some technical details of the most
+In this tutorial, we'll explain some technical details of the most
 common **WiFi Hotspot** deployments and how to test the most
 important functionalities
 of this use case on the :doc:`OpenWISP Demo System <./demo>`.
@@ -12,42 +12,43 @@ of this use case on the :doc:`OpenWISP Demo System <./demo>`.
 Testing the Hotspot Functionality on Demo
 -----------------------------------------
 
-The firmware image provided for the :doc:`OpenWISP Demo System <./demo>`
-includes a captive portal software package called
+The **OpenWrt** firmware image provided
+for the :doc:`OpenWISP Demo System <./demo>`
+includes a *captive portal* package called
 `Coova-Chilli <https://coova.github.io/CoovaChilli/>`_, which
 supports the
 `RADIUS protocol <https://networkradius.com/doc/current/introduction/RADIUS.html>`_,
 a standard protocol used for AAA
-(Accounting, Authorization and Authentication), which means a way
-of authenticating, authorizing and rate limiting network usage supported
-by a lot of networking hardware equipment and software.
+(Accounting, Authorization and Authentication).
+This means it's a way of authenticating, authorizing, and rate-limiting
+network usage supported by a lot of networking hardware and software.
 
 Enable Captive Portal Template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you flashed the firmware and registered your device as explained
-in the :doc:`OpenWISP Demo Page <./demo>`, you can proceed to
-assign the captive portal template to your device:
+If you flashed the *OpenWrt* based firmware and registered your device
+as explained in the :doc:`OpenWISP Demo Page <./demo>`, proceed
+to assign the captive portal template to your device:
 
-- go to the device list
-- open the device details
-- click on the configuration tab
-- select the "Captive Portal Demo" template
-- hit "Save"
+- Go to the device list.
+- Open the device details.
+- Click on the configuration tab.
+- Select the "Captive Portal Demo" template.
+- Hit "Save".
 
-Make sure the OpenVPN management tunnel is working or otherwise
+Make sure the *OpenVPN management tunnel* is working or otherwise
 the captive portal software will not be able to talk to the demo
 `FreeRADIUS <https://freeradius.org/>`_ server instance.
 
 Shortly after the configuration is applied successfully,
-the Public WiFi SSID will be broadcasted by the device.
+the Public WiFi SSID will be broadcasted by the *access point*.
 
 Accessing the Public WiFI Hotspot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Connect one of your laptop or phone devices to the SSID
-"OpenWISP Public WiFi Demo", if all is working well your operating
-system should open a browser window showing the captive page as in
+Connect your laptop or phone to the SSID "OpenWISP Public WiFi Demo".
+If everything is working correctly, your operating system should
+open a browser window showing the captive page as shown in
 the screenshot below.
 
 .. image:: ../images/demo/wifi-login-pages-public-wifi-hotspot.jpeg
@@ -55,32 +56,31 @@ the screenshot below.
    :width: 300
    :align: center
 
-At this point you can try to sign in using the same credentials to
-access the demo system (``demo``/``tester123``).
+At this point, try to sign in using the same credentials
+you used to access the demo system  (``demo``/``tester123``).
 
 .. note::
   Trying to surf the internet without authenticating will not work.
 
-Once you have logged in you will see a status page like in the following
-screenshots:
+Once you've logged in, you'll see a status page as shown in the
+following screenshot:
 
 .. image:: ../images/demo/hotspot-status.jpeg
   :target: ../_images/hotspot-status.jpeg
   :width: 300
   :align: center
 
-This page communicates that the user can now use the internet,
-it also provides the following features:
+This page communicates that the user can now use the internet
+provided by the *hotspot*, it also provides the following features:
 
-- it shows a list of the sessions of the user,
-  each session showing the start time, the stop time, the duration,
-  the traffic consumed (download and upload) and the mac address of
-  the device which has accessed the WiFi service.
-- It allows to change password of the account.
-- When SMS verification is enabled, it allows to change the phone
-  number (will require to verify the number again via SMS, **this
-  feature is not enabled on the demo system**).
-- It allows to perform log out (more on why this is useful below).
+- It shows a list of the user's sessions, including the start time,
+  stop time, duration, traffic consumed (download and upload),
+  and the MAC address of the device that accessed the WiFi service.
+- It allows to change the account password and phone number
+  (if SMS verification is enabled, which is not the case
+  for the demo system).
+- It allows to close the session and log out
+  (more on why this is useful below).
 
 On some mobile operating system, the mini browser
 automatically closes when switching windows
@@ -88,10 +88,22 @@ automatically closes when switching windows
 which can be problematic if the user needs to use one of the
 features of the status page listed above.
 
-To alleviate this pain, once the WiFi session is started, OpenWISP
+On some mobile operating systems, the mini-browser automatically closes
+when switching windows
+(e.g., opening the real browser to surf the internet),
+which can be problematic if the user needs to use one of the
+features of the status page listed above.
+
+To alleviate this issue, once the WiFi session is started, OpenWISP
 will send an email to the user with a magic link which will allow
-to access the status page of WiFi Login Pages without entering
-the credentials again, this link has temporary validity.
+to access the status page of
+without entering the credentials again,
+this link has temporary validity.
+
+OpenWISP will send an email to the user with a magic link
+with temporal validity that allows to access the status page of
+`WiFi Login Pages <https://github.com/openwisp/openwisp-wifi-login-pages>`_
+without entering the credentials again.
 
 .. note::
   For more technical information and implementation details
@@ -107,26 +119,24 @@ the credentials again, this link has temporary validity.
   :width: 300
   :align: center
 
-However, when using the demo account, the email will be sent to the
-email of the demo account, so if you want to try this feature, you
-will have to sign up for your own account or use the social login
+If you're using the demo account, the email will be sent to the email
+address of the demo account. Therefore, if you want to try this feature,
+you'll have to sign up for your own account or use the social login
 feature (scroll below to find out more information).
 
 Logging out
 ~~~~~~~~~~~
 
-Most public WiFi services do not allow users to browse indefinitely but
-have limitations in place.
+Most WiFi hotspot services have limitations in place that do not allow
+users to browse indefinitely.
 
-Some services allow to surf only for a limited amount of time per day,
-some services allow to to consume only a certain amount of traffic
-per day, others employ a mix of both (as soon as the either the
-daily time or traffic limit is reached, the session is closed).
+Some services only allow surfing for a limited amount of time per day,
+while others limit the amount of data you can consume. Some services use
+a combination of both methods (when either the daily time or data limit
+is reached, the session is closed).
 
-For this reason, users which use the service often and who intend
-to use the service again later on in the same day, in order to
-avoid consuming the time of their session may want to close
-the session using the log out button.
+Therefore, users who plan to use the service again later on the same day,
+should log out to avoid consuming their daily time and/or data.
 
 Session limits
 ~~~~~~~~~~~~~~
@@ -136,8 +146,8 @@ Session limits
   :width: 300
   :align: center
 
-The default session limits built in the default OpenWISP RADIUS
-configuration are 300 MB daily traffic or 3 hours of daily surfing.
+The default session limits in the **OpenWISP RADIUS** configuration
+are 300 MB of daily traffic or 3 hours of daily surfing.
 
 .. note::
     To find out more technical information about this topic please read:
@@ -151,10 +161,10 @@ The `WiFi Login Pages application
 <https://github.com/openwisp/openwisp-wifi-login-pages>`_
 allows those users who have logged in previously and who use a
 browser which supports cookies
-(not all mini-browsers that are used for captive portal log in do),
-to automatically login without entering credentials again.
+(not all mini-browsers that are used for captive portal logins do),
+to automatically log in without entering their credentials again.
 
-The short video below shows a demonstration of this feature.
+The video below demonstrates this feature:
 
 .. raw:: html
 
@@ -176,13 +186,12 @@ Sign up
 .. image:: ../images/demo/signup.png
   :target: ../_images/signup.png
 
-The screenshot above shows the sign up page of the OpenWISP Demo.
-
-Select the free plan, then insert dummy data
-(remember this data is deleted every day), but we recommend
-inserting a real email address so you can test the features
-which require receiving emails (eg: email confirmation,
-reset password, wifi session started notification).
+To sign up for the *WiFi hotspot demo*, select the free plan and enter
+dummy data (this data is deleted every day).
+However, it is recommended that you enter a real email address so that
+you can test features that require receiving emails,
+such as email confirmation, password reset,
+and the "WiFi session started" notification.
 
 .. note::
   The sign up process uses the
@@ -197,14 +206,14 @@ Social Login
    :target: ../_images/social-login.png
    :align: center
 
-Another way to sign up for a free account is to use the social login
-just click on any of the two social login buttons to initiate
-the process.
+Another way to sign up for a free WiFi hotspot account is to use social
+login. Simply click on one of the social login buttons
+to initiate the process.
 
-Remember that your personal data is stored for less than 24 hours
-as the content of the demo system is reset every day.
+Please note that your personal data is stored
+for less than 24 hours, as the demo system is reset every day.
 
 .. note::
-  To find out more technical information about this topic please read:
+  For more technical information about social login, please read
   `OpenWISP RADIUS - Social Login
   <https://openwisp-radius.readthedocs.io/en/stable/user/social_login.html>`_
