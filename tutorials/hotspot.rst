@@ -1,6 +1,9 @@
 WiFi Hotspot & Captive Portal
 =============================
 
+.. image:: ../images/demo/hotspot.png
+  :target: ../_images/hotspot.png
+
 OpenWISP is widely used as an **open source software** solution
 for **WiFi Hotspot Management** in **Public Wi-Fi** settings.
 
@@ -9,8 +12,12 @@ common **WiFi Hotspot** deployments and how to test the most
 important functionalities
 of this use case on the :doc:`OpenWISP Demo System <./demo>`.
 
-Testing the Hotspot Functionality on Demo
------------------------------------------
+Firmware Requirements for Hotspot Authentication
+------------------------------------------------
+
+.. image:: ../images/demo/openwrt-coova-chilli-firmware.png
+  :target: ../_images/openwrt-coova-chilli-firmware.png
+  :align: center
 
 The **OpenWrt** firmware image provided
 for the :doc:`OpenWISP Demo System <./demo>`
@@ -24,7 +31,10 @@ This means it's a way of authenticating, authorizing, and rate-limiting
 network usage supported by a lot of networking hardware and software.
 
 Enable Captive Portal Template
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
+
+.. image:: ../images/demo/captive-portal-demo.png
+  :target: ../_images/captive-portal-demo.png
 
 If you flashed the *OpenWrt* based firmware and registered your device
 as explained in the :doc:`OpenWISP Demo Page <./demo>`, proceed
@@ -44,12 +54,12 @@ Shortly after the configuration is applied successfully,
 the Public WiFi SSID will be broadcasted by the *access point*.
 
 Accessing the Public WiFI Hotspot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 Connect your laptop or phone to the SSID "OpenWISP Public WiFi Demo".
 If everything is working correctly, your operating system should
 open a browser window showing the captive page as shown in
-the screenshot below.
+the screenshot above.
 
 .. image:: ../images/demo/wifi-login-pages-public-wifi-hotspot.jpeg
    :target: ../_images/wifi-login-pages-public-wifi-hotspot.jpeg
@@ -82,42 +92,31 @@ provided by the *hotspot*, it also provides the following features:
 - It allows to close the session and log out
   (more on why this is useful below).
 
-On some mobile operating system, the mini browser
-automatically closes when switching windows
-(eg: opening the real browser to surf the internet),
-which can be problematic if the user needs to use one of the
-features of the status page listed above.
-
 On some mobile operating systems, the mini-browser automatically closes
 when switching windows
 (e.g., opening the real browser to surf the internet),
 which can be problematic if the user needs to use one of the
 features of the status page listed above.
 
-To alleviate this issue, once the WiFi session is started, OpenWISP
-will send an email to the user with a magic link which will allow
-to access the status page of
-without entering the credentials again,
-this link has temporary validity.
-
-OpenWISP will send an email to the user with a magic link
-with temporal validity that allows to access the status page of
-`WiFi Login Pages <https://github.com/openwisp/openwisp-wifi-login-pages>`_
-without entering the credentials again.
-
-.. note::
-  For more technical information and implementation details
-  about the magic link feature,
-  Consult the
-  `openwisp-users documentation <https://github.com/openwisp/openwisp-users#2-openwisp_usersapiauthenticationsesameauthentication>`_
-  (which briefly provides more information
-  about the underlying open source
-  library used to implement this feature).
-
 .. image:: ../images/demo/public-wifi-session-started.jpeg
   :target: ../_images/public-wifi-session-started.jpeg
   :width: 300
   :align: center
+
+To alleviate this issue, OpenWISP will send an email to the user with
+a magic link with temporal validity that allows to access the
+status page of
+`WiFi Login Pages <https://github.com/openwisp/openwisp-wifi-login-pages>`_
+without entering the credentials again, as shown in the image above.
+
+.. note::
+  For more technical information and implementation details
+  about the magic link feature,
+  consult the
+  `openwisp-users documentation <https://github.com/openwisp/openwisp-users#2-openwisp_usersapiauthenticationsesameauthentication>`_
+  (which briefly provides more information
+  about the underlying open source
+  library used to implement this feature).
 
 If you're using the demo account, the email will be sent to the email
 address of the demo account. Therefore, if you want to try this feature,
@@ -125,7 +124,10 @@ you'll have to sign up for your own account or use the social login
 feature (scroll below to find out more information).
 
 Logging out
-~~~~~~~~~~~
+-----------
+
+.. image:: ../images/demo/hotspot-logout.gif
+  :target: ../_images/hotspot-logout.gif
 
 Most WiFi hotspot services have limitations in place that do not allow
 users to browse indefinitely.
@@ -139,7 +141,7 @@ Therefore, users who plan to use the service again later on the same day,
 should log out to avoid consuming their daily time and/or data.
 
 Session limits
-~~~~~~~~~~~~~~
+--------------
 
 .. image:: ../images/demo/session-limit-exceeded.jpeg
   :target: ../_images/session-limit-exceeded.jpeg
@@ -155,7 +157,7 @@ are 300 MB of daily traffic or 3 hours of daily surfing.
     <https://openwisp-radius.readthedocs.io/en/stable/user/enforcing_limits.html>`_.
 
 Automatic Captive Portal Login
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 The `WiFi Login Pages application
 <https://github.com/openwisp/openwisp-wifi-login-pages>`_
@@ -181,7 +183,7 @@ The video below demonstrates this feature:
     </p>
 
 Sign up
-~~~~~~~
+-------
 
 .. image:: ../images/demo/signup.png
   :target: ../_images/signup.png
@@ -200,7 +202,7 @@ and the "WiFi session started" notification.
   under the hood.
 
 Social Login
-~~~~~~~~~~~~
+------------
 
 .. image:: ../images/demo/social-login.png
    :target: ../_images/social-login.png
