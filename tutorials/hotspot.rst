@@ -172,7 +172,7 @@ The video below demonstrates this feature:
 
     <p style="text-align: center">
         <iframe
-          width="461"
+          width="100%"
           height="820"
           src="https://www.youtube.com/embed/wUTFte2at7o"
           title="WiFi Captive Portal Auto Login Feature of OpenWISP"
