@@ -123,7 +123,7 @@ address of the demo account. Therefore, if you want to try this feature,
 you'll have to sign up for your own account or use the social login
 feature (scroll below to find out more information).
 
-Logging out
+Logging Out
 -----------
 
 .. image:: ../images/demo/hotspot-logout.gif
@@ -140,7 +140,7 @@ is reached, the session is closed).
 Therefore, users who plan to use the service again later on the same day,
 should log out to avoid consuming their daily time and/or data.
 
-Session limits
+Session Limits
 --------------
 
 .. image:: ../images/demo/session-limit-exceeded.jpeg
@@ -182,7 +182,7 @@ The video below demonstrates this feature:
         </iframe>
     </p>
 
-Sign up
+Sign Up
 -------
 
 .. image:: ../images/demo/signup.png
@@ -219,3 +219,48 @@ for less than 24 hours, as the demo system is reset every day.
   For more technical information about social login, please read
   `OpenWISP RADIUS - Social Login
   <https://openwisp-radius.readthedocs.io/en/stable/user/social_login.html>`_
+
+Paid WiFi Hotspot Subscription Plans
+------------------------------------
+
+.. raw:: html
+
+    <p style="text-align: center">
+        <iframe
+          width="100%"
+          height="820"
+          src="https://www.youtube.com/embed/8zf-rDG0UjU"
+          title="OpenWISP Paid WiFi Subscription Plans"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+    </p>
+
+Testing the **WiFi hotspot paid subscription plans** is easy,
+the demo system is configured to use the Paypal Sandbox, a test version
+of Paypal with unlimited fake money, which allows to test the feature
+at any time without incurring any costs.
+
+Follow these steps to try the *paid WiFi subscription* feature:
+
+- Sign up for one of the non-free plans.
+- Enter your real email address and dummy personal information.
+- Click "Proceed with the payment."
+- Enter the following paypal credentials:
+  ``support@openwisp.io`` / ``tester123`` and click on
+  "start session".
+- Choose to pay with Paypal balance and click "Continue to Review Order."
+
+After following the steps above you will be logged in to the WiFi service
+and redirected to the status page, from then on you can surf the
+web.
+
+You should also receive a test invoice via email as in the
+screenshots below.
+
+.. image:: ../images/demo/wifi-paid-plan-invoice-email.png
+   :target: ../_images/wifi-paid-plan-invoice-email.png
+
+.. image:: ../images/demo/wifi-paid-plan-invoice-sample.png
+   :target: ../_images/wifi-paid-plan-invoice-sample.png
