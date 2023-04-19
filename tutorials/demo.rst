@@ -15,51 +15,56 @@ Accessing the demo system
 - **Username**: demo
 - **Password**: tester123
 
-The content of the demo organization is reset every day at 1:00 UTC.
+The content of the demo organization is reset every day
+at 1:00 AM UTC, while the demo user's password is reset every minute.
 
-The password of the demo user is reset every minute.
+To ensure the safety and integrity of our managed OpenWISP system,
+certain features are disabled for the demo user, including:
 
-For security reasons, the demo user is
-not allowed to use the following features:
+* Deleting existing devices
+* Sending custom shell commands to devices
+* Sending password change commands to devices
+* Uploading new firmware builds
+* Launching firmware upgrade operations
+* Creating new users or modifying the details of the demo organization
+* Changing the details of RADIUS groups
 
-* delete existing devices
-* sending custom shell commands to devices
-* sending password change commands to devices
-* uploading new firmware builds
-* launch firmware upgrade operations
-* create new users or change the details of the demo organization
-* changing the details of RADIUS groups
-
-If you want to test the features above you can request
-a free 30 days trial, the form to request the free trial
-will pop up while using the demo system.
+If you would like to test any of these features, we offer a free 30-day
+trial period. You can access the request form for the free trial by
+using the demo system, or by
+:ref:`contacting our support <get_help>`.
 
 Firmware instructions (flashing OpenWISP Firmware)
 --------------------------------------------------
 
-We host an OpenWrt based firmware which ships all the packages
-that are commonly used in OpenWISP installations.
+We offer an OpenWrt-based firmware that includes all the packages
+typically used in OpenWISP installations.
 
-This firmware will help you get up to speed and test the main features
-of the OpenWISP cloud quickly.
+This firmware can help you quickly get started and test
+the core features of OpenWISP Cloud.
 
-If for some reason your prefer to use the firmware you already have,
-read the
-:ref:`the alternative instructions <alternative_firmware_instructions>`.
+If you prefer to use your existing firmware,
+please refer to the alternative instructions by reading
+
+:ref:`the alternative firmware instructions
+<alternative_firmware_instructions>`.
 
 1. Downloading the firmware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open `downloads.openwisp.io <http://downloads.openwisp.io/?prefix=firmware/22.03/ath79/>`_
-and select the target architecture and image for your device.
+To download the OpenWISP firmware for your device, visit
+`downloads.openwisp.io <http://downloads.openwisp.io/?prefix=firmware/22.03/ath79/>`_
+and select the appropriate target architecture and image.
 
-At the moment we are generating the firmware only for ath79,
-but we will be adding more targets over time.
+At present, we are generating firmware only for ath79, but we plan to add
+support for more targets in the future.
 
-If your device is missing, let us know via the
-`support channels <https://openwisp.org/support.html>`__,
-in the meantime you can use
-:ref:`the alternative instructions <alternative_firmware_instructions>`.
+If your device is not currently
+supported, please let us know through our
+`support channels <https://openwisp.org/support.html>`__. In the meantime,
+you can use the
+:ref:`alternative firmware instructions
+<alternative_firmware_instructions>`
 
 2. Flashing the firmware
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,7 +106,7 @@ The easiest thing is to use the following commands:
 
 However, if you want to install more recent
 versions of the OpenWISP packages
-you can use download the packages from
+you can download them from
 `downloads.openwisp.io <http://downloads.openwisp.io/>`__ on your
 device and install them, eg:
 
@@ -151,23 +156,23 @@ Connecting your device to OpenWISP
 
 .. image:: ../images/demo/lan-ports.jpg
 
-Once your device is flashed, connect an ethernet cable from your LAN into
-one of the available LAN ports.
+Once your device is flashed, connect an Ethernet cable from your LAN into
+one of the LAN ports.
 
 DHCP client mode
 ~~~~~~~~~~~~~~~~
 
-Assuming your LAN is equipped with a DHCP server (usually your
-main ISP router), after booting up, the device will be assigned an
-IP address from the LAN DHCP server, at this point the device
-should be able to reach the internet and hence register to the
+Assuming your LAN is equipped with a DHCP server (usually your main
+ISP router), after booting up, the device will be assigned an IP
+address from the LAN DHCP server. At this point, the device should
+be able to reach the internet and register to the
 OpenWISP demo system.
 
 Static address mode
 ~~~~~~~~~~~~~~~~~~~
 
-If your LAN does not have a DHCP server you will need to configure the
-a static ip address and gateway address to the LAN interface.
+If your LAN does not have a DHCP server, you will need to configure
+a static IP address and gateway address for the LAN interface.
 
 Registration
 ~~~~~~~~~~~~
@@ -175,23 +180,22 @@ Registration
 .. image:: ../images/demo/device-list-registered.png
     :target: ../_images/device-list-registered.png
 
-Once the previous steps are executed correctly and the device can
-reach the internet, the device will register and you will be able to find
-it in the list of available
-devices of the demo organization, most likely you will be able to find
-it by its mac address as in the screenshot above
-(or by its name if you changed its name from "OpenWrt" to something else).
+Once you have completed the previous steps correctly and the device can
+connect to the internet, it will automatically register and appear in
+the list of available devices for the demo organization.
+You can find it by its MAC address, as shown in the screenshot above,
+or by its name if you have changed it from "OpenWrt" to something else.
 
-At this point the device should have already downloaded and applied
-the configuration, in a few minutes the management tunnel will be
-up and the device will start collecting monitoring information
+At this point, the device should have already downloaded and applied
+the configuration. In a few minutes the management tunnel will be
+established and the device will start collecting monitoring information.
 
 Monitoring charts and status
 ----------------------------
 
-After a few minutes, you should start noticing OpenWISP is collecting
-metrics from your device, the UI will show the information similar to
-the screenshots below.
+After a few minutes, OpenWISP will start collecting metrics from your
+device. You will be able to see this information displayed in the UI,
+which will be similar to the screenshots shown below.
 
 Health status
 ~~~~~~~~~~~~~
@@ -250,12 +254,15 @@ with mobile connections (eg: 3G, LTE).
 Find out more information about the
 :doc:`Monitoring module of OpenWISP <../user/monitoring>`.
 
+.. _get_help:
+
 Get help
 --------
 
-If you need help, you can write to the
+If you need help or want to request a free 30-day trial of the
+full feature set, you can write to the
 `support channels <https://openwisp.org/support.html>`__ or just click
-directly on "Contact support" as indicated in the screenshot below.
+on "Contact support" as indicated in the screenshot below.
 
 .. image:: ../images/demo/contact-support.png
     :target: ../_images/contact-support.png
