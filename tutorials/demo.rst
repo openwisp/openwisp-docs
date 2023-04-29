@@ -270,5 +270,7 @@ on "Contact support" as indicated in the screenshot below.
 Next steps
 ----------
 
-- Try the :doc:`WiFi Hotspot & Captive Portal (Public WiFi) <./hotspot>`
-  features
+- :doc:`Open and/or WPA protected WiFi Access Point SSID
+  <./wifi-access-point>`
+- :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
+  <./hotspot>`

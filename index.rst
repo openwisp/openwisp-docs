@@ -24,6 +24,7 @@ Contents:
    user/wifi-login-pages
    user/django-settings
    tutorials/demo
+   tutorials/wifi-access-point.rst
    tutorials/hotspot
    general/architecture
    general/values
