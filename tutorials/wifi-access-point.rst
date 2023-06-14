@@ -128,6 +128,45 @@ e.g. ``radio0`` and ``radio1``.
 
 .. _monitoring_wifi_clients:
 
+Roaming (802.11r: Fast BSS Transition)
+--------------------------------------
+
+Fast transition enables WiFi clients to seamlessly roam between
+access points without interrupting media flows, such as video or
+phone calls, streaming, etc., caused by delays in re-authentication.
+
+Enabling 802.11r on OpenWrt via OpenWISP can be easily done with the
+following steps:
+
+1. Prepare a WiFi AP template as explained in the previous sections,
+   ensuring that the SSID used on
+   the access points remains consistent.
+2. Check the "roaming" checkbox.
+3. Check the "FT PSK generate local" checkbox.
+4. Increase the default "reassociation deadline" to at least 2000.
+5. Save the changes.
+
+.. image:: ../images/demo/ap/roaming-fast-transition-80211r.png
+  :target: ../_images/roaming-fast-transition-80211r.png
+
+To verify whether WiFi clients are roaming between APs,
+launch the shell command ``logread -f`` on each AP.
+Then, move the WiFi client from one AP to another, making sure they
+are sufficiently distant.
+
+When the WiFi client successfully transitions from one AP to another,
+you should see log lines like:
+
+.. code-block::
+
+  WPA: FT authentication already completed - do not start 4-way handshake
+
+You may wish to test the configuration and adjust the following options:
+
+- Reassociation deadline: Increase it to avoid frequent
+  timeouts on busy networks.
+- FT-over-DS.
+
 Monitoring WiFi Clients
 -----------------------
 
