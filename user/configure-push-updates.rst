@@ -26,13 +26,23 @@ the following command:
 
 .. code-block:: shell
 
-    echo './sshkey' | ssh-keygen -t rsa -b 4096 -C "openwisp"
+    echo './sshkey' | ssh-keygen -t ed25519 -C "openwisp"
 
 This will create two files in the current directory, one called ``sshkey``
 (the private key) and one called
 ``sshkey.pub`` (the public key).
 
 Store the content of these files in a secure location.
+
+.. note::
+
+    Support for **ED25519** was added in OpenWrt 21.02
+    (requires Dropbear > 2020.79). If you are managing devices
+    with OpenWrt < 21, then you will need to use RSA keys:
+
+    .. code-block:: shell
+
+       echo './sshkey' | ssh-keygen -t rsa -b 4096 -C "openwisp"
 
 2. Save SSH private key in OpenWISP (access credentials)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
