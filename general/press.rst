@@ -122,6 +122,12 @@ Blog Posts
 Google Summer of Code Blog Posts
 --------------------------------
 
+2023 Contributors
+~~~~~~~~~~~~~~~~~
+
+- `ZeroTier Tunnels Support for OpenWISP Controller
+  <https://aryamanz29.medium.com/add-support-for-automatic-management-of-zerotier-tunnels-791be96903bf>`_ by Aryaman (Aryamanz29).
+
 2022 Contributors
 ~~~~~~~~~~~~~~~~~
 
