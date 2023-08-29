@@ -22,9 +22,13 @@ template and Device has same organization.
 1. Configure Self-Hosted ZeroTier Network Controller
 ####################################################
 
-If you haven't already set up a self-hosted Zerotier
-network controller on your server, now is a good time to do so.
-You can start by simply installing Zerotier on your server
+Currently, OpenWISP doesn't support the management
+of `ZeroTier Central Controllers <https://my.zerotier.com/>`_
+and only supports `self-hosted ZeroTier controllers
+<https://docs.zerotier.com/self-hosting/introduction/>`_.
+If you haven't already set up a self-hosted ZeroTier network controller
+on your server, now is a good time to do so. You can
+start by simply installing ZeroTier package on your server
 from the `official website <https://www.zerotier.com/download/>`_.
 
 2. Create VPN server configuration for ZeroTier

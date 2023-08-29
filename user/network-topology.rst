@@ -133,8 +133,9 @@ systemwide (no organization)** option is used
 for the ZeroTier topology organization. You are free
 to opt for any organization, as long as both the topology
 and the device share the same organization, assuming the
-`OpenWISP controller integration <#integration-with-openwisp
--controller-and-openwisp-monitoring>`_ feature is enabled.
+`OpenWISP controller integration <https://github.com/openwisp/
+openwisp-network-topology/ #integration-with-openwisp-controller
+-and-openwisp-monitoring>`_ feature is enabled.
 
 1. Create topology for ZeroTier
 ###############################
@@ -162,10 +163,11 @@ and the device share the same organization, assuming the
 2. Create a script for sending ZeroTier topology data
 #####################################################
 
-1. Now, create a script (e.g: ``/opt/send-zt-topology.sh``)
+1. Now, create a script on your server where
+   the ZeroTier controller is hosted (e.g: ``/opt/send-zt-topology.sh``)
    that sends the ZeroTier topology data using a POST request.
-   In the example script below, we are sending the ZeroTier
-   self-hosted controller peers data:
+   In the example script below, we are sending the peers data
+   from the self-hosted ZeroTier controller to OpenWISP:
 
 .. code-block:: shell
 
