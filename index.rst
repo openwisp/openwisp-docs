@@ -15,6 +15,7 @@ Contents:
    user/configuration-variables
    user/vpn
    user/wireguard
+   user/zerotier
    user/configure-push-updates
    user/send-commands
    user/subnet-division-rules

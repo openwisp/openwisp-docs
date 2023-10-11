@@ -88,9 +88,9 @@ This is the most common scenario:
 
 In this scenario, the OpenWISP application will not be able to reach the
 devices **unless a management tunnel** is used, for that reason having
-a management VPN like OpenVPN, Wireguard or any other tunneling solution
-is paramount, not only to allow OpenWISP to work properly, but also to
-be able to perform debugging and troubleshooting when needed.
+a management VPN like OpenVPN, Wireguard, ZeroTier or any other tunneling
+solution is paramount, not only to allow OpenWISP to work properly, but
+also to be able to perform debugging and troubleshooting when needed.
 
 In this scenario, the following requirements are needed:
 
