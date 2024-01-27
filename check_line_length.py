@@ -10,13 +10,14 @@ LIMIT_TEXT = 75
 LIMIT_CODE = 114
 
 
-def check_url(line):
+def should_skip_check(line):
     """
-    Check if there is a url present in the given line
+    Check if there is a pattern in this line
+    that indicates we should skip the check
     """
     pattern = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\), ]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     url = re.findall(pattern, line)
-    return bool(url)
+    return '"contents": "' in line or bool(url)
 
 
 def check_line_length(file_path):
@@ -54,7 +55,7 @@ def check_line_length(file_path):
             limit_type = 'text'
             limit = LIMIT_TEXT
         length = len(line)
-        if length > limit and check_url(line) is not True:
+        if length > limit and should_skip_check(line) is not True:
             errors.append(
                 'line {} in file {} is longer '
                 'than {} characters'.format(line_number, file, limit)

@@ -27,6 +27,7 @@ Contents:
    tutorials/demo
    tutorials/wifi-access-point.rst
    tutorials/hotspot
+   tutorials/mesh
    general/architecture
    general/values
    general/help-us
