@@ -168,4 +168,4 @@ Configuration management:
 Project ideas
 -------------
 
-- :doc:`Project Ideas 2023 <../developer/gsoc-ideas-2023>`
+- :doc:`Project Ideas 2024 <../developer/gsoc-ideas-2024>`
