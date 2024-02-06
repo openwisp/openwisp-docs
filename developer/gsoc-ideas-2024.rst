@@ -63,6 +63,88 @@ General suggestions and warnings
 Project Ideas
 -------------
 
+Enhancing Geo-Locating UX in OpenWISP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2024/maps.jpg
+
+.. Important::
+
+  Languages and technologies used:
+  **Python**, **Django**, **JavaScript**.
+
+  **Mentors**: Federico Capoano, Gagan Deep (more mentors TBA)
+
+  **Project size**: 350 hours.
+
+  **Difficulty rate**: medium.
+
+This GSoC project aims to elevate the user experience of geo-location
+features within OpenWISP. By creating a dedicated map page, enabling
+precise device tracking, and seamlessly integrating indoor floorplans,
+the project endeavors to significantly enhance the usability and
+functionality of the mapping interface, ensuring a more intuitive
+and efficient user experience.
+
+Pre-requisites to work on this project
+######################################
+
+The applicant must demonstrate good understanding of Python, Django,
+`Leaflet library <https://github.com/makinacorpus/django-leaflet>`_,
+Javascript, `OpenWISP Controller
+<https://github.com/openwisp/openwisp-controller#openwisp-controller>`__
+and `OpenWISP Monitoring
+<https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__.
+
+Expected outcomes
+#################
+
+- `Add a dedicated map page
+  <https://github.com/openwisp/openwisp-monitoring/issues/561>`_:
+  Add a dedicated page to display all network devices on a map
+  (similar to the map on the dashboard). This dedicated page will
+  provide users with a comprehensive overview of device locations,
+  improving visibility and ease of navigation.
+- `Allow locating a device on the map
+  <https://github.com/openwisp/openwisp-monitoring/issues/562>`_:
+  Add a URL in the device's page to locate a it on the map.
+  The map should focus (adjust zoom level and center) the device
+  in question.
+- `Allow tracking mobile co-ordinates
+  <https://github.com/openwisp/openwisp-controller/issues/828>`_:
+  OpenWISP Controller provides a way for devices to update their
+  co-ordinates. The map should be updated to reflect the updated
+  co-ordinates of such mobile devices.
+- `Integrate indoor floorplan in the map
+  <https://github.com/openwisp/openwisp-monitoring/issues/564>`_:
+  Implement functionality to support indoor locations within the
+  mapping interface. When zooming in on a device located indoors,
+  users should see an option to switch to the indoor view.
+  This view would show the floorplan of the indoor location.
+  It should take care of the following possibilities:
+    - An indoor location can have multiple floors. The view should be
+      allow users to navigate between different floors.
+    - There can be multiple devices on the same floor. The view should
+      show all the devices on a floor. This will require developing an
+      `API endpoint which returns location of devices on the floorplan
+      <https://github.com/openwisp/openwisp-controller/issues/828>`_.
+
+At each step of code changing the test coverage must be maintained stable
+and the documentation in the README must be kept up to date.
+
+.. note::
+
+  The "expected outcomes" provided above include links to corresponding
+  GitHub issues. However, these issues may not encompass all aspects of
+  the project and are primarily created to gather technical details.
+  Applicants are encouraged to seek clarification and propose solutions.
+
+Applicants are also expected to deepen their understanding of the UI
+changes required by utilizing *wireframes (mockups)*, which must be
+included in their application. Demonstrated willingness and enthusiasm
+to learn about UI/UX development are crucial for successful
+participation in this project.
+
 Improve UX and Flexibility of the Firmware Upgrader Module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
