@@ -274,3 +274,5 @@ Next steps
   <./wifi-access-point>`
 - :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
   <./hotspot>`
+- :doc:`How to Set Up a Wireless Mesh Network
+  <./mesh>`
