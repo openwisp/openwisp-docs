@@ -4,8 +4,30 @@ How to Set Up a Wireless Mesh Network
 .. image:: ../images/mesh/mesh-network-topology-graph.png
   :target: ../_images/mesh-network-topology-graph.png
 
-In this tutorial, we'll guide you through the process of establishing
-a mesh network using the
+A **mesh network** is a **decentralized network architecture** where each
+node not only communicates with its immediate neighbors but also relays
+data for other mesh nodes.
+
+The word "mesh" primarily describes the interconnected topology of the
+network, while **wireless mesh networks** specifically refer to mesh
+networks deployed using standard WiFi bands (2.4 GHz / 5 GHz) as the
+physical connection medium.
+
+The advantages of this network architecture include:
+
+- **Resilience**: Due to its interconnected topology, there's no single
+  point of failure, so the dynamic routing protocols used to route traffic
+  are able to implement self-healing behavior, rerouting traffic along
+  alternative paths when a link fails.
+
+- **Flexibility**: Deploying new nodes or relocating existing ones is
+  straightforward due to consistent configurations across all nodes.
+
+These advantages make mesh networks particularly valuable for expanding
+WiFi coverage while controlling deployment and maintenance costs.
+
+In this tutorial, we'll guide you through the process of setting up
+a *wireless mesh network* using the
 `802.11s mesh mode <https://en.wikipedia.org/wiki/IEEE_802.11s>`_
 on `OpenWrt <https://openwrt.org/>`_ through OpenWISP.
 Additionally, we'll provide valuable tips on monitoring
