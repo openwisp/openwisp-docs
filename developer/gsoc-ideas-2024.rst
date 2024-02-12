@@ -104,6 +104,14 @@ and `netjsongraph.js
 Expected outcomes
 #################
 
+- `Make map actions bookmarkable
+  <https://github.com/openwisp/netjsongraph.js/issues/238>`_:
+  Clicking on a node/link to view it's details (action) should update
+  the query parameters of the page's URL with the object's ID.
+  When visiting this URL, the map should automatically focus the
+  said node/link. It shall also open the node's/link's details
+  if they are available. This shall also account for geo-maps
+  which work with co-ordinates.
 - `Add a dedicated map page
   <https://github.com/openwisp/openwisp-monitoring/issues/561>`_:
   Add a dedicated page to display all network devices on a map
@@ -114,7 +122,8 @@ Expected outcomes
   <https://github.com/openwisp/openwisp-monitoring/issues/562>`_:
   Add a URL in the device's page to locate a it on the map.
   The map should focus (adjust zoom level and center) the device
-  in question.
+  in question. Also, add a separate URL for viewing the object
+  on the indoor map.
 - `Allow tracking mobile co-ordinates
   <https://github.com/openwisp/openwisp-controller/issues/828>`_:
   OpenWISP Controller provides a way for devices to update their
