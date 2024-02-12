@@ -80,21 +80,21 @@ Improve OpenWISP General Map: Indoor, Mobile, Linkable URLs
 
   **Difficulty rate**: medium.
 
-This GSoC project aims to elevate the user experience of the general map
-of OpenWISP, which was added in the last stable version.
+This GSoC project aims to enhance the user experience of the general map
+within OpenWISP, a feature introduced in the last stable version.
 
-By creating a dedicated map page, enabling
+By developing a dedicated map page, facilitating
 precise device tracking, and seamlessly integrating indoor floorplans,
-the project endeavors to significantly enhance the usability and
+the project endeavors to significantly improve the usability and
 functionality of the mapping interface, ensuring a more intuitive
 and effective user experience.
 
 Pre-requisites to work on this project
 ######################################
 
-The applicant must demonstrate good understanding of Python, Django,
+Applicants must demonstrate a solid understanding of Python, Django,
 `Leaflet library <https://github.com/makinacorpus/django-leaflet>`_,
-Javascript, `OpenWISP Controller
+JavaScript, `OpenWISP Controller
 <https://github.com/openwisp/openwisp-controller#openwisp-controller>`__,
 `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__.
@@ -104,60 +104,76 @@ and `netjsongraph.js
 Expected outcomes
 #################
 
-- `Make map actions bookmarkable
-  <https://github.com/openwisp/netjsongraph.js/issues/238>`_:
-  Clicking on a node/link to view it's details (action) should update
-  the query parameters of the page's URL with the object's ID.
-  When visiting this URL, the map should automatically focus the
-  said node/link. It shall also open the node's/link's details
-  if they are available. This shall also account for geo-maps
-  which work with co-ordinates.
 - `Add a dedicated map page
   <https://github.com/openwisp/openwisp-monitoring/issues/561>`_:
-  Add a dedicated page to display all network devices on a map
-  (similar to the map on the dashboard). This dedicated page will
-  provide users with a comprehensive overview of device locations,
-  improving visibility and ease of navigation.
-- `Allow locating a device on the map
-  <https://github.com/openwisp/openwisp-monitoring/issues/562>`_:
-  Add a URL in the device's page to locate a it on the map.
-  The map should focus (adjust zoom level and center) the device
-  in question. Also, add a separate URL for viewing the object
-  on the indoor map.
-- `Allow tracking mobile co-ordinates
+  Introduce a dedicated page to display all network devices on a map.
+  This view will offer the same functionality as the map in the
+  dashboard, with the sole difference being that this page focuses on
+  rendering only the map. It will be used for linking specific points
+  on the map within the rest of the OpenWISP UI.
+
+- `Allow tracking mobile coordinates
   <https://github.com/openwisp/openwisp-controller/issues/828>`_:
   OpenWISP Controller provides a way for devices to update their
-  co-ordinates. The map should be updated to reflect the updated
-  co-ordinates of such mobile devices.
-- `Integrate indoor floorplan functionality in the map
-  <https://github.com/openwisp/openwisp-monitoring/issues/564>`_:
-  Implement functionality to support indoor locations within the
-  general map interface. When zooming in on a device located indoors,
-  users should see an option to switch to the indoor view.
-  This view would show the floorplan of the indoor location
-  and account for the following use cases:
-    - An indoor location can have multiple floors. The view should be
-      allow users to navigate between different floors.
-    - There can be multiple devices on the same floor. The view should
-      show all the devices on a floor. This will require developing an
-      `API endpoint which returns location of devices on the floorplan
-      <https://github.com/openwisp/openwisp-controller/issues/828>`_.
+  co-ordinates, we want to make the map able to update in real time
+  as devices send their updated coordinates.
 
-At each step of code changing the test coverage must be maintained stable
-and the documentation in the README must be kept up to date.
+- `Integrate indoor floor plan functionality in the map
+  <https://github.com/openwisp/openwisp-monitoring/issues/564>`_:
+  The netjsongraph.js library allows to render indoor maps,
+  we want to make use of this feature to display the indoor location
+  of devices and we want this feature to be accessible from the general
+  map. When zooming in on a device which is flagged as indoor and has
+  floor plans saved in the database,
+  users should see an option to switch to the indoor view.
+  This view would show the floor plan of the indoor location and
+  any device located on the floor plan, it shall also account for the
+  following use cases:
+
+   - An indoor location can have multiple floors. The view should be
+     allow users to navigate between different floors.
+   - There can be multiple devices on the same floor. The view should
+     show all the devices on a floor. This will require developing an
+     API endpoint which returns location of devices on the floor plan
+
+- `Make map actions bookmarkable
+  <https://github.com/openwisp/netjsongraph.js/issues/238>`_:
+  Update the URL when clicking on a node/link to view its details.
+  Visiting this URL should automatically focus on the specified
+  node/link and display its details, if available. This functionality
+  should also accommodate geo-maps using coordinates.
+  Clicking on a node/link to view it's details should update
+  the the page's URL.
+  When visiting this URL, the map should automatically focus the
+  said node/link. It shall also open the node's/link's details
+  if they are available. This should work on geographic maps,
+  indoor maps and logical maps.
+
+- `Add button to general map from device detail
+  <https://github.com/openwisp/openwisp-monitoring/issues/562>`_:
+  Implement a button on the device detail page to allow users to
+  navigate from the device detail to the general map and inspect
+  the device's location on the map. The map should focus on the
+  specific device in question. This feature should also be available
+  for indoor maps, providing a button in the floor plan section
+  to open the general map with the indoor view focused.
+
+Throughout the code changes, it is imperative to maintain stable
+test coverage and keep the README documentation up to date.
 
 .. note::
 
-  The "expected outcomes" provided above include links to corresponding
-  GitHub issues. However, these issues may not encompass all aspects of
-  the project and are primarily created to gather technical details.
-  Applicants are encouraged to seek clarification and propose solutions.
+  The "expected outcomes" mentioned above include links to corresponding
+  GitHub issues. However, these issues may not cover all aspects of the
+  project and are primarily intended to gather technical details.
+  Applicants are encouraged to seek clarification, propose solutions
+  and open more issues if needed.
 
 Applicants are also expected to deepen their understanding of the UI
-changes required by utilizing *wireframes* / *mockups*, which must be
-included in their application. Demonstrated willingness and enthusiasm
-to learn about UI/UX development are crucial for the success of this
-project idea.
+changes required by preparing *wireframes* or *mockups*, which must be
+included in their application. Demonstrating a willingness and enthusiasm
+to learn about UI/UX development is crucial for the success of this
+project.
 
 Improve UX and Flexibility of the Firmware Upgrader Module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
