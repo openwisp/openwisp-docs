@@ -187,7 +187,7 @@ Improve netjsongraph.js resiliency and visualization
 
   **Mentors**: Federico Capoano (more mentors TBA).
 
-  **Project size**: 90 hours.
+  **Project size**: 175 hours.
 
   **Difficulty rate**: medium.
 
