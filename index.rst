@@ -24,6 +24,7 @@ Contents:
    user/radius
    user/wifi-login-pages
    user/django-settings
+   user/usage-metric-collection
    tutorials/demo
    tutorials/wifi-access-point.rst
    tutorials/hotspot
