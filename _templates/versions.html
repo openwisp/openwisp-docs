@@ -1,0 +1,52 @@
+<style>
+  .rst-versions.shift-up {
+    background: #ddd;
+  }
+
+  span.rst-current-version {
+    background: #fff !important;
+    color: #df5d43 !important;
+  }
+
+  .rst-other-versions dt {
+    font-weight: bold !important;
+  }
+
+  .rst-versions .rst-other-versions dd a {
+    color: #777;
+  }
+
+  .rst-versions .rst-other-versions dd a:hover,
+  .rst-versions .rst-other-versions dd.selected a {
+    color: #df5d43 !important;
+  }
+</style>
+
+
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    Version: {{ current_ow_version }}
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>{{ _('Versions') }}</dt>
+      {% for ow_version, ow_version_root_url in ow_versions %}
+      <dd class="{% if ow_version == current_ow_version %}selected{% endif %}">
+        <a href="{{ ow_version_root_url }}/{{ pagename }}.html">{{ ow_version }}</a>
+      </dd>
+      {% endfor %}
+    </dl>
+    <dl>
+      <dt>{{ _('Versions') }}</dt>
+      <dd><a href="//openwisp-radius.readthedocs.io/_/downloads/en/stable/pdf/">PDF</a></dd>
+
+      <dd><a href="//openwisp-radius.readthedocs.io/_/downloads/en/stable/htmlzip/">HTML</a></dd>
+
+      <dd><a href="//openwisp-radius.readthedocs.io/_/downloads/en/stable/epub/">Epub</a></dd>
+
+    </dl>
+    <br>
+    </dl>
+  </div>
+</div>

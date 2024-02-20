@@ -10,20 +10,11 @@ with using OpenWISP.**
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :glob:
 
    user/quickstart
-   user/configure-device
-   user/monitoring
-   user/templates
-   user/configuration-variables
-   user/vpn
-   user/wireguard
-   user/zerotier
-   user/configure-push-updates
-   user/send-commands
-   user/subnet-division-rules
-   user/firmware-upgrades
+   modules/*/docs/*
    user/network-topology
    user/radius
    user/wifi-login-pages

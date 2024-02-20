@@ -31,11 +31,14 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'rst2pdf.pdfbuilder',
+    'sphinxcontrib.jquery',
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
     'notfound.extension',
+    'sphinx_multiversion',
     'openwisp.sphinx.theme',
 ]
 
@@ -181,7 +184,11 @@ html_logo = 'assets/design/openwisp-logo-black.svg'
 
 # Custom sidebar templates, maps document names to template names.
 #
-# html_sidebars = {}
+html_sidebars = {
+    '**': [
+        'versions.html',
+    ],
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -428,10 +435,6 @@ epub_exclude_files = ['search.html']
 #
 # epub_use_index = True
 
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {}
-
 notfound_urls_prefix = '/docs/'
 notfound_context = {
     'title': 'Page not found',
@@ -440,3 +443,24 @@ notfound_context = {
         'perform a search for what you were looking for.'
     ),
 }
+
+
+smv_remote_whitelist = None
+smv_branch_whitelist = 'master'
+smv_tag_whitelist = r'^.*$'
+
+# Configuration for generating comprehensive docs
+import yaml
+import os
+
+with open('config.yml', 'r') as f:
+    ow_docs_config = yaml.safe_load(f)
+
+html_context = {
+    'current_ow_version': os.environ.get('OPENWISP2_VERSION', 'stable'),
+    'ow_versions': []
+}
+
+for ow_version in ow_docs_config['versions']:
+    ow_version_name = ow_version['name']
+    html_context['ow_versions'].append([ow_version_name, f'/{ow_version_name}'])

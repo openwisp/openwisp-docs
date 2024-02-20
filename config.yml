@@ -1,0 +1,15 @@
+---
+
+versions:
+  - name: latest
+    modules:
+      - name: openwisp-firmware-upgrader
+        branch: reorder-docs
+      - name: openwisp-controller
+        branch: reorder-docs
+  - name: stable
+    modules:
+      - name: openwisp-firmware-upgrader
+        branch: reorder-docs-stable
+      - name: openwisp-controller
+        branch: reorder-docs-stable
