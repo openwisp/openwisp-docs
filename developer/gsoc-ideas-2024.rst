@@ -175,6 +175,73 @@ included in their application. Demonstrating a willingness and enthusiasm
 to learn about UI/UX development is crucial for the success of this
 project.
 
+Improve netjsongraph.js resiliency and visualization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/netjsongraph-default.png
+
+.. Important::
+
+  Languages and technologies used:
+  **Javascript**, **NodeJS**, **HTML**, **CSS**
+
+  **Mentors**: Federico Capoano (more mentors TBA).
+
+  **Project size**: 175 hours.
+
+  **Difficulty rate**: medium.
+
+The goal of this project is to improve the latest version of the
+netjsongraph.js visualization library to improve resiliency and
+functionality.
+
+Pre-requisites to work on this project
+######################################
+
+The contributor should have a proven track record and experience with
+Javascript, React JS, NodeJS, HTML and CSS.
+
+Familiarity with
+`OpenWISP Network Topology <https://github.com/openwisp/openwisp-network-topology>`__
+and `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring>`__
+is a plus.
+
+Expected outcomes
+#################
+
+The applicant must open pull requests for the following issues which must
+be merged by the final closing date of the program:
+
+- `Allow showing node names on geo map on high zoom levels
+  <https://github.com/openwisp/netjsongraph.js/issues/189>`_:
+  The node names should be shown by default on high zoom levels.
+- `Map should respect zoom levels of tile providers
+  <https://github.com/openwisp/netjsongraph.js/issues/188>`_:
+  We shall limit the map zoom levels based on the tile provider.
+  We can make the supported zoom levels configurable and provide
+  sensible defaults.
+- `Prevent overlapping of clusters
+  <https://github.com/openwisp/netjsongraph.js/issues/171>`_:
+  The clusters of different categories with the same location
+  are overlapped. Instead, we should find a way to prevent this
+  behavior.
+- `Add resiliency for invalid data
+  <https://github.com/openwisp/netjsongraph.js/issues/164>`_:
+  The library should not crash if invalid data is provided,
+  e.g. different nodes with same ID. Instead, it should handle
+  such cases gracefully and log the errors.
+- `Display additional data (connected clients) on nodes
+  <https://github.com/openwisp/netjsongraph.js/issues/153>`_:
+  It shall be possible to show connected clients on nodes.
+  This feature needs to be flexible, such that it can
+  be used to show different kinds of data.
+
+Each issue contains the details which the applicant needs to know
+in order to complete the project successfully.
+
+At each step of code changing the test coverage must be maintained stable
+and the documentation in the README must be kept up to date.
+
 Improve UX and Flexibility of the Firmware Upgrader Module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
