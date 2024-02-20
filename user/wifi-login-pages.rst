@@ -1,6 +1,12 @@
 WiFi Login Pages
 ================
 
+.. note::
+  For a demonstration of how this module is used,
+  please refer to the following demo tutorial:
+  :doc:`WiFi Hotspot, Captive Portal (Public WiFi),
+  Social Login <../tutorials/hotspot>`.
+
 Screenshots
 -----------
 
