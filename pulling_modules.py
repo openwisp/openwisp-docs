@@ -6,7 +6,7 @@ import yaml
 
 
 def clone_or_update_repo(module_name, branch):
-    repo_url = f'git@github.com:openwisp/{module_name}.git'
+    repo_url = f'https://github.com/openwisp/{module_name}.git'
     repo_path = f'modules/{module_name}'
 
     if os.path.exists(repo_path):
