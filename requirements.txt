@@ -3,7 +3,7 @@
 sphinx~=7.3.7
 svglib
 rst2pdf
-sphinxcontrib
+sphinxcontrib-jquery
 sphinx-notfound-page
 openwisp-sphinx-theme~=1.0.0
 openwisp-utils[qa] @ https://github.com/openwisp/openwisp-utils/tarball/master
