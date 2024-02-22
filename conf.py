@@ -38,7 +38,6 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.githubpages',
     'notfound.extension',
-    'sphinx_multiversion',
     'openwisp.sphinx.theme',
 ]
 
