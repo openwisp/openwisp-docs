@@ -1,4 +1,5 @@
 import os
+import shutil
 import subprocess
 
 import yaml
@@ -10,8 +11,16 @@ def clone_or_update_repo(module_name, branch):
 
     if os.path.exists(repo_path):
         print(f"Repository '{module_name}' already exists. Updating...")
-        subprocess.run(['git', 'remote', 'set-branches', 'origin', branch], cwd=repo_path, check=True)
-        subprocess.run(['git', 'fetch', '--update-shallow', 'origin', branch], cwd=repo_path, check=True)
+        subprocess.run(
+            ['git', 'remote', 'set-branches', 'origin', branch],
+            cwd=repo_path,
+            check=True,
+        )
+        subprocess.run(
+            ['git', 'fetch', '--update-shallow', 'origin', branch],
+            cwd=repo_path,
+            check=True,
+        )
         subprocess.run(['git', 'checkout', branch], cwd=repo_path, check=True)
     else:
         print(f"Cloning repository '{module_name}'...")
@@ -19,7 +28,7 @@ def clone_or_update_repo(module_name, branch):
             [
                 'git',
                 'clone',
-                # '--single-branch',
+                '--single-branch',
                 '--branch',
                 branch,
                 '--depth',
@@ -53,6 +62,7 @@ def main():
         subprocess.run(
             ['sphinx-build', '-b', 'html', '.', f'_build/{version_name}'], check=True
         )
+    shutil.copy('_static/index.html', '_build/index.html')
 
 
 if __name__ == "__main__":

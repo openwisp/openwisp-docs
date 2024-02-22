@@ -449,16 +449,17 @@ smv_remote_whitelist = None
 smv_branch_whitelist = 'master'
 smv_tag_whitelist = r'^.*$'
 
+
 # Configuration for generating comprehensive docs
-import yaml
 import os
+import yaml
 
 with open('config.yml', 'r') as f:
     ow_docs_config = yaml.safe_load(f)
 
 html_context = {
     'current_ow_version': os.environ.get('OPENWISP2_VERSION', 'stable'),
-    'ow_versions': []
+    'ow_versions': [],
 }
 
 for ow_version in ow_docs_config['versions']:
