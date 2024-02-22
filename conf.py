@@ -448,7 +448,6 @@ smv_remote_whitelist = None
 smv_branch_whitelist = 'master'
 smv_tag_whitelist = r'^.*$'
 
-
 # Configuration for generating comprehensive docs
 import os
 import yaml
@@ -463,4 +462,5 @@ html_context = {
 
 for ow_version in ow_docs_config['versions']:
     ow_version_name = ow_version['name']
-    html_context['ow_versions'].append([ow_version_name, f'/{ow_version_name}'])
+    html_context['ow_versions'].append([ow_version_name, f'/openwisp2-docs/{ow_version_name}'])
+
