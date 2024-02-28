@@ -235,6 +235,12 @@ be merged by the final closing date of the program:
   It shall be possible to show connected clients on nodes.
   This feature needs to be flexible, such that it can
   be used to show different kinds of data.
+- `Show node labels only after hitting a certain zoom level
+  <https://github.com/openwisp/netjsongraph.js/issues/148>`_:
+  At present, the node labels become cluttered and unreadable
+  when zoomed out excessively. To enhance readability, we need
+  to add a feature in the library that allows configuring
+  the zoom level at which node labels should start appearing.
 
 Each issue contains the details which the applicant needs to know
 in order to complete the project successfully.
