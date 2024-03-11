@@ -169,3 +169,70 @@ Project ideas
 -------------
 
 - :doc:`Project Ideas 2024 <../developer/gsoc-ideas-2024>`
+
+Application Template
+--------------------
+
+Please make sure to include the information requested below
+in your GSoC application.
+
+1. Your Details
+~~~~~~~~~~~~~~~
+
+- Full name
+- Date of birth
+- Country/Region
+- Email
+- GitHub/GitLab profile
+- Phone number
+- What's your availability in UTC times?
+
+2. Tell Us About Yourself
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- What is your background?
+- Have you ever contributed to open-source software projects? If yes, how?
+- Please list the links to your OpenWISP contributions and/or notable
+  contributions to other Open Source & Free Software projects.
+- Do you have any experience with OpenWrt?
+- Do you have a router at home on which you can flash OpenWrt to test
+  OpenWISP?
+- What's your motivation for working on OpenWISP during
+  the Google Summer of Code?
+
+3. Your GSoC Project
+~~~~~~~~~~~~~~~~~~~~
+
+- Project Title
+- Possible Mentor
+- Measurable Outcomes
+- Project Details:
+
+  How are you going to implement the solution?
+
+  What technologies do you want to use?
+
+  Make sure to include code samples.
+
+  Linking to a repository containing a prototype and an explicative
+  README, which includes screenshots or GIF recordings demonstrating
+  how the prototype works, is a great way to demonstrate your
+  technical understanding and boost your chances.
+- Project Schedule:
+  Can you provide a rough estimate?
+  When can you begin to work?
+- Availability:
+  How many hours per week can you spend working on this?
+  What other obligations do you have this summer?
+
+4. After GSoC
+~~~~~~~~~~~~~
+
+- Are you interested in continuing to collaborate with
+  OpenWISP after the GSoC ends?
+- Will you help maintain your implementation for a while?
+- If we get new business opportunities to build new features, are
+  you interested in occasional freelance paid work?
+
+  It's not enough to reply "YES," please explain what your motivation is
+  (e.g., gaining experience, tech challenges).
