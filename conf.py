@@ -450,10 +450,11 @@ smv_tag_whitelist = r'^.*$'
 
 # Configuration for generating comprehensive docs
 import os
+
 import yaml
 
-with open('config.yml', 'r') as f:
-    ow_docs_config = yaml.safe_load(f)
+with open('config.yml', 'r') as config_file:
+    ow_docs_config = yaml.safe_load(config_file)
 
 html_context = {
     'current_ow_version': os.environ.get('OPENWISP2_VERSION', 'stable'),
@@ -462,5 +463,4 @@ html_context = {
 
 for ow_version in ow_docs_config['versions']:
     ow_version_name = ow_version['name']
-    html_context['ow_versions'].append([ow_version_name, f'/openwisp2-docs/{ow_version_name}'])
-
+    html_context['ow_versions'].append([ow_version_name, f'/{ow_version_name}'])
