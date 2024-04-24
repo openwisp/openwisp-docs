@@ -448,6 +448,11 @@ smv_remote_whitelist = None
 smv_branch_whitelist = 'master'
 smv_tag_whitelist = r'^.*$'
 
+# rst2pdf configuration
+pdf_documents = [
+    ('index', 'OpenWISP', 'OpenWISP', author),
+]
+
 # Configuration for generating comprehensive docs
 import os
 

@@ -57,10 +57,12 @@ def main():
             clone_or_update_repo(module_name, branch)
         version_name = version['name']
 
-        os.makedirs(f'_build/{version_name}', exist_ok=True)
         os.environ['OPENWISP2_VERSION'] = version_name
         subprocess.run(
             ['sphinx-build', '-b', 'html', '.', f'_build/{version_name}'], check=True
+        )
+        subprocess.run(
+            ['sphinx-build', '-b', 'pdf', '.', f'_build/pdf/{version_name}'], check=True
         )
     shutil.copy('_static/index.html', '_build/index.html')
 

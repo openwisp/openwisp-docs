@@ -7,10 +7,8 @@ with using OpenWISP.**
 **Need a quick overview?**
 `Try the OpenWISP Demo <https://openwisp.org/demo.html>`_.
 
-Contents:
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    user/quickstart
