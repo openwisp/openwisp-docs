@@ -16,7 +16,7 @@ openwisp-qa-check \
 
 echo ''
 echo 'Checking documentation build status'
-make html
+python3 pulling_modules.py
 
 # check for broken link
 python -m http.server 8001 &> /dev/null & pid=$!

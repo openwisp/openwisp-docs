@@ -5,4 +5,5 @@
     or for modifying the behavior of OpenWISP).
 
     If you want to install OpenWISP for usage, follow the
-    `tutorial for install OpenWISP </user/quickstart.html#install-the-openwisp-server-application>`_.
+    `tutorial for install OpenWISP
+    </user/quickstart.html#install-the-openwisp-server-application>`_.
