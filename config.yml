@@ -1,15 +1,19 @@
 ---
 
 versions:
-  - name: stable
+  - name: '22.05'
     modules:
       - name: openwisp-firmware-upgrader
         branch: reorder-docs-stable
       - name: openwisp-controller
         branch: reorder-docs-stable
-  - name: latest
+      - name: openwisp-monitoring
+        branch: reorder-docs
+  - name: dev
     modules:
       - name: openwisp-firmware-upgrader
         branch: reorder-docs
       - name: openwisp-controller
+        branch: reorder-docs
+      - name: openwisp-monitoring
         branch: reorder-docs
