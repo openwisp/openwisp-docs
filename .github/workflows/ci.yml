@@ -39,7 +39,7 @@ jobs:
         run: sudo npm install -g stylelint
 
       - name: QA checks
-        run: ./run-qa-checks
+        run: PRODUCTION=1 ./run-qa-checks
 
       # TODO: Uncomment the CI condition before merging
       - name: Setup Google Cloud

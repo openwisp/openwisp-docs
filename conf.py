@@ -434,7 +434,6 @@ notfound_context = {
     ),
 }
 
-
 # rst2pdf configuration
 pdf_documents = [
     ('index', 'OpenWISP', 'OpenWISP', author),
@@ -452,11 +451,15 @@ with open('config.yml', 'r') as config_file:
 version = os.environ.get('OPENWISP2_VERSION', 'stable')
 release = version
 
+docs_root = ''
+if os.environ.get('PRODUCTION', False):
+    docs_root = '/docs/__new__'
 html_context = {
     'current_ow_version': version,
     'ow_versions': [],
+    'docs_root': docs_root,
 }
 
 for ow_version in ow_docs_config['versions']:
     ow_version_name = ow_version['name']
-    html_context['ow_versions'].append([ow_version_name, f'/{ow_version_name}'])
+    html_context['ow_versions'].append([ow_version_name, f'{docs_root}/{ow_version_name}'])
