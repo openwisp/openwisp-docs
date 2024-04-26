@@ -438,7 +438,7 @@ notfound_context = {
 pdf_documents = [
     ('index', 'OpenWISP', 'OpenWISP', author),
 ]
-pdf_stylesheets = ['sphinx', 'a4', 'pdf-style']
+pdf_stylesheets = ['sphinx', 'a4', '_styles/pdf-style']
 
 # Configuration for generating comprehensive docs
 import os
