@@ -40,6 +40,7 @@ extensions = [
     'notfound.extension',
     'openwisp.sphinx.theme',
     'sphinx.ext.autosectionlabel',
+    'sphinx.ext.ifconfig'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -443,7 +444,7 @@ import yaml
 with open('config.yml', 'r') as config_file:
     ow_docs_config = yaml.safe_load(config_file)
 
-version = os.environ.get('OPENWISP2_VERSION', 'stable')
+version = os.environ.get('OPENWISP2_VERSION', 'dev')
 release = version
 
 docs_root = ''
