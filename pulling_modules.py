@@ -64,6 +64,9 @@ def main():
         subprocess.run(
             ['sphinx-build', '-b', 'pdf', '.', f'_build/{version_name}'], check=True
         )
+        subprocess.run(
+            ['sphinx-build', '-b', 'epub', '.', f'_build/{version_name}'], check=True
+        )
     shutil.copy('_static/index.html', '_build/index.html')
 
 

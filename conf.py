@@ -466,4 +466,6 @@ pdf_documents = [
 ]
 pdf_stylesheets = ['sphinx', 'a4', '_styles/pdf-style']
 
+epub_basename = f'OpenWISP-{version}'
+
 nitpicky = True
