@@ -9,6 +9,8 @@ versions:
         branch: reorder-docs-stable
       - name: openwisp-monitoring
         branch: reorder-docs
+      - name: openwisp-network-topology
+        branch: reorder-docs
   - name: dev
     modules:
       - name: openwisp-firmware-upgrader
@@ -16,4 +18,6 @@ versions:
       - name: openwisp-controller
         branch: reorder-docs
       - name: openwisp-monitoring
+        branch: reorder-docs
+      - name: openwisp-network-topology
         branch: reorder-docs

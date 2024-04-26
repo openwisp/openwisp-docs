@@ -13,7 +13,6 @@ with using OpenWISP.**
 
    user/quickstart
    modules/*/docs/*
-   user/network-topology
    user/radius
    user/wifi-login-pages
    user/django-settings
