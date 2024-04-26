@@ -39,6 +39,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'notfound.extension',
     'openwisp.sphinx.theme',
+    'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -434,12 +435,6 @@ notfound_context = {
     ),
 }
 
-# rst2pdf configuration
-pdf_documents = [
-    ('index', 'OpenWISP', 'OpenWISP', author),
-]
-pdf_stylesheets = ['sphinx', 'a4', '_styles/pdf-style']
-
 # Configuration for generating comprehensive docs
 import os
 
@@ -463,3 +458,11 @@ html_context = {
 for ow_version in ow_docs_config['versions']:
     ow_version_name = ow_version['name']
     html_context['ow_versions'].append([ow_version_name, f'{docs_root}/{ow_version_name}'])
+
+# rst2pdf configuration
+pdf_documents = [
+    ('index', f'OpenWISP-{version}', 'OpenWISP', author),
+]
+pdf_stylesheets = ['sphinx', 'a4', '_styles/pdf-style']
+
+nitpicky = True
