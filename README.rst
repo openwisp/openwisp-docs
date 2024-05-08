@@ -11,6 +11,8 @@ contributions, feedback and suggestions are very welcome.
 How to build the docs
 ---------------------
 
+Requirements: Python >= 3.9.
+
 1. Fork this repository
 
 2. Clone this repository using the following command::

@@ -1,6 +1,6 @@
 # Sphinx temporarily pinned because of this issue
 # https://github.com/sphinx-doc/sphinx/issues/11633
-sphinx~=7.1.2
+sphinx~=7.3.7
 sphinx-notfound-page
 openwisp-sphinx-theme~=1.0.0
 openwisp-utils[qa] @ https://github.com/openwisp/openwisp-utils/tarball/master
