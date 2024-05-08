@@ -1,3 +1,5 @@
+:orphan:
+
 GSoC Project Ideas 2021
 =======================
 
