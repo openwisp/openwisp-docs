@@ -16,7 +16,7 @@ openwisp-qa-check \
 
 echo ''
 echo 'Checking documentation build status'
-./runsphinx-build
+make html
 
 # check for broken link
 python -m http.server 8001 &> /dev/null & pid=$!
