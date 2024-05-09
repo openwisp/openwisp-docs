@@ -1,5 +1,6 @@
 ---
 
+stable_version: '22.05'
 versions:
   - name: '22.05'
     modules: []

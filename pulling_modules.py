@@ -1,8 +1,8 @@
 import os
-import shutil
 import subprocess
 
 import yaml
+from jinja2 import Environment, FileSystemLoader
 
 
 def clone_or_update_repo(module_name, branch):
@@ -50,6 +50,11 @@ def main():
     with open('config.yml') as f:
         config = yaml.safe_load(f)
 
+    docs_root = ''
+    if os.environ.get('PRODUCTION', False):
+        docs_root = '/docs/__new__'
+    os.environ['DOCS_ROOT'] = docs_root
+
     for version in config['versions']:
         for module in version['modules']:
             module_name = module['name']
@@ -61,13 +66,22 @@ def main():
         subprocess.run(
             ['sphinx-build', '-b', 'html', '.', f'_build/{version_name}'], check=True
         )
-        subprocess.run(
-            ['sphinx-build', '-b', 'pdf', '.', f'_build/{version_name}'], check=True
+        # subprocess.run(
+        #     ['sphinx-build', '-b', 'pdf', '.', f'_build/{version_name}'], check=True
+        # )
+        # subprocess.run(
+        #     ['sphinx-build', '-b', 'epub', '.', f'_build/{version_name}'], check=True
+        # )
+
+    # Generate the index.html file which redirects to the stable version.
+    env = Environment(loader=FileSystemLoader('_static'))
+    template = env.get_template('index.jinja2')
+    with open('_build/index.html', 'w') as f:
+        f.write(
+            template.render(
+                stable_version=config['stable_version'], docs_root=docs_root
+            )
         )
-        subprocess.run(
-            ['sphinx-build', '-b', 'epub', '.', f'_build/{version_name}'], check=True
-        )
-    shutil.copy('_static/index.html', '_build/index.html')
 
 
 if __name__ == "__main__":

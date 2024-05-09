@@ -40,7 +40,7 @@ extensions = [
     'notfound.extension',
     'openwisp.sphinx.theme',
     'sphinx.ext.autosectionlabel',
-    'sphinx.ext.ifconfig'
+    'sphinx.ext.ifconfig',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -447,9 +447,7 @@ with open('config.yml', 'r') as config_file:
 version = os.environ.get('OPENWISP2_VERSION', 'dev')
 release = version
 
-docs_root = ''
-if os.environ.get('PRODUCTION', False):
-    docs_root = '/docs/__new__'
+docs_root = os.environ['DOCS_ROOT']
 html_context = {
     'current_ow_version': version,
     'ow_versions': [],
@@ -458,7 +456,9 @@ html_context = {
 
 for ow_version in ow_docs_config['versions']:
     ow_version_name = ow_version['name']
-    html_context['ow_versions'].append([ow_version_name, f'{docs_root}/{ow_version_name}'])
+    html_context['ow_versions'].append(
+        [ow_version_name, f'{docs_root}/{ow_version_name}']
+    )
 
 # rst2pdf configuration
 pdf_documents = [
