@@ -17,6 +17,8 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 .PHONY: help
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
+	@echo "  build_docs to build the documentation in all formats (PDF, HTML and ePUB)"
+	@echo "  build_docs_html to build the documentation in HTML format only"
 	@echo "  html       to make standalone HTML files"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
@@ -48,11 +50,19 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
+.PHONY: build_docs
+build_docs:
+	./build.py $(formats)
+
+.PHONY: build_docs_html
+build_docs_html:
+	make build_docs formats=html
+
 .PHONY: html
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)"
 
 .PHONY: dirhtml
 dirhtml:
@@ -114,11 +124,17 @@ devhelp:
 	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/NewcomersGuide"
 	@echo "# devhelp"
 
+.PHONY: pdf
+pdf:
+	$(SPHINXBUILD) -b pdf $(ALLSPHINXOPTS) $(BUILDDIR)
+	@echo
+	@echo "Build finished. The pdf file is in $(BUILDDIR)."
+
 .PHONY: epub
 epub:
-	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)
 	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
+	@echo "Build finished. The epub file is in $(BUILDDIR)."
 
 .PHONY: epub3
 epub3:

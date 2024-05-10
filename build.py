@@ -1,11 +1,26 @@
+#!/usr/bin/python3
+
+# This script generates the documentation for all the OpenWISP versions
+# defined in config.yml. For each version, it will clone or update the
+# OpenWISP modules and checkout the specified branch. It will then generate
+# the documentation using Sphinx in a separate directory for each
+# OpenWISP version.
+
 import os
 import subprocess
+import sys
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
+OUTPUT_FORMATS = ['pdf', 'epub', 'html']
+
 
 def clone_or_update_repo(module_name, branch):
+    """
+    Clone or update a repository based on the module name and branch provided.
+    If the repository already exists, update it. Otherwise, clone the repository.
+    """
     repo_url = f'https://github.com/openwisp/{module_name}.git'
     repo_path = f'modules/{module_name}'
 
@@ -55,6 +70,13 @@ def main():
         docs_root = '/docs/__new__'
     os.environ['DOCS_ROOT'] = docs_root
 
+    output_formats = OUTPUT_FORMATS.copy()
+    if len(sys.argv) > 1:
+        output_formats = sys.argv[1].split(',')
+        for format in output_formats:
+            if format not in OUTPUT_FORMATS:
+                print(f'ERROR: {format} is not a valid output format')
+
     for version in config['versions']:
         for module in version['modules']:
             module_name = module['name']
@@ -63,15 +85,10 @@ def main():
         version_name = version['name']
 
         os.environ['OPENWISP2_VERSION'] = version_name
-        subprocess.run(
-            ['sphinx-build', '-b', 'html', '.', f'_build/{version_name}'], check=True
-        )
-        # subprocess.run(
-        #     ['sphinx-build', '-b', 'pdf', '.', f'_build/{version_name}'], check=True
-        # )
-        # subprocess.run(
-        #     ['sphinx-build', '-b', 'epub', '.', f'_build/{version_name}'], check=True
-        # )
+        for format in output_formats:
+            subprocess.run(
+                ['make', format, f'BUILDDIR=_build/{version_name}'], check=True
+            )
 
     # Generate the index.html file which redirects to the stable version.
     env = Environment(loader=FileSystemLoader('_static'))
