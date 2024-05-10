@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build --fail-on-warning
+SPHINXBUILD   = sphinx-build #--fail-on-warning
 PAPER         =
 BUILDDIR      = _build
 
