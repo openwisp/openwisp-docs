@@ -42,7 +42,7 @@ jobs:
         run: ./run-qa-checks
 
       - name: Build docs in all formats
-        run: PRODUCTION=1 make build_docs
+        run: PRODUCTION=1 make build
 
       # TODO: Uncomment the CI condition before merging
       - name: Setup Google Cloud

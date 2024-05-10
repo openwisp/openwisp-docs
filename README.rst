@@ -32,14 +32,14 @@ Requirements: Python >= 3.9.
 .. code-block:: shell
 
     # This command will generate the documentation in all formats - HTML, PDF and ePUB
-    make build_docs
+    make build
     # The ``formats`` argument is a comma separated list of formats to build,
     # e.g. ``formats=html,pdf,epub``. The default is to build all available
     # formats, which currently are ``html``, ``pdf`` and ``epub``.
-    make build_docs formats=pdf,html
+    make build formats=pdf,html
     # This command is a shortcut for generating only HTML documentation during
     # development, since building PDF and ePUB takes time.
-    make build_docs_html
+    make build_html
 
 5. Open the generated HTML files in your browser.
 

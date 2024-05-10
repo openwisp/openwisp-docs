@@ -17,8 +17,8 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 .PHONY: help
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  build_docs to build the documentation in all formats (PDF, HTML and ePUB)"
-	@echo "  build_docs_html to build the documentation in HTML format only"
+	@echo "  build to build the documentation in all formats (PDF, HTML and ePUB)"
+	@echo "  build_html to build the documentation in HTML format only"
 	@echo "  html       to make standalone HTML files"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
@@ -50,13 +50,13 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
-.PHONY: build_docs
-build_docs:
+.PHONY: build
+build:
 	./build.py $(formats)
 
-.PHONY: build_docs_html
-build_docs_html:
-	make build_docs formats=html
+.PHONY: build_html
+build_html:
+	make build formats=html
 
 .PHONY: html
 html:
