@@ -112,7 +112,7 @@ Creating the Template
 From the OpenWISP navigation menu, go to ``Configurations``
 and then ``Templates``, from here click on the ``Add template``.
 
-.. image:: ../images/mesh/create-template.png
+.. image:: ../images/create-template.png
   :target: ../_images/create-template.png
 
 Fill in name, organization, leave type set to "Generic", backend
@@ -215,12 +215,12 @@ Once the advanced mode editor is open you can paste the following NetJSON:
 
 Then click on "back to normal mode" to close the advanced mode editor.
 
-.. image:: ../images/mesh/back-to-normal-mode.png
+.. image:: ../images/back-to-normal-mode.png
   :target: ../_images/back-to-normal-mode.png
 
 Now you can save the new template.
 
-.. image:: ../images/mesh/save.png
+.. image:: ../images/save.png
   :target: ../_images/save.png
 
 At this point you're ready to assign the template to your devices, but

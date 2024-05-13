@@ -8,6 +8,8 @@ OpenWISP Demo
    :backlinks: none
    :depth: 3
 
+.. _accessing_the_demo_system:
+
 Accessing the demo system
 -------------------------
 
