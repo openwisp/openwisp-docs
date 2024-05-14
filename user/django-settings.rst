@@ -1,12 +1,18 @@
 How to Edit Django Settings
 ===========================
 
-Modules (a.k.a Django Apps)
+.. contents::
+    :depth: 1
+    :local:
+
+What is an OpenWISP Module?
 ---------------------------
 
 The OpenWISP server application is composed of a number of modules
-called `Django apps <https://docs.djangoproject.com/en/4.0/intro/reusable-apps/>`_,
-Django is the underlying web framework on top
+called `Django apps <https://docs.djangoproject.com/en/4.2/intro/reusable-apps/>`_.
+
+`Django <https://djangoproject.com/>`_
+is the underlying Python web framework on top
 of which OpenWISP is built.
 
 Some of the Django apps used by OpenWISP are developed and maintained
@@ -15,18 +21,21 @@ or third party organizations, but most of these apps are configurable
 and customizable in different shapes or forms.
 
 The most common way to modify the behavior of a Django app is by
-editing the `settings.py file
-<https://docs.djangoproject.com/en/4.0/topics/settings/>`_,
+editing the `project settings.py file
+<https://docs.djangoproject.com/en/4.2/topics/settings/>`_,
 a file which holds all the global configuration of the application.
 
 The OpenWISP django modules are highly configurable and over time
 you may need to edit their settings, these settings are documented
-in the respective README documentation files of each module,
-for a list of all the available modules please see
+in the respective section of each module on this website,
+a reference is also provided for convenience at the end of this page.
+
+If you are looking for a reference which lists and describes
+all the OpenWISP modules please refer to
 :doc:`Architecture, Modules, Technologies <../general/architecture>`.
 
-Editing settings with the ansible role
---------------------------------------
+Editing Settings with Ansible-OpenWISP2
+---------------------------------------
 
 The official ansible OpenWISP role provides many
 `configuration variables <https://github.com/openwisp/ansible-openwisp2#role-variables>`_
@@ -68,7 +77,7 @@ add any python instruction to define and manipulate settings via the
 This allows for great flexibility in configuring and extending OpenWISP,
 because additional custom modules can be added and configured too.
 
-Editing settings with docker-openwisp
+Editing Settings with Docker-OpenWISP
 -------------------------------------
 
 Similarly to the ansible role, the dockerized version of OpenWISP
@@ -79,3 +88,8 @@ provides mainly two ways of changing settings:
 2. For more advanced use cases, it's possible
    `to provide an entirely custom django settings file
    <https://github.com/openwisp/docker-openwisp#custom-django-settings>`_.
+
+OpenWISP Settings Reference
+---------------------------
+
+TODO: let's list all the docs pages which list settings here.
