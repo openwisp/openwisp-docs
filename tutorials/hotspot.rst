@@ -19,8 +19,8 @@ Firmware Requirements for Hotspot Authentication
   :target: ../_images/openwrt-coova-chilli-firmware.png
   :align: center
 
-The **OpenWrt** firmware image provided
-for the :doc:`OpenWISP Demo System <./demo>`
+The **OpenWrt** :ref:`firmware image provided
+for the OpenWISP Demo System <demo_firmware>`
 includes a *captive portal* package called
 `Coova-Chilli <https://coova.github.io/CoovaChilli/>`_, which
 supports the
@@ -29,6 +29,17 @@ a standard protocol used for AAA
 (Accounting, Authorization and Authentication).
 This means it's a way of authenticating, authorizing, and rate-limiting
 network usage supported by a lot of networking hardware and software.
+
+The OpenVPN package is also required and included in
+the :ref:`firmware instructions for the
+OpenWISP Demo System <demo_firmware>`,
+as it's needed to facilitate secure communication between the
+Coova-Chilli captive portal and FreeRADIUS over the
+Management VPN tunnel.
+This setup prevents the routing of unencrypted RADIUS packets
+through the public internet, ensuring security, privacy, and
+mitigating potential legal risks associated with exposing
+users' personal information to malicious actors.
 
 Enable Captive Portal Template
 ------------------------------

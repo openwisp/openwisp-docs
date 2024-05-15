@@ -34,6 +34,8 @@ trial period. You can access the request form for the free trial by
 using the demo system, or by
 :ref:`contacting our support <get_help>`.
 
+.. _demo_firmware:
+
 Firmware instructions (flashing OpenWISP Firmware)
 --------------------------------------------------
 
