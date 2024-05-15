@@ -30,6 +30,15 @@ a standard protocol used for AAA
 This means it's a way of authenticating, authorizing, and rate-limiting
 network usage supported by a lot of networking hardware and software.
 
+.. warning::
+
+   Unfortunately, at the moment, installing Coova-Chilli
+   from the OpenWrt packages will not work because the
+   default configuration of the Coova-Chilli OpenWrt package
+   does not enable the ``chilli-redir`` feature, nor has SSL support
+   enabled, which will not allow the captive portal to redirect
+   the user to the captive page and will not support HTTPs requests.
+
 The OpenVPN package is also required and included in
 the :ref:`firmware instructions for the
 OpenWISP Demo System <demo_firmware>`,
