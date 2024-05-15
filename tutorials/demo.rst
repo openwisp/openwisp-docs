@@ -46,9 +46,7 @@ This firmware can help you quickly get started and test
 the core features of OpenWISP Cloud.
 
 If you prefer to use your existing firmware,
-please refer to the alternative instructions by reading
-
-:ref:`the alternative firmware instructions
+please refer to the :ref:`the alternative firmware instructions
 <alternative_firmware_instructions>`.
 
 1. Downloading the firmware
