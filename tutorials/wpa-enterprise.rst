@@ -1,5 +1,5 @@
-How to Set Up a WPA Enterprise (EAP-TTLS-PAP) authentication
-============================================================
+How to Set Up WPA Enterprise (EAP-TTLS-PAP) authentication
+===========================================================
 
 In this tutorial, we will guide you set up WPA Enterprise (EAP-TTLS-PAP)
 authentication for WiFi networks using OpenWISP. The RADIUS capabilities
@@ -86,24 +86,74 @@ section.
 Configuring FreeRADIUS for WPA Enterprise
 -----------------------------------------
 
-We assume you have already `configured FreeRADIUS to support
-WPA Enterprise (EAP-TTLS-PAP) authentication
-<https://openwisp-radius.readthedocs.io/en/stable/developer/freeradius_wpa_enterprise.html>`_.
-
 .. note::
 
-  We recommend to use the `ansible-openwisp2 role <`https://github.com/openwisp/ansible-openwisp2`>`_
-  which simplifies the configuration of FreeRADIUS through the ``freeradius_eap_orgs``
-  ansible variables.
+  You don't need to do anything if your are following this tutorial on
+  our :doc:`Demo System <./demo>`. The FreeRADIUS site is already configured
+  on the :doc:`OpenWISP Demo System <./demo>`.
 
-The authentication and authorization services of the FreeRADIUS server
-should be accessible by the OpenWrt devices.
+Before we go ahead with making changes to the FreeRADIUS configuration, we need
+to gather the following information:
 
-.. note::
+  - Organization's UUID
+  - Organization's RADIUS token
 
-  If you are trying this feature on our :doc:`Demo System <./demo>`, then
-  you need to apply the "Management VPN (OpenVPN)" template on your device.
-  Otherwise, your device won't be able to connect to the FreeRADIUS server.
+From the OpenWISP navigation menu, go to ``Users & Organizations``
+and then ``Organizations``, from here click on the desired organziation.
+
+.. image:: ../images/navigating-to-organization.png
+  :target: ../_images/navigating-to-organization.png
+
+From the organization's page, we need to find the organization's UUID
+and RADIUS token.
+
+.. image:: ../images/organization-uuid.png
+  :target: ../_images/organization-uuid.png
+
+.. image:: ../images/organization-radius-token.png
+  :target: ../_images/organization-radius-token.png
+
+This is good point to decide whether to use self-signed certificates or public
+certificates issued by a trusted Certificate Authority (CA). Both options
+have their pros and cons, and the choice largely depends on your specific
+requirements and constraints.
+
+Self-Signed Certificates
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Pros:
+
+  - Generated locally without involving a third-party CA.
+  - Eliminates the need for external entities, reducing
+    the risk of compromised trust.
+
+Cons:
+
+  - Requires installation of self-signed CA on all client devices.
+
+Public Certificates
+~~~~~~~~~~~~~~~~~~~
+
+Pros:
+
+  - Issued by trusted CAs, thus works out of the box with most devices.
+
+Cons:
+
+  - Offers a higher risk of compromise.
+  - Cumbersome to set-up.
+
+We recommend to use Ansible OpenWISP2 role to which simplifies
+configuring FreeRADIUS to use WPA Enterprise. Please refer to the
+`"Configuring FreeRADIUS for WPA Enterprise (EAP-TTLS-PAP)" section
+in the ansible-openwisp2 documentation
+<https://github.com/openwisp/ansible-openwisp2/tree/master?tab=readme-ov-file#configuring-freeradius-for-wpa-enterprise-eap-ttls-pap>`_
+for details.
+
+If you still prefer to configure the FreeRADIUS site manually, you can
+refer the `"Freeradius Setup for WPA Enterprise (EAP-TTLS-PAP) authentication"
+section of the FreeRADIUS documentation
+<https://openwisp-radius.readthedocs.io/en/stable/developer/freeradius_wpa_enterprise.html#freeradius-setup-for-wpa-enterprise-eap-ttls-pap-authentication>`_.
 
 Creating the NAS
 ----------------
@@ -116,6 +166,9 @@ Creating the NAS
 
 From the OpenWISP navigation menu, go to ``RADIUS``
 and then ``NAS``, from here click on the ``Add NAS``.
+
+.. image:: ../images/navigating-to-nas.png
+  :target: ../_images/navigating-to-nas.png
 
 Fill in the organization, short name, secret, and set the type to
 "Wireless - IEEE 802.11". In the **name** field, enter the IP address
