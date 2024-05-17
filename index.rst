@@ -1,7 +1,11 @@
 OpenWISP Documentation
 ======================
 
-**Need a quick overview?** `Try the OpenWISP Demo <https://openwisp.org/demo.html>`_.
+**This page contains all the documentation you will need to get started on
+with using OpenWISP.**
+
+**Need a quick overview?**
+`Try the OpenWISP Demo <https://openwisp.org/demo.html>`_.
 
 Contents:
 

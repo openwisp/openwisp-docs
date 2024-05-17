@@ -1,6 +1,9 @@
 Quickstart
 ==========
 
+**Use our quickstart guide below to help you get set up with using
+OpenWISP.**
+
 .. contents:: **Table of Contents**:
    :backlinks: none
    :depth: 3
@@ -8,9 +11,10 @@ Quickstart
 0. Try the Demo
 ---------------
 
-Before installing we recommend taking a look at
-:doc:`the OpenWISP Demo system <../tutorials/demo>`
-to get a quick overview.
+Before installing OpenWISP, we recommend that you try out the
+:doc:`OpenWISP Demo system <../tutorials/demo>`. This will give
+you an overview of how the system works. Once you have taken a
+look at the demo follow the steps below.
 
 .. _install_server:
 
@@ -18,7 +22,7 @@ to get a quick overview.
 ------------------------------------------
 
 If you want to find out how to deploy OpenWISP for production usage,
-follow the step by step `ansible-openwisp2 tutorial
+follow this step-by-step `ansible-openwisp2 tutorial
 <https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_.
 
 Alternatively, there's also
@@ -33,11 +37,11 @@ can be used as well.
 2. Install openwisp-config on your devices
 ------------------------------------------
 
-Here's a guide on :doc:`how to install openwisp-config on OpenWRT
-and connect it to OpenWISP <./configure-device>`.
+The following guide will walk you through how to install openwisp-config
+on :doc:`OpenWRT and connect it to OpenWISP <./configure-device>`.
 
 If you don't have a physical OpenWRT-compatible device at hand, you can
-install OpenWRT in a VirtualBox VM, that's also covered by the guide.
+install OpenWRT in a VirtualBox VM, the guide above covers how to do this.
 
 3. Install openwisp-monitoring on your devices
 ----------------------------------------------
@@ -48,6 +52,8 @@ read the :doc:`Monitoring Quickstart Guide <./monitoring>`.
 
 4. Watch video demonstrations
 -----------------------------
+
+Take a look at our video guides for further information.
 
 .. raw:: html
 
@@ -63,4 +69,5 @@ read the :doc:`Monitoring Quickstart Guide <./monitoring>`.
 5. Look for help
 ----------------
 
-See `support channels <http://openwisp.org/support.html>`_.
+If you need further support, please reach out to us via our
+`support channels <http://openwisp.org/support.html>`_.

@@ -6,14 +6,14 @@ Architecture Overview
 ---------------------
 
 The following SVG image summarizes the architecture of OpenWISP, the main
-technologies used, the structure of the OpenWISP modules and their
-most important dependencies and the way they interact with one another.
+technologies used, the structure of the OpenWISP modules, their most
+important dependencies and the way they interact with one another.
 
 .. note::
-    For the best experience it is recommended to open the image in a new
-    tab of your browser, from there you can also click on the different
-    elements to open the README or website of each module or technology
-    used.
+
+    For a better viewing experience, open the image in a new tab of your
+    browser, from there you can also click on the different elements to
+    open the README or website of each module or technology used.
 
     :download:`The Inkscape source file of the architecture diagram is
     also available for download
@@ -44,19 +44,19 @@ Deployment
   Recommended way to deploy OpenWISP on virtual machines.
 - `Docker OpenWISP <https://github.com/openwisp/docker-openwisp>`_
   (alpha): allows to deploy OpenWISP on dockerized cloud infrastructure.
-  It's still being improved but the basic features of OpenWISP
-  are working.
+  This software is still being improved but the basic features of
+  OpenWISP are working.
 - `Ansible OpenWISP WiFi Login Pages
   <https://github.com/openwisp/ansible-openwisp-wifi-login-pages>`_:
-  ansible role that allows to deploy `OpenWISP WiFi Login Pages
+  ansible role that allows deployment of `OpenWISP WiFi Login Pages
   <https://github.com/openwisp/openwisp-wifi-login-pages>`_.
 - `Ansible OpenWISP2 Image Generator
   <https://github.com/openwisp/ansible-openwisp2-imagegenerator>`_:
-  useful to generate many OpenWrt firmware images for different
-  organizations with the OpenWISP packages preinstalled.
+  useful for generating many OpenWrt firmware images for different
+  organizations with the OpenWISP packages pre installed.
 - `Ansible Wireguard OpenWISP.
   <https://github.com/openwisp/ansible-wireguard-openwisp>`_:
-  ansible role that allows to deploy the `Wireguard integration
+  ansible role that allows deployment of `Wireguard integration
   for OpenWISP Controller
   <https://github.com/openwisp/openwisp-controller/#how-to-setup-vxlan-over-wireguard-tunnels>`_.
 
@@ -65,7 +65,7 @@ Server Side
 
 - `OpenWISP Users <https://github.com/openwisp/openwisp-users>`_:
   User management, multi-tenancy, authentication backend,
-  REST API utilities and classes to implement multi-tenancy.
+  REST API utilities and classes to implement multi-tenancy..
 
 - `OpenWISP Controller <https://github.com/openwisp/openwisp-controller>`_:
   Configuration management and templating,
@@ -100,11 +100,11 @@ Server Side
 - `OpenWISP Network Topology
   <https://github.com/openwisp/openwisp-network-topology>`_:
   Network topology collector and visualizer.
-  Collects network topology datafrom dynamic mesh routing protocols or
+  Collects network topology data from dynamic mesh routing protocols or
   other popular networking software like OpenVPN, allows to visualize the
   network graph and save daily snapshots that can be viewed in the future.
 
-  This module depends on a couple of libraries developed
+  This module depends on two libraries developed
   and maintained by OpenWISP:
 
   - `netdiff <https://github.com/openwisp/netdiff>`__:
@@ -136,15 +136,15 @@ Server Side
   <https://github.com/openwisp/openwisp-utils>`_:
   common utilities and classes shared by all the OpenWISP python
   modules, it includes a lot of utilities for QA checks and
-  automated testing which are heavily used in the continous integration
-  builds of most if not all the OpenWISP github repositories.
+  automated testing which are heavily used in continuous integration
+  builds of most, if not all, the OpenWISP github repositories.
 
 - `OpenWISP WiFi Login Pages
   <https://github.com/openwisp/openwisp-wifi-login-pages>`_:
   Configurable captive page for public/private WiFi services providing
   login, sign up, social login, SMS verification, change password,
   reset password, change phone number and more.
-  It is a frontend of the OpenWISP RADIUS REST API and it's designed to
+  This is a frontend of the OpenWISP RADIUS REST API and it's designed to
   be used by end users of a public WiFi network.
 
 Network Device Side
@@ -175,8 +175,8 @@ Python
 `Python <https://www.python.org/>`_ it's the main programming language
 used by the server side application (web admin, API, controller, workers).
 
-In the past OpenWISP was built in Ruby On Rails, but we later switched
-to Python because it's much more suited to networking and it has a wider
+In the past OpenWISP was built on  Ruby On Rails, but we later switched
+to Python because it's more suited to networking and  has a wider
 pool of potential contributors.
 
 Find out more on :ref:`why OpenWISP chose Python
@@ -212,8 +212,8 @@ Celery
 ~~~~~~
 
 `Celery <https://docs.celeryq.dev/en/stable/index.html>`_ is a python
-implementation of a distributed task queue and is heavily used in
-OpenWISP to execute background tasks, perform network operations
+implementation of a distributed task queue and it is heavily used
+in OpenWISP to execute background tasks, perform network operations
 like monitoring checks, configuration updates, firmware upgrades
 and so on.
 
@@ -304,7 +304,7 @@ implementation of the RADIUS protocol and is heavily relied on in
 Mesh Networking
 ~~~~~~~~~~~~~~~
 
-A `mesh nework <https://en.wikipedia.org/wiki/Mesh_networking/>`_ is a
+A `mesh network <https://en.wikipedia.org/wiki/Mesh_networking/>`_  is a
 local network topology in which the infrastructure nodes connect directly,
 dynamically and non-hierarchically to as many other nodes as possible
 and cooperate with one another to efficiently route data from/to clients.
@@ -312,23 +312,22 @@ and cooperate with one another to efficiently route data from/to clients.
 OpenWrt supports the standard mesh mode (802.11s) and OpenWISP supports
 this mode out of the box.
 
-It is also possible to support other popular dynamic  open source
+It is also possible to support other popular dynamic open source
 routing protocols available on OpenWrt like OLSRd2, BATMAN-advanced,
 Babel, BMX, etc.
 
 InfluxDB
 ~~~~~~~~
 
-`InfluxDB <https://www.influxdata.com/>`_ is the deafult open source
-timeseries DB used in OpenWISP Monitoring.
+`InfluxDB <https://www.influxdata.com/>`_ is the default open source
+time series DB used in OpenWISP Monitoring.
 
 Elasticsearch
 ~~~~~~~~~~~~~
 
 `Elasticsearch <https://www.elastic.co/>`_ is an alternative option which
-can be used in OpenWISP Monitoring as timeseries DB, although it was
-designed with different purposes related to storing and retrieving data in
-a fast and efficient way.
+can be used in OpenWISP Monitoring as time series DB,
+related to storing and retrieving data in a fast and efficient way.
 
 Networkx
 ~~~~~~~~
@@ -353,7 +352,7 @@ The most notable ones are:
 
 **For production usage we recommend PostgreSQL.**
 
-For development we recommend SQLite for it simplicity.
+For development we recommend SQLite for its simplicity .
 
 Other notable dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

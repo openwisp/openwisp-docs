@@ -7,7 +7,7 @@ Monitoring
 
 `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring/tree/1.0>`_
-has been introduced in OpenWISP 22.05 and focuses
+is available since OpenWISP 22.05 and focuses
 on allowing users to know the status of their devices at any given time.
 
 .. contents:: **Table of Contents**:
@@ -25,7 +25,7 @@ It's also available in
 `docker-openwisp <https://github.com/openwisp/docker-openwisp>`_
 although its usage is not recommended for production usage yet, unless
 the reader is willing to invest effort in adapting the docker images
-and configurations to overcome any roadblocks encountered.
+and configurations to overcome any problems encountered.
 
 Quickstart Guide
 ----------------
@@ -33,7 +33,7 @@ Quickstart Guide
 This guide assumes you have the
 `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring/tree/1.0>`_ module enabled
-in your OpenWISP server application and you have already followed
+on your OpenWISP server application and you have already followed
 the steps to :doc:`install openwisp-config on your OpenWRT
 devices <./configure-device>`.
 
@@ -73,12 +73,13 @@ There are mainly two deployment scenarios for OpenWISP:
 2. the OpenWISP server is deployed on a computer/server which is
    located in the same Layer 2 network (that is, in the same LAN)
    where the devices are located.
-   **in this case a management tunnel is NOT needed**
+   **In this case a management tunnel is NOT needed**
 
 1. Public internet deployment
 #############################
 
 This is the most common scenario:
+
 
 - the OpenWISP server is deployed to the public internet, hence the
   server has a public IPv4 (and IPv6) address and usually a valid
@@ -87,15 +88,15 @@ This is the most common scenario:
   locations (different cities, different regions, different countries)
 
 In this scenario, the OpenWISP application will not be able to reach the
-devices **unless a management tunnel** is used, for that reason having
-a management VPN like OpenVPN, Wireguard, ZeroTier or any other tunneling
-solution is paramount, not only to allow OpenWISP to work properly, but
-also to be able to perform debugging and troubleshooting when needed.
+devices unless a management tunnel is used, for that reason having a
+management VPN like OpenVPN, Wireguard, ZeroTier or any other tunneling
+solution is paramount, not only to allow OpenWISP to work properly,
+but also to be able to perform debugging and troubleshooting when needed.
 
 In this scenario, the following requirements are needed:
 
 - a VPN server must be installed in a way that the OpenWISP
-  server can reach the VPN peers, for more information on how to do this
+  server can reach the VPN peers. For more information on how to do this
   via OpenWISP please refer to the following sections:
 
   - `OpenVPN tunnel automation
@@ -103,15 +104,14 @@ In this scenario, the following requirements are needed:
   - `Wireguard tunnel automation
     <https://github.com/openwisp/openwisp-controller/tree/1.0#how-to-setup-wireguard-tunnels>`_
 
-  If you prefer to use other tunneling solutions (L2TP, Softether, etc.)
+- If you prefer to use other tunneling solutions (L2TP, Softether, etc.)
   and know how to configure those solutions on your own,
-  that's totally fine as well.
-
+  please do so.
   If the OpenWISP server is connected to a network infrastructure
   which allows it to reach the devices via pre-existing tunneling or
   Intranet solutions (eg: MPLS, SD-WAN), then setting up a VPN server
-  is not needed, as long as there's a dedicated interface on OpenWrt
-  which gets an IP address assigned to it and which is reachable from
+  is not needed, as long as there’s a dedicated interface on OpenWrt
+  which has an IP address assigned to it and which is reachable from
   the OpenWISP server.
 
 - The devices must be configured to join the management
@@ -120,8 +120,8 @@ In this scenario, the following requirements are needed:
   `OpenWISP Template <https://openwisp.io/docs/user/templates.html>`_.
 
 - The `openwisp-config <https://github.com/openwisp/openwisp-config>`_
-  agent on the devices must be configured to specify
-  the ``management_interface`` option, the agent will communicate the
+  agent on the devices must be configured to specify the
+  ``management_interface`` option, the agent will communicate the
   IP of the management interface to the OpenWISP Server and OpenWISP will
   use the management IP for reaching the device.
 

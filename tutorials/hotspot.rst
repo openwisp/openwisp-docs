@@ -7,28 +7,23 @@ WiFi Hotspot & Captive Portal
 OpenWISP is widely used as an **open source software** solution
 for **WiFi Hotspot Management** in **Public Wi-Fi** settings.
 
-In this tutorial, we'll explain some technical details of the most
+In this tutorial, we'll explain the technical details of the most
 common **WiFi Hotspot** deployments and how to test the most
 important functionalities
 of this use case on the :doc:`OpenWISP Demo System <./demo>`.
-
-Firmware Requirements for Hotspot Authentication
-------------------------------------------------
 
 .. image:: ../images/demo/openwrt-coova-chilli-firmware.png
   :target: ../_images/openwrt-coova-chilli-firmware.png
   :align: center
 
-The **OpenWrt** :ref:`firmware image provided
-for the OpenWISP Demo System <demo_firmware>`
-includes a *captive portal* package called
-`Coova-Chilli <https://coova.github.io/CoovaChilli/>`_, which
-supports the
+The **OpenWrt** firmware image for the
+:doc:`OpenWISP Demo System<./demo>` includes a *captive portal* package
+called `Coova-Chilli <https://coova.github.io/CoovaChilli/>`_.
+This supports the
 `RADIUS protocol <https://networkradius.com/doc/current/introduction/RADIUS.html>`_,
-a standard protocol used for AAA
-(Accounting, Authorization and Authentication).
-This means it's a way of authenticating, authorizing, and rate-limiting
-network usage supported by a lot of networking hardware and software.
+a standard security protocol used in  Accounting, Authorization and
+Authentication (AAA), a way of authenticating, authorizing, and
+rate-limiting network usage supported by networking hardware and software.
 
 .. warning::
 
@@ -50,8 +45,6 @@ through the public internet, ensuring security, privacy, and
 mitigating potential legal risks associated with exposing
 users' personal information to malicious actors.
 
-Enable Captive Portal Template
-------------------------------
 
 .. image:: ../images/demo/captive-portal-demo.png
   :target: ../_images/captive-portal-demo.png
@@ -66,7 +59,7 @@ to assign the captive portal template to your device:
 - Select the "Captive Portal Demo" template.
 - Hit "Save".
 
-Make sure the *OpenVPN management tunnel* is working or otherwise
+Then, make sure the *OpenVPN management tunnel* is working otherwise
 the captive portal software will not be able to talk to the demo
 `FreeRADIUS <https://freeradius.org/>`_ server instance.
 
@@ -86,8 +79,8 @@ the screenshot above.
    :width: 300
    :align: center
 
-At this point, try to sign in using the same credentials
-you used to access the demo system  (``demo``/``tester123``).
+At this point, sign in using the same credentials
+you used to access the demo system (``demo``/``tester123``).
 
 .. note::
   Trying to surf the internet without authenticating will not work.
@@ -101,47 +94,43 @@ following screenshot:
   :align: center
 
 This page communicates that the user can now use the internet
-provided by the *hotspot*, it also provides the following features:
+provided by the hotspot, it also provides the following features:
 
-- It shows a list of the user's sessions, including the start time,
+- It shows a list of the user’s sessions, including the start time,
   stop time, duration, traffic consumed (download and upload),
   and the MAC address of the device that accessed the WiFi service.
-- It allows to change the account password and phone number
-  (if SMS verification is enabled, which is not the case
-  for the demo system).
-- It allows to close the session and log out
+- It allows the account password and phone number (if SMS verification is
+  enabled, which is not the case for the demo system) to be changed.
+- It allows users to close their session and log out
   (more on why this is useful below).
 
 On some mobile operating systems, the mini-browser automatically closes
-when switching windows
-(e.g., opening the real browser to surf the internet),
-which can be problematic if the user needs to use one of the
-features of the status page listed above.
+when switching windows, for example, when opening the real browser
+to surf the internet. This  can be problematic if the user needs
+to use one of the features of the status page listed above.
 
 .. image:: ../images/demo/public-wifi-session-started.jpeg
   :target: ../_images/public-wifi-session-started.jpeg
   :width: 300
   :align: center
 
-To alleviate this issue, OpenWISP will send an email to the user with
-a magic link with temporal validity that allows to access the
-status page of
-:doc:`WiFi Login Pages <../user/wifi-login-pages>`
-without entering the credentials again, as shown in the image above.
+To resolve this, OpenWISP will send an email to the user with a magic
+link. This will allow the user access to the status page of
+:doc:`WiFi Login Pages <../user/wifi-login-pages>` without entering their
+credentials again, as shown in the image above.
 
 .. note::
-  For more technical information and implementation details
-  about the magic link feature,
-  consult the
-  `openwisp-users documentation <https://github.com/openwisp/openwisp-users#2-openwisp_usersapiauthenticationsesameauthentication>`_
-  (which briefly provides more information
-  about the underlying open source
-  library used to implement this feature).
 
-If you're using the demo account, the email will be sent to the email
-address of the demo account. Therefore, if you want to try this feature,
-you'll have to sign up for your own account or use the social login
-feature (scroll below to find out more information).
+  For more technical information and implementation details
+  about the magic link feature, consult the
+  `openwisp-users documentation <https://github.com/openwisp/openwisp-users#2-openwisp_usersapiauthenticationsesameauthentication>`_.
+  Here you will find  more information about the underlying
+  open source library used to implement this feature.
+
+If you are using the demo account, the email will be sent to the email
+address linked to the demo account. Therefore, if you want to try this
+feature, you will  have to sign up for your own account or use the social
+login feature. Please see more information on this below.
 
 Logging Out
 -----------
@@ -154,8 +143,8 @@ users to browse indefinitely.
 
 Some services only allow surfing for a limited amount of time per day,
 while others limit the amount of data you can consume. Some services use
-a combination of both methods (when either the daily time or data limit
-is reached, the session is closed).
+a combination of both methods and when either the daily time or data limit
+is reached, the session is closed.
 
 Therefore, users who plan to use the service again later on the same day,
 should log out to avoid consuming their daily time and/or data.
@@ -169,7 +158,7 @@ Session Limits
   :align: center
 
 The default session limits in the **OpenWISP RADIUS** configuration
-are 300 MB of daily traffic or 3 hours of daily surfing.
+are 300 MB of daily traffic or three hours of daily surfing.
 
 .. note::
     To find out more technical information about this topic please read:
@@ -180,7 +169,7 @@ Automatic Captive Portal Login
 ------------------------------
 
 The :doc:`WiFi Login Pages application <../user/wifi-login-pages>`.
-allows those users who have logged in previously and who use a
+allows users who have logged in previously, and who use a
 browser which supports cookies
 (not all mini-browsers that are used for captive portal logins do),
 to automatically log in without entering their credentials again.
@@ -258,14 +247,14 @@ Paid WiFi Hotspot Subscription Plans
 
 Testing the **WiFi hotspot paid subscription plans** is easy,
 the demo system is configured to use the Paypal Sandbox, a test version
-of Paypal with unlimited fake money, which allows to test the feature
-at any time without incurring any costs.
+of Paypal with unlimited fake money, which allows users to test the
+feature at any time without incurring any costs.
 
 Follow these steps to try the *paid WiFi subscription* feature:
 
 - Sign up for one of the non-free plans.
 - Enter your real email address and dummy personal information.
-- Click "Proceed with the payment."
+- Click “Proceed with the payment.”
 - Enter the following paypal credentials:
   ``support@openwisp.io`` / ``tester123`` and click on
   "start session".
