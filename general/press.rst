@@ -173,6 +173,10 @@ Google Summer of Code Blog Posts
 Research and publications
 -------------------------
 
+
+- :download:`A Comprehensive Study on OpenWISP
+  for Evolving Infrastructure Needs
+  </assets/documents/infra-needs.pdf>`
 - :download:`Monitoring Community Networks: Report on Experimentations on
   Community Networks
   </assets/documents/netcommons-monitoring-2017-12-28.pdf>`
