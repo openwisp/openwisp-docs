@@ -2,4 +2,11 @@
 _build/
 
 .vscode/
-modules/
+modules/*
+controller/
+monitoring/
+firmware-upgrader/
+notifications/
+network-topology/
+users/
+utils/

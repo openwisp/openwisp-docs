@@ -53,7 +53,13 @@ with using OpenWISP.**
       :glob:
 
       user/quickstart
-      modules/*/docs/*
+      users/*
+      controller/*
+      monitoring/*
+      firmware-upgrader/*
+      network-topology/*
+      notifications/*
+      utils/*
       user/radius
       user/wifi-login-pages
       user/django-settings

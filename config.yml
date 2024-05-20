@@ -1,23 +1,24 @@
 ---
 
-stable_version: '22.05'
+modules:
+  - name: openwisp-controller
+    dir_name: controller
+  - name: openwisp-monitoring
+    dir_name: monitoring
+  - name: openwisp-firmware-upgrader
+    dir_name: firmware-upgrader
+  - name: openwisp-notifications
+    dir_name: notifications
+  - name: openwisp-network-topology
+    dir_name: network-topology
+  - name: openwisp-users
+    dir_name: users
+  - name: openwisp-utils
+    dir_name: utils
 versions:
   - name: '22.05'
-    modules: []
+    modules: false
   - name: dev
-    modules:
-      - name: openwisp-firmware-upgrader
-        branch: reorder-docs
-      - name: openwisp-controller
-        branch: reorder-docs
-      - name: openwisp-monitoring
-        branch: reorder-docs
-      - name: openwisp-notifications
-        branch: reorder-docs
-      - name: openwisp-network-topology
-        branch: reorder-docs
-      - name: openwisp-users
-        branch: reorder-docs
-      - name: openwisp-utils
-        branch: reorder-docs
+    branch: reorder-docs
+
 

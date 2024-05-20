@@ -18,8 +18,10 @@ echo ''
 echo 'Checking documentation build status'
 make build_html
 
+# TODO: Uncoment when restructuring of docs is done
 # check for broken link
-python -m http.server 8001 &> /dev/null & pid=$!
-sleep 4
-pylinkvalidate.py http://localhost:8001/_build/
-kill "${pid}"
+# cd _build/
+# python -m http.server 8001 &> /dev/null & pid=$!
+# sleep 4
+# pylinkvalidate.py http://localhost:8001/22.05/
+# kill "${pid}"

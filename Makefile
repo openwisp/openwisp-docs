@@ -52,7 +52,7 @@ clean:
 
 .PHONY: build
 build:
-	./build.py $(formats)
+	python3 build.py $(formats)
 
 .PHONY: build_html
 build_html:

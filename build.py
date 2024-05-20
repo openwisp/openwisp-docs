@@ -7,16 +7,37 @@
 # OpenWISP version.
 
 import os
+import shutil
 import subprocess
 import sys
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
+from packaging import version as packaging_version
 
 OUTPUT_FORMATS = ['pdf', 'epub', 'html']
 
 
-def clone_or_update_repo(module_name, branch, is_production=False):
+def get_stable_version(versions):
+    def get_version_object(version):
+        version_name = version['name']
+        if version_name == 'dev':
+            version_name = '0'
+        return packaging_version.parse(version_name)
+    stable_version = max(versions, key=get_version_object)
+    return stable_version['name']
+
+
+def merge_module_versions(default_modules, version_modules):
+    modules = default_modules.copy()
+    for version_module in version_modules:
+        for module in modules:
+            if module['name'] == version_module['name']:
+                module.update(version_module)
+    return modules
+
+
+def clone_or_update_repo(module_name, branch, dir_name, is_production=False):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
@@ -27,7 +48,7 @@ def clone_or_update_repo(module_name, branch, is_production=False):
         # Cloning over SSH only works when VM's public key is added to GitHub.
         # Thus, it would fail on GitHub Actions.
         repo_url = f'git@github.com:openwisp/{module_name}.git'
-    repo_path = f'modules/{module_name}'
+    repo_path = os.path.join('modules', dir_name)
 
     if os.path.exists(repo_path):
         print(f"Repository '{module_name}' already exists. Updating...")
@@ -64,17 +85,28 @@ def clone_or_update_repo(module_name, branch, is_production=False):
         subprocess.run(
             ['git', 'sparse-checkout', 'set', 'docs'], cwd=repo_path, check=True
         )
+    subprocess.run(
+        [
+            'cp',
+            '-r',
+            os.path.join(repo_path, 'docs'),
+            dir_name,
+        ],
+        check=True,
+    )
 
 
 def main():
     PRODUCTION = os.environ.get('PRODUCTION', False)
     with open('config.yml') as f:
         config = yaml.safe_load(f)
+    stable_version = get_stable_version(config['versions'])
 
     docs_root = ''
     if PRODUCTION:
         docs_root = '/docs/__new__'
     os.environ['DOCS_ROOT'] = docs_root
+    os.environ['STABLE_VERSION'] = stable_version
 
     output_formats = OUTPUT_FORMATS.copy()
     if len(sys.argv) > 1:
@@ -84,10 +116,19 @@ def main():
                 print(f'ERROR: {format} is not a valid output format')
 
     for version in config['versions']:
-        for module in version['modules']:
-            module_name = module['name']
-            branch = module['branch']
-            clone_or_update_repo(module_name, branch, PRODUCTION)
+        module_dirs = []
+        version_modules = version.get('modules', [])
+        if version_modules is not False:
+            modules = merge_module_versions(config['modules'], version_modules)
+            branch = version.get('branch', version['name'])
+            for module in modules:
+                clone_or_update_repo(
+                    module['name'],
+                    module.get('branch', branch),
+                    module['dir_name'],
+                    PRODUCTION,
+                )
+                module_dirs.append(module['dir_name'])
         version_name = version['name']
 
         os.environ['OPENWISP2_VERSION'] = version_name
@@ -95,16 +136,15 @@ def main():
             subprocess.run(
                 ['make', format, f'BUILDDIR=_build/{version_name}'], check=True
             )
+        # Remove all temporary directories
+        for dir in module_dirs:
+            shutil.rmtree(dir)
 
     # Generate the index.html file which redirects to the stable version.
     env = Environment(loader=FileSystemLoader('_static'))
     template = env.get_template('index.jinja2')
     with open('_build/index.html', 'w') as f:
-        f.write(
-            template.render(
-                stable_version=config['stable_version'], docs_root=docs_root
-            )
-        )
+        f.write(template.render(stable_version=stable_version, docs_root=docs_root))
 
 
 if __name__ == "__main__":
