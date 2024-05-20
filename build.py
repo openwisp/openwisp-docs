@@ -16,12 +16,17 @@ from jinja2 import Environment, FileSystemLoader
 OUTPUT_FORMATS = ['pdf', 'epub', 'html']
 
 
-def clone_or_update_repo(module_name, branch):
+def clone_or_update_repo(module_name, branch, is_production=False):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
     """
-    repo_url = f'https://github.com/openwisp/{module_name}.git'
+    if is_production:
+        repo_url = f'https://github.com/openwisp/{module_name}.git'
+    else:
+        # Cloning over SSH only works when VM's public key is added to GitHub.
+        # Thus, it would fail on GitHub Actions.
+        repo_url = f'git@github.com:openwisp/{module_name}.git'
     repo_path = f'modules/{module_name}'
 
     if os.path.exists(repo_path):
@@ -62,11 +67,12 @@ def clone_or_update_repo(module_name, branch):
 
 
 def main():
+    PRODUCTION = os.environ.get('PRODUCTION', False)
     with open('config.yml') as f:
         config = yaml.safe_load(f)
 
     docs_root = ''
-    if os.environ.get('PRODUCTION', False):
+    if PRODUCTION:
         docs_root = '/docs/__new__'
     os.environ['DOCS_ROOT'] = docs_root
 
@@ -81,7 +87,7 @@ def main():
         for module in version['modules']:
             module_name = module['name']
             branch = module['branch']
-            clone_or_update_repo(module_name, branch)
+            clone_or_update_repo(module_name, branch, PRODUCTION)
         version_name = version['name']
 
         os.environ['OPENWISP2_VERSION'] = version_name
