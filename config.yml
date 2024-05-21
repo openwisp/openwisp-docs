@@ -17,7 +17,12 @@ modules:
     dir_name: utils
 versions:
   - name: '22.05'
-    modules: false
+    overwrite_modules: true
+    modules:
+      - name: openwisp2-docs
+        branch: '22.05'
+        dir_name: openwisp2-docs
+    sphinx_src_dir: ./openwisp2-docs
   - name: dev
     branch: reorder-docs
 
