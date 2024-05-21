@@ -52,11 +52,11 @@ clean:
 
 .PHONY: build
 build:
-	./build.py $(formats)
+	./build.py $(if $(FORMATS),--formats $(FORMATS)) $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES))
 
 .PHONY: build_html
 build_html:
-	make build formats=html
+	make build FORMATS=html $(ARGS)
 
 .PHONY: html
 html:

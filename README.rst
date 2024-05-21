@@ -37,8 +37,12 @@ Requirements: Python >= 3.9.
     # e.g. ``formats=html,pdf,epub``. The default is to build all available
     # formats, which currently are ``html``, ``pdf`` and ``epub``.
     make build formats=pdf,html
+    # You can also build documentation for a specific version using the
+    # VERSION argument
+    make build VERSION=22.05
     # This command is a shortcut for generating only HTML documentation during
-    # development, since building PDF and ePUB takes time.
+    # development, since building PDF and ePUB takes time. It also supports
+    # the VERSION argument.
     make build_html
 
 5. Open the generated HTML files in your browser.

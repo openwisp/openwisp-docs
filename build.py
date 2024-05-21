@@ -6,10 +6,10 @@
 # the documentation using Sphinx in a separate directory for each
 # OpenWISP version.
 
+import argparse
 import os
 import shutil
 import subprocess
-import sys
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
@@ -24,6 +24,7 @@ def get_stable_version(versions):
         if version_name == 'dev':
             version_name = '0'
         return packaging_version.parse(version_name)
+
     stable_version = max(versions, key=get_version_object)
     return stable_version['name']
 
@@ -37,7 +38,7 @@ def merge_module_versions(default_modules, version_modules):
     return modules
 
 
-def clone_or_update_repo(module_name, branch, dir_name, is_production=False):
+def clone_or_update_repo(module_name, branch, dir_name):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
@@ -101,10 +102,23 @@ def clone_or_update_repo(module_name, branch, dir_name, is_production=False):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--formats',
+        default=','.join(OUTPUT_FORMATS),
+        help='comma separated output formats (pdf, epub, or html)',
+    )
+    parser.add_argument('--version', default=None, help='document version to build')
+    args = parser.parse_args()
+
     PRODUCTION = os.environ.get('PRODUCTION', False)
     with open('config.yml') as f:
         config = yaml.safe_load(f)
-    stable_version = get_stable_version(config['versions'])
+    output_version = args.version
+    if output_version:
+        stable_version = output_version
+    else:
+        stable_version = get_stable_version(config['versions'])
 
     docs_root = ''
     if PRODUCTION:
@@ -112,14 +126,19 @@ def main():
     os.environ['DOCS_ROOT'] = docs_root
     os.environ['STABLE_VERSION'] = stable_version
 
-    output_formats = OUTPUT_FORMATS.copy()
-    if len(sys.argv) > 1:
-        output_formats = sys.argv[1].split(',')
-        for format in output_formats:
-            if format not in OUTPUT_FORMATS:
-                print(f'ERROR: {format} is not a valid output format')
+    output_formats = args.formats.split(',')
+    # Validate all output formats are supported
+    for format in output_formats:
+        if format not in OUTPUT_FORMATS:
+            print(f'ERROR: {format} is not a valid output format')
+            exit(2)
 
     for version in config['versions']:
+        # Build documentation for all versions if output_version
+        # is not specified. Otherwise, build documentation for
+        # the specified version.
+        if output_version and output_version != version['name']:
+            continue
         module_dirs = []
         version_modules = version.get('modules', [])
         if version_modules is not False:
@@ -130,7 +149,6 @@ def main():
                     module['name'],
                     module.get('branch', branch),
                     module['dir_name'],
-                    PRODUCTION,
                 )
                 module_dirs.append(module['dir_name'])
         version_name = version['name']
@@ -154,12 +172,13 @@ def main():
     subprocess.run(
         [
             'ln',
-            '-rs',
+            '-rsf',
             f'_build/{stable_version}',
             '_build/stable',
         ],
-        check=True
+        check=True,
     )
+
 
 if __name__ == "__main__":
     main()
