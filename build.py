@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 # This script generates the documentation for all the OpenWISP versions
 # defined in config.yml. For each version, it will clone or update the
@@ -42,12 +42,16 @@ def clone_or_update_repo(module_name, branch, dir_name, is_production=False):
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
     """
-    if is_production:
-        repo_url = f'https://github.com/openwisp/{module_name}.git'
-    else:
-        # Cloning over SSH only works when VM's public key is added to GitHub.
-        # Thus, it would fail on GitHub Actions.
+    if os.environ.get('DEV'):
+        # SSH cloning is a convenient option for local development, as it
+        # allows you to commit changes directly to the repository, but it
+        # requires that you have added your public SSH key to your GitHub
+        # account and have access to the repository. This means that it won't
+        # work on GitHub Actions, and it won't work for contributors who don't
+        # use SSH to access GitHub.
         repo_url = f'git@github.com:openwisp/{module_name}.git'
+    else:
+        repo_url = f'https://github.com/openwisp/{module_name}.git'
     repo_path = os.path.join('modules', dir_name)
 
     if os.path.exists(repo_path):
@@ -146,6 +150,16 @@ def main():
     with open('_build/index.html', 'w') as f:
         f.write(template.render(stable_version=stable_version, docs_root=docs_root))
 
+    # Create a symbolic link for the stable version
+    subprocess.run(
+        [
+            'ln',
+            '-rs',
+            f'_build/{stable_version}',
+            '_build/stable',
+        ],
+        check=True
+    )
 
 if __name__ == "__main__":
     main()

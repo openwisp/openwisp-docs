@@ -43,6 +43,14 @@ Requirements: Python >= 3.9.
 
 5. Open the generated HTML files in your browser.
 
+To build the documentation using SSH remote URLs for OpenWISP
+modules, set the ``DEV=1`` environment variable when running the build
+commands. Example:
+
+.. code-block:: shell
+
+    DEV=1 make build
+
 Need help?
 ----------
 
