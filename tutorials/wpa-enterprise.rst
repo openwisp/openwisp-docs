@@ -225,7 +225,7 @@ Once the advanced mode editor is open you can paste the following NetJSON:
                     "ack_distance": 0,
                     "rts_threshold": 0,
                     "frag_threshold": 0,
-                    "ssid": "test-openwisp",
+                    "ssid": "OpenWISP",
                     "hidden": false,
                     "wds": false,
                     "encryption": {
