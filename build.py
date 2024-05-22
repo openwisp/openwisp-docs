@@ -20,11 +20,47 @@ OUTPUT_FORMATS = ['pdf', 'epub', 'html']
 
 
 def get_stable_version(versions):
+    """
+    Returns the stable version from a list of versions.
+    It is assumed that the highest version is the stable version.
+
+    If there is only one version, it is returned as stable version,
+    even if it is 'dev'.
+
+    Parameters:
+        versions (list): A list of dictionaries representing versions.
+            Each dictionary should have a 'name' key.
+
+    Returns:
+        str: The name of the stable version.
+
+    This function takes a list of versions and finds the stable version
+    by comparing the version names.
+
+    Example:
+        versions = [
+            {'name': '1.0.0'},
+            {'name': '2.0.0'},
+            {'name': 'dev'},
+            {'name': '3.0.0-beta'}
+        ]
+        get_stable_version(versions)
+        # Output: '2.0.0'
+    """
+
     def get_version_object(version):
+        """
+        Returns a packaging version object for the given version dictionary.
+        """
         version_name = version['name']
+        # Special case for 'dev' version: we treat it as having a version
+        # of '0' so that it will come as last when we perform max operation.
         if version_name == 'dev':
             version_name = '0'
         return packaging_version.parse(version_name)
+
+    if len(versions) == 1:
+        return versions[0]['name']
 
     stable_version = max(versions, key=get_version_object)
     return stable_version['name']
@@ -63,17 +99,55 @@ def merge_module_versions(modules1, modules2):
     return modules1
 
 
+def get_build_versions(all_versions, output_version):
+    if not output_version:
+        # Build all versions
+        return all_versions
+    for version in all_versions:
+        if version['name'] == output_version:
+            return [version]
+
+
 def get_modules(
     default_modules,
     version_modules,
     overridden_modules,
 ):
+    """
+    Merge module versions from default, version-specific, and overridden modules.
+    The order of priority is: overridden > version-specific > default
+
+    Args:
+        default_modules (list): List of dictionaries representing default module versions.
+            These modules are defined at the root of the config.yml file.
+            These are common for all OpenWISP versions.
+        version_modules (list): List of dictionaries representing version-specific module versions.
+            These modules are defined for each OpenWISP version.
+        overridden_modules (list): List of dictionaries representing overridden module versions.
+            These modules are defined from the CLI.
+
+    Returns:
+        list: List of dictionaries representing merged module versions.
+    """
     modules = merge_module_versions(version_modules, overridden_modules)
     modules = merge_module_versions(default_modules, modules)
     return modules
 
 
-def parse_input_modules(value):
+def parse_modules_arg(value):
+    """
+    Parses a comma-separated string of input modules and returns a dictionary
+    where the keys are versions and the values are lists of dictionaries
+    representing the modules.
+
+    Args:
+        value (string): A string of input modules in the format
+            `version=<version>:repository=<repo-owner>/<repo-name>:dir_name=<dir-name>, ...`.
+
+    If a module does not specify a `version`, it defaults to `'dev'`.
+    The `repository` should be in the format `repo-owner/repo-name`, e.g. `openwisp/openwisp2-docs`.
+    The `dir_name` is optional and defaults to the module name if not specified.
+    """
     entries = value.split(',')
     result = {}
     for entry in entries:
@@ -93,6 +167,56 @@ def parse_input_modules(value):
         except KeyError:
             result[version] = [module]
     return result
+
+
+def parse_formats_arg(value):
+    """
+    Parses a comma-separated string of output formats and validates them.
+
+    Args:
+        value (str): A string of output formats separated by commas.
+
+    Returns:
+        list: A list of output formats.
+
+    Raises:
+        SystemExit: If any of the output formats are not supported.
+
+    This function takes a comma-separated string of output formats and splits it into a list.
+    It then validates each format by checking if it is in the `OUTPUT_FORMATS` list.
+    If any format is not supported, it prints an error message and exits the program.
+    If all formats are supported, it returns the list of output formats.
+    """
+    output_formats = value.split(',')
+    # Validate all output formats are supported
+    for format in output_formats:
+        if format not in OUTPUT_FORMATS:
+            print(f'ERROR: {format} is not a valid output format')
+            exit(2)
+    return output_formats
+
+
+def parse_version_arg(value):
+    """
+    Validates the passed version exists in the config.yaml file.
+
+    Args:
+        value (str): The version to be validated.
+
+    Returns:
+        str: The validated version if it exists in the config.yaml file.
+
+    Raises:
+        SystemExit: If the version is not found in the config.yaml file.
+    """
+    # Validate passed version exists in config.yaml
+    with open('config.yml', 'r') as f:
+        config = yaml.safe_load(f)
+    for version in config['versions']:
+        if version['name'] == value:
+            return value
+    print(f'ERROR: {value} is not a valid version')
+    exit(3)
 
 
 def clone_or_update_repo(name, branch, dir_name, owner='openwisp'):
@@ -154,48 +278,35 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--formats',
-        default=','.join(OUTPUT_FORMATS),
+        type=parse_formats_arg,
+        default=OUTPUT_FORMATS,
         help='comma separated output formats (pdf, epub, or html)',
     )
-    parser.add_argument('--version', default=None, help='document version to build')
+    parser.add_argument(
+        '--version',
+        type=parse_version_arg,
+        default=None,
+        help='document version to build',
+    )
     parser.add_argument(
         '--modules',
         default={},
-        type=parse_input_modules,
+        type=parse_modules_arg,
         help='comma separated modules to build'
         'in the format of <version:module-name>:<branch>:<dir-name>:<repository-owner>',
     )
     args = parser.parse_args()
 
-    PRODUCTION = os.environ.get('PRODUCTION', False)
     with open('config.yml') as f:
         config = yaml.safe_load(f)
 
-    output_version = args.version
-    if output_version:
-        stable_version = output_version
-    else:
-        stable_version = get_stable_version(config['versions'])
-
+    build_versions = get_build_versions(config['versions'], args.version)
+    stable_version = get_stable_version(build_versions)
     docs_root = ''
-    if PRODUCTION:
+    if os.environ.get('PRODUCTION', False):
         docs_root = '/docs/__new__'
-    os.environ['DOCS_ROOT'] = docs_root
-    os.environ['STABLE_VERSION'] = stable_version
 
-    output_formats = args.formats.split(',')
-    # Validate all output formats are supported
-    for format in output_formats:
-        if format not in OUTPUT_FORMATS:
-            print(f'ERROR: {format} is not a valid output format')
-            exit(2)
-
-    for version in config['versions']:
-        # Build documentation for all versions if output_version
-        # is not specified. Otherwise, build documentation for
-        # the specified version.
-        if output_version and output_version != version['name']:
-            continue
+    for version in build_versions:
         version_name = version['name']
         module_dirs = []
 
@@ -212,17 +323,18 @@ def main():
             version_modules=version_modules,
             overridden_modules=overridden_modules,
         )
-        branch = version.get('branch', version['name'])
+
+        # If a module does not define a branch,
+        # it will fallback to the version_branch.
+        version_branch = version.get('branch', version['name'])
         for module in modules:
             clone_or_update_repo(
-                branch=module.pop('branch', branch),
+                branch=module.pop('branch', version_branch),
                 **module,
             )
             module_dirs.append(module['dir_name'])
-
-        os.environ['OPENWISP2_VERSION'] = version_name
         sphinx_src_dir = version.get('sphinx_src_dir', '.')
-        for format in output_formats:
+        for format in args.formats:
             subprocess.run(
                 [
                     'make',
@@ -230,6 +342,11 @@ def main():
                     f'SRCDIR={sphinx_src_dir}',
                     f'BUILDDIR=_build/{version_name}',
                 ],
+                env=dict(
+                    os.environ,
+                    DOCS_ROOT=docs_root,
+                    OPENWISP2_VERSION=version_name,
+                ),
                 check=True,
             )
         # Remove all temporary directories
