@@ -198,18 +198,18 @@ def parse_formats_arg(value):
 
 def parse_version_arg(value):
     """
-    Validates the passed version exists in the config.yaml file.
+    Validates the passed version exists in the config.yml file.
 
     Args:
         value (str): The version to be validated.
 
     Returns:
-        str: The validated version if it exists in the config.yaml file.
+        str: The validated version if it exists in the config.yml file.
 
     Raises:
-        SystemExit: If the version is not found in the config.yaml file.
+        SystemExit: If the version is not found in the config.yml file.
     """
-    # Validate passed version exists in config.yaml
+    # Validate passed version exists in config.yml
     with open('config.yml', 'r') as f:
         config = yaml.safe_load(f)
     for version in config['versions']:
