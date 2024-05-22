@@ -1,15 +1,13 @@
 {% extends "!layout.html" %}
-{% block extrahead %}
-    <link href="{{ pathto("_static/style.css", True) }}" rel="stylesheet" type="text/css">
-{% endblock %}
 {% block footer %}
 {{ super() }}
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46086503-11"></script>
+<h1> Version </h1>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGGYQ3GC31"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments)};
     gtag('js', new Date());
-    gtag('config', 'UA-46086503-11');
+    gtag('config', 'G-RGGYQ3GC31');
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
            h._hjSettings={hjid:531905,hjsv:6};
@@ -17,6 +15,6 @@
         r=o.createElement('script');r.async=1;
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');	
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 {% endblock %}
