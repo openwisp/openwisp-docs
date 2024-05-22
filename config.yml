@@ -20,7 +20,7 @@ versions:
     overwrite_modules: true
     modules:
       - name: openwisp2-docs
-        branch: '22.05'
+        branch: '22.05-restructed-docs'
         dir_name: openwisp2-docs
     sphinx_src_dir: ./openwisp2-docs
   - name: dev
