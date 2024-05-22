@@ -83,6 +83,9 @@ def parse_input_modules(value):
             key, value = item.split('=')
             if key == 'version':
                 version = value
+            if key == 'repository':
+                owner, name = value.split('/')
+                module.update({'name': name, 'owner': owner})
             else:
                 module[key] = value
         try:
@@ -92,11 +95,12 @@ def parse_input_modules(value):
     return result
 
 
-def clone_or_update_repo(module_name, branch, dir_name, owner='openwisp'):
+def clone_or_update_repo(name, branch, dir_name, owner='openwisp'):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
     """
+    repository = f'{owner}/{name}'
     if os.environ.get('DEV'):
         # SSH cloning is a convenient option for local development, as it
         # allows you to commit changes directly to the repository, but it
@@ -104,26 +108,26 @@ def clone_or_update_repo(module_name, branch, dir_name, owner='openwisp'):
         # account and have access to the repository. This means that it won't
         # work on GitHub Actions, and it won't work for contributors who don't
         # use SSH to access GitHub.
-        repo_url = f'git@github.com:{owner}/{module_name}.git'
+        repo_url = f'git@github.com:{repository}.git'
     else:
-        repo_url = f'https://github.com/openwisp/{module_name}.git'
-    repo_path = os.path.join('m+odules', dir_name)
+        repo_url = f'https://github.com/{repository}.git'
+    clone_path = os.path.join('modules', dir_name)
 
-    if os.path.exists(repo_path):
-        print(f"Repository '{module_name}' already exists. Updating...")
+    if os.path.exists(clone_path):
+        print(f"Repository '{name}' already exists. Updating...")
         subprocess.run(
             ['git', 'remote', 'set-branches', 'origin', branch],
-            cwd=repo_path,
+            cwd=clone_path,
             check=True,
         )
         subprocess.run(
             ['git', 'fetch', '--update-shallow', 'origin', branch],
-            cwd=repo_path,
+            cwd=clone_path,
             check=True,
         )
-        subprocess.run(['git', 'checkout', branch], cwd=repo_path, check=True)
+        subprocess.run(['git', 'checkout', branch], cwd=clone_path, check=True)
     else:
-        print(f"Cloning repository '{module_name}'...")
+        print(f"Cloning repository '{name}'...")
         subprocess.run(
             [
                 'git',
@@ -134,22 +138,16 @@ def clone_or_update_repo(module_name, branch, dir_name, owner='openwisp'):
                 '--depth',
                 '1',
                 repo_url,
-                repo_path,
+                clone_path,
             ],
             check=True,
         )
-        # subprocess.run(
-        #     ['git', 'sparse-checkout', 'init', '--cone'], cwd=repo_path, check=True
-        # )
-        # subprocess.run(
-        #     ['git', 'sparse-checkout', 'set', 'docs'], cwd=repo_path, check=True
-        # )
     # If the module contains a doc directory, copy it to the dir_name in the root.
     # Otherwise, copy the entire directory.
     try:
-        shutil.copytree(os.path.join(repo_path, 'docs'), dir_name)
+        shutil.copytree(os.path.join(clone_path, 'docs'), dir_name)
     except FileNotFoundError:
-        shutil.copytree(repo_path, dir_name)
+        shutil.copytree(clone_path, dir_name)
 
 
 def main():
@@ -217,9 +215,8 @@ def main():
         branch = version.get('branch', version['name'])
         for module in modules:
             clone_or_update_repo(
-                module['name'],
-                module.get('branch', branch),
-                module['dir_name'],
+                branch=module.pop('branch', branch),
+                **module,
             )
             module_dirs.append(module['dir_name'])
 
