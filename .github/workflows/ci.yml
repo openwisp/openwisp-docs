@@ -44,14 +44,20 @@ jobs:
       # TODO: Uncomment the CI condition before merging
       - name: Setup Google Cloud
         # if: ${{ github.event_name=='push' }}
-        uses: google-github-actions/setup-gcloud@v0
+        uses: 'google-github-actions/auth@v2'
         with:
+          credentials_json: ${{ secrets.GCS_DOWNLOADS_SERVICE_ACCOUNT_JSON }}
           project_id: ${{ secrets.GCS_PROJECT_ID }}
+          export_environment_variables: true
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
 
       # TODO: Uncomment the CI condition before merging
       - name: Deploy pages to openwisp.io/docs
         # if: ${{ github.event_name=='push' }}
-        run: gsutil -m rsync -r ${{ env.SRC_URL }} ${{ env.DST_URL }}
+        run: |
+          gsutil -m rsync -r ${{ env.SRC_URL }} ${{ env.DST_URL }}
         env:
           SRC_URL: /home/runner/work/openwisp2-docs/openwisp2-docs/_build/docs/__new__/
           DST_URL: gs://${{ secrets.GCS_DOCS_BUCKET_NAME }}/docs/__new__/
