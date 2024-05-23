@@ -1,4 +1,10 @@
 {% extends "!layout.html" %}
+
+{% block linktags %}
+{{ super() }}
+<link rel="canonical" href="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/{{ pagename }}.html" />
+{% endblock %}
+
 {% block footer %}
 {{ super() }}
 <h1> Version </h1>

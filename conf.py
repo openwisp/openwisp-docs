@@ -447,18 +447,18 @@ with open('config.yml', 'r') as config_file:
 version = os.environ.get('OPENWISP2_VERSION', 'dev')
 release = version
 
-docs_root = os.environ['DOCS_ROOT']
+docs_root = os.environ.get('DOCS_ROOT', '')
 html_context = {
     'current_ow_version': version,
     'ow_versions': [],
     'docs_root': docs_root,
+    'stable_version': os.environ.get('STABLE_VERSION'),
+    'html_baseurl': os.environ.get('HTML_BASE_URL', ''),
 }
 
 for ow_version in ow_docs_config['versions']:
     ow_version_name = ow_version['name']
-    html_context['ow_versions'].append(
-        [ow_version_name, f'{docs_root}/{ow_version_name}']
-    )
+    html_context['ow_versions'].append(ow_version_name)
 
 # rst2pdf configuration
 pdf_documents = [

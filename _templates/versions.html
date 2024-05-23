@@ -31,9 +31,9 @@
   <div class="rst-other-versions">
     <dl>
       <dt>{{ _('Versions') }}</dt>
-      {% for ow_version, ow_version_root_url in ow_versions %}
+      {% for ow_version in ow_versions %}
       <dd class="{% if ow_version == current_ow_version %}selected{% endif %}">
-        <a href="{{ ow_version_root_url }}/{{ pagename }}.html">{{ ow_version }}</a>
+        <a href="{{ docs_root }}/{{ ow_version }}/{{ pagename }}.html">{{ ow_version }}</a>
       </dd>
       {% endfor %}
     </dl>

@@ -303,8 +303,12 @@ def main():
     build_versions = get_build_versions(config['versions'], args.version)
     stable_version = get_stable_version(build_versions)
     docs_root = ''
+    html_base_url = ''
+    build_dir = '_build'
     if os.environ.get('PRODUCTION', False):
         docs_root = '/docs/__new__'
+        html_base_url = 'https://openwisp.io'
+        build_dir = f'{build_dir}/docs/__new__'
 
     for version in build_versions:
         version_name = version['name']
@@ -340,12 +344,14 @@ def main():
                     'make',
                     format,
                     f'SRCDIR={sphinx_src_dir}',
-                    f'BUILDDIR=_build/{version_name}',
+                    f'BUILDDIR={build_dir}/{version_name}',
                 ],
                 env=dict(
                     os.environ,
                     DOCS_ROOT=docs_root,
                     OPENWISP2_VERSION=version_name,
+                    STABLE_VERSION=stable_version,
+                    HTML_BASE_URL=html_base_url,
                 ),
                 check=True,
             )
@@ -356,7 +362,7 @@ def main():
     # Generate the index.html file which redirects to the stable version.
     env = Environment(loader=FileSystemLoader('_static'))
     template = env.get_template('index.jinja2')
-    with open('_build/index.html', 'w') as f:
+    with open(f'{build_dir}/index.html', 'w') as f:
         f.write(template.render(stable_version=stable_version, docs_root=docs_root))
 
     # Create a symbolic link for the stable version
@@ -364,8 +370,8 @@ def main():
         [
             'ln',
             '-rsf',
-            f'_build/{stable_version}',
-            '_build/stable',
+            f'{build_dir}/{stable_version}',
+            f'{build_dir}/stable',
         ],
         check=True,
     )
