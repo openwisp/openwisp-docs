@@ -92,4 +92,7 @@ provides mainly two ways of changing settings:
 OpenWISP Settings Reference
 ---------------------------
 
-TODO: let's list all the docs pages which list settings here.
+- :doc:`OpenWISP Controller Settings </controller/user/settings>`
+- :doc:`OpenWISP Monitoring Settings </monitoring/user/settings>`
+- :doc:`OpenWISP Users Settings </users/user/settings>`
+- TODO: Add More
