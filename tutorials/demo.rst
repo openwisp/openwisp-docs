@@ -1,8 +1,10 @@
 OpenWISP Demo
 =============
 
-.. image:: ../images/demo/demo.png
-    :target: ../_images/demo.png
+.. figure:: ../images/demo/demo.png
+   :align: center
+
+   Screenshot of OpenWISP web UI dashboard
 
 .. contents:: **Table of Contents**:
    :backlinks: none
@@ -16,7 +18,7 @@ Accessing the demo system
 - **Password**: tester123
 
 The content of the demo organization is reset every day
-at 1:00 AM UTC, while the demo user's password is reset every minute.
+at 1:00 AM UTC, and the demo user's password is reset every minute.
 
 To ensure the safety and integrity of our managed OpenWISP system,
 certain features are disabled for the demo user, including:
@@ -59,12 +61,10 @@ and select the appropriate target architecture and image.
 At present, we are generating firmware only for ath79, but we plan to add
 support for more targets in the future.
 
-If your device is not currently
-supported, please let us know through our
-`support channels <https://openwisp.org/support.html>`__. In the meantime,
-you can use the
-:ref:`alternative firmware instructions
-<alternative_firmware_instructions>`
+If your device is not currently supported, please let us know through our
+`support channels <https://openwisp.org/support.html>`__
+and/or follow our :ref:`alternative firmware instructions
+<alternative_firmware_instructions>` below.
 
 2. Flashing the firmware
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,9 +74,11 @@ You can `Flash the firmware via web UI
 or via `other means available on OpenWrt
 <https://openwrt.org/docs/guide-user/installation/generic.flashing>`_.
 
-Make sure not to keep settings
-(supply the ``-n`` command line option to sysupgrade, for the web UI
-there is a specific checkbox).
+Make sure not to keep settings: supply the `-n` command line option to
+`sysupgrade`. If you're using the OpenWrt web UI, there is a specific
+checkbox labeled "Keep settings and retain the current configuration"
+which appears just before confirming the upgrade and needs to be
+unchecked.
 
 .. _alternative_firmware_instructions:
 
@@ -104,11 +106,10 @@ The easiest thing is to use the following commands:
     opkg install openwisp-config
     opkg install openwisp-monitoring
 
-However, if you want to install more recent
-versions of the OpenWISP packages
-you can download them from
-`downloads.openwisp.io <http://downloads.openwisp.io/>`__ on your
-device and install them, eg:
+If you want to install more recent versions of the OpenWISP packages,
+you can download them onto your device from
+`downloads.openwisp.io <http://downloads.openwisp.io/>`__ and then
+install them, eg:
 
 .. code-block::
 
@@ -130,7 +131,7 @@ device and install them, eg:
 
 .. note::
   If ``wget`` doesn't work (eg: SSL issues), you can use ``curl``,
-  or alternatively you can download the packages on your machine
+  or alternatively you can download the packages onto your machine
   and from there upload them to your device via ``scp``.
 
 Once the packages are installed, copy the following contents to
@@ -180,21 +181,23 @@ Registration
 .. image:: ../images/demo/device-list-registered.png
     :target: ../_images/device-list-registered.png
 
-Once you have completed the previous steps correctly and the device can
-connect to the internet, it will automatically register and appear in
-the list of available devices for the demo organization.
-You can find it by its MAC address, as shown in the screenshot above,
-or by its name if you have changed it from "OpenWrt" to something else.
+If the above steps have been completed correctly, and the device is
+connected to the internet, then it will automatically register and appear
+in the list of available devices for the demo organization.
+You will then be able to  locate the device  by its MAC address,
+as shown in the screenshot above, or by its name if you have changed
+it from "OpenWrt" to something else.
 
 At this point, the device should have already downloaded and applied
-the configuration. In a few minutes the management tunnel will be
-established and the device will start collecting monitoring information.
+the configuration. After a few minutes the management tunnel will be
+set up  and the device will start collecting monitoring information.
 
 Monitoring charts and status
 ----------------------------
 
-After a few minutes, OpenWISP will start collecting metrics from your
-device. You will be able to see this information displayed in the UI,
+Once the OpenWISP Monitoring package has been installed and launched,
+it will start collecting metrics from your device.
+You will be able to see this information displayed in the UI,
 which will be similar to the screenshots shown below.
 
 Health status
@@ -260,9 +263,9 @@ Get help
 --------
 
 If you need help or want to request a free 30-day trial of the
-full feature set, you can write to the
+full feature set, you can write to us via the
 `support channels <https://openwisp.org/support.html>`__ or just click
-on "Contact support" as indicated in the screenshot below.
+on the tab *Contact support* as indicated in the screenshot below.
 
 .. image:: ../images/demo/contact-support.png
     :target: ../_images/contact-support.png

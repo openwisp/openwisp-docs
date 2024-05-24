@@ -1,7 +1,7 @@
 RADIUS
 ======
 
-OpenWISP RADIUS has been introduced in OpenWISP 22.05 and
+OpenWISP RADIUS is available since OpenWISP 22.05 and
 provides many features aimed at public WiFi services.
 
 .. contents:: **Table of Contents**:
@@ -24,9 +24,9 @@ Alternatively you can set it up manually by following these guides:
 
 This module is also available in
 `docker-openwisp <https://github.com/openwisp/docker-openwisp>`_
-although its usage is not recommended for production usage yet, unless
-the reader is willing to invest effort in adapting the docker images
-and configurations to overcome any roadblocks encountered.
+although its usage is not recommended for production usage yet,
+unless the reader is willing to invest effort in adapting the docker
+images and configurations to overcome any roadblocks encountered.
 
 Find out more about OpenWISP RADIUS
 -----------------------------------
