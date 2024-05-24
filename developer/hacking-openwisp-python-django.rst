@@ -188,7 +188,7 @@ Django Debug Toolbar
 The `Django Debug Toolbar <https://django-debug-toolbar.readthedocs.io/>`_
 is a configurable set of panels which display various debug information
 about the current HTTP request/response and, when clicked, display more
-details about the panel’s content.
+details about the panel's content.
 
 It can be installed with:
 
@@ -262,7 +262,7 @@ but this is already done in ``settings.py``. Here's what
 
     INTERNAL_IPS = ['127.0.0.1']
 
-To complete the process, the Debug Toolbar’s URL needs to be added
+To complete the process, the Debug Toolbar's URL needs to be added
 to the URLconf of ``openwisp-controller`` as shown in `this
 <https://django-debug-toolbar.readthedocs.io/en/latest/installation.html>`_
 tutorial but this is already present in the last lines of ``urls.py``:

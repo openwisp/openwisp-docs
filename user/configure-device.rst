@@ -21,7 +21,7 @@ Refer to the instructions described in
 2. Flash OpenWRT on a device
 ----------------------------
 
-If you have a  network device which is compatible with OpenWRT, follow the
+If you have a network device which is compatible with OpenWRT, follow the
 instructions in the `official OpenWRT flashing guide
 <https://openwrt.org/docs/guide-user/installation/generic.flashing>`_.
 
@@ -63,7 +63,7 @@ clipboard, then run the following commands on your OpenWrt device:
     opkg update
     opkg install ./<file-just-downloaded>
 
-If you’re running at least OpenWRT 19.07, you can install openwisp-config
+If you're running at least OpenWRT 19.07, you can install openwisp-config
 from the official OpenWRT packages:
 
 .. code-block:: bash
@@ -84,7 +84,7 @@ controller. To do that, edit the config file located at
 
 You will see the default config file, as shown below.
 If your instance lacks some of the lines shown in the example below,
- please add them.
+please add them.
 
 .. code-block:: text
 
@@ -117,10 +117,10 @@ If your instance lacks some of the lines shown in the example below,
 
 Uncomment and change the following fields:
 
-- ``url``: the hostname of your OpenWISP2 controller. For example, if you
+- ``url``: the hostname of your OpenWISP controller. For example, if you
   are hosting your OpenWISP server locally and you set the IP Address to
-  “192.168.56.2”, the url would be ``https://192.168.56.2``.
-- ``verify_ssl``: set to ``'0'`` if your controller’s SSL certificate is
+  "192.168.56.2", the url would be ``https://192.168.56.2``.
+- ``verify_ssl``: set to ``'0'`` if your controller's SSL certificate is
   self-signed; in production you will need a valid SSL certificate to
   keep your instance secure
 - ``shared_secret``: you can retrieve this from the  OpenWISP2 admin
@@ -146,7 +146,7 @@ Save the file and start openwisp-config:
 
     /etc/init.d/openwisp_config restart
 
-Your OpenWRT instance should register itself to your OpenWISP2 controller.
+Your OpenWRT instance should register itself to your OpenWISP controller.
 Check the devices menu on the admin panel to make sure your OpenWRT
 device is registered.
 

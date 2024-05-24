@@ -45,6 +45,8 @@ through the public internet, ensuring security, privacy, and
 mitigating potential legal risks associated with exposing
 users' personal information to malicious actors.
 
+Enable Captive Portal Template
+------------------------------
 
 .. image:: ../images/demo/captive-portal-demo.png
   :target: ../_images/captive-portal-demo.png
@@ -96,7 +98,7 @@ following screenshot:
 This page communicates that the user can now use the internet
 provided by the hotspot, it also provides the following features:
 
-- It shows a list of the user’s sessions, including the start time,
+- It shows a list of the user's sessions, including the start time,
   stop time, duration, traffic consumed (download and upload),
   and the MAC address of the device that accessed the WiFi service.
 - It allows the account password and phone number (if SMS verification is
@@ -254,7 +256,7 @@ Follow these steps to try the *paid WiFi subscription* feature:
 
 - Sign up for one of the non-free plans.
 - Enter your real email address and dummy personal information.
-- Click “Proceed with the payment.”
+- Click "Proceed with the payment."
 - Enter the following paypal credentials:
   ``support@openwisp.io`` / ``tester123`` and click on
   "start session".

@@ -110,7 +110,7 @@ In this scenario, the following requirements are needed:
   If the OpenWISP server is connected to a network infrastructure
   which allows it to reach the devices via pre-existing tunneling or
   Intranet solutions (eg: MPLS, SD-WAN), then setting up a VPN server
-  is not needed, as long as there’s a dedicated interface on OpenWrt
+  is not needed, as long as there's a dedicated interface on OpenWrt
   which has an IP address assigned to it and which is reachable from
   the OpenWISP server.
 

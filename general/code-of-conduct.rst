@@ -75,12 +75,12 @@ within our community:
 - Sexist, racist, homophobic, transphobic,
   ableist or otherwise discriminatory jokes and language.
 - Posting or displaying sexually explicit or violent material.
-- Posting or threatening to post other people’s personally identifying
+- Posting or threatening to post other people's personally identifying
   information ("doxing").
 - Personal insults, particularly those related to gender, sexual
   orientation, race, religion, or disability.
 - Inappropriate photography or recording.
-- Inappropriate physical contact. You should have someone’s consent
+- Inappropriate physical contact. You should have someone's consent
   before touching them.
 - Unwelcome sexual attention. This includes, sexualized comments
   or jokes; inappropriate touching, groping, and unwelcomed sexual

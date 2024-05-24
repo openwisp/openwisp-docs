@@ -65,7 +65,7 @@ Server Side
 
 - `OpenWISP Users <https://github.com/openwisp/openwisp-users>`_:
   User management, multi-tenancy, authentication backend,
-  REST API utilities and classes to implement multi-tenancy..
+  REST API utilities and classes to implement multi-tenancy.
 
 - `OpenWISP Controller <https://github.com/openwisp/openwisp-controller>`_:
   Configuration management and templating,
@@ -172,7 +172,7 @@ Main Technologies Used
 Python
 ~~~~~~
 
-`Python <https://www.python.org/>`_ it's the main programming language
+`Python <https://www.python.org/>`_ is the main programming language
 used by the server side application (web admin, API, controller, workers).
 
 In the past OpenWISP was built on  Ruby On Rails, but we later switched

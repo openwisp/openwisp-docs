@@ -48,8 +48,7 @@ This firmware can help you quickly get started and test
 the core features of OpenWISP Cloud.
 
 If you prefer to use your existing firmware,
-please refer to the alternative instructions by reading
-:ref:`the alternative firmware instructions
+please refer to the :ref:`the alternative firmware instructions
 <alternative_firmware_instructions>`.
 
 1. Downloading the firmware
@@ -75,9 +74,8 @@ You can `Flash the firmware via web UI
 or via `other means available on OpenWrt
 <https://openwrt.org/docs/guide-user/installation/generic.flashing>`_.
 
-Make sure not to keep settings as shown in
-(supply the ``-n`` command line option to sysupgrade, for the web UI
-there is a specific checkbox).
+Make sure not to keep settings: supply the ``-n`` command line option to
+sysupgrade, for the web UI there is a specific checkbox.
 
 .. _alternative_firmware_instructions:
 
@@ -185,7 +183,7 @@ connected to the internet, then it will automatically register and appear
 in the list of available devices for the demo organization.
 You will then be able to  locate the device  by its MAC address,
 as shown in the screenshot above, or by its name if you have changed
-it from “OpenWrt” to something else.
+it from "OpenWrt" to something else.
 
 At this point, the device should have already downloaded and applied
 the configuration. After a few minutes the management tunnel will be
@@ -268,3 +266,13 @@ on the tab *Contact support* as indicated in the screenshot below.
 
 .. image:: ../images/demo/contact-support.png
     :target: ../_images/contact-support.png
+
+Next steps
+----------
+
+- :doc:`Open and/or WPA protected WiFi Access Point SSID
+  <./wifi-access-point>`
+- :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
+  <./hotspot>`
+- :doc:`How to Set Up a Wireless Mesh Network
+  <./mesh>`
