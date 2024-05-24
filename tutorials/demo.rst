@@ -74,8 +74,11 @@ You can `Flash the firmware via web UI
 or via `other means available on OpenWrt
 <https://openwrt.org/docs/guide-user/installation/generic.flashing>`_.
 
-Make sure not to keep settings: supply the ``-n`` command line option to
-sysupgrade, for the web UI there is a specific checkbox.
+Make sure not to keep settings: supply the `-n` command line option to
+`sysupgrade`. If you're using the OpenWrt web UI, there is a specific
+checkbox labeled "Keep settings and retain the current configuration"
+which appears just before confirming the upgrade and needs to be
+unchecked.
 
 .. _alternative_firmware_instructions:
 

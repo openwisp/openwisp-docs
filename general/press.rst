@@ -93,7 +93,7 @@ Interview for `GARRTV <https://www.garr.tv>`_ by Davide Guerri
 Blog Posts
 ----------
 
-- `How Bottom-up Broadband will overcome the ‘last mile' problem
+- `How Bottom-up Broadband will overcome the 'last mile' problem
   <https://blog.p2pfoundation.net/how-bottom-up-broadband-will-overcome-
   the-last-mile-problem/2013/07/23>`_
 - `netjsonconfig: convert NetJSON to OpenWRT UCI
