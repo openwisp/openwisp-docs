@@ -7,13 +7,11 @@ of OpenWISP provides integration with FreeRADIUS to allow users to
 authenticate with their django user accounts. Users can either be created
 manually via the admin interface, generated or imported from CSV.
 
-You can try this feature on our :doc:`OpenWISP Demo System <./demo>`!
-
 Pre-requisites for following this tutorial
 ------------------------------------------
 
-Enabled OpenWISP RADIUS
-~~~~~~~~~~~~~~~~~~~~~~~
+Enable OpenWISP RADIUS
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -78,7 +76,7 @@ steps in the :doc:`OpenVPN tunnel Automation <../user/vpn>` section.
     device by default. If not, you need to enable that template on your
     device. Otherwise, your device won't connect to the FreeRADIUS server.
 
-        .. image:: ../images/enable-openvpn-template.png
+        .. image:: ../images/tutorials/enable-openvpn-template.png
             :target: ../_images/enable-openvpn-template.png
 
 Configuring FreeRADIUS for WPA Enterprise
@@ -99,16 +97,16 @@ need to gather the following information:
 From the OpenWISP navigation menu, go to ``Users & Organizations`` and
 then ``Organizations``, from here click on the desired organziation.
 
-.. image:: ../images/navigating-to-organization.png
+.. image:: ../images/tutorials/navigating-to-organization.png
     :target: ../_images/navigating-to-organization.png
 
 From the organization's page, we need to find the organization's UUID and
 RADIUS token.
 
-.. image:: ../images/organization-uuid.png
+.. image:: ../images/tutorials/organization-uuid.png
     :target: ../_images/organization-uuid.png
 
-.. image:: ../images/organization-radius-token.png
+.. image:: ../images/tutorials/organization-radius-token.png
     :target: ../_images/organization-radius-token.png
 
 This is good point to decide whether to use self-signed certificates or
@@ -165,7 +163,7 @@ Creating the NAS
 From the OpenWISP navigation menu, go to ``RADIUS`` and then ``NAS``, from
 here click on the ``Add NAS``.
 
-.. image:: ../images/navigating-to-nas.png
+.. image:: ../images/tutorials/navigating-to-nas.png
     :target: ../_images/navigating-to-nas.png
 
 Fill in the organization, short name, secret, and set the type to
@@ -197,14 +195,14 @@ Creating the Template
 From the OpenWISP navigation menu, go to ``Configurations`` and then
 ``Templates``, from here click on the ``Add template``.
 
-.. image:: ../images/create-template.png
+.. image:: ../images/tutorials/create-template.png
     :target: ../_images/create-template.png
 
 Fill in name, organization, leave type set to "Generic", backend set to
 "OpenWrt", scroll down to the Configuration section, then click on
 "Advanced mode (raw JSON)".
 
-.. image:: ../images/advanced-mode.png
+.. image:: ../images/tutorials/advanced-mode.png
     :target: ../_images/advanced-mode.png
 
 Before copying the following NetJSON to the advanced mode editor, you will
@@ -219,75 +217,71 @@ need to update these fields to reflect your configuration:
 .. code-block:: json
 
     {
-        "interfaces": [
-            {
-                "wireless": {
-                    "network": [
-                        "lan"
-                    ],
-                    "mode": "access_point",
-                    "radio": "radio0",
-                    "ack_distance": 0,
-                    "rts_threshold": 0,
-                    "frag_threshold": 0,
-                    "ssid": "OpenWISP",
-                    "hidden": false,
-                    "wds": false,
-                    "encryption": {
-                        "protocol": "wpa2_enterprise",
-                        "key": "testing123",
-                        "disabled": false,
-                        "cipher": "auto",
-                        "ieee80211w": "0",
-                        "server": "10.8.0.1",
-                        "port": 1822,
-                        "acct_server": "10.8.0.1",
-                        "acct_server_port": 1823
-                    },
-                    "wmm": true,
-                    "isolate": false,
-                    "ieee80211r": false,
-                    "reassociation_deadline": 1000,
-                    "ft_psk_generate_local": false,
-                    "ft_over_ds": true,
-                    "rsn_preauth": false,
-                    "macfilter": "disable",
-                    "maclist": []
-                },
-                "type": "wireless",
-                "name": "wlan0",
-                "mtu": 1500,
-                "disabled": false,
-                "network": "",
-                "mac": "",
-                "autostart": true,
-                "addresses": []
+        "interfaces": [{
+            "name": "wlan_eap",
+            "type": "wireless",
+            "mtu": 1500,
+            "disabled": false,
+            "network": "",
+            "mac": "",
+            "autostart": true,
+            "addresses": [],
+            "wireless": {
+                "network": [
+                    "lan"
+                ],
+                "mode": "access_point",
+                "radio": "radio0",
+                "ssid": "WPA Enterprise 2 (EAP-PAP-TTLS)",
+                "ack_distance": 0,
+                "rts_threshold": 0,
+                "frag_threshold": 0,
+                "hidden": false,
+                "wds": false,
+                "wmm": true,
+                "isolate": false,
+                "ieee80211r": false,
+                "reassociation_deadline": 1000,
+                "ft_psk_generate_local": false,
+                "ft_over_ds": true,
+                "rsn_preauth": false,
+                "macfilter": "disable",
+                "maclist": [],
+                "encryption": {
+                    "protocol": "wpa2_enterprise",
+                    "key": "testing123",
+                    "disabled": false,
+                    "cipher": "auto",
+                    "ieee80211w": "0",
+                    "server": "10.8.0.1",
+                    "port": 1822,
+                    "acct_server": "10.8.0.1",
+                    "acct_server_port": 1823
+                }
             }
-        ],
-      "files": [
-          {
-              "path": "/etc/openwisp/pre-reload-hook",
-              "mode": "0700",
-              "contents": "#!/bin/sh\n\n# Ensure radio0 is enabled \nuci set wireless.radio0.disabled='0'\nuci commit wireless"
-          }
-      ]
+        }],
+        "files": [{
+            "path": "/etc/openwisp/pre-reload-hook",
+            "mode": "0700",
+            "contents": "#!/bin/sh\n\n# Ensure radio0 is enabled \nuci set wireless.radio0.disabled='0'\nuci commit wireless"
+        }]
     }
 
 Then click on "back to normal mode" to close the advanced mode editor.
 
-.. image:: ../images/back-to-normal-mode.png
+.. image:: ../images/tutorials/back-to-normal-mode.png
     :target: ../_images/back-to-normal-mode.png
 
 Now you can save the new template.
 
-.. image:: ../images/save.png
+.. image:: ../images/tutorials/save.png
     :target: ../_images/save.png
 
 At this point you're ready to assign the template to your devices, but
 before doing so you may want to read on to understand the different
 components of this template:
 
-- The ``wlan0`` creates the wireless interface that supports WPA 2
+- The ``wlan_eap`` creates the wireless interface that supports WPA 2
   Enterprise encryption bound to ``radio0``. This interface attached to
   the ``lan`` interface which is configured to provide internet access in
   default OpenWrt configuration.
@@ -358,7 +352,7 @@ You can also verify the RADIUS session created on OpenWISP. From the
 OpenWISP navigation menu, go to ``RADIUS`` and then ``Accounting
 Sessions``.
 
-.. image:: ../images/navigating-to-radius-accounting.png
+.. image:: ../images/tutorials/navigating-to-radius-accounting.png
     :target: ../_images/navigating-to-radius-accounting.png
     :alt: Navigating to RADIUS Accounting on OpenWISP
 

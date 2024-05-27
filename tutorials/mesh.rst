@@ -112,14 +112,14 @@ Creating the Template
 From the OpenWISP navigation menu, go to ``Configurations``
 and then ``Templates``, from here click on the ``Add template``.
 
-.. image:: ../images/create-template.png
+.. image:: ../images/tutorials/create-template.png
   :target: ../_images/create-template.png
 
 Fill in name, organization, leave type set to "Generic", backend
 set to "OpenWrt", scroll down to the Configuration section, then
 click on "Advanced mode (raw JSON)".
 
-.. image:: ../images/mesh/advanced-mode.png
+.. image:: ../images/tutorials/advanced-mode.png
   :target: ../_images/advanced-mode.png
 
 Once the advanced mode editor is open you can paste the following NetJSON:
@@ -215,13 +215,13 @@ Once the advanced mode editor is open you can paste the following NetJSON:
 
 Then click on "back to normal mode" to close the advanced mode editor.
 
-.. image:: ../images/back-to-normal-mode.png
+.. image:: ../images/tutorials/back-to-normal-mode.png
   :target: ../_images/back-to-normal-mode.png
 
 Now you can save the new template.
 
-.. image:: ../images/save.png
-  :target: ../_images/save.png
+.. image:: ../images/tutorials/save.png
+  :target: ../_images//save.png
 
 At this point you're ready to assign the template to your devices, but
 before doing so you may want to read on to understand the different
