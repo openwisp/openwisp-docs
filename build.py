@@ -157,7 +157,7 @@ def parse_modules_arg(value):
             key, value = item.split('=')
             if key == 'version':
                 version = value
-            if key == 'repository':
+            elif key == 'repository':
                 owner, name = value.split('/')
                 module.update({'name': name, 'owner': owner})
             else:
@@ -268,6 +268,8 @@ def clone_or_update_repo(name, branch, dir_name, owner='openwisp'):
         )
     # If the module contains a doc directory, copy it to the dir_name in the root.
     # Otherwise, copy the entire directory.
+    if os.path.exists(dir_name):
+        shutil.rmtree(dir_name)
     try:
         shutil.copytree(os.path.join(clone_path, 'docs'), dir_name)
     except FileNotFoundError:
