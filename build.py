@@ -268,12 +268,13 @@ def clone_or_update_repo(name, branch, dir_name, owner='openwisp'):
         )
     # If the module contains a doc directory, copy it to the dir_name in the root.
     # Otherwise, copy the entire directory.
-    if os.path.exists(dir_name):
-        shutil.rmtree(dir_name)
-    try:
-        shutil.copytree(os.path.join(clone_path, 'docs'), dir_name)
-    except FileNotFoundError:
-        shutil.copytree(clone_path, dir_name)
+    if os.path.islink(dir_name):
+        os.unlink(dir_name)
+    src = os.path.join(clone_path, 'docs')
+    # openwisp docs repo
+    if not os.path.exists(src):
+        src = clone_path
+    os.symlink(src, dir_name)
 
 
 def main():
@@ -359,7 +360,7 @@ def main():
             )
         # Remove all temporary directories
         for dir in module_dirs:
-            shutil.rmtree(dir)
+            os.unlink(dir)
 
     # Generate the index.html file which redirects to the stable version.
     env = Environment(loader=FileSystemLoader('_static'))
