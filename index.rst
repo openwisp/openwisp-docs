@@ -20,7 +20,7 @@ with using OpenWISP.**
       notifications/*
       utils/*
       user/radius
-      user/wifi-login-pages
+      wifi-login-pages/*
       user/django-settings
       user/usage-metric-collection
       tutorials/demo
