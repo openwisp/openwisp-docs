@@ -59,5 +59,5 @@ jobs:
         run: |
           gsutil -m rsync -r ${{ env.SRC_URL }} ${{ env.DST_URL }}
         env:
-          SRC_URL: /home/runner/work/openwisp2-docs/openwisp2-docs/_build/docs/__new__/
+          SRC_URL: /home/runner/work/openwisp-docs/openwisp-docs/_build/docs/__new__/
           DST_URL: gs://${{ secrets.GCS_DOCS_BUCKET_NAME }}/docs/__new__/
