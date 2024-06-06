@@ -257,7 +257,7 @@ with mobile connections (eg: 3G, LTE).
    :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/signal-quality.png
 
 Find out more information about the
-:doc:`Monitoring module of OpenWISP <../user/monitoring>`.
+:doc:`Monitoring module of OpenWISP </monitoring/index>`.
 
 .. _get_help:
 

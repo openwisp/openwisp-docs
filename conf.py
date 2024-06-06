@@ -39,7 +39,6 @@ extensions = [
     'sphinx.ext.githubpages',
     'notfound.extension',
     'openwisp.sphinx.theme',
-    'sphinx.ext.autosectionlabel',
     'sphinx.ext.ifconfig',
 ]
 

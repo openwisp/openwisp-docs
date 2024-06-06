@@ -18,6 +18,7 @@ with using OpenWISP.**
       firmware-upgrader/*
       network-topology/*
       notifications/*
+      ipam/*
       utils/*
       user/radius
       wifi-login-pages/*

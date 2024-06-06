@@ -17,6 +17,8 @@ modules:
     dir_name: utils
   - name: openwisp-wifi-login-pages
     dir_name: wifi-login-pages
+  - name: openwisp-ipam
+    dir_name: ipam
 versions:
   - name: '22.05'
     overwrite_modules: true

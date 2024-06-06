@@ -175,7 +175,7 @@ Monitoring WiFi Clients
 
 Since OpenWISP 23, in the device page, whenever any WiFi
 client data is collected by the
-:doc:`Monitoring module of OpenWISP <../user/monitoring>`,
+:doc:`Monitoring module of OpenWISP </monitoring/user/wifi-sessions>`,
 a "WiFi Sessions" tab will appear as in the screenshot above,
 showing WiFi clients connected right now.
 
