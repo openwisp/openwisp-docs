@@ -167,6 +167,8 @@ are 300 MB of daily traffic or three hours of daily surfing.
     `OpenWISP RADIUS - Enforcing session limits
     <https://openwisp-radius.readthedocs.io/en/stable/user/enforcing_limits.html>`_.
 
+.. _automatic_captive_portal_login:
+
 Automatic Captive Portal Login
 ------------------------------
 

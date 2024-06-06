@@ -155,8 +155,8 @@ Building for production
 
 If you want to build the documentation for the production environment,
 i.e. for deploying on `https://openwisp.io/docs`, set the environment
-variable ``PRODUCTION=1``. This will generate the documentation in the
-following formats:
+variable ``PRODUCTION=1``. This will generate the documentation in
+all the formats:
 
 .. code-block:: shell
 
