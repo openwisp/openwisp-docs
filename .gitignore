@@ -3,11 +3,14 @@ _build/
 
 .vscode/
 modules/*
-controller/
-monitoring/
-firmware-upgrader/
-notifications/
-network-topology/
-users/
-utils/
-openwisp2-docs/
+controller
+monitoring
+firmware-upgrader
+notifications
+network-topology
+users
+utils
+openwisp2-docs
+wifi-login-pages
+ipam
+openwisp-config
