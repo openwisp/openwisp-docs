@@ -21,6 +21,8 @@ modules:
     dir_name: ipam
   - name: openwisp-config
     dir_name: openwrt-config-agent
+  - name: openwrt-openwisp-monitoring
+    dir_name: openwrt-monitoring-agent
 versions:
   - name: '22.05'
     overwrite_modules: true
