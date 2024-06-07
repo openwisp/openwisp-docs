@@ -48,7 +48,7 @@ install OpenWRT in a VirtualBox VM, the guide above covers how to do this.
 
 If you want to take advantage of the features
 offered by the monitoring module of OpenWISP,
-read the :doc:`Monitoring Quickstart Guide <./monitoring>`.
+read the :doc:`Monitoring Quickstart Guide </monitoring/user/quickstart>`.
 
 4. Watch video demonstrations
 -----------------------------
