@@ -19,6 +19,8 @@ modules:
     dir_name: wifi-login-pages
   - name: openwisp-ipam
     dir_name: ipam
+  - name: openwisp-config
+    dir_name: openwrt-config-agent
 versions:
   - name: '22.05'
     overwrite_modules: true

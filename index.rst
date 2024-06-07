@@ -16,6 +16,7 @@ with using OpenWISP.**
       controller/*
       monitoring/*
       firmware-upgrader/*
+      openwrt-config-agent/*
       network-topology/*
       notifications/*
       ipam/*
