@@ -12,7 +12,7 @@ with using OpenWISP.**
       :glob:
 
       user/quickstart
-      ansible-openwisp2/*
+      ansible/*
       users/*
       controller/*
       monitoring/*
