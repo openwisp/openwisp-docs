@@ -25,6 +25,8 @@ modules:
     dir_name: openwrt-monitoring-agent
   - name: ansible-openwisp2
     dir_name: ansible
+  - name: docker-openwisp
+    dir_name: docker
 versions:
   - name: '22.05'
     overwrite_modules: true

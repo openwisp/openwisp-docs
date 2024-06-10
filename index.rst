@@ -13,6 +13,7 @@ with using OpenWISP.**
 
       user/quickstart
       ansible/*
+      docker/*
       users/*
       controller/*
       monitoring/*
