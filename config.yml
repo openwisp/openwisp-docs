@@ -23,6 +23,8 @@ modules:
     dir_name: openwrt-config-agent
   - name: openwrt-openwisp-monitoring
     dir_name: openwrt-monitoring-agent
+  - name: ansible-openwisp2
+    dir_name: ansible-openwisp2
 versions:
   - name: '22.05'
     overwrite_modules: true
