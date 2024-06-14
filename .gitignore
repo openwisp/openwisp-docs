@@ -13,4 +13,7 @@ utils
 openwisp2-docs
 wifi-login-pages
 ipam
-openwisp-config
+openwrt-config-agent
+openwrt-monitoring-agent
+docker
+ansible
