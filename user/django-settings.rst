@@ -94,5 +94,8 @@ OpenWISP Settings Reference
 
 - :doc:`OpenWISP Controller Settings </controller/user/settings>`
 - :doc:`OpenWISP Monitoring Settings </monitoring/user/settings>`
+- :doc:`OpenWISP Firmware Upgrader Settings </firmware-upgrader/user/settings>`
+- :doc:`OpenWISP Network Topology Settings </network-topology/user/settings>`
 - :doc:`OpenWISP Users Settings </users/user/settings>`
-- TODO: Add More
+- :doc:`OpenWISP Notifications Settings </notifications/user/settings>`
+- :doc:`OpenWISP Utils Settings </utils/user/settings>`
