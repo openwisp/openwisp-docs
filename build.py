@@ -8,7 +8,6 @@
 
 import argparse
 import os
-import shutil
 import subprocess
 from copy import deepcopy
 
@@ -190,7 +189,7 @@ def parse_formats_arg(value):
     output_formats = value.split(',')
     # Validate all output formats are supported
     for format in output_formats:
-        if format not in OUTPUT_FORMATS:
+        if format not in OUTPUT_FORMATS and format != 'ow_dummy':
             print(f'ERROR: {format} is not a valid output format')
             exit(2)
     return output_formats
@@ -225,7 +224,7 @@ def clone_or_update_repo(name, branch, dir_name, owner='openwisp'):
     If the repository already exists, update it. Otherwise, clone the repository.
     """
     repository = f'{owner}/{name}'
-    if os.environ.get('DEV'):
+    if os.environ.get('SSH'):
         # SSH cloning is a convenient option for local development, as it
         # allows you to commit changes directly to the repository, but it
         # requires that you have added your public SSH key to your GitHub

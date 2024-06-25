@@ -1,6 +1,6 @@
-========================
-OpenWISP 2 Documentation
-========================
+======================
+OpenWISP Documentation
+======================
 
 This repository aims to help out **new users and contributors** to get
 start using and getting involved in `OpenWISP <http://openwisp.org>`_.
@@ -143,24 +143,12 @@ Building with SSH remotes
 By default, the OpenWISP modules are cloned over HTTPS. This may pose
 a hurdle if you wish to make changes to the cloned modules and push
 them to the remote URL. To use SSH remotes, you can set the environment
-variable ``DEV=1``. This will instruct the build to clone the modules
+variable ``SSH=1``. This will instruct the build to clone the modules
 using SSH instead of HTTPS. For example:
 
 .. code-block:: shell
 
-    DEV=1 make build
-
-Building for production
-~~~~~~~~~~~~~~~~~~~~~~~
-
-If you want to build the documentation for the production environment,
-i.e. for deploying on `https://openwisp.io/docs`, set the environment
-variable ``PRODUCTION=1``. This will generate the documentation in
-all the formats:
-
-.. code-block:: shell
-
-    PRODUCTION=1 make build
+    SSH=1 make build
 
 Need help?
 ----------

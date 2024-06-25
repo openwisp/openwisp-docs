@@ -39,7 +39,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'notfound.extension',
     'openwisp.sphinx.theme',
-    'sphinx.ext.ifconfig',
+    'version_switcher',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -437,8 +437,10 @@ notfound_context = {
 
 # Configuration for generating comprehensive docs
 import os
-
+import sys
 import yaml
+
+sys.path.insert(0, os.path.abspath(os.path.curdir))
 
 with open('config.yml', 'r') as config_file:
     ow_docs_config = yaml.safe_load(config_file)
@@ -468,3 +470,5 @@ pdf_stylesheets = ['sphinx', 'a4', '_styles/pdf-style']
 epub_basename = f'OpenWISP-{version}'
 
 nitpicky = True
+
+
