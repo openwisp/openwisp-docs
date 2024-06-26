@@ -4,6 +4,14 @@ from .utils import load_versions_map, VERSION_MAP_FILE
 
 
 class OpenwispDummyBuilder(DummyBuilder):
+    """
+    This custom builder is a subclass of the built-in `DummyBuilder` class.
+    The `DummyBuilder` iterates over all the source files but it does not create
+    any output files. It is used specifically to create the `VERSION_MAP_FILE`
+    which is used for showing only relevant versions for each page in the
+    version switcher.
+    """
+
     name = 'ow_dummy'
 
     def init(self):
