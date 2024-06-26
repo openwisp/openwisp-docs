@@ -12,6 +12,7 @@ with using OpenWISP.**
       :glob:
 
       user/quickstart
+      user/configure-device
       ansible/*
       docker/*
       users/*
@@ -28,7 +29,11 @@ with using OpenWISP.**
       wifi-login-pages/*
       user/django-settings
       user/usage-metric-collection
+      user/vpn
       tutorials/demo
+      tutorials/wifi-access-point.rst
+      tutorials/hotspot
+      tutorials/mesh
       general/architecture
       general/values
       general/help-us

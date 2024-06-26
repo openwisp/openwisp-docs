@@ -75,7 +75,7 @@ OpenWISP server in `NetJSON format <https://netjson.org/>`_ (see
 `Monitoring Scripts <https://github.com/openwisp/openwisp-monitoring#monitoring-scripts>`_).
 
 At the moment, this code is deployed using a
-:doc:`configuration template <../user/templates>` which is created with
+:doc:`configuration template </controller/user/templates>` which is created with
 a `database migration <https://github.com/openwisp/openwisp-monitoring/blob/ee2271be25649c4c262e8eaf76b6fdc5d5d002ca/openwisp_monitoring/device/migrations/0002_create_template.py>`_
 when the monitoring module is installed,
 but we need to convert this existing code
@@ -85,7 +85,7 @@ documented and with a key improvement regarding its resiliency.
 **Pre-requisites to work on this project**:
 
 The student should be familiar with
-:doc:`OpenWISP Templates <../user/templates>`,
+:doc:`OpenWISP Templates </controller/user/templates>`,
 `OpenWRT <https://openwrt.org>`_,
 `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
 and should have a basic knowledge of
@@ -468,7 +468,7 @@ last year of usage of this module.
 **Pre-requisites to work on this project**:
 
 The student should be familiar with
-:doc:`OpenWISP Templates <../user/templates>`,
+:doc:`OpenWISP Templates </controller/user/templates>`,
 `OpenWRT <https://openwrt.org>`_,
 `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
 and should have a basic knowledge of

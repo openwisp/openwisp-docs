@@ -106,7 +106,7 @@ this to be applied automatically when new devices register!
 .. note::
   If you want to find out more about templates,
   consult the documentation section dedicated to
-  :doc:`Configuration Templates <../user/templates>`.
+  :doc:`Configuration Templates </controller/user/templates>`.
 
 Multiple SSIDs, multiple radios
 -------------------------------

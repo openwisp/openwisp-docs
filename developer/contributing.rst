@@ -96,6 +96,8 @@ Create a new branch for your patch, use a self-descriptive name, eg:
   # use a descriptive name
   git checkout -b autoregistration
 
+.. _openwisp_commit_message_style_guidelines:
+
 2. Commit message style guidelines
 ----------------------------------
 

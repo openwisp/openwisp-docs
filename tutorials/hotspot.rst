@@ -118,7 +118,7 @@ to use one of the features of the status page listed above.
 
 To resolve this, OpenWISP will send an email to the user with a magic
 link. This will allow the user access to the status page of
-:doc:`WiFi Login Pages <../user/wifi-login-pages>` without entering their
+:doc:`WiFi Login Pages </wifi-login-pages/index>` without entering their
 credentials again, as shown in the image above.
 
 .. note::
@@ -172,7 +172,7 @@ are 300 MB of daily traffic or three hours of daily surfing.
 Automatic Captive Portal Login
 ------------------------------
 
-The :doc:`WiFi Login Pages application <../user/wifi-login-pages>`.
+The :doc:`WiFi Login Pages application </wifi-login-pages/index>`.
 allows users who have logged in previously, and who use a
 browser which supports cookies
 (not all mini-browsers that are used for captive portal logins do),
