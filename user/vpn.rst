@@ -5,7 +5,8 @@ In this guide we will explore how to set up the automatic management
 of **OpenVPN tunnels**.
 
 If you're interested in **Wireguard tunnels** see
-:doc:`Wireguard and Wireguard over VXLAN tunnel automation </controller/user/wireguard>`.
+:doc:`Wireguard and Wireguard over VXLAN tunnel automation
+</controller/user/wireguard>`.
 
 .. contents:: **Table of Contents**:
    :backlinks: none

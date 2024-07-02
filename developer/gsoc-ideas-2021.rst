@@ -75,8 +75,8 @@ OpenWISP server in `NetJSON format <https://netjson.org/>`_ (see
 `Monitoring Scripts <https://github.com/openwisp/openwisp-monitoring#monitoring-scripts>`_).
 
 At the moment, this code is deployed using a
-:doc:`configuration template </controller/user/templates>` which is created with
-a `database migration <https://github.com/openwisp/openwisp-monitoring/blob/ee2271be25649c4c262e8eaf76b6fdc5d5d002ca/openwisp_monitoring/device/migrations/0002_create_template.py>`_
+:doc:`configuration template </controller/user/templates>` which is
+created with a `database migration <https://github.com/openwisp/openwisp-monitoring/blob/ee2271be25649c4c262e8eaf76b6fdc5d5d002ca/openwisp_monitoring/device/migrations/0002_create_template.py>`_
 when the monitoring module is installed,
 but we need to convert this existing code
 in a new OpenWRT package, well tested,

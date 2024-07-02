@@ -1,12 +1,12 @@
 def setup(app):
-    from .builders import OpenwispDummyBuilder
+    from .builders import VersionSwitcherIndexBuilder
     from .event_callbacks import (
         html_builder_inited,
         update_version_map,
         set_version_context,
     )
 
-    app.add_builder(OpenwispDummyBuilder)
+    app.add_builder(VersionSwitcherIndexBuilder)
     app.connect('builder-inited', html_builder_inited)
     app.connect('source-read', update_version_map)
     app.connect('html-page-context', set_version_context)

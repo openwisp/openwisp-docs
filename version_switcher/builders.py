@@ -3,7 +3,7 @@ import json
 from .utils import load_versions_map, VERSION_MAP_FILE
 
 
-class OpenwispDummyBuilder(DummyBuilder):
+class VersionSwitcherIndexBuilder(DummyBuilder):
     """
     This custom builder is a subclass of the built-in `DummyBuilder` class.
     The `DummyBuilder` iterates over all the source files but it does not create
@@ -12,7 +12,7 @@ class OpenwispDummyBuilder(DummyBuilder):
     version switcher.
     """
 
-    name = 'ow_dummy'
+    name = 'version_map'
 
     def init(self):
         super().init()

@@ -18,7 +18,7 @@ def update_version_map(app, docname, content):
     This function is executed when the source file is read.
     It adds the current version to the versions map for the current page.
     """
-    if app.builder.name != 'ow_dummy':
+    if app.builder.name != 'version_map':
         return
     try:
         app.builder.ow_version_map[docname].append(app.config.version)

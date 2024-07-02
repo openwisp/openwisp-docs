@@ -189,7 +189,7 @@ def parse_formats_arg(value):
     output_formats = value.split(',')
     # Validate all output formats are supported
     for format in output_formats:
-        if format not in OUTPUT_FORMATS and format != 'ow_dummy':
+        if format not in OUTPUT_FORMATS and format != 'version_map':
             print(f'ERROR: {format} is not a valid output format')
             exit(2)
     return output_formats

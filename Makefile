@@ -64,7 +64,7 @@ build:
 	mv _build/versions_map.json versions_map.json &> /dev/null || true
 
 	@echo "Building version map"
-	./build.py --formats ow_dummy $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES))
+	./build.py --formats version_map $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES))
 
 	@echo "Building documentation"
 	./build.py $(if $(FORMATS),--formats $(FORMATS)) $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES))
@@ -258,6 +258,6 @@ dummy:
 	@echo
 	@echo "Build finished. Dummy builder generates no files."
 
-.PHONY: ow_dummy
-ow_dummy:
-	$(SPHINXBUILD) -b ow_dummy $(ALLSPHINXOPTS) $(BUILDDIR)/ow_dummy
+.PHONY: version_map
+version_map:
+	$(SPHINXBUILD) -b version_map $(ALLSPHINXOPTS) $(BUILDDIR)/version_map
