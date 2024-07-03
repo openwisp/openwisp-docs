@@ -199,8 +199,29 @@ From the OpenWISP navigation menu, go to ``Configurations`` and then
     :target: ../_images/create-template.png
 
 Fill in name, organization, leave type set to "Generic", backend set to
-"OpenWrt", scroll down to the Configuration section, then click on
-"Advanced mode (raw JSON)".
+"OpenWrt". Scroll down to the ``Configuration variables`` section, then
+click on "Toggle Raw JSON Editing".
+
+.. image:: ../images/tutorials/config-variables-raw-json.png
+    :target: ../_images/config-variables-raw-json.png
+
+Paste the following JSON in the ``Raw JSON Editing`` field.
+
+.. code-block:: json
+
+    {
+        "mac_address": "00:00:00:00:00:00"
+    }
+
+.. image:: ../images/wpa-enterprise/config-variable-mac-json.png
+    :target: ../_images/config-variable-mac-json.png
+
+You can refer the :doc:`Configuration Variables
+</user/configuration-variables>` section of this documentation for more
+details.
+
+Scroll down to the ``Configuration`` section, then click on "Advanced mode
+(raw JSON)".
 
 .. image:: ../images/tutorials/advanced-mode.png
     :target: ../_images/advanced-mode.png
@@ -220,10 +241,10 @@ need to update these fields to reflect your configuration:
         "interfaces": [{
             "name": "wlan_eap",
             "type": "wireless",
+            "mac": "{{mac_address}}",
             "mtu": 1500,
             "disabled": false,
             "network": "",
-            "mac": "",
             "autostart": true,
             "addresses": [],
             "wireless": {
@@ -287,6 +308,12 @@ components of this template:
   default OpenWrt configuration.
 - A ``pre-reload-hook`` script which is executed before OpenWrt reloads
   its services to make ensure that ``radio0`` is enabled.
+- The ``mac_address`` configuration variable is added to the template as a
+  placeholder. When the template is applied to a device, the device's
+  actual MAC address will automatically override the placeholder, ensuring
+  that the wireless interface is created with the correct MAC address.
+  This is necessary for tracing which device is being used in RADIUS
+  accounting stats.
 
 Enable the WPA Enterprise Template on the Devices
 -------------------------------------------------

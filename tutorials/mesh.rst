@@ -221,7 +221,7 @@ Then click on "back to normal mode" to close the advanced mode editor.
 Now you can save the new template.
 
 .. image:: ../images/tutorials/save.png
-  :target: ../_images//save.png
+  :target: ../_images/save.png
 
 At this point you're ready to assign the template to your devices, but
 before doing so you may want to read on to understand the different
