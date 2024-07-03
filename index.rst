@@ -33,6 +33,7 @@ Contents:
    tutorials/wifi-access-point.rst
    tutorials/hotspot
    tutorials/mesh
+   tutorials/wpa-enterprise-eap-ttls-pap
    general/architecture
    general/values
    general/help-us

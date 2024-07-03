@@ -10,6 +10,8 @@ OpenWISP Demo
    :backlinks: none
    :depth: 3
 
+.. _accessing_the_demo_system:
+
 Accessing the demo system
 -------------------------
 
@@ -279,3 +281,5 @@ Next steps
   <./hotspot>`
 - :doc:`How to Set Up a Wireless Mesh Network
   <./mesh>`
+- :doc:`How to Set Up WPA Enterprise (EAP-TTLS-PAP) authentication
+  <./wpa-enterprise-eap-ttls-pap>`
