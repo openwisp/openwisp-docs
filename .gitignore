@@ -17,3 +17,18 @@ openwrt-config-agent
 openwrt-monitoring-agent
 docker
 ansible
+versions_map.json
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
