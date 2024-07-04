@@ -217,7 +217,7 @@ Paste the following JSON in the ``Raw JSON Editing`` field.
     :target: ../_images/config-variable-mac-json.png
 
 You can refer the :doc:`Configuration Variables
-</user/configuration-variables>` section of this documentation for more
+</controller/user/variables>` section of this documentation for more
 details.
 
 Scroll down to the ``Configuration`` section, then click on "Advanced mode
