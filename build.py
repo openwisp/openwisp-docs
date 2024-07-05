@@ -249,6 +249,7 @@ def clone_or_update_repo(name, branch, dir_name, owner='openwisp'):
             check=True,
         )
         subprocess.run(['git', 'checkout', branch], cwd=clone_path, check=True)
+        subprocess.run(['git', 'pull', 'origin', branch], cwd=clone_path, check=True)
     else:
         print(f"Cloning repository '{name}'...")
         subprocess.run(
