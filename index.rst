@@ -30,11 +30,7 @@ with using OpenWISP.**
       user/django-settings
       user/usage-metric-collection
       user/vpn
-      tutorials/demo
-      tutorials/wifi-access-point.rst
-      tutorials/hotspot
-      tutorials/mesh
-      tutorials/wpa-enterprise-eap-ttls-pap
+      tutorials/index
       general/architecture
       general/values
       general/help-us
