@@ -31,11 +31,7 @@ with using OpenWISP.**
       user/usage-metric-collection
       user/vpn
       tutorials/index
-      general/architecture
-      general/values
-      general/help-us
-      general/press
-      general/code-of-conduct
+      general/index
       developer/contributing
       developer/hacking-openwisp-python-django
       developer/google-summer-of-code
