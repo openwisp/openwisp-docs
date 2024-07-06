@@ -1,6 +1,8 @@
-from sphinx.builders.dummy import DummyBuilder
 import json
-from .utils import load_versions_map, VERSION_MAP_FILE
+
+from sphinx.builders.dummy import DummyBuilder
+
+from .utils import VERSION_MAP_FILE, load_versions_map
 
 
 class VersionSwitcherIndexBuilder(DummyBuilder):
