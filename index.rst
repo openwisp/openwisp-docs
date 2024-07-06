@@ -1,42 +1,24 @@
 OpenWISP Documentation
 ======================
 
-**This page contains all the documentation you will need to get started on
-with using OpenWISP.**
+Everything you need to know about OpenWISP.
 
-**Need a quick overview?**
-`Try the OpenWISP Demo <https://openwisp.org/demo.html>`_.
+For a complete overview of the contents of this documentation
+you can refer to the :doc:`Full Table of Contents <contents>`.
 
-   .. toctree::
-      :maxdepth: 1
-      :glob:
+.. note::
 
-      user/quickstart
-      user/configure-device
-      ansible/*
-      docker/*
-      users/*
-      controller/*
-      monitoring/*
-      firmware-upgrader/*
-      openwrt-config-agent/*
-      openwrt-monitoring-agent/*
-      network-topology/*
-      notifications/*
-      ipam/*
-      utils/*
-      user/radius
-      wifi-login-pages/*
-      user/django-settings
-      user/usage-metric-collection
-      user/vpn
-      tutorials/index
-      general/index
-      developer/contributing
-      developer/hacking-openwisp-python-django
-      developer/google-summer-of-code
-      developer/gsoc-ideas-2024
-      developer/google-code-in
-      developer/hacktoberfest
+    Are you looking for a quick overview of the OpenWISP application?
+    `Try the OpenWISP Demo <https://openwisp.org/demo.html>`_.
 
-   You can check the :ref:`reference of this documentation <reference>` for details.
+.. toctree::
+  :maxdepth: 2
+  :glob:
+
+  first-steps
+  general/index
+  installers
+  modules
+  openwrt-agents
+  tutorials/index
+  developer/index

@@ -12,15 +12,15 @@ If you're interested in **Wireguard tunnels** see
    :backlinks: none
    :depth: 3
 
-Installing OpenVPN Server and importing the OpenVPN configuration
------------------------------------------------------------------
+Setting up the OpenVPN Server
+-----------------------------
 
 Install the OpenVPN Server using the
 `Stouts.openvpn ansible role <https://github.com/Stouts/Stouts.openvpn>`_,
 then import the VPN configuration into OpenWISP. If you have
 already set up your VPN server, or would like to install the VPN server
 via some other way, you can skip forward to
-`Step 4 <#importing-the-ca-and-the-server-certificate>`_
+`Step 4 <#importing-the-ca-and-the-server-certificate>`_.
 
 .. note::
 
@@ -29,7 +29,7 @@ via some other way, you can skip forward to
 1. Install Ansible and required Ansible roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install ansible (version 2.5 or higher) **on your local machine**
+Install ansible **on your local machine**
 (please ensure that you do not install it on the server).
 
 To **install ansible** we suggest you follow the official
@@ -96,7 +96,6 @@ create a file named ``playbook.yml`` which contains the following:
     Read more about other options in `EasyRSA <https://github.com/nkakouros-original/ansible-role-easyrsa>`_
     and `OpenVPN <https://github.com/Stouts/Stouts.openvpn>`_
 
-
 3. Run the Playbook
 ~~~~~~~~~~~~~~~~~~~
 
@@ -109,7 +108,8 @@ Run the ansible playbook using:
 4. Importing the CA and the Server Certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To import the CA and Server Certificate, you need to access your server
+To import the CA and Server Certificate in OpenWISP,
+you need to access your server
 via ``ssh`` or any other method that suits you.
 
 You need to change your directory to ``/etc/easyrsa/pki/``
