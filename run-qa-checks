@@ -18,20 +18,17 @@ echo ''
 echo 'Checking documentation build status'
 make build
 
-# TODO: Uncoment when restructuring of docs is done
 # check for broken link
-# cd _build/
-# python -m http.server 8001 &> /dev/null & pid=$!
-# sleep 4
-# BASE_URL="http://localhost:8001"
-# if [ -n "${PRODUCTION:-}" ]; then
-#     BASE_URL="$BASE_URL/docs/__new__"
-# fi
-# pylinkvalidate.py "$BASE_URL/22.05/" \
-#     -w 4 -m process \
-#     --ignore "$BASE_URL/22.05/controller,$BASE_URL/22.05/monitoring,$BASE_URL/22.05/firmware-upgrader,$BASE_URL/22.05/network-topology,$BASE_URL/22.05/notifications,$BASE_URL/22.05/users,$BASE_URL/22.05/utils"
-
-# kill "${pid}"
+cd _build/
+python -m http.server 8001 &> /dev/null & pid=$!
+sleep 4
+BASE_URL="http://localhost:8001"
+if [ -n "${PRODUCTION:-}" ]; then
+    BASE_URL="$BASE_URL/docs/__new__"
+fi
+pylinkvalidate.py "$BASE_URL/22.05/" \
+    -w 4 -m process
+kill "${pid}"
 
 # Verify PDFs are valid
 for pdf in _build/*/*.pdf; do
