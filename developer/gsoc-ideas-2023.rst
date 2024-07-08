@@ -3,14 +3,6 @@
 GSoC Project Ideas 2023
 =======================
 
-.. warning::
-  **This page is currently a work in progress and not final.**
-
-  If you want to apply to GSoC 2023 with us please focus on
-  :doc:`contributing to OpenWISP <../developer/contributing>`
-  before spending effort on any idea listed on this page,
-  at least until the GSoC application period opens.
-
 .. Tip:: Do you want to apply with us?
 
   We have a page that describes how to increase your chances of success.

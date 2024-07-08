@@ -1,12 +1,24 @@
+:orphan:
+
 Google Code-in
 ==============
 
+.. note::
+
+  Google Code-in was a contest that introduced pre-university students
+  (ages 13-17) to open source software development.
+  OpenWISP has been a mentoring organization in this program for
+  3 years:
+
+  - `2017 <https://codein.withgoogle.com/archive/2017/organization/5760586365272064/>`_
+  - `2018 <https://codein.withgoogle.com/archive/2018/organization/6193692746448896/>`_
+  - `2019 <https://codein.withgoogle.com/archive/2019/organization/6304121049579520/>`_
+
+  The program was discontinued by Google in early 2020.
+  This page is kept for archiving reasons.
+
 .. image:: ../images/gci/gci.png
      :align: center
-
-.. note::
-  `OpenWISP is a mentoring organization for the Google Code-In 2019
-  <https://codein.withgoogle.com/organizations/openwisp/>`_.
 
 If you are reading this page you are probably considering OpenWISP
 as a possible mentoring organization for the `Google Code-In
