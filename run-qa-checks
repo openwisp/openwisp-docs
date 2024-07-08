@@ -26,7 +26,7 @@ BASE_URL="http://localhost:8001"
 if [ -n "${PRODUCTION:-}" ]; then
     BASE_URL="$BASE_URL/docs/__new__"
 fi
-pylinkvalidate.py "$BASE_URL/22.05/" \
+pylinkvalidate.py "$BASE_URL/dev/" \
     -w 4 -m process
 kill "${pid}"
 
