@@ -16,9 +16,10 @@ refer to the :doc:`Full Table of Contents <contents>`.
     :glob:
 
     first-steps
-    general/index
+    project-overview
     installers
     modules
     openwrt-agents
     tutorials/index
+    community
     developer/index
