@@ -12,10 +12,10 @@ internal code of OpenWISP in the following ways:
 2. By introducing some Python tools and Django extensions which are
    **extremely useful during development and debugging**.
 
-Table of Contents:
+**Table of Contents:**
 
 .. contents::
-   :depth: 1
+   :depth: 2
    :local:
 
 .. _why_python:

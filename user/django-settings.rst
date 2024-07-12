@@ -1,8 +1,10 @@
 How to Edit Django Settings
 ===========================
 
+**Table of Contents:**
+
 .. contents::
-    :depth: 1
+    :depth: 2
     :local:
 
 What is an OpenWISP Module?

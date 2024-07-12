@@ -30,6 +30,12 @@ will have a very tangible positive effect from the first day of your
 participation** and where **you can grow your tech skills at 360°**,
 then **CONGRATULATIONS!** OpenWISP is the right organization for you.
 
+**Table of Contents:**
+
+.. contents::
+    :depth: 2
+    :local:
+
 How to run a successful Google Summer of Code
 ---------------------------------------------
 

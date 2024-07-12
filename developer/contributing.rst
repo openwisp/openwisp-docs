@@ -6,6 +6,12 @@ We are glad and thankful that you want to contribute to OpenWISP.
 Please read these guidelines carefully, it will help you and us to save
 precious time later.
 
+**Table of Contents:**
+
+.. contents::
+    :depth: 2
+    :local:
+
 Introduce yourself
 ~~~~~~~~~~~~~~~~~~
 

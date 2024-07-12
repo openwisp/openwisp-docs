@@ -7,6 +7,12 @@ An apparently insignificant action can have a very positive impact on
 the project and in this page we'll explain why it's in your interest to
 help the project grow.
 
+**Table of Contents:**
+
+.. contents::
+    :depth: 2
+    :local:
+
 Are you using OpenWISP for your organization?
 ---------------------------------------------
 
