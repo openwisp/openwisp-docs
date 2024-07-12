@@ -1,9 +1,11 @@
 Architecture, Modules, Technologies
 ===================================
 
+**Table of Contents:**
+
 .. contents::
-    :depth: 1
-    :local:
+   :depth: 1
+   :local:
 
 Architecture Overview
 ---------------------

@@ -1,8 +1,10 @@
 Values and Goals of OpenWISP
 ============================
 
+**Table of Contents:**
+
 .. contents::
-    :depth: 1
+    :depth: 2
     :local:
 
 .. _what_is_openwisp:
