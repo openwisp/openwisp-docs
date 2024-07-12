@@ -203,7 +203,7 @@ other style conventions which can be enforced by using the
 following tools:
 
 - ``openwisp-qa-format``: this command is shipped in
-  `openwisp-utils <https://github.com/openwisp/openwisp-utils#openwisp-qa-format>`_,
+  :doc:`openwisp-utils </utils/developer/qa-checks>`,
   a dependency used in every OpenWISP python module,
   it formats the Python code according to the
   OpenWISP style conventions, it's based on popular tools like:
@@ -217,7 +217,7 @@ following tools:
   which performs several common QA checks used across all OpenWISP modules
   to ensure consistency (including `flake8 <http://flake8.pycqa.org/en/latest/>`_),
   for more info consult the documentation of
-  `openwisp-qa-check <https://github.com/openwisp/openwisp-utils#openwisp-qa-format>`_
+  :doc:`openwisp-qa-check </utils/developer/qa-checks>`.
 
 
 Keep in mind that the QA checks defined in the ``run-qa-checks`` script
@@ -229,8 +229,7 @@ fixes if needed until ``./run-qa-checks`` runs without errors.
 .. note::
 
   If you want to learn more about our usage of python and django,
-  we suggest reading :doc:`Hacking OpenWISP: Python and Django
-  <../developer/hacking-openwisp-python-django>`
+  we suggest reading :doc:`../developer/hacking-openwisp-python-django`.
 
 2. Javascript code conventions
 ------------------------------
@@ -244,7 +243,7 @@ fixes if needed until ``./run-qa-checks`` runs without errors.
   explanation and wonderful examples
 
 3. OpenWRT related conventions
-----------------------------------
+------------------------------
 
 OpenWISP follows the standard OpenWRT coding style conventions of OpenWRT:
 
