@@ -33,15 +33,14 @@ respective section of each module on this website, a reference is also
 provided for convenience at the end of this page.
 
 If you are looking for a reference which lists and describes all the
-OpenWISP modules please refer to :doc:`Architecture, Modules, Technologies
-<../general/architecture>`.
+OpenWISP modules please refer to :doc:`/general/architecture`.
 
 Editing Settings with Ansible-OpenWISP2
 ---------------------------------------
 
-The official ansible OpenWISP role provides many `configuration variables
-<https://github.com/openwisp/ansible-openwisp2#role-variables>`_ which
-offer a convenient way to edit the most widely used settings of OpenWISP.
+The official ansible OpenWISP role provides many :doc:`configuration
+variables </ansible/user/role-variables>` which offer a convenient way to
+edit the most widely used settings of OpenWISP.
 
 However, not all the possible settings have a corresponding variable
 because doing so would be very costly to maintain and make the code more
@@ -86,11 +85,10 @@ Editing Settings with Docker-OpenWISP
 Similarly to the ansible role, the dockerized version of OpenWISP provides
 mainly two ways of changing settings:
 
-1. The most widely used setting have a `dedicated environment variable
-   <https://github.com/openwisp/docker-openwisp/blob/master/docs/ENV.md>`_.
-2. For more advanced use cases, it's possible `to provide an entirely
-   custom django settings file
-   <https://github.com/openwisp/docker-openwisp#custom-django-settings>`_.
+1. The most widely used setting have a :doc:`dedicated environment
+   variable </docker/user/settings>`.
+2. For more advanced use cases, it's possible :doc:`to provide an entirely
+   custom django settings file </docker/user/customization>`.
 
 OpenWISP Settings Reference
 ---------------------------
