@@ -1,6 +1,9 @@
 RADIUS
 ======
 
+**Source code**: `github.com/openwisp/openwisp-radius
+<https://github.com/openwisp/openwisp-radius>`_.
+
 OpenWISP RADIUS is available since OpenWISP 22.05 and
 provides many features aimed at public WiFi services.
 
