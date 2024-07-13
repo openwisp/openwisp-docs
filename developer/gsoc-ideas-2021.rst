@@ -57,19 +57,19 @@ General suggestions and warnings
 Project Ideas
 -------------
 
-Improve resiliency and packaging of OpenWISP Monitoring on OpenWRT
+Improve resiliency and packaging of OpenWISP Monitoring on OpenWrt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. Important::
 
   Languages and technologies used:
-  Mostly **Lua**, **OpenWRT**, **Makefile** but also a bit of
+  Mostly **Lua**, **OpenWrt**, **Makefile** but also a bit of
   **Python** and **Django**.
 
   **Mentors**: Federico Capoano.
 
 `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`_
-depends on specific lua code to be deployed on the OpenWRT
+depends on specific lua code to be deployed on the OpenWrt
 devices, this code collects monitoring information and sends it to the
 OpenWISP server in `NetJSON format <https://netjson.org/>`_ (see
 `Monitoring Scripts <https://github.com/openwisp/openwisp-monitoring#monitoring-scripts>`_).
@@ -79,14 +79,14 @@ At the moment, this code is deployed using a
 created with a `database migration <https://github.com/openwisp/openwisp-monitoring/blob/ee2271be25649c4c262e8eaf76b6fdc5d5d002ca/openwisp_monitoring/device/migrations/0002_create_template.py>`_
 when the monitoring module is installed,
 but we need to convert this existing code
-in a new OpenWRT package, well tested,
+in a new OpenWrt package, well tested,
 documented and with a key improvement regarding its resiliency.
 
 **Pre-requisites to work on this project**:
 
 The student should be familiar with
 :doc:`OpenWISP Templates </controller/user/templates>`,
-`OpenWRT <https://openwrt.org>`_,
+`OpenWrt <https://openwrt.org>`_,
 `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
 and should have a basic knowledge of
 `NetJSON format <https://netjson.org/>`_.
@@ -94,7 +94,7 @@ and should have a basic knowledge of
 **Measurable outcomes**:
 
 - Convert `lua-monitoring <https://github.com/openwisp/lua-monitoring>`_ into
-  two OpenWRT packages:
+  two OpenWrt packages:
 
     1. One package for the netjson-monitoring utility,
        which aims to simply return NetJSON DeviceMonitoring output
@@ -305,7 +305,7 @@ and should have a basic knowledge of
 
 **Measurable outcomes**:
 
-- Revamp the OpenWRT backend of `netengine <https://github.com/openwisp/netengine>`__,
+- Revamp the OpenWrt backend of `netengine <https://github.com/openwisp/netengine>`__,
   making it compliant with `NetJSON DeviceMonitoring specification <https://netjson.org/rfc.html#rfc.section.6>`_
 - Revamp the backend for Ubiquiti making it compliant with
   *NetJSON DeviceMonitoring* as well
@@ -469,7 +469,7 @@ last year of usage of this module.
 
 The student should be familiar with
 :doc:`OpenWISP Templates </controller/user/templates>`,
-`OpenWRT <https://openwrt.org>`_,
+`OpenWrt <https://openwrt.org>`_,
 `OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
 and should have a basic knowledge of
 `NetJSON format <https://netjson.org/>`_.

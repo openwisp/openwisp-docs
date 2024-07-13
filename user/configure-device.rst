@@ -1,9 +1,9 @@
-Connect OpenWRT to OpenWISP
+Connect OpenWrt to OpenWISP
 ===========================
 
 This page will guide you through the installation of
 `openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a
-device which supports `OpenWRT <https://openwrt.org/>`_.
+device which supports `OpenWrt <https://openwrt.org/>`_.
 
 **If you don't have a physical device available but you still want to try
 out OpenWISP, you can use a Virtual Machine.**
@@ -18,11 +18,11 @@ out OpenWISP, you can use a Virtual Machine.**
 Refer to the instructions described in
 :ref:`Install the OpenWISP server application <install_server>`.
 
-2. Flash OpenWRT on a device
+2. Flash OpenWrt on a device
 ----------------------------
 
-If you have a network device which is compatible with OpenWRT, follow the
-instructions in the `official OpenWRT flashing guide
+If you have a network device which is compatible with OpenWrt, follow the
+instructions in the `official OpenWrt flashing guide
 <https://openwrt.org/docs/guide-user/installation/generic.flashing>`_.
 
 If you don't have a physical device, you can
@@ -38,10 +38,10 @@ If you don't have a physical device, you can
     "Adapter Type: Intel PRO/1000 MT Desktop". Do
     not use the same IP Address that you used for the local OpenWISP
     website you hosted before. That suggested change applies only when
-    you boot into the OpenWRT device as per the description of the
+    you boot into the OpenWrt device as per the description of the
     above link (for example, if you set 192.168.56.2 as the IP Address
     of your local OpenWISP website, please use another IP such as
-    192.168.56.3 for the IP Address of the OpenWRT device).
+    192.168.56.3 for the IP Address of the OpenWrt device).
 
 3. Install openwisp-config
 --------------------------
@@ -49,7 +49,7 @@ If you don't have a physical device, you can
 Installation
 ~~~~~~~~~~~~
 
-To install openwisp-config on your OpenWRT system follow the steps below:
+To install openwisp-config on your OpenWrt system follow the steps below:
 
 Install one of the latest stable builds from
 `downloads.openwisp.io <http://downloads.openwisp.io/?prefix=openwisp-config/>`_,
@@ -63,8 +63,8 @@ clipboard, then run the following commands on your OpenWrt device:
     opkg update
     opkg install ./<file-just-downloaded>
 
-If you're running at least OpenWRT 19.07, you can install openwisp-config
-from the official OpenWRT packages:
+If you're running at least OpenWrt 19.07, you can install openwisp-config
+from the official OpenWrt packages:
 
 .. code-block:: bash
 
@@ -146,20 +146,20 @@ Save the file and start openwisp-config:
 
     /etc/init.d/openwisp_config restart
 
-Your OpenWRT instance should register itself to your OpenWISP controller.
-Check the devices menu on the admin panel to make sure your OpenWRT
+Your OpenWrt instance should register itself to your OpenWISP controller.
+Check the devices menu on the admin panel to make sure your OpenWrt
 device is registered.
 
-Compile your own OpenWRT image
+Compile your own OpenWrt image
 ------------------------------
 
-You may want to compile a custom OpenWRT image to save time when
+You may want to compile a custom OpenWrt image to save time when
 configuring new devices. By compiling a custom image, you can pre-install
 openwisp-config, including your configurations (e.g. ``url`` and
 ``shared_secret``). This ensures that you will not have to go through
 the configuration process again. This will make you save a lot of time if
 you need to manage many devices!
 
-A guide on `how to compile a custom OpenWRT image available in the
+A guide on `how to compile a custom OpenWrt image available in the
 openwisp-config documentation
 <https://github.com/openwisp/openwisp-config#compiling-a-custom-openwrt-image>`_.

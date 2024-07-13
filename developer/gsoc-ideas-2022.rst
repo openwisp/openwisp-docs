@@ -65,7 +65,7 @@ Adding support for automatic management of ZeroTier Tunnels
 .. Important::
 
   Languages and technologies used:
-  Mostly **OpenWRT**, **Python**, **Django**, **ZeroTier**.
+  Mostly **OpenWrt**, **Python**, **Django**, **ZeroTier**.
 
   **Mentors**: Gagan Deep (`pandafy <https://github.com/pandafy>`_), Federico Capoano.
 
@@ -92,7 +92,7 @@ Any merged patches on any of those modules is considered
 an important plus point.
 
 The contributor must also demonstrate familiarity with `ZeroTier <https://www.zerotier.com/>`__,
-and `OpenWRT <https://openwrt.org>`_, moreover, they should be willing to
+and `OpenWrt <https://openwrt.org>`_, moreover, they should be willing to
 increase their experience with these technologies and show enthusiasm
 toward learning and implementing IT network automation.
 
@@ -109,7 +109,7 @@ Expected outcomes
     OpenWrt and ZeroTier Controller using netjsonconfig.
   - GitHub Issues:
 
-    - `netjsonconfig #207: [feature] Add support for ZeroTier tunnels to OpenWRT backend <https://github.com/openwisp/netjsonconfig/issues/207>`_
+    - `netjsonconfig #207: [feature] Add support for ZeroTier tunnels to OpenWrt backend <https://github.com/openwisp/netjsonconfig/issues/207>`_
     - `netjsonconfig #208: [feature] Add ZeroTier backend <https://github.com/openwisp/netjsonconfig/issues/208>`_
 
 - Add ZeroTier as a VPN backend in `OpenWISP Controller <https://github.com/openwisp/openwisp-controller#openwisp-controller>`_.

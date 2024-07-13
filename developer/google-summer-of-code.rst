@@ -133,7 +133,7 @@ Here's a few quick tricks you can use to become a star in our community:
   repositories that are not under active development anymore)
 - if we ask you to open an issue in one of our github repository, please
   take at least 5 minutes of time to write a proper bug report
-- watch the `OpenWISP 2 presentation at the recent OpenWRT Summit 2017
+- watch the `OpenWISP 2 presentation at the recent OpenWrt Summit 2017
   <https://www.youtube.com/watch?v=n531yTtJimU>`_ and read the slides of
   this `more technical OpenWISP 2 talk
   <https://www.slideshare.net/FedericoCapoano/applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`_

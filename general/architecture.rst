@@ -112,7 +112,7 @@ Server Side
     Javascript library for network graph visualization.
 
 - :doc:`OpenWISP Firmware Upgrader </firmware-upgrader/index>`: Firmware
-  upgrade solution for OpenWRT with possibility to add support for other
+  upgrade solution for OpenWrt with possibility to add support for other
   embedded OSes. Provides features like automatic retry for network
   failures, mass upgrades, REST API and more.
 - :doc:`OpenWISP RADIUS </user/radius>`: provides a web interface to a
@@ -223,7 +223,7 @@ language designed primarily for embedded systems and clients.
 Lua is cross-platform, since the interpreter is written in ANSI C, and has
 a relatively simple C API.
 
-It is the official scripting language of OpenWRT and it's used heavily in
+It is the official scripting language of OpenWrt and it's used heavily in
 the OpenWrt packages of OpenWISP: :doc:`openwisp-config
 </openwrt-config-agent/index>` and :doc:`openwisp-monitoring
 </openwrt-monitoring-agent/index>`.
@@ -248,7 +248,7 @@ deployment.
 
 We use `Ansible <https://www.ansible.com/>`_ to provide automated
 procedures to :doc:`deploy OpenWISP </ansible/user/quickstart>`, to
-`compile custom OpenWRT images for different organizations
+`compile custom OpenWrt images for different organizations
 <https://github.com/openwisp/ansible-openwisp2-imagegenerator>`__, to
 `deploy OpenWISP WiFi Login Pages
 <https://github.com/openwisp/ansible-openwisp-wifi-login-pages>`__ and to

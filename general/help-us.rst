@@ -165,7 +165,7 @@ Are you skilled in one of the following areas?
 - networking
 - graphic/web design
 - frontend development
-- OpenWRT
+- OpenWrt
 - Freeradius
 - linux
 - devops

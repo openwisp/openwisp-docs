@@ -38,10 +38,10 @@ can be used as well.
 ------------------------------------------
 
 The following guide will walk you through how to install openwisp-config
-on :doc:`OpenWRT and connect it to OpenWISP <./configure-device>`.
+on :doc:`OpenWrt and connect it to OpenWISP <./configure-device>`.
 
-If you don't have a physical OpenWRT-compatible device at hand, you can
-install OpenWRT in a VirtualBox VM, the guide above covers how to do this.
+If you don't have a physical OpenWrt-compatible device at hand, you can
+install OpenWrt in a VirtualBox VM, the guide above covers how to do this.
 
 3. Install openwisp-monitoring on your devices
 ----------------------------------------------

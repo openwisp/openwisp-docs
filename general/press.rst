@@ -29,10 +29,10 @@ Presented by Fiorella De Luca at `PyCon Italy
 - `video <https://www.youtube.com/watch?v=Yapdso_6EGA>`__
 - `abstract <https://www.pycon.it/conference/talks/django-freeradius>`__
 
-OpenWISP 2: the modular configuration manager for OpenWRT
+OpenWISP 2: the modular configuration manager for OpenWrt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Presented by Federico Capoano at `OpenWRT Summit
+Presented by Federico Capoano at `OpenWrt Summit
 <http://openwrtsummit.org>`__ 2017 in Prague:
 
 - `video <https://www.youtube.com/watch?v=n531yTtJimU>`__
@@ -58,7 +58,7 @@ Lightning talk by Federico Capoano at `DjangoCon Europe 2017
 - `slides <https://www.slideshare.net/FedericoCapoano/opening-propietary-
   networks-with-openwisp>`__
 
-OpenWISP2 a self hosted solution to control OpenWRT/LEDE devices
+OpenWISP2 a self hosted solution to control OpenWrt/LEDE devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Talk by Federico Capoano at `FOSDEM <https://fosdem.org/>`_ 2017 in
@@ -67,10 +67,10 @@ Brussels:
 - `video <https://www.youtube.com/watch?v=lGiW-uA4Btk>`__
 - `abstract <https://archive.fosdem.org/2017/schedule/event/openwisp2>`__
 
-Do you really need to fork OpenWRT?
+Do you really need to fork OpenWrt?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Presented at `OpenWRT Summit <http://openwrtsummit.org>`__ 2015 in Dublin:
+Presented at `OpenWrt Summit <http://openwrtsummit.org>`__ 2015 in Dublin:
 
 - `video <https://www.youtube.com/watch?v=2uioGZuITbA>`__
 
@@ -96,10 +96,10 @@ Blog Posts
 - `How Bottom-up Broadband will overcome the 'last mile' problem
   <https://blog.p2pfoundation.net/how-bottom-up-broadband-will-overcome-
   the-last-mile-problem/2013/07/23>`_
-- `netjsonconfig: convert NetJSON to OpenWRT UCI
+- `netjsonconfig: convert NetJSON to OpenWrt UCI
   <http://nemesisdesign.net/blog/coding/netjsonconfig-convert-netjson-to-
   openwrt-uci/>`_
-- `Automate OpenWRT/LEDE firmware generation with Ansible
+- `Automate OpenWrt/LEDE firmware generation with Ansible
   <http://nemesisdesign.net/blog/coding/automate-openwrt-lede-firmware
   -generation-ansible/>`_
 - `django-x509: a reusable django app for PKI management
@@ -138,7 +138,7 @@ Google Summer of Code Blog Posts
 ~~~~~~~~~~~~~
 
 - `OpenWISP REST API <https://manishshah120.medium.com/openwisp-rest-api-gsoc21-project-report-f2c4e0a22673>`_ by Manish Kumar Shah (manishshah120).
-- `OpenWRT OpenWISP Monitoring <https://dev.to/devkapilbansal/openwrt-openwisp-monitoring-2bmj>`_ by Kapil Bansal (devkapilbansal).
+- `OpenWrt OpenWISP Monitoring <https://dev.to/devkapilbansal/openwrt-openwisp-monitoring-2bmj>`_ by Kapil Bansal (devkapilbansal).
 - `OpenWISP WiFi Login Pages <https://codesankalp.medium.com/openwisp-wifi-login-pages-project-report-fbc77ff6cc8b>`_ by Sankalp (codesankalp).
 - `Modern UI/UX <https://medium.com/@niteshsinha1707/new-navigation-menu-and-ui-ux-improvements-project-report-a94c37514b7d>`_ by Nitesh Sinha (nitehsinha17).
 - `Revamp Netengine and add its SNMP capability to OpenWISP Monitoring <https://medium.com/@purhan/gsoc-2021-final-project-report-85dc49c59a87>`_ by Purhan Kaushik (purhan).

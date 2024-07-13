@@ -78,7 +78,7 @@ Here's a few quick tricks you can use to become a star in our community:
   us to improve
 - if we ask you to open an issue in one of our github repository, please
   take at least 5 minutes of time to write a proper bug report
-- watch the `OpenWISP 2 presentation at the OpenWRT Summit 2017
+- watch the `OpenWISP 2 presentation at the OpenWrt Summit 2017
   <https://www.youtube.com/watch?v=n531yTtJimU>`_ and
   read the slides of this `more technical OpenWISP 2 talk
   <https://www.slideshare.net/FedericoCapoano/applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`_
@@ -185,18 +185,18 @@ in order to learn.
 of how OpenWISP can be used and will help us to write more documentation
 and tutorials on how to use it.
 
-Learn to use OpenWRT
+Learn to use OpenWrt
 ~~~~~~~~~~~~~~~~~~~~
 
-OpenWRT is one of the most important technologies in OpenWISP, therefore
+OpenWrt is one of the most important technologies in OpenWISP, therefore
 we consider important that students learn the basics of how it works
 and how OpenWISP can control it.
 
-**Hint**: start with using a virtual instance of OpenWRT in virtualbox,
-then when you feel ready get a `cheap OpenWRT compatible device
+**Hint**: start with using a virtual instance of OpenWrt in virtualbox,
+then when you feel ready get a `cheap OpenWrt compatible device
 <https://forum.openwrt.org/t/cheap-openwrt-hardware-to-move-first-steps-with-openwrt/23569>`_
-that you can use for testing and development. A full list of the OpenWRT
-compatible hardware is available in the official `OpenWRT Website
+that you can use for testing and development. A full list of the OpenWrt
+compatible hardware is available in the official `OpenWrt Website
 <https://openwrt.org/toh/start>`_.
 
 Full stack knowledge

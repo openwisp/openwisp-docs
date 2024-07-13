@@ -242,10 +242,10 @@ fixes if needed until ``./run-qa-checks`` runs without errors.
   <https://www.w3schools.com/js/js_conventions.asp>`_ link for proper
   explanation and wonderful examples
 
-3. OpenWRT related conventions
+3. OpenWrt related conventions
 ------------------------------
 
-OpenWISP follows the standard OpenWRT coding style conventions of OpenWRT:
+OpenWISP follows the standard OpenWrt coding style conventions of OpenWrt:
 
 - `Working with Patches
   <https://wiki.openwrt.org/doc/devel/patches>`_
