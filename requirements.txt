@@ -5,5 +5,5 @@ svglib
 rst2pdf
 sphinxcontrib-jquery
 sphinx-notfound-page
-openwisp-sphinx-theme~=1.0.0
+openwisp-sphinx-theme~=1.0.1
 openwisp-utils[qa] @ https://github.com/openwisp/openwisp-utils/tarball/master
