@@ -2,5 +2,5 @@
 # https://github.com/sphinx-doc/sphinx/issues/11633
 sphinx~=7.3.7
 sphinx-notfound-page
-openwisp-sphinx-theme~=1.0.0
+openwisp-sphinx-theme~=1.0.1
 openwisp-utils[qa] @ https://github.com/openwisp/openwisp-utils/tarball/master
