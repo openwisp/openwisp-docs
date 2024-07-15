@@ -56,9 +56,9 @@ Deployment
   organizations with the OpenWISP packages preinstalled.
 - `Ansible Wireguard OpenWISP.
   <https://github.com/openwisp/ansible-wireguard-openwisp>`_:
-  ansible role that allows to deploy the `Wireguard integration
+  ansible role that allows to deploy the :doc:`Wireguard integration
   for OpenWISP Controller
-  <https://github.com/openwisp/openwisp-controller/#how-to-setup-vxlan-over-wireguard-tunnels>`_.
+  </controller/user/wireguard>`.
 
 Server Side
 ~~~~~~~~~~~
