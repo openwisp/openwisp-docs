@@ -7,9 +7,10 @@ OpenWISP Documentation Contents
    :maxdepth: 3
 
    first-steps
-   general/index
+   project-overview
    installers
    modules
    openwrt-agents
    tutorials/index
+   community
    developer/index
