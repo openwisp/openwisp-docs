@@ -240,8 +240,7 @@ Why we use a ``pre-reload-hook`` script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the template shared above, we utilize a
-`pre-reload-hook
-<https://github.com/openwisp/openwisp-config?tab=readme-ov-file#pre-reload-hook>`_
+:ref:`pre-reload-hook <config_pre_reload_hook>`
 script to execute the following configuration changes:
 
 - Ensure that ``radio0``  is enabled, set on a specific channel and
@@ -395,11 +394,10 @@ output, this should help you to fix it.
 Monitoring the Mesh Nodes
 -------------------------
 
-If everything has worked out successfully and you have the `OpenWISP
-monitoring agent <https://github.com/openwisp/openwrt-openwisp-monitoring>`_
-running correctly on your device, you should start
-seeing monitoring information about the mesh network in the status tab
-of the device page.
+If everything has worked out successfully and you have the :doc:`OpenWISP
+monitoring agent <../openwrt-monitoring-agent/index>` running correctly on
+your device, you should start seeing monitoring information about the mesh
+network in the status tab of the device page.
 
 Bridge interface:
 
@@ -436,9 +434,8 @@ in finding the information needed to set it up:
 - Github pull request:
   `[feature] WiFi Mesh integration
   <https://github.com/openwisp/openwisp-network-topology/pull/179>`_
-- `Network Topology README
-  <https://github.com/openwisp/openwisp-network-topology/blob/master/README.rst>`_,
-  look for "Integration with OpenWISP Controller and OpenWISP Monitoring"
+- :doc:`Network Topology documentation
+  </network-topology/user/integrations>`
 
 If you have been playing with our **Demo System**,
 you can try this feature there!

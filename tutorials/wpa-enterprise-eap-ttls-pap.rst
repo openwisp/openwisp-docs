@@ -20,8 +20,8 @@ Enable OpenWISP RADIUS
     enabled on the :doc:`OpenWISP Demo System <./demo>`.
 
 Your OpenWISP installation should have the RADIUS module enabled. If not,
-you can follow the steps at :ref:`Enabling the RADIUS module in the OpenWISP
-ansible role documentation <ansible_enabling_radius_module>`.
+you can follow the steps at :ref:`Enabling the RADIUS module in the
+OpenWISP ansible role documentation <ansible_enabling_radius_module>`.
 
 Firmware Requirements
 ~~~~~~~~~~~~~~~~~~~~~
@@ -142,8 +142,7 @@ We recommend to use Ansible OpenWISP2 role to which simplifies configuring
 FreeRADIUS to use WPA Enterprise. Please refer to the :doc:`"Configuring
 FreeRADIUS for WPA Enterprise (EAP-TTLS-PAP)" section in the
 ansible-openwisp2 documentation
-</ansible/user/deploying-wpa-eap-ttls-pap>`
-for details.
+</ansible/user/deploying-wpa-eap-ttls-pap>` for details.
 
 If you still prefer to configure the FreeRADIUS site manually, you can
 refer the `"Freeradius Setup for WPA Enterprise (EAP-TTLS-PAP)
