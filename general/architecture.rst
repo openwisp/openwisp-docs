@@ -85,7 +85,7 @@ Server Side
     certificates).
   - `django-loci <https://github.com/openwisp/django-loci>`__: Geographic
     and indoor mapping features.
-  - `openwisp-ipam <https://github.com/openwisp/openwisp-ipam>`__: IP and
+  - :doc:`openwisp-ipam </ipam/index>`: IP and
     Subnet administration.
   - `django-rest-framework-gis
     <https://github.com/openwisp/django-rest-framework-gis>`__: GIS addons

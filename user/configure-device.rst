@@ -2,7 +2,7 @@ Connect OpenWrt to OpenWISP
 ===========================
 
 This page will guide you through the installation of
-`openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a
+:doc:`openwisp-config </openwrt-config-agent/index>` on a
 device which supports `OpenWrt <https://openwrt.org/>`_.
 
 **If you don't have a physical device available but you still want to try
@@ -89,7 +89,7 @@ please add them.
 .. code-block:: text
 
     # For more information about the config options please see the README
-    # or https://github.com/openwisp/openwisp-config#configuration-options
+    # or https://openwisp.io/docs/dev/openwrt-config-agent/user/settings.html#configuration-options
 
     config controller 'http'
         #option url 'https://openwisp2.mynetwork.com'
@@ -160,6 +160,5 @@ openwisp-config, including your configurations (e.g. ``url`` and
 the configuration process again. This will make you save a lot of time if
 you need to manage many devices!
 
-A guide on `how to compile a custom OpenWrt image available in the
-openwisp-config documentation
-<https://github.com/openwisp/openwisp-config#compiling-a-custom-openwrt-image>`_.
+A guide on :doc:`how to compile a custom OpenWrt image available in the
+openwisp-config documentation </openwrt-config-agent/user/compiling>`.

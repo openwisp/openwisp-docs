@@ -235,9 +235,9 @@ fixes if needed until ``./run-qa-checks`` runs without errors.
 ------------------------------
 
 - OpenWISP follows standard JavaScript coding style conventions that are
-  generally accepted or the ones that are specified in `.jslintrc files
-  <https://github.com/openwisp/django-freeradius/blob/master/.jslintrc>`_;
-  find out more about `JSlint here <https://www.jslint.com/help.html>`_
+  generally accepted or the ones that are specified in `.jshintrc files
+  <https://github.com/openwisp/openwisp-controller/blob/master/.jshintrc>`_;
+  find out more about `JSHint here <https://jshint.com/about/>`_
 - please follow this `JavaScript Style Guide and Coding Conventions
   <https://www.w3schools.com/js/js_conventions.asp>`_ link for proper
   explanation and wonderful examples

@@ -14,9 +14,9 @@ provides many features aimed at public WiFi services.
 Deploy instructions
 -------------------
 
-See `Enabling the RADIUS module on the
-OpenWISP 22.05 ansible role documentation
-<https://github.com/openwisp/ansible-openwisp2/tree/22.05#enabling-the-radius-module>`_.
+See :ref:`Enabling the RADIUS module on the
+OpenWISP ansible role documentation
+<ansible_enabling_radius_module>`.
 
 Alternatively you can set it up manually by following these guides:
 
@@ -26,7 +26,7 @@ Alternatively you can set it up manually by following these guides:
   <https://openwisp-radius.readthedocs.io/en/stable/developer/freeradius_wpa_enterprise.html>`_
 
 This module is also available in
-`docker-openwisp <https://github.com/openwisp/docker-openwisp>`_
+:doc:`docker-openwisp </docker/index>`
 although its usage is not recommended for production usage yet,
 unless the reader is willing to invest effort in adapting the docker
 images and configurations to overcome any roadblocks encountered.

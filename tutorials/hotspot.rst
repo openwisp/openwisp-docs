@@ -125,7 +125,7 @@ credentials again, as shown in the image above.
 
   For more technical information and implementation details
   about the magic link feature, consult the
-  `openwisp-users documentation <https://github.com/openwisp/openwisp-users#2-openwisp_usersapiauthenticationsesameauthentication>`_.
+  :doc:`openwisp-users documentation <../users/index>`.
   Here you will find  more information about the underlying
   open source library used to implement this feature.
 
@@ -163,6 +163,7 @@ The default session limits in the **OpenWISP RADIUS** configuration
 are 300 MB of daily traffic or three hours of daily surfing.
 
 .. note::
+
     To find out more technical information about this topic please read:
     `OpenWISP RADIUS - Enforcing session limits
     <https://openwisp-radius.readthedocs.io/en/stable/user/enforcing_limits.html>`_.

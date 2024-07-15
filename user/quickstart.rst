@@ -22,11 +22,11 @@ look at the demo follow the steps below.
 ------------------------------------------
 
 If you want to find out how to deploy OpenWISP for production usage,
-follow this step-by-step `ansible-openwisp2 tutorial
-<https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_.
+follow this step-by-step :doc:`ansible-openwisp2 tutorial
+</ansible/user/quickstart>`.
 
 Alternatively, there's also
-`docker-openwisp <https://github.com/openwisp/docker-openwisp>`_
+:doc:`docker-openwisp </docker/index>`
 (in alpha stage) which
 can be especially useful for testing purposes.
 
