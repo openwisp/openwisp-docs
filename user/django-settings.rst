@@ -18,8 +18,8 @@ The OpenWISP server application is composed of a number of modules called
 framework on top of which OpenWISP is built.
 
 Some of the Django apps used by OpenWISP are developed and maintained by
-OpenWISP, other apps are developed and mainained by either Django or third
-party organizations, but most of these apps are configurable and
+OpenWISP, other apps are developed and maintained by either Django or
+third party organizations, but most of these apps are configurable and
 customizable in different shapes or forms.
 
 The most common way to modify the behavior of a Django app is by editing
@@ -27,8 +27,8 @@ the `project settings.py file
 <https://docs.djangoproject.com/en/4.2/topics/settings/>`_, a file which
 holds all the global configuration of the application.
 
-The OpenWISP django modules are highly configurable and over time you may
-need to edit their settings, these settings are documented in the
+The Django based modules of OpenWISP are highly configurable and over time
+you may need to edit their settings, these settings are documented in the
 respective section of each module on this website, a reference is also
 provided for convenience at the end of this page.
 
@@ -38,9 +38,9 @@ OpenWISP modules please refer to :doc:`/general/architecture`.
 Editing Settings with Ansible-OpenWISP2
 ---------------------------------------
 
-The official ansible OpenWISP role provides many :doc:`configuration
-variables </ansible/user/role-variables>` which offer a convenient way to
-edit the most widely used settings of OpenWISP.
+The official ansible OpenWISP role provides many :doc:`role variables
+</ansible/user/role-variables>` which offer a convenient way to edit the
+most widely used settings of OpenWISP.
 
 However, not all the possible settings have a corresponding variable
 because doing so would be very costly to maintain and make the code more
@@ -76,8 +76,9 @@ instruction to define and manipulate settings via the
             },
         }
 
-This allows for great flexibility in configuring and extending OpenWISP,
-because additional custom modules can be added and configured too.
+This allows for great flexibility in configuring and extending OpenWISP:
+the possibility of running python code in the settings allows for
+limitless adaptation and customization.
 
 Editing Settings with Docker-OpenWISP
 -------------------------------------
