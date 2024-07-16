@@ -284,3 +284,14 @@ screenshots below.
 
 .. image:: ../images/demo/wifi-paid-plan-invoice-sample.png
    :target: ../_images/wifi-paid-plan-invoice-sample.png
+
+----
+
+.. seealso::
+
+   - :doc:`Open and/or WPA protected WiFi Access Point SSID
+     <./wifi-access-point>`
+   - :doc:`How to Set Up a Wireless Mesh Network
+     <./mesh>`
+   - :doc:`How to Set Up WPA Enterprise (EAP-TTLS-PAP) authentication
+     <./wpa-enterprise-eap-ttls-pap>`

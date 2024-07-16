@@ -272,14 +272,15 @@ on the tab *Contact support* as indicated in the screenshot below.
 .. image:: ../images/demo/contact-support.png
     :target: ../_images/contact-support.png
 
-Next steps
-----------
+----
 
-- :doc:`Open and/or WPA protected WiFi Access Point SSID
-  <./wifi-access-point>`
-- :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
-  <./hotspot>`
-- :doc:`How to Set Up a Wireless Mesh Network
-  <./mesh>`
-- :doc:`How to Set Up WPA Enterprise (EAP-TTLS-PAP) authentication
-  <./wpa-enterprise-eap-ttls-pap>`
+.. seealso::
+
+    - :doc:`Open and/or WPA protected WiFi Access Point SSID
+      <./wifi-access-point>`
+    - :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
+      <./hotspot>`
+    - :doc:`How to Set Up a Wireless Mesh Network
+      <./mesh>`
+    - :doc:`How to Set Up WPA Enterprise (EAP-TTLS-PAP) authentication
+      <./wpa-enterprise-eap-ttls-pap>`

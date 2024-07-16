@@ -471,3 +471,14 @@ can be done.
 
 You will need to turn off mesh forwarding and configure the
 routing daemon of your choice.
+
+----
+
+.. seealso::
+
+    - :doc:`Open and/or WPA protected WiFi Access Point SSID
+      <./wifi-access-point>`
+    - :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
+      <./hotspot>`
+    - :doc:`How to Set Up WPA Enterprise (EAP-TTLS-PAP) authentication
+      <./wpa-enterprise-eap-ttls-pap>`

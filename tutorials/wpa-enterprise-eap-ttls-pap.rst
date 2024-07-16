@@ -394,3 +394,14 @@ If your smartphone does not connect to the internet, you can debug the
 FreeRADIUS configuration by following the steps in the `"Debugging"
 section of OpenWISP RADIUS documentation
 <https://openwisp-radius.readthedocs.io/en/stable/developer/freeradius.html#debugging>`_.
+
+----
+
+.. seealso::
+
+    - :doc:`Open and/or WPA protected WiFi Access Point SSID
+      <./wifi-access-point>`
+    - :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
+      <./hotspot>`
+    - :doc:`How to Set Up a Wireless Mesh Network
+      <./mesh>`

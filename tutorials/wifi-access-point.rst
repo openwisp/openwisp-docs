@@ -189,3 +189,14 @@ have connected to this access point, as shown below.
 
 In this page it will be possible to use more filters and even
 perform a text search.
+
+----
+
+.. seealso::
+
+    - :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
+      <./hotspot>`
+    - :doc:`How to Set Up a Wireless Mesh Network
+      <./mesh>`
+    - :doc:`How to Set Up WPA Enterprise (EAP-TTLS-PAP) authentication
+      <./wpa-enterprise-eap-ttls-pap>`
