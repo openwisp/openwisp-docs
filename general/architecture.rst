@@ -4,8 +4,8 @@ Architecture, Modules, Technologies
 **Table of Contents:**
 
 .. contents::
-   :depth: 1
-   :local:
+    :depth: 1
+    :local:
 
 Architecture Overview
 ---------------------
@@ -85,8 +85,7 @@ Server Side
     certificates).
   - `django-loci <https://github.com/openwisp/django-loci>`__: Geographic
     and indoor mapping features.
-  - :doc:`openwisp-ipam </ipam/index>`: IP and
-    Subnet administration.
+  - :doc:`openwisp-ipam </ipam/index>`: IP and Subnet administration.
   - `django-rest-framework-gis
     <https://github.com/openwisp/django-rest-framework-gis>`__: GIS addons
     for Django REST Framework.

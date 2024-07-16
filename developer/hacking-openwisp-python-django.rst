@@ -15,8 +15,8 @@ internal code of OpenWISP in the following ways:
 **Table of Contents:**
 
 .. contents::
-   :depth: 2
-   :local:
+    :depth: 2
+    :local:
 
 .. _why_python:
 
@@ -211,8 +211,8 @@ Using these Tools in OpenWISP
 These tools can be added to an OpenWISP development environment to
 significantly improve the efficiency and experience of development. Here's
 a walkthrough on how to use them in :doc:`OpenWISP Controller
-</controller/index>`. In the ``tests/``
-folder, ``local_settings.example.py`` should be copied and renamed to
+</controller/index>`. In the ``tests/`` folder,
+``local_settings.example.py`` should be copied and renamed to
 ``local_settings.py`` for customization. This technique can be used in
 other OpenWISP development environments too.
 
@@ -222,11 +222,11 @@ other OpenWISP development environments too.
     cp local_settings_example.py local_settings.py
 
 Follow the :doc:`installation steps
-<../controller/developer/installation>` for OpenWISP
-Controller. Run the command ``pipenv install --dev``, then run ``pipenv
-run ./manage.py migrate`` and ``pipenv run ./manage.py createsuperuser``.
-Ensure ``SPATIALITE_LIBRARY_PATH`` is specified in the
-``local_settings.py`` file.
+<../controller/developer/installation>` for OpenWISP Controller. Run the
+command ``pipenv install --dev``, then run ``pipenv run ./manage.py
+migrate`` and ``pipenv run ./manage.py createsuperuser``. Ensure
+``SPATIALITE_LIBRARY_PATH`` is specified in the ``local_settings.py``
+file.
 
 To start the development server with more debugging information, run:
 
