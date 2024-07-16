@@ -4,6 +4,13 @@ WiFi Hotspot & Captive Portal
 .. image:: ../images/demo/openwisp-wifi-hotspot-demo.png
   :target: ../_images/openwisp-wifi-hotspot-demo.png
 
+.. contents:: **Table of Contents**:
+   :depth: 3
+   :local:
+
+Introduction & Prerequisites
+----------------------------
+
 OpenWISP is widely used as an **open source software** solution
 for **WiFi Hotspot Management** in **Public Wi-Fi** settings.
 

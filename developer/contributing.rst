@@ -3,8 +3,10 @@ Contributing guidelines
 
 We are glad and thankful that you want to contribute to OpenWISP.
 
-Please read these guidelines carefully, it will help you and us to save
-precious time later.
+.. important::
+
+    Please read these guidelines carefully, it will help to save
+    precious time for everyone involved.
 
 **Table of Contents:**
 
@@ -66,10 +68,14 @@ the issues according to their expertise:
 Setup
 ~~~~~
 
-Once you have chosen an issue to work on, read the ``README`` of the
-repository of the module you want to contribute to, follow the setup
-instructions, each module has its own specific instructions which we
-highly advise to read carefully.
+Once you have chosen an issue to work on, read the documentation section
+of the module you want to contribute to, follow the setup
+instructions, each module has its own specific developer installation
+instructions which we highly advise to read carefully.
+
+.. important::
+
+    For a complete list of the OpenWISP modules, refer to :doc:`/general/architecture`.
 
 How to commit your changes properly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,6 +1,10 @@
 Code of Conduct
 ===============
 
+.. contents:: **Table of Contents**:
+    :depth: 2
+    :local:
+
 1. Purpose
 ~~~~~~~~~~
 
@@ -38,6 +42,7 @@ to the fullest extent, we want to know.
 The following behaviors are expected and requested of all community
 members:
 
+
 - Participate in an authentic and active way. In doing so, you contribute
   to the health and longevity of this community.
 - Exercise consideration and respect in your speech and actions.
@@ -50,15 +55,6 @@ members:
   inconsequential.
 - Remember that community event venues may be shared with members of the
   public; please be respectful to all patrons of these locations.
-- Refrain from demanding and expecting maintainers to offer you free
-  support and/or free work. Maintainers are the most precious resources
-  an Open Source project has and are a scarce resource. Acknowledge
-  and recognize that they will not always be able to respond to all issues
-  and all community support requests.
-- Refrain from name-calling and disrespecting other people in the
-  community in any way, always maintain professional
-  and respectful behavior.
-- Explain your technical issues in detail before requesting support.
 
 4. Unacceptable Behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,24 +62,20 @@ members:
 The following behaviors are considered harassment and are unacceptable
 within our community:
 
-- Throwing tantrums and disrespectful behavior directed at other users
-  or maintainers in the public channels
-  (mailing list, public chat, github).
-- Posting Spam and/or off topic contents.
 - Violence, threats of violence or violent language directed
   against another person.
 - Sexist, racist, homophobic, transphobic,
-  ableist or otherwise discriminatory jokes and language.
+  ableit or otherwise discriminatory jokes and language.
 - Posting or displaying sexually explicit or violent material.
-- Posting or threatening to post other people's personally identifying
+- Posting or threatening to post other people’s personally identifying
   information ("doxing").
 - Personal insults, particularly those related to gender, sexual
   orientation, race, religion, or disability.
 - Inappropriate photography or recording.
-- Inappropriate physical contact. You should have someone's consent
+- Inappropriate physical contact. You should have someone’s consent
   before touching them.
-- Unwelcome sexual attention. This includes, sexualized comments
-  or jokes; inappropriate touching, groping, and unwelcomed sexual
+- Unwelcome sexual attention. This includes, sexual comments
+  or jokes; inappropriate touching, groping, and unwelcome sexual
   advances.
 - Deliberate intimidation, stalking or following (online or in person).
 - Advocating for, or encouraging, any of the above behavior.
@@ -110,7 +102,7 @@ a temporary ban or permanent expulsion from the community without warning
 
 If you are being harassed, noticed that someone else is being harassed, or
 have any other concerns, please
-`contact community organizers immediately <#contact-info>`_.
+:ref:`contact community organizers immediately <contact_info>`.
 
 Additionally, community organizers are available to aid community
 members to engage with local law enforcement or to otherwise help
@@ -123,7 +115,7 @@ the person experiencing distress.
 
 If you feel you have been falsely or unfairly accused of violating this
 Code of Conduct, you should
-`get in touch with the OpenWISP community managers <#contact-info>`_
+:ref:`get in touch with the OpenWISP community managers <contact_info>`
 by sending a short explanation of your grievance.
 
 Your grievance will be handled in accordance with
@@ -143,13 +135,15 @@ unacceptable behavior occurring outside the scope of community activities
 when such behavior has the potential to adversely affect the safety and
 well-being of community members.
 
+.. _contact_info:
+
 9. Contact info
 ~~~~~~~~~~~~~~~
 
 .. raw:: html
 
     <p>
-        <a href="mailto:&#099;&#111;&#100;&#101;&#111;&#102;&#099;&#111;&#110;&#100;&#117;&#099;&#116;&#064;&#111;&#112;&#101;&#110;&#119;&#105;&#115;&#112;&#046;&#105;&#111;">&#099;&#111;&#100;&#101;&#111;&#102;&#099;&#111;&#110;&#100;&#117;&#099;&#116;&#064;&#111;&#112;&#101;&#110;&#119;&#105;&#115;&#112;&#046;&#105;&#111;</a>.
+        E-mail: <a href="mailto:&#099;&#111;&#100;&#101;&#111;&#102;&#099;&#111;&#110;&#100;&#117;&#099;&#116;&#064;&#111;&#112;&#101;&#110;&#119;&#105;&#115;&#112;&#046;&#105;&#111;">&#099;&#111;&#100;&#101;&#111;&#102;&#099;&#111;&#110;&#100;&#117;&#099;&#116;&#064;&#111;&#112;&#101;&#110;&#119;&#105;&#115;&#112;&#046;&#105;&#111;</a>.
     </p>
 
 10. License and attribution
@@ -160,9 +154,4 @@ This Code of Conduct is distributed under a
 <http://creativecommons.org/licenses/by-sa/3.0/>`_.
 
 Portions of text derived from the `Django Under The
-Hood <https://www.djangounderthehood.com/coc/>`_
-and the `Geek Feminism Anti-Harassment Policy
-<http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy>`_.
-
-Retrieved on April 08, 2018 from `Citizen Code of Conduct
-<http://citizencodeofconduct.org/>`_.
+Hood <https://www.djangounderthehood.com/coc/>`_.

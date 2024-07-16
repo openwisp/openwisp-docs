@@ -1,14 +1,18 @@
-How to Set Up WPA Enterprise (EAP-TTLS-PAP) authentication
+How to Set Up WPA Enterprise (EAP-TTLS-PAP) Authentication
 ==========================================================
+
+.. contents:: **Table of Contents**:
+   :depth: 3
+   :local:
+
+Introduction & Prerequisites
+----------------------------
 
 In this tutorial, we will guide you set up WPA Enterprise (EAP-TTLS-PAP)
 authentication for WiFi networks using OpenWISP. The RADIUS capabilities
 of OpenWISP provides integration with FreeRADIUS to allow users to
 authenticate with their django user accounts. Users can either be created
 manually via the admin interface, generated or imported from CSV.
-
-Pre-requisites for following this tutorial
-------------------------------------------
 
 Enable OpenWISP RADIUS
 ~~~~~~~~~~~~~~~~~~~~~~

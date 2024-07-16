@@ -7,8 +7,8 @@ OpenWISP Demo
    Screenshot of OpenWISP web UI dashboard
 
 .. contents:: **Table of Contents**:
-   :backlinks: none
    :depth: 3
+   :local:
 
 .. _accessing_the_demo_system:
 

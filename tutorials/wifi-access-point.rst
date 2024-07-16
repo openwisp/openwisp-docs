@@ -1,20 +1,19 @@
 How to Set Up Wi-Fi Access Point SSIDs
 ======================================
 
+.. contents:: **Table of Contents**:
+   :depth: 3
+   :local:
+
+Introduction & Prerequisites
+----------------------------
+
 This tutorial shows different ways to set up a WiFi SSID
 in access point mode on your devices.
 
 The requirement for this to work is that your device must be equipped with
 at least one radio and that it is named ``radio0`` in the OpenWrt
 configuration (this is the default).
-
-.. note::
-  All the features shown in this page will work on
-  any OpenWISP instance.
-
-.. contents:: **Table of Contents**:
-   :backlinks: none
-   :depth: 3
 
 Set Up an Open Access Point SSID on a Device
 --------------------------------------------

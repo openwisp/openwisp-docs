@@ -4,6 +4,13 @@ How to Set Up a Wireless Mesh Network
 .. image:: ../images/mesh/mesh-network-topology-graph.png
   :target: ../_images/mesh-network-topology-graph.png
 
+.. contents:: **Table of Contents**:
+   :depth: 3
+   :local:
+
+Introduction & Prerequisites
+----------------------------
+
 A **mesh network** is a **decentralized network architecture** where each
 node not only communicates with its immediate neighbors but also relays
 data for other mesh nodes.
@@ -33,8 +40,8 @@ on `OpenWrt <https://openwrt.org/>`_ through OpenWISP.
 Additionally, we'll provide valuable tips on monitoring
 and maintaining the mesh network.
 
-Firmware Requirements for Mesh
-------------------------------
+Firmware Requirements
+---------------------
 
 In order to use mesh mode with wireless encryption, your firmware needs
 to be equipped with a version of the ``wpad`` package which supports mesh

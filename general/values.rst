@@ -112,6 +112,8 @@ We encourage those who share our values to reach out to us through our
 :doc:`contribute to the project <../developer/contributing>` in any way
 they can, according to their means and available time.
 
+.. _values_software_reusability:
+
 5. Software Reusability for Long-Term Sustainability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
