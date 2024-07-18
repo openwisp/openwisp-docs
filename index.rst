@@ -3,13 +3,16 @@ OpenWISP Documentation
 
 Everything you need to know about OpenWISP.
 
-For a complete overview of the contents of this documentation you can
-refer to the :doc:`Full Table of Contents <contents>`.
-
 .. note::
 
+    For a complete overview of this documentation,
+    refer to the :doc:`Full Table of Contents <contents>`.
+
+.. important::
+
     Are you looking for a quick overview of the OpenWISP application?
-    `Try the OpenWISP Demo <https://openwisp.org/demo.html>`_.
+
+    :doc:`Try the OpenWISP Demo </tutorials/demo>`.
 
 .. toctree::
     :maxdepth: 2

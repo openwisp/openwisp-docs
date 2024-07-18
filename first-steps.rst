@@ -5,6 +5,6 @@ First Steps
     :maxdepth: 2
 
     user/quickstart
-    user/configure-device
     user/vpn
+    user/configure-device
     user/django-settings
