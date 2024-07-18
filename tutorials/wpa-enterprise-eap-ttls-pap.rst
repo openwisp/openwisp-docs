@@ -2,8 +2,8 @@ How to Set Up WPA Enterprise (EAP-TTLS-PAP) Authentication
 ==========================================================
 
 .. contents:: **Table of Contents**:
-   :depth: 3
-   :local:
+    :depth: 3
+    :local:
 
 Introduction & Prerequisites
 ----------------------------
@@ -363,10 +363,8 @@ mobile and click on it. Fill in the details as follows:
 
       .. image:: ../images/wpa-enterprise/connect-to-wpa-enterprise.png
           :target: ../_images/connect-to-wpa-enterprise.png
-          :width: 40 %
           :align: center
-          :alt: Screenshot of authentication details filled in for
-                WPA 2 Enterprise WiFi connection
+          :alt: Authentication details
 
 You can leave the **Advanced options** unchanged and click on **Connect**
 after filling on the details.
@@ -403,5 +401,4 @@ section of OpenWISP RADIUS documentation
       <./wifi-access-point>`
     - :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
       <./hotspot>`
-    - :doc:`How to Set Up a Wireless Mesh Network
-      <./mesh>`
+    - :doc:`How to Set Up a Wireless Mesh Network <./mesh>`

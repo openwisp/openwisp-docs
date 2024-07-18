@@ -40,9 +40,9 @@ This is the most common scenario:
 In this scenario, the OpenWISP application will not be able to reach the
 devices unless a management tunnel is used.
 
-Therefore, **having a management
-VPN solution is crucial**, not only to allow OpenWISP to work properly but
-also to **perform debugging and troubleshooting** when needed.
+Therefore, **having a management VPN solution is crucial**, not only to
+allow OpenWISP to work properly but also to **perform debugging and
+troubleshooting** when needed.
 
 Requirements for this scenario:
 
