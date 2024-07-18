@@ -1,156 +1,142 @@
 Architecture, Modules, Technologies
 ===================================
 
+.. image:: ../images/architecture/v2/openwisp-architecture-v2-all.png
+    :target: ../_images/openwisp-architecture-v2-all.png
+    :align: center
+    :alt: OpenWISP Architecture Overview
+
+The diagram above provides an overview of the OpenWISP architecture. It
+highlights the key technologies used, the structure of the OpenWISP
+modules, their major dependencies, and their interactions.
+
+.. important::
+
+    For an enhanced viewing experience, open the image in a new browser
+    tab.
+
 **Table of Contents:**
 
 .. contents::
-    :depth: 1
+    :depth: 2
     :local:
-
-Architecture Overview
----------------------
-
-The following SVG image summarizes the architecture of OpenWISP, the main
-technologies used, the structure of the OpenWISP modules, their most
-important dependencies and the way they interact with one another.
-
-.. note::
-
-    For a better viewing experience, open the image in a new tab of your
-    browser, from there you can also click on the different elements to
-    open the README or website of each module or technology used.
-
-    :download:`The Inkscape source file of the architecture diagram is
-    also available for download
-    </assets/design/architecture-diagram-inkscape.svg>`.
-
-    `Inkscape <https://inkscape.org/>`__ is an open source vector editing
-    software which has been used to produce this diagram.
-
-.. image:: ../images/architecture/openwisp-architecture.svg
-    :target: ../_images/openwisp-architecture.svg
-    :align: center
-    :alt: OpenWISP Architecture Overview
 
 OpenWISP Modules
 ----------------
 
 .. note::
 
-    If you want to know more about the motivations and philosophy that
-    have shaped the modular architecture of OpenWISP, please see `Applying
-    the Unix Philosophy to Django projects: a report from the real world
+    For more insights into the motivations and philosophy behind the
+    modular architecture of OpenWISP, refer to `Applying the Unix
+    Philosophy to Django projects: a report from the real world
     <https://www.slideshare.net/FedericoCapoano/applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`__.
 
 Deployment
 ~~~~~~~~~~
 
-- :doc:`Ansible OpenWISP2 </ansible/index>`: Recommended way to deploy
+- :doc:`Ansible OpenWISP2 </ansible/index>`: Recommended method to deploy
   OpenWISP on virtual machines.
-- :doc:`Docker OpenWISP </docker/index>`: allows to deploy OpenWISP on
-  dockerized cloud infrastructure. This software is still being improved
-  but the basic features of OpenWISP are working.
+- :doc:`Docker OpenWISP </docker/index>`: Enables deployment of OpenWISP
+  on dockerized cloud infrastructure. While still under active
+  development, the basic features of OpenWISP are functional.
 - `Ansible OpenWISP WiFi Login Pages
   <https://github.com/openwisp/ansible-openwisp-wifi-login-pages>`_:
-  ansible role that allows deployment of the :doc:`WiFi Login Pages
+  Ansible role for deploying the :doc:`WiFi Login Pages
   </wifi-login-pages/index>` module.
 - `Ansible OpenWISP2 Image Generator
-  <https://github.com/openwisp/ansible-openwisp2-imagegenerator>`_: useful
-  for generating many OpenWrt firmware images for different organizations
-  with the OpenWISP packages pre installed.
-- `Ansible Wireguard OpenWISP.
-  <https://github.com/openwisp/ansible-wireguard-openwisp>`_: ansible role
-  that allows deployment of :doc:`Wireguard integration for OpenWISP
+  <https://github.com/openwisp/ansible-openwisp2-imagegenerator>`_: Useful
+  for generating multiple OpenWrt firmware images for different
+  organizations with the OpenWISP packages pre-installed.
+- `Ansible Wireguard OpenWISP
+  <https://github.com/openwisp/ansible-wireguard-openwisp>`_: Ansible role
+  that enables deployment of :doc:`Wireguard integration for OpenWISP
   Controller </controller/user/wireguard>`.
 
 Server Side
 ~~~~~~~~~~~
 
-- :doc:`OpenWISP Users </users/index>`: User management, multi-tenancy,
-  authentication backend, REST API utilities and classes to implement
-  multi-tenancy.
-- :doc:`OpenWISP Controller </controller/index>`: Configuration management
-  and templating, automatic provisioning of VPN tunnels like OpenVPN,
-  Wireguard, Wireguard over VXLAN, shell commands, SSH connections, x509
-  PKI management, geographic maps and floorplans, programmable IP address
-  management and subnet provisioning.
+- :doc:`OpenWISP Users </users/index>`: Manages user authentication,
+  multi-tenancy, and provides REST API utilities and classes for
+  implementing multi-tenancy.
+- :doc:`OpenWISP Controller </controller/index>`: Handles configuration
+  management, VPN provisioning (OpenVPN, Wireguard, Wireguard over VXLAN),
+  shell commands, SSH connections, x509 PKI management, geographic maps,
+  floorplans, programmable IP address management, and subnet provisioning.
 
-  This module depends on several django apps or python libraries developed
-  or maintained by OpenWISP:
+  This module depends on several Django apps and Python libraries
+  developed or maintained by OpenWISP:
 
-  - `netjsonconfig <https://github.com/openwisp/netjsonconfig>`__:
-    configuration generation, validation and parsing.
-  - `django-x509 <https://github.com/openwisp/django-x509>`__: Public Key
-    Infrastructure (management of certification authorities and x509
+  - `netjsonconfig <https://github.com/openwisp/netjsonconfig>`__: For
+    configuration generation, validation, and parsing.
+  - `django-x509 <https://github.com/openwisp/django-x509>`__: Manages
+    Public Key Infrastructure (certification authorities and x509
     certificates).
-  - `django-loci <https://github.com/openwisp/django-loci>`__: Geographic
-    and indoor mapping features.
-  - :doc:`openwisp-ipam </ipam/index>`: IP and Subnet administration.
+  - `django-loci <https://github.com/openwisp/django-loci>`__: Provides
+    geographic and indoor mapping features.
+  - :doc:`openwisp-ipam </ipam/index>`: Administers IP and subnet
+    management.
   - `django-rest-framework-gis
-    <https://github.com/openwisp/django-rest-framework-gis>`__: GIS addons
-    for Django REST Framework.
+    <https://github.com/openwisp/django-rest-framework-gis>`__: Adds GIS
+    capabilities to Django REST Framework.
 
 - :doc:`OpenWISP Monitoring </monitoring/index>`: Monitors and tracks
-  device information like ping success rate, packet loss, round trip time,
-  traffic, WiFi clients,memory, CPU load, flash space, ARP/neighbor
-  information, DHCP leases, provides charts and configurable alerts,
-  allows to write custom checks or reconfigure tolerance thresholds and
-  charts.
-- :doc:`OpenWISP Network Topology </network-topology/index>`: Network
-  topology collector and visualizer. Collects network topology data from
-  dynamic mesh routing protocols or other popular networking software like
-  OpenVPN, allows to visualize the network graph and save daily snapshots
-  that can be viewed in the future.
+  device metrics like ping success rate, packet loss, round trip time,
+  traffic, WiFi clients, memory, CPU load, flash space, ARP/neighbor
+  information, DHCP leases, and provides charts and configurable alerts.
+  It also allows custom checks and tolerance threshold configurations.
+- :doc:`OpenWISP Network Topology </network-topology/index>`: Collects and
+  visualizes network topology data from dynamic mesh routing protocols and
+  other popular networking software like OpenVPN. It can visualize network
+  graphs and save daily snapshots for future viewing.
 
-  This module depends on two libraries developed and maintained by
+  This module relies on two libraries developed and maintained by
   OpenWISP:
 
-  - `netdiff <https://github.com/openwisp/netdiff>`__: network topology
-    parsing.
-  - `netjsongraph.js <https://github.com/openwisp/netjsongraph.js>`__:
-    Javascript library for network graph visualization.
+  - `netdiff <https://github.com/openwisp/netdiff>`__: Parses network
+    topology.
+  - `netjsongraph.js <https://github.com/openwisp/netjsongraph.js>`__: A
+    JavaScript library for visualizing network graphs.
 
-- :doc:`OpenWISP Firmware Upgrader </firmware-upgrader/index>`: Firmware
-  upgrade solution for OpenWrt with possibility to add support for other
-  embedded OSes. Provides features like automatic retry for network
-  failures, mass upgrades, REST API and more.
-- :doc:`OpenWISP RADIUS </user/radius>`: provides a web interface to a
-  freeradius database, a rich REST HTTP API and features like user self
-  registration, SMS verification, import of users from CSV files,
-  generation of new users for events, Captive Portal Social Login, Captive
-  Portal SAML login and more.
-- :doc:`OpenWISP Notifications </notifications/index>`: provides email and
-  web notifications to OpenWISP. Its main goal is to allow any OpenWISP
-  module to notify users about meaningful events that happen in their
-  network.
-- :doc:`OpenWISP Utils </utils/index>`: common utilities and classes
-  shared by all the OpenWISP python modules, it includes a lot of
-  utilities for QA checks and automated testing which are heavily used in
-  continuous integration builds of most, if not all, the OpenWISP github
-  repositories.
-- :doc:`OpenWISP WiFi Login Pages </wifi-login-pages/index>`: Configurable
-  captive page for public/private WiFi services providing login, sign up,
-  social login, SMS verification, change password, reset password, change
-  phone number and more. This is a frontend of the OpenWISP RADIUS REST
-  API and it's designed to be used by end users of a public WiFi network.
+- :doc:`OpenWISP Firmware Upgrader </firmware-upgrader/index>`: Provides a
+  firmware upgrade solution for OpenWrt and potentially other embedded
+  OSes. Features include automatic retry for network failures, mass
+  upgrades, a REST API, and more.
+- :doc:`OpenWISP RADIUS </user/radius>`: Offers a web interface to a
+  FreeRADIUS database, a rich REST HTTP API, and features like user
+  self-registration, SMS verification, user import from CSV files,
+  event-based user generation, Captive Portal Social Login, and Captive
+  Portal SAML login.
+- :doc:`OpenWISP Notifications </notifications/index>`: Provides email and
+  web notifications for OpenWISP, enabling modules to notify users about
+  significant events in their network.
+- :doc:`OpenWISP Utils </utils/index>`: Common utilities and classes
+  shared by all OpenWISP Python modules. Includes many utilities for QA
+  checks and automated testing, heavily used in continuous integration
+  builds of most OpenWISP GitHub repositories.
+- :doc:`OpenWISP WiFi Login Pages </wifi-login-pages/index>`: A
+  configurable captive portal for public/private WiFi services, offering
+  login, sign up, social login, SMS verification, password management, and
+  more. It is a frontend for the OpenWISP RADIUS REST API, designed for
+  end users of a public WiFi network.
 
 Network Device Side
 ~~~~~~~~~~~~~~~~~~~
 
-- :doc:`OpenWISP OpenWrt Config Agent </openwrt-config-agent/index>`: an
-  OpenWrt package which integrates with OpenWISP Controller.
+- :doc:`OpenWISP OpenWrt Config Agent </openwrt-config-agent/index>`: An
+  OpenWrt package that integrates with :doc:`OpenWISP Controller
+  </controller/index>`.
 - :doc:`OpenWISP OpenWrt Monitoring Agent
-  </openwrt-monitoring-agent/index>`: an OpenWrt package which integrates
-  with OpenWISP Monitoring.
+  </openwrt-monitoring-agent/index>`: An OpenWrt package that integrates
+  with :doc:`OpenWISP Monitoring </monitoring/index>`.
 
 Website and Documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- `openwisp-docs <https://github.com/openwisp/openwisp-docs>`_: repository
-  for the documentation of OpenWISP, hosted on `openwisp.io/docs
+- `openwisp-docs <https://github.com/openwisp/openwisp-docs>`_: Repository
+  for the OpenWISP documentation, hosted on `openwisp.io/docs
   <https://openwisp.io/docs/>`_.
 - `OpenWISP-Website <https://github.com/openwisp/OpenWISP-Website>`_:
-  repository of the OpenWISP website, hosted on `openwisp.org
+  Repository for the OpenWISP website, hosted on `openwisp.org
   <https://openwisp.org/>`_.
 
 Main Technologies Used
@@ -159,11 +145,12 @@ Main Technologies Used
 Python
 ~~~~~~
 
-`Python <https://www.python.org/>`_ is the main programming language used
-by the server side application (web admin, API, controller, workers).
+`Python <https://www.python.org/>`_ is the primary programming language
+used for the server-side application (web admin, API, controller,
+workers).
 
-In the past OpenWISP was built on Ruby On Rails, but we later switched to
-Python because it's more suited to networking and has a wider pool of
+Originally, OpenWISP was built on Ruby On Rails, but we later switched to
+Python due to its suitability for networking and a larger pool of
 potential contributors.
 
 Find out more on :ref:`why OpenWISP chose Python as its main language
@@ -173,12 +160,12 @@ Django
 ~~~~~~
 
 `Django <https://www.djangoproject.com/>`_ is one of the most popular web
-frameworks for Python language.
+frameworks for Python.
 
-It is used extensively in our modules. Django allows rapid development and
-has a very rich ecosystem.
+It is used extensively in our modules, allowing rapid development and
+access to a rich ecosystem.
 
-It's the base framework used in most of the server side modules of
+It's the base framework used in most of the server-side modules of
 OpenWISP.
 
 Find out more on :ref:`why OpenWISP chose Django as its main web framework
@@ -188,9 +175,8 @@ Django REST Framework
 ~~~~~~~~~~~~~~~~~~~~~
 
 `Django REST framework <https://www.django-rest-framework.org>`_ is a
-powerful and flexible toolkit for building Web APIs based on Django and
-it's widely used in most of the Django and web based based OpenWISP
-modules.
+powerful and flexible toolkit for building Web APIs based on Django,
+widely used in most of the Django and web-based OpenWISP modules.
 
 Find out more on :ref:`why OpenWISP chose Django REST Framework to build
 its REST API <why_DRF>`.
@@ -198,19 +184,19 @@ its REST API <why_DRF>`.
 Celery
 ~~~~~~
 
-`Celery <https://docs.celeryq.dev/en/stable/index.html>`_ is a python
-implementation of a distributed task queue and it is heavily used in
-OpenWISP to execute background tasks, perform network operations like
-monitoring checks, configuration updates, firmware upgrades and so on.
+`Celery <https://docs.celeryq.dev/en/stable/index.html>`_ is a Python
+implementation of a distributed task queue. It is heavily used in OpenWISP
+to execute background tasks, perform network operations like monitoring
+checks, configuration updates, firmware upgrades, and more.
 
 OpenWrt
 ~~~~~~~
 
-`OpenWrt <https://openwrt.org/>`_ is an linux distribution designed for
-embedded systems, routers and networking in general.
+`OpenWrt <https://openwrt.org/>`_ is a Linux distribution designed for
+embedded systems, routers, and networking in general.
 
-It has a very skilled community and it is used as a base by many hardware
-vendors (Technicolor, Ubiquiti Networks, Linksys, Teltonika and many
+It has a very skilled community and is used as a base by many hardware
+vendors (Technicolor, Ubiquiti Networks, Linksys, Teltonika, and many
 others).
 
 Lua
@@ -222,7 +208,7 @@ language designed primarily for embedded systems and clients.
 Lua is cross-platform, since the interpreter is written in ANSI C, and has
 a relatively simple C API.
 
-It is the official scripting language of OpenWrt and it's used heavily in
+It is the official scripting language of OpenWrt and is used heavily in
 the OpenWrt packages of OpenWISP: :doc:`openwisp-config
 </openwrt-config-agent/index>` and :doc:`openwisp-monitoring
 </openwrt-monitoring-agent/index>`.
@@ -230,34 +216,33 @@ the OpenWrt packages of OpenWISP: :doc:`openwisp-config
 Node.js and React JS
 ~~~~~~~~~~~~~~~~~~~~
 
-`NodeJS <https://nodejs.org/en/>`_ is javascript runtime to build JS based
-applications.
+`NodeJS <https://nodejs.org/en/>`_ is a JavaScript runtime for building
+JS-based applications.
 
-In OpenWISP it's used as a base for frontend applications along with
+In OpenWISP, it's used as a base for frontend applications along with
 `React <https://reactjs.org/>`_, like the :doc:`WiFi Login Pages module
 </wifi-login-pages/index>`.
 
 Ansible
 ~~~~~~~
 
-`Ansible <https://www.ansible.com/>`_ is a very popular software
-automation tool written in python that is generally used for automating
-software provisioning, configuration management and application
-deployment.
+`Ansible <https://www.ansible.com/>`_ is a popular software automation
+tool written in Python, generally used for automating software
+provisioning, configuration management, and application deployment.
 
 We use `Ansible <https://www.ansible.com/>`_ to provide automated
 procedures to :doc:`deploy OpenWISP </ansible/user/quickstart>`, to
 `compile custom OpenWrt images for different organizations
 <https://github.com/openwisp/ansible-openwisp2-imagegenerator>`__, to
 `deploy OpenWISP WiFi Login Pages
-<https://github.com/openwisp/ansible-openwisp-wifi-login-pages>`__ and to
+<https://github.com/openwisp/ansible-openwisp-wifi-login-pages>`__, and to
 deploy the :doc:`Wireguard integration for OpenWISP Controller
 </controller/user/wireguard>`.
 
 Docker
 ~~~~~~
 
-We use docker in :doc:`docker-openwisp </docker/index>`, which aims to
+We use Docker in :doc:`docker-openwisp </docker/index>`, which aims to
 ease the deployment of OpenWISP in a containerized infrastructure.
 
 NetJSON
@@ -333,11 +318,11 @@ The most notable ones are:
 - `MySQL <https://www.mysql.com/>`_
 - `SQLite <https://www.sqlite.org/>`_
 
-**For production usage we recommend PostgreSQL.**
+**For production usage, we recommend PostgreSQL.**
 
-For development we recommend SQLite for its simplicity .
+For development, we recommend SQLite for its simplicity.
 
-Other notable dependencies
+Other Notable Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - `Paramiko <https://www.paramiko.org/>`_ (used in OpenWISP Controller and
@@ -348,7 +333,7 @@ Other notable dependencies
   <https://github.com/bennylope/django-organizations>`_ (used in OpenWISP
   Users).
 - `Django-swappable-models
-  <https://github.com/openwisp/django-swappable-models>`_ (used in all the
+  <https://github.com/openwisp/django-swappable-models>`_ (used in all
   major Django modules).
 - `Django-private-storage
   <https://github.com/edoburu/django-private-storage>`_ (used in OpenWISP
