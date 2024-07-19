@@ -55,6 +55,11 @@ Enable Captive Portal Template
 .. image:: ../images/demo/captive-portal-demo.png
     :target: ../_images/captive-portal-demo.png
 
+.. hint::
+
+    If you don't know what a template is, please see
+    :doc:`/controller/user/templates`.
+
 If you flashed the *OpenWrt* based firmware and registered your device as
 explained in the :doc:`OpenWISP Demo Page <./demo>`, proceed to assign the
 captive portal template to your device:
@@ -128,9 +133,8 @@ again, as shown in the image above.
 .. note::
 
     For more technical information and implementation details about the
-    magic link feature, consult the :doc:`openwisp-users documentation
-    <../users/index>`. Here you will find more information about the
-    underlying open source library used to implement this feature.
+    magic links feature, refer to the related section:
+    :ref:`users_sesameauthentication`.
 
 If you are using the demo account, the email will be sent to the email
 address linked to the demo account. Therefore, if you want to try this

@@ -104,6 +104,11 @@ interface, which comes preconfigured in OpenWrt.
 Creating the Template
 ---------------------
 
+.. hint::
+
+    If you don't know what a template is, please see
+    :doc:`/controller/user/templates`.
+
 .. note::
 
     This template is also available in our :doc:`Demo System <./demo>` as

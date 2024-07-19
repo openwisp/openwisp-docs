@@ -80,26 +80,29 @@ Set Up the Same SSID and Password on Multiple Devices
     :target: ../_images/wifi-wpa-template.gif
 
 The procedure is very similar to the previous one, with the difference
-that we will be using a **configuration template**, then we will assign
-this template to the devices we want to have the SSID.
+that we will be using a :doc:`configuration template
+</controller/user/templates>`, then we will assign this template to the
+devices we want to have the SSID.
 
-In this example we are defining two variables: ``wlan0_ssid`` and
-``wlan0_password``, this allows us to change the SSID and password on a
-specific device if we need. Below you can find a demonstration of how to
-change these default template values from the device page in the
-"configuration variables" section.
+In this example we are defining two :doc:`configuration variables
+</controller/user/variables>`: ``wlan0_ssid`` and ``wlan0_password``, this
+allows us to change the SSID and password on a specific device if we need.
+Below you can find a demonstration of how to change these default template
+values from the device page in the "configuration variables" section.
 
 .. image:: ../images/demo/ap/wifi-template-change-ssid-password.gif
     :target: ../_images/wifi-template-change-ssid-password.gif
 
-The template can even be flagged as "Default" if we want this to be
-applied automatically when new devices register!
+The template can even be flagged as :ref:`"Default" <default_templates>`
+if we want this to be applied automatically when new devices register!
 
-.. note::
+.. hint::
 
-    If you want to find out more about templates, consult the
-    documentation section dedicated to :doc:`Configuration Templates
-    </controller/user/templates>`.
+    If you want to find out more about configuration templates and/or
+    variables, consult the respective documentation sections:
+
+    - :doc:`/controller/user/templates`
+    - :doc:`/controller/user/variables`
 
 Multiple SSIDs, multiple radios
 -------------------------------
@@ -116,8 +119,6 @@ sections, with the difference that instead of adding only one interface,
 you will have to add multiple wireless interfaces and define a different
 ``name`` and, if you want to deploy the SSID on different bands, a
 different value for the ``radio`` field, e.g. ``radio0`` and ``radio1``.
-
-.. _monitoring_wifi_clients:
 
 Roaming (802.11r: Fast BSS Transition)
 --------------------------------------
@@ -155,6 +156,8 @@ You may wish to test the configuration and adjust the following options:
 - Reassociation deadline: Increase it to avoid frequent timeouts on busy
   networks.
 - FT-over-DS.
+
+.. _monitoring_wifi_clients:
 
 Monitoring WiFi Clients
 -----------------------
