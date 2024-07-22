@@ -36,37 +36,37 @@ How to help
 
 .. _mailing_list:
 
-1. Write to the mailing list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Open new discussion threads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `mailing list <http://openwisp.org/support.html>`_ is a great place to
-ask questions or share information regarding OpenWISP.
+The `Github Discussions Forum and the Mailing List
+<http://openwisp.org/support.html>`_ are excellent places to ask questions
+or share information regarding OpenWISP.
 
 Every question and its replies are archived and indexed by search engines,
-so over time the archive becomes a repositories of solved problems which
-people can find.
+creating a repository of solved problems that people can find over time.
 
-For this reason, **using the mailing list for support questions should be
-preferred over the main chat**.
+For this reason, **using these channels for support questions should be
+preferred over the chats**.
 
 .. warning::
 
-    Please be mindful that **over 400 people read the mailing list** and
-    **discussion are indexed forever**, for these reasons you should:
+    Please be mindful that **over 700 people read these channels** and
+    **discussions are indexed forever**. For these reasons, you should:
 
-        - keep the focus of the discussion technical
-        - avoid unrelevant comments
-        - be mindful about what you write
-        - keep the tone calm and constructive
-        - be respectful to the volunteers who reply in their free time
-        - avoid generating noise
+        - Keep the focus of the discussion technical.
+        - Avoid irrelevant comments.
+        - Be mindful about what you write.
+        - Keep the tone calm and constructive.
+        - Be respectful to the volunteers who reply in their free time.
+        - Avoid generating noise.
 
-When subscribing to the mailing list, we suggest to choose one of these
+When subscribing to the mailing list, we suggest choosing one of these
 options:
 
-- receive all emails by creating a filter in your mailbox which moves the
-  messages to a dedicated folder
-- receive a periodic summary (abridged or digest)
+- Receive all emails by creating a filter in your mailbox that moves the
+  messages to a dedicated folder.
+- Receive a periodic summary (abridged or digest).
 
 2. Send feedback
 ~~~~~~~~~~~~~~~~
