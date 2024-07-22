@@ -1,11 +1,30 @@
 RADIUS
 ======
 
-**Source code**: `github.com/openwisp/openwisp-radius
-<https://github.com/openwisp/openwisp-radius>`_.
+.. seealso::
+
+    **Source code**: `github.com/openwisp/openwisp-radius
+    <https://github.com/openwisp/openwisp-radius>`_.
 
 OpenWISP RADIUS is available since OpenWISP 22.05 and provides many
 features aimed at public WiFi services.
+
+The following diagram illustrates the role of the RADIUS
+module within the OpenWISP architecture.
+
+.. figure:: /images/architecture/v2/architecture-v2-openwisp-radius.png
+    :target: ../_images/architecture-v2-openwisp-radius.png
+    :align: center
+    :alt: OpenWISP Architecture: Radius module
+
+    **OpenWISP Architecture: highlighted radius module**
+
+.. important::
+
+    For an enhanced viewing experience, open the image above in a new
+    browser tab.
+
+    Refer to :doc:`/general/architecture` for more information.
 
 .. contents:: **Table of Contents**:
     :backlinks: none
