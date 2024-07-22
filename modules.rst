@@ -7,8 +7,8 @@ Modules
     users/index
     controller/index
     monitoring/index
-    firmware-upgrader/index
     network-topology/index
+    firmware-upgrader/index
     user/radius
     wifi-login-pages/index
     ipam/index
