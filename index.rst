@@ -1,7 +1,12 @@
 OpenWISP Documentation
 ======================
 
-Everything you need to know about OpenWISP.
+.. figure:: images/intro/index-banner.png
+    :target: _images/index-banner.png
+    :align: center
+    :alt: Your Network Management with OpenWrt & OpenWISP
+
+    **Everything you need to know about OpenWISP is here!**
 
 .. note::
 
