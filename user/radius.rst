@@ -9,8 +9,8 @@ RADIUS
 OpenWISP RADIUS is available since OpenWISP 22.05 and provides many
 features aimed at public WiFi services.
 
-The following diagram illustrates the role of the RADIUS
-module within the OpenWISP architecture.
+The following diagram illustrates the role of the RADIUS module within the
+OpenWISP architecture.
 
 .. figure:: /images/architecture/v2/architecture-v2-openwisp-radius.png
     :target: ../_images/architecture-v2-openwisp-radius.png

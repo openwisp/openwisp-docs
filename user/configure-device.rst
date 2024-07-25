@@ -71,7 +71,8 @@ Download them onto your device from `downloads.openwisp.io
 Once the agents are installed on your OpenWrt device, let's ensure they
 can connect to OpenWISP successfully.
 
-Edit the config file located at ``/etc/config/openwisp``, which should look like the following sample:
+Edit the config file located at ``/etc/config/openwisp``, which should
+look like the following sample:
 
 ::
 
@@ -104,7 +105,9 @@ Edit the config file located at ``/etc/config/openwisp``, which should look like
 
 Uncomment and update the following lines:
 
-- ``url``: Set this to the hostname of your OpenWISP instance (e.g., if your OpenWISP server is at "192.168.56.2", set the url to ``https://192.168.56.2``).
+- ``url``: Set this to the hostname of your OpenWISP instance (e.g., if
+  your OpenWISP server is at "192.168.56.2", set the url to
+  ``https://192.168.56.2``).
 - ``verify_ssl``: Set to ``'0'`` if your controller's SSL certificate is
   self-signed; in production, use a valid SSL certificate to ensure
   security.
@@ -115,8 +118,8 @@ Uncomment and update the following lines:
 
 .. hint::
 
-    For more details on the configuration options, refer to :doc:`OpenWrt Config Agent Settings
-    </openwrt-config-agent/user/settings>`.
+    For more details on the configuration options, refer to :doc:`OpenWrt
+    Config Agent Settings </openwrt-config-agent/user/settings>`.
 
 .. note::
 
@@ -138,8 +141,8 @@ Save the file and restart the agent:
     default settings work for most cases, and the agent restarts itself
     when the config agent is restarted.
 
-    For more details on its configuration options, refer to :doc:`OpenWrt Monitoring Agent Settings
-    </openwrt-monitoring-agent/user/settings>`.
+    For more details on its configuration options, refer to :doc:`OpenWrt
+    Monitoring Agent Settings </openwrt-monitoring-agent/user/settings>`.
 
 Your OpenWrt device should now be able to register with OpenWISP.
 
