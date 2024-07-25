@@ -4,7 +4,7 @@ OpenWISP Demo
 .. figure:: ../images/demo/demo.png
     :align: center
 
-    Screenshot of OpenWISP web UI dashboard
+    Screenshot of OpenWISP web UI dashboard.
 
 .. contents:: **Table of Contents**:
     :depth: 3
@@ -122,12 +122,11 @@ can download them onto your device from `downloads.openwisp.io
     # from downloads.openwisp.io
 
     wget https://downloads.openwisp.io/openwisp-config/latest/openwisp-config_1.1.0a-1_all.ipk
-    wget https://downloads.openwisp.io/openwisp-monitoring/latest/netjson-monitoring_0.1.1-1_all.ipk
-    wget https://downloads.openwisp.io/openwisp-monitoring/latest/openwisp-monitoring_0.1.1-1_all.ipk
+    wget https://downloads.openwisp.io/openwisp-monitoring/latest/netjson-monitoring_0.2.0a-1_all.ipk
+    wget https://downloads.openwisp.io/openwisp-monitoring/latest/openwisp-monitoring_0.2.0a-1_all.ipk
     opkg install openwisp-config_1.1.0a-1_all.ipk
-    opkg install netjson-monitoring_0.1.1-1_all.ipk
-    opkg install netjson-monitoring_0.1.1-1_all.ipk
-    opkg install openwisp-monitoring_0.1.1-1_all.ipk
+    opkg install netjson-monitoring_0.2.0a-1_all.ipk
+    opkg install openwisp-monitoring_0.2.0a-1_all.ipk
 
 .. note::
 
