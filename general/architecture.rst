@@ -114,10 +114,10 @@ Server Side
   checks and automated testing, heavily used in continuous integration
   builds of most OpenWISP GitHub repositories.
 - :doc:`OpenWISP WiFi Login Pages </wifi-login-pages/index>`: A
-  configurable captive portal for public/private WiFi services, offering
-  login, sign up, social login, SMS verification, password management, and
-  more. It is a frontend for the OpenWISP RADIUS REST API, designed for
-  end users of a public WiFi network.
+  configurable login page and self registration app for WiFi Hotspot
+  services, offering features like login, sign up, social login, SMS
+  verification, password reset and more. It is a frontend for the OpenWISP
+  RADIUS REST API, designed for end users of a WiFi Hotspot service.
 
 Network Device Side
 ~~~~~~~~~~~~~~~~~~~
