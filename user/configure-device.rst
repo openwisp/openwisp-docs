@@ -1,14 +1,14 @@
-Configure Your OpenWrt Devices
-==============================
+Configure Your OpenWrt Device
+=============================
 
-This page will guide you through installing the
-:doc:`/openwrt-config-agent/index` on a device that supports `OpenWrt
-<https://openwrt.org/>`_.
+This page will guide you through installing the OpenWISP agents on a
+device that supports `OpenWrt <https://openwrt.org/>`_.
 
 .. hint::
 
     **No physical device? No problem!** You can try OpenWISP using a
-    Virtual Machine.
+    `Virtual Machine
+    <https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm>`_.
 
 .. contents:: **Table of Contents**:
     :depth: 3
