@@ -2,6 +2,8 @@
 
 set -e
 
+docstrfmt -c -l 74 .
+
 # openwisp-utils checks
 #This is done first to ignore build directories for openwisp-utils checks
 openwisp-qa-check \
@@ -12,10 +14,8 @@ openwisp-qa-check \
     --skip-black \
     --skip-checkrst
 
-./check_line_length.py
-
 echo ''
-echo 'Checking documentation build status'
+echo 'Build documention to look for syntax errors'
 make build
 
 # check for broken link

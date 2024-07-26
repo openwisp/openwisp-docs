@@ -261,3 +261,7 @@ dummy:
 .PHONY: version_map
 version_map:
 	$(SPHINXBUILD) -b version_map $(ALLSPHINXOPTS) $(BUILDDIR)/version_map
+
+.PHONY: format
+format:
+	docstrfmt -l 74 .

@@ -10,8 +10,8 @@ OpenWISP Documentation
 
 .. note::
 
-    For a complete overview of this documentation,
-    refer to the :doc:`Full Table of Contents <contents>`.
+    For a complete overview of this documentation, refer to the :doc:`Full
+    Table of Contents <contents>`.
 
 .. important::
 

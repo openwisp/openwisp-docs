@@ -1,7 +1,10 @@
 def setup(app):
     from .builders import VersionSwitcherIndexBuilder
-    from .event_callbacks import (html_builder_inited, set_version_context,
-                                  update_version_map)
+    from .event_callbacks import (
+        html_builder_inited,
+        set_version_context,
+        update_version_map,
+    )
 
     app.add_builder(VersionSwitcherIndexBuilder)
     app.connect('builder-inited', html_builder_inited)
