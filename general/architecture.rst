@@ -57,7 +57,7 @@ Deployment
 - `Ansible Wireguard OpenWISP.
   <https://github.com/openwisp/ansible-wireguard-openwisp>`_: ansible role
   that allows to deploy the :doc:`Wireguard integration for OpenWISP
-  Controller </controller/user/wireguard>`.
+  Controller </user/wireguard>`.
 
 Server Side
 ~~~~~~~~~~~
