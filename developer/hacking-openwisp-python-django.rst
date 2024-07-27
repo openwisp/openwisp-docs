@@ -2,7 +2,7 @@ Hacking OpenWISP: Python and Django
 ===================================
 
 .. image:: ../images/intro/django-debug-toolbar.png
-   :align: center
+    :align: center
 
 In this page we aim to help users and contributors who want to work on the
 internal code of OpenWISP in the following ways:
@@ -12,7 +12,7 @@ internal code of OpenWISP in the following ways:
 2. By introducing some Python tools and Django extensions which are
    **extremely useful during development and debugging**.
 
-.. _why_python:
+.. _why_python_22:
 
 Why Python?
 -----------
@@ -27,15 +27,13 @@ for their systems.
 
 **Here are the main reasons why OpenWISP is written in Python:**
 
-- it is widely used in the networking and configuration management
-  world, famous libraries such as
-  `networkx <https://networkx.org/>`_,
-  `ansible <https://www.ansible.com>`_,
-  `salt <https://docs.saltstack.com/en/latest/topics/>`_,
-  `paramiko <http://www.paramiko.org>`_ and
-  `fabric <http://www.fabfile.org>`_ are written in Python, this allows
-  our users to work with a programming language which they are
-  already familiar with
+- it is widely used in the networking and configuration management world,
+  famous libraries such as `networkx <https://networkx.org/>`_, `ansible
+  <https://www.ansible.com>`_, `salt
+  <https://docs.saltstack.com/en/latest/topics/>`_, `paramiko
+  <http://www.paramiko.org>`_ and `fabric <http://www.fabfile.org>`_ are
+  written in Python, this allows our users to work with a programming
+  language which they are already familiar with
 - finding developers who know Python is very easy and allows the community
   to grow and help to improve the OpenWISP software ecosystem over time
 - Python allows great flexibility and extensibility, this in turns allows
@@ -48,14 +46,15 @@ for their systems.
 - `SoloLearn <https://www.sololearn.com>`_ (a detailed beginner course)
 
 .. note::
-  The first version of OpenWISP was written in Ruby.
 
-  OpenWISP 2 was rewritten in Python because Ruby
-  developers are more scarce and this caused the project to stagnate.
-  The fact that Python is widely used in the networking world was also
-  an important factor in the decision.
+    The first version of OpenWISP was written in Ruby.
 
-.. _why_django:
+    OpenWISP 2 was rewritten in Python because Ruby developers are more
+    scarce and this caused the project to stagnate. The fact that Python
+    is widely used in the networking world was also an important factor in
+    the decision.
+
+.. _why_django_22:
 
 Why Django?
 -----------
@@ -72,17 +71,16 @@ design.
   high profile companies
 - Security vulnerabilities are usually privately disclosed to the
   developers and quickly fixed
-- Being popular, it's easy to find Python developers who have
-  experience with Django and can get up to speed very fast in
-  contributing to OpenWISP
+- Being popular, it's easy to find Python developers who have experience
+  with Django and can get up to speed very fast in contributing to
+  OpenWISP
 - Django projects are easily customizable by editing a ``settings.py``
   file, this allows OpenWISP to design its modules so that these can be
-  imported into larger, more complex and customized applications,
-  allowing to create customized network management solutions;
-  **this makes OpenWISP similar to a framework**: users can use the
-  default installation but if they need a solution that is more tailored
-  to their needs they can use it as a base to avoid re-developing a lot
-  of code from scratch
+  imported into larger, more complex and customized applications, allowing
+  to create customized network management solutions; **this makes OpenWISP
+  similar to a framework**: users can use the default installation but if
+  they need a solution that is more tailored to their needs they can use
+  it as a base to avoid re-developing a lot of code from scratch
 
 **Resources for learning Django**:
 
@@ -91,26 +89,25 @@ design.
   (excellent for absolute beginners!)
 
 PS: if you are wondering why the second tutorial mentions the word
-"Girls", we suggest taking a look at
-`djangogirls.org <https://djangogirls.org/>`_.
+"Girls", we suggest taking a look at `djangogirls.org
+<https://djangogirls.org/>`_.
 
-.. _why_DRF:
+.. _why_drf_22:
 
 Why Django REST framework?
 --------------------------
 
-`Django REST framework <https://www.django-rest-framework.org>`_
-is a powerful and flexible toolkit for building Web APIs and it's used
-and trusted by internationally recognised companies including Mozilla,
-Red Hat, Heroku, and Eventbrite.
+`Django REST framework <https://www.django-rest-framework.org>`_ is a
+powerful and flexible toolkit for building Web APIs and it's used and
+trusted by internationally recognised companies including Mozilla, Red
+Hat, Heroku, and Eventbrite.
 
 Here are some reasons why OpenWISP uses Django REST framework:
 
 - Simplicity, flexibility, quality, and test coverage of source code
-- Powerful serialization engine compatible with both ORM and non-ORM
-  data sources
-- Clean, simple, views for Resources, using Django's new class based
-  views
+- Powerful serialization engine compatible with both ORM and non-ORM data
+  sources
+- Clean, simple, views for Resources, using Django's new class based views
 - HTTP response handling, content type negotiation using HTTP Accept
   headers
 - Publishing of metadata along with querysets
@@ -146,24 +143,26 @@ More details including installation and updates can be found on the
 As for `ipdb <https://github.com/gotcha/ipdb>`_, it allows to use the
 ``ipython`` shell when using the python debugger (known as ``pdb``).
 
-Try to drop this line in a Django project (or an OpenWISP module),
-for example in a ``settings.py`` file:
+Try to drop this line in a Django project (or an OpenWISP module), for
+example in a ``settings.py`` file:
 
 .. code-block:: python
 
-    import ipdb; ipdb.set_trace()
+    import ipdb
 
-Now load the Django development server and have fun while learning how
-to do debug Python code!
+    ipdb.set_trace()
+
+Now load the Django development server and have fun while learning how to
+do debug Python code!
 
 Django Extensions
 ~~~~~~~~~~~~~~~~~
 
 `Django Extensions <https://django-extensions.readthedocs.io/>`_ is a
 collection of extensions for the Django Framework. These include
-management commands, additional database fields, admin extensions and
-much more. We will focus on three of them for now, namely
-``shell_plus``, ``runserver_plus``, ``show_urls``.
+management commands, additional database fields, admin extensions and much
+more. We will focus on three of them for now, namely ``shell_plus``,
+``runserver_plus``, ``show_urls``.
 
 Django Extensions can be installed with:
 
@@ -207,18 +206,17 @@ significantly improve the efficiency and experience while developing.
 Let's do a walkthrough of how to use them in `OpenWISP Controller
 <https://github.com/openwisp/openwisp-controller>`_ as an example. In the
 ``tests/`` folder, ``local_settings.example.py`` must be copied and
-renamed to ``local_settings.py`` which we will use for customization.
-This technique can be used in other OpenWISP development environments too.
+renamed to ``local_settings.py`` which we will use for customization. This
+technique can be used in other OpenWISP development environments too.
 
 .. code-block:: bash
 
-  cd tests/
-  cp local_settings_example.py local_settings.py
+    cd tests/
+    cp local_settings_example.py local_settings.py
 
 To start, the `steps <https://github.com/openwisp/openwisp-controller>`_
-for installing OpenWISP Controller must be followed. The command
-``pipenv install --dev`` then the commands
-``pipenv run ./manage.py migrate`` and
+for installing OpenWISP Controller must be followed. The command ``pipenv
+install --dev`` then the commands ``pipenv run ./manage.py migrate`` and
 ``pipenv run ./manage.py createsuperuser`` must be run and
 ``SPATIALITE_LIBRARY_PATH`` should be specified in the
 ``local_settings.py`` file.
@@ -230,40 +228,35 @@ Also, ``ipython`` can be used alongside ``shell_plus`` by running the
 command ``./manage.py shell_plus --ipython`` in the terminal. This will
 provide an interactive shell for running code in Python.
 
-To debug the code, ``ipdb`` can be used. Commands similar to
-``ipdb mymodule.py`` may be used to carry out that process. A
-list of lines where errors have been found or lines which can be further
-optimized will be returned.
+To debug the code, ``ipdb`` can be used. Commands similar to ``ipdb
+mymodule.py`` may be used to carry out that process. A list of lines where
+errors have been found or lines which can be further optimized will be
+returned.
 
-Lastly, ``django-debug-toolbar`` may be used to display information
-about processes occuring on the website. To achieve that, some code needs
-to be added to our current module, i.e ``openwisp-controller``. To begin,
-the lines ``'debug_toolbar'`` and
-``'debug_toolbar.middleware.DebugToolbarMiddleware'`` need to be added
-to the ``INSTALLED_APPS`` and to the ``MIDDLEWARE`` settings respectively
-and the line ``INTERNAL_IPS = ['127.0.0.1']`` should be added too,
-otherwise the django debug toolbar won't be displayed. We also need to
-import ``django_extensions`` and add it to our ``INSTALLED_APPS`` setting
-but this is already done in ``settings.py``. Here's what
-``local_settings.py`` will roughly look like at the end:
+Lastly, ``django-debug-toolbar`` may be used to display information about
+processes occuring on the website. To achieve that, some code needs to be
+added to our current module, i.e ``openwisp-controller``. To begin, the
+lines ``'debug_toolbar'`` and
+``'debug_toolbar.middleware.DebugToolbarMiddleware'`` need to be added to
+the ``INSTALLED_APPS`` and to the ``MIDDLEWARE`` settings respectively and
+the line ``INTERNAL_IPS = ['127.0.0.1']`` should be added too, otherwise
+the django debug toolbar won't be displayed. We also need to import
+``django_extensions`` and add it to our ``INSTALLED_APPS`` setting but
+this is already done in ``settings.py``. Here's what ``local_settings.py``
+will roughly look like at the end:
 
 .. code-block:: python
 
     from django.conf import settings
 
-    settings.INSTALLED_APPS += [
-        'debug_toolbar',
-        'django_extensions'
-    ]
+    settings.INSTALLED_APPS += ["debug_toolbar", "django_extensions"]
 
-    settings.MIDDLEWARE += [
-        'debug_toolbar.middleware.DebugToolbarMiddleware'
-    ]
+    settings.MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
 
-    INTERNAL_IPS = ['127.0.0.1']
+    INTERNAL_IPS = ["127.0.0.1"]
 
-To complete the process, the Debug Toolbar’s URL needs to be added
-to the URLconf of ``openwisp-controller`` as shown in `this
+To complete the process, the Debug Toolbar’s URL needs to be added to the
+URLconf of ``openwisp-controller`` as shown in `this
 <https://django-debug-toolbar.readthedocs.io/en/latest/installation.html>`_
 tutorial but this is already present in the last lines of ``urls.py``:
 
@@ -271,18 +264,17 @@ tutorial but this is already present in the last lines of ``urls.py``:
 
     from django.conf import settings
 
-    if settings.DEBUG and 'debug_toolbar' in settings.INSTALLED_APPS:
+    if settings.DEBUG and "debug_toolbar" in settings.INSTALLED_APPS:
         import debug_toolbar
-        urlpatterns.append(
-            url(r'^__debug__/', include(debug_toolbar.urls))
-        )
+
+        urlpatterns.append(url(r"^__debug__/", include(debug_toolbar.urls)))
 
 When you open ``http://127.0.0.1:8000`` in the browser now and enter the
 credentials we created earlier, you should see something like the
 following screenshot:
 
 .. image:: ../images/intro/django-debug-toolbar.png
-   :align: center
+    :align: center
 
 Now that you know some basics, you can experiment and try to use these
 tricks on some other OpenWISP module.

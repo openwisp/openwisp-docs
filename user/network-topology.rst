@@ -2,90 +2,88 @@ Network Topology
 ================
 
 .. image:: https://github.com/openwisp/openwisp-network-topology/raw/docs/docs/demo_network_topology.gif
-   :alt: Features Highlights
+    :alt: Features Highlights
 
 `OpenWISP Network Topology
-<https://github.com/openwisp/openwisp-network-topology/tree/1.0>`_
-is a network topology collector and visualizer
-web application and API, it allows to collect network topology data
-from different networking software (dynamic mesh routing protocols,
-OpenVPN), store it, visualize it, edit its details, it also provides
-hooks (a.k.a
-`Django signals <https://docs.djangoproject.com/en/4.0/topics/signals/>`_)
-to execute code when the status of a link changes.
+<https://github.com/openwisp/openwisp-network-topology/tree/1.0>`_ is a
+network topology collector and visualizer web application and API, it
+allows to collect network topology data from different networking software
+(dynamic mesh routing protocols, OpenVPN), store it, visualize it, edit
+its details, it also provides hooks (a.k.a `Django signals
+<https://docs.djangoproject.com/en/4.0/topics/signals/>`_) to execute code
+when the status of a link changes.
 
-When used in conjunction with
-`OpenWISP Controller <https://github.com/openwisp/openwisp-controller>`_
-and
-`OpenWISP Monitoring <https://github.com/openwisp/openwisp-monitoring>`_,
-it
-`makes the monitoring system faster in detecting change to the network
+When used in conjunction with `OpenWISP Controller
+<https://github.com/openwisp/openwisp-controller>`_ and `OpenWISP
+Monitoring <https://github.com/openwisp/openwisp-monitoring>`_, it `makes
+the monitoring system faster in detecting change to the network
 <https://github.com/openwisp/openwisp-network-topology/tree/1.0#integration-with-openwisp-controller-and-openwisp-monitoring>`_.
 
 .. contents:: **Table of Contents**:
-   :backlinks: none
-   :depth: 3
+    :backlinks: none
+    :depth: 3
 
 Deploy instructions
 -------------------
 
-See `Enabling the network topology module
-on the OpenWISP 22.05 ansible role documentation
+See `Enabling the network topology module on the OpenWISP 22.05 ansible
+role documentation
 <https://github.com/openwisp/ansible-openwisp2/tree/22.05#enabling-the-network-topology-module>`_.
 
-This module is also available in
-`docker-openwisp <https://github.com/openwisp/docker-openwisp>`_
-although its usage is not recommended for production usage yet, unless
-the reader is willing to invest effort in adapting the docker images
-and configurations to overcome any roadblocks encountered.
+This module is also available in `docker-openwisp
+<https://github.com/openwisp/docker-openwisp>`_ although its usage is not
+recommended for production usage yet, unless the reader is willing to
+invest effort in adapting the docker images and configurations to overcome
+any roadblocks encountered.
 
 Quickstart Guide
 ----------------
 
-This module works by periodically collecting the network topology
-graph data of the `supported networking software or formats
+This module works by periodically collecting the network topology graph
+data of the `supported networking software or formats
 <https://github.com/openwisp/openwisp-network-topology/tree/1.0#available-features>`_.
-The data has to be either fetched by the application or received in
-POST API requests, therefore after deploying the application,
-additional steps are required to make the data collection and
-visualization work, read on to find out how.
+The data has to be either fetched by the application or received in POST
+API requests, therefore after deploying the application, additional steps
+are required to make the data collection and visualization work, read on
+to find out how.
 
 Creating a topology
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://github.com/openwisp/openwisp-network-topology/raw/docs/docs/quickstart-topology.gif
 
 1. Create a topology object by going to *Network Topology* > *Topologies*
    > *Add topology*.
 2. Give an appropriate label to the topology.
-3. Select the *topology format* from the dropdown menu.
-   The *topology format* determines which parser should be used
-   to process topology data.
+3. Select the *topology format* from the dropdown menu. The *topology
+   format* determines which parser should be used to process topology
+   data.
 4. Select the *Strategy* for updating this topology.
 
    - If you are using `FETCH strategy
      <https://github.com/openwisp/openwisp-network-topology/tree/1.0#fetch-strategy>`_,
      then enter the URL for fetching topology data in the *Url* field.
-   - If you are using `RECEIVE strategy <https://github.com/openwisp/openwisp-network-topology/tree/1.0#receive-strategy>`_, you will get the
-     *URL* for sending topology data. The *RECEIVE* strategy provides an
-     additional field *expiration time*. This can be used to add delay in
-     marking missing links as down.
+   - If you are using `RECEIVE strategy
+     <https://github.com/openwisp/openwisp-network-topology/tree/1.0#receive-strategy>`_,
+     you will get the *URL* for sending topology data. The *RECEIVE*
+     strategy provides an additional field *expiration time*. This can be
+     used to add delay in marking missing links as down.
 
 Sending data for topology with RECEIVE strategy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: https://github.com/openwisp/openwisp-network-topology/raw/docs/docs/quickstart-receive.gif
 
 1. Copy the *URL* generated by OpenWISP for sending the topology data.
 
-   E.g., in our case the URL is ``http://127.0.0.1:8000/api/v1/network-topology/topology/d17e539a-1793-4be2-80a4-c305eca64fd8/receive/?key=cMGsvio8q0L0BGLd5twiFHQOqIEKI423``.
+   E.g., in our case the URL is
+   ``http://127.0.0.1:8000/api/v1/network-topology/topology/d17e539a-1793-4be2-80a4-c305eca64fd8/receive/?key=cMGsvio8q0L0BGLd5twiFHQOqIEKI423``.
 
 2. Create a script (eg: ``/opt/send-topology.sh``) which sends the
    topology data using ``POST``, in the example script below we are
-   sending the status log data of OpenVPN but the same code can be
-   applied to other formats by replacing
-   ``cat /var/log/openvpn/tun0.stats`` with the actual command which
-   returns the network topology output:
+   sending the status log data of OpenVPN but the same code can be applied
+   to other formats by replacing ``cat /var/log/openvpn/tun0.stats`` with
+   the actual command which returns the network topology output:
 
 .. code-block:: shell
 
@@ -100,8 +98,8 @@ Sending data for topology with RECEIVE strategy
             http://127.0.0.1:8000/api/v1/network-topology/topology/d17e539a-1793-4be2-80a4-c305eca64fd8/receive/?key=cMGsvio8q0L0BGLd5twiFHQOqIEKI423
 
 3. Add the ``/opt/send-topology.sh`` script created in the previous step
-   to the crontab, here's an example which sends the topology
-   data every 5 minutes:
+   to the crontab, here's an example which sends the topology data every 5
+   minutes:
 
 .. code-block:: shell
 
@@ -116,11 +114,10 @@ Sending data for topology with RECEIVE strategy
 
 4. Once the steps above are completed, you should see nodes and links
    being created automatically, you can see the network topology graph
-   from the admin page of the topology change page
-   (you have to click on the *View topology graph* button in the upper
-   right part of the page)
-   or, alternatively, a non-admin visualizer page is also available at
-   the URL ``/topology/topology/<TOPOLOGY-UUID>/``.
+   from the admin page of the topology change page (you have to click on
+   the *View topology graph* button in the upper right part of the page)
+   or, alternatively, a non-admin visualizer page is also available at the
+   URL ``/topology/topology/<TOPOLOGY-UUID>/``.
 
 Find out more about OpenWISP Network Topology
 ---------------------------------------------

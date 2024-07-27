@@ -1,22 +1,22 @@
 Connect OpenWRT to OpenWISP
 ===========================
 
-This page will guide you through the installation of
-`openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a
-device which supports `OpenWRT <https://openwrt.org/>`_.
+This page will guide you through the installation of `openwisp-config
+<https://github.com/openwisp/openwisp-config>`_ on a device which supports
+`OpenWRT <https://openwrt.org/>`_.
 
 **If you don't have a physical device available but you still want to try
 out OpenWISP, you can use a Virtual Machine**.
 
 .. contents:: **Table of Contents**:
-   :backlinks: none
-   :depth: 3
+    :backlinks: none
+    :depth: 3
 
 1. Install OpenWISP
 -------------------
 
-Refer to the instructions described in
-:ref:`Install the OpenWISP server application <install_server>`.
+Refer to the instructions described in :ref:`Install the OpenWISP server
+application <install_server_22>`.
 
 2. Flash OpenWRT on a device
 ----------------------------
@@ -25,23 +25,23 @@ If you have a physical OpenWRT compatible hardware, follow the
 instructions in the `official OpenWRT flashing guide
 <https://openwrt.org/docs/guide-user/installation/generic.flashing>`_.
 
-If you don't have a physical device, you can
-`install OpenWrt on a VirtualBox Virtual Machine
+If you don't have a physical device, you can `install OpenWrt on a
+VirtualBox Virtual Machine
 <https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm>`_.
 
 .. note::
 
-    It's required to enable SSH access and connect the device or
-    VM to the internet.
+    It's required to enable SSH access and connect the device or VM to the
+    internet.
 
     Note that when using Virtualbox, both Adapter1 and Adapter2 use
-    "Adapter Type: Intel PRO/1000 MT Desktop". Also, please do
-    not use the same IP Address that you used for the local OpenWISP
-    website you hosted before. That suggested change applies only when
-    you boot into the OpenWRT device as per the description of the
-    above link (for example, if you set 192.168.56.2 as the IP Address
-    of your local OpenWISP website, please use another IP such as
-    192.168.56.3 for the IP Address of the OpenWRT device).
+    "Adapter Type: Intel PRO/1000 MT Desktop". Also, please do not use the
+    same IP Address that you used for the local OpenWISP website you
+    hosted before. That suggested change applies only when you boot into
+    the OpenWRT device as per the description of the above link (for
+    example, if you set 192.168.56.2 as the IP Address of your local
+    OpenWISP website, please use another IP such as 192.168.56.3 for the
+    IP Address of the OpenWRT device).
 
 3. Install openwisp-config
 --------------------------
@@ -49,13 +49,13 @@ If you don't have a physical device, you can
 Installation
 ~~~~~~~~~~~~
 
-Install openwisp-config on your OpenWRT system.
-For this guide.
+Install openwisp-config on your OpenWRT system. For this guide.
 
 We recommend to install one of the latest stable builds from
-`downloads.openwisp.io <http://downloads.openwisp.io/?prefix=openwisp-config/>`_,
-copy the URL of the ipk file you want to download in your
-clipboard and then run the following commands on your OpenWrt device:
+`downloads.openwisp.io
+<http://downloads.openwisp.io/?prefix=openwisp-config/>`_, copy the URL of
+the ipk file you want to download in your clipboard and then run the
+following commands on your OpenWrt device:
 
 .. code-block:: bash
 
@@ -73,14 +73,12 @@ from the official OpenWRT packages:
 Configuration
 ~~~~~~~~~~~~~
 
-Once openwisp-config is installed, we need to configure
-it to connect to our OpenWISP2
-controller. To do that, edit the config file located at
+Once openwisp-config is installed, we need to configure it to connect to
+our OpenWISP2 controller. To do that, edit the config file located at
 ``/etc/config/openwisp``.
 
-You will see the default config file, something like the following
-(if your instance lacks some of the lines in the following,
-please add them):
+You will see the default config file, something like the following (if
+your instance lacks some of the lines in the following, please add them):
 
 ::
 
@@ -113,12 +111,12 @@ please add them):
 
 Uncomment and change the following fields:
 
-- ``url``: the hostname of your OpenWISP2 controller (for example, if
-  you are hosting your OpenWISP server locally and you set the IP Address
-  to "192.168.56.2", the url would be ``https://192.168.56.2``).
+- ``url``: the hostname of your OpenWISP2 controller (for example, if you
+  are hosting your OpenWISP server locally and you set the IP Address to
+  "192.168.56.2", the url would be ``https://192.168.56.2``).
 - ``verify_ssl``: set to ``'0'`` if your controller's SSL certificate is
-  self-signed; in production you will need a valid SSL certificate to
-  keep your instance secure
+  self-signed; in production you will need a valid SSL certificate to keep
+  your instance secure
 - ``shared_secret``: you can retrieve this from OpenWISP2 admin panel, in
   the Organization settings. The list of organizations is available at
   ``/admin/openwisp_users/organization/``.
@@ -128,8 +126,8 @@ Uncomment and change the following fields:
     When testing or developing using the Django development server
     directly from your computer, make sure the server listens on all
     interfaces (``./manage.py runserver 0.0.0.0:8000``) and then just
-    point openwisp to use your local IP address
-    (e.g. ``http://192.168.1.34:8000``)
+    point openwisp to use your local IP address (e.g.
+    ``http://192.168.1.34:8000``)
 
 Save the file and start openwisp-config:
 

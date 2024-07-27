@@ -1,40 +1,41 @@
 OpenVPN tunnel Automation
 =========================
 
-In this guide we will explore how to set up the automatic management
-of **OpenVPN tunnels**.
+In this guide we will explore how to set up the automatic management of
+**OpenVPN tunnels**.
 
-If you're interested in **Wireguard tunnels** see
-:doc:`Wireguard and Wireguard over VXLAN tunnel automation <./wireguard>`.
+If you're interested in **Wireguard tunnels** see :doc:`Wireguard and
+Wireguard over VXLAN tunnel automation <./wireguard>`.
 
 .. contents:: **Table of Contents**:
-   :backlinks: none
-   :depth: 3
+    :backlinks: none
+    :depth: 3
 
 Installing OpenVPN Server and importing the OpenVPN configuration
 -----------------------------------------------------------------
 
-We will be installing OpenVPN Server using
-`this ansible role Stouts.openvpn <https://github.com/Stouts/Stouts.openvpn>`_
-and then import the VPN configuration into OpenWISP. If you have
-already setup your VPN server or would like to install the VPN server
-via some other way, you can skip to
-`Step 4 <#importing-the-ca-and-the-server-ceritficate>`_
+We will be installing OpenVPN Server using `this ansible role
+Stouts.openvpn <https://github.com/Stouts/Stouts.openvpn>`_ and then
+import the VPN configuration into OpenWISP. If you have already setup your
+VPN server or would like to install the VPN server via some other way, you
+can skip to `Step 4 <#importing-the-ca-and-the-server-ceritficate>`_
 
 .. note::
+
     **This process is not automated yet.**
 
 1. Install Ansible and required Ansible roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install ansible (version 2.5 or higher) **on your local machine**
-(not on the server!) if you haven't done already.
+Install ansible (version 2.5 or higher) **on your local machine** (not on
+the server!) if you haven't done already.
 
-To **install ansible** we suggest you follow the official
-`ansible installation guide <http://docs.ansible.com/ansible/latest/intro_installation.html>`_ .
+To **install ansible** we suggest you follow the official `ansible
+installation guide
+<http://docs.ansible.com/ansible/latest/intro_installation.html>`_ .
 
-After having installed ansible, **you need to install git**
-(example for linux debian/ubuntu systems):
+After having installed ansible, **you need to install git** (example for
+linux debian/ubuntu systems):
 
 .. code-block:: bash
 
@@ -49,9 +50,8 @@ After having ansible and git installed, install the required roles:
 2. Create hosts file and ansible playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create an ansible inventory file named ``hosts``
-**on your local machine and not in the server** with the following
-contents:
+Create an ansible inventory file named ``hosts`` **on your local machine
+and not in the server** with the following contents:
 
 ::
 
@@ -65,8 +65,8 @@ For e.g. if your server ip is ``192.168.56.2``:
     [openvpn]
     192.168.56.2
 
-In the same directory where you created the ``host`` file,
-create a file named ``playbook.yml`` which contains the following:
+In the same directory where you created the ``host`` file, create a file
+named ``playbook.yml`` which contains the following:
 
 .. code-block:: yaml
 
@@ -87,19 +87,19 @@ create a file named ``playbook.yml`` which contains the following:
         - role: nkakouros.easyrsa
         - role: Stouts.openvpn
 
+.. hint::
 
-.. Hint::
     You can further customize the Configuration using the role variables.
-    Get Info about other options in `EasyRSA <https://github.com/nkakouros-original/ansible-role-easyrsa>`_
-    and `OpenVPN <https://github.com/Stouts/Stouts.openvpn>`_
-
+    Get Info about other options in `EasyRSA
+    <https://github.com/nkakouros-original/ansible-role-easyrsa>`_ and
+    `OpenVPN <https://github.com/Stouts/Stouts.openvpn>`_
 
 3. Run the Playbook
 ~~~~~~~~~~~~~~~~~~~
 
 Run the ansible playbok using:
 
-.. code-block::  bash
+.. code-block:: bash
 
     ansible-playbook -i hosts playbook.yml -b -k -K --become-method=su
 
@@ -112,8 +112,9 @@ via ``ssh`` or any other method that suits you.
 You need to change your directory to ``/etc/easyrsa/pki/``
 
 .. note::
-    If you face ``-bash: cd: /etc/easyrsa/pki: Permission denied``
-    you may need to login as root user.
+
+    If you face ``-bash: cd: /etc/easyrsa/pki: Permission denied`` you may
+    need to login as root user.
 
 **Importing the CA**:
 
@@ -140,24 +141,25 @@ respective fields.
 
 On your openwisp dashboard go to ``/admin/config/vpn/add/``
 
-In **Host** enter you Server IP, in **Certification Authority** select
-the CA you created and in **X509 Certificate** select the certificate you
+In **Host** enter you Server IP, in **Certification Authority** select the
+CA you created and in **X509 Certificate** select the certificate you
 created.
 
 Now under **Configuration**, open **Configuration Menu** and deselect
-Property :guilabel:`Files`. For **VPN1** Change
-:guilabel:`Server (Bridged)` to the Type of your VPN Server. The VPN
-Server installed using the guide above is a Routed Server so change the
-Type to :guilabel:`Server (Routed)`. The Process to setup a Bridged Server
-is identical to that of Routed Server.
+Property :guilabel:`Files`. For **VPN1** Change :guilabel:`Server
+(Bridged)` to the Type of your VPN Server. The VPN Server installed using
+the guide above is a Routed Server so change the Type to :guilabel:`Server
+(Routed)`. The Process to setup a Bridged Server is identical to that of
+Routed Server.
 
 Change the rest of the Configuration of the VPN according to the
 configuration in ``/etc/openvpn/server.conf``
 
-.. Tip::
+.. tip::
+
     You can check if your VPN Configuration is similar to the
-    ``server.conf`` file using the **Preview Configuration** option
-    at the Top.
+    ``server.conf`` file using the **Preview Configuration** option at the
+    Top.
 
 Preparing the configuration template for VPN Clients
 ----------------------------------------------------
@@ -167,15 +169,15 @@ Create VPN Template
 
 On your openwisp dashboard go to ``/admin/config/template/add/``.
 
-Change **Type** to :guilabel:`VPN-client`.
-For **VPN** select the VPN you created in the previous steps.
+Change **Type** to :guilabel:`VPN-client`. For **VPN** select the VPN you
+created in the previous steps.
 
-You can further toggle `Enabled by default <#default-templates>`_
-and `Auto certificate <#auto-client-certificates>`_
-options according to your needs.
+You can further toggle `Enabled by default <#default-templates>`_ and
+`Auto certificate <#auto-client-certificates>`_ options according to your
+needs.
 
-Save the template. You can now tweak the Client VPN configuration.
-Now can add the template to your devices.
+Save the template. You can now tweak the Client VPN configuration. Now can
+add the template to your devices.
 
 Auto Client Certificates
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -194,6 +196,6 @@ Default Templates
 
 **Default**: ``False``
 
-Default templates are automatically added to newly created devices of
-the organization of the template. If no organization is specified, the
+Default templates are automatically added to newly created devices of the
+organization of the template. If no organization is specified, the
 template is added to all devices of all the organizations.
