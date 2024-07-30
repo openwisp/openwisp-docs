@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     name: Python==3.10
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     strategy:
       fail-fast: false
@@ -28,7 +28,7 @@ jobs:
           python-version: "3.10"
 
       - name: Upgrade python system packages
-        run: pip install -U pip wheel attrs
+        run: pip install -U pip wheel setuptools
 
       - name: Install test dependencies
         run: |

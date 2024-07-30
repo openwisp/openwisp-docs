@@ -2,8 +2,6 @@
 
 set -e
 
-docstrfmt -c -l 74 .
-
 # openwisp-utils checks
 #This is done first to ignore build directories for openwisp-utils checks
 openwisp-qa-check \
@@ -12,7 +10,7 @@ openwisp-qa-check \
     --skip-isort \
     --skip-flake8 \
     --skip-black \
-    --skip-checkrst
+    --skip-checkendline
 
 echo ''
 echo 'Build documention to look for syntax errors'
