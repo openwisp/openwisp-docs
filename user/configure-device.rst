@@ -63,6 +63,14 @@ clipboard, then run the following commands on your OpenWrt device:
     opkg update
     opkg install ./<file-just-downloaded>
 
+Alternatively, you can also use the curl method instead of wget to install the ipk file:
+
+.. code-block:: bash
+
+    curl -o <some-file-name>.ipk <URL-you-just-copied>
+    opkg install <some-file-name>.ipk
+
+
 If you're running at least OpenWRT 19.07, you can install openwisp-config
 from the official OpenWRT packages:
 
@@ -73,6 +81,12 @@ from the official OpenWRT packages:
 
 **We recommend installing from our latest builds or compiling your own
 firmware image** as the OpenWrt packages are not always up to date.
+
+If all the above methods fail you can:
+
+- Download the ipk file on your system.
+- Use SCP to transfer the file to the Openwrt system.
+- Install using opkg.
 
 Configuration
 ~~~~~~~~~~~~~
