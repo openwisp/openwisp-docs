@@ -1,0 +1,39 @@
+---
+
+modules:
+  - name: openwisp-controller
+    dir_name: controller
+  - name: openwisp-monitoring
+    dir_name: monitoring
+  - name: openwisp-firmware-upgrader
+    dir_name: firmware-upgrader
+  - name: openwisp-notifications
+    dir_name: notifications
+  - name: openwisp-network-topology
+    dir_name: network-topology
+  - name: openwisp-users
+    dir_name: users
+  - name: openwisp-utils
+    dir_name: utils
+  - name: openwisp-wifi-login-pages
+    dir_name: wifi-login-pages
+  - name: openwisp-ipam
+    dir_name: ipam
+  - name: openwisp-config
+    dir_name: openwrt-config-agent
+  - name: openwrt-openwisp-monitoring
+    dir_name: openwrt-monitoring-agent
+  - name: ansible-openwisp2
+    dir_name: ansible
+  - name: docker-openwisp
+    dir_name: docker
+versions:
+  - name: '22.05'
+    overwrite_modules: true
+    modules:
+      - name: openwisp-docs
+        branch: '22.05-restructed-docs'
+        dir_name: openwisp-docs
+    sphinx_src_dir: ./openwisp-docs
+  - name: dev
+    branch: reorder-docs

@@ -3,20 +3,23 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build --fail-on-warning
+SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
+SRCDIR        = .
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
-ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
+ALLSPHINXOPTS   = -c . -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) $(SRCDIR)
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: help
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
+	@echo "  build to build the documentation in all formats (PDF, HTML and ePUB)"
+	@echo "  build_html to build the documentation in HTML format only"
 	@echo "  html       to make standalone HTML files"
 	@echo "  dirhtml    to make HTML files named index.html in directories"
 	@echo "  singlehtml to make a single large HTML file"
@@ -48,11 +51,36 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 
+.PHONY: build
+build:
+	# If the build fails or is interrupted, the versions_map.json will
+	# stay in the root directory. This would cause bugs when re-creating
+	# the version map, so we remove it before building.
+	rm versions_map.json &> /dev/null || true
+
+	#If the build is successful, the version map is stored in the
+	# _build/ directory, allowing re-use of the version map when sphinx uses cache
+	# in subsequent builds and only builds the changed files.
+	mv _build/versions_map.json versions_map.json &> /dev/null || true
+
+	@echo "Building version map"
+	./build.py --formats version_map $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES))
+
+	@echo "Building documentation"
+	./build.py $(if $(FORMATS),--formats $(FORMATS)) $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES))
+
+	# Store the version map in the _build/ directory
+	mv versions_map.json _build/
+
+.PHONY: build_html
+build_html:
+	make build FORMATS=html $(ARGS)
+
 .PHONY: html
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXBUILD) -W -b html $(ALLSPHINXOPTS) $(BUILDDIR)
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)"
 
 .PHONY: dirhtml
 dirhtml:
@@ -114,11 +142,17 @@ devhelp:
 	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/NewcomersGuide"
 	@echo "# devhelp"
 
+.PHONY: pdf
+pdf:
+	$(SPHINXBUILD) -b pdf $(ALLSPHINXOPTS) $(BUILDDIR)
+	@echo
+	@echo "Build finished. The pdf file is in $(BUILDDIR)."
+
 .PHONY: epub
 epub:
-	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)
 	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
+	@echo "Build finished. The epub file is in $(BUILDDIR)."
 
 .PHONY: epub3
 epub3:
@@ -223,3 +257,11 @@ dummy:
 	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
 	@echo
 	@echo "Build finished. Dummy builder generates no files."
+
+.PHONY: version_map
+version_map:
+	$(SPHINXBUILD) -Q -b version_map $(ALLSPHINXOPTS) $(BUILDDIR)/version_map
+
+.PHONY: format
+format:
+	docstrfmt -l 74 .

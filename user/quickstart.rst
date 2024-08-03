@@ -1,59 +1,50 @@
-Quickstart
-==========
+Quick Start Guide
+=================
 
-**Use our quickstart guide below to help you get set up with using
-OpenWISP.**
+.. contents:: **Get started with OpenWISP!**
+    :depth: 3
+    :local:
 
-.. contents:: **Table of Contents**:
-   :backlinks: none
-   :depth: 3
+Try the Demo
+------------
 
-0. Try the Demo
----------------
+Before installing OpenWISP, we recommend trying out the :doc:`OpenWISP
+Demo system </tutorials/demo>`. This will give you a great overview of how
+the system works.
 
-Before installing OpenWISP, we recommend that you try out the
-:doc:`OpenWISP Demo system <../tutorials/demo>`. This will give
-you an overview of how the system works. Once you have taken a
-look at the demo follow the steps below.
+Once you have explored the demo, you can install your own instance by
+following the instructions below.
 
 .. _install_server:
 
-1. Install the OpenWISP server application
-------------------------------------------
+Install OpenWISP
+----------------
 
-If you want to find out how to deploy OpenWISP for production usage,
-follow this step-by-step `ansible-openwisp2 tutorial
-<https://github.com/openwisp/ansible-openwisp2#usage-tutorial>`_.
+For production usage, we recommend :doc:`Deploying OpenWISP with the
+Ansible OpenWISP role </ansible/user/quickstart>`.
 
-Alternatively, there's also
-`docker-openwisp <https://github.com/openwisp/docker-openwisp>`_
-(in alpha stage) which
-can be especially useful for testing purposes.
+Alternatively, you can use :doc:`Docker OpenWISP
+</docker/user/quickstart>`.
 
-For testing purposes
-`vagrant-openwisp2 <https://github.com/openwisp/vagrant-openwisp2>`_
-can be used as well.
+Make Sure OpenWISP Can Reach Your Devices
+-----------------------------------------
 
-2. Install openwisp-config on your devices
-------------------------------------------
+For smooth operations, please :doc:`Setup a Management Network
+</user/vpn>`.
 
-The following guide will walk you through how to install openwisp-config
-on :doc:`OpenWRT and connect it to OpenWISP <./configure-device>`.
+Configure Your OpenWrt Devices
+------------------------------
 
-If you don't have a physical OpenWRT-compatible device at hand, you can
-install OpenWRT in a VirtualBox VM, the guide above covers how to do this.
+Follow the guide to :doc:`Configure Your OpenWrt Devices
+<./configure-device>`.
 
-3. Install openwisp-monitoring on your devices
-----------------------------------------------
+If you don't have a physical OpenWrt-compatible device, you can install
+OpenWrt in a VirtualBox VM. The guide above covers how to do this.
 
-If you want to take advantage of the features
-offered by the monitoring module of OpenWISP,
-read the :doc:`Monitoring Quickstart Guide <./monitoring>`.
+Watch Video Demonstrations
+--------------------------
 
-4. Watch video demonstrations
------------------------------
-
-Take a look at our video guides for further information.
+Check out our video guides for further information.
 
 .. raw:: html
 
@@ -66,8 +57,8 @@ Take a look at our video guides for further information.
         </iframe>
     </p>
 
-5. Look for help
-----------------
+Seek Help
+---------
 
-If you need further support, please reach out to us via our
-`support channels <http://openwisp.org/support.html>`_.
+Reach out to the `Community Support Channels
+<http://openwisp.org/support.html>`_.

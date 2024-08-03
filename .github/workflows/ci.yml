@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     name: Python==3.10
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     strategy:
       fail-fast: false
@@ -28,7 +28,7 @@ jobs:
           python-version: "3.10"
 
       - name: Upgrade python system packages
-        run: pip install -U pip wheel
+        run: pip install -U pip wheel setuptools
 
       - name: Install test dependencies
         run: |
@@ -39,24 +39,23 @@ jobs:
         run: sudo npm install -g stylelint
 
       - name: QA checks
-        run: ./run-qa-checks
+        run: PRODUCTION=1 ./run-qa-checks
 
-      - name: Google Cloud Auth
+      - name: Setup Google Cloud
         if: ${{ github.event_name=='push' }}
         uses: 'google-github-actions/auth@v2'
         with:
-          project_id: ${{ secrets.GCS_PROJECT_ID }}
           credentials_json: ${{ secrets.GCS_DOWNLOADS_SERVICE_ACCOUNT_JSON }}
-
-      - name: Google Cloud Setup
-        if: ${{ github.event_name=='push' }}
-        uses: google-github-actions/setup-gcloud@v2
-        with:
           project_id: ${{ secrets.GCS_PROJECT_ID }}
+          export_environment_variables: true
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
 
       - name: Deploy pages to openwisp.io/docs
         if: ${{ github.event_name=='push' }}
-        run: gsutil -D  -m rsync -r ${{ env.SRC }} ${{ env.DEST }}
+        run: |
+          gsutil -m rsync -r ${{ env.SRC_URL }} ${{ env.DST_URL }}
         env:
-          SRC: /home/runner/work/openwisp-docs/openwisp-docs/_build/html
-          DEST: gs://${{ secrets.GCS_DOCS_BUCKET_NAME }}/docs
+          SRC_URL: /home/runner/work/openwisp-docs/openwisp-docs/_build/docs/
+          DST_URL: gs://${{ secrets.GCS_DOCS_BUCKET_NAME }}/docs/

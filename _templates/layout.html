@@ -1,6 +1,13 @@
 {% extends "!layout.html" %}
+
+{% block linktags %}
+{{ super() }}
+<link rel="canonical" href="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/{{ pagename }}.html" />
+{% endblock %}
+
 {% block footer %}
 {{ super() }}
+<h1> Version </h1>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGGYQ3GC31"></script>
 <script>
     window.dataLayer = window.dataLayer || [];

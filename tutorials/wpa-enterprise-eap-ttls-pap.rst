@@ -1,42 +1,81 @@
-How to Set Up WPA Enterprise (EAP-TTLS-PAP) authentication
+How to Set Up WPA Enterprise (EAP-TTLS-PAP) Authentication
 ==========================================================
 
-In this tutorial, we will guide you set up WPA Enterprise (EAP-TTLS-PAP)
-authentication for WiFi networks using OpenWISP. The RADIUS capabilities
-of OpenWISP provides integration with FreeRADIUS to allow users to
-authenticate with their django user accounts. Users can either be created
-manually via the admin interface, generated or imported from CSV.
+.. contents:: **Table of Contents**:
+    :depth: 3
+    :local:
 
-Pre-requisites for following this tutorial
-------------------------------------------
+Introduction & Prerequisites
+----------------------------
+
+In this tutorial, we will guide you on how to set up WPA Enterprise
+(EAP-TTLS-PAP) authentication for WiFi networks using OpenWISP. The RADIUS
+capabilities of OpenWISP provide integration with FreeRADIUS to allow
+users to authenticate with their Django user accounts. Users can either be
+created manually via the admin interface, `generated with voucher-like
+codes
+<https://openwisp-radius.readthedocs.io/en/stable/user/generating_users.html>`_,
+`imported from CSV
+<https://openwisp-radius.readthedocs.io/en/stable/user/importing_users.html>`_
+or can register autonomously via the `REST API of OpenWISP RADIUS
+<https://openwisp-radius.readthedocs.io/en/stable/user/api.html#user-registration>`_.
 
 Enable OpenWISP RADIUS
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-    You don't need to do anything if you are following this tutorial on
-    the :doc:`OpenWisp Demo System <./demo>`. OpenWISP RADIUS is already
-    enabled on the :doc:`OpenWISP Demo System <./demo>`.
+    If you are following this tutorial on our :doc:`Demo System <./demo>`,
+    you can skip this step.
 
-Your OpenWISP installation should have the RADIUS module enabled. If not,
-you can follow the steps at `Enabling the RADIUS module in the OpenWISP
-22.05 ansible role documentation
-<https://github.com/openwisp/ansible-openwisp2/tree/22.05#enabling-the-radius-module>`_.
+To use WPA2 Enterprise, the :doc:`RADIUS module </user/radius>` must be
+enabled first.
+
+See :ref:`ansible_enabling_radius_module` in the Ansible OpenWISP role. In
+:doc:`/docker/index`, the RADIUS module is enabled by default.
+
+VPN Tunnel
+~~~~~~~~~~
+
+We recommend setting up a VPN tunnel to secure the communication between
+the RADIUS server and the NAS devices.
+
+Routing unencrypted RADIUS traffic through the internet is not recommended
+for security. When security breaches in the RADIUS protocol are discovered
+(like the "Blast-RADIUS attack" in July 2024), your entire network would
+be at risk.
+
+If you are using OpenWrt, you can use OpenWISP to automate the
+provisioning of OpenVPN tunnels on your OpenWrt devices. For more
+information, please refer to :doc:`/controller/user/openvpn`.
+
+.. note::
+
+    If you are following this tutorial on our :doc:`Demo System <./demo>`,
+    the ``Management VPN (OpenVPN)`` template will be applied to your
+    device by default. If not, you need to enable that template on your
+    device. Otherwise, your device won't connect to the FreeRADIUS server.
+
+    .. image:: ../images/tutorials/enable-openvpn-template.png
+        :target: ../_images/enable-openvpn-template.png
+
+Using radsec (RADIUS over TLS) is a good option, but it's not covered in
+this tutorial.
 
 Firmware Requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
-In order to use WPA Enterprise authentication, your firmware needs to be
-equipped with a version of the ``wpad`` package which supports WPA
-Enterprise encryption.
+To use WPA Enterprise authentication, your firmware needs to be equipped
+with a version of the ``wpad`` package that supports WPA Enterprise
+encryption.
 
 Please refer to the `OpenWrt WPA encryption documentation
 <https://openwrt.org/docs/guide-user/network/wifi/encryption#wpa_encryption>`_
 for more information.
 
-This tutorial uses OpenVPN for VPN. Ensure that your OpenWrt device has
-``openvpn`` package installed.
+In tutorial we use OpenVPN to tunnel RADIUS packets from NAS devices to
+FreeRADIUS, for this reason you must ensure that your OpenWrt device has
+the ``openvpn`` package installed.
 
 .. note::
 
@@ -47,8 +86,8 @@ This tutorial uses OpenVPN for VPN. Ensure that your OpenWrt device has
 One Radio Available
 ~~~~~~~~~~~~~~~~~~~
 
-We require at least one radio named ``radio0`` to be available and enabled
-for the successful execution of this tutorial.
+At least one radio named ``radio0`` needs to be available and enabled for
+the successful execution of this tutorial.
 
 For simplicity, we will focus on a single radio, but it's important to
 note that the WPA Enterprise functionality can be extended to multiple
@@ -56,52 +95,31 @@ radios if necessary.
 
 Alternatively, you have the option of using WPA Enterprise encryption on
 one radio while the other radios use different encryption methods.
-
 However, these additional scenarios are not explained in this tutorial and
 are left as an exercise for the reader.
-
-VPN Tunnel
-~~~~~~~~~~
-
-We recommend setting up a VPN tunnel to secure RADIUS communication
-between OpenWrt devices and the FreeRADIUS server. Unencrypted RADIUS
-traffic exposes sensitive data, such as usernames and passwords. You can
-use OpenWISP to automate provisioning of OpenVPN tunnels, just follow the
-steps in the :doc:`OpenVPN tunnel Automation <../user/vpn>` section.
-
-.. note::
-
-    If you are following this tutorial on our :doc:`Demo System <./demo>`,
-    the ``Management VPN (OpenVPN)`` template will be applied on your
-    device by default. If not, you need to enable that template on your
-    device. Otherwise, your device won't connect to the FreeRADIUS server.
-
-        .. image:: ../images/tutorials/enable-openvpn-template.png
-            :target: ../_images/enable-openvpn-template.png
 
 Configuring FreeRADIUS for WPA Enterprise
 -----------------------------------------
 
 .. note::
 
-    You don't need to do anything if your are following this tutorial on
-    our :doc:`Demo System <./demo>`. The FreeRADIUS site is already
-    configured on the :doc:`OpenWISP Demo System <./demo>`.
+    If you are following this tutorial on our :doc:`Demo System <./demo>`,
+    you can skip this step.
 
-Before we go ahead with making changes to the FreeRADIUS configuration, we
-need to gather the following information:
+Before making changes to the FreeRADIUS configuration, we need to gather
+the following information:
 
     - Organization's UUID
     - Organization's RADIUS token
 
 From the OpenWISP navigation menu, go to ``Users & Organizations`` and
-then ``Organizations``, from here click on the desired organziation.
+then ``Organizations``. From here, click on the desired organization.
 
 .. image:: ../images/tutorials/navigating-to-organization.png
     :target: ../_images/navigating-to-organization.png
 
-From the organization's page, we need to find the organization's UUID and
-RADIUS token.
+From the organization's page, find the organization's UUID and RADIUS
+token.
 
 .. image:: ../images/tutorials/organization-uuid.png
     :target: ../_images/organization-uuid.png
@@ -109,7 +127,7 @@ RADIUS token.
 .. image:: ../images/tutorials/organization-radius-token.png
     :target: ../_images/organization-radius-token.png
 
-This is good point to decide whether to use self-signed certificates or
+This is a good point to decide whether to use self-signed certificates or
 public certificates issued by a trusted Certificate Authority (CA). Both
 options have their pros and cons, and the choice largely depends on your
 specific requirements and constraints.
@@ -125,7 +143,7 @@ Pros:
 
 Cons:
 
-    - Requires installation of self-signed CA on all client devices.
+    - Requires installation of the self-signed CA on all client devices.
 
 Public Certificates
 ~~~~~~~~~~~~~~~~~~~
@@ -136,51 +154,19 @@ Pros:
 
 Cons:
 
-    - Offers a higher risk of compromise.
-    - Cumbersome to set-up.
+    - Higher risk of compromise.
+    - More cumbersome to set up.
 
-We recommend to use Ansible OpenWISP2 role to which simplifies configuring
-FreeRADIUS to use WPA Enterprise. Please refer to the `"Configuring
-FreeRADIUS for WPA Enterprise (EAP-TTLS-PAP)" section in the
-ansible-openwisp2 documentation
-<https://github.com/openwisp/ansible-openwisp2/tree/master?tab=readme-ov-file#configuring-freeradius-for-wpa-enterprise-eap-ttls-pap>`_
-for details.
+We recommend using the Ansible OpenWISP2 role, which simplifies
+configuring FreeRADIUS to use WPA Enterprise. Please refer to the
+:doc:`"Configuring FreeRADIUS for WPA Enterprise (EAP-TTLS-PAP)" section
+in the ansible-openwisp2 documentation
+</ansible/user/deploying-wpa-eap-ttls-pap>` for details.
 
-If you still prefer to configure the FreeRADIUS site manually, you can
-refer the `"Freeradius Setup for WPA Enterprise (EAP-TTLS-PAP)
-authentication" section of the OpenWISP RADIUS documentation
+If you prefer to configure the FreeRADIUS site manually, refer to the
+`"Freeradius Setup for WPA Enterprise (EAP-TTLS-PAP) authentication"
+section of the OpenWISP RADIUS documentation
 <https://openwisp-radius.readthedocs.io/en/stable/developer/freeradius_wpa_enterprise.html#freeradius-setup-for-wpa-enterprise-eap-ttls-pap-authentication>`_.
-
-Creating the NAS
-----------------
-
-.. note::
-
-    You can skip this step if you are following this tutorial on our
-    :doc:`Demo System <./demo>`. The NAS has been already configured on
-    the :doc:`Demo System <./demo>`.
-
-From the OpenWISP navigation menu, go to ``RADIUS`` and then ``NAS``, from
-here click on the ``Add NAS``.
-
-.. image:: ../images/tutorials/navigating-to-nas.png
-    :target: ../_images/navigating-to-nas.png
-
-Fill in the organization, short name, secret, and set the type to
-"Wireless - IEEE 802.11". In the **name** field, enter the IP address of
-the NAS. Since every device acts as a NAS in our scenario, we specify the
-subnet of the VPN. This would allow FreeRADIUS to accept RADIUS traffic
-from all the devices.
-
-.. image:: ../images/wpa-enterprise/create-nas.png
-    :target: ../_images/create-nas.png
-
-.. warning::
-
-    Creating or modifying a NAS in OpenWISP requires a restart of the
-    FreeRADIUS server. Otherwise, the changes won't take effect.
-
-We would need the NAS's secret in the next step while creating a template.
 
 Creating the Template
 ---------------------
@@ -192,15 +178,20 @@ Creating the Template
     <https://demo.openwisp.io/admin/config/template/5f279920-60fd-4274-b367-450aa4d30004/change/>`_,
     **feel free to try it out!**
 
+.. hint::
+
+    If you don't know what a template is, please see
+    :doc:`/controller/user/templates`.
+
 From the OpenWISP navigation menu, go to ``Configurations`` and then
-``Templates``, from here click on the ``Add template``.
+``Templates``, from here click on ``Add template``.
 
 .. image:: ../images/tutorials/create-template.png
     :target: ../_images/create-template.png
 
-Fill in name, organization, leave type set to "Generic", backend set to
-"OpenWrt". Scroll down to the ``Configuration variables`` section, then
-click on "Toggle Raw JSON Editing".
+Fill in the name, organization, leave type set to "Generic", and backend
+set to "OpenWrt". Scroll down to the ``Configuration variables`` section,
+then click on "Toggle Raw JSON Editing".
 
 .. image:: ../images/tutorials/config-variables-raw-json.png
     :target: ../_images/config-variables-raw-json.png
@@ -216,9 +207,10 @@ Paste the following JSON in the ``Raw JSON Editing`` field.
 .. image:: ../images/wpa-enterprise/config-variable-mac-json.png
     :target: ../_images/config-variable-mac-json.png
 
-You can refer the :doc:`Configuration Variables
-</user/configuration-variables>` section of this documentation for more
-details.
+.. hint::
+
+    For more information about variables, please refer to
+    :doc:`/controller/user/variables`.
 
 Scroll down to the ``Configuration`` section, then click on "Advanced mode
 (raw JSON)".
@@ -229,7 +221,7 @@ Scroll down to the ``Configuration`` section, then click on "Advanced mode
 Before copying the following NetJSON to the advanced mode editor, you will
 need to update these fields to reflect your configuration:
 
-- ``key`` - RADIUS secret should be same as set in NAS
+- ``key`` - RADIUS secret should be the same as set in NAS
 - ``server`` - RADIUS server authentication IP
 - ``port`` - RADIUS server authentication port
 - ``acct_server`` - RADIUS accounting server IP
@@ -298,16 +290,16 @@ Now you can save the new template.
 .. image:: ../images/tutorials/save.png
     :target: ../_images/save.png
 
-At this point you're ready to assign the template to your devices, but
-before doing so you may want to read on to understand the different
-components of this template:
+At this point, you're ready to assign the template to your devices.
+However, before doing so, you may want to read on to understand the
+different components of this template:
 
-- The ``wlan_eap`` creates the wireless interface that supports WPA 2
-  Enterprise encryption bound to ``radio0``. This interface attached to
-  the ``lan`` interface which is configured to provide internet access in
-  default OpenWrt configuration.
-- A ``pre-reload-hook`` script which is executed before OpenWrt reloads
-  its services to make ensure that ``radio0`` is enabled.
+- The ``wlan_eap`` creates the wireless interface that supports WPA2
+  Enterprise encryption bound to ``radio0``. This interface is attached to
+  the ``lan`` interface, which is configured to provide internet access in
+  the default OpenWrt configuration.
+- A ``pre-reload-hook`` script is executed before OpenWrt reloads its
+  services to ensure that ``radio0`` is enabled.
 - The ``mac_address`` configuration variable is added to the template as a
   placeholder. When the template is applied to a device, the device's
   actual MAC address will automatically override the placeholder, ensuring
@@ -318,20 +310,20 @@ components of this template:
 Enable the WPA Enterprise Template on the Devices
 -------------------------------------------------
 
-Now is time to apply this template to the devices where you want to enable
-WPA Enterprise authentication on WiFi.
+Now it is time to apply this template to the devices where you want to
+enable WPA Enterprise authentication on WiFi.
 
 Click on ``Devices`` in the navigation menu, click on the device you want
 to assign the WPA Enterprise template to, then go to the ``Configuration``
-tab, select the template just created, then click on save.
+tab, select the template just created, and then click on save.
 
 .. image:: ../images/wpa-enterprise/enable-wpa-enterprise-template.png
     :target: ../_images/enable-wpa-enterprise-template.png
 
-Connecting to the WiFi with WPA 2 Enterprise
---------------------------------------------
+Connecting to the WiFi with WPA2 Enterprise
+-------------------------------------------
 
-For brevity, this section only includes an example for connecting a
+For brevity, this section only includes an example of connecting a
 smartphone running Android 11 to the WiFi network. Similar steps can
 typically be followed on other devices. If unsure, consult your device's
 manual for guidance.
@@ -339,20 +331,20 @@ manual for guidance.
 Find the "OpenWISP" SSID in the list of available WiFi networks on your
 mobile and click on it. Fill in the details as follows:
 
-    - **EAP method**: Set this to ``TTLS``
-    - **Phase 2 authentication**: Set this to ``PAP``
+    - **EAP method**: Set this to ``TTLS``.
+    - **Phase 2 authentication**: Set this to ``PAP``.
     - **CA certificate**: Select one of the options based on your
-      FreeRADIUS configuration
+      FreeRADIUS configuration.
     - **Domain**: Enter the domain based on the server certificate used by
-      FreeRADIUS
+      FreeRADIUS.
     - **Identity** and **Password**: Use the OpenWISP user's username for
       ``Identity`` and password for ``Password``.
 
 .. note::
 
     If you are trying this feature on our :doc:`OpenWISP Demo System
-    <./demo>` you can use the **demo** user to authenticate. You will need
-    to update the following fields as mentioned:
+    <./demo>`, you can use the **demo** user to authenticate. You will
+    need to update the following fields as mentioned:
 
     - **CA certificate**: Set this to ``Use system certificates``
     - **Domain**: Set this to ``demo.openwisp.io``
@@ -361,13 +353,11 @@ mobile and click on it. Fill in the details as follows:
 
       .. image:: ../images/wpa-enterprise/connect-to-wpa-enterprise.png
           :target: ../_images/connect-to-wpa-enterprise.png
-          :width: 40 %
           :align: center
-          :alt: Screenshot of authentication details filled in for
-                WPA 2 Enterprise WiFi connection
+          :alt: Authentication details
 
 You can leave the **Advanced options** unchanged and click on **Connect**
-after filling on the details.
+after filling in the details.
 
 Verifying and Debugging
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -383,7 +373,7 @@ Sessions``.
     :target: ../_images/navigating-to-radius-accounting.png
     :alt: Navigating to RADIUS Accounting on OpenWISP
 
-You should see a RADIUS accounting session for this device
+You should see a RADIUS accounting session for this device.
 
 .. image:: ../images/wpa-enterprise/verify-openwisp-radius-accounting.png
     :target: ../_images/verify-openwisp-radius-accounting.png
@@ -392,3 +382,13 @@ If your smartphone does not connect to the internet, you can debug the
 FreeRADIUS configuration by following the steps in the `"Debugging"
 section of OpenWISP RADIUS documentation
 <https://openwisp-radius.readthedocs.io/en/stable/developer/freeradius.html#debugging>`_.
+
+----
+
+.. seealso::
+
+    - :doc:`Open and/or WPA protected WiFi Access Point SSID
+      <./wifi-access-point>`
+    - :doc:`WiFi Hotspot, Captive Portal (Public WiFi), Social Login
+      <./hotspot>`
+    - :doc:`How to Set Up a Wireless Mesh Network <./mesh>`

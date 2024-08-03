@@ -1,47 +1,33 @@
 OpenWISP Documentation
 ======================
 
-**This page contains all the documentation you will need to get started on
-with using OpenWISP.**
+.. figure:: images/intro/index-banner.png
+    :target: _images/index-banner.png
+    :align: center
+    :alt: Your Network Management with OpenWrt & OpenWISP
 
-**Need a quick overview?**
-`Try the OpenWISP Demo <https://openwisp.org/demo.html>`_.
+    **Everything you need to know about OpenWISP is here!**
 
-Contents:
+.. note::
+
+    For a complete overview of this documentation, refer to the :doc:`Full
+    Table of Contents <contents>`.
+
+.. important::
+
+    Are you looking for a quick overview of the OpenWISP application?
+
+    :doc:`Try the OpenWISP Demo </tutorials/demo>`.
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
+    :glob:
 
-   user/quickstart
-   user/configure-device
-   user/monitoring
-   user/templates
-   user/configuration-variables
-   user/vpn
-   user/wireguard
-   user/zerotier
-   user/configure-push-updates
-   user/send-commands
-   user/subnet-division-rules
-   user/firmware-upgrades
-   user/network-topology
-   user/radius
-   user/wifi-login-pages
-   user/django-settings
-   user/usage-metric-collection
-   tutorials/demo
-   tutorials/wifi-access-point.rst
-   tutorials/hotspot
-   tutorials/mesh
-   tutorials/wpa-enterprise-eap-ttls-pap
-   general/architecture
-   general/values
-   general/help-us
-   general/press
-   general/code-of-conduct
-   developer/contributing
-   developer/hacking-openwisp-python-django
-   developer/google-summer-of-code
-   developer/gsoc-ideas-2024
-   developer/google-code-in
-   developer/hacktoberfest
+    first-steps
+    project-overview
+    installers
+    modules
+    openwrt-agents
+    tutorials/index
+    community
+    developer/index

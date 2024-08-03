@@ -1,94 +1,82 @@
-Connect OpenWRT to OpenWISP
-===========================
+Configure Your OpenWrt Device
+=============================
 
-This page will guide you through the installation of
-`openwisp-config <https://github.com/openwisp/openwisp-config>`_ on a
-device which supports `OpenWRT <https://openwrt.org/>`_.
+This page will guide you through installing the OpenWISP agents on a
+device that supports `OpenWrt <https://openwrt.org/>`_.
 
-**If you don't have a physical device available but you still want to try
-out OpenWISP, you can use a Virtual Machine.**
+.. hint::
+
+    **No physical device? No problem!** You can try OpenWISP using a
+    `Virtual Machine
+    <https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm>`_.
 
 .. contents:: **Table of Contents**:
-   :backlinks: none
-   :depth: 3
+    :depth: 3
+    :local:
 
-1. Install OpenWISP
--------------------
+Prerequisites
+-------------
 
-Refer to the instructions described in
-:ref:`Install the OpenWISP server application <install_server>`.
+Ensure you have already :ref:`Installed the OpenWISP Server Application
+<install_server>` and :doc:`Configured a Management Network </user/vpn>`.
 
-2. Flash OpenWRT on a device
+Flash OpenWrt on Your Device
 ----------------------------
 
-If you have a network device which is compatible with OpenWRT, follow the
-instructions in the `official OpenWRT flashing guide
+If you have a compatible network device, follow the `official OpenWrt
+flashing guide
 <https://openwrt.org/docs/guide-user/installation/generic.flashing>`_.
 
-If you don't have a physical device, you can
-`install OpenWrt on a VirtualBox Virtual Machine
+If you don't have a physical device, you can `install OpenWrt on a
+VirtualBox Virtual Machine
 <https://openwrt.org/docs/guide-user/virtualization/virtualbox-vm>`_.
 
 .. note::
 
-    It's required to enable SSH access and connect the device or
-    VM to the internet.
+    Enable SSH access and connect the device or VM to the internet.
 
-    Note that when using Virtualbox, both Adapter1 and Adapter2 use
-    "Adapter Type: Intel PRO/1000 MT Desktop". Do
-    not use the same IP Address that you used for the local OpenWISP
-    website you hosted before. That suggested change applies only when
-    you boot into the OpenWRT device as per the description of the
-    above link (for example, if you set 192.168.56.2 as the IP Address
-    of your local OpenWISP website, please use another IP such as
-    192.168.56.3 for the IP Address of the OpenWRT device).
+    When using VirtualBox, both Adapter1 and Adapter2 should use "Adapter
+    Type: Intel PRO/1000 MT Desktop". Use a different IP address for the
+    OpenWrt device than the one used for the local OpenWISP website (e.g.,
+    if your OpenWISP site uses 192.168.56.2, use 192.168.56.3 for the
+    OpenWrt device).
 
-3. Install openwisp-config
---------------------------
+Install the OpenWISP OpenWrt Agents
+-----------------------------------
 
-Installation
-~~~~~~~~~~~~
+We recommend installing the latest versions of the OpenWISP packages.
+Download them onto your device from `downloads.openwisp.io
+<http://downloads.openwisp.io/>`__ and then install them as follows:
 
-To install openwisp-config on your OpenWRT system follow the steps below:
+.. code-block::
 
-Install one of the latest stable builds from
-`downloads.openwisp.io <http://downloads.openwisp.io/?prefix=openwisp-config/>`_,
-copy the URL of the IPK file you want to download onto your
-clipboard, then run the following commands on your OpenWrt device:
+    cd /tmp
 
-.. code-block:: bash
+    # WARNING: the URL may change over time, so verify the correct URL
+    # from downloads.openwisp.io
 
-    cd /tmp  # /tmp runs in memory
-    wget <URL-you-just-copied>
-    opkg update
-    opkg install ./<file-just-downloaded>
+    wget https://downloads.openwisp.io/openwisp-config/latest/openwisp-config_1.1.0a-1_all.ipk
+    wget https://downloads.openwisp.io/openwisp-monitoring/latest/netjson-monitoring_0.2.0a-1_all.ipk
+    wget https://downloads.openwisp.io/openwisp-monitoring/latest/openwisp-monitoring_0.2.0a-1_all.ipk
+    opkg install openwisp-config_1.1.0a-1_all.ipk
+    opkg install netjson-monitoring_0.2.0a-1_all.ipk
+    opkg install openwisp-monitoring_0.2.0a-1_all.ipk
 
-If you're running at least OpenWRT 19.07, you can install openwisp-config
-from the official OpenWRT packages:
+.. note::
 
-.. code-block:: bash
+    If ``wget`` doesn't work (e.g., SSL issues), you can use ``curl`` or
+    alternatively download the packages onto your machine and upload them
+    to your device via ``scp``.
 
-    opkg update
-    opkg install openwisp-config
+Once the agents are installed on your OpenWrt device, let's ensure they
+can connect to OpenWISP successfully.
 
-**We recommend installing from our latest builds or compiling your own
-firmware image** as the OpenWrt packages are not always up to date.
+Edit the config file located at ``/etc/config/openwisp``, which should
+look like the following sample:
 
-Configuration
-~~~~~~~~~~~~~
+::
 
-Once openwisp-config is installed, you will need to configure
-it to connect to our OpenWISP2
-controller. To do that, edit the config file located at
-``/etc/config/openwisp``.
-
-You will see the default config file, as shown below.
-If your instance lacks some of the lines shown in the example below,
-please add them.
-
-.. code-block:: text
-
-    # For more information about the config options please see the README
+    # For more information about the config options, please see the README
     # or https://github.com/openwisp/openwisp-config#configuration-options
 
     config controller 'http'
@@ -115,51 +103,82 @@ please add them.
         #option pre_reload_hook '/usr/sbin/my_pre_reload_hook'
         #option post_reload_hook '/usr/sbin/my_post_reload_hook'
 
-Uncomment and change the following fields:
+Uncomment and update the following lines:
 
-- ``url``: the hostname of your OpenWISP controller. For example, if you
-  are hosting your OpenWISP server locally and you set the IP Address to
-  "192.168.56.2", the url would be ``https://192.168.56.2``.
-- ``verify_ssl``: set to ``'0'`` if your controller's SSL certificate is
-  self-signed; in production you will need a valid SSL certificate to
-  keep your instance secure
-- ``shared_secret``: you can retrieve this from the  OpenWISP2 admin
-  panel, in the Organization settings. The list of organizations is
-  available at ``/admin/openwisp_users/organization/``.
-- ``management_interface``: this is the interface which OpenWISP uses to
-  reach the device when it needs to. For more information
-  **we highly recommend reading**:
-  :ref:`how to make sure OpenWISP can reach your devices
-  <openwisp_reach_devices>`.
+- ``url``: Set this to the hostname of your OpenWISP instance (e.g., if
+  your OpenWISP server is at "192.168.56.2", set the url to
+  ``https://192.168.56.2``).
+- ``verify_ssl``: Set to ``'0'`` if your controller's SSL certificate is
+  self-signed; in production, use a valid SSL certificate to ensure
+  security.
+- ``shared_secret``: Retrieve this from the OpenWISP dashboard in the
+  Organization settings. The list of organizations is available at
+  ``/admin/openwisp_users/organization/``.
+- ``management_interface``: Refer to :doc:`/user/vpn`.
+
+.. hint::
+
+    For more details on the configuration options, refer to :doc:`OpenWrt
+    Config Agent Settings </openwrt-config-agent/user/settings>`.
 
 .. note::
 
     When testing or developing using the Django development server
     directly from your computer, make sure the server listens on all
-    interfaces (``./manage.py runserver 0.0.0.0:8000``) and then just
-    point openwisp-config to use your local IP address
-    (e.g. ``http://192.168.1.34:8000``)
+    interfaces (``./manage.py runserver 0.0.0.0:8000``) and then point
+    OpenWISP to use your local IP address (e.g.
+    ``http://192.168.1.34:8000``).
 
-Save the file and start openwisp-config:
+Save the file and restart the agent:
 
 .. code-block:: bash
 
     /etc/init.d/openwisp_config restart
 
-Your OpenWRT instance should register itself to your OpenWISP controller.
-Check the devices menu on the admin panel to make sure your OpenWRT
-device is registered.
+.. note::
 
-Compile your own OpenWRT image
-------------------------------
+    No changes are needed for the monitoring agent at this stage. The
+    default settings work for most cases, and the agent restarts itself
+    when the config agent is restarted.
 
-You may want to compile a custom OpenWRT image to save time when
-configuring new devices. By compiling a custom image, you can pre-install
-openwisp-config, including your configurations (e.g. ``url`` and
-``shared_secret``). This ensures that you will not have to go through
-the configuration process again. This will make you save a lot of time if
-you need to manage many devices!
+    For more details on its configuration options, refer to :doc:`OpenWrt
+    Monitoring Agent Settings </openwrt-monitoring-agent/user/settings>`.
 
-A guide on `how to compile a custom OpenWRT image available in the
-openwisp-config documentation
-<https://github.com/openwisp/openwisp-config#compiling-a-custom-openwrt-image>`_.
+Your OpenWrt device should now be able to register with OpenWISP.
+
+If not, refer to the following **troubleshooting** guides:
+
+- :doc:`Troubleshooting issues with the OpenWrt Config Agent
+  </openwrt-config-agent/user/debugging>`
+- :doc:`Troubleshooting issues with the OpenWrt Monitoring Agent
+  </openwrt-monitoring-agent/user/debugging>`
+- :doc:`Troubleshooting issues with the OpenWISP Server (Ansible role)
+  </ansible/user/troubleshooting>`
+
+.. seealso::
+
+    - :doc:`Config Agent Quick Start Guide
+      </openwrt-config-agent/user/quickstart>`
+    - :doc:`OpenWrt Config Agent Settings
+      </openwrt-config-agent/user/settings>`
+    - :doc:`Monitoring Agent Quick Start Guide
+      </openwrt-monitoring-agent/user/quickstart>`
+    - :doc:`OpenWrt Monitoring Agent Settings
+      </openwrt-monitoring-agent/user/settings>`
+
+Compiling Your Own OpenWrt Image
+--------------------------------
+
+.. warning::
+
+    This section is for advanced users.
+
+Compiling a custom OpenWrt image can save time when configuring new
+devices. By doing this, you can pre-install the agents and include your
+configurations (e.g., ``url`` and ``shared_secret``) in the default image.
+
+This way, you won't have to configure each new device manually, which is
+particularly useful if you provision and manage many devices.
+
+Refer to the :doc:`guide on compiling a custom OpenWrt image
+</openwrt-config-agent/user/compiling>` for more information.
