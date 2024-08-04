@@ -309,7 +309,7 @@ def main():
     html_base_url = ''
     build_dir = '_build'
     if os.environ.get('PRODUCTION', False):
-        docs_root = '/docs/__new__'
+        docs_root = '/docs/'
         html_base_url = 'https://openwisp.io'
         build_dir = f'{build_dir}/{docs_root}'
 

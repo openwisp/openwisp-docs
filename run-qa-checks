@@ -22,7 +22,7 @@ python -m http.server 8001 &> /dev/null & pid=$!
 sleep 4
 BASE_URL="http://localhost:8001"
 if [ -n "${PRODUCTION:-}" ]; then
-    BASE_URL="$BASE_URL/docs/__new__"
+    BASE_URL="$BASE_URL/docs/"
 fi
 pylinkvalidate.py "$BASE_URL/dev/" \
     -w 4 -m process
