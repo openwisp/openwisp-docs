@@ -38,7 +38,7 @@ jobs:
       - name: Install npm dependencies
         run: sudo npm install -g stylelint
 
-      - name: QA checks
+      - name: QA checks, Build, Validate links (no 404s allowed), Check PDF
         run: PRODUCTION=1 ./run-qa-checks
 
       - name: Setup Google Cloud
@@ -50,6 +50,7 @@ jobs:
           export_environment_variables: true
 
       - name: 'Set up Cloud SDK'
+        if: ${{ github.event_name=='push' }}
         uses: 'google-github-actions/setup-gcloud@v2'
 
       - name: Deploy pages to openwisp.io/docs
