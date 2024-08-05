@@ -1,2 +1,2 @@
 [tool.docstrfmt]
-extend_exclude = ["*.py", "**/**/*.py"]
+extend_exclude = ["*.py", "**/*.py", "modules/**/*.rst"]
