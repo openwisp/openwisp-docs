@@ -71,7 +71,7 @@ System defined variables
 ------------------------
 
 Predefined device variables, global variables and other variables that are
-automatically managed by the system (eg: when using templates of type
+automatically managed by the system (e.g.: when using templates of type
 VPN-client) are displayed in the admin UI as *System Defined Variables* in
 read-only mode.
 
@@ -120,7 +120,7 @@ These would be the default values in the template:
     }
 
 The default values can then be overridden at `device level
-<#user-defined-device-variables>`_ if needed, eg:
+<#user-defined-device-variables>`_ if needed, e.g.:
 
 .. code-block:: json
 

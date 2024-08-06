@@ -57,7 +57,7 @@ Deployment
 - `Ansible Wireguard OpenWISP.
   <https://github.com/openwisp/ansible-wireguard-openwisp>`_: ansible role
   that allows to deploy the :doc:`Wireguard integration for OpenWISP
-  Controller </user/wireguard>`.
+  Controller <../user/wireguard>`.
 
 Server Side
 ~~~~~~~~~~~
@@ -67,9 +67,9 @@ Server Side
   and classes to implement multi-tenancy.
 - `OpenWISP Controller
   <https://github.com/openwisp/openwisp-controller>`_: Configuration
-  management and templating, automatic provisioning of VPN tunnels like
+  management, automatic provisioning of VPN tunnels like
   OpenVPN, Wireguard, Wireguard over VXLAN, shell commands, SSH
-  connections, x509 PKI management, geographic maps and floorplans,
+  connections, x509 PKI management, geographic maps and floor plans,
   programmable IP address management and subnet provisioning.
 
   This module depends on several django apps or python libraries developed
@@ -85,7 +85,7 @@ Server Side
   - `openwisp-ipam <https://github.com/openwisp/openwisp-ipam>`__: IP and
     Subnet administration.
   - `django-rest-framework-gis
-    <https://github.com/openwisp/django-rest-framework-gis>`__: GIS addons
+    <https://github.com/openwisp/django-rest-framework-gis>`__: GIS utilities
     for Django REST Framework.
 
 - `OpenWISP Monitoring
@@ -97,7 +97,7 @@ Server Side
   charts.
 - `OpenWISP Network Topology
   <https://github.com/openwisp/openwisp-network-topology>`_: Network
-  topology collector and visualizer. Collects network topology datafrom
+  topology collector and visualizer. Collects network topology data from
   dynamic mesh routing protocols or other popular networking software like
   OpenVPN, allows to visualize the network graph and save daily snapshots
   that can be viewed in the future.
@@ -128,7 +128,7 @@ Server Side
 - `OpenWISP Utils <https://github.com/openwisp/openwisp-utils>`_: common
   utilities and classes shared by all the OpenWISP python modules, it
   includes a lot of utilities for QA checks and automated testing which
-  are heavily used in the continous integration builds of most if not all
+  are heavily used in the continuous integration builds of most if not all
   the OpenWISP github repositories.
 - `OpenWISP WiFi Login Pages
   <https://github.com/openwisp/openwisp-wifi-login-pages>`_: Configurable
@@ -305,7 +305,7 @@ etc.
 InfluxDB
 ~~~~~~~~
 
-`InfluxDB <https://www.influxdata.com/>`_ is the deafult open source
+`InfluxDB <https://www.influxdata.com/>`_ is the default open source
 timeseries DB used in OpenWISP Monitoring.
 
 Elasticsearch

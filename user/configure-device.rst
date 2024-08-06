@@ -54,7 +54,7 @@ Install openwisp-config on your OpenWRT system. For this guide.
 We recommend to install one of the latest stable builds from
 `downloads.openwisp.io
 <http://downloads.openwisp.io/?prefix=openwisp-config/>`_, copy the URL of
-the ipk file you want to download in your clipboard and then run the
+the *ipk* file you want to download in your clipboard and then run the
 following commands on your OpenWrt device:
 
 .. code-block:: bash
@@ -113,7 +113,7 @@ Uncomment and change the following fields:
 
 - ``url``: the hostname of your OpenWISP2 controller (for example, if you
   are hosting your OpenWISP server locally and you set the IP Address to
-  "192.168.56.2", the url would be ``https://192.168.56.2``).
+  "192.168.56.2", the URL would be ``https://192.168.56.2``).
 - ``verify_ssl``: set to ``'0'`` if your controller's SSL certificate is
   self-signed; in production you will need a valid SSL certificate to keep
   your instance secure
@@ -143,7 +143,7 @@ Compile your own OpenWRT image
 ------------------------------
 
 You may want to compile a custom OpenWRT image to save time in configuring
-new devices. By compiling a custom image, you can pre-install
+new devices. By compiling a custom image, you can preinstall
 openwisp-config, including your configurations (e.g. ``url`` and
 ``shared_secret``), so that you won't have to go through the configuration
 process again.

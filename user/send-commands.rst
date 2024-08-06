@@ -30,7 +30,7 @@ used often in your network regardless of your users' knowledge of Linux
 shell commands, you can add new commands by following instructions in "How
 to define new options in the commands menu" section below.
 
-If you are an advanced user and want to register commands programatically,
+If you are an advanced user and want to register commands programmatically,
 then refer to `"Register / Unregistering commands"
 <https://github.com/openwisp/openwisp-controller/tree/1.0#registering--unregistering-commands>`_
 section.

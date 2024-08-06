@@ -194,7 +194,7 @@ should be same as VPN server configuration in OpenWISP.
 5. Ensure that **Automatic tunnel provisioning** is checked. This will
    make OpenWISP to automatically generate public and private keys and
    provision IP address for each WireGuard VPN client along with VXLAN
-   Network Indentifier(VNI).
+   Network Identifier (VNI).
 6. After clicking on **Save and continue editing** button, you will see
    details of *Wireguard VXLAN* VPN server in **System Defined
    Variables**. The template configuration will be automatically generated
@@ -216,7 +216,7 @@ OpenWISP. Register or create a device before proceeding.
    some entries in **System Defined Variables**. It will contain internal
    IP address, private and public key for the WireGuard client on the
    device and details of WireGuard VPN server along with VXLAN Network
-   Identifier(VNI) of this device.
+   Identifier (VNI) of this device.
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/docs/docs/wireguard-vxlan-tutorial/device-configuration.png
     :alt: WireGuard VXLAN VPN device configuration example

@@ -36,8 +36,8 @@ recommended for production usage yet, unless the reader is willing to
 invest effort in adapting the docker images and configurations to overcome
 any roadblocks encountered.
 
-Quickstart Guide
-----------------
+Quick Start Guide
+-----------------
 
 This module works by periodically collecting the network topology graph
 data of the `supported networking software or formats
@@ -79,7 +79,7 @@ Sending data for topology with RECEIVE strategy
    E.g., in our case the URL is
    ``http://127.0.0.1:8000/api/v1/network-topology/topology/d17e539a-1793-4be2-80a4-c305eca64fd8/receive/?key=cMGsvio8q0L0BGLd5twiFHQOqIEKI423``.
 
-2. Create a script (eg: ``/opt/send-topology.sh``) which sends the
+2. Create a script (e.g.: ``/opt/send-topology.sh``) which sends the
    topology data using ``POST``, in the example script below we are
    sending the status log data of OpenVPN but the same code can be applied
    to other formats by replacing ``cat /var/log/openvpn/tun0.stats`` with

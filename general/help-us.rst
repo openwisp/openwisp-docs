@@ -7,6 +7,12 @@ An apparently insignificant action can have a very positive impact on the
 project and in this page we'll explain why it's in your interest to help
 the project grow.
 
+**Table of Contents:**
+
+.. contents::
+    :depth: 2
+    :local:
+
 Are you using OpenWISP for your organization?
 ---------------------------------------------
 
@@ -22,45 +28,45 @@ if performed by a sufficient number of people.**
 .. note::
 
     **If you need commercial support for your business**, see the
-    paragraph about `Commercial support and funding development
-    <commercial_support_22_>`_.
+    paragraph about :ref:`Commercial support and funding development
+    <commercial_support_22>`.
 
 How to help
 -----------
 
 .. _mailing_list_22:
 
-1. Write to the mailing list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Open new discussion threads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `mailing list <http://openwisp.org/support.html>`_ is a great place to
-ask questions or share information regarding OpenWISP.
+The `Github Discussions Forum and the Mailing List
+<http://openwisp.org/support.html>`_ are excellent places to ask questions
+or share information regarding OpenWISP.
 
 Every question and its replies are archived and indexed by search engines,
-so over time the archive becomes a repositories of solved problems which
-people can find.
+creating a repository of solved problems that people can find over time.
 
-For this reason, **using the mailing list for support questions should be
-preferred over the main chat**.
+For this reason, **using these channels for support questions should be
+preferred over the chats**.
 
 .. warning::
 
-    Please be mindful that **over 400 people read the mailing list** and
-    **discussion are indexed forever**, for these reasons you should:
+    Please be mindful that **over 700 people read these channels** and
+    **discussions are indexed forever**. For these reasons, you should:
 
-        - keep the focus of the discussion technical
-        - avoid unrelevant comments
-        - be mindful about what you write
-        - keep the tone calm and constructive
-        - be respectful to the volunteers who reply in their free time
-        - avoid generating noise
+        - Keep the focus of the discussion technical.
+        - Avoid irrelevant comments.
+        - Be mindful about what you write.
+        - Keep the tone calm and constructive.
+        - Be respectful to the volunteers who reply in their free time.
+        - Avoid generating noise.
 
-When subscribing to the mailing list, we suggest to choose one of these
+When subscribing to the mailing list, we suggest choosing one of these
 options:
 
-- receive all emails by creating a filter in your mailbox which moves the
-  messages to a dedicated folder
-- receive a periodic summary (abridged or digest)
+- Receive all emails by creating a filter in your mailbox that moves the
+  messages to a dedicated folder.
+- Receive a periodic summary (abridged or digest).
 
 2. Send feedback
 ~~~~~~~~~~~~~~~~
@@ -91,7 +97,7 @@ new users and developers look at `our github organization page
 <https://github.com/openwisp>`_ they may not get this at first glance and
 they will start looking for the numbers of stars.
 
-Yes, we know it sounds silly, but since it doesn't cost you anything, it
+Yes, we know it sounds silly, but since it does not cost you anything, it
 would be really useful if you could **take a look at our projects on
 github** and **star the ones you find most interesting**.
 
@@ -139,8 +145,8 @@ community.
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you like to share your knowledge at conferences and meetups, you may
-cite OpenWISP in one of your presentations or lightining talks, you may
-also show some of its featues, if relevant.
+cite OpenWISP in one of your presentations or lightning talks, you may
+also show some of its features, if relevant.
 
 8. Participate
 ~~~~~~~~~~~~~~
@@ -160,7 +166,7 @@ Are you skilled in one of the following areas?
 - networking
 - graphic/web design
 - frontend development
-- OpenWRT
+- OpenWrt
 - Freeradius
 - linux
 - devops

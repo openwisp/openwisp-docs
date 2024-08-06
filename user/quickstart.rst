@@ -1,5 +1,5 @@
-Quickstart
-==========
+Quick Start
+===========
 
 .. contents:: **Table of Contents**:
     :backlinks: none

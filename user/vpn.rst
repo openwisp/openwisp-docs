@@ -97,16 +97,16 @@ named ``playbook.yml`` which contains the following:
 3. Run the Playbook
 ~~~~~~~~~~~~~~~~~~~
 
-Run the ansible playbok using:
+Run the ansible playbook using:
 
 .. code-block:: bash
 
     ansible-playbook -i hosts playbook.yml -b -k -K --become-method=su
 
-4. Importing the CA and the Server Ceritficate
+4. Importing the CA and the Server Certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To import the CA and Server Ceritficate, you need to access your server
+To import the CA and Server Certificate, you need to access your server
 via ``ssh`` or any other method that suits you.
 
 You need to change your directory to ``/etc/easyrsa/pki/``
@@ -122,7 +122,7 @@ On your openwisp dashboard go to ``/admin/pki/ca/add/``
 
 In **Operation Type** choose :guilabel:`Import Existing`
 
-Get your CA Ceritficate from ``ca.crt`` file and Private Key from
+Get your CA Certificate from ``ca.crt`` file and Private Key from
 ``private/ca.key`` and then enter them in the respective fields.
 
 **Importing the Server Certificate**:
@@ -132,7 +132,7 @@ On your openwisp dashboard go to ``/admin/pki/cert/add/``
 In **Operation Type** choose :guilabel:`Import Existing` and in **CA**
 choose the CA you just created.
 
-Get your Server Ceritficate from ``issued/server.crt`` file and Server
+Get your Server Certificate from ``issued/server.crt`` file and Server
 Private Key from ``private/server.key`` and then enter them in the
 respective fields.
 

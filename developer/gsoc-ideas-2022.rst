@@ -55,7 +55,7 @@ Adding support for automatic management of ZeroTier Tunnels
 
 .. important::
 
-    Languages and technologies used: Mostly **OpenWRT**, **Python**,
+    Languages and technologies used: Mostly **OpenWrt**, **Python**,
     **Django**, **ZeroTier**.
 
     **Mentors**: Gagan Deep (`pandafy <https://github.com/pandafy>`_),
@@ -71,8 +71,8 @@ already supports configuring **OpenVPN**, **WireGuard** and **VXLAN over
 WireGuard** tunnels. The goal of this project is to add support for
 another VPN backend: `ZeroTier <https://www.zerotier.com>`_.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The contributor must demonstrate good understanding of the following
 OpenWISP modules:
@@ -87,7 +87,7 @@ Any merged patches on any of those modules is considered an important plus
 point.
 
 The contributor must also demonstrate familiarity with `ZeroTier
-<https://www.zerotier.com/>`__, and `OpenWRT <https://openwrt.org>`_,
+<https://www.zerotier.com/>`__, and `OpenWrt <https://openwrt.org>`_,
 moreover, they should be willing to increase their experience with these
 technologies and show enthusiasm toward learning and implementing IT
 network automation.
@@ -107,7 +107,7 @@ Expected outcomes
   - GitHub Issues:
 
     - `netjsonconfig #207: [feature] Add support for ZeroTier tunnels to
-      OpenWRT backend
+      OpenWrt backend
       <https://github.com/openwisp/netjsonconfig/issues/207>`_
     - `netjsonconfig #208: [feature] Add ZeroTier backend
       <https://github.com/openwisp/netjsonconfig/issues/208>`_
@@ -168,8 +168,8 @@ netjsongraph.js visualization library, which is has not been released yet
 and is available in the `gsoc2019 branch of netjsongraph.js on github
 <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019>`_.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The contributor should have a proven track record and experience with
 Javascript, React JS, NodeJS, HTML and CSS.
@@ -205,7 +205,7 @@ Expected outcomes
 - Test the library on narrow screens and ensure quirks are fixed
 - Add support for loading map data using GeoJSON
 - Allow loading more than 1000 devices by using pagination, load max 10K
-  points by default (eg: ``maxPointsFetched``), make this max value
+  points by default (e.g.: ``maxPointsFetched``), make this max value
   configurable
 - When more points are present than the configured ``maxPointsFetched``
   value, if the map is zoomed more than a specific level (which shall also
@@ -258,8 +258,8 @@ On a macro level, the check would work this way:
    information and jitter)
 3. SSH connection is closed
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
@@ -277,7 +277,7 @@ The outcomes we expect from this project are the following:
 - This check should be optional and disabled by default
 - We can run it by default every night
 - Allow configuring the iperf server globally and by organization with a
-  setting, eg:
+  setting, e.g.:
 
 .. code-block:: python
 
@@ -329,8 +329,8 @@ usage of this module and have the aim of improving the user experience in
 analyzing the collected monitoring data, as well as the developer user
 experience in extracting data from the system.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
@@ -350,7 +350,7 @@ Expected outcomes
   view #27 <https://github.com/openwisp/openwisp-monitoring/issues/27>`_
 - `[feature] Add REST API endpoints for device which include monitoring
   info #290 <https://github.com/openwisp/openwisp-monitoring/issues/290>`_
-- `[docs] Add quickstart tutorial to README #285
+- `[docs] Add quick start tutorial to README #285
   <https://github.com/openwisp/openwisp-monitoring/issues/285>`_
 - `[feature] Add possibility to connect to influxdb on unix domain socket
   #312 <https://github.com/openwisp/openwisp-monitoring/issues/312>`_
@@ -371,11 +371,11 @@ Add more timeseries database clients to OpenWISP Monitoring
 
     **Difficulty rate**: medium.
 
-The goal of this project is to add more Timseries DB options to OpenWISP
+The goal of this project is to add more Time Series DB options to OpenWISP
 while keeping good maintainability.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
@@ -403,7 +403,7 @@ Expected outcomes
     **InfluxDB** from `ansible-openwisp2
     <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
     <https://github.com/openwisp/docker-openwisp/>`_
-  - The requests to Elasticsearch shall be optimizesd as described in
+  - The requests to Elasticsearch shall be optimized as described in
     `[timeseries] Optimize elasticsearch #168
     <https://github.com/openwisp/openwisp-monitoring/issues/168>`_.
 

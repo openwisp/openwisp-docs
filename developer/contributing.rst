@@ -34,7 +34,7 @@ github issue, don't hesitate to ask questions in our `general chat
 <https://gitter.im/openwisp/general>`_.
 
 **You don't need to wait for the issue to be assigned to you.** Just check
-if there is anyone else actively working on it (eg: an open pull request
+if there is anyone else actively working on it (e.g.: an open pull request
 with recent activity). If nobody else is actively working on it, **just
 announce your intention to work on it by leaving a comment in the issue**.
 
@@ -75,13 +75,13 @@ reviewed and tested it.
 
 You can run QA checks locally by running ``./run-qa-checks`` in the top
 level directory of the repository you're working on. Every OpenWISP module
-should have this script (if a module doesn't have it, please open an issue
+should have this script (if a module does not have it, please open an issue
 on github).
 
 1. Branch naming guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a new branch for your patch, use a self-descriptive name, eg:
+Create a new branch for your patch, use a self-descriptive name, e.g.:
 
 ::
 
@@ -170,7 +170,7 @@ now on we will shorten it often to just *PR*):
 Keep your contribution focused and change the least amount of lines of
 code as possible needed to reach the goal you're working on.
 
-**Avoid changes unrelated** to the feature/bugfix/change you're working
+**Avoid changes unrelated** to the feature/fix/change you're working
 on.
 
 **Avoid changes related to white-space** (spaces, tabs, blank lines) by

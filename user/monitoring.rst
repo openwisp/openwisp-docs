@@ -26,8 +26,8 @@ recommended for production usage yet, unless the reader is willing to
 invest effort in adapting the docker images and configurations to overcome
 any roadblocks encountered.
 
-Quickstart Guide
-----------------
+Quick Start Guide
+-----------------
 
 This guide assumes you have the `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring/tree/1.0>`_ module
@@ -101,15 +101,15 @@ In this scenario, the following requirements are needed:
   fine as well.
 
   If the OpenWISP server is connected to a network infrastructure which
-  allows it to reach the devices via pre-existing tunneling or Intranet
-  solutions (eg: MPLS, SD-WAN), then setting up a VPN server is not
+  allows it to reach the devices via preexisting tunneling or Intranet
+  solutions (e.g.: MPLS, SD-WAN), then setting up a VPN server is not
   needed, as long as there's a dedicated interface on OpenWrt which gets
   an IP address assigned to it and which is reachable from the OpenWISP
   server.
 
 - The devices must be configured to join the management tunnel
-  automatically, either via a pre-existing configuration in the firmware
-  or via an `OpenWISP Template
+  automatically, either via a preexisting configuration in the firmware or
+  via an `OpenWISP Template
   <https://openwisp.io/docs/user/templates.html>`_.
 - The `openwisp-config <https://github.com/openwisp/openwisp-config>`_
   agent on the devices must be configured to specify the
@@ -132,9 +132,9 @@ In this scenario, the following requirements are needed:
 +++++++++++++++++
 
 When the OpenWISP server and the network devices are deployed in the same
-L2 network (eg: an office LAN) and the OpenWISP server is reachable on the
-LAN address, OpenWISP can then use the **Last IP** field of the devices to
-reach them.
+L2 network (e.g.: an office LAN) and the OpenWISP server is reachable on
+the LAN address, OpenWISP can then use the **Last IP** field of the
+devices to reach them.
 
 In this scenario it's necessary to set the
 `"OPENWISP_MONITORING_MANAGEMENT_IP_ONLY"

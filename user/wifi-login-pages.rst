@@ -45,7 +45,7 @@ features:
 - Change password
 - Reset password (password forgot)
 - Support for `Social Login`_ and SAML_
-- Optional social login buttons (facebook, google, twitter)
+- Optional social login buttons (*Facebook*, *Google*, *Twitter*)
 - Contact box allowing to show the support email and/or phone number, as
   well as additional links specified via configuration
 - Navigation menu (header and footer) with possibility of specifying if

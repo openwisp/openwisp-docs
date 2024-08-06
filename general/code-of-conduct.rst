@@ -69,8 +69,8 @@ within our community:
 - Inappropriate photography or recording.
 - Inappropriate physical contact. You should have someone’s consent before
   touching them.
-- Unwelcome sexual attention. This includes, sexualized comments or jokes;
-  inappropriate touching, groping, and unwelcomed sexual advances.
+- Unwelcome sexual attention. This includes, sexual comments or jokes;
+  inappropriate touching, groping, and unwelcome sexual advances.
 - Deliberate intimidation, stalking or following (online or in person).
 - Advocating for, or encouraging, any of the above behavior.
 - Sustained disruption of community events, including talks and
@@ -95,8 +95,8 @@ a temporary ban or permanent expulsion from the community without warning
 -----------------------
 
 If you are being harassed, noticed that someone else is being harassed, or
-have any other concerns, please `contact community organizers immediately
-<#contact-info>`_.
+have any other concerns, please :ref:`contact community organizers
+immediately <contact_info_22>`.
 
 Additionally, community organizers are available to aid community members
 to engage with local law enforcement or to otherwise help those
@@ -108,9 +108,8 @@ person experiencing distress.
 ------------------------
 
 If you feel you have been falsely or unfairly accused of violating this
-Code of Conduct, you should `get in touch with the OpenWISP community
-managers <#contact-info>`_ by sending a short explanation of your
-grievance.
+Code of Conduct, you should :ref:`get in touch with the OpenWISP community
+managers <contact_info_22>` by sending a short explanation of your grievance.
 
 Your grievance will be handled in accordance with our existing governing
 policies.
@@ -129,8 +128,12 @@ unacceptable behavior occurring outside the scope of community activities
 when such behavior has the potential to adversely affect the safety and
 well-being of community members.
 
+.. _contact_info_22:
+
 9. Contact info
 ---------------
+
+E-mail:
 
 .. raw:: html
 
@@ -146,9 +149,4 @@ Attribution-ShareAlike License
 <http://creativecommons.org/licenses/by-sa/3.0/>`_.
 
 Portions of text derived from the `Django Under The Hood
-<https://www.djangounderthehood.com/coc/>`_ and the `Geek Feminism
-Anti-Harassment Policy
-<http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy>`_.
-
-Retrieved on April 08, 2018 from `Citizen Code of Conduct
-<http://citizencodeofconduct.org/>`_.
+<https://www.djangounderthehood.com/coc/>`_.

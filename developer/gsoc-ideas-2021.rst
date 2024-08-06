@@ -48,34 +48,34 @@ General suggestions and warnings
 Project Ideas
 -------------
 
-Improve resiliency and packaging of OpenWISP Monitoring on OpenWRT
+Improve resiliency and packaging of OpenWISP Monitoring on OpenWrt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
 
-    Languages and technologies used: Mostly **Lua**, **OpenWRT**,
+    Languages and technologies used: Mostly **Lua**, **OpenWrt**,
     **Makefile** but also a bit of **Python** and **Django**.
 
     **Mentors**: Federico Capoano.
 
 `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`_
-depends on specific lua code to be deployed on the OpenWRT devices, this
+depends on specific lua code to be deployed on the OpenWrt devices, this
 code collects monitoring information and sends it to the OpenWISP server
 in `NetJSON format <https://netjson.org/>`_ (see `Monitoring Scripts
 <https://github.com/openwisp/openwisp-monitoring#monitoring-scripts>`_).
 
 At the moment, this code is deployed using a :doc:`configuration template
-<../user/templates>` which is created with a `database migration
+</user/templates>` which is created with a `database migration
 <https://github.com/openwisp/openwisp-monitoring/blob/ee2271be25649c4c262e8eaf76b6fdc5d5d002ca/openwisp_monitoring/device/migrations/0002_create_template.py>`_
 when the monitoring module is installed, but we need to convert this
-existing code in a new OpenWRT package, well tested, documented and with a
+existing code in a new OpenWrt package, well tested, documented and with a
 key improvement regarding its resiliency.
 
-**Pre-requisites to work on this project**:
+**prerequisites to work on this project**:
 
 The student should be familiar with :doc:`OpenWISP Templates
-<../user/templates>`, `OpenWRT <https://openwrt.org>`_, `OpenWISP
+</user/templates>`, `OpenWrt <https://openwrt.org>`_, `OpenWISP
 Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
 and should have a basic knowledge of `NetJSON format
@@ -84,31 +84,31 @@ and should have a basic knowledge of `NetJSON format
 **Measurable outcomes**:
 
 - Convert `lua-monitoring <https://github.com/openwisp/lua-monitoring>`_
-  into two OpenWRT packages:
+  into two OpenWrt packages:
 
       1. One package for the netjson-monitoring utility, which aims to
          simply return NetJSON DeviceMonitoring output
-      2. One package which provides the OpenWISP Monitoring deamon, which
+      2. One package which provides the OpenWISP Monitoring daemon, which
          depends on netjson-monitoring and `openwisp-config
          <https://github.com/openwisp/openwisp-config>`_ (it takes the
          server information from the openwisp config file)
 
-- The ``netjson-monitoring.lua`` file is becoming too big,ç we have to
+- The ``netjson-monitoring.lua`` file is becoming too big, we have to
   split it over multiple files
 - Each lua function used in the package shall be unit tested, the main
   cases should be covered, mocks should be used to simulate the different
   cases
 - Achieve at least 93% test coverage
-- The deamon shall ran by default every 5 minutes, but this interval shall
+- The daemon shall ran by default every 5 minutes, but this interval shall
   be configurable
-- If for some reason the deamon cannot communicate with the server (eg:
+- If for some reason the daemon cannot communicate with the server (e.g.:
   internet connection is down), the daemon shall:
 
       - check if there's enough RAM available, if not, stop, otherwise
         continue to the next point
       - save the data in a new file stored in a subdirectory of ``/tmp/``
         (which is stored in memory), the file should contain the date/time
-        and the data (eg: the filename could be the datetime and its
+        and the data (e.g.: the filename could be the datetime and its
         contents the data)
 
 - When the daemon sends data to the server, if the HTTP request is
@@ -142,7 +142,7 @@ The OpenWISP Admin site has become the most important web interface of
 OpenWISP, but its usability has not improved much in the last versions, in
 this project we aim to fix this.
 
-**Pre-requisites to work on this project**:
+**prerequisites to work on this project**:
 
 The student should have installed a full OpenWISP instance running
 different modules (controller, monitoring and radius) and should be
@@ -166,7 +166,7 @@ familiar with `openwisp-utils
 - Add the possibility to register menu groups, as well as to specify the
   order at which the level should be added and an optional icon (needs
   also tests and documentation)
-- Add the possibilty to register menu items in levels/groups and specify
+- Add the possibility to register menu items in levels/groups and specify
   their order (needs also tests and documentation)
 - Ensure the old `register_menu_items
   <https://github.com/openwisp/openwisp-utils#openwisp-utils-utils-register-menu-items>`_
@@ -212,7 +212,7 @@ The goal of this project is to add the much needed missing REST API
 endpoints for some of the django models of the oldest OpenWISP modules
 which do not ship a complete REST API.
 
-**Pre-requisites to work on this project**:
+**prerequisites to work on this project**:
 
 The student should have installed a full OpenWISP instance running
 different modules (controller, network topology) and should be familiar
@@ -228,15 +228,15 @@ with `openwisp-controller
 
   - `REST API for main controller features
     <https://github.com/openwisp/openwisp-controller/issues/379>`_
-  - pki app models CRUD operations
-  - geo app models CRUD operations
-  - connection app models CRUD operations
+  - *pki* app models CRUD operations
+  - *geo* app models CRUD operations
+  - *connection* app models CRUD operations
 
 - Create API endpoints for openwisp-users:
 
   - users (include possibility of changing/updating permissions, groups,
     organization-users)
-  - endpoint to manage email addresses (eg: add/remove/change email
+  - endpoint to manage email addresses (e.g.: add/remove/change email
     address, make/unmake primary)
   - organizations CRUD
 
@@ -258,8 +258,8 @@ with `openwisp-controller
 - Add a basic REST API documentation like the one we have in
   `firmware-upgrader
   <https://github.com/openwisp/openwisp-firmware-upgrader#rest-api>`_
-- Ensure the package DRF YASG is included in the test/dev environment of
-  each module touched in this project, as in the `Firmware Upgrader
+- Ensure the package DRF YASG is included in the test project of each
+  module touched in this project, as in the `Firmware Upgrader
   <https://github.com/openwisp/openwisp-firmware-upgrader>`_ and `RADIUS
   <https://github.com/openwisp/openwisp-radius>`_ modules
 
@@ -280,7 +280,7 @@ make easy to access monitoring information via different protocols.
 We do not need to maintain backward compatibility at this stage, we have
 the freedom to change the library how we think is best.
 
-**Pre-requisites to work on this project**:
+**prerequisites to work on this project**:
 
 The student should be familiar with `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
@@ -289,7 +289,7 @@ and should have a basic knowledge of `NetJSON format
 
 **Measurable outcomes**:
 
-- Revamp the OpenWRT backend of `netengine
+- Revamp the OpenWrt backend of `netengine
   <https://github.com/openwisp/netengine>`__, making it compliant with
   `NetJSON DeviceMonitoring specification
   <https://netjson.org/rfc.html#rfc.section.6>`_
@@ -327,7 +327,7 @@ The goal of this project is to improve `OpenWISP WiFi Login Pages
 boilerplate code, reduce the amount of configuration lines in the
 configuration files, improve test coverage and make the code more robust.
 
-**Pre-requisites to work on this project**:
+**prerequisites to work on this project**:
 
 The student should be familiar with `OpenWISP WiFi Login Pages
 <https://github.com/openwisp/openwisp-wifi-login-pages>`__, `OpenWISP
@@ -368,8 +368,8 @@ proficient with Javascript, React JS, NodeJS, HTML and CSS.
 - Implement basic browser testing with selenium for the following
   features:
 
-      - signup success
-      - signup failure (validation error)
+      - sign up success
+      - sign up failure (validation error)
       - login success
       - login failure
       - status
@@ -389,7 +389,7 @@ netjsongraph.js visualization library, which is has not been released yet
 and is available in the `gsoc2019 branch of netjsongraph.js on github
 <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019>`_.
 
-**Pre-requisites to work on this project**:
+**prerequisites to work on this project**:
 
 The student should be familiar with `OpenWISP Network Topology
 <https://github.com/openwisp/openwisp-network-topology>`__ and should be
@@ -421,7 +421,7 @@ proficient with Javascript, React JS, NodeJS, HTML and CSS.
 - Test the library on narrow screens and ensure quirks are fixed
 - Add support for loading map data using GeoJSON
 - Allow loading more than 1000 devices by using pagination, load max 10K
-  points by default (eg: ``maxPointsFetched``), make this max value
+  points by default (e.g.: ``maxPointsFetched``), make this max value
   configurable
 - When more points are present than the configured ``maxPointsFetched``
   value, if the map is zoomed more than a specific level (which shall also
@@ -456,10 +456,10 @@ The goal of this project is to improve OpenWISP Monitoring by working on
 features and changes that have been noted down during the last year of
 usage of this module.
 
-**Pre-requisites to work on this project**:
+**prerequisites to work on this project**:
 
 The student should be familiar with :doc:`OpenWISP Templates
-<../user/templates>`, `OpenWRT <https://openwrt.org>`_, `OpenWISP
+</user/templates>`, `OpenWrt <https://openwrt.org>`_, `OpenWISP
 Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
 and should have a basic knowledge of `NetJSON format

@@ -22,8 +22,8 @@ recommended for production usage yet, unless the reader is willing to
 invest effort in adapting the docker images and configurations to overcome
 any roadblocks encountered.
 
-Quickstart Guide
-----------------
+Quick Start Guide
+-----------------
 
 Requirements:
 
@@ -43,7 +43,7 @@ one firmware type in your network, you could simply name the category
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-firmware-upgrader/docs/docs/images/quickstart-category.gif
 
 If you use multiple firmware images with different features, create one
-category for each firmware type, eg:
+category for each firmware type, e.g.:
 
 - WiFi
 - SDN router
@@ -69,7 +69,7 @@ differences between each version.
 
 An important but optional field of the build model is **OS identifier**,
 this field should match the value of the **Operating System** field which
-gets automatically filled during device registration, eg: ``OpenWrt
+gets automatically filled during device registration, e.g.: ``OpenWrt
 19.07-SNAPSHOT r11061-6ffd4d8a4d``. It is used by the firmware-upgrader
 module to automatically create ``DeviceFirmware`` objects for existing
 devices or when new devices register.

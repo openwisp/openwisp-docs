@@ -10,7 +10,7 @@ The OpenWISP server application is composed of a number of modules called
 the underlying web framework on top of which OpenWISP is built.
 
 Some of the Django apps used by OpenWISP are developed and maintained by
-OpenWISP, other apps are developed and mainained by either Django or third
+OpenWISP, other apps are developed and maintained by either Django or third
 party organizations, but most of these apps are configurable and
 customizable in different shapes or forms.
 
@@ -36,7 +36,7 @@ However, not all the possible settings have a corresponding variable
 because doing so would be very costly to maintain and make the code more
 complicated, for that reason the role provides a way to add any python
 instruction to define and manipulate settings via the
-``openwisp2_extra_django_settings_instructions`` variable, eg:
+``openwisp2_extra_django_settings_instructions`` variable, e.g.:
 
 ::
 

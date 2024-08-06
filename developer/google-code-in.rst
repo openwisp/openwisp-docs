@@ -1,13 +1,24 @@
 Google Code-in
 ==============
 
-.. image:: ../images/gci/gci.png
-    :align: center
-
 .. note::
 
-    `OpenWISP is a mentoring organization for the Google Code-In 2019
-    <https://codein.withgoogle.com/organizations/openwisp/>`_.
+    Google Code-in was a contest that introduced preuniversity students
+    (ages 13-17) to open source software development. OpenWISP has been a
+    mentoring organization in this program for 3 years:
+
+    - `2017
+      <https://codein.withgoogle.com/archive/2017/organization/5760586365272064/>`_
+    - `2018
+      <https://codein.withgoogle.com/archive/2018/organization/6193692746448896/>`_
+    - `2019
+      <https://codein.withgoogle.com/archive/2019/organization/6304121049579520/>`_
+
+    The program was discontinued by Google in early 2020. This page is
+    kept for archiving reasons.
+
+.. image:: ../images/gci/gci.png
+    :align: center
 
 If you are reading this page you are probably considering OpenWISP as a
 possible mentoring organization for the `Google Code-In
@@ -69,7 +80,7 @@ Here's a few quick tricks you can use to become a star in our community:
   to improve
 - if we ask you to open an issue in one of our github repository, please
   take at least 5 minutes of time to write a proper bug report
-- watch the `OpenWISP 2 presentation at the OpenWRT Summit 2017
+- watch the `OpenWISP 2 presentation at the OpenWrt Summit 2017
   <https://www.youtube.com/watch?v=n531yTtJimU>`_ and read the slides of
   this `more technical OpenWISP 2 talk
   <https://www.slideshare.net/FedericoCapoano/applying-the-unix-philosophy-to-django-projects-a-report-from-the-real-world>`_
@@ -90,7 +101,7 @@ Be patient
 
 Mentors are volunteers and they have their own obligations to attend.
 
-Avoid asking them continously to review your task. You are in a queue and
+Avoid asking them continuously to review your task. You are in a queue and
 you need to wait at least 24 hours as indicated in the GCI guidelines
 
 **Hint**: optimize your time!
@@ -176,18 +187,18 @@ order to learn.
 of how OpenWISP can be used and will help us to write more documentation
 and tutorials on how to use it.
 
-Learn to use OpenWRT
+Learn to use OpenWrt
 ~~~~~~~~~~~~~~~~~~~~
 
-OpenWRT is one of the most important technologies in OpenWISP, therefore
+OpenWrt is one of the most important technologies in OpenWISP, therefore
 we consider important that students learn the basics of how it works and
 how OpenWISP can control it.
 
-**Hint**: start with using a virtual instance of OpenWRT in virtualbox,
-then when you feel ready get a `cheap OpenWRT compatible device
+**Hint**: start with using a virtual instance of OpenWrt in virtualbox,
+then when you feel ready get a `cheap OpenWrt compatible device
 <https://forum.openwrt.org/t/cheap-openwrt-hardware-to-move-first-steps-with-openwrt/23569>`_
-that you can use for testing and development. A full list of the OpenWRT
-compatible hardware is available in the official `OpenWRT Website
+that you can use for testing and development. A full list of the OpenWrt
+compatible hardware is available in the official `OpenWrt Website
 <https://openwrt.org/toh/start>`_.
 
 Full stack knowledge
@@ -261,11 +272,11 @@ don't feel comfortable discussing in public, please get in touch with an
 organization administrator, the organization admins for the 2019 edition
 are:
 
-- 2stacks
-- hispanico
-- atb00ker
-- cappe87
-- nemesisdesign
+- ``2stacks``
+- ``hispanico``
+- ``atb00ker``
+- ``cappe87``
+- ``nemesisdesign``
 
 How can I apply as mentor?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
