@@ -58,7 +58,7 @@ build:
 	# the version map, so we remove it before building.
 	rm versions_map.json &> /dev/null || true
 
-	#If the build is successful, the version map is stored in the
+	# If the build is successful, the version map is stored in the
 	# _build/ directory, allowing re-use of the version map when sphinx uses cache
 	# in subsequent builds and only builds the changed files.
 	mv _build/versions_map.json versions_map.json &> /dev/null || true
@@ -262,6 +262,5 @@ dummy:
 version_map:
 	$(SPHINXBUILD) -Q -b version_map $(ALLSPHINXOPTS) $(BUILDDIR)/version_map
 
-.PHONY: format
-format:
-	docstrfmt -l 74 .
+spellcheck:
+	$(SPHINXBUILD) -W -b spelling $(ALLSPHINXOPTS) $(BUILDDIR)

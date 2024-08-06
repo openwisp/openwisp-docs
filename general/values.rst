@@ -14,7 +14,7 @@ What is OpenWISP?
 
 OpenWISP is a robust and versatile software platform designed to simplify
 and automate network management, with a strong emphasis on wireless
-networks. It's widely used in various scenarios, including public Wi-Fi
+networks. It's widely used in various scenarios, including public WiFi
 hotspots, mesh networks, community networks, and IoT applications.
 
 In December 2016, OpenWISP 2 was launched, marking the next generation of
@@ -59,7 +59,7 @@ We believe `Net Neutrality
 internet because it ensures fair treatment (non-discrimination) of private
 communications.
 
-The very first public Wi-Fi networks built with OpenWISP in Italy adhere
+The very first public WiFi networks built with OpenWISP in Italy adhere
 strictly to this principle: no content filtering of any type is allowed on
 these networks, and no special privileges are given to any private
 entities.

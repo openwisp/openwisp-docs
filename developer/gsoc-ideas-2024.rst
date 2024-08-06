@@ -69,12 +69,12 @@ This GSoC project aims to enhance the user experience of the general map
 within OpenWISP, a feature introduced in the last stable version.
 
 By developing a dedicated map page, facilitating precise device tracking,
-and seamlessly integrating indoor floorplans, the project endeavors to
+and seamlessly integrating indoor floor plans, the project endeavors to
 significantly improve the usability and functionality of the mapping
 interface, ensuring a more intuitive and effective user experience.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 Applicants must demonstrate a solid understanding of Python, Django,
 `Leaflet library <https://github.com/makinacorpus/django-leaflet>`_,
@@ -173,8 +173,8 @@ The goal of this project is to improve the latest version of the
 netjsongraph.js visualization library to improve resiliency and
 functionality.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The contributor should have a proven track record and experience with
 Javascript, React JS, NodeJS, HTML and CSS.
@@ -241,8 +241,8 @@ The goal of this project is to improve the Firmware Upgrader module to
 make its mass upgrade operation feature more versatile and to improve the
 user experience by showing progress in real time.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of Python, Django,
 Javascript and `OpenWISP Controller
@@ -311,8 +311,8 @@ The goal of this project is to improve the user experience for managing of
 the notification module in regards to managing notification preferences
 and batching of email notifications.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of `OpenWISP
 Notifications
@@ -386,11 +386,11 @@ Add more timeseries database clients to OpenWISP Monitoring
 
     **Difficulty rate**: medium.
 
-The goal of this project is to add more Timseries DB options to OpenWISP
+The goal of this project is to add more Time Series DB options to OpenWISP
 while keeping good maintainability.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
@@ -418,7 +418,7 @@ Expected outcomes
     **InfluxDB** from `ansible-openwisp2
     <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
     <https://github.com/openwisp/docker-openwisp/>`_
-  - The requests to Elasticsearch shall be optimizesd as described in
+  - The requests to Elasticsearch shall be optimized as described in
     `[timeseries] Optimize elasticsearch #168
     <https://github.com/openwisp/openwisp-monitoring/issues/168>`_.
 

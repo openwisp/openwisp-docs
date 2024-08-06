@@ -179,12 +179,12 @@ Django Extensions can be installed with:
 
 `shell_plus
 <https://django-extensions.readthedocs.io/en/latest/shell_plus.html>`_:
-Django shell with autoloading of the apps' database models and subclasses
-of user-defined classes.
+Django shell which automatically imports the project settings and the
+django models defined in the settings.
 
 `runserver_plus
 <https://django-extensions.readthedocs.io/en/latest/runserver_plus.html>`_:
-typical runserver with Werkzeug debugger baked in.
+the typical ``runserver`` with the Werkzeug debugger baked in.
 
 ``show_urls``: displays the registered URLs of a Django project.
 
@@ -210,11 +210,12 @@ Using these Tools in OpenWISP
 
 These tools can be added to an OpenWISP development environment to
 significantly improve the efficiency and experience of development. Here's
-a walkthrough on how to use them in :doc:`OpenWISP Controller
-</controller/index>`. In the ``tests/`` folder,
-``local_settings.example.py`` should be copied and renamed to
-``local_settings.py`` for customization. This technique can be used in
-other OpenWISP development environments too.
+a guide on how to use them in :doc:`OpenWISP Controller
+</controller/index>`.
+
+In the ``tests/`` folder, ``local_settings.example.py`` should be copied
+and renamed to ``local_settings.py`` for customization. This technique can
+be used in other OpenWISP development environments too.
 
 .. code-block:: bash
 

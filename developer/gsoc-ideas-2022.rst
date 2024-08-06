@@ -73,8 +73,8 @@ already supports configuring **OpenVPN**, **WireGuard** and **VXLAN over
 WireGuard** tunnels. The goal of this project is to add support for
 another VPN backend: `ZeroTier <https://www.zerotier.com>`_.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The contributor must demonstrate good understanding of the following
 OpenWISP modules:
@@ -170,8 +170,8 @@ netjsongraph.js visualization library, which is has not been released yet
 and is available in the `gsoc2019 branch of netjsongraph.js on github
 <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019>`_.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The contributor should have a proven track record and experience with
 Javascript, React JS, NodeJS, HTML and CSS.
@@ -207,7 +207,7 @@ Expected outcomes
 - Test the library on narrow screens and ensure quirks are fixed
 - Add support for loading map data using GeoJSON
 - Allow loading more than 1000 devices by using pagination, load max 10K
-  points by default (eg: ``maxPointsFetched``), make this max value
+  points by default (e.g.: ``maxPointsFetched``), make this max value
   configurable
 - When more points are present than the configured ``maxPointsFetched``
   value, if the map is zoomed more than a specific level (which shall also
@@ -260,8 +260,8 @@ On a macro level, the check would work this way:
    information and jitter)
 3. SSH connection is closed
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
@@ -279,7 +279,7 @@ The outcomes we expect from this project are the following:
 - This check should be optional and disabled by default
 - We can run it by default every night
 - Allow configuring the iperf server globally and by organization with a
-  setting, eg:
+  setting, e.g.:
 
 .. code-block:: python
 
@@ -331,8 +331,8 @@ usage of this module and have the aim of improving the user experience in
 analyzing the collected monitoring data, as well as the developer user
 experience in extracting data from the system.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
@@ -373,11 +373,11 @@ Add more timeseries database clients to OpenWISP Monitoring
 
     **Difficulty rate**: medium.
 
-The goal of this project is to add more Timseries DB options to OpenWISP
+The goal of this project is to add more Time Series DB options to OpenWISP
 while keeping good maintainability.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
@@ -405,7 +405,7 @@ Expected outcomes
     **InfluxDB** from `ansible-openwisp2
     <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
     <https://github.com/openwisp/docker-openwisp/>`_
-  - The requests to Elasticsearch shall be optimizesd as described in
+  - The requests to Elasticsearch shall be optimized as described in
     `[timeseries] Optimize elasticsearch #168
     <https://github.com/openwisp/openwisp-monitoring/issues/168>`_.
 

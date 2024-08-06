@@ -34,3 +34,6 @@ for pdf in _build/*/*.pdf; do
         echo "$pdf is broken"
     fi
 done
+
+./sort_spelling_wordlist.py --qa || \
+  (echo "Spelling Vocabulary not up to date"; exit 1)

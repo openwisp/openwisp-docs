@@ -74,8 +74,8 @@ already supports configuring **OpenVPN**, **WireGuard** and **VXLAN over
 WireGuard** tunnels. The goal of this project is to add support for
 another VPN backend: `ZeroTier <https://www.zerotier.com>`_.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The contributor must demonstrate good understanding of the following
 OpenWISP modules:
@@ -169,8 +169,8 @@ The goal of this project is to improve the Firmware Upgrader module to
 make its mass upgrade operation feature more versatile and to improve the
 user experience by showing progress in real time.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of Python, Django,
 Javascript and `OpenWISP Controller
@@ -239,8 +239,8 @@ The goal of this project is to improve the user experience for managing of
 the notification module in regards to managing notification preferences
 and batching of email notifications.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of `OpenWISP
 Notifications
@@ -314,11 +314,11 @@ Add more timeseries database clients to OpenWISP Monitoring
 
     **Difficulty rate**: medium.
 
-The goal of this project is to add more Timseries DB options to OpenWISP
+The goal of this project is to add more Time Series DB options to OpenWISP
 while keeping good maintainability.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
@@ -346,7 +346,7 @@ Expected outcomes
     **InfluxDB** from `ansible-openwisp2
     <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
     <https://github.com/openwisp/docker-openwisp/>`_
-  - The requests to Elasticsearch shall be optimizesd as described in
+  - The requests to Elasticsearch shall be optimized as described in
     `[timeseries] Optimize elasticsearch #168
     <https://github.com/openwisp/openwisp-monitoring/issues/168>`_.
 

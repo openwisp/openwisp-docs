@@ -40,8 +40,7 @@ Requirements: Python >= 3.9.
     # the VERSION argument.
     make build_html
 
-..
-    note:
+.. note:
 
     Please refer the "`build options" <#build-options>`_section of this
     configuration for a complete reference of the available options.

@@ -341,7 +341,7 @@ def main():
             )
             module_dirs.append(module['dir_name'])
         sphinx_src_dir = version.get('sphinx_src_dir', '.')
-        for format in args.formats:
+        for format in ['spellcheck'] + args.formats:
             subprocess.run(
                 [
                     'make',

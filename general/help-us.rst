@@ -145,8 +145,8 @@ community.
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you like to share your knowledge at conferences and meetups, you may
-cite OpenWISP in one of your presentations or lightining talks, you may
-also show some of its featues, if relevant.
+cite OpenWISP in one of your presentations or lightning talks, you may
+also show some of its features, if relevant.
 
 8. Participate
 ~~~~~~~~~~~~~~

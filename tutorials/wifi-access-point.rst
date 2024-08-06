@@ -1,5 +1,5 @@
-How to Set Up Wi-Fi Access Point SSIDs
-======================================
+How to Set Up WiFi Access Point SSIDs
+=====================================
 
 .. contents:: **Table of Contents**:
     :depth: 3
@@ -35,7 +35,7 @@ The screenshot below shows how the preview will look like.
     :target: ../_images/open-wifi-ap-preview.png
 
 Once the configuration is applied on the device, the SSID will be
-broadacasted.
+broadcast.
 
 .. image:: ../images/demo/ap/open-ap-wifi-iwinfo.png
     :target: ../_images/open-ap-wifi-iwinfo.png
@@ -65,7 +65,7 @@ The screenshot below shows how the preview will look like.
     :target: ../_images/wpa3-mixed-preview.png
 
 Once the configuration is applied on the device, the SSID will be
-broadacasted.
+broadcast.
 
 .. image:: ../images/demo/ap/wpa3-mixed-iwinfo.png
     :target: ../_images/wpa3-mixed-iwinfo.png
@@ -111,8 +111,8 @@ Dual radio (2.4 GHz and 5 GHz) hardware is very common nowadays.
 
 Multiple WiFi interfaces can be created for each available radio, as long
 as they have different names. The SSID can be the same, although this only
-makes sense for having the same SSID broadcasted on different Wi-Fi bands
-(eg: 2.4 GHz and 5 GHz).
+makes sense for having the same SSID broadcast on different WiFi bands
+(e.g.: 2.4 GHz and 5 GHz).
 
 In order to do this, just repeat the procedure shown in the previous
 sections, with the difference that instead of adding only one interface,
@@ -155,7 +155,7 @@ You may wish to test the configuration and adjust the following options:
 
 - Reassociation deadline: Increase it to avoid frequent timeouts on busy
   networks.
-- FT-over-DS.
+- *FT-over-DS*.
 
 .. _monitoring_wifi_clients:
 
