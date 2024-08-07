@@ -176,10 +176,8 @@ html_logo = 'assets/design/openwisp-logo-black.svg'
 #
 # html_last_updated_fmt = None
 
-# If true, SmartyPants will be used to convert quotes and dashes to
-# typographically correct entities.
-#
-# html_use_smartypants = 4True
+# This has to be disabled because it messes with spell-check
+smartquotes = False
 
 # Custom sidebar templates, maps document names to template names.
 #
