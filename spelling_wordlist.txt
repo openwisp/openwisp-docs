@@ -270,6 +270,7 @@ vxlan
 webpack
 Websocket
 websocket
+websockets
 Werkzeug
 wifi
 wireframing

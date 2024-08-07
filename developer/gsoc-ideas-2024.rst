@@ -73,7 +73,7 @@ and seamlessly integrating indoor floor plans, the project endeavors to
 significantly improve the usability and functionality of the mapping
 interface, ensuring a more intuitive and effective user experience.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 Applicants must demonstrate a solid understanding of Python, Django,
@@ -173,7 +173,7 @@ The goal of this project is to improve the latest version of the
 netjsongraph.js visualization library to improve resiliency and
 functionality.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The contributor should have a proven track record and experience with
@@ -241,7 +241,7 @@ The goal of this project is to improve the Firmware Upgrader module to
 make its mass upgrade operation feature more versatile and to improve the
 user experience by showing progress in real time.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of Python, Django,
@@ -311,7 +311,7 @@ The goal of this project is to improve the user experience for managing of
 the notification module in regards to managing notification preferences
 and batching of email notifications.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of `OpenWISP
@@ -389,7 +389,7 @@ Add more timeseries database clients to OpenWISP Monitoring
 The goal of this project is to add more Time Series DB options to OpenWISP
 while keeping good maintainability.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of `OpenWISP Monitoring

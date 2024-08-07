@@ -74,7 +74,7 @@ when the monitoring module is installed, but we need to convert this
 existing code in a new OpenWrt package, well tested, documented and with a
 key improvement regarding its resiliency.
 
-**prerequisites to work on this project**:
+**Prerequisites to work on this project**:
 
 The student should be familiar with :doc:`OpenWISP Templates
 </controller/user/templates>`, `OpenWrt <https://openwrt.org>`_, `OpenWISP
@@ -144,7 +144,7 @@ The OpenWISP Admin site has become the most important web interface of
 OpenWISP, but its usability has not improved much in the last versions, in
 this project we aim to fix this.
 
-**prerequisites to work on this project**:
+**Prerequisites to work on this project**:
 
 The student should have installed a full OpenWISP instance running
 different modules (controller, monitoring and radius) and should be
@@ -214,7 +214,7 @@ The goal of this project is to add the much needed missing REST API
 endpoints for some of the django models of the oldest OpenWISP modules
 which do not ship a complete REST API.
 
-**prerequisites to work on this project**:
+**Prerequisites to work on this project**:
 
 The student should have installed a full OpenWISP instance running
 different modules (controller, network topology) and should be familiar
@@ -282,7 +282,7 @@ make easy to access monitoring information via different protocols.
 We do not need to maintain backward compatibility at this stage, we have
 the freedom to change the library how we think is best.
 
-**prerequisites to work on this project**:
+**Prerequisites to work on this project**:
 
 The student should be familiar with `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
@@ -329,7 +329,7 @@ The goal of this project is to improve `OpenWISP WiFi Login Pages
 boilerplate code, reduce the amount of configuration lines in the
 configuration files, improve test coverage and make the code more robust.
 
-**prerequisites to work on this project**:
+**Prerequisites to work on this project**:
 
 The student should be familiar with `OpenWISP WiFi Login Pages
 <https://github.com/openwisp/openwisp-wifi-login-pages>`__, `OpenWISP
@@ -391,7 +391,7 @@ netjsongraph.js visualization library, which is has not been released yet
 and is available in the `gsoc2019 branch of netjsongraph.js on github
 <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019>`_.
 
-**prerequisites to work on this project**:
+**Prerequisites to work on this project**:
 
 The student should be familiar with `OpenWISP Network Topology
 <https://github.com/openwisp/openwisp-network-topology>`__ and should be
@@ -458,7 +458,7 @@ The goal of this project is to improve OpenWISP Monitoring by working on
 features and changes that have been noted down during the last year of
 usage of this module.
 
-**prerequisites to work on this project**:
+**Prerequisites to work on this project**:
 
 The student should be familiar with :doc:`OpenWISP Templates
 </controller/user/templates>`, `OpenWrt <https://openwrt.org>`_, `OpenWISP

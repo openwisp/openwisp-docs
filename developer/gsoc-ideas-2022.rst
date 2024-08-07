@@ -73,7 +73,7 @@ already supports configuring **OpenVPN**, **WireGuard** and **VXLAN over
 WireGuard** tunnels. The goal of this project is to add support for
 another VPN backend: `ZeroTier <https://www.zerotier.com>`_.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The contributor must demonstrate good understanding of the following
@@ -170,7 +170,7 @@ netjsongraph.js visualization library, which is has not been released yet
 and is available in the `gsoc2019 branch of netjsongraph.js on github
 <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019>`_.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The contributor should have a proven track record and experience with
@@ -260,7 +260,7 @@ On a macro level, the check would work this way:
    information and jitter)
 3. SSH connection is closed
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
@@ -331,7 +331,7 @@ usage of this module and have the aim of improving the user experience in
 analyzing the collected monitoring data, as well as the developer user
 experience in extracting data from the system.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
@@ -377,7 +377,7 @@ Add more timeseries database clients to OpenWISP Monitoring
 The goal of this project is to add more Time Series DB options to OpenWISP
 while keeping good maintainability.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
