@@ -154,8 +154,8 @@ Important notes for using Subnet Division
 Limitations of Subnet Division
 ------------------------------
 
-In the current implementation, it is not possible to change "Size",
-"Number of Subnets" and "Number of IPs" fields of an existing subnet
+In the current implementation, it is not possible to change *"Size"*,
+*"Number of Subnets"* and *"Number of IPs"* fields of an existing subnet
 division rule due to following reasons:
 
 Size
