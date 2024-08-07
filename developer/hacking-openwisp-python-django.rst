@@ -221,8 +221,7 @@ be used in other OpenWISP development environments too.
     cd tests/
     cp local_settings_example.py local_settings.py
 
-Follow the installation steps
-of the OpenWISP Controller module. Run the
+Follow the installation steps of the OpenWISP Controller module. Run the
 command ``pipenv install --dev``, then run ``pipenv run ./manage.py
 migrate`` and ``pipenv run ./manage.py createsuperuser``. Ensure
 ``SPATIALITE_LIBRARY_PATH`` is specified in the ``local_settings.py``

@@ -109,7 +109,8 @@ person experiencing distress.
 
 If you feel you have been falsely or unfairly accused of violating this
 Code of Conduct, you should :ref:`get in touch with the OpenWISP community
-managers <contact_info_22>` by sending a short explanation of your grievance.
+managers <contact_info_22>` by sending a short explanation of your
+grievance.
 
 Your grievance will be handled in accordance with our existing governing
 policies.

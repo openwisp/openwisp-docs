@@ -75,8 +75,7 @@ key improvement regarding its resiliency.
 **prerequisites to work on this project**:
 
 The student should be familiar with :doc:`OpenWISP Templates
-</user/templates>`, `OpenWrt <https://openwrt.org>`_, `OpenWISP
-Monitoring
+</user/templates>`, `OpenWrt <https://openwrt.org>`_, `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
 and should have a basic knowledge of `NetJSON format
 <https://netjson.org/>`_.
@@ -459,8 +458,7 @@ usage of this module.
 **prerequisites to work on this project**:
 
 The student should be familiar with :doc:`OpenWISP Templates
-</user/templates>`, `OpenWrt <https://openwrt.org>`_, `OpenWISP
-Monitoring
+</user/templates>`, `OpenWrt <https://openwrt.org>`_, `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__
 and should have a basic knowledge of `NetJSON format
 <https://netjson.org/>`_.

@@ -81,8 +81,8 @@ applicants which give a higher chance of getting selected**:
   issues for which they have enough information to get started, in order
   to avoid staying idle.
 - **Value quality**: they ensure their work is of the highest quality and
-  does not break existing features of the system thanks to thorough testing
-  before flagging a patch as ready to be merged.
+  does not break existing features of the system thanks to thorough
+  testing before flagging a patch as ready to be merged.
 
 How to become an OpenWISP star
 ------------------------------

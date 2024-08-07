@@ -75,8 +75,8 @@ reviewed and tested it.
 
 You can run QA checks locally by running ``./run-qa-checks`` in the top
 level directory of the repository you're working on. Every OpenWISP module
-should have this script (if a module does not have it, please open an issue
-on github).
+should have this script (if a module does not have it, please open an
+issue on github).
 
 1. Branch naming guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,8 +170,7 @@ now on we will shorten it often to just *PR*):
 Keep your contribution focused and change the least amount of lines of
 code as possible needed to reach the goal you're working on.
 
-**Avoid changes unrelated** to the feature/fix/change you're working
-on.
+**Avoid changes unrelated** to the feature/fix/change you're working on.
 
 **Avoid changes related to white-space** (spaces, tabs, blank lines) by
 setting your editor as follows:

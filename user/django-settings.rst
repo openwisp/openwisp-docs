@@ -10,8 +10,8 @@ The OpenWISP server application is composed of a number of modules called
 the underlying web framework on top of which OpenWISP is built.
 
 Some of the Django apps used by OpenWISP are developed and maintained by
-OpenWISP, other apps are developed and maintained by either Django or third
-party organizations, but most of these apps are configurable and
+OpenWISP, other apps are developed and maintained by either Django or
+third party organizations, but most of these apps are configurable and
 customizable in different shapes or forms.
 
 The most common way to modify the behavior of a Django app is by editing

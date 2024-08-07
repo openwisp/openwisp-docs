@@ -67,10 +67,10 @@ Server Side
   and classes to implement multi-tenancy.
 - `OpenWISP Controller
   <https://github.com/openwisp/openwisp-controller>`_: Configuration
-  management, automatic provisioning of VPN tunnels like
-  OpenVPN, Wireguard, Wireguard over VXLAN, shell commands, SSH
-  connections, x509 PKI management, geographic maps and floor plans,
-  programmable IP address management and subnet provisioning.
+  management, automatic provisioning of VPN tunnels like OpenVPN,
+  Wireguard, Wireguard over VXLAN, shell commands, SSH connections, x509
+  PKI management, geographic maps and floor plans, programmable IP address
+  management and subnet provisioning.
 
   This module depends on several django apps or python libraries developed
   or maintained by OpenWISP:
@@ -85,8 +85,8 @@ Server Side
   - `openwisp-ipam <https://github.com/openwisp/openwisp-ipam>`__: IP and
     Subnet administration.
   - `django-rest-framework-gis
-    <https://github.com/openwisp/django-rest-framework-gis>`__: GIS utilities
-    for Django REST Framework.
+    <https://github.com/openwisp/django-rest-framework-gis>`__: GIS
+    utilities for Django REST Framework.
 
 - `OpenWISP Monitoring
   <https://github.com/openwisp/openwisp-monitoring>`__: Monitors and
