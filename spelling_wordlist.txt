@@ -8,6 +8,7 @@ autocompletion
 autoscale
 backend
 backends
+backhaul
 backoff
 backward
 bind
@@ -91,6 +92,7 @@ gzipping
 hackable
 hacktoberfest
 heterogeneous
+hoc
 hostname
 hostnames
 hotplug

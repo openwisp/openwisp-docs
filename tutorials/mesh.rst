@@ -11,9 +11,11 @@ How to Set Up a Wireless Mesh Network
 Introduction & Prerequisites
 ----------------------------
 
+**What is a Mesh Network?**
+
 A **mesh network** is a **decentralized network architecture** where each
 node not only communicates with its immediate neighbors but also relays
-data for other mesh nodes.
+data for other mesh nodes, creating a peer-to-peer network.
 
 The word "mesh" primarily describes the interconnected topology of the
 network, while **wireless mesh networks** specifically refer to mesh
@@ -23,20 +25,33 @@ physical connection medium.
 The advantages of this network architecture include:
 
 - **Resilience**: Due to its interconnected topology, there's no single
-  point of failure, so the dynamic routing protocols used to route traffic
-  are able to implement self-healing behavior, rerouting traffic along
-  alternative paths when a link fails.
+  point of failure, so the dynamic routing mesh protocols used to route
+  traffic are able to implement *self-healing* behavior, rerouting traffic
+  along alternative paths when a link fails. This redundancy ensures
+  continued operation and makes the network *resilient to temporary
+  failures*.
 - **Flexibility**: Deploying new nodes or relocating existing ones is
-  straightforward due to consistent configurations across all nodes.
+  straightforward due to consistent configurations across all nodes. This
+  allows the network to scale without increasing configuration maintenance
+  costs. Additionally, ad-hoc deployment is possible without extensive
+  planning.
 
-These advantages make mesh networks particularly valuable for expanding
-WiFi coverage while controlling deployment and maintenance costs.
+These benefits make *mesh networking technologies* particularly valuable
+for expanding WiFi coverage area in large spaces like offices, spacious
+houses, and rural areas, while controlling deployment and maintenance
+costs.
 
-In this tutorial, we'll guide you through the process of setting up a
-*wireless mesh network* using the `802.11s mesh mode
+**How to configure a wireless mesh network?**
+
+In this tutorial, we'll guide you through the *best practices for mesh
+network setup* using the `mesh mode (also known as 802.11s)
 <https://en.wikipedia.org/wiki/IEEE_802.11s>`_ on `OpenWrt
 <https://openwrt.org/>`_ through OpenWISP. Additionally, we'll provide
-valuable tips on monitoring and maintaining the mesh network.
+valuable tips on monitoring and maintaining the mesh network, focusing on
+signal strength and network performance.
+
+This tutorial focuses on using **open source solutions for mesh
+networking**.
 
 Firmware Requirements
 ---------------------
@@ -74,10 +89,12 @@ for the successful execution of this tutorial.
 
 For simplicity, we will focus on a single radio, but it's important to
 note that the mesh functionality can be extended to multiple radios if
-necessary.
+necessary. This can improve backhaul performance and reduce interference.
 
 Alternatively, you have the option of running the mesh on one radio while
-the access points operate on another radio to avoid interference.
+the access points operate on another radio to avoid interference and
+increase the performance of the mesh network, mitigating issues like
+interference, optimizing for latency and throughput.
 
 However, these additional scenarios are not explained in this tutorial and
 are left as an exercise for the reader.
@@ -115,6 +132,12 @@ Creating the Template
     `Mesh Demo
     <https://demo.openwisp.io/admin/config/template/ae564575-f251-4f78-aaaf-7821e7a06ad3/change/>`_,
     **feel free to try it out!**
+
+**How to automate a mesh network?**
+
+In this section we'll explain how to automate the provisioning of new mesh
+nodes with a :doc:`Mesh Configuration Template
+</controller/user/templates>`.
 
 From the OpenWISP navigation menu, go to ``Configurations`` and then
 ``Templates``, from here click on the ``Add template``.
@@ -285,8 +308,8 @@ configuration and tailor any part to suit your requirements.
 Enable the Mesh Template on the Devices
 ---------------------------------------
 
-Now is time to apply this template to the devices that we want to make
-part of the mesh.
+Now is time to apply this *mesh template* to the nodes that we want to
+make part of the mesh.
 
 Click on "devices" in the navigation menu, click on the device you want to
 assign the mesh template to, then go to the "Configuration" tab, select
@@ -427,8 +450,8 @@ Mesh Topology Collection and Visualization
     :target: ../_images/mesh-network-topology.gif
 
 In June 2023, we introduced a new feature to the Network Topology module
-of OpenWISP, enabling the automatic collection of network topology data
-from mesh interfaces for visualization purposes.
+of OpenWISP, enabling the automatic collection of *mesh network topology*
+data from for visualization purposes.
 
 Setting up this feature is beyond the scope of this tutorial, but we
 provide pointers to demonstrate its usefulness and guide you in finding
@@ -458,8 +481,13 @@ collected and shown in the **Network Topology List** as shown below.
 Changing the Default 802.11s Routing Protocol
 ---------------------------------------------
 
-Using a routing protocol other than the default protocol shipped in the
-802.11s implementation is out of scope of this tutorial but can be done.
+Switching the mesh routing protocol can be beneficial for optimizing the
+most efficient path between two nodes and reducing the number of hops, but
+it is essential to configure it correctly to achieve optimal performance.
+
+Using a mesh routing protocol other than the default protocol shipped in
+the 802.11s implementation is out of scope of this tutorial but can be
+done.
 
 You will need to turn off mesh forwarding and configure the routing daemon
 of your choice.
