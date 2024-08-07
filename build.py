@@ -311,7 +311,7 @@ def main():
     if os.environ.get('PRODUCTION', False):
         docs_root = '/docs'
         html_base_url = 'https://openwisp.io'
-        build_dir = f'{build_dir}/{docs_root}'
+        build_dir = f'{build_dir}{docs_root}'
 
     for version in build_versions:
         version_name = version['name']
@@ -341,7 +341,7 @@ def main():
             )
             module_dirs.append(module['dir_name'])
         sphinx_src_dir = version.get('sphinx_src_dir', '.')
-        for format in args.formats:
+        for format in ['spellcheck'] + args.formats:
             subprocess.run(
                 [
                     'make',

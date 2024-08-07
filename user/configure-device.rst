@@ -106,7 +106,7 @@ look like the following sample:
 Uncomment and update the following lines:
 
 - ``url``: Set this to the hostname of your OpenWISP instance (e.g., if
-  your OpenWISP server is at "192.168.56.2", set the url to
+  your OpenWISP server is at "192.168.56.2", set the URL to
   ``https://192.168.56.2``).
 - ``verify_ssl``: Set to ``'0'`` if your controller's SSL certificate is
   self-signed; in production, use a valid SSL certificate to ensure
@@ -174,7 +174,7 @@ Compiling Your Own OpenWrt Image
     This section is for advanced users.
 
 Compiling a custom OpenWrt image can save time when configuring new
-devices. By doing this, you can pre-install the agents and include your
+devices. By doing this, you can preinstall the agents and include your
 configurations (e.g., ``url`` and ``shared_secret``) in the default image.
 
 This way, you won't have to configure each new device manually, which is

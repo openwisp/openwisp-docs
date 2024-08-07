@@ -402,12 +402,12 @@ monitoring agent <../openwrt-monitoring-agent/index>` running correctly on
 your device, you should start seeing monitoring information about the mesh
 network in the status tab of the device page.
 
-Bridge interface:
+*Bridge* interface:
 
 .. image:: ../images/mesh/status-br-lan.png
     :target: ../_images/status-br-lan.png
 
-Mesh0 interface:
+*Mesh0* interface:
 
 .. image:: ../images/mesh/status-mesh0.png
     :target: ../_images/status-mesh0.png
@@ -415,7 +415,7 @@ Mesh0 interface:
 .. image:: ../images/mesh/status-mesh0-associated-clients.png
     :target: ../_images/status-mesh0-associated-clients.png
 
-Wlan0 interface:
+*Wlan0* interface:
 
 .. image:: ../images/mesh/status-wlan0.png
     :target: ../_images/status-wlan0.png

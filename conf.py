@@ -39,6 +39,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'notfound.extension',
     'openwisp.sphinx.theme',
+    'sphinxcontrib.spelling',
     'version_switcher',
 ]
 
@@ -175,10 +176,8 @@ html_logo = 'assets/design/openwisp-logo-black.svg'
 #
 # html_last_updated_fmt = None
 
-# If true, SmartyPants will be used to convert quotes and dashes to
-# typographically correct entities.
-#
-# html_use_smartypants = 4True
+# This has to be disabled because it messes with spell-check
+smartquotes = False
 
 # Custom sidebar templates, maps document names to template names.
 #
@@ -441,6 +440,10 @@ notfound_context = {
         'perform a search for what you were looking for.'
     ),
 }
+
+spelling_word_list_filename = 'spelling_wordlist.txt'
+spelling_filters = ['sphinxcontrib.spelling.filters.ContractionFilter']
+spelling_exclude_patterns = ['_build', 'requirements.txt']
 
 # Configuration for generating comprehensive docs
 import os

@@ -12,7 +12,7 @@ Introduction & Prerequisites
 ----------------------------
 
 OpenWISP is widely used as an **open source software** solution for **WiFi
-Hotspot Management** in **Public Wi-Fi** settings.
+Hotspot Management** in **Public WiFi** settings.
 
 In this tutorial, we'll explain the technical details of the most common
 **WiFi Hotspot** deployments and how to test the most important
@@ -75,7 +75,7 @@ captive portal software will not be able to talk to the demo `FreeRADIUS
 <https://freeradius.org/>`_ server instance.
 
 Shortly after the configuration is applied successfully, the Public WiFi
-SSID will be broadcasted by the *access point*.
+SSID will be broadcast by the *access point*.
 
 Accessing the Public WiFI Hotspot
 ---------------------------------
@@ -266,7 +266,7 @@ Follow these steps to try the *paid WiFi subscription* feature:
 - Sign up for one of the non-free plans.
 - Enter your real email address and dummy personal information.
 - Click "Proceed with the payment."
-- Enter the following paypal credentials: ``support@openwisp.io`` /
+- Enter the following Paypal credentials: ``support@openwisp.io`` /
   ``tester123`` and click on "start session".
 - Choose to pay with Paypal balance and click "Continue to Review Order."
 

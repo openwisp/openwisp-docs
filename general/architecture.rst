@@ -37,7 +37,7 @@ Deployment
 - :doc:`Ansible OpenWISP2 </ansible/index>`: Recommended method to deploy
   OpenWISP on virtual machines.
 - :doc:`Docker OpenWISP </docker/index>`: Enables deployment of OpenWISP
-  on dockerized cloud infrastructure. While still under active
+  on Dockerized cloud infrastructure. While still under active
   development, the basic features of OpenWISP are functional.
 - `Ansible OpenWISP WiFi Login Pages
   <https://github.com/openwisp/ansible-openwisp-wifi-login-pages>`_:
@@ -46,7 +46,7 @@ Deployment
 - `Ansible OpenWISP2 Image Generator
   <https://github.com/openwisp/ansible-openwisp2-imagegenerator>`_: Useful
   for generating multiple OpenWrt firmware images for different
-  organizations with the OpenWISP packages pre-installed.
+  organizations with the OpenWISP packages preinstalled.
 - `Ansible Wireguard OpenWISP
   <https://github.com/openwisp/ansible-wireguard-openwisp>`_: Ansible role
   that enables deployment of :doc:`Wireguard integration for OpenWISP
@@ -61,7 +61,8 @@ Server Side
 - :doc:`OpenWISP Controller </controller/index>`: Handles configuration
   management, VPN provisioning (OpenVPN, Wireguard, Wireguard over VXLAN),
   shell commands, SSH connections, x509 PKI management, geographic maps,
-  floorplans, programmable IP address management, and subnet provisioning.
+  floor plans, programmable IP address management, and subnet
+  provisioning.
 
   This module depends on several Django apps and Python libraries
   developed or maintained by OpenWISP:
