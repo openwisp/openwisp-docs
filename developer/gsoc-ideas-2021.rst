@@ -58,7 +58,7 @@ Improve resiliency and packaging of OpenWISP Monitoring on OpenWrt
     Languages and technologies used: Mostly **Lua**, **OpenWrt**,
     **Makefile** but also a bit of **Python** and **Django**.
 
-    **Mentors**: Federico Capoano.
+    **Mentors**: *Federico Capoano*.
 
 `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`_
