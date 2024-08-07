@@ -16,6 +16,7 @@ boolean
 bridge
 browsable
 campus
+Capoano
 captcha
 cd
 certbot
