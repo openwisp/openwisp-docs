@@ -262,7 +262,7 @@ dummy:
 
 .PHONY: version_map
 version_map:
-	$(SPHINXBUILD) -Q -b version_map $(ALLSPHINXOPTS) $(BUILDDIR)/version_map
+	$(SPHINXBUILD) --quiet --fresh-env -b version_map $(ALLSPHINXOPTS) $(BUILDDIR)/version_map
 
 .PHONY: spellcheck
 spellcheck:

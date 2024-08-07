@@ -443,6 +443,10 @@ notfound_context = {
     ),
 }
 
+spelling_word_list_filename = 'spelling_wordlist.txt'
+spelling_filters = ['sphinxcontrib.spelling.filters.ContractionFilter']
+spelling_exclude_patterns = ['_build', 'requirements.txt']
+
 # Configuration for generating comprehensive docs
 import os
 import sys
