@@ -15,8 +15,7 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 from packaging import version as packaging_version
 
-# OUTPUT_FORMATS = ['pdf', 'epub', 'html']
-OUTPUT_FORMATS = ['html']
+OUTPUT_FORMATS = ['pdf', 'epub', 'html']
 
 
 def get_stable_version(versions):
