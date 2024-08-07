@@ -40,7 +40,8 @@ Requirements: Python >= 3.9.
     # the VERSION argument.
     make build_html
 
-.. note:
+..
+    note:
 
     Please refer the "`build options" <#build-options>`_section of this
     configuration for a complete reference of the available options.
@@ -145,6 +146,13 @@ instead of HTTPS. For example:
 .. code-block:: shell
 
     SSH=1 make build
+
+Spell check
+~~~~~~~~~~~
+
+.. code-block:: shell
+
+    make spellcheck
 
 Need help?
 ----------
