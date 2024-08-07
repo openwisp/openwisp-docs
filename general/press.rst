@@ -121,36 +121,36 @@ Google Summer of Code Blog Posts
 
 - `ZeroTier Tunnels Support for OpenWISP Controller
   <https://aryamanz29.medium.com/add-support-for-automatic-management-of-zerotier-tunnels-791be96903bf>`_
-  by Aryaman (*Aryamanz29*).
+  by *Aryaman* (*Aryamanz29*).
 
 2022 Contributors
 ~~~~~~~~~~~~~~~~~
 
 - `Iperf3 Check for OpenWISP Monitoring
   <https://aryamanz29.medium.com/iperf-check-to-openwisp-monitoring-gsoc22-project-report-2661eddd3f77>`_
-  by Aryaman (*Aryamanz29*).
+  by *Aryaman* (*Aryamanz29*).
 - `Improve netjsongraph.js for its new release
   <https://medium.com/@vaishnavnair365/improve-netjsongraph-js-for-its-new-release-project-report-b87002fcfe34>`_
-  by Vaishnav Nair (*totallynotvaishnav*).
+  by *Vaishnav Nair* (*totallynotvaishnav*).
 
 2021 Students
 ~~~~~~~~~~~~~
 
 - `OpenWISP REST API
   <https://manishshah120.medium.com/openwisp-rest-api-gsoc21-project-report-f2c4e0a22673>`_
-  by Manish Kumar Shah (*manishshah120*).
+  by *Manish Kumar Shah* (*manishshah120*).
 - `OpenWrt OpenWISP Monitoring
   <https://dev.to/devkapilbansal/openwrt-openwisp-monitoring-2bmj>`_ by
-  Kapil Bansal (*devkapilbansal*).
+  *Kapil Bansal* (*devkapilbansal*).
 - `OpenWISP WiFi Login Pages
   <https://codesankalp.medium.com/openwisp-wifi-login-pages-project-report-fbc77ff6cc8b>`_
-  by Sankalp (*codesankalp*).
+  by *Sankalp* (*codesankalp*).
 - `Modern UI/UX
   <https://medium.com/@niteshsinha1707/new-navigation-menu-and-ui-ux-improvements-project-report-a94c37514b7d>`_
-  by Nitesh Sinha (*nitehsinha17*).
+  by *Nitesh Sinha* (*nitehsinha17*).
 - `Revamp Netengine and add its SNMP capability to OpenWISP Monitoring
   <https://medium.com/@purhan/gsoc-2021-final-project-report-85dc49c59a87>`_
-  by Purhan Kaushik (*purhan*).
+  by *Purhan Kaushik* (*purhan*).
 
 2020 Students
 ~~~~~~~~~~~~~

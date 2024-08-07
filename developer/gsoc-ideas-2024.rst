@@ -59,7 +59,7 @@ Improve OpenWISP General Map: Indoor, Mobile, Linkable URLs
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**, **Leaflet**, **netjsongraph.js**.
 
-    **Mentors**: Federico Capoano, Gagan Deep.
+    **Mentors**: *Federico Capoano*, *Gagan Deep*.
 
     **Project size**: 350 hours.
 
@@ -163,7 +163,7 @@ Improve netjsongraph.js resiliency and visualization
     Languages and technologies used: **Javascript**, **NodeJS**, **HTML**,
     **CSS**
 
-    **Mentors**: Federico Capoano (more mentors TBA).
+    **Mentors**: *Federico Capoano* (more mentors TBA).
 
     **Project size**: 175 hours.
 
@@ -231,7 +231,7 @@ Improve UX and Flexibility of the Firmware Upgrader Module
 
     Languages and technologies used: **Python**, **Django**, **OpenWrt**.
 
-    **Mentors**: Federico Capoano (more mentors TBA).
+    **Mentors**: *Federico Capoano* (more mentors TBA).
 
     **Project size**: 175 hours.
 
@@ -300,7 +300,7 @@ Improve UX of the Notifications Module
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**, **HTML**, **CSS**
 
-    **Mentors**: Gagan Deep (`pandafy <https://github.com/pandafy>`_)
+    **Mentors**: *Gagan Deep* (`pandafy <https://github.com/pandafy>`_)
     (more mentors TBA).
 
     **Project size**: 175 hours.
@@ -380,7 +380,7 @@ Add more timeseries database clients to OpenWISP Monitoring
     Languages and technologies used: **Python**, **Django**, **InfluxDB**,
     **Elasticsearch**.
 
-    **Mentors**: Federico Capoano, Gagan Deep (more mentors TBA).
+    **Mentors**: *Federico Capoano*, *Gagan Deep* (more mentors TBA).
 
     **Project size**: 175 hours.
 
@@ -409,8 +409,8 @@ Expected outcomes
   - The old pull request has to be updated on the current code base
   - The merge conflicts have to be resolved
   - All the tests must pass, new tests for new charts and metrics added to
-    influxdb must be added (see `[feature] Chart mobile (LTE/5G/UMTS/GSM)
-    signal strength #270
+    *InfluxDB* must be added (see `[feature] Chart mobile
+    (LTE/5G/UMTS/GSM) signal strength #270
     <https://github.com/openwisp/openwisp-monitoring/pull/294>`_)
   - The usage shall be documented, we must make sure there's at least one
     dedicated CI build for **Elasticsearch**

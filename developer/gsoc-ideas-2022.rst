@@ -60,8 +60,8 @@ Adding support for automatic management of ZeroTier Tunnels
     Languages and technologies used: Mostly **OpenWrt**, **Python**,
     **Django**, **ZeroTier**.
 
-    **Mentors**: Gagan Deep (`pandafy <https://github.com/pandafy>`_),
-    Federico Capoano.
+    **Mentors**: *Gagan Deep* (`pandafy <https://github.com/pandafy>`_),
+    *Federico Capoano*.
 
     **Project size**: 350 hours.
 
@@ -159,7 +159,7 @@ Improve netjsongraph.js for its new release
     Languages and technologies used: **Javascript**, **NodeJS**, **HTML**,
     **CSS**
 
-    **Mentors**: Federico Capoano (more mentors TBA).
+    **Mentors**: *Federico Capoano* (more mentors TBA).
 
     **Project size**: 350 hours.
 
@@ -238,7 +238,7 @@ Add iperf bandwidth monitoring check to OpenWISP Monitoring
 
     Languages and technologies used: **Python**, **Django**, **iperf3**.
 
-    **Mentors**: Federico Capoano, Gagan Deep (more mentors TBA).
+    **Mentors**: *Federico Capoano*, *Gagan Deep* (more mentors TBA).
 
     **Project size**: 175 hours.
 
@@ -319,7 +319,7 @@ Improve UX of OpenWISP Monitoring
 
     Languages and technologies used: **Python**, **Django**.
 
-    **Mentors**: Ajay Tripathi, Federico Capoano.
+    **Mentors**: *Ajay Tripathi*, *Federico Capoano*.
 
     **Project size**: 175 hours.
 
@@ -354,8 +354,9 @@ Expected outcomes
   info #290 <https://github.com/openwisp/openwisp-monitoring/issues/290>`_
 - `[docs] Add quickstart tutorial to README #285
   <https://github.com/openwisp/openwisp-monitoring/issues/285>`_
-- `[feature] Add possibility to connect to influxdb on unix domain socket
-  #312 <https://github.com/openwisp/openwisp-monitoring/issues/312>`_
+- `[feature] Add possibility to connect to *InfluxDB* on unix domain
+  socket #312
+  <https://github.com/openwisp/openwisp-monitoring/issues/312>`_
 
 Add more timeseries database clients to OpenWISP Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -367,7 +368,7 @@ Add more timeseries database clients to OpenWISP Monitoring
     Languages and technologies used: **Python**, **Django**, **InfluxDB**,
     **Elasticsearch**.
 
-    **Mentors**: Federico Capoano, Gagan Deep (more mentors TBA).
+    **Mentors**: *Federico Capoano*, *Gagan Deep* (more mentors TBA).
 
     **Project size**: 175 hours.
 
@@ -396,8 +397,8 @@ Expected outcomes
   - The old pull request has to be updated on the current code base
   - The merge conflicts have to be resolved
   - All the tests must pass, new tests for new charts and metrics added to
-    influxdb must be added (see `[feature] Chart mobile (LTE/5G/UMTS/GSM)
-    signal strength #270
+    *InfluxDB* must be added (see `[feature] Chart mobile
+    (LTE/5G/UMTS/GSM) signal strength #270
     <https://github.com/openwisp/openwisp-monitoring/pull/294>`_)
   - The usage shall be documented, we must make sure there's at least one
     dedicated CI build for **Elasticsearch**

@@ -138,7 +138,7 @@ New General Navigation Menu and UX improvements
     Languages and technologies used: Mostly **HTML**, **CSS** and
     **Javascript**, but also a bit of **Python** and **Django**.
 
-    **Mentors**: Ajay Tripathi, Federico Capoano.
+    **Mentors**: *Ajay Tripathi*, *Federico Capoano*.
 
 The OpenWISP Admin site has become the most important web interface of
 OpenWISP, but its usability has not improved much in the last versions, in
@@ -208,7 +208,7 @@ OpenWISP REST API
     Languages and technologies used: **Python**, **Django**, **Django REST
     Framework**.
 
-    **Mentors**: Ajay Tripahi, Noumbissi Valere, Federico Capoano.
+    **Mentors**: *Ajay Tripahi*, *Noumbissi Valere*, *Federico Capoano*.
 
 The goal of this project is to add the much needed missing REST API
 endpoints for some of the django models of the oldest OpenWISP modules
@@ -272,7 +272,7 @@ Revamp Netengine and add its SNMP capability to OpenWISP Monitoring
 
     Languages and technologies used: **Python**, **Django**.
 
-    **Mentors**: Gagan Deep, Federico Capoano.
+    **Mentors**: *Gagan Deep*, *Federico Capoano*.
 
 The goal of this project is to add support for SNMP (Simple Network
 Management Protocol) to OpenWISP Monitoring by using `netengine
@@ -322,7 +322,7 @@ Bring professional efficiency to OpenWISP WiFi Login Pages
     Languages and technologies used: **Javascript**, **React JS**,
     **NodeJS**, **HTML**, **CSS**.
 
-    **Mentors**: Noumbissi Valere, Federico Capoano.
+    **Mentors**: *Noumbissi Valere*, *Federico Capoano*.
 
 The goal of this project is to improve `OpenWISP WiFi Login Pages
 <https://github.com/openwisp/openwisp-wifi-login-pages>`__ by reducing
@@ -384,7 +384,7 @@ Improve netjsongraph.js for its new release
     Languages and technologies used: **Javascript**, **NodeJS**, **HTML**,
     **CSS**
 
-    **Mentors**: Federico Capoano
+    **Mentors**: *Federico Capoano*.
 
 The goal of this project is to improve the new version of the
 netjsongraph.js visualization library, which is has not been released yet
@@ -452,7 +452,7 @@ Second release of OpenWISP Monitoring
 
     Languages and technologies used: **Python**, **Django**.
 
-    **Mentors**: Gagan Deep, Federico Capoano.
+    **Mentors**: *Gagan Deep*, *Federico Capoano*.
 
 The goal of this project is to improve OpenWISP Monitoring by working on
 features and changes that have been noted down during the last year of

@@ -269,6 +269,7 @@ vpns
 vxlan
 webpack
 Websocket
+websocket
 Werkzeug
 wifi
 wireframing
