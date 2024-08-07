@@ -111,6 +111,7 @@ ipam
 ipdb
 iperf
 iproute2
+IPs
 iptables
 IPv
 IPython
