@@ -107,11 +107,12 @@ IoT
 iot
 ip
 ipam
+ipdb
 iperf
 iproute2
-IPs
 iptables
 IPv
+IPython
 Italia
 iterating
 javascript

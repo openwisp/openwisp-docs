@@ -58,8 +58,8 @@ Adding support for automatic management of ZeroTier Tunnels
     Languages and technologies used: Mostly **OpenWrt**, **Python**,
     **Django**, **ZeroTier**.
 
-    **Mentors**: Gagan Deep (`pandafy <https://github.com/pandafy>`_),
-    Federico Capoano.
+    **Mentors**: *Gagan Deep* (`pandafy <https://github.com/pandafy>`_),
+    *Federico Capoano*.
 
     **Project size**: 350 hours.
 
@@ -71,7 +71,7 @@ already supports configuring **OpenVPN**, **WireGuard** and **VXLAN over
 WireGuard** tunnels. The goal of this project is to add support for
 another VPN backend: `ZeroTier <https://www.zerotier.com>`_.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The contributor must demonstrate good understanding of the following
@@ -157,7 +157,7 @@ Improve netjsongraph.js for its new release
     Languages and technologies used: **Javascript**, **NodeJS**, **HTML**,
     **CSS**
 
-    **Mentors**: Federico Capoano (more mentors TBA).
+    **Mentors**: *Federico Capoano* (more mentors TBA).
 
     **Project size**: 350 hours.
 
@@ -168,7 +168,7 @@ netjsongraph.js visualization library, which is has not been released yet
 and is available in the `gsoc2019 branch of netjsongraph.js on github
 <https://github.com/openwisp/netjsongraph.js/tree/gsoc2019>`_.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The contributor should have a proven track record and experience with
@@ -236,7 +236,7 @@ Add iperf bandwidth monitoring check to OpenWISP Monitoring
 
     Languages and technologies used: **Python**, **Django**, **iperf3**.
 
-    **Mentors**: Federico Capoano, Gagan Deep (more mentors TBA).
+    **Mentors**: *Federico Capoano*, *Gagan Deep* (more mentors TBA).
 
     **Project size**: 175 hours.
 
@@ -258,7 +258,7 @@ On a macro level, the check would work this way:
    information and jitter)
 3. SSH connection is closed
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
@@ -317,7 +317,7 @@ Improve UX of OpenWISP Monitoring
 
     Languages and technologies used: **Python**, **Django**.
 
-    **Mentors**: Ajay Tripathi, Federico Capoano.
+    **Mentors**: *Ajay Tripathi*, *Federico Capoano*.
 
     **Project size**: 175 hours.
 
@@ -329,7 +329,7 @@ usage of this module and have the aim of improving the user experience in
 analyzing the collected monitoring data, as well as the developer user
 experience in extracting data from the system.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
@@ -352,8 +352,9 @@ Expected outcomes
   info #290 <https://github.com/openwisp/openwisp-monitoring/issues/290>`_
 - `[docs] Add quick start tutorial to README #285
   <https://github.com/openwisp/openwisp-monitoring/issues/285>`_
-- `[feature] Add possibility to connect to influxdb on unix domain socket
-  #312 <https://github.com/openwisp/openwisp-monitoring/issues/312>`_
+- `[feature] Add possibility to connect to *InfluxDB* on unix domain
+  socket #312
+  <https://github.com/openwisp/openwisp-monitoring/issues/312>`_
 
 Add more timeseries database clients to OpenWISP Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -365,7 +366,7 @@ Add more timeseries database clients to OpenWISP Monitoring
     Languages and technologies used: **Python**, **Django**, **InfluxDB**,
     **Elasticsearch**.
 
-    **Mentors**: Federico Capoano, Gagan Deep (more mentors TBA).
+    **Mentors**: *Federico Capoano*, *Gagan Deep* (more mentors TBA).
 
     **Project size**: 175 hours.
 
@@ -374,7 +375,7 @@ Add more timeseries database clients to OpenWISP Monitoring
 The goal of this project is to add more Time Series DB options to OpenWISP
 while keeping good maintainability.
 
-prerequisites to work on this project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The student must demonstrate good understanding of `OpenWISP Monitoring
@@ -394,8 +395,8 @@ Expected outcomes
   - The old pull request has to be updated on the current code base
   - The merge conflicts have to be resolved
   - All the tests must pass, new tests for new charts and metrics added to
-    influxdb must be added (see `[feature] Chart mobile (LTE/5G/UMTS/GSM)
-    signal strength #270
+    *InfluxDB* must be added (see `[feature] Chart mobile
+    (LTE/5G/UMTS/GSM) signal strength #270
     <https://github.com/openwisp/openwisp-monitoring/pull/294>`_)
   - The usage shall be documented, we must make sure there's at least one
     dedicated CI build for **Elasticsearch**
