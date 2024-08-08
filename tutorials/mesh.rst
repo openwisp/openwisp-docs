@@ -457,10 +457,10 @@ Setting up this feature is beyond the scope of this tutorial, but we
 provide pointers to demonstrate its usefulness and guide you in finding
 the information needed to set it up:
 
+- :doc:`Relevant Network Topology documentation
+  </network-topology/user/integrations>`
 - Github pull request: `[feature] WiFi Mesh integration
   <https://github.com/openwisp/openwisp-network-topology/pull/179>`_
-- :doc:`Network Topology documentation
-  </network-topology/user/integrations>`
 
 If you have been playing with our **Demo System**, you can try this
 feature there! You only have to register at least 2 devices to the
