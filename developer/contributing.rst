@@ -18,11 +18,12 @@ Introduce yourself
 ------------------
 
 It won't hurt to join `our main communication channel
-<https://matrix.to/#/#openwisp_general:gitter.im>`_ and introduce yourself, although to
-coordinate with one another on technical matters we use `the development
-channel <https://matrix.to/#/#openwisp_development:gitter.im>`_. Use these two channels
-share feedback, share your OpenWISP derivative work, ask questions or
-announce your intentions.
+<https://matrix.to/#/#openwisp_general:gitter.im>`_ and introduce
+yourself, although to coordinate with one another on technical matters we
+use `the development channel
+<https://matrix.to/#/#openwisp_development:gitter.im>`_. Use these two
+channels share feedback, share your OpenWISP derivative work, ask
+questions or announce your intentions.
 
 Look for open issues
 --------------------
@@ -30,12 +31,12 @@ Look for open issues
 Check out these two kanban boards:
 
 - `OpenWISP Contributor's Board
-  <https://github.com/orgs/openwisp/projects/42/views/1>`_: lists issues that are
-  suited to newcomers.
+  <https://github.com/orgs/openwisp/projects/42/views/1>`_: lists issues
+  that are suited to newcomers.
 - `OpenWISP Priorities for next releases
-  <https://github.com/orgs/openwisp/projects/37/views/1>`_, lists issues that are
-  more urgently needed by the community and is frequently used and
-  reviewed by more seasoned contributors.
+  <https://github.com/orgs/openwisp/projects/37/views/1>`_, lists issues
+  that are more urgently needed by the community and is frequently used
+  and reviewed by more seasoned contributors.
 
 If there's anything you don't understand regarding the board or a specific
 github issue, don't hesitate to ask questions in our `general chat
@@ -52,8 +53,8 @@ Priorities for the next release
 When we are close to releasing a new major version of OpenWISP, we will
 encourage all contributors to focus on the **To Do** column of the
 `OpenWISP Priorities for next releases
-<https://github.com/orgs/openwisp/projects/37/views/1>`_ board and filter the
-issues according to their expertise:
+<https://github.com/orgs/openwisp/projects/37/views/1>`_ board and filter
+the issues according to their expertise:
 
 - **Newcomer**: filter by `Good first issue
   <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=good+first+issue>`_
