@@ -57,7 +57,7 @@ Depending on your use case, you might be interested in different features:
   particularly useful.
 - **WiFi Connectivity and Security**: If you're focused on providing WiFi
   Hotspot connectivity or WPA Enterprise WiFi, take a look at the
-  :doc:`RADIUS </user/radius>` and :doc:`WiFi Login Pages
+  :doc:`RADIUS </radius/index>` and :doc:`WiFi Login Pages
   </wifi-login-pages/index>` modules.
 
 Additionally, we offer tutorials for the most common scenarios:
