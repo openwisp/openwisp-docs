@@ -30,7 +30,7 @@ Public Internet Deployment
 
 This is the most common scenario:
 
-- The OpenWISP server is deployed in a datacenter exposed to the public
+- The OpenWISP server is deployed in a data center exposed to the public
   internet. Thus, the server has a public IPv4 (and IPv6) address and
   usually a valid SSL certificate provided by Let's Encrypt or another
   commercial SSL provider.
@@ -60,14 +60,14 @@ Requirements for this scenario:
   well.
 
   If the OpenWISP server is connected to a network infrastructure that
-  allows it to reach the devices via pre-existing tunneling or Intranet
+  allows it to reach the devices via preexisting tunneling or Intranet
   solutions (e.g., MPLS, SD-WAN), then setting up a VPN server is not
   needed, as long as there's a dedicated interface on OpenWrt with an
   assigned IP address that is reachable from the OpenWISP server.
 
 - The devices must be configured to join the management tunnel
-  automatically, either via a pre-existing configuration in the firmware
-  or via a :ref:`default_templates`.
+  automatically, either via a preexisting configuration in the firmware or
+  via a :ref:`default_templates`.
 - The :doc:`/openwrt-config-agent/index` running on the network devices
   must be configured to specify the ``management_interface`` option, which
   must be set to the interface name assigned by the VPN tunnel. The agent

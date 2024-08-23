@@ -5,7 +5,7 @@ Google Code-in
 
 .. note::
 
-    Google Code-in was a contest that introduced pre-university students
+    Google Code-in was a contest that introduced preuniversity students
     (ages 13-17) to open source software development. OpenWISP has been a
     mentoring organization in this program for 3 years:
 
@@ -103,7 +103,7 @@ Be patient
 
 Mentors are volunteers and they have their own obligations to attend.
 
-Avoid asking them continously to review your task. You are in a queue and
+Avoid asking them continuously to review your task. You are in a queue and
 you need to wait at least 24 hours as indicated in the GCI guidelines
 
 **Hint**: optimize your time!
@@ -274,11 +274,11 @@ don't feel comfortable discussing in public, please get in touch with an
 organization administrator, the organization admins for the 2019 edition
 are:
 
-- 2stacks
-- hispanico
-- atb00ker
-- cappe87
-- nemesisdesign
+- ``2stacks``
+- ``hispanico``
+- ``atb00ker``
+- ``cappe87``
+- ``nemesisdesign``
 
 How can I apply as mentor?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

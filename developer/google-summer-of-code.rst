@@ -121,7 +121,7 @@ Here's a few quick tricks you can use to become a star in our community:
   idea about how to improve it, **please let us know!**
 - start using OpenWISP 2: install it, run it, play with it; understand its
   structure
-- start contributing (eg: fix easy bugs, write documentation, improve
+- start contributing (e.g.: fix easy bugs, write documentation, improve
   tests); look for open issues in our most used repositories on
   `github.com/openwisp <https://github.com/openwisp>`_ (ask in our support
   channels before starting to code please! we have many legacy

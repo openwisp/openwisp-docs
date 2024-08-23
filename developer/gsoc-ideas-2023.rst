@@ -61,8 +61,8 @@ Adding support for automatic management of ZeroTier Tunnels
     Languages and technologies used: Mostly **OpenWrt**, **Python**,
     **Django**, **ZeroTier**.
 
-    **Mentors**: Gagan Deep (`pandafy <https://github.com/pandafy>`_),
-    Federico Capoano.
+    **Mentors**: *Gagan Deep* (`pandafy <https://github.com/pandafy>`_),
+    *Federico Capoano*.
 
     **Project size**: 350 hours.
 
@@ -74,8 +74,8 @@ already supports configuring **OpenVPN**, **WireGuard** and **VXLAN over
 WireGuard** tunnels. The goal of this project is to add support for
 another VPN backend: `ZeroTier <https://www.zerotier.com>`_.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The contributor must demonstrate good understanding of the following
 OpenWISP modules:
@@ -159,7 +159,7 @@ Improve UX and Flexibility of the Firmware Upgrader Module
 
     Languages and technologies used: **Python**, **Django**, **OpenWrt**.
 
-    **Mentors**: Federico Capoano (more mentors TBA).
+    **Mentors**: *Federico Capoano* (more mentors TBA).
 
     **Project size**: 175 hours.
 
@@ -169,8 +169,8 @@ The goal of this project is to improve the Firmware Upgrader module to
 make its mass upgrade operation feature more versatile and to improve the
 user experience by showing progress in real time.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of Python, Django,
 Javascript and `OpenWISP Controller
@@ -228,7 +228,7 @@ Improve UX of the Notifications Module
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**, **HTML**, **CSS**
 
-    **Mentors**: Gagan Deep (`pandafy <https://github.com/pandafy>`_)
+    **Mentors**: *Gagan Deep* (`pandafy <https://github.com/pandafy>`_)
     (more mentors TBA).
 
     **Project size**: 175 hours.
@@ -239,8 +239,8 @@ The goal of this project is to improve the user experience for managing of
 the notification module in regards to managing notification preferences
 and batching of email notifications.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of `OpenWISP
 Notifications
@@ -308,17 +308,17 @@ Add more timeseries database clients to OpenWISP Monitoring
     Languages and technologies used: **Python**, **Django**, **InfluxDB**,
     **Elasticsearch**.
 
-    **Mentors**: Federico Capoano, Gagan Deep (more mentors TBA).
+    **Mentors**: *Federico Capoano*, *Gagan Deep* (more mentors TBA).
 
     **Project size**: 175 hours.
 
     **Difficulty rate**: medium.
 
-The goal of this project is to add more Timseries DB options to OpenWISP
+The goal of this project is to add more Time Series DB options to OpenWISP
 while keeping good maintainability.
 
-Pre-requisites to work on this project
-++++++++++++++++++++++++++++++++++++++
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
 
 The applicant must demonstrate good understanding of `OpenWISP Monitoring
 <https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
@@ -337,8 +337,8 @@ Expected outcomes
   - The old pull request has to be updated on the current code base
   - The merge conflicts have to be resolved
   - All the tests must pass, new tests for new charts and metrics added to
-    influxdb must be added (see `[feature] Chart mobile (LTE/5G/UMTS/GSM)
-    signal strength #270
+    *InfluxDB* must be added (see `[feature] Chart mobile
+    (LTE/5G/UMTS/GSM) signal strength #270
     <https://github.com/openwisp/openwisp-monitoring/pull/294>`_)
   - The usage shall be documented, we must make sure there's at least one
     dedicated CI build for **Elasticsearch**
@@ -346,7 +346,7 @@ Expected outcomes
     **InfluxDB** from `ansible-openwisp2
     <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
     <https://github.com/openwisp/docker-openwisp/>`_
-  - The requests to Elasticsearch shall be optimizesd as described in
+  - The requests to Elasticsearch shall be optimized as described in
     `[timeseries] Optimize elasticsearch #168
     <https://github.com/openwisp/openwisp-monitoring/issues/168>`_.
 

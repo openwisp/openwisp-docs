@@ -147,6 +147,13 @@ instead of HTTPS. For example:
 
     SSH=1 make build
 
+Spell check
+~~~~~~~~~~~
+
+.. code-block:: shell
+
+    make spellcheck
+
 Need help?
 ----------
 

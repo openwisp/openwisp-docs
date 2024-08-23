@@ -59,8 +59,8 @@ To download the OpenWISP firmware for your device, visit
 <http://downloads.openwisp.io/?prefix=firmware/22.03/ath79/>`_ and select
 the appropriate target architecture and image.
 
-At present, we are generating firmware only for ath79, but we plan to add
-support for more targets in the future.
+At present, we are generating firmware only for ``ath79``, but we plan to
+add support for more targets in the future.
 
 If your device is not currently supported, please let us know through our
 `support channels <https://openwisp.org/support.html>`__ and/or follow our
@@ -109,7 +109,7 @@ The easiest thing is to use the following commands:
 
 If you want to install more recent versions of the OpenWISP packages, you
 can download them onto your device from `downloads.openwisp.io
-<http://downloads.openwisp.io/>`__ and then install them, eg:
+<http://downloads.openwisp.io/>`__ and then install them, e.g.:
 
 .. code-block::
 
@@ -130,7 +130,7 @@ can download them onto your device from `downloads.openwisp.io
 
 .. note::
 
-    If ``wget`` doesn't work (eg: SSL issues), you can use ``curl``, or
+    If ``wget`` doesn't work (e.g.: SSL issues), you can use ``curl``, or
     alternatively you can download the packages onto your machine and from
     there upload them to your device via ``scp``.
 
@@ -242,7 +242,7 @@ Charts
     :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/cpu-load.png
 
 The following charts are displayed only for devices with mobile
-connections (eg: 3G, LTE).
+connections (e.g.: 3G, LTE).
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/access-technology.png
     :target: https://raw.githubusercontent.com/openwisp/openwisp-monitoring/docs/docs/access-technology.png

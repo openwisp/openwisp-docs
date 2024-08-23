@@ -18,11 +18,12 @@ Introduce yourself
 ------------------
 
 It won't hurt to join `our main communication channel
-<https://gitter.im/openwisp/general>`_ and introduce yourself, although to
-coordinate with one another on technical matters we use `the development
-channel <https://gitter.im/openwisp/development>`_. Use these two channels
-share feedback, share your OpenWISP derivative work, ask questions or
-announce your intentions.
+<https://matrix.to/#/#openwisp_general:gitter.im>`_ and introduce
+yourself, although to coordinate with one another on technical matters we
+use `the development channel
+<https://matrix.to/#/#openwisp_development:gitter.im>`_. Use these two
+channels share feedback, share your OpenWISP derivative work, ask
+questions or announce your intentions.
 
 Look for open issues
 --------------------
@@ -30,19 +31,19 @@ Look for open issues
 Check out these two kanban boards:
 
 - `OpenWISP Contributor's Board
-  <https://github.com/orgs/openwisp/projects/3>`_: lists issues that are
-  suited to newcomers.
+  <https://github.com/orgs/openwisp/projects/42/views/1>`_: lists issues
+  that are suited to newcomers.
 - `OpenWISP Priorities for next releases
-  <https://github.com/orgs/openwisp/projects/4>`_, lists issues that are
-  more urgently needed by the community and is frequently used and
-  reviewed by more seasoned contributors.
+  <https://github.com/orgs/openwisp/projects/37/views/1>`_, lists issues
+  that are more urgently needed by the community and is frequently used
+  and reviewed by more seasoned contributors.
 
 If there's anything you don't understand regarding the board or a specific
 github issue, don't hesitate to ask questions in our `general chat
-<https://gitter.im/openwisp/general>`_.
+<https://matrix.to/#/#openwisp_general:gitter.im>`_.
 
 **You don't need to wait for the issue to be assigned to you.** Just check
-if there is anyone else actively working on it (eg: an open pull request
+if there is anyone else actively working on it (e.g.: an open pull request
 with recent activity). If nobody else is actively working on it, **just
 announce your intention to work on it by leaving a comment in the issue**.
 
@@ -52,15 +53,15 @@ Priorities for the next release
 When we are close to releasing a new major version of OpenWISP, we will
 encourage all contributors to focus on the **To Do** column of the
 `OpenWISP Priorities for next releases
-<https://github.com/orgs/openwisp/projects/4>`_ board and filter the
-issues according to their expertise:
+<https://github.com/orgs/openwisp/projects/37/views/1>`_ board and filter
+the issues according to their expertise:
 
 - **Newcomer**: filter by `Good first issue
-  <https://github.com/orgs/openwisp/projects/4?card_filter_query=label%3A%22good+first+issue%22>`_
+  <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=good+first+issue>`_
   or `Hacktoberfest
-  <https://github.com/orgs/openwisp/projects/4?card_filter_query=label%3Ahacktoberfest>`_.
+  <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=hacktoberfest>`_.
 - **Expert**: filter by `Important
-  <https://github.com/orgs/openwisp/projects/4?card_filter_query=label%3Aimportant>`_.
+  <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=important>`_.
 
 Setup
 -----
@@ -94,7 +95,7 @@ on github).
 1. Branch naming guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a new branch for your patch, use a self-descriptive name, eg:
+Create a new branch for your patch, use a self-descriptive name, e.g.:
 
 .. code-block::
 
@@ -185,8 +186,7 @@ now on we will shorten it often to just *PR*):
 Keep your contribution focused and change the least amount of lines of
 code as possible needed to reach the goal you're working on.
 
-**Avoid changes unrelated** to the feature/bugfix/change you're working
-on.
+**Avoid changes unrelated** to the feature/fix/change you're working on.
 
 **Avoid changes related to white-space** (spaces, tabs, blank lines) by
 setting your editor as follows:

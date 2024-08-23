@@ -46,7 +46,7 @@ However, not all the possible settings have a corresponding variable
 because doing so would be very costly to maintain and make the code more
 complicated, for that reason the role provides a way to add any python
 instruction to define and manipulate settings via the
-``openwisp2_extra_django_settings_instructions`` variable, eg:
+``openwisp2_extra_django_settings_instructions`` variable, e.g.:
 
 .. code-block::
 

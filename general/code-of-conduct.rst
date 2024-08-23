@@ -63,7 +63,7 @@ within our community:
 
 - Violence, threats of violence or violent language directed against
   another person.
-- Sexist, racist, homophobic, transphobic, ableit or otherwise
+- Sexist, racist, homophobic, transphobic, ableist or otherwise
   discriminatory jokes and language.
 - Posting or displaying sexually explicit or violent material.
 - Posting or threatening to post other people’s personally identifying

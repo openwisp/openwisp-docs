@@ -37,7 +37,7 @@ overhead for maintainers.
 
 Look for issues labeled **hacktoberfest** in the `OpenWISP Hacktoberfest
 Contributor's Board
-<https://github.com/orgs/openwisp/projects/3?card_filter_query=label%3Ahacktoberfest>`_..
+<https://github.com/orgs/openwisp/projects/42/views/1?card_filter_query=label%3Ahacktoberfest>`_..
 
 Feel free to ask question regarding points which are not clear, but please
 **ensure your questions are specific**.
@@ -86,7 +86,7 @@ and end goals. Since new contributors are not suited to work on critical
 tasks due to their inherent complexity, we prepared a list of easier and
 well defined issues that can be used to get started, please refer to our
 `OpenWISP Hacktoberfest Contributor's Board
-<https://github.com/orgs/openwisp/projects/3?card_filter_query=label%3Ahacktoberfest>`_.
+<https://github.com/orgs/openwisp/projects/42/views/1?card_filter_query=label%3Ahacktoberfest>`_.
 
 2. Spammy pull requests won't be accepted
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
