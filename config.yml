@@ -9,8 +9,6 @@ modules:
     dir_name: firmware-upgrader
   - name: openwisp-radius
     dir_name: radius
-    # TODO: Remove before merging
-    branch: reorder-docs
   - name: openwisp-notifications
     dir_name: notifications
   - name: openwisp-network-topology
@@ -29,12 +27,8 @@ modules:
     dir_name: openwrt-monitoring-agent
   - name: ansible-openwisp2
     dir_name: ansible
-    # TODO: Remove before merging
-    branch: reorder-docs
   - name: docker-openwisp
     dir_name: docker
-    # TODO: Remove before merging
-    branch: reorder-docs
 versions:
   - name: '22.05'
     overwrite_modules: true
