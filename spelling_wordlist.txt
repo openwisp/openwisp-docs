@@ -1,9 +1,11 @@
 ableist
 ai
+allauth
 analytics
 ansible
 api
 arp
+auth
 autocompletion
 autoscale
 backend
@@ -25,6 +27,7 @@ Chromedriver
 ci
 cidr
 cli
+CoA
 codebase
 config
 configs
@@ -39,6 +42,7 @@ crontab
 cryptographic
 css
 csv
+csvfile
 curl
 customizable
 customizations
@@ -49,6 +53,7 @@ debian
 devops
 differently
 django
+djangosaml
 dns
 dnscrypt
 dnsmasq
@@ -85,6 +90,7 @@ github
 gitlab
 Gmail
 googleapis
+groupname
 GSoC
 gui
 gzipped
@@ -154,6 +160,7 @@ modularity
 monetizable
 multitenant
 mysql
+nas
 Nazionali
 Netengine
 netjson
@@ -177,6 +184,7 @@ pfSense
 PKI
 pluggable
 Polyfills
+postauth
 postfix
 postgresql
 pppd
@@ -194,12 +202,14 @@ processed
 progetti
 programmatically
 proxied
+py
 Pypi
 python
 QA
 qualified
 queryset
 querysets
+querystring
 RADIUS
 radsec
 reassociation
@@ -211,6 +221,7 @@ respawn
 reusability
 rtt
 runtime
+saml
 scalable
 schemas
 serializer
@@ -248,8 +259,10 @@ txtinfo
 ubiquiti
 ubuntu
 udp
+uid
 unassign
 uncheck
+uncomment
 Uncomment
 unencrypted
 unmanaged
@@ -261,16 +274,19 @@ untrusted
 upgrader
 upgraders
 uptime
+urlconf
 utils
 uwsgi
 uWSGI
 validator
+verifiers
 virtualbox
 VNI
 vpn
 vpns
 vxlan
 webpack
+webservers
 Websocket
 websocket
 websockets

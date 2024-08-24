@@ -7,6 +7,8 @@ modules:
     dir_name: monitoring
   - name: openwisp-firmware-upgrader
     dir_name: firmware-upgrader
+  - name: openwisp-radius
+    dir_name: radius
   - name: openwisp-notifications
     dir_name: notifications
   - name: openwisp-network-topology

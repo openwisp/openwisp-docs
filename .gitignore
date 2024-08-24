@@ -6,6 +6,7 @@ modules/*
 controller
 monitoring
 firmware-upgrader
+radius
 notifications
 network-topology
 users

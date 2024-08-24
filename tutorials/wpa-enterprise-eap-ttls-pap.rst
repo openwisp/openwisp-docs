@@ -28,7 +28,7 @@ Enable OpenWISP RADIUS
     If you are following this tutorial on our :doc:`Demo System <./demo>`,
     you can skip this step.
 
-To use WPA2 Enterprise, the :doc:`RADIUS module </user/radius>` must be
+To use WPA2 Enterprise, the :doc:`RADIUS module </radius/index>` must be
 enabled first.
 
 See :ref:`ansible_enabling_radius_module` in the Ansible OpenWISP role. In

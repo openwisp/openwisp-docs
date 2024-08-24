@@ -102,7 +102,7 @@ Server Side
   firmware upgrade solution for OpenWrt and potentially other embedded
   OSes. Features include automatic retry for network failures, mass
   upgrades, a REST API, and more.
-- :doc:`OpenWISP RADIUS </user/radius>`: Offers a web interface to a
+- :doc:`OpenWISP RADIUS </radius/index>`: Offers a web interface to a
   FreeRADIUS database, a rich REST HTTP API, and features like user
   self-registration, SMS verification, user import from CSV files,
   event-based user generation, Captive Portal Social Login, and Captive
@@ -266,7 +266,7 @@ FreeRADIUS
 
 `FreeRADIUS <https://freeradius.org/>`_ is the most popular open-source
 implementation of the RADIUS protocol and is extensively relied upon in
-:doc:`OpenWISP RADIUS </user/radius>`.
+:doc:`OpenWISP RADIUS </radius/index>`.
 
 Mesh Networking
 ~~~~~~~~~~~~~~~
