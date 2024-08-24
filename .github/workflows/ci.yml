@@ -60,3 +60,23 @@ jobs:
         env:
           SRC_URL: /home/runner/work/openwisp-docs/openwisp-docs/_build/docs/
           DST_URL: gs://${{ secrets.GCS_DOCS_BUCKET_NAME }}/docs/
+
+  invalidate-cache:
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ needs.build.result == 'success' }} && ${{ github.event_name=='push' }}
+
+    steps:
+     - name: Authenticate to Google Cloud
+       uses: google-github-actions/auth@v2
+       with:
+         credentials_json: ${{ secrets.GCS_DOWNLOADS_SERVICE_ACCOUNT_JSON }}
+         project_id: ${{ secrets.GCS_PROJECT_ID }}
+         export_environment_variables: true
+
+     - name: Invalid CDN cache on GCP
+       uses: stefanodotit/github-actions-invalidate-gcp-cdn@v1
+       with:
+          load_balancer_name: ${{ secrets.GCS_MAIN_LOAD_BALANCER_NAME }}
+          host: openwisp.io
+          path: '/docs/*'
