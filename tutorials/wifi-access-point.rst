@@ -20,6 +20,7 @@ Set Up an Open Access Point SSID on a Device
 
 .. image:: ../images/demo/ap/open-ap-wifi-ui.gif
     :target: ../_images/open-ap-wifi-ui.gif
+    :align: center
 
 Open the device detail page of your device, then go to the configuration
 tab, then scroll down and click on "Configuration Menu", then select
@@ -33,12 +34,14 @@ The screenshot below shows how the preview will look like.
 
 .. image:: ../images/demo/ap/open-wifi-ap-preview.png
     :target: ../_images/open-wifi-ap-preview.png
+    :align: center
 
 Once the configuration is applied on the device, the SSID will be
 broadcast.
 
 .. image:: ../images/demo/ap/open-ap-wifi-iwinfo.png
     :target: ../_images/open-ap-wifi-iwinfo.png
+    :align: center
 
 Once clients start to connect to this access point their information will
 be logged in the :ref:`WiFi Sessions tab <monitoring_wifi_clients>`.
@@ -48,6 +51,7 @@ Set Up a WPA Encrypted Access Point SSID on a Device
 
 .. image:: ../images/demo/ap/encrypted-wifi-ui.gif
     :target: ../_images/encrypted-wifi-ui.gif
+    :align: center
 
 Open the detail page of your device, then go to the configuration tab,
 then scroll down and click on "Configuration Menu", then select
@@ -63,12 +67,14 @@ The screenshot below shows how the preview will look like.
 
 .. image:: ../images/demo/ap/wpa3-mixed-preview.png
     :target: ../_images/wpa3-mixed-preview.png
+    :align: center
 
 Once the configuration is applied on the device, the SSID will be
 broadcast.
 
 .. image:: ../images/demo/ap/wpa3-mixed-iwinfo.png
     :target: ../_images/wpa3-mixed-iwinfo.png
+    :align: center
 
 Once clients start to connect to this access point their information will
 be logged in the :ref:`WiFi Sessions tab <monitoring_wifi_clients>`.
@@ -78,6 +84,7 @@ Set Up the Same SSID and Password on Multiple Devices
 
 .. image:: ../images/demo/ap/wifi-wpa-template.gif
     :target: ../_images/wifi-wpa-template.gif
+    :align: center
 
 The procedure is very similar to the previous one, with the difference
 that we will be using a :doc:`configuration template
@@ -92,6 +99,7 @@ values from the device page in the "configuration variables" section.
 
 .. image:: ../images/demo/ap/wifi-template-change-ssid-password.gif
     :target: ../_images/wifi-template-change-ssid-password.gif
+    :align: center
 
 The template can even be flagged as :ref:`"Default" <default_templates>`
 if we want this to be applied automatically when new devices register!
@@ -139,6 +147,7 @@ following steps:
 
 .. image:: ../images/demo/ap/roaming-fast-transition-80211r.png
     :target: ../_images/roaming-fast-transition-80211r.png
+    :align: center
 
 To verify whether WiFi clients are roaming between APs, launch the shell
 command ``logread -f`` on each AP. Then, move the WiFi client from one AP
@@ -164,6 +173,7 @@ Monitoring WiFi Clients
 
 .. image:: ../images/demo/ap/ap-wifi-sessions.png
     :target: ../_images/ap-wifi-sessions.png
+    :align: center
 
 Since OpenWISP 23, in the device page, whenever any WiFi client data is
 collected by the :doc:`Monitoring module of OpenWISP
@@ -177,6 +187,7 @@ of all clients which have connected to this access point, as shown below.
 
 .. image:: ../images/demo/ap/wifi-sessions-general.png
     :target: ../_images/wifi-sessions-general.png
+    :align: center
 
 In this page it will be possible to use more filters and even perform a
 text search.

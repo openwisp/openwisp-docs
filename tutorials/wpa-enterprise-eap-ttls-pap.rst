@@ -12,13 +12,12 @@ In this tutorial, we will guide you on how to set up WPA Enterprise
 (EAP-TTLS-PAP) authentication for WiFi networks using OpenWISP. The RADIUS
 capabilities of OpenWISP provide integration with FreeRADIUS to allow
 users to authenticate with their Django user accounts. Users can either be
-created manually via the admin interface, `generated with voucher-like
-codes
-<https://openwisp-radius.readthedocs.io/en/stable/user/generating_users.html>`_,
-`imported from CSV
-<https://openwisp-radius.readthedocs.io/en/stable/user/importing_users.html>`_
-or can register autonomously via the `REST API of OpenWISP RADIUS
-<https://openwisp-radius.readthedocs.io/en/stable/user/api.html#user-registration>`_.
+created manually via the admin interface, :doc:`generated with voucher-like
+codes </radius/user/generating_users>`,
+:doc:`imported from CSV
+</radius/user/importing_users>`
+or can register autonomously via the :ref:`REST API of OpenWISP RADIUS
+<radius_user_registration>`.
 
 Enable OpenWISP RADIUS
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -109,8 +108,8 @@ Configuring FreeRADIUS for WPA Enterprise
 Before making changes to the FreeRADIUS configuration, we need to gather
 the following information:
 
-    - Organization's UUID
-    - Organization's RADIUS token
+- Organization's UUID
+- Organization's RADIUS token
 
 From the OpenWISP navigation menu, go to ``Users & Organizations`` and
 then ``Organizations``. From here, click on the desired organization.
@@ -137,25 +136,25 @@ Self-Signed Certificates
 
 Pros:
 
-    - Generated locally without involving a third-party CA.
-    - Eliminates the need for external entities, reducing the risk of
-      compromised trust.
+- Generated locally without involving a third-party CA.
+- Eliminates the need for external entities, reducing the risk of
+  compromised trust.
 
 Cons:
 
-    - Requires installation of the self-signed CA on all client devices.
+- Requires installation of the self-signed CA on all client devices.
 
 Public Certificates
 ~~~~~~~~~~~~~~~~~~~
 
 Pros:
 
-    - Issued by trusted CAs, thus works out of the box with most devices.
+- Issued by trusted CAs, thus works out of the box with most devices.
 
 Cons:
 
-    - Higher risk of compromise.
-    - More cumbersome to set up.
+- Higher risk of compromise.
+- More cumbersome to set up.
 
 We recommend using the Ansible OpenWISP2 role, which simplifies
 configuring FreeRADIUS to use WPA Enterprise. Please refer to the
@@ -164,9 +163,9 @@ in the ansible-openwisp2 documentation
 </ansible/user/deploying-wpa-eap-ttls-pap>` for details.
 
 If you prefer to configure the FreeRADIUS site manually, refer to the
-`"Freeradius Setup for WPA Enterprise (EAP-TTLS-PAP) authentication"
+:doc:`"Freeradius Setup for WPA Enterprise (EAP-TTLS-PAP) authentication"
 section of the OpenWISP RADIUS documentation
-<https://openwisp-radius.readthedocs.io/en/stable/developer/freeradius_wpa_enterprise.html#freeradius-setup-for-wpa-enterprise-eap-ttls-pap-authentication>`_.
+</radius/deploy/freeradius_wpa_enterprise>`.
 
 Creating the Template
 ---------------------
@@ -331,14 +330,14 @@ manual for guidance.
 Find the "OpenWISP" SSID in the list of available WiFi networks on your
 mobile and click on it. Fill in the details as follows:
 
-    - **EAP method**: Set this to ``TTLS``.
-    - **Phase 2 authentication**: Set this to ``PAP``.
-    - **CA certificate**: Select one of the options based on your
+- **EAP method**: Set this to ``TTLS``.
+- **Phase 2 authentication**: Set this to ``PAP``.
+- **CA certificate**: Select one of the options based on your
       FreeRADIUS configuration.
-    - **Domain**: Enter the domain based on the server certificate used by
-      FreeRADIUS.
-    - **Identity** and **Password**: Use the OpenWISP user's username for
-      ``Identity`` and password for ``Password``.
+- **Domain**: Enter the domain based on the server certificate used by
+  FreeRADIUS.
+- **Identity** and **Password**: Use the OpenWISP user's username for
+  ``Identity`` and password for ``Password``.
 
 .. note::
 
@@ -346,15 +345,15 @@ mobile and click on it. Fill in the details as follows:
     <./demo>`, you can use the **demo** user to authenticate. You will
     need to update the following fields as mentioned:
 
-    - **CA certificate**: Set this to ``Use system certificates``
-    - **Domain**: Set this to ``demo.openwisp.io``
-    - **Identity** and **Password**: Use the :ref:`demo user credentials
-      <accessing_the_demo_system>`.
+- **CA certificate**: Set this to ``Use system certificates``
+- **Domain**: Set this to ``demo.openwisp.io``
+- **Identity** and **Password**: Use the :ref:`demo user credentials
+  <accessing_the_demo_system>`.
 
-      .. image:: ../images/wpa-enterprise/connect-to-wpa-enterprise.png
-          :target: ../_images/connect-to-wpa-enterprise.png
-          :align: center
-          :alt: Authentication details
+.. image:: ../images/wpa-enterprise/connect-to-wpa-enterprise.png
+    :target: ../_images/connect-to-wpa-enterprise.png
+    :align: center
+    :alt: Authentication details
 
 You can leave the **Advanced options** unchanged and click on **Connect**
 after filling in the details.
@@ -378,10 +377,9 @@ You should see a RADIUS accounting session for this device.
 .. image:: ../images/wpa-enterprise/verify-openwisp-radius-accounting.png
     :target: ../_images/verify-openwisp-radius-accounting.png
 
-If your smartphone does not connect to the internet, you can debug the
-FreeRADIUS configuration by following the steps in the `"Debugging"
-section of OpenWISP RADIUS documentation
-<https://openwisp-radius.readthedocs.io/en/stable/developer/freeradius.html#debugging>`_.
+If your smartphone does not connect to the internet, you can troubleshoot the
+FreeRADIUS configuration by following the steps in the
+:ref:`radius_debugging`.
 
 ----
 

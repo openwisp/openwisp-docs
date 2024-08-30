@@ -172,8 +172,8 @@ The default session limits in the **OpenWISP RADIUS** configuration are
 .. note::
 
     To find out more technical information about this topic please read:
-    `OpenWISP RADIUS - Enforcing session limits
-    <https://openwisp-radius.readthedocs.io/en/stable/user/enforcing_limits.html>`_.
+    :doc:`OpenWISP RADIUS - Enforcing session limits
+    </radius/user/enforcing_limits>`.
 
 .. _automatic_captive_portal_login:
 
@@ -215,8 +215,8 @@ the "WiFi session started" notification.
 
 .. note::
 
-    The sign up process uses the `OpenWISP RADIUS REST API
-    <https://openwisp-radius.readthedocs.io/en/stable/user/api.html#user-registration>`_
+    The sign up process uses the :ref:`OpenWISP RADIUS REST API
+    <radius_user_registration>`
     under the hood.
 
 Social Login
@@ -236,8 +236,8 @@ the demo system is reset every day.
 .. note::
 
     For more technical information about social login, please read
-    `OpenWISP RADIUS - Social Login
-    <https://openwisp-radius.readthedocs.io/en/stable/user/social_login.html>`_
+    :doc:`OpenWISP RADIUS - Social Login
+    </radius/user/social_login>`
 
 Paid WiFi Hotspot Subscription Plans
 ------------------------------------
