@@ -20,8 +20,8 @@ example below.
 
 .. note::
 
-    In order for this feature to work, a device needs to have at
-    least one **Access Credential** (see :doc:`How to Configure Push Updates
+    In order for this feature to work, a device needs to have at least one
+    **Access Credential** (see :doc:`How to Configure Push Updates
     <./configure-push-updates>`).
 
 The **Send Command** button will be hidden until the device has at least
