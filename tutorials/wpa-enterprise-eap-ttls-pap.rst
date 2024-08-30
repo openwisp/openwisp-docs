@@ -12,12 +12,10 @@ In this tutorial, we will guide you on how to set up WPA Enterprise
 (EAP-TTLS-PAP) authentication for WiFi networks using OpenWISP. The RADIUS
 capabilities of OpenWISP provide integration with FreeRADIUS to allow
 users to authenticate with their Django user accounts. Users can either be
-created manually via the admin interface, :doc:`generated with voucher-like
-codes </radius/user/generating_users>`,
-:doc:`imported from CSV
-</radius/user/importing_users>`
-or can register autonomously via the :ref:`REST API of OpenWISP RADIUS
-<radius_user_registration>`.
+created manually via the admin interface, :doc:`generated with
+voucher-like codes </radius/user/generating_users>`, :doc:`imported from
+CSV </radius/user/importing_users>` or can register autonomously via the
+:ref:`REST API of OpenWISP RADIUS <radius_user_registration>`.
 
 Enable OpenWISP RADIUS
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -377,8 +375,8 @@ You should see a RADIUS accounting session for this device.
 .. image:: ../images/wpa-enterprise/verify-openwisp-radius-accounting.png
     :target: ../_images/verify-openwisp-radius-accounting.png
 
-If your smartphone does not connect to the internet, you can troubleshoot the
-FreeRADIUS configuration by following the steps in the
+If your smartphone does not connect to the internet, you can troubleshoot
+the FreeRADIUS configuration by following the steps in the
 :ref:`radius_debugging`.
 
 ----

@@ -216,8 +216,7 @@ the "WiFi session started" notification.
 .. note::
 
     The sign up process uses the :ref:`OpenWISP RADIUS REST API
-    <radius_user_registration>`
-    under the hood.
+    <radius_user_registration>` under the hood.
 
 Social Login
 ------------
@@ -236,8 +235,7 @@ the demo system is reset every day.
 .. note::
 
     For more technical information about social login, please read
-    :doc:`OpenWISP RADIUS - Social Login
-    </radius/user/social_login>`
+    :doc:`OpenWISP RADIUS - Social Login </radius/user/social_login>`
 
 Paid WiFi Hotspot Subscription Plans
 ------------------------------------
