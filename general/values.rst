@@ -161,5 +161,4 @@ Goals
   <https://github.com/openwisp/netjsonconfig/tree/airos>`_)
 - Provide good documentation both for users and developers
 - Create web interfaces that are easy to use even for people who have
-  limited experience with computer networking concepts (**note**: we are
-  very far from reaching this goal as of end of 2017)
+  limited experience with computer networking concepts

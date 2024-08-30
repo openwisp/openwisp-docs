@@ -40,9 +40,11 @@ same organization.
    be used to ensure that configuration upgrades are requested from
    trusted sources.
 
-   **Note**: If you are following this tutorial for also setting up
-   WireGuard VPN server, just substitute ``wireguard-server.mydomain.com``
-   with hostname of your VPN server and follow the steps in next section.
+   .. note::
+
+       If you are following this tutorial for also setting up
+       WireGuard VPN server, just substitute ``wireguard-server.mydomain.com``
+       with hostname of your VPN server and follow the steps in next section.
 
 6. Under the configuration section, set the name of WireGuard tunnel 1
    interface. We have used ``wg0`` in this example.
@@ -100,8 +102,10 @@ should be same as VPN server configuration in OpenWISP.
 4. Apply Wireguard VPN template to devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Note**: This step assumes that you already have a device registered on
-OpenWISP. Register or create a device before proceeding.
+.. note::
+
+    This step assumes that you already have a device registered on
+    OpenWISP. Register or create a device before proceeding.
 
 1. Open the **Configuration** tab of the concerned device.
 2. Select the *WireGuard Client* template.
@@ -148,9 +152,11 @@ same organization.
    this will be used to ensure that configuration upgrades are requested
    from trusted sources.
 
-   **Note**: If you are following this tutorial for also setting up
-   WireGuard VPN server, just substitute ``wireguard-server.mydomain.com``
-   with hostname of your VPN server and follow the steps in next section.
+   .. note::
+
+       If you are following this tutorial for also setting up
+       WireGuard VPN server, just substitute ``wireguard-server.mydomain.com``
+       with hostname of your VPN server and follow the steps in next section.
 
 6. Under the configuration section, set the name of WireGuard tunnel 1
    interface. We have used ``wg0`` in this example.
@@ -207,8 +213,10 @@ should be same as VPN server configuration in OpenWISP.
 4. Apply Wireguard VXLAN VPN template to devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Note**: This step assumes that you already have a device registered on
-OpenWISP. Register or create a device before proceeding.
+.. note::
+
+    This step assumes that you already have a device registered on
+    OpenWISP. Register or create a device before proceeding.
 
 1. Open the **Configuration** tab of the concerned device.
 2. Select the *WireGuard VXLAN Client* template.

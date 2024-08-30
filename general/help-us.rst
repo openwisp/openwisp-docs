@@ -54,12 +54,12 @@ preferred over the chats**.
     Please be mindful that **over 700 people read these channels** and
     **discussions are indexed forever**. For these reasons, you should:
 
-        - Keep the focus of the discussion technical.
-        - Avoid irrelevant comments.
-        - Be mindful about what you write.
-        - Keep the tone calm and constructive.
-        - Be respectful to the volunteers who reply in their free time.
-        - Avoid generating noise.
+    - Keep the focus of the discussion technical.
+    - Avoid irrelevant comments.
+    - Be mindful about what you write.
+    - Keep the tone calm and constructive.
+    - Be respectful to the volunteers who reply in their free time.
+    - Avoid generating noise.
 
 When subscribing to the mailing list, we suggest choosing one of these
 options:

@@ -39,8 +39,10 @@ IPs for devices.
 Create a master subnet under which automatically generated subnets will be
 provisioned.
 
-**Note**: Choose the size of the subnet appropriately considering your use
-case.
+.. tip::
+
+    Choose the size of the subnet appropriately considering your use
+    case.
 
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/docs/docs/subnet-division-rule/subnet.png
     :alt: Creating a master subnet example
@@ -63,7 +65,10 @@ rule.
 Creating a new rule of "Device" type will also provision subnets and IP
 addresses for existing devices of the organization automatically.
 
-**Note**: a device without a configuration will not trigger this rule.
+.. important::
+
+    Keep in mind that a device without a defined configuration object
+    will not trigger this rule.
 
 VPN Subnet Division Rule
 ++++++++++++++++++++++++
@@ -98,9 +103,11 @@ Create a template, setting the **Type** field to **VPN Client** and
 .. image:: https://raw.githubusercontent.com/openwisp/openwisp-controller/docs/docs/subnet-division-rule/vpn-client.png
     :alt: Creating a VPN Client template example
 
-**Note**: You can also check the **Enable by default** field if you want
-to automatically apply this template to devices that will register in
-future.
+.. tip::
+
+    You can also check the **Enable by default** field if you want
+    to automatically apply this template to devices that will register in
+    future.
 
 4. Apply VPN Client Template to Devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
