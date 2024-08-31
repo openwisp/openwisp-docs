@@ -1,0 +1,36 @@
+{% extends "!layout.html" %}
+
+{% block linktags %}
+{{ super() }}
+<link rel="canonical" href="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/{{ pagename }}.html" />
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+<!-- Google Analytics v4 Cookieless -->
+<script>
+  if (window.location.hostname === 'openwisp.io') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    // NO COOKIES
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+    });
+  }
+</script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-RGGYQ3GC31"
+></script>
+<script>
+  if (window.location.hostname === 'openwisp.io') {
+    gtag("js", new Date());
+    gtag("config", "G-RGGYQ3GC31");
+  }
+</script>
+{% endblock %}

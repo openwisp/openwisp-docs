@@ -42,7 +42,7 @@ jobs:
         run: PRODUCTION=1 ./run-qa-checks
 
       - name: Setup Google Cloud
-        if: ${{ github.event_name=='push' }}
+        # if: ${{ github.event_name=='push' }}
         uses: 'google-github-actions/auth@v2'
         with:
           credentials_json: ${{ secrets.GCS_DOWNLOADS_SERVICE_ACCOUNT_JSON }}
@@ -50,24 +50,25 @@ jobs:
           export_environment_variables: true
 
       - name: 'Set up Cloud SDK'
-        if: ${{ github.event_name=='push' }}
+        # if: ${{ github.event_name=='push' }}
         uses: 'google-github-actions/setup-gcloud@v2'
 
       - name: Deploy pages to openwisp.io/docs
-        if: ${{ github.event_name=='push' }}
+        # if: ${{ github.event_name=='push' }}
         run: |
           gsutil -m rsync -r ${{ env.SRC_URL }} ${{ env.DST_URL }}
         env:
           SRC_URL: /home/runner/work/openwisp-docs/openwisp-docs/_build/docs/
-          DST_URL: gs://${{ secrets.GCS_DOCS_BUCKET_NAME }}/docs/
+          DST_URL: gs://${{ secrets.GCS_DOCS_BUCKET_NAME }}/docs/preview/
 
   invalidate-cache:
     runs-on: ubuntu-latest
     needs: build
-    if: ${{ needs.build.result == 'success' }} && ${{ github.event_name=='push' }}
+    if: ${{ needs.build.result == 'success' }}
 
     steps:
      - name: Authenticate to Google Cloud
+       # if: ${{ github.event_name=='push' }}
        uses: google-github-actions/auth@v2
        with:
          credentials_json: ${{ secrets.GCS_DOWNLOADS_SERVICE_ACCOUNT_JSON }}
@@ -75,6 +76,7 @@ jobs:
          export_environment_variables: true
 
      - name: Invalid CDN cache on GCP
+       # if: ${{ github.event_name=='push' }}
        uses: stefanodotit/github-actions-invalidate-gcp-cdn@v1
        with:
           load_balancer_name: ${{ secrets.GCS_MAIN_LOAD_BALANCER_NAME }}

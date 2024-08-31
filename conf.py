@@ -147,10 +147,10 @@ html_theme_options = {
     # 'logo_light': 'assets/design/openwisp-logo-black.svg',
     # 'logo_dark': 'assets/design/openwisp-logo-black.svg',
     'main_nav_links': {
-        'About': 'http://localhost:8080/',
-        'FAQ': 'http://localhost:8080/support/',
-        'Support': 'http://localhost:8080/support/',
-        'Blog': 'http://localhost:8080/blog/',
+        'About': 'https://openwisp.org/preview/',
+        'FAQ': 'https://openwisp.org/preview/faq/',
+        'Support': 'https://openwisp.org/preview/support/',
+        'Blog': 'https://openwisp.org/preview/blog/',
     },
     'show_prev_next': True,
     # 'show_scrolltop': True,
@@ -171,27 +171,6 @@ html_css_files = ["custom.css"]
 # html_use_index = False  # Don't create index
 # html_domain_indices = False  # Don't need module indices
 # html_copy_source = False  # Don't need sources
-
-
-# pydata
-# html_theme_options = {
-#     "show_nav_level": 0,
-#     "navigation_depth": 3,
-#     "show_toc_level": 2,
-#     "collapse_navigation": True,
-#     "header_links_before_dropdown": 3,
-#     "show_version_warning_banner": False,
-#     "announcement": "",
-#     "logo": {
-#         "text": "OpenWISP",
-#         "image_dark": "assets/design/openwisp-logo-white.svg",
-#     },
-#     "secondary_sidebar_items": {
-#         "**/*": ["page-toc"],
-#         # "examples/no-sidebar": [],
-#     },
-#     # "navbar_center": ["version-switcher", "navbar-nav"],
-# }
 
 # Custom sidebar templates, maps document names to template names.
 #
