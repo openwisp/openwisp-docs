@@ -1,0 +1,7 @@
+<nav class="table w-full min-w-full my-6 lg:my-8">
+  {%- if theme_globaltoc_includehidden|tobool %}
+  {{ toctree(maxdepth=4, titles_only=true, collapse=True, includehidden=true) }}
+  {%- else %}
+  {{ toctree(maxdepth=4, titles_only=true, collapse=True) }}
+  {%- endif %}
+</nav>

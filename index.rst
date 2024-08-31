@@ -1,5 +1,5 @@
-OpenWISP Documentation
-======================
+OpenWISP *Documentation*
+========================
 
 .. figure:: images/intro/index-banner.png
     :target: _images/index-banner.png
