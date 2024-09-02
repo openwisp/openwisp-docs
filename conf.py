@@ -466,7 +466,7 @@ epub_exclude_files = ['search.html']
 #
 # epub_use_index = True
 
-notfound_urls_prefix = '/docs/'
+notfound_urls_prefix = '/docs/preview/dev/'
 notfound_context = {
     'title': 'Page not found',
     'body': (
