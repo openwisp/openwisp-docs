@@ -16,14 +16,14 @@
       class="scroll-smooth"
 >
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   {{ metatags }}
 
   {%- block htmltitle %}
     <title>{{ title|striptags|e if title else docstitle }}{{ titlesuffix }}</title>
-    <meta property="og:title" content="{{ title|striptags|e if title else docstitle }}{{ titlesuffix }}" />
-    <meta name="twitter:title" content="{{ title|striptags|e if title else docstitle }}{{ titlesuffix }}" />
+    <meta property="og:title" content="{{ title|striptags|e if title else docstitle }}{{ titlesuffix }}">
+    <meta name="twitter:title" content="{{ title|striptags|e if title else docstitle }}{{ titlesuffix }}">
   {%- endblock htmltitle %}
 
   {#- CSS files #}
@@ -31,37 +31,37 @@
     {%- if css|attr("filename") %}
       {{ css_tag(css) }}
     {%- else -%}
-      <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" />
+      <link rel="stylesheet" href="{{ pathto(css, 1)|e }}">
     {%- endif %}
   {%- endfor %}
 
   {%- if docsearch %}
-    <link rel="preconnect" href="https://{{ docsearch_app_id }}-dsn.algolia.net" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://{{ docsearch_app_id }}-dsn.algolia.net" crossorigin="anonymous">
   {% endif %}
 
   {%- if pageurl %}
-    <link rel="canonical" href="{{ pageurl|e }}" />
+    <link rel="canonical" href="{{ pageurl|e }}">
   {%- endif %}
 
   {%- set _favicon_url = favicon_url | default(pathto('_static/' + (favicon or ""), 1)) %}
     {%- if favicon_url or favicon %}
-      <link rel="icon" href="{{ _favicon_url }}" />
+      <link rel="icon" href="{{ _favicon_url }}">
     {%- endif %}
 
     {%- block linktags %}
-      <link rel="canonical" href="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/{{ pagename }}.html" />
+      <link rel="canonical" href="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/{{ pagename }}.html">
       {%- if hasdoc('search') and not docsearch %}
-        <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+        <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}">
       {%- endif %}
 
       {%- if hasdoc('genindex') %}
-        <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+        <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}">
       {%- endif %}
       {%- if next %}
-          <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+          <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}">
       {%- endif %}
       {%- if prev %}
-          <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+          <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}">
       {%- endif %}
     {%- endblock linktags %}
     {%- block extrahead %}{%- endblock extrahead %}
@@ -113,6 +113,10 @@
       {%- include "footer.html" %}
     {%- endblock footer %}
   </div>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+  </div>
   {% block scripts %}
   {%- for js in script_files %}
     {{ js_tag(js) }}
@@ -143,6 +147,7 @@
       gtag("config", "G-RGGYQ3GC31");
     }
   </script>
+  {{ js_tag('_static/lightbox.js') }}
   {% endblock scripts %}
 </body>
 </html>
