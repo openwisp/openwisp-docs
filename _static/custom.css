@@ -188,6 +188,11 @@ header.sticky a.items-center > img,
   margin-left: 0.2rem;
 }
 
+#left-sidebar a.current {
+  cursor: default;
+  text-decoration: none !important;
+}
+
 #left-sidebar .toctree-l2.current ul {
   padding-top: 0;
   padding-bottom: 0;

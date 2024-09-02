@@ -16,10 +16,12 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+import yaml
+from datetime import date
+
+sys.path.insert(0, os.path.abspath(os.path.curdir))
 
 # -- General configuration ------------------------------------------------
 
@@ -30,19 +32,12 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-from datetime import date
 
 extensions = [
     'rst2pdf.pdfbuilder',
-    # 'sphinxcontrib.jquery',
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
-    # 'sphinx.ext.mathjax',
-    # "sphinx_sitemap",
-    # "sphinx_design",
-    # "sphinx_docsearch",
     'notfound.extension',
-    # 'openwisp.sphinx.theme',
     'sphinxcontrib.spelling',
     'version_switcher',
 ]
@@ -53,7 +48,6 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
 
 # The encoding of source files.
@@ -133,10 +127,7 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-# html_theme = 'openwisp-sphinx-theme'
 html_theme = 'sphinxawesome_theme'
-# html_theme = "pydata_sphinx_theme"
-# html_theme = "furo"
 html_favicon = 'assets/design/favicon.png'
 html_logo = 'assets/design/openwisp-logo-black.svg'
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -144,8 +135,6 @@ html_logo = 'assets/design/openwisp-logo-black.svg'
 # documentation.
 
 html_theme_options = {
-    # 'logo_light': 'assets/design/openwisp-logo-black.svg',
-    # 'logo_dark': 'assets/design/openwisp-logo-black.svg',
     'main_nav_links': {
         'About': 'https://openwisp.org/preview/',
         'FAQ': 'https://openwisp.org/preview/faq/',
@@ -153,24 +142,15 @@ html_theme_options = {
         'Blog': 'https://openwisp.org/preview/blog/',
     },
     'show_prev_next': True,
-    # 'show_scrolltop': True,
+    'show_scrolltop': True,
     'show_breadcrumbs': True,
-    # 'globaltoc_includehidden': False
 }
 html_permalinks_icon = ""
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
-# html_context = {
-#     "mode": "production",
-#     "feedback_url": "https://github.com/kai687/sphinxawesome-theme/issues/new?title=Feedback",
-#     "umami_website_id": os.getenv("UMAMI_WEBSITE_ID", ""),
-# }
-# html_sidebars = {
-#   "**": ["sidebar_main_nav_links.html", "sidebar_toc.html"]
-# }
-# html_use_index = False  # Don't create index
-# html_domain_indices = False  # Don't need module indices
-# html_copy_source = False  # Don't need sources
+html_use_index = False  # Don't create index
+html_domain_indices = False  # Don't need module indices
+html_copy_source = False  # Don't need sources
 
 # Custom sidebar templates, maps document names to template names.
 #
@@ -480,13 +460,6 @@ spelling_filters = ['sphinxcontrib.spelling.filters.ContractionFilter']
 spelling_exclude_patterns = ['_build', 'requirements.txt']
 
 # Configuration for generating comprehensive docs
-import os
-import sys
-
-import yaml
-
-sys.path.insert(0, os.path.abspath(os.path.curdir))
-
 with open('config.yml', 'r') as config_file:
     ow_docs_config = yaml.safe_load(config_file)
 
