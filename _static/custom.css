@@ -268,11 +268,6 @@ header.sticky nav.items-center a:focus {
   color: #e36914;
 }
 
-/* hide dark theme switch */
-header.sticky nav.flex.items-center.space-x-1 {
-  display: none;
-}
-
 footer p {
   font-size: 0.8rem;
   color: hsl(216deg, 18%, 34%);
