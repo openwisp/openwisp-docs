@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,400&display=swap');
 
 .font-sans {
   font-family: Inter, ui-sans-serif,
@@ -6,6 +6,10 @@
   Ubuntu,Cantarell,Noto Sans,sans-serif,
   Apple Color Emoji,Segoe UI Emoji,
   Segoe UI Symbol,Noto Color Emoji;
+}
+
+b, strong {
+  font-weight: 600;
 }
 
 .contents, .toctree-wrapper {
