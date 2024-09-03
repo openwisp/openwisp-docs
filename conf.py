@@ -155,11 +155,6 @@ html_copy_source = False  # Don't need sources
 # Custom sidebar templates, maps document names to template names.
 #
 # html_sidebars = {
-#     '**': [
-#         'sidebar_main_nav_links.html',
-#         'sidebar_toc.html',
-#         # 'versions.html'
-#     ]
 # }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -378,7 +373,7 @@ epub_copyright = copyright
 # output is usually not wise. This defaults to 'epub', a theme designed to save
 # visual space.
 #
-epub_theme = 'epub'
+# epub_theme = 'epub'
 
 # The language of the text. It defaults to the language option
 # or 'en' if the language is not set.
