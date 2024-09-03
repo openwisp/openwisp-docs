@@ -1,13 +1,9 @@
 {% extends "!layout.html" %}
 
 {% block linktags %}
+<script>localStorage.darkMode = "light";</script>
 {{ super() }}
 <link rel="canonical" href="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/{{ pagename }}.html" />
-{% endblock %}
-
-{% block footer %}
-{{ super() }}
-<script>localStorage.darkMode = "light";</script>
 {% endblock %}
 
 {% block scripts %}
