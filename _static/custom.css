@@ -173,8 +173,10 @@ header.sticky a.items-center > img,
   width: 125px;
 }
 
-#left-sidebar {
-  padding: 1rem 0;
+@media (min-width:768px) {
+  #left-sidebar {
+    padding: 1rem 0;
+  }
 }
 
 #left-sidebar > div.h-\[calc\(100vh-8rem\)\]{
