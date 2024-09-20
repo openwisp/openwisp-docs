@@ -1,7 +1,7 @@
 {% extends "!layout.html" %}
 
 {% block linktags %}
-<script>localStorage.darkMode = "light";</script>
+<script>localStorage.setItem("darkMode", "light");</script>
 {{ super() }}
 <link rel="canonical" href="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/{{ pagename }}.html" />
 {% endblock %}
