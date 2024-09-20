@@ -136,10 +136,10 @@ html_logo = 'assets/design/openwisp-logo-black.svg'
 
 html_theme_options = {
     'main_nav_links': {
-        'About': 'https://openwisp.org/preview/',
-        'FAQ': 'https://openwisp.org/preview/faq/',
-        'Support': 'https://openwisp.org/preview/support/',
-        'Blog': 'https://openwisp.org/preview/blog/',
+        'About': 'https://openwisp.org/',
+        'FAQ': 'https://openwisp.org/faq/',
+        'Support': 'https://openwisp.org/support/',
+        'Blog': 'https://openwisp.org/blog/',
     },
     'show_prev_next': True,
     'show_scrolltop': True,
@@ -441,7 +441,7 @@ epub_exclude_files = ['search.html']
 #
 # epub_use_index = True
 
-notfound_urls_prefix = '/docs/preview/dev/'
+notfound_urls_prefix = '/docs/dev/'
 notfound_context = {
     'title': 'Page not found',
     'body': (
