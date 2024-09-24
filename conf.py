@@ -130,7 +130,6 @@ todo_include_todos = False
 #
 html_theme = 'sphinxawesome_theme'
 html_favicon = 'assets/design/favicon.png'
-html_logo = 'assets/design/openwisp-logo-black.svg'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -145,6 +144,8 @@ html_theme_options = {
     'show_prev_next': True,
     'show_scrolltop': True,
     'show_breadcrumbs': True,
+    'logo_dark': 'assets/design/openwisp-logo.svg',
+    'logo_light': 'assets/design/openwisp-logo-black.svg',
 }
 html_permalinks_icon = ""
 html_static_path = ["_static"]
