@@ -1,7 +1,6 @@
 {% extends "!layout.html" %}
 
 {% block linktags %}
-<script>localStorage.setItem("darkMode", "light");</script>
 {{ super() }}
 <link rel="canonical" href="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/{{ pagename }}.html" />
 {% endblock %}
@@ -30,6 +29,24 @@
         ePUB</a>
     </p>
   </li>
+  <li class="color-mode">
+    <p>
+      {{ _('Color') }}:
+      <a href="#" 
+        id="light-mode" 
+        @click.prevent="darkMode = 'light'; localStorage.setItem('darkMode', 'light')"
+        :class="{ 'font-bold': darkMode === 'light' }">
+        {{ _('Light') }}
+      </a>
+      /
+      <a href="#" 
+        id="dark-mode" 
+        @click.prevent="darkMode = 'dark'; localStorage.setItem('darkMode', 'dark')"
+        :class="{ 'font-bold': darkMode === 'dark' }">
+        {{ _('Dark') }}
+      </a>
+    </p>
+  </li>
 </ul>
 {% endblock %}
 
@@ -55,6 +72,26 @@
   </p>
 </noscript>
 <!-- End Matomo Code -->
+
+<!-- Color Mode -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const lightModeButton = document.getElementById('light-mode');
+    const darkModeButton = document.getElementById('dark-mode');
+
+    lightModeButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      localStorage.setItem('darkMode', 'light');
+    });
+
+    darkModeButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      localStorage.setItem('darkMode', 'dark');
+    });
+  });
+</script>
+<!-- End Color Mode -->
+
 <div id="lightbox" class="lightbox">
   <span class="close">&times;</span>
 </div>
