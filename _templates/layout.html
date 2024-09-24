@@ -35,32 +35,26 @@
 
 {% block scripts %}
 {{ super() }}
-<!-- Google Analytics v4 Cookieless -->
+<!-- Matomo -->
 <script>
-  if (window.location.hostname === "openwisp.io") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    // NO COOKIES
-    gtag("consent", "default", {
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
-      analytics_storage: "denied",
-    });
-  }
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//analytics.openwisp.io/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '7']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
 </script>
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-RGGYQ3GC31"
-></script>
-<script>
-  if (window.location.hostname === "openwisp.io") {
-    gtag("js", new Date());
-    gtag("config", "G-RGGYQ3GC31");
-  }
-</script>
+<noscript>
+  <p>
+    <img referrerpolicy="no-referrer-when-downgrade" src="//analytics.openwisp.io/matomo.php?idsite=7&amp;rec=1" style="border:0;" alt="" />
+  </p>
+</noscript>
+<!-- End Matomo Code -->
 <div id="lightbox" class="lightbox">
   <span class="close">&times;</span>
 </div>
