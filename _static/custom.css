@@ -18,13 +18,13 @@
 html.dark {
   --text-color: #e0e0e0;
   --background-color: #1a1a1a;
-  --link-color: #ff9d5c;
-  --link-hover-color: #ffb380;
+  --link-color: #ee7f31;
+  --link-hover-color: #ff9d5c;
   --admonition-bg: #2c2c2c;
   --admonition-color: #b0d4ff;
   --code-bg: #2c2c2c;
   --sidebar-bg: rgba(60, 60, 60, 0.5);
-  --current-link-color: #ff9d5c;
+  --current-link-color: #ee7f31;
   --header-link-color: #b0b0b0;
 }
 
@@ -108,6 +108,9 @@ table thead th { font-weight: 600 }
   font-style: normal;
   color: var(--link-hover-color);
 }
+html.dark #content h1 em {
+  color: var(--link-color);
+}
 #content h2 {
   margin-top: 2rem;
   font-size: 1.6em;
@@ -177,12 +180,12 @@ code.download {
 
 a.rounded-md,
 a.rounded-md:hover {
-  background-color: var(--link-hover-color);
+  background-color: var(--link-color);
   color: var(--background-color);
   font-weight: 600;
 }
 a.rounded-md:hover {
-  background-color: var(--link-color);
+  background-color: var(--link-hover-color);
 }
 
 a.rounded-md svg.mr-2 {
