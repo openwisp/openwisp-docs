@@ -6,6 +6,8 @@
   --background-color: #f5f5f5;
   --link-color: #b15210;
   --link-hover-color: #e36914;
+  --button-color: var(--link-hover-color);
+  --button-hover-color: var(--link-color);
   --admonition-bg: #f0f9ff;
   --admonition-color: rgba(12, 74, 110, 1);
   --code-bg: #fff;
@@ -71,7 +73,7 @@ b, strong {
   font-weight: 600;
 }
 .seealso {
-  border-color: var(--link-color);
+  border-color: var(--admonition-color);
   background-color: var(--admonition-bg);
   color: var(--admonition-color);
 }
@@ -180,12 +182,12 @@ code.download {
 
 a.rounded-md,
 a.rounded-md:hover {
-  background-color: var(--link-color);
+  background-color: var(--button-color);
   color: var(--background-color);
   font-weight: 600;
 }
 a.rounded-md:hover {
-  background-color: var(--link-hover-color);
+  background-color: var(--button-hover-color);
 }
 
 a.rounded-md svg.mr-2 {
