@@ -367,40 +367,40 @@ main > div .flex.justify-between.items-center.pt-6 {
 
 /* version switcher */
 .doc-versions {
-  font-size: 15px;
+  font-size: 14px;
   padding-left: 8px;
   padding-right: 8px;
   font-weight: 600;
-
 }
 .doc-versions .dropdown {
   display: inline-block;
 }
 .doc-versions .dropbtn {
-  background-color: var(--background-color);
-  border: 1px solid;
-  border-color: hsl(var(--border));
-  padding: 4px 5px 4px 16px;
-  margin-left: 8px;
-  border-radius: 8px;
+  padding: 4px 5px 4px 15px;
+  margin-left: 6px;
   font-size: 14px;
-  min-width: 85px;
 }
 .doc-versions .dropbtn svg {
   rotate: 90deg;
   display: inline;
   margin-left: 5px;
 }
+.doc-versions .dropbtn,
+.doc-versions .dropdown-content {
+  min-width: 75px;
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border));
+  background-color: var(--background-color);
+  font-size: 14px;
+  text-align: left;
+}
 .doc-versions .dropdown-content {
   position: absolute;
-  border: 1px solid hsl(var(--border));
-  border-radius: 0px 0px 8px 8px;
-  background-color: var(--background-color);
+  border-radius: 0 0 8px 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1;
-  min-width: 85px;
   text-align: center;
-  margin-left: 8px;
+  margin: -1px 0 0 6px;
 }
 .doc-versions .dropbtn.disabled {
   min-width: unset;
@@ -410,19 +410,17 @@ main > div .flex.justify-between.items-center.pt-6 {
 }
 .doc-versions .dropdown-content a {
   color: var(--theme-link-color);
-  padding: 10px 16px;
-  font-size: 14px;
+  padding: 4px 5px 4px 15px !important;
   text-decoration: none !important;
   display: block !important;
-  border-bottom: 1px solid var(--theme-border-color); /* Border */
+  border-bottom: 1px solid var(--theme-border-color);
+  text-align: left;
 }
 .doc-versions .dropdown-content a:hover {
   color: var(--button-hover-color);
 }
 .doc-versions .dropbtn.active {
-  color: var(--button-hover-color);
-  border-radius: 5px 5px 0px 0px;
-  border-bottom: 0px
+  border-radius: 8px 8px 0 0;
 }
 .offline-docs {
   margin-top: 8px;
@@ -451,4 +449,3 @@ main > div .flex.justify-between.items-center.pt-6 {
 .offline-docs .urls a:first-child {
   padding-left: 0px !important;
 }
-
