@@ -157,8 +157,7 @@ html_copy_source = False  # Don't need sources
 
 # Custom sidebar templates, maps document names to template names.
 #
-# html_sidebars = {
-# }
+html_sidebars = {"**": ["version_switcher.html", "sidebar_toc.html", 'downloads.html']}
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = ['_theme']

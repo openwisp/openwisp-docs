@@ -1,0 +1,21 @@
+<div class="doc-versions">
+    <label>Version</label>
+    <div class="dropdown" x-data="{ showVersionSwitcher: false }">
+        <button type="button" class="dropbtn {% if not ow_versions|length > 1 %} disabled {% endif %}"
+            {% if ow_versions|length > 1 %} @click="showVersionSwitcher = !showVersionSwitcher" :class="{'active': showVersionSwitcher}
+            {% endif %}
+            ">{{ current_ow_version }}{% if ow_versions|length > 1 %}<svg fill="currentColor" height="18px"
+                stroke="none" viewBox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+            </svg>{% endif %}
+        </button>
+        <div x-show="showVersionSwitcher" class="dropdown-content" :class="{'hidden': !showVersionSwitcher}"
+            @click.away="showVersionSwitcher = false" class="dropdown-content">
+            {% for ow_version in ow_versions %}
+            {% if ow_version != current_ow_version %}
+            <a href="{{ docs_root }}/{{ ow_version }}/{{ pagename }}.html">{{ ow_version }}</a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
