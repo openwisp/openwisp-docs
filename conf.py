@@ -148,16 +148,16 @@ html_theme_options = {
     'logo_dark': 'assets/design/openwisp-logo.svg',
     'logo_light': 'assets/design/openwisp-logo-black.svg',
 }
-html_permalinks_icon = ""
-html_static_path = ["_static"]
-html_css_files = ["custom.css"]
+html_permalinks_icon = ''
+html_static_path = ['_static']
+html_css_files = ['custom.css']
 html_use_index = False  # Don't create index
 html_domain_indices = False  # Don't need module indices
 html_copy_source = False  # Don't need sources
 
 # Custom sidebar templates, maps document names to template names.
 #
-html_sidebars = {"**": ["version_switcher.html", "sidebar_toc.html", 'downloads.html']}
+html_sidebars = {'**': ['version_switcher.html', 'sidebar_toc.html', 'downloads.html']}
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = ['_theme']
