@@ -5,33 +5,6 @@
 <link rel="canonical" href="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/{{ pagename }}.html" />
 {% endblock %}
 
-{% block footer %}
-{{ super() }}
-<ul id="doc-versions">
-  {% for ow_version in ow_versions %}
-    {% if ow_version != current_ow_version %}
-      <li class="other">
-        <a href="{{ docs_root }}/{{ ow_version }}/{{ pagename }}.html"">{{ ow_version }}</a>
-      </li>
-    {% endif %}
-  {% endfor %}
-  <li class="current">
-    <p>
-      {{ _('Current version') }}:
-      <strong>{{ current_ow_version }}</strong>
-    </p>
-    <p class="download-links">
-      {{ _('Downloads') }}:
-      <a href="{{ docs_root }}/{{ current_ow_version }}/OpenWISP-{{ current_ow_version }}.pdf" target="_blank">
-        PDF</a>
-      |
-      <a href="{{ docs_root }}/{{ current_ow_version }}/OpenWISP-{{ current_ow_version }}.epub" target="_blank">
-        ePUB</a>
-    </p>
-  </li>
-</ul>
-{% endblock %}
-
 {% block scripts %}
 {{ super() }}
 <!-- Matomo -->
