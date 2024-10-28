@@ -43,6 +43,10 @@ body {
   Segoe UI Symbol,Noto Color Emoji;
 }
 
+.scale-95 {
+  transform: scale(0.95);
+}
+
 b, strong {
   font-weight: 600;
 }
@@ -449,3 +453,21 @@ main > div .flex.justify-between.items-center.pt-6 {
 .offline-docs .urls a:first-child {
   padding-left: 0px !important;
 }
+
+.navigation-dropdown {
+  border-radius: 0.75rem;
+  margin-left: -15px;
+  margin-top: 10px;
+  transition-duration: 0.3s;
+  transition-property: opacity, transform;
+  color: var(--background-color);
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid hsl(var(--border));
+}
+.navigation-dropdown a {
+  padding: .375rem 1rem;
+  white-space: nowrap;
+  width: 100%;
+}
+

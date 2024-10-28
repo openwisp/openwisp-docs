@@ -1,0 +1,38 @@
+{#- Template for the main navigation links in the sidebar -#}
+{% if main_nav_links|tobool %}
+<nav class="flex flex-col font-bold mt-4 md:hidden">
+    {%- for text, item in main_nav_links.items() %}
+    {%- if item is string %}
+    {# Single link #}
+    {%- set url = item if item.startswith("http") else pathto(item) %}
+    <a href="{{ url }}" class="block px-4 py-2 transition-colors hover:bg-gray-100 text-gray-800"
+        rel="{{ 'nofollow noopener' if item.startswith('http') else '' }}">
+        {{ text }}
+    </a>
+    {%- elif item is mapping %}
+    {# Nested links #}
+    <div x-data="{ open: false }" class="flex flex-col">
+        <a @click="open = !open" @focus="open = true" @blur="open = false"
+            class="flex items-center justify-between px-4 py-2 transition-colors hover:bg-gray-100 text-gray-800 w-full focus:outline-none"
+            :aria-expanded="open.toString()" aria-haspopup="true">
+            {{ text }}
+            <svg fill="currentColor" height="24px" stroke="none" viewBox="0 0 24 24" width="24px"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+            </svg>
+        </a>
+        <div x-show="open" x-transition class="flex flex-col pl-6 mt-2 space-y-1">
+            {%- for subtext, suburl in item.items() %}
+            {%- set sublink = suburl if suburl.startswith("http") else pathto(suburl) %}
+            <a href="{{ sublink }}"
+                class="block ml-2 px-4 py-2 text-sm transition-colors hover:bg-gray-100 text-gray-700"
+                rel="{{ 'nofollow noopener' if suburl.startswith('http') else '' }}">
+                {{ subtext }}
+            </a>
+            {%- endfor %}
+        </div>
+    </div>
+    {%- endif %}
+    {%- endfor %}
+</nav>
+{% endif %}
