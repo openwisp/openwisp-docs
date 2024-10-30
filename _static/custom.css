@@ -456,12 +456,12 @@ main > div .flex.justify-between.items-center.pt-6 {
 
 .navigation-dropdown {
   border-radius: 0.75rem;
-  margin-left: -15px;
-  margin-top: 10px;
-  transition-duration: 0.3s;
-  transition-property: opacity, transform;
+  margin-left: -48%;
+  margin-top: 5px;
+  transition-duration: 0.4s;
+  transition-property: opacity;
   color: var(--background-color);
-  padding-top: 0.75rem;
+  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border: 1px solid hsl(var(--border));
 }
@@ -470,4 +470,3 @@ main > div .flex.justify-between.items-center.pt-6 {
   white-space: nowrap;
   width: 100%;
 }
-
