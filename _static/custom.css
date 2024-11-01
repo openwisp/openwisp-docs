@@ -449,3 +449,24 @@ main > div .flex.justify-between.items-center.pt-6 {
 .offline-docs .urls a:first-child {
   padding-left: 0px !important;
 }
+
+/* navigation */
+.navigation-dropdown {
+  border-radius: 0.75rem;
+  margin-left: -48%;
+  margin-top: 5px;
+  transition-duration: 0.4s;
+  transition-property: opacity;
+  color: var(--background-color);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid hsl(var(--border));
+}
+.navigation-dropdown a {
+  padding: .375rem 1rem;
+  white-space: nowrap;
+  width: 100%;
+}
+#left-sidebar nav.md\:hidden {
+  margin-top: 1rem !important;
+}

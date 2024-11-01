@@ -136,12 +136,6 @@ html_favicon = 'assets/design/favicon.png'
 # documentation.
 
 html_theme_options = {
-    'main_nav_links': {
-        'About': 'https://openwisp.org/',
-        'FAQ': 'https://openwisp.org/faq/',
-        'Support': 'https://openwisp.org/support/',
-        'Blog': 'https://openwisp.org/blog/',
-    },
     'show_prev_next': True,
     'show_scrolltop': True,
     'show_breadcrumbs': True,
@@ -157,7 +151,14 @@ html_copy_source = False  # Don't need sources
 
 # Custom sidebar templates, maps document names to template names.
 #
-html_sidebars = {'**': ['version_switcher.html', 'sidebar_toc.html', 'downloads.html']}
+html_sidebars = {
+    '**': [
+        'version_switcher.html',
+        'sidebar_main_nav_links.html',
+        'sidebar_toc.html',
+        'downloads.html',
+    ]
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = ['_theme']
@@ -470,6 +471,22 @@ html_context = {
     'docs_root': docs_root,
     'stable_version': os.environ.get('STABLE_VERSION'),
     'html_baseurl': os.environ.get('HTML_BASE_URL', ''),
+    'main_nav_links': {
+        'Features': 'https://openwisp.org/features/',
+        'About': {
+            'FAQ': 'https://openwisp.org/faq/',
+            'Source Code': 'https://openwisp.org/code/',
+            'History': 'https://openwisp.org/history/',
+            'Team': 'https://openwisp.org/team/',
+            'Partners': 'https://openwisp.org/partners/',
+            'Sponsorship': 'https://openwisp.org/sponsorship/',
+        },
+        'Support': {
+            'Community Support': 'https://openwisp.org/support/',
+            'Commercial Support': 'https://openwisp.org/commercial-support/',
+        },
+        'Blog': 'https://openwisp.org/blog/',
+    },
 }
 
 for ow_version in ow_docs_config['versions']:
