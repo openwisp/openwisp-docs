@@ -43,10 +43,6 @@ body {
   Segoe UI Symbol,Noto Color Emoji;
 }
 
-.scale-95 {
-  transform: scale(0.95);
-}
-
 b, strong {
   font-weight: 600;
 }
