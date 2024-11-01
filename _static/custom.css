@@ -454,6 +454,7 @@ main > div .flex.justify-between.items-center.pt-6 {
   padding-left: 0px !important;
 }
 
+/* navigation */
 .navigation-dropdown {
   border-radius: 0.75rem;
   margin-left: -48%;
@@ -469,4 +470,7 @@ main > div .flex.justify-between.items-center.pt-6 {
   padding: .375rem 1rem;
   white-space: nowrap;
   width: 100%;
+}
+#left-sidebar nav.md\:hidden {
+  margin-top: 1rem !important;
 }

@@ -1,6 +1,6 @@
 {#- Template for the main navigation links in the sidebar -#}
 {% if main_nav_links|tobool %}
-<nav class="flex flex-col font-bold mt-4 md:hidden">
+<nav class="flex flex-col font-bold md:hidden">
     {%- for text, item in main_nav_links.items() %}
     {%- if item is string %}
     {# Single link #}

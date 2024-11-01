@@ -28,7 +28,8 @@
             x-transition:leave="transition"
             x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-95"
-            class="absolute bg-background mt-2 z-10 transition navigation-dropdown">
+            class="absolute bg-background mt-2 z-10 transition navigation-dropdown"
+            style="display: none;">
             {%- for subtext, suburl in item.items() %}
             {%- set _active = "text-foreground" if pagename in suburl else "text-foreground/60" -%}
             {%- set url = suburl if suburl.startswith("http") else suburl %}
