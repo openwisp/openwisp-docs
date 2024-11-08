@@ -3,31 +3,35 @@
 /* Light mode styles (default) */
 :root {
   --text-color: #0f1729;
-  --background-color: #f5f5f5;
+  --background-color: #ffffff;
   --link-color: #b15210;
   --link-hover-color: #e36914;
   --button-color: var(--link-hover-color);
-  --button-hover-color: var(--link-color);
+  --button-hover-color: #ca5e11;
   --admonition-bg: #f0f9ff;
   --admonition-color: rgba(12, 74, 110, 1);
   --code-bg: #fff;
   --sidebar-bg: rgb(241, 245, 249, 0.5);
   --current-link-color: #CA5E12;
   --header-link-color: #475467;
+  --downloads-link-color: #1F78D1;
 }
 
 /* Dark mode styles */
 html.dark {
   --text-color: #e0e0e0;
-  --background-color: #1a1a1a;
-  --link-color: #ee7f31;
-  --link-hover-color: #ff9d5c;
+  --background-color: #020614;
+  --link-color: #ff9d5c;
+  --link-hover-color: #ee7f31;
+  --button-color: #ef7f2f;
+  --button-hover-color: var(--link-color);
   --admonition-bg: #2c2c2c;
   --admonition-color: #b0d4ff;
   --code-bg: #2c2c2c;
   --sidebar-bg: rgba(60, 60, 60, 0.5);
   --current-link-color: #ee7f31;
   --header-link-color: #b0b0b0;
+  --downloads-link-color: #67b3ff;
 }
 
 body {
@@ -157,6 +161,12 @@ code.download {
 }
 #content a:not(.toc-backref,.image-reference):visited {
   filter: brightness(80%);
+}
+html.dark #content a:not(.toc-backref,.image-reference):hover {
+  filter: brightness(120%);
+}
+html.dark  #content a:not(.toc-backref,.image-reference):visited {
+  filter: brightness(90%);
 }
 
 #content .admonition a {
@@ -444,7 +454,7 @@ main > div .flex.justify-between.items-center.pt-6 {
   display: inline-block !important;
   width: fit-content !important;
   padding: 0px 8px !important;
-  color: #1F78D1;
+  color: var(--downloads-link-color);
 }
 .offline-docs .urls a:first-child {
   padding-left: 0px !important;
