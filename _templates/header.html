@@ -1,0 +1,47 @@
+{% extends "!header.html" %}
+
+{%- block header_main_nav %}
+{%- if main_nav_links|tobool -%}
+<nav class="flex items-center space-x-6 text-sm font-medium">
+    {%- for text, item in main_nav_links.items() %}
+    {%- if item is string %}
+    {# Single link #}
+    {%- set _active = "text-foreground" if pagename in item else "text-foreground/60" -%}
+    {%- set url = item if item.startswith("http") else item %}
+    <a href="{{ url }}" class="py-2 transition-colors hover:text-foreground/80 {{ _active }}"
+        rel="{{ 'nofollow noopener' if url.startswith('http') else '' }}">{{ text }}</a>
+    {%- elif item is mapping %}
+    {# Nested links with focus and hover accessibility #}
+    <div x-data="{ open: false }" @focusin="open = true" @focusout="open = false" @mouseenter="open = true"
+        @mouseleave="open = false" class="relative navigation-link">
+        <a href="#" class="py-2 transition-colors hover:text-foreground/80 focus:outline-none" tabindex="0"
+            aria-haspopup="true" :aria-expanded="open.toString()">
+            {{ text }}
+            <svg fill="currentColor" height="24px" stroke="none" viewBox="0 0 24 24" width="24px"
+                xmlns="http://www.w3.org/2000/svg" class="rotate-90 inline">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+            </svg>
+        </a>
+        <div x-show="open"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute bg-background mt-2 z-10 transition navigation-dropdown"
+            style="display: none;">
+            {%- for subtext, suburl in item.items() %}
+            {%- set _active = "text-foreground" if pagename in suburl else "text-foreground/60" -%}
+            {%- set url = suburl if suburl.startswith("http") else suburl %}
+            <a href="{{ url }}" class="block px-4 py-2 text-sm transition-colors {{ _active }}" tabindex="0"
+                rel="{{ 'nofollow noopener' if suburl.startswith('http') else '' }}">
+                {{ subtext }}
+            </a>
+            {%- endfor %}
+        </div>
+    </div>
+    {%- endif %}
+    {%- endfor %}
+</nav>
+{%- endif %}
+{%- endblock header_main_nav %}

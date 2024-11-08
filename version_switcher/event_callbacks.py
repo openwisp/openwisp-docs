@@ -21,7 +21,8 @@ def update_version_map(app, docname, content):
     if app.builder.name != 'version_map':
         return
     try:
-        app.builder.ow_version_map[docname].append(app.config.version)
+        if app.config.version not in app.builder.ow_version_map[docname]:
+            app.builder.ow_version_map[docname].append(app.config.version)
     except KeyError:
         app.builder.ow_version_map[docname] = [app.config.version]
 

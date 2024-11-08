@@ -9,7 +9,7 @@ Modules
     monitoring/index
     network-topology/index
     firmware-upgrader/index
-    user/radius
+    radius/index
     wifi-login-pages/index
     ipam/index
     notifications/index
