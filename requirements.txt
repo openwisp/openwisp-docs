@@ -6,5 +6,5 @@ rst2pdf
 sphinxcontrib-jquery
 sphinx-notfound-page
 sphinxcontrib-spelling
-sphinxawesome-theme~=5.2.0
+sphinxawesome-theme~=5.3.1
 openwisp-utils[qa]~=1.1.0
