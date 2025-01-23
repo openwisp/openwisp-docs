@@ -231,13 +231,15 @@ fixes if needed until ``./run-qa-checks`` runs without errors.
     If you want to learn more about our usage of python and django, we
     suggest reading :doc:`../developer/hacking-openwisp-python-django`.
 
-2. Javascript code conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. CSS and Javascript code conventions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- OpenWISP follows standard JavaScript coding style conventions that are
-  generally accepted or the ones that are specified in `.jshintrc files
-  <https://github.com/openwisp/openwisp-controller/blob/master/.jshintrc>`_;
-  find out more about `JSHint here <https://jshint.com/about/>`_
+- OpenWISP follows standard CSS and JavaScript coding style conventions
+  that are generally accepted or the ones that are specified by Prettier
+  find out more about `Prettier here <https://prettier.io/>`_
+- These style conventions can also be enforced by the tools
+  `openwisp-qa-format` and `./run-qa-checks` which are present in the top
+  level directory of each OpenWISP module
 - please follow this `JavaScript Style Guide and Coding Conventions
   <https://www.w3schools.com/js/js_conventions.asp>`_ link for proper
   explanation and wonderful examples
