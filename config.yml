@@ -30,6 +30,20 @@ modules:
   - name: docker-openwisp
     dir_name: docker
 versions:
+  - name: dev
+    branch: master
+  - name: '24.11'
+    branch: '1.1'
+    modules:
+      - name: ansible-openwisp2
+        branch: '24.11'
+        dir_name: ansible
+      - name: docker-openwisp
+        branch: '24.11'
+        dir_name: docker
+      - name: openwrt-openwisp-monitoring
+        branch: '0.2'
+        dir_name: openwrt-monitoring-agent
   - name: '22.05'
     overwrite_modules: true
     modules:
@@ -37,5 +51,3 @@ versions:
         branch: 'v22.05'
         dir_name: openwisp-docs
     sphinx_src_dir: ./openwisp-docs
-  - name: dev
-    branch: master

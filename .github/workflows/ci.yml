@@ -49,7 +49,7 @@ jobs:
           project_id: ${{ secrets.GCS_PROJECT_ID }}
           export_environment_variables: true
 
-      - name: 'Set up Cloud SDK'
+      - name: Set up Cloud SDK
         if: ${{ github.event_name=='push' }}
         uses: 'google-github-actions/setup-gcloud@v2'
 
