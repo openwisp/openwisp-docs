@@ -7,4 +7,4 @@ sphinxcontrib-jquery
 sphinx-notfound-page
 sphinxcontrib-spelling
 sphinxawesome-theme~=5.2.0
-openwisp-utils[qa]~=1.1.1
+openwisp-utils[qa] @ https://github.com/openwisp/openwisp-utils/tarball/1.2
