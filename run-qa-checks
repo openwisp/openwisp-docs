@@ -10,7 +10,9 @@ openwisp-qa-check \
     --skip-isort \
     --skip-flake8 \
     --skip-black \
-    --skip-checkendline
+    --skip-checkendline \
+    --csslinter \
+    --jslinter
 
 echo ''
 echo 'Build documention to look for syntax errors'
