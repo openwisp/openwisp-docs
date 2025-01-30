@@ -220,11 +220,14 @@ conventions which can be enforced by using the following tools:
   <http://flake8.pycqa.org/en/latest/>`_), for more info consult the
   documentation of :doc:`openwisp-qa-check </utils/developer/qa-checks>`.
 
-Keep in mind that the QA checks defined in the ``run-qa-checks`` script
-are also executed in the CI builds, which will fail if any QA check fails.
+.. important::
 
-To fix QA check failures, run ``openwisp-qa-format`` and apply manual
-fixes if needed until ``./run-qa-checks`` runs without errors.
+    QA checks defined in the ``run-qa-checks`` script are also executed in
+    CI builds. These builds will fail if any QA check fails.
+
+    To resolve QA check failures, run ``openwisp-qa-format`` and apply
+    manual fixes if necessary, until ``./run-qa-checks`` completes without
+    errors.
 
 .. note::
 
@@ -234,15 +237,21 @@ fixes if needed until ``./run-qa-checks`` runs without errors.
 2. CSS and Javascript code conventions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- OpenWISP follows standard CSS and JavaScript coding style conventions
-  that are generally accepted or the ones that are specified by Prettier
-  find out more about `Prettier here <https://prettier.io/>`_
-- These style conventions can also be enforced by the tools
-  `openwisp-qa-format` and `./run-qa-checks` which are present in the top
-  level directory of each OpenWISP module
-- please follow this `JavaScript Style Guide and Coding Conventions
-  <https://www.w3schools.com/js/js_conventions.asp>`_ link for proper
-  explanation and wonderful examples
+OpenWISP follows CSS and JavaScript coding conventions enforced by the
+`Prettier <https://prettier.io>`_ code formatting tool.
+
+The Prettier formatter is used by the :doc:`openwisp-qa-format
+</utils/developer/qa-checks>` tool and by the `./run-qa-checks` script
+located in the top-level directory of each repository.
+
+.. important::
+
+    QA checks defined in the ``run-qa-checks`` script are also executed in
+    CI builds. These builds will fail if any QA check fails.
+
+    To resolve QA check failures, run ``openwisp-qa-format`` and apply
+    manual fixes if necessary, until ``./run-qa-checks`` completes without
+    errors.
 
 3. OpenWrt related conventions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
