@@ -1,6 +1,4 @@
-:orphan:
-
-GSoC Project Ideas 2024
+GSoC Project Ideas 2025
 =======================
 
 .. tip::
@@ -291,86 +289,6 @@ following issues:
   <https://github.com/openwisp/openwisp-firmware-upgrader/issues/69>`_
 - `[feature] Allow management of UpgradeOperation objects in the admin
   <https://github.com/openwisp/openwisp-firmware-upgrader/issues/145>`_
-
-Improve UX of the Notifications Module
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: ../images/gsoc/ideas/2023/notification-preferences.png
-
-.. important::
-
-    Languages and technologies used: **Python**, **Django**,
-    **JavaScript**, **HTML**, **CSS**
-
-    **Mentors**: *Gagan Deep* (`pandafy <https://github.com/pandafy>`_)
-    (more mentors TBA).
-
-    **Project size**: 175 hours.
-
-    **Difficulty rate**: medium.
-
-The goal of this project is to improve the user experience for managing of
-the notification module in regards to managing notification preferences
-and batching of email notifications.
-
-Prerequisites to work on this project
-+++++++++++++++++++++++++++++++++++++
-
-The applicant must demonstrate good understanding of `OpenWISP
-Notifications
-<https://github.com/openwisp/openwisp-notifications#openwisp-notifications>`__,
-it's integration in `OpenWISP Controller
-<https://github.com/openwisp/openwisp-controller#openwisp-controller>`_
-and `OpenWISP Monitoring
-<https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`_.
-
-The applicant must demonstrate at least basic UI/UX development skills and
-eagerness to learn more about this subject.
-
-Expected outcomes
-+++++++++++++++++
-
-The applicant must open pull-requests for the following issues which must
-be merged by the final closing date of the program:
-
-- `[feature] Batch email notifications to prevent email flooding
-  <https://github.com/openwisp/openwisp-notifications/issues/132>`_: this
-  issue has priority because when this happens it causes most users to
-  want to disable email notifications.
-- `[feature] Allow to disable notifications for all organizations or keep
-  everything disabled except notifications for specific organizations
-  <https://github.com/openwisp/openwisp-notifications/issues/148>`_.
-- `[feature] Add REST API to manage notification preferences of other
-  users <https://github.com/openwisp/openwisp-notifications/issues/255>`_.
-- `[feature] Add a dedicated view for managing notification preferences
-  <https://github.com/openwisp/openwisp-notifications/issues/110>`_.
-- `[feature] Add link to manage notification preferences to email
-  notifications
-  <https://github.com/openwisp/openwisp-notifications/issues/256>`_.
-
-Each issue contains the details which the applicant needs to know in order
-to complete the project successfully.
-
-At each step of code changing the test coverage must be maintained stable
-and the documentation in the README must be kept up to date.
-
-Applicants are expected to gain more understanding of the UI changes
-requested with the help of *wireframes* which must be included in the
-application; experience in wireframing is considered an important factor,
-alternatively mentors will guide applicants in learning more about the
-subject. Willingness and eagerness to learn more about this subject, as
-well as UI/UX development are paramount.
-
-Training Issues
-+++++++++++++++
-
-The applicant may warm up in the application phase by working on the
-following issues:
-
-- `[feature] Add dedicated notification type for internal errors
-  <https://github.com/openwisp/openwisp-notifications/issues/254>`_
-- `[change] Allow relative paths
-  <https://github.com/openwisp/openwisp-notifications/issues/249>`_
 
 Add more timeseries database clients to OpenWISP Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
