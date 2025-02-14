@@ -49,6 +49,61 @@ General suggestions and warnings
 Project Ideas
 -------------
 
+Certificate Generator Templates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important::
+
+    Languages and technologies used: **Python**, **Django**,
+    **JavaScript**.
+
+    **Mentors**: *Federico Capoano*, *Gagan Deep*.
+
+    **Project size**: 90 hours.
+
+    **Difficulty rate**: medium.
+
+This GSoC project aims to enhance OpenWISP’s certificate management
+capabilities by enabling the generation of x509 certificates for general
+use, beyond OpenVPN.
+
+Currently, OpenWISP supports generating x509 certificates exclusively for
+OpenVPN clients, where each VPN client template produces a certificate
+signed by the CA linked to the corresponding VPN server. However, many
+users have requested support for generating certificates for other
+purposes, such as securing web servers.
+
+The proposed solution involves introducing a new template type that allows
+users to generate certificates using a selected CA. This template should
+provide configurable options, including:
+
+- Certificate duration
+- Key length
+- Digest algorithm
+
+If left unspecified, these options should default to the CA’s standard
+settings.
+
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate a solid understanding of Python, Django,
+JavaScript, and `OpenWISP Controller
+<https://github.com/openwisp/openwisp-controller>`__.
+
+Expected outcomes
++++++++++++++++++
+
+- Implement a new certificate template type in OpenWISP to support
+  general-purpose x509 certificate generation.
+- Allow users to select a CA and configure certificate properties.
+- Integrate with OpenWISP’s configuration management to expose certificate
+  details (public key, private key, and UUID) as variables for automated
+  deployment.
+- Write automated tests to ensure the correctness and reliability of the
+  new functionality.
+- Update the documentation to explain the new feature and its usage.
+
 Improve OpenWISP General Map: Indoor, Mobile, Linkable URLs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
