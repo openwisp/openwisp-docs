@@ -57,7 +57,7 @@ Certificate Generator Templates
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**.
 
-    **Mentors**: *Federico Capoano*, *Gagan Deep*.
+    **Mentors**: *Federico Capoano*.
 
     **Project size**: 90 hours.
 
@@ -114,7 +114,7 @@ Improve OpenWISP General Map: Indoor, Mobile, Linkable URLs
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**, **Leaflet**, **netjsongraph.js**.
 
-    **Mentors**: *Federico Capoano*, *Gagan Deep*.
+    **Mentors**: *Federico Capoano*.
 
     **Project size**: 350 hours.
 
@@ -218,7 +218,7 @@ Improve netjsongraph.js resiliency and visualization
     Languages and technologies used: **Javascript**, **NodeJS**, **HTML**,
     **CSS**
 
-    **Mentors**: *Federico Capoano* (more mentors TBA).
+    **Mentors**: *Nitesh Sinha*, *Federico Capoano*.
 
     **Project size**: 175 hours.
 
@@ -286,7 +286,7 @@ Improve UX and Flexibility of the Firmware Upgrader Module
 
     Languages and technologies used: **Python**, **Django**, **OpenWrt**.
 
-    **Mentors**: *Federico Capoano* (more mentors TBA).
+    **Mentors**: *Oliver Kraitschy*, *Purhan Kaushik*.
 
     **Project size**: 175 hours.
 
@@ -355,7 +355,7 @@ Add more timeseries database clients to OpenWISP Monitoring
     Languages and technologies used: **Python**, **Django**, **InfluxDB**,
     **Elasticsearch**.
 
-    **Mentors**: *Federico Capoano*, *Gagan Deep* (more mentors TBA).
+    **Mentors**: *Gagan Deep*, *Aryaman*, *Sankalp*.
 
     **Project size**: 175 hours.
 
