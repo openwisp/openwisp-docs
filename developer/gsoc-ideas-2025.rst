@@ -144,7 +144,7 @@ X.509 Certificate Generator Templates
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**.
 
-    **Mentors**: *Federico Capoano*.
+    **Mentors**: *Federico Capoano*, *Aryaman*.
 
     **Project size**: 90 hours.
 
