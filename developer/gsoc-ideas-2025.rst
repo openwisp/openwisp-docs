@@ -49,8 +49,95 @@ General suggestions and warnings
 Project Ideas
 -------------
 
-Certificate Generator Templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mass Commands
+~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2025/mass-commands.png
+
+.. important::
+
+    Languages and technologies used: **Python**, **Django**,
+    **JavaScript**, **WebSockets**, **REST API**.
+
+    **Mentors**: *Federico Capoano*, *Gagan Deep*, *Purhan Kaushik*.
+
+    **Project size**: 175 hours.
+
+    **Difficulty rate**: medium.
+
+This project idea aims to extend OpenWISP's remote device management
+capabilities by enabling users to execute shell commands on multiple
+devices simultaneously. Currently, OpenWISP supports executing commands on
+a single device at a time. This project will introduce a bulk execution
+feature while maintaining the existing security, rules, and limitations of
+the single-device command execution feature.
+
+The mass command operation will be accessible from two main entry points:
+
+- An admin action on the device list page, allowing users to select
+  multiple devices and send a shell command in bulk.
+- A dedicated mass command admin section, where users can initiate bulk
+  command execution with various targeting options:
+
+  - All devices in the system (restricted to superusers).
+  - All devices within a specific organization.
+  - All devices within a specific device group.
+  - All devices within a specific geographic location.
+  - Specific selected devices.
+
+The UI will guide users step-by-step, dynamically displaying relevant
+fields based on the selected target scope. For example, if a user selects
+"All devices in a specific organization", an auto-complete list of
+organizations will be displayed next.
+
+The system will provide real-time tracking of command execution results.
+Inspired by OpenWISP Firmware Upgrader's mass upgrade feature, the UI will
+receive live updates via WebSockets, displaying command output as soon as
+it is received from the devices. Additionally:
+
+- The device detail page will show executed commands under the "Recent
+  Commands" tab.
+- Commands that were part of a mass operation will be clearly marked, with
+  a link to the corresponding mass command operation page.
+
+To support API-based management, the REST API will be extended with the
+following capabilities:
+
+- Create new mass command operations.
+- Retrieve mass command operations and their results (with pagination).
+- Delete mass command operations.
+- Modify the single-shell command API to reference the mass command
+  operation ID if applicable.
+
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate a solid understanding of Python, Django, HTML,
+CSS, JavaScript, WebSockets, and `OpenWISP Controller
+<https://github.com/openwisp/openwisp-controller>`__.
+
+Expected outcomes
++++++++++++++++++
+
+- Implementation of mass shell command execution in OpenWISP, replicating
+  the rules and limitations of single-device execution.
+- Development of an intuitive UI with the Django admin for selecting
+  devices and tracking command results in real-time.
+- Admin action for device list page.
+- Enhancement of the device detail page to reflect mass command history
+  for individual devices.
+- Extension of the REST API to support mass command operations.
+- Comprehensive automated tests covering the new feature.
+- Updated documentation, including:
+
+  - Feature description with usage instructions.
+  - A short example usage video for YouTube that we can showcase on the
+    website.
+
+X.509 Certificate Generator Templates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2025/x509-templates.webp
 
 .. important::
 
@@ -63,7 +150,7 @@ Certificate Generator Templates
 
     **Difficulty rate**: medium.
 
-This GSoC project aims to enhance OpenWISP’s certificate management
+This GSoC project aims to enhance OpenWISP's certificate management
 capabilities by enabling the generation of x509 certificates for general
 use, beyond OpenVPN.
 
@@ -81,7 +168,7 @@ provide configurable options, including:
 - Key length
 - Digest algorithm
 
-If left unspecified, these options should default to the CA’s standard
+If left unspecified, these options should default to the CA's standard
 settings.
 
 Prerequisites to work on this project
@@ -97,7 +184,7 @@ Expected outcomes
 - Implement a new certificate template type in OpenWISP to support
   general-purpose x509 certificate generation.
 - Allow users to select a CA and configure certificate properties.
-- Integrate with OpenWISP’s configuration management to expose certificate
+- Integrate with OpenWISP's configuration management to expose certificate
   details (public key, private key, and UUID) as variables for automated
   deployment.
 - Write automated tests to ensure the correctness and reliability of the

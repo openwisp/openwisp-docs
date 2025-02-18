@@ -76,6 +76,7 @@ filesystem
 firewalld
 firmware
 firmwares
+formatter
 fping
 freeradius
 frontend
