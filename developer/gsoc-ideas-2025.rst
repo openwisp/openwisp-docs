@@ -189,7 +189,11 @@ Expected outcomes
   deployment.
 - Write automated tests to ensure the correctness and reliability of the
   new functionality.
-- Update the documentation to explain the new feature and its usage.
+- Updated documentation, including:
+
+  - Feature overview in a dedicated page with step-by-step usage
+    instructions.
+  - Short Video demonstration.
 
 WHOIS Information and IP Address-Based Geolocation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -352,11 +356,11 @@ Expected outcomes
   located on the floor plan, it shall also account for the following use
   cases:
 
-      - An indoor location can have multiple floors. The view should be
-        allow users to navigate between different floors.
-      - There can be multiple devices on the same floor. The view should
-        show all the devices on a floor. This will require developing an
-        API endpoint which returns location of devices on the floor plan
+  - An indoor location can have multiple floors. The view should be allow
+    users to navigate between different floors.
+  - There can be multiple devices on the same floor. The view should show
+    all the devices on a floor. This will require developing an API
+    endpoint which returns location of devices on the floor plan
 
 - `Make map actions bookmarkable
   <https://github.com/openwisp/netjsongraph.js/issues/238>`_: Update the
