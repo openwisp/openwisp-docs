@@ -85,6 +85,7 @@ geo
 geocoding
 geodjango
 geoip
+geolocation
 Geospatial
 git
 github

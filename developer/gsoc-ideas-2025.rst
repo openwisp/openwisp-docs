@@ -191,6 +191,105 @@ Expected outcomes
   new functionality.
 - Update the documentation to explain the new feature and its usage.
 
+WHOIS Information and IP Address-Based Geolocation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2025/geolocation.webp
+
+.. important::
+
+    Languages and technologies used: **Python**, **Django**, **REST API**.
+
+    **Mentors**: *Federico Capoano*
+
+    **Project size**: 175 hours.
+
+    **Difficulty rate**: Easy/Medium.
+
+This GSoC project aims to enhance OpenWISP’s device management
+capabilities by integrating WHOIS data retrieval and automatic fuzzy
+geolocation based on public IP addresses.
+
+The project consists of two main features:
+
+**1. WHOIS Information Retrieval**
+
+- When a device reports a ``last_ip`` that is a public IP and differs from
+  the previously stored value, OpenWISP should automatically trigger a
+  background Celery task to retrieve and store its WHOIS information.
+- A summary of key WHOIS details (e.g., organization name, country, ISP)
+  will be displayed alongside the ``last_ip`` field on the device detail
+  page.
+- Users will have the option to expand this section to view additional
+  details.
+- The REST API should include WHOIS summary information in the device list
+  and device detail endpoints.
+- An additional API option in the device details endpoint should allow
+  retrieving the complete WHOIS data stored in the database.
+
+**2. Fuzzy Geolocation from IP Addresses**
+
+- The system should attempt to determine approximate geographic
+  coordinates based on the device’s ``last_ip`` and create a ``Location``
+  object with this data, marking it as *Fuzzy* (a different term may be
+  considered).
+- IP-based geolocation must be processed in a background Celery task to
+  avoid slowing down the main processes.
+- The UI should clearly indicate that this location is estimated and
+  encourage users to manually refine it for greater accuracy.
+- A notification can be sent to users suggesting they review or confirm
+  the estimated location.
+- If the ``Location`` object remains unmodified and marked as fuzzy,
+  OpenWISP should detect changes in the device's public IP address and
+  reattempt IP-based geolocation, updating the coordinates if they differ.
+- The ``Location`` admin list page should include a filter for fuzzy
+  locations.
+- The Device admin list page should include a filter for devices with
+  fuzzy locations (expanding on the existing filter for devices with or
+  without geographic locations).
+- This feature should be configurable at both the global and organization
+  levels, allowing administrators to enable or disable it as needed.
+  Existing modules already provide organization settings that default to
+  global configuration, see `FallbackBooleanChoiceField
+  <https://openwisp.io/docs/stable/utils/developer/custom-fields.html#openwisp-utils-fields-fallbackbooleanchoicefield>`_
+  for reference.
+- The OpenWISP Controller REST API must be updated to support these
+  functionalities:
+
+  - Include the fuzzy field in the ``Location`` list and detail endpoints.
+  - Allow filtering fuzzy locations.
+  - Allow filtering devices with fuzzy locations.
+
+Prerequisites to Work on This Project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate a solid understanding of Python, Django, REST
+APIs, HTML, CSS, JavaScript, `OpenWISP Controller
+<https://github.com/openwisp/openwisp-controller>`__, and `django-loci
+<https://github.com/openwisp/django-loci>`__.
+
+Expected Outcomes
++++++++++++++++++
+
+- Implementation of WHOIS data retrieval as a background operation and
+  display within the OpenWISP Controller admin panel.
+- Development of fuzzy geolocation based on public IPs, with clear UI
+  explanations and manual override options.
+- Integration with OpenWISP’s notification system to suggest location
+  refinements.
+- Admin filters to identify fuzzy locations and devices with fuzzy
+  locations.
+- Configurable settings to enable or disable the feature globally or per
+  organization.
+- REST API enhancements to reflect the new functionalities.
+- Comprehensive automated tests ensuring feature reliability.
+- Updated documentation, including:
+
+  - A feature overview with step-by-step usage instructions on dedicated
+    pages.
+  - Videos demonstrating WHOIS data retrieval and geolocation results.
+  - Configuration details for enabling or disabling these features.
+
 Improve OpenWISP General Map: Indoor, Mobile, Linkable URLs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
