@@ -18,7 +18,7 @@ We will be installing OpenVPN Server using `this ansible role
 Stouts.openvpn <https://github.com/Stouts/Stouts.openvpn>`_ and then
 import the VPN configuration into OpenWISP. If you have already setup your
 VPN server or would like to install the VPN server via some other way, you
-can skip to `Step 4 <#importing-the-ca-and-the-server-ceritficate>`_
+can skip to :ref:`Step 4 <importing_ca_and_server_certificate>`.
 
 .. note::
 
@@ -102,6 +102,8 @@ Run the ansible playbook using:
 .. code-block:: bash
 
     ansible-playbook -i hosts playbook.yml -b -k -K --become-method=su
+
+.. _importing_ca_and_server_certificate:
 
 4. Importing the CA and the Server Certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
