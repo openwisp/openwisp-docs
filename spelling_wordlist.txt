@@ -246,6 +246,7 @@ subnets
 Subnets
 Supervisord
 Swapper
+sync
 syslog
 tcp
 technical

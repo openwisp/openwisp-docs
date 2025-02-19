@@ -602,6 +602,99 @@ Expected outcomes
     <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
     <https://github.com/openwisp/docker-openwisp/>`_.
 
+OpenWISP VPN Sync Linux Package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2025/vpn-sync.webp
+
+.. important::
+
+    Languages and technologies used: **Linux**, **Python**, **Django**,
+    **WebSockets**, **OpenVPN**, **WireGuard**, **WireGuard over VXLAN**,
+    **ZeroTier**.
+
+    **Mentors:** *Federico Capoano*.
+
+    **Project size:** 350 hours.
+
+    **Difficulty level:** medium/hard.
+
+This GSoC project aims to simplify the deployment and management of VPN
+servers integrated with OpenWISP. The goal is to develop an
+easy-to-install program that synchronizes VPN configurations with OpenWISP
+in real-time, reducing manual intervention and ensuring configuration
+consistency across all managed VPN servers.
+
+This program will run on Linux-based servers and will:
+
+- Be implemented in Python to ensure maintainability and extensibility.
+- Use a Makefile to generate installation packages for major Linux
+  distributions:
+
+  - **DEB** (for Debian, Ubuntu, and related distributions)
+  - **RPM** (for Red Hat, Fedora, and similar systems)
+  - **Snap** (for broader Linux compatibility)
+
+- Establish a **WebSocket connection** with OpenWISP to listen for changes
+  in the VPN Server object and synchronize local settings accordingly.
+- Keep the local list of peers and the **certificate revocation list
+  (CRL)** updated whenever VPN clients are added, removed, or modified.
+- Support the following VPN tunneling technologies:
+
+  - **OpenVPN**
+  - **WireGuard**
+  - **WireGuard over VXLAN**
+  - **ZeroTier**
+
+- Provide a **command-line utility** to simplify the initial setup,
+  enabling users to:
+
+  - Select the VPN software to be used.
+  - Verify whether the required system packages are installed and display
+    a clear warning if dependencies are missing.
+  - Enter the necessary details to securely connect and synchronize with
+    OpenWISP.
+
+- Support running **multiple instances**, with each instance managing a
+  separate VPN server object independently.
+- Implement **structured logging** with dedicated log files for each
+  instance, adhering to Linux logging best practices and supporting log
+  rotation.
+- Include a **developer-friendly README** with clear setup instructions.
+- Update the **OpenWISP documentation** to cover installation,
+  configuration, and best practices.
+
+To support this project, OpenWISP Controller will need to be updated to
+expose a **WebSocket endpoint**. This endpoint will allow the new VPN
+synchronization program to listen for real-time configuration updates.
+
+Prerequisites to Work on This Project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must have a solid understanding of:
+
+- **Python** and **Django**.
+- **WebSockets**.
+- At least one of the supported VPN technologies (**OpenVPN, WireGuard,
+  WireGuard over VXLAN, ZeroTier**).
+- **System administration and Linux packaging** (preferred but not
+  required).
+
+Expected Outcomes
++++++++++++++++++
+
+- A Python-based VPN synchronization tool.
+- A command-line setup utility for easy first-time configuration.
+- WebSocket-based synchronization between VPN servers and OpenWISP.
+- Automated packaging for major Linux distributions.
+- Structured logging with proper log rotation.
+- OpenWISP Controller enhancements to support WebSocket-based
+  synchronization.
+- Comprehensive **documentation**, including setup guides and best
+  practices.
+- Automated tests to ensure reliability and stability.
+- A **short tutorial video** demonstrating installation and usage.
+
 Enhancing Uspot Captive Portal for OpenWrt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
