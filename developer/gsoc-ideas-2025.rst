@@ -543,7 +543,7 @@ Add more timeseries database clients to OpenWISP Monitoring
 
     **Mentors**: *Gagan Deep*, *Aryaman*, *Sankalp*.
 
-    **Project size**: 175 hours.
+    **Project size**: 350 hours.
 
     **Difficulty rate**: medium.
 
