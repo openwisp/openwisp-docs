@@ -277,6 +277,7 @@ upgrader
 upgraders
 uptime
 urlconf
+uspot
 utils
 uwsgi
 uWSGI

@@ -601,3 +601,107 @@ Expected outcomes
     from `ansible-openwisp2
     <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
     <https://github.com/openwisp/docker-openwisp/>`_.
+
+Enhancing Uspot Captive Portal for OpenWrt
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2025/uspot.png
+
+.. important::
+
+    Languages and technologies used: **C**, **OpenWrt**, **RADIUS**.
+
+    **Mentors**: *Federico Capoano*, *Sankalp*.
+
+    **Project size**: 350 hours.
+
+    **Difficulty rate**: hard.
+
+This GSoC project aims to improve **Uspot**, a relatively new captive
+portal for OpenWrt, by implementing critical missing features that are
+essential for large-scale deployments. **Uspot** is a promising
+replacement for **CoovaChilli**, which is no longer actively developed and
+only receives occasional maintenance patches. However, **Uspot** lacks
+several important capabilities that **CoovaChilli** provides. This project
+will focus on adding the most critical missing features to ensure Uspot
+can be a viable alternative.
+
+Feature list
+++++++++++++
+
+**1. Traffic Reporting for RADIUS Accounting Interim-Updates**
+
+- Implement RADIUS accounting interim-update support.
+- Add an option to swap input and output traffic counters (similar to
+  CoovaChilli's ``swapoctets`` option).
+
+**2. No-Challenge Authentication Mode**
+
+- Implement a **nochallenge** mode where passwords are sent in plain-text
+  to RADIUS.
+- Justification: OpenWISP uses Django’s modern hashing algorithms, which
+  are significantly stronger than those supported by RADIUS.
+- Security: This method is secure as long as communication between the
+  captive portal and RADIUS is encrypted using VPNs or **RadSec**.
+
+**3. Support for RadSec (RADIUS over TLS)**
+
+- Ensure **RadSec** can be used to encrypt RADIUS packets.
+- Provide documentation on how to configure Uspot with **RadSec**.
+
+**4. Secure Web Authentication**
+
+- Ensure that the web server can be configured to accept authentication
+  credentials over **HTTPS**.
+- Provide detailed documentation on how to set up HTTPS authentication
+  securely.
+
+**5. Bandwidth Limitation Features**
+    - **Static Configuration**: Applied to all users globally.
+    - **Dynamic RADIUS-based Configuration**: Bandwidth limits based on
+      RADIUS attributes (e.g., ``WISPr-Bandwidth-Max-Down``,
+      ``WISPr-Bandwidth-Max-Up``), allowing differentiated speeds based on
+      user type.
+
+**6. Traffic Consumption Limits**
+
+Implement RADIUS attributes to limit total data consumption per user:
+
+- ``ChilliSpot-Max-Total-Octets``
+- ``WISPr-Bandwidth-Max-Total``
+- ``CoovaChilli-Max-Total-Gigawords`` (important for limits above **4.29
+  GB**, overcoming 32-bit integer limitations).
+
+**7. VLAN Tagging Support**
+
+Allow tagging user traffic with VLANs:
+
+- **Global VLAN Configuration**: Apply a default VLAN tag to all users.
+- **RADIUS-based VLAN Assignment**: Dynamically assign VLANs based on
+  RADIUS Access-Accept attributes, which allows to tag traffic with
+  different VLANs based on rules defined at the application level.
+
+Prerequisites to Work on This Project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate a solid understanding of:
+
+- **C programming** (for modifying Uspot’s core functionality).
+- **Networking protocols**, including **RADIUS** and **VLANs**.
+- **OpenWrt development** (building and packaging OpenWrt software).
+- **Secure authentication mechanisms** (RadSec, HTTPS authentication).
+- **Linux network stack**, particularly how OpenWrt handles network
+  interfaces and firewall rules.
+
+Expected Outcomes
++++++++++++++++++
+
+- Implementation of the missing features in **Uspot**, getting closer to
+  parity with key **CoovaChilli** functionalities.
+- Comprehensive testing and validation of each new feature.
+- Ensure all changes are merged upstream into the **Uspot** repository.
+- Update OpenWrt packages for the most recent **three** OpenWrt versions
+  to include these enhancements.
+- Provide documentation on how to configure and use these new features.
+- Potential adoption of **Uspot** as a fully functional captive portal
+  replacement for **CoovaChilli** in OpenWISP deployments.
