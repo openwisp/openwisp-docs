@@ -61,7 +61,7 @@ Mass Commands
 
     **Mentors**: *Federico Capoano*, *Gagan Deep*, *Purhan Kaushik*.
 
-    **Project size**: 175 hours.
+    **Project size**: 350 hours.
 
     **Difficulty rate**: medium.
 
