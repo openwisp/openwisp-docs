@@ -32,6 +32,7 @@ jobs:
 
       - name: Install test dependencies
         run: |
+          sudo apt install poppler-utils
           pip install -U -r requirements.txt
           pip install pylinkvalidator
 

@@ -32,7 +32,7 @@ kill "${pid}"
 
 # Verify PDFs are valid
 for pdf in _build/*/*.pdf; do
-    if ! pdfinfo "$pdf" &> /dev/null; then
+    if ! pdfinfo "$pdf"; then
         echo "$pdf is broken"
     fi
 done
