@@ -59,7 +59,7 @@ Mass Commands
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**, **WebSockets**, **REST API**.
 
-    **Mentors**: *Federico Capoano*, *Gagan Deep*, *Purhan Kaushik*.
+    **Mentors**: *Gagan Deep*, *Purhan Kaushik*, *Kapil Bansal*.
 
     **Project size**: 350 hours.
 
@@ -144,7 +144,7 @@ X.509 Certificate Generator Templates
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**.
 
-    **Mentors**: *Federico Capoano*, *Aryaman*.
+    **Mentors**: *Federico Capoano*, *Aryaman*, *Nitesh Sinha*.
 
     **Project size**: 90 hours.
 
@@ -204,7 +204,7 @@ WHOIS Information and IP Address-Based Geolocation
 
     Languages and technologies used: **Python**, **Django**, **REST API**.
 
-    **Mentors**: *Federico Capoano*
+    **Mentors**: *Federico Capoano*, *Nitesh Sinha*, *Kapil Bansal*
 
     **Project size**: 175 hours.
 
@@ -304,7 +304,7 @@ Improve OpenWISP General Map: Indoor, Mobile, Linkable URLs
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**, **Leaflet**, **netjsongraph.js**.
 
-    **Mentors**: *Federico Capoano*.
+    **Mentors**: *Federico Capoano*, *Gagan Deep*.
 
     **Project size**: 350 hours.
 
@@ -613,7 +613,7 @@ OpenWISP VPN Sync Linux Package
     **WebSockets**, **OpenVPN**, **WireGuard**, **WireGuard over VXLAN**,
     **ZeroTier**.
 
-    **Mentors:** *Federico Capoano*.
+    **Mentors:** *Federico Capoano*, *Gagan Deep*.
 
     **Project size:** 350 hours.
 
