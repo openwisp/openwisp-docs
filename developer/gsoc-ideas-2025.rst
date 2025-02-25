@@ -264,7 +264,7 @@ The project consists of two main features:
   - Allow filtering fuzzy locations.
   - Allow filtering devices with fuzzy locations.
 
-Prerequisites to Work on This Project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 Applicants must demonstrate a solid understanding of Python, Django, REST
@@ -602,8 +602,8 @@ Expected outcomes
     <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
     <https://github.com/openwisp/docker-openwisp/>`_.
 
-OpenWISP VPN Sync Linux Package
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OpenWISP VPN Deployer Linux Package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/gsoc/ideas/2025/vpn-sync.webp
 
@@ -620,15 +620,22 @@ OpenWISP VPN Sync Linux Package
     **Difficulty level:** medium/hard.
 
 This GSoC project aims to simplify the deployment and management of VPN
-servers integrated with OpenWISP. The goal is to develop an
-easy-to-install program that synchronizes VPN configurations with OpenWISP
-in real-time, reducing manual intervention and ensuring configuration
-consistency across all managed VPN servers.
+servers integrated with OpenWISP.
 
-This program will run on Linux-based servers and will:
+The goal is to develop an easy-to-install program that automates the
+deployment of VPN servers synchronized with OpenWISP in real time. This
+reduces manual intervention and ensures configuration consistency between
+the VPN server objects in the OpenWISP database and the deployed VPN
+instances.
 
-- Be implemented in Python to ensure maintainability and extensibility.
-- Use a Makefile to generate installation packages for major Linux
+Key Features
+++++++++++++
+
+The program will run on Linux-based servers and will:
+
+- Be implemented in **Python** to ensure maintainability and
+  extensibility.
+- Use a **Makefile** to generate installation packages for major Linux
   distributions:
 
   - **DEB** (for Debian, Ubuntu, and related distributions)
@@ -636,7 +643,7 @@ This program will run on Linux-based servers and will:
   - **Snap** (for broader Linux compatibility)
 
 - Establish a **WebSocket connection** with OpenWISP to listen for changes
-  in the VPN Server object and synchronize local settings accordingly.
+  in VPN server configurations and synchronize local settings accordingly.
 - Keep the local list of peers and the **certificate revocation list
   (CRL)** updated whenever VPN clients are added, removed, or modified.
 - Support the following VPN tunneling technologies:
@@ -646,32 +653,53 @@ This program will run on Linux-based servers and will:
   - **WireGuard over VXLAN**
   - **ZeroTier**
 
-- Provide a **command-line utility** to simplify the initial setup,
-  enabling users to:
+- Provide a **command-line utility** to simplify the initial setup. This
+  utility will:
 
-  - Select the VPN software to be used.
-  - Verify whether the required system packages are installed and display
-    a clear warning if dependencies are missing.
-  - Enter the necessary details to securely connect and synchronize with
-    OpenWISP.
+  - Guide users step by step, making it accessible even to those with
+    limited experience.
+  - Allow users to select the VPN technology to be deployed.
+  - Verify that the necessary system packages are installed and provide
+    clear warnings if dependencies are missing.
+  - Assist in securely connecting and synchronizing with OpenWISP.
 
-- Support running **multiple instances**, with each instance managing a
-  separate VPN server object independently.
+    .. note::
+
+        The command-line utility must apply all necessary changes in the
+        OpenWISP database via the **REST API**. If any required
+        modifications cannot be performed with the current API, the
+        contributor will be responsible for implementing the missing
+        functionality.
+
+    - To facilitate authentication, the utility will `guide users in
+      retrieving their OpenWISP REST API token
+      <https://github.com/openwisp/openwisp-users/issues/240>`_. A
+      proposed approach is to provide a link to the OpenWISP admin
+      interface, where users can generate and copy their API token easily.
+
+- Support running **multiple instances**, where each instance manages a
+  separate VPN server independently.
 - Implement **structured logging** with dedicated log files for each
   instance, adhering to Linux logging best practices and supporting log
   rotation.
-- Include a **developer-friendly README** with clear setup instructions.
+- Provide **comprehensive documentation** in ReStructuredText format,
+  following OpenWISP conventions:
+
+  - Documentation will be stored in a ``/docs`` directory, with a clear
+    separation between user guides and developer documentation.
+  - A **video demonstration** will be included, which can be published on
+    YouTube to increase project visibility.
+
 - Update the **OpenWISP documentation** to cover installation,
   configuration, and best practices.
+- To support this project, **OpenWISP Controller** will need to be updated
+  to expose a **WebSocket endpoint**. This will allow the VPN
+  synchronization program to receive real-time configuration updates.
 
-To support this project, OpenWISP Controller will need to be updated to
-expose a **WebSocket endpoint**. This endpoint will allow the new VPN
-synchronization program to listen for real-time configuration updates.
-
-Prerequisites to Work on This Project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
-Applicants must have a solid understanding of:
+Applicants should have a solid understanding of:
 
 - **Python** and **Django**.
 - **WebSockets**.
@@ -688,11 +716,11 @@ Expected Outcomes
 - WebSocket-based synchronization between VPN servers and OpenWISP.
 - Automated packaging for major Linux distributions.
 - Structured logging with proper log rotation.
-- OpenWISP Controller enhancements to support WebSocket-based
-  synchronization.
+- Enhancements to **OpenWISP Controller** to support WebSocket-based
+  synchronization and any required REST API modifications.
+- Automated tests to ensure reliability and stability.
 - Comprehensive **documentation**, including setup guides and best
   practices.
-- Automated tests to ensure reliability and stability.
 - A **short tutorial video** demonstrating installation and usage.
 
 Enhancing Uspot Captive Portal for OpenWrt
@@ -771,7 +799,7 @@ Allow tagging user traffic with VLANs:
   RADIUS Access-Accept attributes, which allows to tag traffic with
   different VLANs based on rules defined at the application level.
 
-Prerequisites to Work on This Project
+Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 Applicants must demonstrate a solid understanding of:

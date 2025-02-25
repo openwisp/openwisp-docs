@@ -50,6 +50,7 @@ daemon
 datagram
 davide
 debian
+deployer
 devops
 differently
 django
