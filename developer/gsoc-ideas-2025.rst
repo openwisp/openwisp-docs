@@ -702,7 +702,8 @@ Enhancing Uspot Captive Portal for OpenWrt
 
 .. important::
 
-    Languages and technologies used: **C**, **OpenWrt**, **RADIUS**.
+    Languages and technologies used: `ucode <https://ucode.mein.io/>`_,
+    **C**, **OpenWrt**, **RADIUS**.
 
     **Mentors**: *Federico Capoano*, *Sankalp*.
 
@@ -742,21 +743,17 @@ Feature list
 - Ensure **RadSec** can be used to encrypt RADIUS packets.
 - Provide documentation on how to configure Uspot with **RadSec**.
 
-**4. Secure Web Authentication**
-
-- Ensure that the web server can be configured to accept authentication
-  credentials over **HTTPS**.
-- Provide detailed documentation on how to set up HTTPS authentication
-  securely.
-
-**5. Bandwidth Limitation Features**
+**4. Bandwidth Limitation Features**
     - **Static Configuration**: Applied to all users globally.
     - **Dynamic RADIUS-based Configuration**: Bandwidth limits based on
       RADIUS attributes (e.g., ``WISPr-Bandwidth-Max-Down``,
       ``WISPr-Bandwidth-Max-Up``), allowing differentiated speeds based on
       user type.
 
-**6. Traffic Consumption Limits**
+These features are available bu not documented right now, so let's make
+sure they're properly documented.
+
+**5. Traffic Consumption Limits**
 
 Implement RADIUS attributes to limit total data consumption per user:
 
@@ -765,7 +762,7 @@ Implement RADIUS attributes to limit total data consumption per user:
 - ``CoovaChilli-Max-Total-Gigawords`` (important for limits above **4.29
   GB**, overcoming 32-bit integer limitations).
 
-**7. VLAN Tagging Support**
+**6. VLAN Tagging Support**
 
 Allow tagging user traffic with VLANs:
 
@@ -779,6 +776,7 @@ Prerequisites to Work on This Project
 
 Applicants must demonstrate a solid understanding of:
 
+- `ucode <https://ucode.mein.io/>`_ proficiency.
 - **C programming** (for modifying Uspot’s core functionality).
 - **Networking protocols**, including **RADIUS** and **VLANs**.
 - **OpenWrt development** (building and packaging OpenWrt software).
@@ -793,8 +791,10 @@ Expected Outcomes
   parity with key **CoovaChilli** functionalities.
 - Comprehensive testing and validation of each new feature.
 - Ensure all changes are merged upstream into the **Uspot** repository.
-- Update OpenWrt packages for the most recent **three** OpenWrt versions
-  to include these enhancements.
-- Provide documentation on how to configure and use these new features.
+- Update OpenWrt packages for the most recent **two** OpenWrt versions to
+  include these enhancements.
+- Provide documentation on how to configure all the features mentioned in
+  the project description.
 - Potential adoption of **Uspot** as a fully functional captive portal
-  replacement for **CoovaChilli** in OpenWISP deployments.
+  replacement for **CoovaChilli** in OpenWISP deployments by mentioning it
+  in the documentation of OpenWISP.
