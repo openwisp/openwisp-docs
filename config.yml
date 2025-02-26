@@ -31,9 +31,10 @@ modules:
     dir_name: docker
 versions:
   - name: dev
-    branch: master
+    module_branch: master
   - name: '24.11'
-    branch: '1.1'
+    docs_branch: '24.11'
+    module_branch: '1.1'
     modules:
       - name: ansible-openwisp2
         branch: '24.11'
@@ -50,4 +51,3 @@ versions:
       - name: openwisp-docs
         branch: 'v22.05'
         dir_name: openwisp-docs
-    sphinx_src_dir: ./openwisp-docs

@@ -218,7 +218,44 @@ def parse_version_arg(value):
     exit(3)
 
 
-def clone_or_update_repo(name, branch, dir_name, owner='openwisp'):
+def create_symlink(src, dest):
+    """
+    Create a symbolic link from src to dest.
+
+    If dest is not 'openwisp-docs', it will be placed inside the
+    'openwisp-docs' directory.
+    If a symlink already exists at the destination, it will be
+    removed before creating the new one.
+
+    Args:
+        src (str): The source path to be linked from
+        dest (str): The destination path to link to
+    """
+    if dest == 'openwisp-docs':
+        dest = 'staging-dir'
+    else:
+        dest = os.path.join('staging-dir', dest)
+    if os.path.islink(dest):
+        os.unlink(dest)
+    os.symlink(src, dest)
+
+
+def remove_symlink(dest):
+    """
+    Remove the symbolic link at the destination path.
+
+    Args:
+        dest (str): The destination path of the symbolic link to be removed.
+    """
+    if dest == 'openwisp-docs':
+        dest = 'staging-dir'
+    else:
+        dest = os.path.join('staging-dir', dest)
+    if os.path.islink(dest):
+        os.unlink(dest)
+
+
+def clone_or_update_repo(name, branch, dir_name, owner='openwisp', dest=None):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
@@ -234,47 +271,40 @@ def clone_or_update_repo(name, branch, dir_name, owner='openwisp'):
         repo_url = f'git@github.com:{repository}.git'
     else:
         repo_url = f'https://github.com/{repository}.git'
-    clone_path = os.path.join('modules', dir_name)
+    clone_path = os.path.abspath(os.path.join('modules', dir_name))
 
     if os.path.exists(clone_path):
         print(f"Repository '{name}' already exists. Updating...")
-        subprocess.run(
-            ['git', 'remote', 'set-branches', 'origin', branch],
-            cwd=clone_path,
-            check=True,
-        )
-        subprocess.run(
-            ['git', 'fetch', '--update-shallow', 'origin', branch],
-            cwd=clone_path,
-            check=True,
-        )
         subprocess.run(['git', 'checkout', branch], cwd=clone_path, check=True)
-        subprocess.run(['git', 'pull', 'origin', branch], cwd=clone_path, check=True)
     else:
         print(f"Cloning repository '{name}'...")
         subprocess.run(
             [
                 'git',
                 'clone',
-                '--single-branch',
-                '--branch',
-                branch,
-                '--depth',
-                '1',
                 repo_url,
                 clone_path,
             ],
             check=True,
         )
-    # If the module contains a doc directory, copy it to the dir_name in the root.
-    # Otherwise, copy the entire directory.
-    if os.path.islink(dir_name):
-        os.unlink(dir_name)
+        subprocess.run(
+            [
+                'git',
+                'checkout',
+                branch,
+            ],
+            cwd=clone_path,
+            check=True,
+        )
+    # Create a symlink to either the 'docs' directory inside the cloned repository
+    # or to the entire repository if no 'docs' directory exists.
+    # This makes the documentation sources available to the Sphinx build process.
     src = os.path.join(clone_path, 'docs')
-    # openwisp docs repo
     if not os.path.exists(src):
+        # If no 'docs' directory exists, use the entire repository
         src = clone_path
-    os.symlink(src, dir_name)
+    dest = dest or dir_name
+    create_symlink(src, dest)
 
 
 def main():
@@ -333,14 +363,20 @@ def main():
 
         # If a module does not define a branch,
         # it will fallback to the version_branch.
-        version_branch = version.get('branch', version['name'])
+        version_branch = version.get('module_branch', version['name'])
+        docs_branch = version.get('docs_branch', 'master')
+        clone_or_update_repo(
+            name='openwisp-docs',
+            branch=docs_branch,
+            dir_name='openwisp-docs',
+        )
         for module in modules:
             clone_or_update_repo(
                 branch=module.pop('branch', version_branch),
                 **module,
             )
             module_dirs.append(module['dir_name'])
-        sphinx_src_dir = version.get('sphinx_src_dir', '.')
+        sphinx_src_dir = version.get('sphinx_src_dir', 'staging-dir')
         for format in ['spellcheck'] + args.formats:
             subprocess.run(
                 [
@@ -360,7 +396,7 @@ def main():
             )
         # Remove all temporary directories
         for dir in module_dirs:
-            os.unlink(dir)
+            remove_symlink(dir)
 
     # Generate the index.html file which redirects to the stable version.
     env = Environment(loader=FileSystemLoader('_static'))

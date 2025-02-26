@@ -48,6 +48,24 @@ Requirements: Python >= 3.9.
 
 5. Open the generated HTML files in your browser.
 
+Build process
+~~~~~~~~~~~~~
+
+The build process is managed by the ``build.py`` script, which performs
+the following steps:
+
+1. **Configuration Parsing**: Reads the ``config.yml`` file to determine
+   the versions and modules to be included in the documentation build.
+2. **Source Retrieval**: Clones the repositories of the specified
+       OpenWISP modules and checks out the required branches based on the
+       configuration. It then creates symbolic links to the modules under
+       a staging directory (``staging-dir``). This setup provides all
+       necessary documentation sources to Sphinx.
+3. **Documentation Generation**: Invokes Sphinx to generate the
+   documentation in the specified formats (HTML, PDF, ePUB).
+4. **Output Management**: Organizes the generated documentation files into
+   the appropriate directories for easy access and distribution.
+
 Build options
 -------------
 
