@@ -304,7 +304,7 @@ Improve OpenWISP General Map: Indoor, Mobile, Linkable URLs
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**, **Leaflet**, **netjsongraph.js**.
 
-    **Mentors**: *Federico Capoano*, *Gagan Deep*.
+    **Mentors**: *Federico Capoano*, *Nitesh Sinha*, *Gagan Deep*.
 
     **Project size**: 350 hours.
 
@@ -613,7 +613,7 @@ OpenWISP VPN Deployer Linux Package
     **WebSockets**, **OpenVPN**, **WireGuard**, **WireGuard over VXLAN**,
     **ZeroTier**.
 
-    **Mentors:** *Federico Capoano*, *Gagan Deep*.
+    **Mentors:** *Federico Capoano*, *Gagan Deep*, *Oliver Kraitschy*.
 
     **Project size:** 350 hours.
 
