@@ -18,6 +18,7 @@ openwrt-config-agent
 openwrt-monitoring-agent
 docker
 ansible
+staging-dir
 versions_map.json
 
 ### Python ###
