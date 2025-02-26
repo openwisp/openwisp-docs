@@ -3,7 +3,7 @@
 set -e
 
 # openwisp-utils checks
-#This is done first to ignore build directories for openwisp-utils checks
+# This is done first to ignore build directories for openwisp-utils checks
 openwisp-qa-check \
     --skip-checkmigrations \
     --skip-checkmakemigrations\
@@ -15,7 +15,7 @@ openwisp-qa-check \
     --jslinter
 
 echo ''
-echo 'Build documention to look for syntax errors'
+echo 'Build documentation to look for syntax errors'
 make build
 
 # check for broken link
@@ -29,14 +29,14 @@ fi
 pylinkvalidate.py "$BASE_URL/dev/" \
     -w 4 -m process
 kill "${pid}"
+cd ..
 
 # Verify PDFs are valid
-for pdf in _build/*/*.pdf; do
+find _build/ -type f -name "*.pdf" | while read -r pdf; do
     if ! pdfinfo "$pdf"; then
         echo "$pdf is broken"
     fi
 done
 
-cd ..
 python sort_spelling_wordlist.py --qa || \
   (echo "Spelling Vocabulary not up to date"; exit 1)

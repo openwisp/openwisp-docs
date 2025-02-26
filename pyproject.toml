@@ -1,2 +1,14 @@
 [tool.docstrfmt]
 extend_exclude = ["*.py", "**/*.py", "modules/**/*.py"]
+
+[tool.isort]
+skip_glob = ["modules/*"]
+
+[tool.flake8]
+max-line-length = 110
+exclude = ["modules/*"]
+
+[tool.black]
+exclude = '''
+modules/*
+'''
