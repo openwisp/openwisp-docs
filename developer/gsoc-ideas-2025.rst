@@ -422,7 +422,7 @@ Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
 The contributor should have a proven track record and experience with
-Javascript, React JS, NodeJS, HTML and CSS.
+Javascript, NodeJS, HTML and CSS.
 
 Familiarity with `OpenWISP Network Topology
 <https://github.com/openwisp/openwisp-network-topology>`__ and `OpenWISP
