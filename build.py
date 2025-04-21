@@ -255,6 +255,16 @@ def remove_symlink(dest):
         os.unlink(dest)
 
 
+def git_is_on_branch(repo_path):
+    result = subprocess.run(
+        ['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
+        cwd=repo_path,
+        capture_output=True,
+        text=True,
+    )
+    return result.stdout.strip() != 'HEAD'
+
+
 def clone_or_update_repo(name, branch, dir_name, owner='openwisp', dest=None):
     """
     Clone or update a repository based on the module name and branch provided.
@@ -275,25 +285,34 @@ def clone_or_update_repo(name, branch, dir_name, owner='openwisp', dest=None):
 
     if os.path.exists(clone_path):
         print(f"Repository '{name}' already exists. Updating...")
-        subprocess.run(['git', 'checkout', branch], cwd=clone_path, check=True)
+        # "-c advice.detachedHead=false" is used to suppress the warning
+        # about being in a detached HEAD state when checking out tags.
+        subprocess.run(
+            ['git', '-c', 'advice.detachedHead=false', 'checkout', branch],
+            cwd=clone_path,
+            check=True,
+        )
+        # In CI/production environments, the repository is always freshly
+        # cloned, so pulling is unnecessary and would only result in redundant
+        # network calls.
+        # During local development, we attempt to pull updates, but only if the
+        # current HEAD is on a branch (i.e., not detached, such as when on a tag).
+        if not os.environ.get('PRODUCTION', False) and git_is_on_branch(clone_path):
+            subprocess.run(['git', 'pull'], cwd=clone_path, check=True)
     else:
         print(f"Cloning repository '{name}'...")
         subprocess.run(
             [
                 'git',
                 'clone',
+                '--depth',
+                '1',
+                '--no-single-branch',
+                '--branch',
+                branch,
                 repo_url,
                 clone_path,
             ],
-            check=True,
-        )
-        subprocess.run(
-            [
-                'git',
-                'checkout',
-                branch,
-            ],
-            cwd=clone_path,
             check=True,
         )
     # Create a symlink to either the 'docs' directory inside the cloned repository
