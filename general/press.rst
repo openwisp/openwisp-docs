@@ -116,6 +116,13 @@ Blog Posts
 Google Summer of Code Blog Posts
 --------------------------------
 
+2024 Contributors
+~~~~~~~~~~~~~~~~~
+
+- `Improve UX of the Notifications Module
+  <https://openwisp.org/blog/improve-ux-of-the-notifications-module-gsoc24-project-report/>`_
+  by *Dhanus* (*Dhanus3133*).
+
 2023 Contributors
 ~~~~~~~~~~~~~~~~~
 
