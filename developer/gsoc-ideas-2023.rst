@@ -189,7 +189,7 @@ Expected outcomes
 The applicant must open pull-requests for the following issues which must
 be merged by the final closing date of the program:
 
-- `[feature] REST API is missing endpoints for DeviceFirmware
+- `[feature] Allow cancellation of stuck "in-progress" upgrades
   <https://github.com/openwisp/openwisp-firmware-upgrader/issues/208>`_
 - `[feature:UI] Show upgrade progress in real time in the UI
   <https://github.com/openwisp/openwisp-firmware-upgrader/issues/224>`_
