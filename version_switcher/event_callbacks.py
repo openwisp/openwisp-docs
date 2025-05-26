@@ -8,7 +8,7 @@ def html_builder_inited(app):
     It contains a mapping of page names to the versions of the documentation
     that page is part of.
     """
-    if app.builder.name != 'html':
+    if app.builder.name != "html":
         return
     app.builder._ow_version_map = load_versions_map()
 
@@ -18,7 +18,7 @@ def update_version_map(app, docname, content):
     This function is executed when the source file is read.
     It adds the current version to the versions map for the current page.
     """
-    if app.builder.name != 'version_map':
+    if app.builder.name != "version_map":
         return
     try:
         if app.config.version not in app.builder.ow_version_map[docname]:
@@ -32,10 +32,10 @@ def set_version_context(app, pagename, templatename, context, doctree):
     This function is executed when the template is rendered.
     It adds the available versions for the current page to the template context.
     """
-    if app.builder.name != 'html':
+    if app.builder.name != "html":
         return
     try:
-        context['ow_versions'] = app.builder._ow_version_map[pagename]
+        context["ow_versions"] = app.builder._ow_version_map[pagename]
     except KeyError as error:
-        if pagename not in ['404', 'genindex', 'search']:
+        if pagename not in ["404", "genindex", "search"]:
             raise error

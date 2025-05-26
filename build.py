@@ -15,7 +15,7 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 from packaging import version as packaging_version
 
-OUTPUT_FORMATS = ['pdf', 'epub', 'html']
+OUTPUT_FORMATS = ["pdf", "epub", "html"]
 
 
 def get_stable_version(versions):
@@ -51,18 +51,18 @@ def get_stable_version(versions):
         """
         Returns a packaging version object for the given version dictionary.
         """
-        version_name = version['name']
+        version_name = version["name"]
         # Special case for 'dev' version: we treat it as having a version
         # of '0' so that it will come as last when we perform max operation.
-        if version_name == 'dev':
-            version_name = '0'
+        if version_name == "dev":
+            version_name = "0"
         return packaging_version.parse(version_name)
 
     if len(versions) == 1:
-        return versions[0]['name']
+        return versions[0]["name"]
 
     stable_version = max(versions, key=get_version_object)
-    return stable_version['name']
+    return stable_version["name"]
 
 
 def merge_module_versions(modules1, modules2):
@@ -90,7 +90,7 @@ def merge_module_versions(modules1, modules2):
     modules1 = deepcopy(modules1)
     for module2 in modules2:
         for module1 in modules1:
-            if module1['name'] == module2['name']:
+            if module1["name"] == module2["name"]:
                 module1.update(module2)
                 break
         else:
@@ -103,7 +103,7 @@ def get_build_versions(all_versions, output_version):
         # Build all versions
         return all_versions
     for version in all_versions:
-        if version['name'] == output_version:
+        if version["name"] == output_version:
             return [version]
 
 
@@ -147,18 +147,18 @@ def parse_modules_arg(value):
     The `repository` should be in the format `repo-owner/repo-name`, e.g. `openwisp/openwisp2-docs`.
     The `dir_name` is optional and defaults to the module name if not specified.
     """
-    entries = value.split(',')
+    entries = value.split(",")
     result = {}
     for entry in entries:
         module = {}
-        version = 'dev'
-        for item in entry.split(':'):
-            key, value = item.split('=')
-            if key == 'version':
+        version = "dev"
+        for item in entry.split(":"):
+            key, value = item.split("=")
+            if key == "version":
                 version = value
-            elif key == 'repository':
-                owner, name = value.split('/')
-                module.update({'name': name, 'owner': owner})
+            elif key == "repository":
+                owner, name = value.split("/")
+                module.update({"name": name, "owner": owner})
             else:
                 module[key] = value
         try:
@@ -186,11 +186,11 @@ def parse_formats_arg(value):
     If any format is not supported, it prints an error message and exits the program.
     If all formats are supported, it returns the list of output formats.
     """
-    output_formats = value.split(',')
+    output_formats = value.split(",")
     # Validate all output formats are supported
     for format in output_formats:
-        if format not in OUTPUT_FORMATS and format != 'version_map':
-            print(f'ERROR: {format} is not a valid output format')
+        if format not in OUTPUT_FORMATS and format != "version_map":
+            print(f"ERROR: {format} is not a valid output format")
             exit(2)
     return output_formats
 
@@ -209,12 +209,12 @@ def parse_version_arg(value):
         SystemExit: If the version is not found in the config.yml file.
     """
     # Validate passed version exists in config.yml
-    with open('config.yml', 'r') as f:
+    with open("config.yml", "r") as f:
         config = yaml.safe_load(f)
-    for version in config['versions']:
-        if version['name'] == value:
+    for version in config["versions"]:
+        if version["name"] == value:
             return value
-    print(f'ERROR: {value} is not a valid version')
+    print(f"ERROR: {value} is not a valid version")
     exit(3)
 
 
@@ -231,10 +231,10 @@ def create_symlink(src, dest):
         src (str): The source path to be linked from
         dest (str): The destination path to link to
     """
-    if dest == 'openwisp-docs':
-        dest = 'staging-dir'
+    if dest == "openwisp-docs":
+        dest = "staging-dir"
     else:
-        dest = os.path.join('staging-dir', dest)
+        dest = os.path.join("staging-dir", dest)
     if os.path.islink(dest):
         os.unlink(dest)
     os.symlink(src, dest)
@@ -247,48 +247,48 @@ def remove_symlink(dest):
     Args:
         dest (str): The destination path of the symbolic link to be removed.
     """
-    if dest == 'openwisp-docs':
-        dest = 'staging-dir'
+    if dest == "openwisp-docs":
+        dest = "staging-dir"
     else:
-        dest = os.path.join('staging-dir', dest)
+        dest = os.path.join("staging-dir", dest)
     if os.path.islink(dest):
         os.unlink(dest)
 
 
 def git_is_on_branch(repo_path):
     result = subprocess.run(
-        ['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
+        ["git", "rev-parse", "--abbrev-ref", "HEAD"],
         cwd=repo_path,
         capture_output=True,
         text=True,
     )
-    return result.stdout.strip() != 'HEAD'
+    return result.stdout.strip() != "HEAD"
 
 
-def clone_or_update_repo(name, branch, dir_name, owner='openwisp', dest=None):
+def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
     """
-    repository = f'{owner}/{name}'
-    if os.environ.get('SSH'):
+    repository = f"{owner}/{name}"
+    if os.environ.get("SSH"):
         # SSH cloning is a convenient option for local development, as it
         # allows you to commit changes directly to the repository, but it
         # requires that you have added your public SSH key to your GitHub
         # account and have access to the repository. This means that it won't
         # work on GitHub Actions, and it won't work for contributors who don't
         # use SSH to access GitHub.
-        repo_url = f'git@github.com:{repository}.git'
+        repo_url = f"git@github.com:{repository}.git"
     else:
-        repo_url = f'https://github.com/{repository}.git'
-    clone_path = os.path.abspath(os.path.join('modules', dir_name))
+        repo_url = f"https://github.com/{repository}.git"
+    clone_path = os.path.abspath(os.path.join("modules", dir_name))
 
     if os.path.exists(clone_path):
         print(f"Repository '{name}' already exists. Updating...")
         # "-c advice.detachedHead=false" is used to suppress the warning
         # about being in a detached HEAD state when checking out tags.
         subprocess.run(
-            ['git', '-c', 'advice.detachedHead=false', 'checkout', branch],
+            ["git", "-c", "advice.detachedHead=false", "checkout", branch],
             cwd=clone_path,
             check=True,
         )
@@ -297,18 +297,18 @@ def clone_or_update_repo(name, branch, dir_name, owner='openwisp', dest=None):
         # network calls.
         # During local development, we attempt to pull updates, but only if the
         # current HEAD is on a branch (i.e., not detached, such as when on a tag).
-        if not os.environ.get('PRODUCTION', False) and git_is_on_branch(clone_path):
-            subprocess.run(['git', 'pull'], cwd=clone_path, check=True)
+        if not os.environ.get("PRODUCTION", False) and git_is_on_branch(clone_path):
+            subprocess.run(["git", "pull"], cwd=clone_path, check=True)
     else:
         print(f"Cloning repository '{name}'...")
         subprocess.run(
             [
-                'git',
-                'clone',
-                '--depth',
-                '1',
-                '--no-single-branch',
-                '--branch',
+                "git",
+                "clone",
+                "--depth",
+                "1",
+                "--no-single-branch",
+                "--branch",
                 branch,
                 repo_url,
                 clone_path,
@@ -318,7 +318,7 @@ def clone_or_update_repo(name, branch, dir_name, owner='openwisp', dest=None):
     # Create a symlink to either the 'docs' directory inside the cloned repository
     # or to the entire repository if no 'docs' directory exists.
     # This makes the documentation sources available to the Sphinx build process.
-    src = os.path.join(clone_path, 'docs')
+    src = os.path.join(clone_path, "docs")
     if not os.path.exists(src):
         # If no 'docs' directory exists, use the entire repository
         src = clone_path
@@ -329,49 +329,49 @@ def clone_or_update_repo(name, branch, dir_name, owner='openwisp', dest=None):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '--formats',
+        "--formats",
         type=parse_formats_arg,
         default=OUTPUT_FORMATS,
-        help='comma separated output formats (pdf, epub, or html)',
+        help="comma separated output formats (pdf, epub, or html)",
     )
     parser.add_argument(
-        '--version',
+        "--version",
         type=parse_version_arg,
         default=None,
-        help='document version to build',
+        help="document version to build",
     )
     parser.add_argument(
-        '--modules',
+        "--modules",
         default={},
         type=parse_modules_arg,
-        help='comma separated modules to build'
-        'in the format of <version:module-name>:<branch>:<dir-name>:<repository-owner>',
+        help="comma separated modules to build"
+        "in the format of <version:module-name>:<branch>:<dir-name>:<repository-owner>",
     )
     args = parser.parse_args()
 
-    with open('config.yml') as f:
+    with open("config.yml") as f:
         config = yaml.safe_load(f)
 
-    build_versions = get_build_versions(config['versions'], args.version)
+    build_versions = get_build_versions(config["versions"], args.version)
     stable_version = get_stable_version(build_versions)
-    docs_root = ''
-    html_base_url = ''
-    build_dir = '_build'
-    if os.environ.get('PRODUCTION', False):
-        docs_root = '/docs'
-        html_base_url = 'https://openwisp.io'
-        build_dir = f'{build_dir}{docs_root}'
+    docs_root = ""
+    html_base_url = ""
+    build_dir = "_build"
+    if os.environ.get("PRODUCTION", False):
+        docs_root = "/docs"
+        html_base_url = "https://openwisp.io"
+        build_dir = f"{build_dir}{docs_root}"
 
     for version in build_versions:
-        version_name = version['name']
+        version_name = version["name"]
         module_dirs = []
 
         # Modules which are configured to be included in all the builds
         default_modules = (
-            config['modules'] if not version.get('overwrite_modules') else []
+            config["modules"] if not version.get("overwrite_modules") else []
         )
         # Modules which are defined for specific version
-        version_modules = version.get('modules', [])
+        version_modules = version.get("modules", [])
         # Modules which are defined from the command line
         overridden_modules = args.modules.get(version_name, [])
         modules = get_modules(
@@ -382,27 +382,27 @@ def main():
 
         # If a module does not define a branch,
         # it will fallback to the version_branch.
-        version_branch = version.get('module_branch', version['name'])
-        docs_branch = version.get('docs_branch', 'master')
+        version_branch = version.get("module_branch", version["name"])
+        docs_branch = version.get("docs_branch", "master")
         clone_or_update_repo(
-            name='openwisp-docs',
+            name="openwisp-docs",
             branch=docs_branch,
-            dir_name='openwisp-docs',
+            dir_name="openwisp-docs",
         )
         for module in modules:
             clone_or_update_repo(
-                branch=module.pop('branch', version_branch),
+                branch=module.pop("branch", version_branch),
                 **module,
             )
-            module_dirs.append(module['dir_name'])
-        sphinx_src_dir = version.get('sphinx_src_dir', 'staging-dir')
-        for format in ['spellcheck'] + args.formats:
+            module_dirs.append(module["dir_name"])
+        sphinx_src_dir = version.get("sphinx_src_dir", "staging-dir")
+        for format in ["spellcheck"] + args.formats:
             subprocess.run(
                 [
-                    'make',
+                    "make",
                     format,
-                    f'SRCDIR={sphinx_src_dir}',
-                    f'BUILDDIR={build_dir}/{version_name}',
+                    f"SRCDIR={sphinx_src_dir}",
+                    f"BUILDDIR={build_dir}/{version_name}",
                 ],
                 env=dict(
                     os.environ,
@@ -418,18 +418,18 @@ def main():
             remove_symlink(dir)
 
     # Generate the index.html file which redirects to the stable version.
-    env = Environment(loader=FileSystemLoader('_static'))
-    template = env.get_template('index.jinja2')
-    with open(f'{build_dir}/index.html', 'w') as f:
+    env = Environment(loader=FileSystemLoader("_static"))
+    template = env.get_template("index.jinja2")
+    with open(f"{build_dir}/index.html", "w") as f:
         f.write(template.render(stable_version=stable_version, docs_root=docs_root))
 
     # Create a symbolic link for the stable version
     subprocess.run(
         [
-            'ln',
-            '-rsf',
-            f'{build_dir}/{stable_version}',
-            f'{build_dir}/stable',
+            "ln",
+            "-rsf",
+            f"{build_dir}/{stable_version}",
+            f"{build_dir}/stable",
         ],
         check=True,
     )

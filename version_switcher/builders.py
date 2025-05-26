@@ -14,7 +14,7 @@ class VersionSwitcherIndexBuilder(DummyBuilder):
     version switcher.
     """
 
-    name = 'version_map'
+    name = "version_map"
 
     def init(self):
         super().init()
@@ -22,5 +22,5 @@ class VersionSwitcherIndexBuilder(DummyBuilder):
 
     def finish(self):
         super().finish()
-        with open(VERSION_MAP_FILE, 'w') as file:
+        with open(VERSION_MAP_FILE, "w") as file:
             json.dump(self.ow_version_map, file)
