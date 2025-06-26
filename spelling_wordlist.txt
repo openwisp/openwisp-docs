@@ -152,6 +152,7 @@ loopback
 lua
 Makefile
 Matomo
+Maxmind
 mesh
 methodologies
 metres
