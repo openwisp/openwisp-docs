@@ -31,14 +31,19 @@ Requirements: Python >= 3.9.
 
     # This command will generate the documentation in all formats - HTML, PDF and ePUB
     make build
+
     # The ``formats`` argument is a comma separated list of formats to build,
     # e.g. ``formats=html,pdf,epub``. The default is to build all available
     # formats, which currently are ``html``, ``pdf`` and ``epub``.
     make build formats=pdf,html
+
     # This command is a shortcut for generating only HTML documentation during
     # development, since building PDF and ePUB takes time. It also supports
     # the VERSION argument.
     make build_html
+
+    # Build only the dev version in HTML format
+    make build VERSION=dev FORMATS=html
 
 ..
     note:
