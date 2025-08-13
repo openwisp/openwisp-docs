@@ -124,9 +124,9 @@ can download them onto your device from `downloads.openwisp.io
     wget https://downloads.openwisp.io/openwisp-config/latest/openwisp-config_1.1.0-1_all.ipk
     wget https://downloads.openwisp.io/openwisp-monitoring/latest/netjson-monitoring_0.2.1-1_all.ipk
     wget https://downloads.openwisp.io/openwisp-monitoring/latest/openwisp-monitoring_0.2.1-1_all.ipk
-    opkg install openwisp-config_1.1.0a-1_all.ipk
-    opkg install netjson-monitoring_0.2.0a-1_all.ipk
-    opkg install openwisp-monitoring_0.2.0a-1_all.ipk
+    opkg install ./openwisp-config_1.1.0-1_all.ipk
+    opkg install ./netjson-monitoring_0.2.1-1_all.ipk
+    opkg install ./openwisp-monitoring_0.2.1-1_all.ipk
 
 .. note::
 
