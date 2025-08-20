@@ -1,5 +1,4 @@
 ---
-
 modules:
   - name: openwisp-controller
     dir_name: controller
@@ -32,22 +31,22 @@ modules:
 versions:
   - name: dev
     module_branch: master
-  - name: '24.11'
-    docs_branch: '24.11'
-    module_branch: '1.1'
+  - name: "24.11"
+    docs_branch: "24.11"
+    module_branch: "1.1"
     modules:
       - name: ansible-openwisp2
-        branch: '24.11'
+        branch: "24.11"
         dir_name: ansible
       - name: docker-openwisp
-        branch: '24.11'
+        branch: "24.11"
         dir_name: docker
       - name: openwrt-openwisp-monitoring
-        branch: '0.2'
+        branch: "0.2"
         dir_name: openwrt-monitoring-agent
-  - name: '22.05'
+  - name: "22.05"
     overwrite_modules: true
     modules:
       - name: openwisp-docs
-        branch: 'v22.05'
+        branch: "v22.05"
         dir_name: openwisp-docs
