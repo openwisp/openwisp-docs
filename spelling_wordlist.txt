@@ -18,10 +18,12 @@ bitbucket
 boolean
 bridge
 browsable
+bugfix
 campus
 captcha
 cd
 certbot
+changelog
 Chilli
 Chromedriver
 ci
@@ -93,6 +95,7 @@ github
 gitlab
 Gmail
 googleapis
+GPT
 groupname
 GSoC
 gui
@@ -219,6 +222,8 @@ radsec
 reassociation
 redis
 reflashed
+releaser
+Releaser
 repo
 repository
 respawn
