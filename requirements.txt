@@ -3,6 +3,8 @@
 sphinx~=7.3.7
 svglib
 rst2pdf
+pypandoc~=1.15
+pypandoc_binary~=1.15
 sphinxcontrib-jquery
 sphinx-notfound-page
 sphinxcontrib-spelling
