@@ -179,5 +179,5 @@ If yes, you can help us greatly. Find out more about this subject in
 10. Commercial support and funding development
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please refer to `Commercial Support
-<https://openwisp.org/commercial-support/>`_.
+Please refer to `Sponsorship <https://openwisp.org/sponsorship/>`_ and
+`Commercial Support <https://openwisp.org/commercial-support/>`_.
