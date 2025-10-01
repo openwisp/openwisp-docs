@@ -1,11 +1,9 @@
-# Sphinx temporarily pinned because of this issue
-# https://github.com/sphinx-doc/sphinx/issues/11633
-sphinx~=7.3.7
+sphinx~=8.0.2
+sphinxawesome-theme~=5.3.1
 svglib
 rst2pdf
 sphinxcontrib-jquery
 sphinx-notfound-page
 sphinxcontrib-spelling
-sphinxawesome-theme~=5.2.0
 openwisp-utils[qa] @ https://github.com/openwisp/openwisp-utils/tarball/1.2
 pylinkvalidator
