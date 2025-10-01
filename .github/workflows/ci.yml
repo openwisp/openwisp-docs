@@ -31,7 +31,8 @@ jobs:
 
       - name: Install test dependencies
         run: |
-          sudo apt install poppler-utils
+          sudo apt update
+          sudo apt install libcairo2-dev poppler-utils
           pip install -U pip wheel setuptools
           pip install -U -r requirements.txt
 
