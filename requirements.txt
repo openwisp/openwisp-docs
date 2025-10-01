@@ -1,5 +1,5 @@
 sphinx~=8.0.2
-sphinxawesome-theme~=5.3.1
+sphinxawesome-theme~=5.3.2
 svglib
 rst2pdf
 sphinxcontrib-jquery
