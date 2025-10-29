@@ -20,7 +20,7 @@ help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  build         to build the documentation in all formats (PDF, HTML and ePUB)"
 	@echo "  build_html    to build the documentation in HTML format only"
-	@echo "  release_notes to generate the release notes for a specific version (default: 24.11). Use 'make changelog VERSION=22.05' to specify."
+	@echo "  release_notes to generate the release notes for a specific version (default: 25.10). Use 'make changelog VERSION=XX' to specify."
 	@echo "  html          to make standalone HTML files"
 	@echo "  dirhtml       to make HTML files named index.html in directories"
 	@echo "  singlehtml    to make a single large HTML file"

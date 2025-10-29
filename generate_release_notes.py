@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 import os
 import re
@@ -93,6 +95,9 @@ def _parse_rst_changelog(lines, version_string):
             if end_regex.match(line):
                 break
             content.append(line)
+    # remove heading separator
+    if content and content[0].startswith('------'):
+        content = content[1:]
     return "".join(content).strip() or None
 
 
@@ -161,10 +166,9 @@ def get_changelog_content(repo_path, version_string):
                 os.remove(tmp_path)
     else:  # It's an RST file
         rst_lines = raw_content.splitlines(keepends=True)
-
     # Parse the RST lines to find the specific version section
     version_content = _parse_rst_changelog(rst_lines, version_string)
-    return version_content, os.path.basename(found_path)
+    return version_content, os.path.basename(found_path), version_string
 
 
 def merge_module_versions(modules1, modules2):
@@ -232,7 +236,7 @@ def main(target_version):
     version_branch_fallback = version_config.get("module_branch", target_version)
 
     all_changelogs = []
-    for module in sorted(final_modules, key=lambda m: m["name"]):
+    for module in final_modules:
         module_name, branch_to_use = module["name"], module.get(
             "branch", version_branch_fallback
         )
@@ -241,17 +245,19 @@ def main(target_version):
         repo_path = clone_or_update_repo(
             name=module_name, branch=branch_to_use, dir_name=module["dir_name"]
         )
-        content, changelog_filename = get_changelog_content(repo_path, branch_to_use)
+        content, changelog_filename, version = get_changelog_content(repo_path, branch_to_use)
 
         if content:
             owner = module.get("owner", "openwisp")
             repo_url = f"https://github.com/{owner}/{module_name}"
             changelog_url = f"{repo_url}/blob/{branch_to_use}/{changelog_filename}"
 
+            heading = f"{module_name} (v{version})"
             module_section = (
-                f"{module_name}\n{'-' * len(module_name)}\n\n"
-                f"* **Repository:** `View on GitHub <{repo_url}>`__\n"
-                f"* **Full Changelog:** `View on GitHub <{changelog_url}>`__\n\n"
+                f"{heading}\n"
+                f"{'-' * len(heading)}\n\n"
+                f"* `Module Git Repository <{repo_url}>`__\n"
+                f"* `Module Change Log <{changelog_url}>`__\n\n"
                 f"{content}"
             )
             all_changelogs.append(module_section)
@@ -283,8 +289,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "version",
         nargs="?",
-        default="24.11",
-        help="The release version from config.yml. Defaults to '24.11'.",
+        default="25.10",
+        help="The release version from config.yml. Defaults to '25.10'.",
     )
     args = parser.parse_args()
     main(args.version)

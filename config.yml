@@ -1,25 +1,25 @@
 ---
 modules:
+  - name: openwisp-users
+    dir_name: users
+  - name: openwisp-notifications
+    dir_name: notifications
   - name: openwisp-controller
     dir_name: controller
   - name: openwisp-monitoring
     dir_name: monitoring
   - name: openwisp-firmware-upgrader
     dir_name: firmware-upgrader
-  - name: openwisp-radius
-    dir_name: radius
-  - name: openwisp-notifications
-    dir_name: notifications
+  - name: openwisp-ipam
+    dir_name: ipam
   - name: openwisp-network-topology
     dir_name: network-topology
-  - name: openwisp-users
-    dir_name: users
+  - name: openwisp-radius
+    dir_name: radius
   - name: openwisp-utils
     dir_name: utils
   - name: openwisp-wifi-login-pages
     dir_name: wifi-login-pages
-  - name: openwisp-ipam
-    dir_name: ipam
   - name: openwisp-config
     dir_name: openwrt-config-agent
   - name: openwrt-openwisp-monitoring
