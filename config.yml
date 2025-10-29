@@ -31,6 +31,19 @@ modules:
 versions:
   - name: dev
     module_branch: master
+  - name: "25.10"
+    docs_branch: "25.10"
+    module_branch: "1.2"
+    modules:
+      - name: ansible-openwisp2
+        branch: "25.10"
+        dir_name: ansible
+      - name: docker-openwisp
+        branch: "25.10"
+        dir_name: docker
+      - name: openwrt-openwisp-monitoring
+        branch: "0.3"
+        dir_name: openwrt-monitoring-agent
   - name: "24.11"
     docs_branch: "24.11"
     module_branch: "1.1"
