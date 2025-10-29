@@ -31,4 +31,3 @@ OpenWISP *Documentation*
     tutorials/index
     community
     developer/index
-    releases/index
