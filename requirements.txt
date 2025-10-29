@@ -2,6 +2,8 @@ sphinx~=8.0.2
 sphinxawesome-theme~=5.3.2
 svglib
 rst2pdf
+pypandoc~=1.15
+pypandoc_binary~=1.15
 sphinxcontrib-jquery
 sphinx-notfound-page
 sphinxcontrib-spelling
