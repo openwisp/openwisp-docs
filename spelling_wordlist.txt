@@ -19,6 +19,7 @@ boolean
 bridge
 browsable
 bugfix
+bugfixes
 campus
 captcha
 cd
@@ -50,6 +51,7 @@ customizable
 customizations
 daemon
 datagram
+datasets
 davide
 debian
 deployer
@@ -90,8 +92,10 @@ geodjango
 geoip
 geolocation
 Geospatial
+GiB
 git
 github
+GitHub
 gitlab
 Gmail
 googleapis
@@ -159,6 +163,7 @@ Maxmind
 mesh
 methodologies
 metres
+MiB
 middleware
 misconfiguration
 mixin
@@ -175,6 +180,7 @@ netjsonconfig
 netjsongraph
 networkx
 nginx
+nullable
 OAuth
 onboarding
 openvpn
@@ -185,6 +191,7 @@ openwrt
 operation
 ORM
 param
+Paramiko
 Paypal
 PC
 pfSense
@@ -231,8 +238,10 @@ reusability
 rtt
 runtime
 saml
+scalability
 scalable
 schemas
+scrollable
 serializer
 serializers
 several

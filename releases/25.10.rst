@@ -1,0 +1,755 @@
+OpenWISP 25.10
+==============
+
+This release brings improvements to stability, security, scalability and
+usability.
+
+Highlights
+----------
+
+**Key changes to stability and performance**
+
+- Fixed performance issues in background tasks, VPN cache updates, and
+  duplicated configuration synchronization.
+- Improved reliability of device communication with new connection retry
+  logic.
+- Optimized monitoring threshold checks and reduced unnecessary alerts.
+
+**Key scalability changes**
+
+- Improved handling of large datasets and asynchronous operations in
+  RADIUS, controller, and monitoring modules.
+- Introduced **automatic assignment of default templates** to simplify the
+  addition of new default/required templates.
+
+**Security and compatibility updates**
+
+- Updated dependencies across all modules.
+- Added support for **Django 5.x** and **Python 3.11–3.13**.
+- Dropped support for **Django 3.2**, **4.1**, and **Python 3.8**.
+
+**Key improvements to usability and features**
+
+- Introduced a dedicated `notification preferences page
+  <https://openwisp.io/docs/dev/notifications/user/notification-preferences.html>`__
+  and `organization-level settings
+  <https://openwisp.io/docs/dev/notifications/user/notification-preferences.html#organization-settings>`__.
+- Added `batching of email notifications
+  <https://openwisp.io/docs/dev/notifications/user/web-email-notifications.html#email-batches>`__
+  to reduce notification noise.
+- Added **WiFi Clients check** in Monitoring for AP load tracking. `Refer
+  to docs
+  <https://openwisp.io/docs/25.10/monitoring/user/checks.html#wifi-clients-check>`__.
+- Added **Simultaneous-Use** support in RADIUS with improved CoA handling.
+  `Refer to docs
+  <https://openwisp.io/docs/25.10/radius/user/simultaneous-use.html>`__.
+
+----
+
+Below you can find the detailed full change log for all the modules
+included in this release. Enjoy!
+
+openwisp-users (v1.2)
+---------------------
+
+- `Module Git Repository <https://github.com/openwisp/openwisp-users>`__
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-users/blob/1.2/CHANGES.rst>`__
+
+Changes
+~~~~~~~
+
+Dependencies
+++++++++++++
+
+- Bumped ``django-organizations>=2.5.0,<2.6.0``.
+- Bumped ``django-extensions>=3.2,<4.2``.
+- Bumped ``django-allauth[socialaccount]>=65.12.0,<65.13.0``.
+- Bumped ``django-phonenumber-field>=8.1.0,<8.2.0``.
+- Bumped ``phonenumbers>=9.0.10,<9.1.0``.
+- Bumped ``openwisp-utils[rest,celery]~=1.2.0``.
+- Removed ``coveralls`` in favor of ``coverage`` package.
+- Added support for Django ``5.x``.
+- Dropped support for Django ``3.2.0`` and Django ``4.1.0``.
+- Added support for Python ``3.11``, ``3.12``, and ``3.13``.
+- Dropped support for Python ``3.8``.
+
+openwisp-notifications (v1.2)
+-----------------------------
+
+- `Module Git Repository
+  <https://github.com/openwisp/openwisp-notifications>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-notifications/blob/1.2/CHANGES.rst>`__.
+
+Features
+~~~~~~~~
+
+- Added `dedicated notification preferences page
+  <https://openwisp.io/docs/25.10/notifications/user/notification-preferences.html>`_.
+- Added `organization notification settings
+  <https://openwisp.io/docs/25.10/notifications/user/notification-preferences.html#organization-settings>`_.
+- Added `Email Batch Summary
+  <https://openwisp.io/docs/25.10/notifications/user/web-email-notifications.html#email-batches>`_.
+- Added email verification warning `(#281)
+  <https://github.com/openwisp/openwisp-notifications/issues/281>`_.
+
+Changes
+~~~~~~~
+
+Other changes
++++++++++++++
+
+- Improved UI of email notifications.
+- Disallowed changing preferences for ``generic_message`` notification
+  type `(#359)
+  <https://github.com/openwisp/openwisp-notifications/issues/359>`_.
+- Dropped dependency on ``django-notifications`` `(#353)
+  <https://github.com/openwisp/openwisp-notifications/issues/353>`_.
+- Removed deprecated code for updating superuser notification settings
+  `(#283)
+  <https://github.com/openwisp/openwisp-notifications/issues/283>`_.
+
+Dependencies
+++++++++++++
+
+- Bumped ``openwisp-users~=1.2.0``.
+- Bumped ``openwisp-utils~=1.2.0``.
+- Bumped ``markdown~=3.9``.
+- Added support for Django ``5.x``.
+- Added support for Python ``3.11``, ``3.12``, and ``3.13``.
+- Dropped support for Django ``3.2`` and ``4.1``.
+- Dropped support for Python ``3.8``.
+
+Bugfixes
+~~~~~~~~
+
+- Prevented notification toast from appearing while leaving a page `(#264)
+  <https://github.com/openwisp/openwisp-notifications/issues/264>`_.
+- Ensured notification widget closes only on user-initiated clicks.
+- Fixed notification widget loading on non-admin pages `(#271)
+  <https://github.com/openwisp/openwisp-notifications/issues/271>`_.
+- Allowed overriding ``openwisp_users`` app label in tests.
+- Hid notification preferences for disabled organizations `(#366)
+  <https://github.com/openwisp/openwisp-notifications/issues/366>`_.
+- Fixed JavaScript logic for creating notification toasts.
+- Fixed issue with notification widget removing URL fragments.
+
+openwisp-controller (v1.2)
+--------------------------
+
+- `Module Git Repository
+  <https://github.com/openwisp/openwisp-controller>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-controller/blob/1.2/CHANGES.rst>`__.
+
+Changes
+~~~~~~~
+
+Other changes
++++++++++++++
+
+- Stored configuration checksum in the database to fix the perennial
+  *modified* status issue. The configuration status now changes to
+  *modified* only when the checksum actually changes `(#1113)
+  <https://github.com/openwisp/openwisp-controller/issues/1113>`_.
+- Templates marked as default or required are now automatically assigned
+  to all eligible devices in a background task `(#480)
+  <https://github.com/openwisp/openwisp-controller/issues/480>`_.
+- Changed ZeroTier background notifications to use the *Generic Message*
+  notification type `(#1048)
+  <https://github.com/openwisp/openwisp-controller/issues/1048>`_.
+- Improved management of relevant templates: facilitated changing
+  organizations and optimized performance `(#204)
+  <https://github.com/openwisp/openwisp-controller/issues/204>`__ `(#1050)
+  <https://github.com/openwisp/openwisp-controller/issues/1050>`_.
+- Added relation from ``VpnClient`` objects to their associated
+  ``Template``. ``VpnClient`` objects are now automatically deleted when
+  their template is deleted `(#831)
+  <https://github.com/openwisp/openwisp-controller/issues/831>`_.
+- Improved consistency across the REST API by renaming ``serializer``
+  modules to ``serializers``, centralizing base serializer logic, fixing
+  configuration creation when organization templates differ, and
+  standardizing primary key parameter types and URL converters.
+
+Dependencies
+~~~~~~~~~~~~
+
+- Bumped ``netjsonconfig~=1.2.0``.
+- Bumped ``openwisp-notifications~=1.2.0``.
+- Bumped ``openwisp-ipam~=1.2.0``.
+- Bumped ``openwisp-users~=1.2.0``.
+- Bumped ``openwisp-utils[celery,channels]~=1.2.0``.
+- Bumped ``django-x509~=1.3.0``.
+- Bumped ``django-loci~=1.2.0``.
+- Bumped ``django-flat-json-widget~=0.4.0``.
+- Bumped ``djangorestframework-gis~=1.2.0``.
+- Bumped ``paramiko~=4.0.0``.
+- Bumped ``django-cache-memoize~=0.2.1``.
+- Bumped ``django-import-export~=4.3.10``.
+- Bumped ``django-reversion~=6.0.0``.
+- Bumped ``django-taggit~=6.1.0``.
+- Added support for Django ``5.x``.
+- Added support for Python ``3.11``, ``3.12``, and ``3.13``.
+- Dropped support for Django ``3.2`` and ``4.1``.
+- Dropped support for Python ``3.8``.
+
+Bugfixes
+~~~~~~~~
+
+- Fixed issue where the ``update_config`` background task could launch
+  multiple times concurrently `(#1128)
+  <https://github.com/openwisp/openwisp-controller/issues/1128>`_.
+- Enforced SSH command timeout in Paramiko. Previously, Paramiko ignored
+  the configured command timeout.
+- Fixed incorrect label for device group filter in the device list
+  `(#1071)
+  <https://github.com/openwisp/openwisp-controller/issues/1071>`_.
+- Allow some unique fields to be ``NULL``.
+- Fixed REST API access for non-superusers in ``DeviceConnection`` and
+  ``Command`` endpoints. Previously, organization admins encountered a 500
+  server error when retrieving command details.
+- Avoided re-populating the VPN peers cache in ``post_save``. Previously,
+  ``VpnClient.post_save`` repopulated the peer cache immediately, causing
+  slow or timed-out uWSGI requests for large peer sets. Now, it only
+  invalidates the cache, which is later repopulated by the background
+  task.
+- Fixed ordering of credentials in the REST API list view `(#1040)
+  <https://github.com/openwisp/openwisp-controller/issues/1040>`_.
+- Fixed handling of non-existent devices in ``DeviceLocationView`` API.
+- Fixed unsaved changes alert showing for read-only maps `(#560)
+  <https://github.com/openwisp/openwisp-controller/issues/560>`_.
+
+openwisp-monitoring (v1.2)
+--------------------------
+
+- `Module Git Repository
+  <https://github.com/openwisp/openwisp-monitoring>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-monitoring/blob/1.2/CHANGES.rst>`__.
+
+Features
+~~~~~~~~
+
+- Added logging for execution time of monitoring checks `(#658)
+  <https://github.com/openwisp/openwisp-monitoring/issues/658>`_.
+- Added `WiFi Clients check
+  <https://openwisp.io/docs/25.10/monitoring/user/checks.html#wifi-clients>`_
+  to monitor AP load and inactivity.
+
+Changes
+~~~~~~~
+
+Other changes
++++++++++++++
+
+- Updated ``netjsongraph.js`` to fix overlapping map clusters on the geo
+  view.
+- Optimized logic for detecting when thresholds are crossed `(#667)
+  <https://github.com/openwisp/openwisp-monitoring/issues/667>`_.
+- Adjusted `default alert tolerances
+  <https://openwisp.io/docs/25.10/monitoring/user/alerts.html>`_ to reduce
+  unnecessary alert noise.
+- Added metric names to signal chart labels `(#311)
+  <https://github.com/openwisp/openwisp-monitoring/issues/311>`_.
+- Improved critical state evaluation `(#566)
+  <https://github.com/openwisp/openwisp-monitoring/issues/566>`_. Devices
+  are now marked as critical only when all metrics defined in
+  `OPENWISP_MONITORING_CRITICAL_DEVICE_METRICS
+  <https://openwisp.io/docs/25.10/monitoring/user/settings.html#openwisp-monitoring-critical-device-metrics>`_
+  are unhealthy.
+- Recovery detection now triggers only for critical checks `(#642)
+  <https://github.com/opnwisp/openwisp-monitoring/issues/642>`_.
+
+Dependencies
+++++++++++++
+
+- Bumped ``openwisp-controller~=1.2.0``.
+- Bumped ``django-nested-admin~=4.1.4``.
+- Added support for Django ``5.x``.
+- Added support for Python ``3.11``, ``3.12``, and ``3.13``.
+- Dropped support for Django ``3.2`` and ``4.1``.
+- Dropped support for Python ``3.8``.
+
+Bugfixes
+~~~~~~~~
+
+- Fixed issue where alerts were not sent for passive metrics `(#670)
+  <https://github.com/openwisp/openwisp-monitoring/issues/670>`_.
+
+openwisp-firmware-upgrader (v1.2)
+---------------------------------
+
+- `Module Git Repository
+  <https://github.com/openwisp/openwisp-firmware-upgrader>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-firmware-upgrader/blob/1.2/CHANGES.rst>`__.
+
+Features
+~~~~~~~~
+
+- Added device recognition mechanism `(#165)
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/165>`_.
+- Allowed system-wide shared category `(#204)
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/204>`__.
+
+Changes
+~~~~~~~
+
+Other changes
++++++++++++++
+
+- Improved REST API for downloading firmware images `(#69)
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/69>`_.
+
+  Firmware downloads now use proper API URLs, respect user permissions,
+  and avoid redundant permission checks.
+
+Dependencies
+++++++++++++
+
+- Bumped ``openwisp-controller~=1.2.0``.
+- Added support for Django ``5.x``.
+- Added support for Python ``3.11``, ``3.12``, and ``3.13``.
+- Dropped support for Django ``3.2`` and ``4.1``.
+- Dropped support for Python ``3.8``.
+
+Bugfixes
+~~~~~~~~
+
+- Fixed firmware image deletion `(#301)
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/301>`_.
+
+  Firmware image files are now reliably removed from the filesystem when
+  the corresponding FirmwareImage object is deleted.
+
+openwisp-ipam (v1.2)
+--------------------
+
+- `Module Git Repository <https://github.com/openwisp/openwisp-ipam>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-ipam/blob/1.2/CHANGES.rst>`__.
+
+Changes
+~~~~~~~
+
+Dependencies
+++++++++++++
+
+- Bumped ``openwisp-users~=1.2.0``.
+- Bumped ``openwisp-utils~=1.2.0``.
+- Bumped ``django-reversion~=6.0.0``.
+- Added support for Django ``5.x``.
+- Dropped support for Django ``3.2.0`` and Django ``4.1.0``.
+- Added support for Python ``3.11``, ``3.12``, and ``3.13``.
+- Dropped support for Python ``3.8``.
+
+openwisp-network-topology (v1.2)
+--------------------------------
+
+- `Module Git Repository
+  <https://github.com/openwisp/openwisp-network-topology>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-network-topology/blob/1.2/CHANGES.rst>`__.
+
+Changes
+~~~~~~~
+
+Dependencies
+++++++++++++
+
+- Bumped ``netdiff~=1.2.0``.
+- Bumped ``openwisp-users~=1.2.0``.
+- Bumped ``openwisp-utils~=1.2.0``.
+- Bumped ``django-flat-json-widget~=0.4.0``.
+- Added support for Django ``5.x``.
+- Added support for Python ``3.11``, ``3.12``, and ``3.13``.
+- Dropped support for Django ``3.2`` and ``4.1``.
+- Dropped support for Python ``3.8``.
+
+openwisp-radius (v1.2)
+----------------------
+
+- `Module Git Repository <https://github.com/openwisp/openwisp-radius>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-radius/blob/1.2/CHANGES.rst>`__.
+
+Features
+~~~~~~~~
+
+- Added support for simultaneous-use `(#615)
+  <https://github.com/openwisp/openwisp-radius/issues/615>`_.
+- Added Called/Calling-Station-Id to the authorize API for improved
+  Simultaneous-Use accuracy `(#648)
+  <https://github.com/openwisp/openwisp-radius/issues/648>`_.
+- Close stale sessions on Accounting-On requests `(#617)
+  <https://github.com/openwisp/openwisp-radius/issues/617>`_.
+- Added ``--number_of_hours`` option to ``cleanup_stale_radacct`` command.
+
+Changes
+~~~~~~~
+
+Other changes
++++++++++++++
+
+- Large batch user creation operations are now executed asynchronously
+  `(#608) <https://github.com/openwisp/openwisp-radius/issues/608>`_.
+- Allowed counters to return multiple replies `(#634)
+  <https://github.com/openwisp/openwisp-radius/issues/634>`_.
+- Included RADIUS replies of the new group in Change of Authorization
+  (CoA) requests `(#643)
+  <https://github.com/openwisp/openwisp-radius/issues/643>`_.
+- Added handling of ``MaxQuotaReached`` in CoA: users who exceed their
+  limits now receive a Disconnect Message instead of a CoA Request `(#643)
+  <https://github.com/openwisp/openwisp-radius/issues/643>`_.
+- Refactored CoA logic to reuse counter and attribute handling from
+  ``AuthorizeView._check_counters`` for improved maintainability `(#643)
+  <https://github.com/openwisp/openwisp-radius/issues/643>`_.
+- Allowed overriding configured RADIUS replies on ``MaxQuotaReached``.
+
+Dependencies
+++++++++++++
+
+- Bumped ``openwisp-users~=1.2.0``.
+- Bumped ``openwisp-utils~=1.2.0``.
+- Bumped ``weasyprint>=65,<67``.
+- Bumped ``dj-rest-auth>=6.0,<7.1``.
+- Bumped ``django-ipware>=5.0,<7.1``.
+- Added support for Django ``5.x``.
+- Added support for Python ``3.11``, ``3.12``, and ``3.13``.
+- Dropped support for Django ``3.2`` and ``4.1``.
+- Dropped support for Python ``3.8``.
+
+Bugfixes
+~~~~~~~~
+
+- Fixed timezone handling in ``delete_old_radiusbatch_users`` command
+  `(#611) <https://github.com/openwisp/openwisp-radius/issues/611>`_.
+- Fixed creation of ``RadiusGroup`` objects with related Group Checks or
+  Group Replies from the admin `(#604)
+  <https://github.com/openwisp/openwisp-radius/issues/604>`_.
+- Fixed SMS message templates not being picked up by ``makemessages``
+  `(#510) <https://github.com/openwisp/openwisp-radius/issues/510>`_.
+
+openwisp-utils (v1.2)
+---------------------
+
+- `Module Git Repository <https://github.com/openwisp/openwisp-utils>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-utils/blob/1.2/CHANGES.rst>`__.
+
+Features
+~~~~~~~~
+
+- Added `guided release tool
+  <https://openwisp.io/docs/25.10/utils/developer/releaser-tool.html>`_.
+- Added retry mechanism to SeleniumTestMixin `(#464)
+  <https://github.com/openwisp/openwisp-utils/issues/464>`_.
+- Enhanced ``ValidatedModelSerializer``: introduced ``exclude_validation``
+  and avoided setting many-to-many fields automatically.
+- Added reusable `retry-command GitHub action
+  <https://openwisp.io/docs/25.10/utils/developer/reusable-github-utils.html#retry-command>`_.
+- Made HTML template configurable in
+  `openwisp_utils.admin_theme.email.send_email
+  <https://openwisp.io/docs/25.10/utils/developer/admin-theme.html#openwisp-utils-admin-theme-email-send-email>`_..
+
+Changes
+~~~~~~~
+
+Backward-incompatible changes
++++++++++++++++++++++++++++++
+
+- Dropped support for OPENWISP_EMAIL_TEMPLATE setting `(#482)
+  <https://github.com/openwisp/openwisp-utils/issues/482>`_.
+
+Other changes
++++++++++++++
+
+- Moved theme color definitions in CSS to variables `(#487)
+  <https://github.com/openwisp/openwisp-utils/issues/487>`_.
+- Standardized code style by switching to Prettier for CSS and JavaScript
+  linting `(#367)
+  <https://github.com/openwisp/openwisp-utils/issues/367>`_.
+- Added line-length enforcement to prettier.
+- Unified Prettier checks into a single command; now includes YAML,
+  Markdown, and JSON files.
+- Updated UI of HTML email templates.
+- Switched selenium browser tests to Firefox.
+
+Dependencies
+++++++++++++
+
+- Bumped ``django-model-utils>=4.5,<5.1"``.
+- Bumped ``swapper~=1.4.0``.
+- Bumped ``djangorestframework~=3.16.0``.
+- Bumped ``celery~=5.5.3``.
+- Bumped ``django-filter>=25.1,<26.0``.
+- Bumped ``black>=25.1,<25.10``.
+- Bumped ``flake8~=7.3.0``.
+- Bumped ``isort~=6.0.1``.
+- Bumped ``tblib~=3.1.0``.
+- Bumped ``docstrfmt~=1.11.1``.
+- Bumped ``selenium>=4.10,<4.36``.
+- Added ``channels`` and ``channels-test`` extra requires `(#388)
+  <https://github.com/openwisp/openwisp-utils/issues/388>`_.
+- Removed ``coveralls`` in favor of ``coverage`` package.
+- Added support for Django ``5.x``.
+- Dropped support for Django ``3.2.0`` and Django ``4.1.0``.
+- Added support for Python ``3.11``, ``3.12``, and ``3.13``.
+- Dropped support for Python ``3.8``.
+
+openwisp-wifi-login-pages (v1.2)
+--------------------------------
+
+- `Module Git Repository
+  <https://github.com/openwisp/openwisp-wifi-login-pages>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-wifi-login-pages/blob/1.2/CHANGES.md>`__.
+
+Features
+~~~~~~~~
+
+- Enabled synchronous captive portal authentication `(#864)
+  <https://github.com/openwisp/openwisp-wifi-login-pages/issues/864>`__.
+- Allowed swapping RADIUS accounting octets in the status page `(#900)
+  <https://github.com/openwisp/openwisp-wifi-login-pages/issues/900>`__.
+- Hid progress bar in the RADIUS usage component when the check value is
+  zero.
+- Added Spanish translations for WiFi login pages.
+- Implemented daily log rotation `(#46)
+  <https://github.com/openwisp/openwisp-wifi-login-pages/issues/46>`__.
+
+Changes
+~~~~~~~
+
+Other changes
++++++++++++++
+
+- Made warning message in status page customizable.
+
+Dependencies
+............
+
+- Bumped ``react==17.0.2``.
+- Bumped ``react-cookie==8.0.1``.
+- Bumped ``react-dom==17.0.2``.
+- Bumped ``react-toastify==9.1.3``.
+- Bumped ``axios==1.10.0``.
+- Bumped ``compression==1.8.0``.
+- Bumped ``express==5.1.0``.
+- Bumped ``marked==16.3.0``.
+- Bumped ``pretty-bytes==7.0.0``.
+- Bumped ``regenerator-runtime==0.14.1``.
+- Bumped ``universal-cookie-express==8.0.1``.
+- Bumped ``winston-daily-rotate-file==5.0.0``.
+
+Bugfixes
+~~~~~~~~
+
+- Don’t render RADIUS usage in Internet mode.
+- Removed check for active session before performing captive portal login
+  `(#918)
+  <https://github.com/openwisp/openwisp-wifi-login-pages/issues/918>`__.
+- Used ``calling_station_id`` instead of ``macaddr`` for MAC filtering
+  `(#914)
+  <https://github.com/openwisp/openwisp-wifi-login-pages/issues/914>`__.
+- Server: consistently return ``NOT_FOUND`` message on 404 errors.
+- Displayed RADIUS usage in MB/GB (base 10) instead of MiB/GiB (base 2).
+- Made the plans modal scrollable in the status page.
+- Fixed upgrade button and limit exceeded message not rendering when users
+  exceeded data usage on paid plans.
+- Don’t show Radius Usage if API does not return any check `(#819)
+  <https://github.com/openwisp/openwisp-wifi-login-pages/issues/819>`__
+
+openwisp-config (v1.2)
+----------------------
+
+- `Module Git Repository <https://github.com/openwisp/openwisp-config>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwisp-config/blob/1.2/CHANGELOG.rst>`__.
+
+Features
+~~~~~~~~
+
+- Added hotplug script for ``management_interface`` to automatically
+  update the management IP when the interface comes up `(#208)
+  <https://github.com/openwisp/openwisp-config/issues/208>`_.
+
+Changes
+~~~~~~~
+
+Other changes
++++++++++++++
+
+- Added random wait time between 5 and 20 seconds before retrying default
+  tests after failure to reduce simultaneous retries and improve
+  reliability.
+- Increased default ``test_retries`` to 10 for improved connection
+  stability.
+
+Bugfixes
+~~~~~~~~
+
+- Added IPv6 support to ``openwisp-get-address`` `(#224)
+  <https://github.com/openwisp/openwisp-config/issues/224>`_.
+
+openwrt-openwisp-monitoring (v0.3)
+----------------------------------
+
+- `Module Git Repository
+  <https://github.com/openwisp/openwrt-openwisp-monitoring>`__.
+- `Module Change Log
+  <https://github.com/openwisp/openwrt-openwisp-monitoring/blob/0.3/CHANGELOG.rst>`__.
+
+Bugfixes
+~~~~~~~~
+
+- Switch to portable ``df`` output (``df -P``) `(#153)
+  <https://github.com/openwisp/openwrt-openwisp-monitoring/issues/153>`_.
+- Fixed issue where WiFi client data was sent even when no clients were
+  connected.
+- Added check to ensure data file exists before sending to prevent errors
+  `(#102)
+  <https://github.com/openwisp/openwrt-openwisp-monitoring/issues/102>`_.
+- Ignored duplicate IP addresses in network configuration.
+
+ansible-openwisp2 (v25.10)
+--------------------------
+
+- `Module Git Repository
+  <https://github.com/openwisp/ansible-openwisp2>`__.
+- `Module Change Log
+  <https://github.com/openwisp/ansible-openwisp2/blob/25.10/CHANGES.md>`__.
+
+Features
+~~~~~~~~
+
+- Made Daphne socket configurable.
+- Added Calling-Station-ID and Called-Station-ID attributes to the
+  FreeRADIUS REST configuration `(#548)
+  <https://github.com/openwisp/ansible-openwisp2/issues/548>`__.
+- Added option to change the Celery execution pool.
+- Added support for restricting admin access to multiple subnets `(#481)
+  <https://github.com/openwisp/ansible-openwisp2/issues/481>`__ `(#518)
+  <https://github.com/openwisp/ansible-openwisp2/issues/518>`__.
+- Introduced new variable ``openwisp2_inventory_hostname_localhost``.
+
+Changes
+~~~~~~~
+
+- Added default sqlite timeout (10 seconds).
+
+Dependencies
+++++++++++++
+
+- Upgraded to OpenWISP Users 1.2.x (see `change log
+  <https://github.com/openwisp/openwisp-users/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Controller 1.2.x (see `change log
+  <https://github.com/openwisp/openwisp-controller/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Monitoring 1.2.x (see `change log
+  <https://github.com/openwisp/openwisp-monitoring/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Network Topology 1.2.x (see `change log
+  <https://github.com/openwisp/openwisp-network-topology/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Firmware Upgrader 1.2.x (see `change log
+  <https://github.com/openwisp/.openwisp-firmware-upgrader/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP RADIUS 1.2.x (see `change log
+  <https://github.com/openwisp/openwisp-radius/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Notifications 1.2.x (see `change log
+  <https://github.com/openwisp/openwisp-notifications/releases/tag/1.2.0>`__).
+- Upgraded to Netjsonconfig 1.2.x (see `change log
+  <https://github.com/openwisp/netjsonconfig/releases/tag/1.2.0>`__).
+- Bumped ``django-cors-headers>=4.9.0,<4.10.0``
+- Bumped ``ansible-core>=2.15,<2.19``.
+- Bumped ``channels_redis>=4.3.0,<4.4.0``.
+- Bumped ``django-redis>=6.0.0,<6.1.0``.
+- Bumped ``django-pipeline>=4.1.0,<4.2.0``.
+- Bumped ``uwsgi>=2.0.30,<2.1.0``.
+- Switched from ``django-celery-email`` to ``django-celery-email-reboot``
+  `(#477) <https://github.com/openwisp/ansible-openwisp2/issues/477>`__.
+- Added support for Debian 13.
+- Dropped support for Ubuntu 20.04.
+
+Bugfixes
+~~~~~~~~
+
+- Fixed ``Restart freeradius`` handler to properly restart the FreeRADIUS
+  service instead of only ensuring it is running.
+- Ensured Django templates from OpenWISP extensions take precedence over
+  those from other apps.
+- Moved OpenWISP version to a separate file to prevent circular imports.
+
+docker-openwisp (v25.10)
+------------------------
+
+- `Module Git Repository <https://github.com/openwisp/docker-openwisp>`__.
+- `Module Change Log
+  <https://github.com/openwisp/docker-openwisp/blob/25.10/CHANGES.rst>`__.
+
+Features
+~~~~~~~~
+
+- Added support for non-default external ports in the Nginx container
+  `(#496) <https://github.com/openwisp/docker-openwisp/issues/496>`_.
+- Updated FreeRADIUS REST module to include Calling-Station-ID and
+  Called-Station-ID during authorization `(#494)
+  <https://github.com/openwisp/docker-openwisp/issues/494>`_.
+- Run `collectstatic` only when Python dependencies change `(#246)
+  <https://github.com/openwisp/docker-openwisp/issues/246>`_.
+- Added environment variables for configuring Redis `(#463)
+  <https://github.com/openwisp/docker-openwisp/issues/463>`_.
+
+Changes
+~~~~~~~
+
+Dependencies
+++++++++++++
+
+- Upgraded to OpenWISP Users 1.2.x (see `changelog
+  <https://github.com/openwisp/openwisp-users/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Controller 1.2.x (see `changelog
+  <https://github.com/openwisp/openwisp-controller/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Monitoring 1.2.x (see `changelog
+  <https://github.com/openwisp/openwisp-monitoring/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Network Topology 1.2.x (see `changelog
+  <https://github.com/openwisp/openwisp-network-topology/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Firmware Upgrader 1.2.x (see `changelog
+  <https://github.com/openwisp/openwisp-firmware-upgrader/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP RADIUS 1.2.x (see `changelog
+  <https://github.com/openwisp/openwisp-radius/releases/tag/1.2.0>`__).
+- Upgraded to OpenWISP Notifications 1.2.x (see `changelog
+  <https://github.com/openwisp/openwisp-notifications/releases/tag/1.2.0>`__).
+- Upgraded to Netjsonconfig 1.2.x (see `changelog
+  <https://github.com/openwisp/netjsonconfig/releases/tag/1.2.0>`__).
+- Updated auto-install script to support Debian 13.
+- Updated auto-install script to support Ubuntu 24.04.
+- Updated base image of ``openwisp/openwisp-nginx`` to
+  ``nginx:1.29.2-alpine``.
+- Updated base image of ``openwisp/openwisp-freeradius`` to
+  ``freeradius/freeradius-server:3.2.8-alpine``.
+- Updated base image of ``openwisp/openwisp-postfix`` to ``alpine:3.22``.
+- Updated base image of ``openwisp/openwisp-openvpn`` to
+  ``kylemanna/openvpn:2.4``.
+- Updated base image of ``openwisp/openwisp-dashboard``,
+  ``openwisp/openwisp-api``, and ``openwisp/openwisp-websocket`` to
+  ``python:3.13-slim-bullseye``.
+- Bumped ``supervisor>=4.3.0,<4.4.0``.
+- Bumped ``django-cors-headers>=4.9.0,<4.10.0``.
+- Bumped ``django-pipeline>=4.1.0,<4.2.0``.
+- Bumped ``uwsgi>=2.0.30,<2.1.0``.
+- Bumped ``django-celery-email-reboot>=4.1.0,<5.0.0``.
+- Bumped ``tldextract>=5.3.0,<5.4.0``.
+- Bumped ``django-storages>=1.14.6,<1.15.0``.
+- Bumped ``boto3>=1.40.49,<1.41.0``.
+
+Bugfixes
+~~~~~~~~
+
+- Fixed permissions issues in the Postfix container.
+- Fixed FreeRADIUS container exit caused by global write permissions.
+- Added error handling for Redis in `load_init_data.py`.
+- Updated Django URL patterns in the WebSocket container `(#462)
+  <https://github.com/openwisp/docker-openwisp/issues/462>`_.
+- Prevented creation of duplicate topology objects.
+- Fixed condition check in `create_default_topology` `(#421)
+  <https://github.com/openwisp/docker-openwisp/issues/421>`_.
+- Updated auto-install script to suggest the correct VPN hostname.
