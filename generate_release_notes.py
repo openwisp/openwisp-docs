@@ -3,12 +3,13 @@
 import argparse
 import os
 import re
+import shutil
 import subprocess
+import tempfile
 from copy import deepcopy
+
 import yaml
 from packaging import version as packaging_version
-import tempfile
-import shutil
 
 RELEASES_OUTPUT_DIR = "releases"
 MODULES_DIR = "modules"
@@ -96,7 +97,7 @@ def _parse_rst_changelog(lines, version_string):
                 break
             content.append(line)
     # remove heading separator
-    if content and content[0].startswith('------'):
+    if content and content[0].startswith("------"):
         content = content[1:]
     return "".join(content).strip() or None
 
@@ -245,7 +246,9 @@ def main(target_version):
         repo_path = clone_or_update_repo(
             name=module_name, branch=branch_to_use, dir_name=module["dir_name"]
         )
-        content, changelog_filename, version = get_changelog_content(repo_path, branch_to_use)
+        content, changelog_filename, version = get_changelog_content(
+            repo_path, branch_to_use
+        )
 
         if content:
             owner = module.get("owner", "openwisp")
@@ -256,8 +259,8 @@ def main(target_version):
             module_section = (
                 f"{heading}\n"
                 f"{'-' * len(heading)}\n\n"
-                f"* `Module Git Repository <{repo_url}>`__\n"
-                f"* `Module Change Log <{changelog_url}>`__\n\n"
+                f"* `Module Git Repository <{repo_url}>`__.\n"
+                f"* `Module Change Log <{changelog_url}>`__.\n\n"
                 f"{content}"
             )
             all_changelogs.append(module_section)
