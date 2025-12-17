@@ -1,4 +1,4 @@
-sphinx~=8.0.2
+sphinx~=9.0.4
 sphinxawesome-theme~=5.3.2
 svglib
 rst2pdf
