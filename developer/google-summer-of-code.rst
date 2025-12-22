@@ -58,10 +58,14 @@ Google Summer of Code, please join `our communication channels
 `dedicated mailing list for GSoC
 <https://groups.google.com/g/openwisp-gsoc>`_, receive all emails please,
 and filter them in your mail box so they are moved to an "OpenWISP"
-folder), `present yourself in our general chat
-<https://gitter.im/openwisp/general>`_, tell us who you are, what your
-values are, what is attracting to OpenWISP and don't be cold like a robot!
-Stay human :-).
+folder), `present yourself in our dev chat
+<https://matrix.to/#/#openwisp_development:gitter.im>`_, tell us who you
+are, what your values are, what is attracting to OpenWISP and don't be
+cold like a robot! Stay human :-).
+
+If you have questions, please post them in the dedicated `Github
+discussions thread: GSoC questions
+<https://github.com/orgs/openwisp/discussions/1181>`_.
 
 Traits we look for in applicants
 --------------------------------
@@ -172,7 +176,7 @@ Configuration management:
 Project ideas
 -------------
 
-- :doc:`Project Ideas 2024 <../developer/gsoc-ideas-2024>`
+- :doc:`Project Ideas 2025 <../developer/gsoc-ideas-2025>`
 
 Application Template
 --------------------
