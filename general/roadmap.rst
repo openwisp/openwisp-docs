@@ -6,8 +6,19 @@ Roadmap
 Installation & Usability
 ------------------------
 
+TBD:
+  - Single executable or archive which ships all dependencies for
+    x86 architecture (for cloud deployments)
+  - Simplified version to be hosted on cheap hardware to be used locally
+    - Victoria metrics which uses less hardware resources
+    - Sqlite and spatialite
+    - Freeradius
+    - WiFi Login Pages (pre-built)
+    - Registration with Layer2
+
 - Make OpenWISP easier to install and configure for newcomers by
   simplifying the installation process and reducing the learning curve.
+
 - Address feedback that OpenWISP feels heavy and hard to use by:
 
   - Providing a simplified installer for users managing small networks
@@ -38,16 +49,6 @@ Firmware Tools
   builder in order to ease maintenance and keeping up with new OpenWrt
   releases.
 
-Documentation
--------------
-
-- Create more detailed, step-by-step tutorials for:
-
-  - Hotspot setup.
-  - PPPoE configuration.
-  - Hooking custom actions on specific events, eg: open a Jira ticket
-    whenever a device goes into critical state.
-
 Agent Improvements
 ------------------
 
@@ -60,36 +61,15 @@ Agent Improvements
   - Remote shell
   - Active checks
 
-Monitoring Logic Enhancements
------------------------------
+Documentation
+-------------
 
-- If a device is sending checksum requests and monitoring data, but the
-  tunnel is down:
+- Create more detailed, step-by-step tutorials for:
 
-  - Show device as “PROBLEM” instead of “CRITICAL”.
-
-- A device should only be in the “CRITICAL” state if:
-
-  - It is unreachable *and* not receiving any monitoring data.
-
-- Add a new metric to track the presence of monitoring requests from the
-  device.
-- Modify the logic for critical metrics to allow combining multiple
-  metrics using logical AND conditions.
-
-Management Tunnel Notifications
--------------------------------
-
-- If no management tunnel is working, the agent should report this to the
-  administrator.
-- Notify the user, but avoid spamming them with repeated alerts.
-- Consider alternative ways to communicate tunnel issues clearly without
-  excessive notifications.
-
-Notification Preferences
-------------------------
-
-- Improve notification settings and customization (GSoC 2024).
+  - Hotspot setup.
+  - PPPoE configuration.
+  - Hooking custom actions on specific events, eg: open a Jira ticket
+    whenever a device goes into critical state.
 
 IP Intelligence
 ---------------
@@ -161,6 +141,8 @@ Firmware Upgrade UX
   only per device or per org). (GSoC 2025)
 - Improve the visual feedback of firmware upgrades to show real-time
   progress without requiring page reloads. (GSoC 2025)
+- Continuous upgrades: if a device cannot be upgraded because it's not
+  available, allow the system to wait until it becomes available.
 
 Mesh Networking
 ---------------
@@ -180,11 +162,8 @@ Dashboard & Visualization
   - Total traffic over time.
   - Device count trends (online, offline, etc).
 
-- Complete the rewrite of `netjsongraph.js` (GSoC 2019 branch):
-
-  - Integrate it into OpenWISP.
-  - Replace current minimal map with an advanced viewer similar to:
-    https://regensburg.freifunk.net/meshviewer/
+- Replace current minimal map with an advanced viewer similar to:
+  https://regensburg.freifunk.net/meshviewer/
 
 - Support toggling between geographic and logical network views.
 
@@ -206,8 +185,9 @@ Monitoring Improvements
 Networking Features
 -------------------
 
-- Add support for ZeroTier.
-- Add support for Hotspot 2.0 and WiFi Offloading in OpenWISP RADIUS.
+- Add support more VPN protocols:
+  - IPSec
+  - Softether
 - Add support for:
 
   - Deep Packet Inspection (DPI) and layer-7 firewall rules.
@@ -217,5 +197,6 @@ Networking Features
   - TR-069 / TR-369
   - NETCONF
   - CAPWAP
-
-- Complete support for managing Ubiquiti AirOS original firmware.
+  - Integration with original firmware of specific producers:
+    - Ubiquiti
+    - Mikrotik
