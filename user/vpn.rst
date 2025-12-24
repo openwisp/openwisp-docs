@@ -50,10 +50,11 @@ Requirements for this scenario:
   VPN peers. For more information on how to do this via OpenWISP, please
   refer to the following sections:
 
-  - :doc:`Wireguard </controller/user/wireguard>`
-  - :doc:`Wireguard over VXLAN </controller/user/vxlan-wireguard>`
-  - :doc:`Zerotier </controller/user/zerotier>`
-  - :doc:`OpenVPN </controller/user/openvpn>`
+      - :doc:`WireGuard </controller/user/wireguard>`
+      - :doc:`WireGuard over VXLAN </controller/user/vxlan-wireguard>`
+      - :doc:`OpenVPN </controller/user/openvpn>`
+
+ZeroTier is also supported and documented as part of the VPN configuration in this section.
 
   If you prefer to use other tunneling solutions (L2TP, Softether, etc.)
   and know how to configure those solutions on your own, that's fine as
