@@ -39,17 +39,21 @@ Core Values
 We believe that **communication through electronic means is a fundamental
 human right**.
 
-According to Mozilla, `4 billion people live without internet access today
-<https://blog.mozilla.org/blog/2017/07/31/mozilla-releases-research-results-zero-rating-not-serving-ramp-internet/>`_.
+According to the `International Telecommunication Union (ITU) 2025 report
+<https://www.itu.int/en/mediacentre/Pages/PR-2025-11-17-Facts-and-Figures.aspx>`_,
+approximately **2.2 billion people**, nearly one-third of the global
+population, remain offline today.
 
 Having witnessed the significant progress the internet has brought to our
 society, we are deeply convinced that addressing the issue of internet
-connectivity will help to alleviate the economic disparity that is so
-evident at the beginning of the 21st century.
+connectivity is essential to alleviating the economic and social
+disparities of the 21st century. Access to information, education, and
+digital services should not be a privilege determined by geography or
+wealth.
 
 For these reasons, **fighting the digital divide, both primary (lack of
-infrastructure) and secondary (lack of know-how), is our utmost
-priority**.
+infrastructure) and secondary (lack of technical digital literacy), is our
+utmost priority**.
 
 2. Net Neutrality
 ~~~~~~~~~~~~~~~~~
