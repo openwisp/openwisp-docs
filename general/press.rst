@@ -118,6 +118,25 @@ Blog Posts
 Google Summer of Code Blog Posts
 --------------------------------
 
+2025 Contributors
+~~~~~~~~~~~~~~~~~
+
+- `Improve UX and Flexibility of the Firmware Upgrader Module
+  <https://openwisp.org/blog/gsoc-2025-improve-ux-and-flexibility-of-the-firmware-upgrader-module/>`_
+  by *Roshan Kumar*.
+- `Better Map UX: Indoor, Mobile, Linkable URLs
+  <https://openwisp.org/blog/gsoc-2025-better-map-ux-indoor-mobile-linkable-urls/>`_
+  by *Deepanshu Sahu*.
+- `WHOIS Info and Estimated Geographic Locations
+  <https://openwisp.org/blog/gsoc-2025-whois-info-and-estimated-geographic-locations/>`_
+  by *Aman Jagotra*.
+- `Improving the Netjsongraph.js Visualization Library
+  <https://openwisp.org/blog/gsoc-2025-improving-the-netjsongraphjs-visualization-library/>`_
+  by *Yashaswi Kumar*.
+- `Enhancing Uspot Captive Portal for OpenWrt
+  <https://openwisp.org/blog/gsoc-2025-enhancing-uspot-captive-portal-for-openwrt/>`_
+  by *Thibaut Varène*.
+
 2024 Contributors
 ~~~~~~~~~~~~~~~~~
 
