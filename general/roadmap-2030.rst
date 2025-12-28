@@ -1,5 +1,5 @@
-Road Map to 2030
-================
+Roadmap to 2030
+===============
 
 This document outlines the primary goals of the OpenWISP project for the
 period 2026-2030.
@@ -171,7 +171,7 @@ IP Intelligence
     see the project board `[GSoC25] WHOIS Information and IP Address-Based
     Geolocation <https://github.com/orgs/openwisp/projects/44/views/1>`_.
 
-- **WHOIS Data Collection**:help-us Automatically collect and store WHOIS
+- **WHOIS Data Collection**: Automatically collect and store WHOIS
   information for the device ``last_ip`` when a public IP is detected.
 - **UI Integration**: Display a summary of WHOIS data in the interface
   with the option to expand for full technical details.
