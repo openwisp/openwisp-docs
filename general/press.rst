@@ -113,6 +113,8 @@ Blog Posts
   <http://www.cittametropolitanaroma.it/homepage/elenco-siti-tematici/wifimetropolitano/openwisp-la-soluzione-open-source-la-diffusione-servizi-wifi/>`_
   (in Italian)
 
+.. _openwisp_gsoc_blog_post:
+
 Google Summer of Code Blog Posts
 --------------------------------
 

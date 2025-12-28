@@ -142,41 +142,11 @@ Here's a few quick tricks you can use to become a star in our community:
 - try to participate in the community, if a fellow member is in need of
   help and you know how to help him, please do so, we will reward you
 
-Time to start hacking
----------------------
-
-.. image:: ../images/gci/technology.gif
-
-If you are not familiar with the following concepts yet, take the time to
-read these resources, it will help you to speed up your raise to the top!
-
-Programming languages and frameworks:
-
-    - `Python
-      <https://runestone.academy/ns/books/published/pythonds/index.html>`_
-      (book)
-    - `Django <https://docs.djangoproject.com/>`_ (official documentation)
-    - `Lua <https://www.youtube.com/watch?v=iMacxZQMPXs/>`_ (video
-      tutorial)
-    - `Shell <https://www.youtube.com/watch?v=hwrnmQumtPw/>`_
-          (video tutorial)
-    - `Javascript <https://www.tutorialspoint.com/javascript/>`_
-      (tutorial)
-
-Networking concepts:
-
-    - Introduction to networking `terminology <https://goo.gl/YG3RLd>`_
-
-Configuration management:
-
-    - Introduction to `configuration management <https://goo.gl/3YTQgg>`_
-    - Writing Ansible `playbooks <https://goo.gl/R2XptC>`_
-    - Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch
-
-Project ideas
--------------
+Project Ideas & Past Projects
+-----------------------------
 
 - :doc:`Project Ideas 2025 <../developer/gsoc-ideas-2025>`
+- :ref:`Past successful projects <openwisp_gsoc_blog_post>`
 
 Application Template
 --------------------
