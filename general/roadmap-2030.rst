@@ -269,6 +269,26 @@ Firmware Upgrade UX
 - **Persistent Upgrade Tasks**: Implement support for continuous upgrades
   that remain queued for offline devices, executing automatically once
   they reconnect.
+- **Automated Firmware Image Identification**
+
+  - **Removal of Predefined Image Types**: Eliminates the need for
+    maintainers and users to manually define and maintain firmware image
+    identifiers or types.
+  - **Automatic Server-Side Extraction**: The server automatically
+    extracts the firmware image identifier from uploaded files to
+    determine device compatibility. If automatic detection fails, the user
+    will be notified and asked to provide the required information
+    manually.
+  - **Automatic Device Matching**: Uses the hardware identifier reported
+    by ``openwisp-config`` to automatically associate devices with
+    compatible firmware images. The existing behavior will continue to
+    work and will be adjusted only if necessary.
+  - **Improved User Experience**: Removes the need for users to customize
+    the hardware definition list when using custom hardware or standard
+    OpenWrt firmware images that are not yet defined in OpenWISP.
+  - **Reduced Maintenance Overhead**: Avoids the need for administrators
+    to track internal OpenWrt or vendor-specific image identifiers, which
+    frequently change over time.
 
 Monitoring Improvements
 -----------------------
