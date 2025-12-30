@@ -12,31 +12,21 @@ technical reach of the platform.
 
 The primary objectives for the 2026 to 2030 period are:
 
-1. **Frictionless deployment**
-
-   Move toward a day one ready approach by simplifying installation
-   workflows and providing clear, sensible default configurations that
-   work out of the box.
-
-2. **Refined user experience**
-
-   Improve the interface of core modules so that frequent operations such
-   as device onboarding, configuration, monitoring, and firmware upgrades
-   are intuitive and accessible, including for users with limited
-   technical background.
-
-3. **Community driven feature parity**
-
-   Address long standing feature requests from the community and reduce
-   functional gaps compared to proprietary network management solutions.
-
-4. **Ecosystem agnosticism**
-
-   Expand support beyond OpenWrt by improving compatibility with other
-   operating systems and by adopting standard protocols such as NETCONF
-   and YANG, as well as TR-069 and TR-369. This will allow OpenWISP to
-   manage a wider range of hardware and software platforms, becoming
-   useful to a larger audience.
+1. **Frictionless deployment**: Move toward a day one ready approach by
+   simplifying installation workflows and providing clear, sensible
+   default configurations that work out of the box.
+2. **Refined user experience**: Improve the interface of core modules so
+   that frequent operations such as device onboarding, configuration,
+   monitoring, and firmware upgrades are intuitive and accessible,
+   including for users with limited technical background.
+3. **Community driven feature parity**: Address long standing feature
+   requests from the community and reduce functional gaps compared to
+   proprietary network management solutions.
+4. **Ecosystem agnosticism**: Expand support beyond OpenWrt by improving
+   compatibility with other operating systems and by adopting standard
+   protocols such as NETCONF and YANG, as well as TR-069 and TR-369. This
+   will allow OpenWISP to manage a wider range of hardware and software
+   platforms, becoming useful to a larger audience.
 
 Read on for a detailed description of the technical goals.
 
