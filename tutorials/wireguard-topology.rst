@@ -97,6 +97,4 @@ The resulting network graph will be visible in the **Network Topology** section 
 See Also
 --------
 
-- :doc:`/controller/user/wireguard`
-- :doc:`/controller/user/templates`
-- :doc:`/network-topology/index`
+For more information on configuration templates, the WireGuard VPN backend, and the network topology module, please refer to the user documentation of the respective modules.
