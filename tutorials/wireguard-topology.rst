@@ -79,14 +79,28 @@ This template ensures that all assigned devices maintain a consistent and secure
 Enabling Topology Visualization
 -------------------------------
 
-Once the template is ready, you can enable **topology collection** by integrating it with the **Network Topology** module.
-This allows OpenWISP to automatically generate a graph representing your VPN connections and their status.
+Once the template is ready, you can enable **topology collection** by following these steps:
+
+1. From the navigation menu, go to **Network Topology** and then **Topologies**.
+2. Click on **Add topology**.
+3. Fill in the basic details:
+   - **Name**: Enter a name like "WireGuard Management Topology".
+   - **Organization**: Select the same organization used for the template.
+   - **Strategy**: Select **Network Topology Collector**.
+4. Ensure the **Protocol** is set to **WireGuard**.
+5. Click **Save** to enable the topology collection.
 
 Assigning the Template to Devices
 ---------------------------------
 
-Assign the WireGuard template to your devices to push the configuration updates.
-OpenWISP will handle the secure distribution of configuration and endpoint information to all peers.
+Follow these steps to apply the WireGuard configuration to your devices:
+
+1. From the navigation menu, go to **Controller** and then **Devices**.
+2. Click on the name of the device you want to configure.
+3. Navigate to the **Configuration** tab.
+4. In the **Templates** field, select the "Management VPN (WireGuard)" template.
+5. Click **Save and continue editing**.
+6. OpenWISP will now schedule a configuration push to the device.
 
 Verifying the Topology
 ----------------------
