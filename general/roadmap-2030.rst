@@ -134,6 +134,15 @@ Firmware Tools
 Configuration Editor
 --------------------
 
+- **Redesign for ease of use**: Redesign the configuration editor by
+  adopting interface patterns and workflows that are already well-tested
+  and widely accepted in the networking industry, such as those found in
+  OpenWrt LuCI and other leading open-source networking software. To
+  ensure these improvements truly simplify complex tasks like VLAN and
+  radio management, we will partner with UX designers and conduct UX
+  research studies. This approach aims to bridge the gap between powerful
+  enterprise functionality and the intuitive ease of use expected in
+  modern networking environments.
 - **Enhanced Configuration Visibility**: Update the editor to manage full
   device configurations without overwhelming the interface. Implement a
   high-level overview with drill-down capabilities for specific details.
