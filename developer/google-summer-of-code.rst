@@ -58,10 +58,14 @@ Google Summer of Code, please join `our communication channels
 `dedicated mailing list for GSoC
 <https://groups.google.com/g/openwisp-gsoc>`_, receive all emails please,
 and filter them in your mail box so they are moved to an "OpenWISP"
-folder), `present yourself in our general chat
-<https://gitter.im/openwisp/general>`_, tell us who you are, what your
-values are, what is attracting to OpenWISP and don't be cold like a robot!
-Stay human :-).
+folder), `present yourself in our dev chat
+<https://matrix.to/#/#openwisp_development:gitter.im>`_, tell us who you
+are, what your values are, what is attracting to OpenWISP and don't be
+cold like a robot! Stay human :-).
+
+If you have questions, please post them in the dedicated `Github
+discussions thread: GSoC questions
+<https://github.com/orgs/openwisp/discussions/1181>`_.
 
 Traits we look for in applicants
 --------------------------------
@@ -138,41 +142,11 @@ Here's a few quick tricks you can use to become a star in our community:
 - try to participate in the community, if a fellow member is in need of
   help and you know how to help him, please do so, we will reward you
 
-Time to start hacking
----------------------
+Project Ideas & Past Projects
+-----------------------------
 
-.. image:: ../images/gci/technology.gif
-
-If you are not familiar with the following concepts yet, take the time to
-read these resources, it will help you to speed up your raise to the top!
-
-Programming languages and frameworks:
-
-    - `Python
-      <https://runestone.academy/ns/books/published/pythonds/index.html>`_
-      (book)
-    - `Django <https://docs.djangoproject.com/>`_ (official documentation)
-    - `Lua <https://www.youtube.com/watch?v=iMacxZQMPXs/>`_ (video
-      tutorial)
-    - `Shell <https://www.youtube.com/watch?v=hwrnmQumtPw/>`_
-          (video tutorial)
-    - `Javascript <https://www.tutorialspoint.com/javascript/>`_
-      (tutorial)
-
-Networking concepts:
-
-    - Introduction to networking `terminology <https://goo.gl/YG3RLd>`_
-
-Configuration management:
-
-    - Introduction to `configuration management <https://goo.gl/3YTQgg>`_
-    - Writing Ansible `playbooks <https://goo.gl/R2XptC>`_
-    - Creating Ansible `roles <https://goo.gl/KMXcmr>`_ from scratch
-
-Project ideas
--------------
-
-- :doc:`Project Ideas 2024 <../developer/gsoc-ideas-2024>`
+- :doc:`Project Ideas 2025 <../developer/gsoc-ideas-2025>`
+- :ref:`Past successful projects <openwisp_gsoc_blog_post>`
 
 Application Template
 --------------------

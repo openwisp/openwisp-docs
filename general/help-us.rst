@@ -86,20 +86,27 @@ will be very helpful to us.
 3. Stars on github
 ~~~~~~~~~~~~~~~~~~
 
-Unfortunately, when evaluating a project, a disproportionate amount of
-people look at the github stars as a method of evaluation on how popular a
-project is and if they don't see many stars they discard the idea of using
-it.
+When evaluating open source projects, many people rely heavily on GitHub
+stars as a proxy for popularity, maturity, and community adoption. In
+practice, this often becomes a deciding factor in whether a project is
+even considered.
 
-OpenWISP is composed of many modules and for that reason we don't have a
-single super popular github repository with thousands of stars, but when
-new users and developers look at `our github organization page
-<https://github.com/openwisp>`_ they may not get this at first glance and
-they will start looking for the numbers of stars.
+OpenWISP is intentionally modular and composed of multiple repositories.
+As a result, there is no single repository with an exceptionally high star
+count. New users and potential contributors browsing `our GitHub
+repositories
+<https://github.com/orgs/openwisp/repositories?q=visibility%3Apublic+fork%3Afalse+archived%3Afalse+sort%3Astars>`_
+may not immediately recognize this and may judge individual modules in
+isolation, based solely on their star count.
 
-Yes, we know it sounds silly, but since it doesn't cost you anything, it
-would be really useful if you could **take a look at our projects on
-github** and **star the ones you find most interesting**.
+While this metric is imperfect, it does influence perception and adoption.
+For this reason, and at no cost to you, we kindly ask you to `review our
+projects on GitHub
+<https://github.com/orgs/openwisp/repositories?q=visibility%3Apublic+fork%3Afalse+archived%3Afalse+sort%3Astars>`_
+and **star the repositories you actively use, contribute to or find
+valuable**. This small gesture helps increase visibility, lowers the
+barrier for new adopters, and supports the long term growth of the
+OpenWISP ecosystem.
 
 4. Documentation
 ~~~~~~~~~~~~~~~~

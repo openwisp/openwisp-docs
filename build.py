@@ -285,10 +285,15 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
 
     if os.path.exists(clone_path):
         print(f"Repository '{name}' already exists. Updating...")
+        subprocess.run(
+            ["git", "fetch", "origin", f"refs/heads/{branch}:refs/heads/{branch}"],
+            cwd=clone_path,
+            check=True,
+        )
         # "-c advice.detachedHead=false" is used to suppress the warning
         # about being in a detached HEAD state when checking out tags.
         subprocess.run(
-            ["git", "-c", "advice.detachedHead=false", "checkout", branch],
+            ["git", "-c", "advice.detachedHead=false", "checkout", f"refs/heads/{branch}"],
             cwd=clone_path,
             check=True,
         )
