@@ -271,6 +271,32 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
     If the repository already exists, update it. Otherwise, clone the repository.
     """
     repository = f"{owner}/{name}"
+
+    # Support for building with local changes
+    if name == "openwisp-docs" and not os.environ.get("PRODUCTION"):
+        print(f"Using local directory for '{name}'")
+
+        os.makedirs("staging-dir", exist_ok=True)
+        exclude_items = {"staging-dir", "modules", "_build", ".git", "__pycache__"}
+        for item in os.listdir("."):
+            if item.startswith("."):
+                continue
+
+            if item in exclude_items:
+                continue
+
+            # skip virtual environments (detect with pyvenv.cfg)
+            if os.path.isdir(item) and os.path.exists(os.path.join(item, "pyvenv.cfg")):
+                continue
+
+            src_path = os.path.abspath(item)
+            dest_path = os.path.join("staging-dir", item)
+            if os.path.islink(dest_path):
+                os.unlink(dest_path)
+            if not os.path.exists(dest_path):
+                os.symlink(src_path, dest_path)
+        return
+
     if os.environ.get("SSH"):
         # SSH cloning is a convenient option for local development, as it
         # allows you to commit changes directly to the repository, but it
@@ -294,7 +320,13 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
         # "-c advice.detachedHead=false" is used to suppress the warning
         # about being in a detached HEAD state when checking out tags.
         subprocess.run(
-            ["git", "-c", "advice.detachedHead=false", "checkout", f"refs/heads/{branch}"],
+            [
+                "git",
+                "-c",
+                "advice.detachedHead=false",
+                "checkout",
+                branch,
+            ],
             cwd=clone_path,
             check=True,
         )
