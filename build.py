@@ -271,11 +271,12 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
     If the repository already exists, update it. Otherwise, clone the repository.
     """
     repository = f"{owner}/{name}"
-
     # Support for building with local changes
     if name == "openwisp-docs" and not os.environ.get("PRODUCTION"):
         print(f"Using local directory for '{name}'")
 
+        if os.path.islink("staging-dir") or os.path.isfile("staging-dir"):
+            os.unlink("staging-dir")
         os.makedirs("staging-dir", exist_ok=True)
         exclude_items = {"staging-dir", "modules", "_build", ".git", "__pycache__"}
         for item in os.listdir("."):
@@ -325,7 +326,7 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
                 "-c",
                 "advice.detachedHead=false",
                 "checkout",
-                branch,
+                f"refs/heads/{branch}",
             ],
             cwd=clone_path,
             check=True,
