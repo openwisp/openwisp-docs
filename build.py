@@ -313,8 +313,13 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
     if os.path.exists(clone_path):
         print(f"Repository '{name}' already exists. Updating...")
         subprocess.run(
-            # Clears ambiguity when git tags and branches have identical names
-            ["git", "fetch", "origin", f"refs/heads/{branch}:refs/heads/{branch}"],
+            # Update remote-tracking ref (avoid fetching into checked-out branch)
+            [
+                "git",
+                "fetch",
+                "origin",
+                f"+refs/heads/{branch}:refs/remotes/origin/{branch}",
+            ],
             cwd=clone_path,
             check=True,
         )
@@ -326,7 +331,9 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
                 "-c",
                 "advice.detachedHead=false",
                 "checkout",
-                f"refs/heads/{branch}",
+                "-B",
+                branch,
+                f"refs/remotes/origin/{branch}",
             ],
             cwd=clone_path,
             check=True,
