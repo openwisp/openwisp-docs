@@ -273,7 +273,7 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
     """
     repository = f"{owner}/{name}"
     # Support for building with local changes
-    if name == "openwisp-docs" and branch == "master" and not os.environ.get("PRODUCTION"):
+    if name == "openwisp-docs":
         # Ensure staging-dir is a real, empty directory
         if os.path.islink("staging-dir") or os.path.isfile("staging-dir"):
             os.unlink("staging-dir")
@@ -347,7 +347,9 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
         # During local development, we attempt to pull updates, but only if the
         # current HEAD is on a branch (i.e., not detached, such as when on a tag).
         if not os.environ.get("PRODUCTION", False) and git_is_on_branch(clone_path):
-            subprocess.run(["git", "pull", "origin", branch], cwd=clone_path, check=True)
+            subprocess.run(
+                ["git", "pull", "origin", branch], cwd=clone_path, check=True
+            )
     else:
         print(f"Cloning repository '{name}'...")
         subprocess.run(
