@@ -272,9 +272,7 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
     """
     repository = f"{owner}/{name}"
     # Support for building with local changes
-    if name == "openwisp-docs" and not os.environ.get("PRODUCTION"):
-        print(f"Using local directory for '{name}'")
-
+    if name == "openwisp-docs":
         if os.path.islink("staging-dir") or os.path.isfile("staging-dir"):
             os.unlink("staging-dir")
         os.makedirs("staging-dir", exist_ok=True)
@@ -282,14 +280,11 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
         for item in os.listdir("."):
             if item.startswith("."):
                 continue
-
             if item in exclude_items:
                 continue
-
             # skip virtual environments (detect with pyvenv.cfg)
             if os.path.isdir(item) and os.path.exists(os.path.join(item, "pyvenv.cfg")):
                 continue
-
             src_path = os.path.abspath(item)
             dest_path = os.path.join("staging-dir", item)
             if os.path.islink(dest_path):
