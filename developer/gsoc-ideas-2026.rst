@@ -1,0 +1,384 @@
+GSoC Project Ideas 2026
+=======================
+
+.. tip::
+
+    Do you want to apply with us?
+
+    We have a page that describes how to increase your chances of success.
+    **Please read it carefully.**
+
+    :doc:`Read our Google Summer of Code guidelines
+    <../developer/google-summer-of-code>`.
+
+.. contents:: **Table of Contents**:
+    :backlinks: none
+    :depth: 3
+
+General suggestions and warnings
+--------------------------------
+
+- **Project ideas describe the goals we want to achieve but may miss
+  details that have to be defined during the project**: we expect
+  applicants to do their own research, propose solutions and be ready to
+  deal with uncertainty and solve challenges that will come up during the
+  project
+- **Code and prototypes are preferred over detailed documents and
+  unreliable estimates**: rather than using your time to write a very long
+  application document, we suggest to invest in writing a prototype (which
+  means the code may be thrown out entirely) which will help you
+  understand the challenges of the project you want to work on; your
+  application should refer to the prototype or other Github contributions
+  you made to OpenWISP that show you have the capability to succeed in the
+  project idea you are applying for.
+- **Applicants who have either shown to have or have shown to be fast
+  learners for the required hard and soft skills by contributing to
+  OpenWISP have a lot more chances of being accepted**: in order to get
+  started contributing refer to the :doc:`OpenWISP Contributing Guidelines
+  <../developer/contributing>`
+- **Get trained in the projects you want to apply for**: once applicants
+  have completed some basic training by :doc:`contributing to OpenWISP
+  <../developer/contributing>` we highly suggest to start working on some
+  aspects of the project they are interested in applying: all projects
+  listed this year are improvements of existing modules so these modules
+  already have a list of open issues which can be solved as part of your
+  advanced training. It will also be possible to complete some of the
+  tasks listed in the project idea right now before GSoC starts. We will
+  list some easy tasks in the project idea for this purpose.
+
+Project Ideas
+-------------
+
+Mass Commands
+~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2025/mass-commands.png
+
+.. important::
+
+    Languages and technologies used: **Python**, **Django**,
+    **JavaScript**, **WebSockets**, **REST API**.
+
+    **Mentors**: *Gagan Deep*, *Purhan Kaushik*, *Kapil Bansal*.
+
+    **Project size**: 350 hours.
+
+    **Difficulty rate**: medium.
+
+This project idea aims to extend OpenWISP's remote device management
+capabilities by enabling users to execute shell commands on multiple
+devices simultaneously. Currently, OpenWISP supports executing commands on
+a single device at a time. This project will introduce a bulk execution
+feature while maintaining the existing security, rules, and limitations of
+the single-device command execution feature.
+
+The mass command operation will be accessible from two main entry points:
+
+- An admin action on the device list page, allowing users to select
+  multiple devices and send a shell command in bulk.
+- A dedicated mass command admin section, where users can initiate bulk
+  command execution with various targeting options:
+
+  - All devices in the system (restricted to superusers).
+  - All devices within a specific organization.
+  - All devices within a specific device group.
+  - All devices within a specific geographic location.
+  - Specific selected devices.
+
+The UI will guide users step-by-step, dynamically displaying relevant
+fields based on the selected target scope. For example, if a user selects
+"All devices in a specific organization", an auto-complete list of
+organizations will be displayed next.
+
+The system will provide real-time tracking of command execution results.
+Inspired by OpenWISP Firmware Upgrader's mass upgrade feature, the UI will
+receive live updates via WebSockets, displaying command output as soon as
+it is received from the devices. Additionally:
+
+- The device detail page will show executed commands under the "Recent
+  Commands" tab.
+- Commands that were part of a mass operation will be clearly marked, with
+  a link to the corresponding mass command operation page.
+
+To support API-based management, the REST API will be extended with the
+following capabilities:
+
+- Create new mass command operations.
+- Retrieve mass command operations and their results (with pagination).
+- Delete mass command operations.
+- Modify the single-shell command API to reference the mass command
+  operation ID if applicable.
+
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate a solid understanding of Python, Django, HTML,
+CSS, JavaScript, WebSockets, and `OpenWISP Controller
+<https://github.com/openwisp/openwisp-controller>`__.
+
+Expected outcomes
++++++++++++++++++
+
+- Implementation of mass shell command execution in OpenWISP, replicating
+  the rules and limitations of single-device execution.
+- Development of an intuitive UI with the Django admin for selecting
+  devices and tracking command results in real-time.
+- Admin action for device list page.
+- Enhancement of the device detail page to reflect mass command history
+  for individual devices.
+- Extension of the REST API to support mass command operations.
+- Comprehensive automated tests covering the new feature.
+- Updated documentation, including:
+
+  - Feature description with usage instructions.
+  - A short example usage video for YouTube that we can showcase on the
+    website.
+
+X.509 Certificate Generator Templates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2025/x509-templates.webp
+
+.. important::
+
+    Languages and technologies used: **Python**, **Django**,
+    **JavaScript**.
+
+    **Mentors**: *Federico Capoano*, *Aryaman*, *Nitesh Sinha*.
+
+    **Project size**: 90 hours.
+
+    **Difficulty rate**: medium.
+
+This GSoC project aims to enhance OpenWISP's certificate management
+capabilities by enabling the generation of x509 certificates for general
+use, beyond OpenVPN.
+
+Currently, OpenWISP supports generating x509 certificates exclusively for
+OpenVPN clients, where each VPN client template produces a certificate
+signed by the CA linked to the corresponding VPN server. However, many
+users have requested support for generating certificates for other
+purposes, such as securing web servers.
+
+The proposed solution involves introducing a new template type that allows
+users to generate certificates using a selected CA. This template should
+provide configurable options, including:
+
+- Certificate duration
+- Key length
+- Digest algorithm
+
+If left unspecified, these options should default to the CA's standard
+settings.
+
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate a solid understanding of Python, Django,
+JavaScript, and `OpenWISP Controller
+<https://github.com/openwisp/openwisp-controller>`__.
+
+Expected outcomes
++++++++++++++++++
+
+- Implement a new certificate template type in OpenWISP to support
+  general-purpose x509 certificate generation.
+- Allow users to select a CA and configure certificate properties.
+- Integrate with OpenWISP's configuration management to expose certificate
+  details (public key, private key, and UUID) as variables for automated
+  deployment.
+- Write automated tests to ensure the correctness and reliability of the
+  new functionality.
+- Updated documentation, including:
+
+  - Feature overview in a dedicated page with step-by-step usage
+    instructions.
+  - Short Video demonstration.
+
+Add more timeseries database clients to OpenWISP Monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/tsdb.png
+
+.. important::
+
+    Languages and technologies used: **Python**, **Django**, **InfluxDB**,
+    **Elasticsearch**.
+
+    **Mentors**: *Gagan Deep*, *Aryaman*, *Sankalp*.
+
+    **Project size**: 350 hours.
+
+    **Difficulty rate**: medium.
+
+The goal of this project is to add more Time Series DB options to OpenWISP
+while keeping good maintainability.
+
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
+
+The applicant must demonstrate good understanding of `OpenWISP Monitoring
+<https://github.com/openwisp/openwisp-monitoring#openwisp-monitoring>`__,
+and demonstrate basic knowledge of `NetJSON format
+<https://netjson.org/>`_, **InfluxDB** and **Elasticsearch**.
+
+Expected outcomes
++++++++++++++++++
+
+- Complete the support to `Elasticsearch
+  <https://github.com/elastic/elasticsearch>`_. `Support to Elasticsearch
+  was added in 2020
+  <https://github.com/openwisp/openwisp-monitoring/pull/164>`_ but was not
+  completed.
+
+  - The old pull request has to be updated on the current code base
+  - The merge conflicts have to be resolved
+  - All the tests must pass, new tests for new charts and metrics added to
+    *InfluxDB* must be added (see `[feature] Chart mobile
+    (LTE/5G/UMTS/GSM) signal strength #270
+    <https://github.com/openwisp/openwisp-monitoring/pull/294>`_)
+  - The usage shall be documented, we must make sure there's at least one
+    dedicated CI build for **Elasticsearch**
+  - We must allow to install and use **Elasticsearch** instead of
+    **InfluxDB** from `ansible-openwisp2
+    <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
+    <https://github.com/openwisp/docker-openwisp/>`_
+  - The requests to Elasticsearch shall be optimized as described in
+    `[timeseries] Optimize elasticsearch #168
+    <https://github.com/openwisp/openwisp-monitoring/issues/168>`_.
+
+- `Add support for InfluxDB 2.0
+  <https://github.com/openwisp/openwisp-monitoring/issues/274>`_ as a new
+  timeseries backend, this way we can support both ``InfluxDB <= 1.8`` and
+  ``InfluxDB >= 2.0``.
+
+  - All the automated tests for **InfluxDB 1.8** must be replicated and
+    must pass
+  - The usage and setup shall be documented
+  - We must make sure there's at least one dedicated CI build for
+    Elasticsearch
+  - We must allow choosing between **InfluxDB 1.8** and **InfluxDB 2.0**
+    from `ansible-openwisp2
+    <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
+    <https://github.com/openwisp/docker-openwisp/>`_.
+
+OpenWISP VPN Deployer Linux Package
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2025/vpn-sync.webp
+
+.. important::
+
+    Languages and technologies used: **Linux**, **Python**, **Django**,
+    **WebSockets**, **OpenVPN**, **WireGuard**, **WireGuard over VXLAN**,
+    **ZeroTier**.
+
+    **Mentors:** *Federico Capoano*, *Gagan Deep*, *Oliver Kraitschy*.
+
+    **Project size:** 350 hours.
+
+    **Difficulty level:** medium/hard.
+
+This GSoC project aims to simplify the deployment and management of VPN
+servers integrated with OpenWISP.
+
+The goal is to develop an easy-to-install program that automates the
+deployment of VPN servers synchronized with OpenWISP in real time. This
+reduces manual intervention and ensures configuration consistency between
+the VPN server objects in the OpenWISP database and the deployed VPN
+instances.
+
+Key Features
+++++++++++++
+
+The program will run on Linux-based servers and will:
+
+- Be implemented in **Python** to ensure maintainability and
+  extensibility.
+- Use a **Makefile** to generate installation packages for major Linux
+  distributions:
+
+  - **DEB** (for Debian, Ubuntu, and related distributions)
+  - **RPM** (for Red Hat, Fedora, and similar systems)
+  - **Snap** (for broader Linux compatibility)
+
+- Establish a **WebSocket connection** with OpenWISP to listen for changes
+  in VPN server configurations and synchronize local settings accordingly.
+- Keep the local list of peers and the **certificate revocation list
+  (CRL)** updated whenever VPN clients are added, removed, or modified.
+- Support the following VPN tunneling technologies:
+
+  - **OpenVPN**
+  - **WireGuard**
+  - **WireGuard over VXLAN**
+  - **ZeroTier**
+
+- Provide a **command-line utility** to simplify the initial setup. This
+  utility will:
+
+  - Guide users step by step, making it accessible even to those with
+    limited experience.
+  - Allow users to select the VPN technology to be deployed.
+  - Verify that the necessary system packages are installed and provide
+    clear warnings if dependencies are missing.
+  - Assist in securely connecting and synchronizing with OpenWISP.
+
+    .. note::
+
+        The command-line utility must apply all necessary changes in the
+        OpenWISP database via the **REST API**. If any required
+        modifications cannot be performed with the current API, the
+        contributor will be responsible for implementing the missing
+        functionality.
+
+    - To facilitate authentication, the utility will `guide users in
+      retrieving their OpenWISP REST API token
+      <https://github.com/openwisp/openwisp-users/issues/240>`_. A
+      proposed approach is to provide a link to the OpenWISP admin
+      interface, where users can generate and copy their API token easily.
+
+- Support running **multiple instances**, where each instance manages a
+  separate VPN server independently.
+- Implement **structured logging** with dedicated log files for each
+  instance, adhering to Linux logging best practices and supporting log
+  rotation.
+- Provide **comprehensive documentation** in ReStructuredText format,
+  following OpenWISP conventions:
+
+  - Documentation will be stored in a ``/docs`` directory, with a clear
+    separation between user guides and developer documentation.
+  - A **video demonstration** will be included, which can be published on
+    YouTube to increase project visibility.
+
+- Update the **OpenWISP documentation** to cover installation,
+  configuration, and best practices.
+- To support this project, **OpenWISP Controller** will need to be updated
+  to expose a **WebSocket endpoint**. This will allow the VPN
+  synchronization program to receive real-time configuration updates.
+
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
+
+Applicants should have a solid understanding of:
+
+- **Python** and **Django**.
+- **WebSockets**.
+- At least one of the supported VPN technologies (**OpenVPN, WireGuard,
+  WireGuard over VXLAN, ZeroTier**).
+- **System administration and Linux packaging** (preferred but not
+  required).
+
+Expected Outcomes
++++++++++++++++++
+
+- A Python-based VPN synchronization tool.
+- A command-line setup utility for easy first-time configuration.
+- WebSocket-based synchronization between VPN servers and OpenWISP.
+- Automated packaging for major Linux distributions.
+- Structured logging with proper log rotation.
+- Enhancements to **OpenWISP Controller** to support WebSocket-based
+  synchronization and any required REST API modifications.
+- Automated tests to ensure reliability and stability.
+- Comprehensive **documentation**, including setup guides and best
+  practices.
+- A **short tutorial video** demonstrating installation and usage.

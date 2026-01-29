@@ -13,4 +13,4 @@ OpenWISP.
     contributing
     hacking-openwisp-python-django
     google-summer-of-code
-    gsoc-ideas-2025
+    gsoc-ideas-2026
