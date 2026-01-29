@@ -8,6 +8,7 @@
 
 import argparse
 import os
+import shutil
 import subprocess
 from copy import deepcopy
 
@@ -273,19 +274,26 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
     repository = f"{owner}/{name}"
     # Support for building with local changes
     if name == "openwisp-docs":
+        # Ensure staging-dir is a real, empty directory
         if os.path.islink("staging-dir") or os.path.isfile("staging-dir"):
             os.unlink("staging-dir")
+        elif os.path.isdir("staging-dir"):
+            shutil.rmtree("staging-dir")
         os.makedirs("staging-dir", exist_ok=True)
+
+        base_dir = "docs" if os.path.isdir("docs") else "."
         exclude_items = {"staging-dir", "modules", "_build", ".git", "__pycache__"}
-        for item in os.listdir("."):
+        for item in os.listdir(base_dir):
             if item.startswith("."):
                 continue
             if item in exclude_items:
                 continue
             # skip virtual environments (detect with pyvenv.cfg)
-            if os.path.isdir(item) and os.path.exists(os.path.join(item, "pyvenv.cfg")):
+            if os.path.isdir(os.path.join(base_dir, item)) and os.path.exists(
+                os.path.join(base_dir, item, "pyvenv.cfg")
+            ):
                 continue
-            src_path = os.path.abspath(item)
+            src_path = os.path.abspath(os.path.join(base_dir, item))
             dest_path = os.path.join("staging-dir", item)
             if os.path.islink(dest_path):
                 os.unlink(dest_path)
