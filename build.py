@@ -273,7 +273,7 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
     """
     repository = f"{owner}/{name}"
     # Support for building with local changes
-    if name == "openwisp-docs":
+    if name == "openwisp-docs" and branch == "master" and not os.environ.get("PRODUCTION"):
         # Ensure staging-dir is a real, empty directory
         if os.path.islink("staging-dir") or os.path.isfile("staging-dir"):
             os.unlink("staging-dir")
