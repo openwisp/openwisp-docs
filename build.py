@@ -8,6 +8,7 @@
 
 import argparse
 import os
+import shutil
 import subprocess
 from copy import deepcopy
 
@@ -265,12 +266,57 @@ def git_is_on_branch(repo_path):
     return result.stdout.strip() != "HEAD"
 
 
-def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
+def clone_or_update_repo(
+    name, branch, dir_name, owner="openwisp", dest=None, version_name=None
+):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
     """
     repository = f"{owner}/{name}"
+    # Support for building with local changes
+    if name == "openwisp-docs":
+        # Ensure staging-dir is a real, empty directory
+        if os.path.islink("staging-dir") or os.path.isfile("staging-dir"):
+            os.unlink("staging-dir")
+        elif os.path.isdir("staging-dir"):
+            shutil.rmtree("staging-dir")
+    # If dev version, copy all doc files to the staging dir
+    if name == "openwisp-docs" and version_name == "dev":
+        os.makedirs("staging-dir", exist_ok=True)
+        base_dir = "docs" if os.path.isdir("docs") else "."
+        exclude_items = ("staging-dir", "modules", "version_switcher")
+        for item in os.listdir(base_dir):
+            is_dir = os.path.isdir(os.path.join(base_dir, item))
+            if any(
+                (
+                    # not a dir nor a rst file, nor the spelling wordlist
+                    all(
+                        (
+                            not is_dir,
+                            not item.endswith(".rst"),
+                            item != "spelling_wordlist.txt",
+                        )
+                    ),
+                    # it's a dir but not designed to contain rst files
+                    is_dir and item.startswith((".", "_")),
+                    # in the exclude list
+                    item in exclude_items,
+                )
+            ):
+                continue
+            # skip virtual environments (detect with pyvenv.cfg)
+            if os.path.isdir(os.path.join(base_dir, item)) and os.path.exists(
+                os.path.join(base_dir, item, "pyvenv.cfg")
+            ):
+                continue
+            src_path = os.path.abspath(os.path.join(base_dir, item))
+            dest_path = os.path.join("staging-dir", item)
+            if os.path.islink(dest_path):
+                os.unlink(dest_path)
+            if not os.path.exists(dest_path):
+                os.symlink(src_path, dest_path)
+        return
     if os.environ.get("SSH"):
         # SSH cloning is a convenient option for local development, as it
         # allows you to commit changes directly to the repository, but it
@@ -286,15 +332,28 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
     if os.path.exists(clone_path):
         print(f"Repository '{name}' already exists. Updating...")
         subprocess.run(
-            # Clears ambiguity when git tags and branches have identical names
-            ["git", "fetch", "origin", f"refs/heads/{branch}:refs/heads/{branch}"],
+            # Update remote-tracking ref (avoid fetching into checked-out branch)
+            [
+                "git",
+                "fetch",
+                "origin",
+                branch,
+            ],
             cwd=clone_path,
             check=True,
         )
         # "-c advice.detachedHead=false" is used to suppress the warning
         # about being in a detached HEAD state when checking out tags.
         subprocess.run(
-            ["git", "-c", "advice.detachedHead=false", "checkout", f"refs/heads/{branch}"],
+            [
+                "git",
+                "-c",
+                "advice.detachedHead=false",
+                "checkout",
+                "-B",
+                branch,
+                "FETCH_HEAD",
+            ],
             cwd=clone_path,
             check=True,
         )
@@ -304,7 +363,9 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
         # During local development, we attempt to pull updates, but only if the
         # current HEAD is on a branch (i.e., not detached, such as when on a tag).
         if not os.environ.get("PRODUCTION", False) and git_is_on_branch(clone_path):
-            subprocess.run(["git", "pull"], cwd=clone_path, check=True)
+            subprocess.run(
+                ["git", "pull", "origin", branch], cwd=clone_path, check=True
+            )
     else:
         print(f"Cloning repository '{name}'...")
         subprocess.run(
@@ -394,6 +455,7 @@ def main():
             name="openwisp-docs",
             branch=docs_branch,
             dir_name="openwisp-docs",
+            version_name=version_name,
         )
         for module in modules:
             clone_or_update_repo(
