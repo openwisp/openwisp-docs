@@ -118,25 +118,23 @@ If the issue is present on Github, use following commit style:
 
 .. code-block::
 
-    [module/file/feature] Short description #<issue-number>
+    [feature/change/fix/chores] Short description #<issue-number>
 
     Long description here.
-    Fixes #<issue-number>
+    Closes #<issue-number>
 
 Here's a real world commit message example from `one of our modules
-<https://github.com/openwisp/django-netjsonconfig/commit/7a5dad9f97e708b89149c2765f8298c5a94b652b>`_:
+<https://github.com/openwisp/openwisp-controller/commit/4eec3234864b5102b575c71a043513ef038975a0>`_:
 
 .. code-block::
 
-    [admin] Fixed VPN context in preview #57
+    [fix] Fixed perennial "modified" state #213
 
-    Fortunately it was just a frontend JS issue.
-    The preview instance was getting the UUID of the Device
-    object instead of the Config object, and that prevented
-    the system from finding the associated VPN and fill the
-    context VPN keys correctly.
+    The status of Config objects will only be updated if
+    the checksum changes, whether it's because of a
+    change in the config, device or any related templates.
 
-    Fixes #57
+    Closes #213
 
 Moreover, keep in mind the following guidelines:
 
