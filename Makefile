@@ -21,6 +21,9 @@ help:
 	@echo "  build         to build the documentation in all formats (PDF, HTML and ePUB)"
 	@echo "  build_html    to build the documentation in HTML format only"
 	@echo "  release_notes to generate the release notes for a specific version (default: 25.10). Use 'make changelog VERSION=XX' to specify."
+	@echo ""
+	@echo "Build arguments:"
+	@echo "  SKIP_FETCH=1  skip GitHub fetch/clone operations (for quick iteration)"
 	@echo "  html          to make standalone HTML files"
 	@echo "  dirhtml       to make HTML files named index.html in directories"
 	@echo "  singlehtml    to make a single large HTML file"
@@ -71,10 +74,10 @@ build:
 	mv _build/versions_map.json versions_map.json &> /dev/null || true
 
 	@echo "Building version map"
-	./build.py --formats version_map $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES))
+	./build.py --formats version_map $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES)) $(if $(SKIP_FETCH),--skip-fetch)
 
 	@echo "Building documentation"
-	./build.py $(if $(FORMATS),--formats $(FORMATS)) $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES))
+	./build.py $(if $(FORMATS),--formats $(FORMATS)) $(if $(VERSION),--version $(VERSION)) $(if $(MODULES),--modules $(MODULES)) $(if $(SKIP_FETCH),--skip-fetch)
 
 	# Store the version map in the _build/ directory
 	mv versions_map.json _build/

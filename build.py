@@ -267,11 +267,14 @@ def git_is_on_branch(repo_path):
 
 
 def clone_or_update_repo(
-    name, branch, dir_name, owner="openwisp", dest=None, version_name=None
+    name, branch, dir_name, skip_fetch=False, owner="openwisp", dest=None, version_name=None
 ):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
+    The resulting directory is then symlinked internally.
+    If skip_fetch=True is passed, git fetching/cloning
+    is skipped and only symlink is performed.
     """
     repository = f"{owner}/{name}"
     # Support for building with local changes
@@ -327,9 +330,9 @@ def clone_or_update_repo(
         repo_url = f"git@github.com:{repository}.git"
     else:
         repo_url = f"https://github.com/{repository}.git"
+    # update if dir exists, otherwise clone
     clone_path = os.path.abspath(os.path.join("modules", dir_name))
-
-    if os.path.exists(clone_path):
+    if os.path.exists(clone_path) and not skip_fetch:
         print(f"Repository '{name}' already exists. Updating...")
         subprocess.run(
             # Update remote-tracking ref (avoid fetching into checked-out branch)
@@ -366,7 +369,7 @@ def clone_or_update_repo(
             subprocess.run(
                 ["git", "pull", "origin", branch], cwd=clone_path, check=True
             )
-    else:
+    elif not skip_fetch:
         print(f"Cloning repository '{name}'...")
         subprocess.run(
             [
@@ -381,6 +384,10 @@ def clone_or_update_repo(
                 clone_path,
             ],
             check=True,
+        )
+    elif skip_fetch and not os.path.exists(clone_path):
+        raise FileNotFoundError(
+            f"Repository \"{name}\" not found at {clone_path}; run without SKIP_FETCH=1 first."
         )
     # Create a symlink to either the 'docs' directory inside the cloned repository
     # or to the entire repository if no 'docs' directory exists.
@@ -414,11 +421,15 @@ def main():
         help="comma separated modules to build"
         "in the format of <version:module-name>:<branch>:<dir-name>:<repository-owner>",
     )
+    parser.add_argument(
+        "--skip-fetch",
+        action="store_true",
+        default=False,
+        help="skip fetching/cloning repositories (useful for quick iteration while editing docs)",
+    )
     args = parser.parse_args()
-
     with open("config.yml") as f:
         config = yaml.safe_load(f)
-
     build_versions = get_build_versions(config["versions"], args.version)
     stable_version = get_stable_version(build_versions)
     docs_root = ""
@@ -428,11 +439,10 @@ def main():
         docs_root = "/docs"
         html_base_url = "https://openwisp.io"
         build_dir = f"{build_dir}{docs_root}"
-
+    # loop over versions and build each one by one
     for version in build_versions:
         version_name = version["name"]
         module_dirs = []
-
         # Modules which are configured to be included in all the builds
         default_modules = (
             config["modules"] if not version.get("overwrite_modules") else []
@@ -446,7 +456,6 @@ def main():
             version_modules=version_modules,
             overridden_modules=overridden_modules,
         )
-
         # If a module does not define a branch,
         # it will fallback to the version_branch.
         version_branch = version.get("module_branch", version["name"])
@@ -454,12 +463,14 @@ def main():
         clone_or_update_repo(
             name="openwisp-docs",
             branch=docs_branch,
+            skip_fetch=args.skip_fetch,
             dir_name="openwisp-docs",
             version_name=version_name,
         )
         for module in modules:
             clone_or_update_repo(
                 branch=module.pop("branch", version_branch),
+                skip_fetch=args.skip_fetch,
                 **module,
             )
             module_dirs.append(module["dir_name"])
@@ -484,13 +495,11 @@ def main():
         # Remove all temporary directories
         for dir in module_dirs:
             remove_symlink(dir)
-
     # Generate the index.html file which redirects to the stable version.
     env = Environment(loader=FileSystemLoader("_static"))
     template = env.get_template("index.jinja2")
     with open(f"{build_dir}/index.html", "w") as f:
         f.write(template.render(stable_version=stable_version, docs_root=docs_root))
-
     # Create a symbolic link for the stable version
     subprocess.run(
         [
