@@ -266,7 +266,9 @@ def git_is_on_branch(repo_path):
     return result.stdout.strip() != "HEAD"
 
 
-def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
+def clone_or_update_repo(
+    name, branch, dir_name, owner="openwisp", dest=None, version_name=None
+):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
@@ -279,8 +281,8 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
             os.unlink("staging-dir")
         elif os.path.isdir("staging-dir"):
             shutil.rmtree("staging-dir")
+    if name == "openwisp-docs" and version_name == "dev":
         os.makedirs("staging-dir", exist_ok=True)
-
         base_dir = "docs" if os.path.isdir("docs") else "."
         exclude_items = {"staging-dir", "modules", "_build", ".git", "__pycache__"}
         for item in os.listdir(base_dir):
@@ -300,7 +302,6 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
             if not os.path.exists(dest_path):
                 os.symlink(src_path, dest_path)
         return
-
     if os.environ.get("SSH"):
         # SSH cloning is a convenient option for local development, as it
         # allows you to commit changes directly to the repository, but it
@@ -439,6 +440,7 @@ def main():
             name="openwisp-docs",
             branch=docs_branch,
             dir_name="openwisp-docs",
+            version_name=version_name,
         )
         for module in modules:
             clone_or_update_repo(
