@@ -281,14 +281,29 @@ def clone_or_update_repo(
             os.unlink("staging-dir")
         elif os.path.isdir("staging-dir"):
             shutil.rmtree("staging-dir")
+    # If dev version, copy all doc files to the staging dir
     if name == "openwisp-docs" and version_name == "dev":
         os.makedirs("staging-dir", exist_ok=True)
         base_dir = "docs" if os.path.isdir("docs") else "."
-        exclude_items = {"staging-dir", "modules", "_build", ".git", "__pycache__"}
+        exclude_items = ("staging-dir", "modules", "version_switcher")
         for item in os.listdir(base_dir):
-            if item.startswith("."):
-                continue
-            if item in exclude_items:
+            is_dir = os.path.isdir(os.path.join(base_dir, item))
+            if any(
+                (
+                    # not a dir nor a rst file, nor the spelling wordlist
+                    all(
+                        (
+                            not is_dir,
+                            not item.endswith(".rst"),
+                            item != "spelling_wordlist.txt",
+                        )
+                    ),
+                    # it's a dir but not designed to contain rst files
+                    is_dir and item.startswith((".", "_")),
+                    # in the exclude list
+                    item in exclude_items,
+                )
+            ):
                 continue
             # skip virtual environments (detect with pyvenv.cfg)
             if os.path.isdir(os.path.join(base_dir, item)) and os.path.exists(
