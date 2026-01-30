@@ -134,6 +134,8 @@ Expected outcomes
   - A short example usage video for YouTube that we can showcase on the
     website.
 
+.. _gsoc-2026-x509-templates:
+
 X.509 Certificate Generator Templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -146,54 +148,169 @@ X.509 Certificate Generator Templates
 
     **Mentors**: *Federico Capoano*, *Aryaman*, *Nitesh Sinha*.
 
-    **Project size**: 90 hours.
+    **Project size**: 175 hours.
 
     **Difficulty rate**: medium.
 
 This GSoC project aims to enhance OpenWISP's certificate management
-capabilities by enabling the generation of x509 certificates for general
-use, beyond OpenVPN.
+capabilities by enabling the generation of x509 certificates for
+general-purpose use, beyond OpenVPN.
 
 Currently, OpenWISP supports generating x509 certificates exclusively for
 OpenVPN clients, where each VPN client template produces a certificate
 signed by the CA linked to the corresponding VPN server. However, many
-users have requested support for generating certificates for other
-purposes, such as securing web servers.
+users require x509 certificates for other purposes, such as securing web
+services, internal APIs, or device authentication outside of VPN usage.
 
-The proposed solution involves introducing a new template type that allows
-users to generate certificates using a selected CA. This template should
-provide configurable options, including:
+The proposed solution introduces a new certificate template type that
+allows users to generate x509 certificates using a selected Certificate
+Authority (CA), while fully reusing the existing certificate
+infrastructure provided by ``django-x509``.
 
-- Certificate duration
-- Key length
-- Digest algorithm
+Certificate template model and scope
+++++++++++++++++++++++++++++++++++++
 
-If left unspecified, these options should default to the CA's standard
-settings.
+The new template type will reference an existing x509 certificate object,
+which acts as a reusable blueprint for certificate generation.
+
+The relation to the certificate object is optional:
+
+- If a certificate template is specified, its non-unique properties are
+  copied when generating per-device certificates
+- If no certificate template is specified, certificate properties default
+  to the selected CA's standard settings
+
+The referenced certificate object is never issued or assigned to devices
+directly and is used exclusively as a template.
+
+No custom certificate profile system will be introduced. Only fields
+already supported by ``django-x509`` may be used.
+
+Device property integration
++++++++++++++++++++++++++++
+
+Certificates generated from templates shall include device specific
+properties resolved at generation time.
+
+Supported device properties include:
+
+- Device hostname
+- Device MAC address
+- Device UUID
+
+These values may be included in:
+
+- Standard subject fields supported by ``django-x509``, the hostname in
+  particular shall be used as common name
+- Custom x509 extensions stored in the existing ``extensions`` JSON field,
+  using private OIDs
+
+Device properties are resolved only when a template is assigned to a
+device.
+
+Certificates are automatically regenerated if the device's hostname or MAC
+address fields are modified. This behavior must be explicitly stated in
+the documentation; additionally, a UI notification of type
+``generic_message`` must be triggered once the regeneration process is
+complete.
+
+Certificate lifecycle and ownership
++++++++++++++++++++++++++++++++++++
+
+Certificates are generated when a certificate template is assigned to a
+device, following the same lifecycle semantics as existing OpenVPN client
+certificates.
+
+- Assignment generates a new certificate
+- Unassignment deletes the certificate
+- Renewal regenerates the certificate
+- No standalone certificates are generated without device assignment
+
+Certificates are always associated with a CA, and revocation is handled
+through the CA's existing Certificate Revocation List (CRL) mechanism. No
+additional revocation logic will be introduced.
+
+Storage, access, and security model
++++++++++++++++++++++++++++++++++++
+
+Private keys and certificates are stored and protected using the existing
+``django-x509`` mechanisms.
+
+This project will not introduce:
+
+- New encryption schemes
+- New private key download endpoints
+- New permission models
+
+Existing OpenWISP access controls and organization scoping rules apply.
+
+Configuration management integration
+++++++++++++++++++++++++++++++++++++
+
+Certificate details will be exposed to OpenWISP's configuration management
+system as template variables, including:
+
+- Certificate (PEM)
+- Private key (PEM)
+- Certificate UUID
+
+Variable names will follow a UUID-based namespace to ensure uniqueness and
+avoid conflicts with existing OpenWISP variables.
+
+Certificate renewal triggers cache invalidation and configuration updates
+to affected devices. No configuration updates are triggered unless a
+certificate is renewed or regenerated.
+
+API and admin interface
++++++++++++++++++++++++
+
+The new certificate template type will be available through:
+
+- Django admin
+- Existing REST API template endpoints
+
+No new API endpoints will be introduced. Existing RBAC and organization
+scoping rules will apply.
+
+Testing and documentation
++++++++++++++++++++++++++
+
+The project requires:
+
+- Automated tests covering certificate generation and lifecycle behavior
+- Admin UI integration tests
+- API tests
+- Selenium browser tests
+- Short video demonstration
+
+Documentation updates include:
+
+- A dedicated documentation page describing certificate templates
+- Step-by-step usage instructions
+- Clear explanation of supported options and limitations
+
+Out of scope
+++++++++++++
+
+The following items are explicitly out of scope for this project:
+
+- Subject Alternative Name (SAN) support
+- OCSP integration
+- Automated public CA issuance (e.g. Let's Encrypt)
+- Custom cryptographic policy engines
+- Changes to existing OpenVPN certificate behavior
 
 Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
 
-Applicants must demonstrate a solid understanding of Python, Django,
-JavaScript, and `OpenWISP Controller
-<https://github.com/openwisp/openwisp-controller>`__.
+Applicants must demonstrate a solid understanding of Python, Django, and
+JavaScript.
 
-Expected outcomes
-+++++++++++++++++
-
-- Implement a new certificate template type in OpenWISP to support
-  general-purpose x509 certificate generation.
-- Allow users to select a CA and configure certificate properties.
-- Integrate with OpenWISP's configuration management to expose certificate
-  details (public key, private key, and UUID) as variables for automated
-  deployment.
-- Write automated tests to ensure the correctness and reliability of the
-  new functionality.
-- Updated documentation, including:
-
-  - Feature overview in a dedicated page with step-by-step usage
-    instructions.
-  - Short Video demonstration.
+Experience with `OpenWISP Controller
+<https://github.com/openwisp/openwisp-controller>`__ and `django-x509
+<https://github.com/openwisp/django-x509>`__ is essential. Contributions
+or resolved issues in these repositories are considered strong evidence of
+the required proficiency.
 
 Add more timeseries database clients to OpenWISP Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -261,6 +378,8 @@ Expected outcomes
     from `ansible-openwisp2
     <https://github.com/openwisp/ansible-openwisp2>`_ and `docker-openwisp
     <https://github.com/openwisp/docker-openwisp/>`_.
+
+.. _gsoc-2026-vpn-deployer:
 
 OpenWISP VPN Deployer Linux Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

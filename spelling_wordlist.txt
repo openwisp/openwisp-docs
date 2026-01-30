@@ -148,6 +148,7 @@ kanban
 ker
 kubernetes
 letsencrypt
+lifecycle
 lightning
 Linkable
 Linksys
@@ -287,6 +288,7 @@ ubuntu
 udp
 uid
 unassign
+Unassignment
 uncheck
 uncomment
 Uncomment

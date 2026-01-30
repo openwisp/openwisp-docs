@@ -81,9 +81,8 @@ entry barrier for new users.
   - Automatically create a full backup before upgrading.
   - Automatically restore the backup if the upgrade fails.
 
-- **Facilitate the setup of VPN automations**: See `OpenWISP VPN Deployer
-  Linux Package GSoC 2025 Project Idea
-  <https://openwisp.io/docs/dev/developer/gsoc-ideas-2025.html#openwisp-vpn-deployer-linux-package>`_
+- **Facilitate the setup of VPN automations**: See :ref:`OpenWISP VPN
+  Deployer Linux Package GSoC 2026 Project Idea <gsoc-2026-vpn-deployer>`
   for more information.
 
 Agent Improvements
@@ -336,6 +335,18 @@ Networking Features
 - **Interactive Web Shell**: Develop a browser-based interactive terminal
   to allow direct command-line access to managed devices through the
   OpenWISP interface.
+- **General Purpose X.509 Certificate Templates**: Expands OpenWISP's PKI
+  capabilities by allowing the generation of X.509 certificates for use
+  cases beyond OpenVPN (e.g., HTTPS, mutual TLS, or internal API
+  security). This feature leverages ``django-x509`` to create
+  device-specific certificates dynamically, injecting hostnames or MAC
+  addresses into the certificate fields, and exposes the resulting ``PEM``
+  data as configuration variables for automated deployment to networking
+  devices.
+
+  See :ref:`General Purpose X.509 Certificate Templates GSoC 2026 Project
+  Idea <gsoc-2026-x509-templates>`.
+
 - **Expanded VPN Protocol Support**: Add support for IPsec and SoftEther.
 - **Advanced Traffic & Access Control**:
 
