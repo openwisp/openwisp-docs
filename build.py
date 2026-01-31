@@ -267,7 +267,13 @@ def git_is_on_branch(repo_path):
 
 
 def clone_or_update_repo(
-    name, branch, dir_name, skip_fetch=False, owner="openwisp", dest=None, version_name=None
+    name,
+    branch,
+    dir_name,
+    skip_fetch=False,
+    owner="openwisp",
+    dest=None,
+    version_name=None,
 ):
     """
     Clone or update a repository based on the module name and branch provided.
@@ -332,6 +338,8 @@ def clone_or_update_repo(
         repo_url = f"https://github.com/{repository}.git"
     # update if dir exists, otherwise clone
     clone_path = os.path.abspath(os.path.join("modules", dir_name))
+    # Using refs/heads/ prefix and --no-tags to explicitly fetch branches only, not tags
+    branch_ref = f"refs/heads/{branch}:refs/remotes/origin/{branch}"
     if os.path.exists(clone_path) and not skip_fetch:
         print(f"Repository '{name}' already exists. Updating...")
         subprocess.run(
@@ -339,8 +347,9 @@ def clone_or_update_repo(
             [
                 "git",
                 "fetch",
+                "--no-tags",
                 "origin",
-                branch,
+                branch_ref,
             ],
             cwd=clone_path,
             check=True,
@@ -367,7 +376,9 @@ def clone_or_update_repo(
         # current HEAD is on a branch (i.e., not detached, such as when on a tag).
         if not os.environ.get("PRODUCTION", False) and git_is_on_branch(clone_path):
             subprocess.run(
-                ["git", "pull", "origin", branch], cwd=clone_path, check=True
+                ["git", "pull", "origin", "--no-tags", branch_ref],
+                cwd=clone_path,
+                check=True,
             )
     elif not skip_fetch:
         print(f"Cloning repository '{name}'...")
@@ -378,6 +389,7 @@ def clone_or_update_repo(
                 "--depth",
                 "1",
                 "--no-single-branch",
+                "--no-tags",
                 "--branch",
                 branch,
                 repo_url,
@@ -387,7 +399,7 @@ def clone_or_update_repo(
         )
     elif skip_fetch and not os.path.exists(clone_path):
         raise FileNotFoundError(
-            f"Repository \"{name}\" not found at {clone_path}; run without SKIP_FETCH=1 first."
+            f'Repository "{name}" not found at {clone_path}; run without SKIP_FETCH=1 first.'
         )
     # Create a symlink to either the 'docs' directory inside the cloned repository
     # or to the entire repository if no 'docs' directory exists.
