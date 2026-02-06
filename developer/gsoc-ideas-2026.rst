@@ -413,33 +413,61 @@ Key Features
 The program will run on Linux-based servers and will:
 
 - Be implemented in **Python** to ensure maintainability and
-  extensibility.
+  extensibility, it should be a Python package installable via ``pip``.
 - Use a **Makefile** to generate installation packages for major Linux
   distributions:
 
   - **DEB** (for Debian, Ubuntu, and related distributions)
   - **RPM** (for Red Hat, Fedora, and similar systems)
-  - **Snap** (for broader Linux compatibility)
 
+- Provide **Docker support** to run the VPN deployer as a containerized
+  service, enabling easy deployment alongside docker-openwisp. We suggest
+  running the deployer and VPN server(s) within the same container to keep
+  the architecture simple, using host networking mode. Configuration
+  management could be achieved via a configuration file (YAML is
+  recommended for readability) mountable into the container. Contributors
+  should verify these suggestions through research and propose the most
+  suitable approach for their implementation.
 - Establish a **WebSocket connection** with OpenWISP to listen for changes
   in VPN server configurations and synchronize local settings accordingly.
-- Keep the local list of peers and the **certificate revocation list
-  (CRL)** updated whenever VPN clients are added, removed, or modified.
-- Support the following VPN tunneling technologies:
+  The connection should handle reconnection automatically. We suggest
+  retrying WebSocket connections indefinitely and using exponential
+  backoff for HTTP requests, but contributors should propose a robust
+  reconnection strategy.
+- Keep the local list of peers updated whenever VPN clients are added,
+  removed, or modified.
+- Receive **real-time updates** via WebSocket when certificate revocation
+  occurs, ensuring the **Certificate Revocation List (CRL)** is always
+  current. The deployer needs to handle OpenVPN server reload when CRL
+  updates are received. Initial research indicates that OpenVPN does not
+  automatically reload CRL files when they change, and that sending a
+  ``SIGUSR1`` signal to the OpenVPN process may reload the CRL without
+  disconnecting existing clients. Contributors must verify this approach
+  and propose the best solution based on their findings.
+- Support the following VPN tunneling technologies (in order of
+  implementation priority):
 
-  - **OpenVPN**
-  - **WireGuard**
-  - **WireGuard over VXLAN**
-  - **ZeroTier**
+  1. **OpenVPN** (most complex due to CRL requirements)
+  2. **WireGuard**
+  3. **ZeroTier**
+  4. **WireGuard over VXLAN** (VXLAN part is tricky)
 
 - Provide a **command-line utility** to simplify the initial setup. This
   utility will:
 
   - Guide users step by step, making it accessible even to those with
     limited experience.
+  - Support **non-interactive/scripted mode** for automation and Docker
+    deployments (minimal implementation).
   - Allow users to select the VPN technology to be deployed.
   - Verify that the necessary system packages are installed and provide
-    clear warnings if dependencies are missing.
+    clear warnings if dependencies are missing. We suggest maintaining a
+    mapping of required packages per distribution and VPN technology, as
+    package names vary between Linux distributions (e.g., Debian
+    ``openvpn`` vs. RHEL ``openvpn``), but contributors should propose
+    their approach.
+  - Store configuration in a YAML configuration file (mountable in Docker
+    environments). Other formats may be considered if justified.
   - Assist in securely connecting and synchronizing with OpenWISP.
 
     .. note::
@@ -455,9 +483,11 @@ The program will run on Linux-based servers and will:
       <https://github.com/openwisp/openwisp-users/issues/240>`_. A
       proposed approach is to provide a link to the OpenWISP admin
       interface, where users can generate and copy their API token easily.
+      The WebSocket connection should authenticate using this API token.
 
 - Support running **multiple instances**, where each instance manages a
-  separate VPN server independently.
+  separate VPN server independently. Each instance could be identified by
+  a dedicated configuration file or other suitable mechanism.
 - Implement **structured logging** with dedicated log files for each
   instance, adhering to Linux logging best practices and supporting log
   rotation.
@@ -472,8 +502,22 @@ The program will run on Linux-based servers and will:
 - Update the **OpenWISP documentation** to cover installation,
   configuration, and best practices.
 - To support this project, **OpenWISP Controller** will need to be updated
-  to expose a **WebSocket endpoint**. This will allow the VPN
-  synchronization program to receive real-time configuration updates.
+  as follows:
+
+  - Expose a **WebSocket endpoint** to allow the VPN synchronization
+    program to receive real-time configuration updates.
+  - **Automatically include the Certificate Revocation List (CRL)** in
+    generated OpenVPN server configurations. The CRL content should be
+    provided as a configuration variable (e.g., ``crl_content``, similar
+    to x509 certificates), eliminating the need for manual CRL file
+    management. The CRL file path should be determined as part of the
+    implementation. When certificates are revoked, the system must trigger
+    WebSocket notifications to connected VPN deployer instances to ensure
+    immediate CRL updates. Additionally, the deployer should periodically
+    poll the CRL checksum via HTTP API as a redundancy measure.
+  - Define a **permission model** for the VPN deployer: the deployer
+    requires a dedicated user account with organization manager role and
+    permissions to add/change VPN servers within that organization.
 
 Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
@@ -482,6 +526,13 @@ Applicants should have a solid understanding of:
 
 - **Python** and **Django**.
 - **WebSockets**.
+- Experience with `OpenWISP Controller
+  <https://github.com/openwisp/openwisp-controller>`__ is essential.
+  Experience with `django-x509
+  <https://github.com/openwisp/django-x509>`__ `netjsonconfig
+  <https://github.com/openwisp/netjsonconfig>`__ is considered as a strong
+  favorable point. Contributions in these repositories are considered
+  strong evidence of the required proficiency.
 - At least one of the supported VPN technologies (**OpenVPN, WireGuard,
   WireGuard over VXLAN, ZeroTier**).
 - **System administration and Linux packaging** (preferred but not
@@ -493,11 +544,30 @@ Expected Outcomes
 - A Python-based VPN synchronization tool.
 - A command-line setup utility for easy first-time configuration.
 - WebSocket-based synchronization between VPN servers and OpenWISP.
-- Automated packaging for major Linux distributions.
+- Automated packaging for major Linux distributions (**DEB** and **RPM**).
+- **Docker support** for running the VPN deployer as a containerized
+  service, including integration with docker-openwisp.
 - Structured logging with proper log rotation.
-- Enhancements to **OpenWISP Controller** to support WebSocket-based
-  synchronization and any required REST API modifications.
-- Automated tests to ensure reliability and stability.
+- Enhancements to **OpenWISP Controller**:
+
+  - Support for WebSocket-based synchronization.
+  - Automatic inclusion of **Certificate Revocation List (CRL)** in
+    OpenVPN server configurations with variable-based CRL content.
+  - WebSocket notifications triggered when certificates are revoked.
+  - Any required REST API modifications.
+
+- Automated tests to ensure reliability and stability:
+
+  - **Unit tests** with mocks for both openwisp-controller and VPN server
+    interactions to enable fast development and testing of individual
+    components.
+  - **Integration tests** using real openwisp-controller and VPN server
+    instances to test core functionality: installation, configuration
+    synchronization, and basic VPN server health checks. While initially
+    minimal, these provide reliability and establish a foundation for
+    expanded integration testing as the project matures and sees wider
+    adoption.
+
 - Comprehensive **documentation**, including setup guides and best
   practices.
 - A **short tutorial video** demonstrating installation and usage.
