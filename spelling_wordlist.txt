@@ -33,6 +33,7 @@ cli
 CoA
 codebase
 codemods
+commitizen
 config
 configs
 configuration
