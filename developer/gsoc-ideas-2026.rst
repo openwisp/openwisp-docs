@@ -49,6 +49,162 @@ General suggestions and warnings
 Project Ideas
 -------------
 
+WiFi Login Pages Modernization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2026/wifi-login-pages.webp
+
+.. important::
+
+    Languages and technologies used: **JavaScript**, **Node.js**,
+    **React**.
+
+    **Mentors**: *Federico Capoano*, *Gagan Deep*.
+
+    **Project size**: 175 hours (medium).
+
+    **Difficulty rate**: medium.
+
+This project aims to modernize the `OpenWISP WiFi Login Pages
+<https://github.com/openwisp/openwisp-wifi-login-pages>`__ application,
+which provides splash page functionality for WiFi hotspot networks. The
+focus is on codebase improvements, architectural refactoring, dependency
+upgrades, and new features to enhance maintainability and user experience.
+
+All refactoring work should maintain backward compatibility—since users
+interact with the application through their browsers, these internal code
+changes should be transparent to them.
+
+Key Objectives
+++++++++++++++
+
+Code Refactoring and Architecture Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following structural improvements will enhance code maintainability
+and reduce technical debt:
+
+1. **Refactor status component to simplify logic and improve
+   maintainability** (`#918
+   <https://github.com/openwisp/openwisp-wifi-login-pages/issues/918>`__)
+
+   The status component in ``client/components/status/status.js`` has
+   grown to handle multiple responsibilities including authentication,
+   verification, payment, session management, captive portal logic, and UI
+   rendering. This makes the codebase difficult to understand and
+   maintain, increases the risk of bugs, and makes testing more difficult.
+   The component should be refactored to separate concerns and improve
+   maintainability.
+
+2. **Move redirect logic from OrganizationWrapper to each component**
+   (`#272
+   <https://github.com/openwisp/openwisp-wifi-login-pages/issues/272>`__)
+
+   Currently, redirection logic is defined in the OrganizationWrapper
+   component, which is re-rendered every time ``setLoading()`` is called.
+   This causes multiple unnecessary HTTP requests and potential issues
+   with external redirects (e.g., payment gateways). The redirect logic
+   should be moved to individual components where it belongs, making
+   OrganizationWrapper leaner.
+
+3. **Eliminate redundancy of header HTML** (`#314
+   <https://github.com/openwisp/openwisp-wifi-login-pages/issues/314>`__)
+
+   The header HTML is duplicated with separate desktop and mobile
+   versions. This redundancy makes customization painful as it requires
+   double the work. The header should be refactored to use a single HTML
+   structure with responsive CSS to handle different screen sizes.
+
+4. **Add support for captive-portal API** (`#947
+   <https://github.com/openwisp/openwisp-wifi-login-pages/issues/947>`__)
+
+   Modern captive portals support `RFC 8908 Captive Portal API
+   <https://datatracker.ietf.org/doc/html/rfc8908>`__. This feature should
+   be implemented as an optional feature (turned off by default) that adds
+   support for:
+
+   - Checking if captive portal login is required
+   - Detecting "internet-mode" status
+   - Configurable timeout (default 2 seconds) per organization
+   - Configurable API URL per organization via YAML configuration
+   - Proper documentation of the feature
+   - Fallback to existing internet mode feature for browsers/devices
+     without Captive Portal API support
+
+5. **Upgrade to latest version of React** (`#870
+   <https://github.com/openwisp/openwisp-wifi-login-pages/issues/870>`__)
+
+   Upgrade the application from its current React version to React 19.
+   Contributors should research whether to perform the upgrade before or
+   in parallel with refactoring tasks, considering that upgrading first
+   may enable modern patterns but could introduce breaking changes. The
+   upgrade involves:
+
+   - Upgrading to React 18.3 first to identify deprecation warnings
+   - Running official React 19 codemods for automated refactoring
+   - Updating all React-related dependencies (react-dom, react-router,
+     react-redux, etc.)
+   - Migrating away from Enzyme (deprecated) to React Testing Library
+     (RTL). Contributors should propose a migration strategy that balances
+     thoroughness with contributor workload—whether to migrate all tests
+     at once or incrementally alongside the React upgrade.
+   - Ensuring all dependencies are compatible with React 19
+   - Comprehensive testing to catch regressions
+
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate a solid understanding of:
+
+- **JavaScript** (ES6+) and modern frontend development practices.
+- **React** components, hooks, state management, and testing.
+- **Node.js** and npm/yarn package management.
+- Experience with `OpenWISP WiFi Login Pages
+  <https://github.com/openwisp/openwisp-wifi-login-pages>`__ is essential.
+  Contributions or resolved issues in this repository are considered
+  strong evidence of the required proficiency.
+
+Implementation Approach
++++++++++++++++++++++++
+
+Each task should be delivered as a separate pull request (one PR per
+task), following standard OpenWISP practices. This enables incremental
+review and reduces risk.
+
+Testing Strategy
+^^^^^^^^^^^^^^^^
+
+Testing should follow these guidelines:
+
+- TDD (Test-Driven Development) is recommended but not mandatory—use
+  judgment based on the specific task.
+- Test coverage levels for refactored components should not decrease from
+  current levels.
+- For the captive-portal API feature, mocked tests are acceptable.
+- Browser support follows the existing ``browserslist`` npm package
+  configuration covering major browsers.
+
+Expected Outcomes
++++++++++++++++++
+
+- A refactored, more maintainable status component with clear separation
+  of concerns.
+- Redirect logic moved from OrganizationWrapper to individual components.
+- A unified header component using responsive CSS instead of duplicated
+  HTML.
+- Implementation of RFC 8908 Captive Portal API support as an optional,
+  configurable feature per organization (via YAML configuration).
+- Successfully upgraded React to version 19 with all dependencies updated
+  and Enzyme replaced by React Testing Library.
+- Comprehensive automated tests covering refactored components and new
+  features. Test coverage should be maintained at current levels.
+- Updated documentation, including:
+
+  - Migration guide for the React upgrade.
+  - Usage instructions for the new captive-portal API feature.
+  - A short example usage video for YouTube that we can showcase on the
+    website.
+
 Mass Commands
 ~~~~~~~~~~~~~
 

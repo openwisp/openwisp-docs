@@ -32,6 +32,7 @@ cidr
 cli
 CoA
 codebase
+codemods
 config
 configs
 configuration
@@ -65,6 +66,7 @@ dnsmasq
 Dockerfile
 Dockerfiles
 dockerized
+dom
 doxing
 DRF
 Dropbear
@@ -185,6 +187,7 @@ netjsonconfig
 netjsongraph
 networkx
 nginx
+npm
 nullable
 OAuth
 onboarding
@@ -233,7 +236,9 @@ querystring
 RADIUS
 radsec
 reassociation
+reconnection
 redis
+redux
 reflashed
 releaser
 Releaser
@@ -277,6 +282,7 @@ tcp
 technical
 teltonika
 terraform
+testability
 timeseries
 toolkits
 topologies
