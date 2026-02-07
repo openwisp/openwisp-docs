@@ -25,6 +25,8 @@ captcha
 cd
 certbot
 changelog
+checksum
+checksums
 Chilli
 Chromedriver
 ci
@@ -201,6 +203,8 @@ operation
 ORM
 param
 Paramiko
+parser
+parsers
 Paypal
 PC
 pfSense
@@ -246,6 +250,7 @@ Releaser
 repo
 repository
 respawn
+reupload
 reusability
 Roadmap
 rollout

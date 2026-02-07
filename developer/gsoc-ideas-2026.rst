@@ -49,6 +49,273 @@ General suggestions and warnings
 Project Ideas
 -------------
 
+Automatic Extraction of OpenWrt Firmware Image Metadata
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2026/firmware-upgrader-openwrt-image-metadata-extraction.webp
+
+.. important::
+
+    Languages and technologies used: **Python**, **Django**, **Celery**,
+    **OpenWrt**, **REST API**.
+
+    **Mentors**: *Federico Capoano*, *TBA*.
+
+    **Project size**: 350 hours.
+
+    **Difficulty rate**: medium/hard.
+
+This GSoC project aims to improve the user experience and reliability of
+`OpenWISP Firmware Upgrader
+<https://github.com/openwisp/openwisp-firmware-upgrader/issues/378>`__ by
+automatically extracting authoritative metadata from OpenWrt firmware
+images at upload time.
+
+Currently, users must manually provide metadata such as image identifiers,
+target architectures, and board compatibility. This process is error-prone
+and does not scale well as the number of supported images grows.
+
+The proposed solution will introduce an automated workflow that analyzes
+uploaded images, extracts relevant metadata, and pre-fills or validates
+image fields to simplify upgrades and prevent misconfiguration.
+
+When uploading firmware images to OpenWISP Firmware Upgrader, users are
+currently required to manually provide metadata such as the image
+identifier, target, and board compatibility. This workflow is error prone,
+confusing for less experienced users, and does not scale as the number of
+supported images grows.
+
+Recent investigations revealed that most of the information requested from
+users is already **present inside the firmware images**, but extracting it
+reliably requires understanding the image format, compressed kernels, and
+device tree structures.
+
+Expected outcomes
++++++++++++++++++
+
+Introduce a future enhancement to OpenWISP Firmware Upgrader that
+**automatically extracts authoritative metadata** from OpenWrt firmware
+images at upload time and uses it to automatically fill and validate image
+fields.
+
+1. **Initial upload**
+
+   - Images are flagged as **unconfirmed / draft** immediately after
+     upload.
+   - Draft status prevents images from being used for upgrades until
+     analysis completes successfully.
+
+2. **Automated analysis** (background Celery task)
+
+   - Analysis happens asynchronously in the background using Celery (we
+     already use it heavily, so this fits right in).
+   - The system attempts to extract metadata:
+
+     - ``/etc/openwrt_release`` → DISTRIB_DESCRIPTION (image identifier),
+       DISTRIB_TARGET, architecture.
+     - **Embedded, device tree-based targets** (``ramips``, ``ath``,
+       ``ath79``, ``mediatek``, ``ipq``, ``rockchip``): extract kernel
+       from ``sysupgrade`` images, decompress if needed (gzip, ``lzma``,
+       ``xz``, ``zstd`` - whatever OpenWrt uses), locate and extract the
+       embedded Device Tree Blob (DTB) using ``binwalk`` or similar
+       well-known tools, read the ``compatible`` property; use the first
+       compatible string as the authoritative board identifier.
+     - **x86 targets**: no board concept exists; rely only on
+       ``/etc/openwrt_release``.
+
+   - Images remain **unconfirmed** and invisible for upgrade operations
+     while analysis runs.
+   - Basic file header validation should reject obviously invalid files
+     (JPEGs, PDFs, etc.) early on.
+
+3. **Post-analysis outcomes**
+
+   Images can end up in several states:
+
+   - **Success**: metadata extracted cleanly → mark image as
+     **confirmed**, making it available for upgrades.
+   - **Analysis in progress**: extraction is running.
+   - **Failed - requires manual intervention**: extraction didn't work,
+     but user can manually fill in the metadata.
+   - **Invalid**: clearly garbage file that can't possibly be a firmware
+     image.
+   - **Manually confirmed**: user overrode auto-extracted data (we need
+     this because sometimes our extraction might be wrong and users will
+     be annoyed if they can't fix it).
+   - For failures:
+
+     1. File is clearly invalid/garbage → reject immediately if possible
+        with a fast validation error. Otherwise, discard in the background
+        and notify the user with a ``generic_notification``.
+     2. Image format is new or unsupported → notify via
+        ``generic_notification`` and allow manual intervention via admin
+        UI or REST API (fill metadata or delete/reupload).
+     3. Out-of-memory during decompression → notify user, explain they may
+        need to increase memory limits and reupload.
+
+   - Gray-area failures (partial extraction, multiple boards detected)
+     fall under scenario 2.
+
+.. warning::
+
+    Metadata should be editable until the image is confirmed or paired
+    with devices. After that, it becomes read-only - otherwise things
+    break and it's too painful to handle all the edge cases.
+
+Build-level status
+++++++++++++++++++
+
+Since builds are collections of images, we should add a status field to
+builds too:
+
+- A build shouldn't be usable for mass upgrades until **all** its images
+  have completed metadata extraction.
+- The admin list view should show the status for builds so users know
+  what's ready to use.
+- **Dynamic status**: If new images are added to a build later (via admin
+  or API), the build status should change back to "analyzing".
+- **Completion notification**: When analysis completes for a build (all
+  images done), send the user a ``generic_notification`` with a link to
+  the build page. Clicking the notification should take them straight to
+  the updated build so they can see the results and take action if needed.
+
+Safety rules
+++++++++++++
+
+- System must prevent using unconfirmed images for single or batch
+  upgrades.
+- System must prevent launching batch upgrades for builds where metadata
+  extraction hasn't completed.
+- System must not pair unconfirmed images with devices (existing or new)
+  based on OS identifier and hardware model.
+- Once an image is confirmed, the existing auto-pairing mechanism kicks
+  in.
+
+Implementation notes
+++++++++++++++++++++
+
+**Tooling:** We should use ``binwalk`` or similar standard tools for DTB
+extraction rather than writing custom parsers. OpenWrt images change all
+the time and our resources are limited - better to rely on tools that
+handle this stuff already. If ``binwalk`` isn't available or fails, notify
+users and fallback to manual extraction mode.
+
+**Memory management:** Decompression can be memory-hungry (``lzma``/``xz``
+can need 10-100MB+). We should:
+
+- Make memory limits configurable with reasonable defaults for typical
+  OpenWrt images.
+- Detect when an image would exceed memory thresholds.
+- Handle OOM gracefully via ``generic_notification`` (since we can't
+  validate during Django model save - compression ratios vary).
+- Consider limiting decompression output size to prevent zip bomb-style
+  attacks.
+
+**Timeouts:** Use the same task timeouts we already use for firmware
+upgrades.
+
+**Retries:** Probably not worth auto-retrying failed extractions - if it
+fails once, it'll likely fail again. Users can just upload again if it was
+a transient issue.
+
+**Task crashes:** Treat as failure, notify user, fallback to manual
+intervention.
+
+Benefits
+++++++++
+
+- Users cannot accidentally upgrade devices with invalid images.
+- Partial or malformed uploads are quarantined safely.
+- Metadata extraction improves incrementally without impacting system
+  safety.
+- Eliminates the need to maintain a hard-coded list of supported devices
+  (``hardware.py``).
+- Simplifies end-user experience significantly.
+
+Testing strategy
+++++++++++++++++
+
+We need to test this with real firmware images, but we can't bloat the
+repo:
+
+- Test one firmware image for each supported type.
+- Store images on ``downloads.openwisp.io`` (public HTTP access) with
+  checksums stored in the repo for security.
+- Integration tests download and cache images; only re-download if
+  checksum changes.
+- Directory structure is an open question - anything reasonable works.
+- We can use official OpenWrt builds for testing; maintainers will upload
+  them to ``downloads.openwisp.io``.
+
+Additional context and research findings
+++++++++++++++++++++++++++++++++++++++++
+
+- ``/etc/board.json`` and ``/tmp/sysinfo/*`` are runtime generated and not
+  present in firmware images.
+- For embedded targets, the **only authoritative board identity**
+  pre-installation is the DTB in the kernel.
+- DTB extraction is feasible but non-trivial: kernels may be compressed
+  and DTBs at variable offsets.
+- x86 is a fundamental exception: no board concept exists, images are
+  target wide.
+- ``Rootfs`` images (``*-squashfs-rootfs.img``) are **not suitable for
+  upgrades** and should not be treated as fully valid.
+- A draft/unconfirmed workflow ensures the system remains safe while
+  extraction runs or fails.
+- The issue containing design and implementation notes is available at:
+  `#378
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/378>`__.
+
+Downsides and challenges
+++++++++++++++++++++++++
+
+- Complexity in handling all existing firmware image types across
+  supported OSes.
+- Requires robust handling of compressed kernels, DTB extraction, and
+  image format edge cases.
+- Out of scope for small projects; needs dedicated effort and assistance
+  from an OpenWrt expert.
+- Security: while only network admins can upload images currently (so we
+  trust the user), we should add basic protections like file header
+  validation and decompression limits.
+
+Open questions for contributors
++++++++++++++++++++++++++++++++
+
+1. **DTB extraction details**: How exactly should ``binwalk`` (or your
+   proposed tool) locate and extract DTBs across different target
+   families? What are the failure modes and how do we handle them?
+2. **Manual override workflow**: Design the complete admin UI flow for
+   when extraction fails. What does the user see? How do they enter
+   metadata manually? How do we validate their input?
+3. **Cross-version compatibility**: OpenWrt versions from 18.06 to 24.10
+   may have different formats. How do we handle this? Should we detect the
+   version and adjust extraction logic?
+4. **Downloading fw images for testing**: Best practices for downloading
+   test images: part of test setup or separate command? How to handle
+   caching efficiently?
+5. **Decompression limits**: What's a reasonable default for maximum
+   decompressed size? How do we detect compression bombs early?
+6. **Status UI**: What should the admin interface look like for showing
+   analysis status? Status badges? Progress indicators? How do we
+   communicate "this image is being analyzed" vs "this needs your
+   attention"?
+7. **Error granularity**: How detailed should failure messages be?
+   Technical details for admins vs. user-friendly summaries?
+
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate a solid understanding of:
+
+- **Python**, **Django**, and **JavaScript**.
+- REST APIs and background task processing (Celery).
+- OpenWrt image formats and basic Linux tooling.
+- Experience with `OpenWISP Firmware Upgrader
+  <https://github.com/openwisp/openwisp-firmware-upgrader>`__ is
+  essential. Contributions or resolved issues in this repository are
+  considered strong evidence of the required proficiency.
+
 WiFi Login Pages Modernization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
