@@ -528,7 +528,7 @@ Other changes
 - Made warning message in status page customizable.
 
 Dependencies
-............
+^^^^^^^^^^^^
 
 - Bumped ``react==17.0.2``.
 - Bumped ``react-cookie==8.0.1``.
