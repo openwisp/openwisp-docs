@@ -65,19 +65,11 @@ Automatic Extraction of OpenWrt Firmware Image Metadata
 
     **Difficulty rate**: medium/hard.
 
-This GSoC project aims to improve the user experience and reliability of
-`OpenWISP Firmware Upgrader
+This GSoC project aims to improve the user experience of `OpenWISP
+Firmware Upgrader
 <https://github.com/openwisp/openwisp-firmware-upgrader/issues/378>`__ by
-automatically extracting authoritative metadata from OpenWrt firmware
-images at upload time.
-
-Currently, users must manually provide metadata such as image identifiers,
-target architectures, and board compatibility. This process is error-prone
-and does not scale well as the number of supported images grows.
-
-The proposed solution will introduce an automated workflow that analyzes
-uploaded images, extracts relevant metadata, and pre-fills or validates
-image fields to simplify upgrades and prevent misconfiguration.
+automatically extracting metadata from OpenWrt firmware images at upload
+time.
 
 When uploading firmware images to OpenWISP Firmware Upgrader, users are
 currently required to manually provide metadata such as the image
@@ -93,10 +85,9 @@ device tree structures.
 Expected outcomes
 +++++++++++++++++
 
-Introduce a future enhancement to OpenWISP Firmware Upgrader that
-**automatically extracts authoritative metadata** from OpenWrt firmware
-images at upload time and uses it to automatically fill and validate image
-fields.
+Introduce logic in OpenWISP Firmware Upgrader to automatically **extract
+metadata from OpenWrt firmware images** upon upload, using it to pre-fill
+and validate image fields.
 
 1. **Initial upload**
 
@@ -162,6 +153,16 @@ fields.
     with devices. After that, it becomes read-only - otherwise things
     break and it's too painful to handle all the edge cases.
 
+4. **Other constraints**
+
+   - Test coverage **must not decrease**, tests must follow the specs
+     described in the *"Testing strategy"* section below.
+   - Documentation needs to be updated to account for this feature,
+     including updating any existing screenshots that may change the look
+     of the UI after implementation.
+   - Once the project is completed, we will need a short example usage
+     video for YouTube that we can showcase on the website/documentation.
+
 Build-level status
 ++++++++++++++++++
 
@@ -206,8 +207,8 @@ can need 10-100MB+). We should:
 - Make memory limits configurable with reasonable defaults for typical
   OpenWrt images.
 - Detect when an image would exceed memory thresholds.
-- Handle OOM gracefully via ``generic_notification`` (since we can't
-  validate during Django model save - compression ratios vary).
+- Handle out of memory gracefully via ``generic_notification`` (since we
+  can't validate during Django model save - compression ratios vary).
 - Consider limiting decompression output size to prevent zip bomb-style
   attacks.
 
@@ -220,6 +221,19 @@ a transient issue.
 
 **Task crashes:** Treat as failure, notify user, fallback to manual
 intervention.
+
+**Extensibility**: the mechanism for extracting metadata varies across
+operating systems.
+
+Although OpenWISP currently focuses exclusively on OpenWrt, it also
+manages devices running OpenWrt derivatives which can have varying degrees
+of difference with the standard OpenWrt source code.
+
+To handle these differences, this module uses the concept of an **Upgrader
+Class**. Therefore, the logic described here should be implemented in a
+similar object-oriented structure, allowing for customization, extension,
+or complete override if needed. Each upgrader class must have a related
+meta-data extraction class.
 
 Benefits
 ++++++++
@@ -338,7 +352,7 @@ which provides splash page functionality for WiFi hotspot networks. The
 focus is on codebase improvements, architectural refactoring, dependency
 upgrades, and new features to enhance maintainability and user experience.
 
-All refactoring work should maintain backward compatibility—since users
+All refactoring work should maintain backward compatibility, since users
 interact with the application through their browsers, these internal code
 changes should be transparent to them.
 
