@@ -262,21 +262,34 @@ Wireless Support
 Firmware Upgrade UX
 -------------------
 
-.. note::
-
-    Part of these subjects have been worked on during Google Summer of
-    Code 2025; see the project board `[GSoC25] Firmware Upgrader UX
-    improvements <https://github.com/orgs/openwisp/projects/43/views/3>`_.
-
 - **Group Upgrades**: Extend firmware upgrade capabilities to allow
   targeting specific device groups, in addition to per-device or
   per-organization options.
+
+  *Status update*: `Work in progress (openwisp-firmware-upgrader/pull/377)
+  <https://github.com/openwisp/openwisp-firmware-upgrader/pull/377>`_
+
 - **Real-Time Progress Tracking**: Enhance visual feedback to provide live
   status updates during firmware upgrades without requiring page
   refreshes.
-- **Persistent Upgrade Tasks**: Implement support for continuous upgrades
+
+  *Status update*: `Work in progress (openwisp-firmware-upgrader/pull/377)
+  <https://github.com/openwisp/openwisp-firmware-upgrader/pull/377>`_
+
+- **Persistent Mass Upgrades**: Implement support for continuous upgrades
   that remain queued for offline devices, executing automatically once
   they reconnect.
+
+  *Detailed plan*: `Github: Persistent Mass Upgrades
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/379>`__.
+
+- **Scheduled Mass Upgrades**: Introduce support for scheduled mass
+  upgrades, allowing a mass upgrade operation to start at a user defined
+  datetime in the future.
+
+  *Detailed plan*: `Github: Scheduled Mass Upgrades
+  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/380>`__.
+
 - **Automated Firmware Image Identification**
 
   - **Removal of Predefined Image Types**: Eliminates the need for
@@ -297,6 +310,9 @@ Firmware Upgrade UX
   - **Reduced Maintenance Overhead**: Avoids the need for administrators
     to track internal OpenWrt or vendor-specific image identifiers, which
     frequently change over time.
+  - *Detailed plan*: `Github: Automatic extraction of image metadata from
+    OpenWrt firmware images
+    <https://github.com/openwisp/openwisp-firmware-upgrader/issues/378>`__.
 
 Monitoring Improvements
 -----------------------
