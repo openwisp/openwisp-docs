@@ -427,7 +427,7 @@ and reduce technical debt:
      react-redux, etc.)
    - Migrating away from Enzyme (deprecated) to React Testing Library
      (RTL). Contributors should propose a migration strategy that balances
-     thoroughness with contributor workload—whether to migrate all tests
+     thoroughness with contributor workload, whether to migrate all tests
      at once or incrementally alongside the React upgrade.
    - Ensuring all dependencies are compatible with React 19
    - Comprehensive testing to catch regressions
@@ -457,7 +457,7 @@ Testing Strategy
 
 Testing should follow these guidelines:
 
-- TDD (Test-Driven Development) is recommended but not mandatory—use
+- TDD (Test-Driven Development) is recommended but not mandatory, use
   judgment based on the specific task.
 - Test coverage levels for refactored components should not decrease from
   current levels.
