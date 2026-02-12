@@ -100,19 +100,27 @@ and validate image fields.
 
    - Analysis happens asynchronously in the background using Celery (we
      already use it heavily, so this fits right in).
-   - The system attempts to extract metadata:
+   - **Primary metadata extraction method**: OpenWrt ``sysupgrade`` images
+     already contain JSON metadata embedded by the ``fwtool`` utility.
+     This metadata includes:
 
-     - ``/etc/openwrt_release`` → DISTRIB_DESCRIPTION (image identifier),
-       DISTRIB_TARGET, architecture.
-     - **Embedded, device tree-based targets** (``ramips``, ``ath``,
-       ``ath79``, ``mediatek``, ``ipq``, ``rockchip``): extract kernel
-       from ``sysupgrade`` images, decompress if needed (gzip, ``lzma``,
-       ``xz``, ``zstd`` - whatever OpenWrt uses), locate and extract the
-       embedded Device Tree Blob (DTB) using ``binwalk`` or similar
-       well-known tools, read the ``compatible`` property; use the first
-       compatible string as the authoritative board identifier.
-     - **x86 targets**: no board concept exists; rely only on
-       ``/etc/openwrt_release``.
+     - ``version.dist`` and ``version.version`` → OS identifier
+     - ``version.target`` → target and architecture
+     - ``version.board`` and ``supported_devices`` → board compatibility
+     - Extraction is fast and does not require decompression.
+     - A minimal Python implementation for reference: `extract_metadata.py
+       <https://gist.github.com/nemesifier/b5ed320f6d4ef0ef6782148b5d300c81>`__
+
+   - **Fallback method** (for images without ``fwtool`` metadata, e.g.,
+     non-``sysupgrade`` images): May require kernel decompression and
+     Device Tree Blob (DTB) extraction. See implementation notes below for
+     details.
+
+     - ``x86`` & ``armvirt``: These are disk images without ``fwtool``
+       metadata; no board concept exists. Manual metadata input is
+       required.
+     - Other compile targets may lack ``fwtool`` metadata; more research
+       is needed, *please include your findings in your GSoC proposal*.
 
    - Images remain **unconfirmed** and invisible for upgrade operations
      while analysis runs.
@@ -195,22 +203,32 @@ Safety rules
 Implementation notes
 ++++++++++++++++++++
 
-**Tooling:** We should use ``binwalk`` or similar standard tools for DTB
-extraction rather than writing custom parsers. OpenWrt images change all
-the time and our resources are limited - better to rely on tools that
-handle this stuff already. If ``binwalk`` isn't available or fails, notify
-users and fallback to manual extraction mode.
+**Primary extraction method:** Firmware images built with OpenWrt's build
+system already contain JSON metadata embedded via the ``fwtool`` utility.
+This has been standard practice for years and is present in all
+``sysupgrade`` images, including custom builds. The metadata can be
+extracted quickly without decompression. A minimal Python implementation
+demonstrating this approach is available for reference:
+`extract_metadata.py
+<https://gist.github.com/nemesifier/b5ed320f6d4ef0ef6782148b5d300c81>`__.
 
-**Memory management:** Decompression can be memory-hungry (``lzma``/``xz``
-can need 10-100MB+). We should:
+**Fallback extraction method:** For images without ``fwtool`` metadata
+(non-``sysupgrade`` images, ``x86`` / ``armvirt`` disk images, or edge
+cases), extraction may require decompressing the kernel and extracting the
+Device Tree Blob (DTB). Contributors should research established tools and
+techniques for this (e.g., kernel decompression, ``binwalk`` for DTB
+location) rather than reinventing solutions. The specific implementation
+details are left to the contributor's research.
 
-- Make memory limits configurable with reasonable defaults for typical
-  OpenWrt images.
-- Detect when an image would exceed memory thresholds.
-- Handle out of memory gracefully via ``generic_notification`` (since we
-  can't validate during Django model save - compression ratios vary).
-- Consider limiting decompression output size to prevent zip bomb-style
-  attacks.
+**Memory management:** While ``fwtool`` metadata extraction does not
+require decompression, fallback methods might. For cases requiring
+decompression:
+
+- Make memory limits configurable with reasonable defaults.
+- Handle out of memory errors in the background task and notify users via
+  ``generic_notification``.
+- Implement limits on max decompression output size to prevent zip
+  bomb-style attacks.
 
 **Timeouts:** Use the same task timeouts we already use for firmware
 upgrades.
@@ -233,7 +251,7 @@ To handle these differences, this module uses the concept of an **Upgrader
 Class**. Therefore, the logic described here should be implemented in a
 similar object-oriented structure, allowing for customization, extension,
 or complete override if needed. Each upgrader class must have a related
-meta-data extraction class.
+metadata extraction class.
 
 Benefits
 ++++++++
@@ -264,15 +282,22 @@ repo:
 Additional context and research findings
 ++++++++++++++++++++++++++++++++++++++++
 
+- **``fwtool`` metadata**: OpenWrt has embedded JSON metadata in
+  ``sysupgrade`` images for years via the ``fwtool`` utility. This
+  metadata is reliable and contains all essential information (OS
+  identifier, target, board, supported devices).
+- **``sysupgrade`` vs disk images**: Only ``sysupgrade`` images contain
+  ``fwtool`` metadata. ``x86`` and ``armvirt`` images are disk images and
+  lack this metadata. Contributors should investigate whether other
+  compile targets produce disk images.
 - ``/etc/board.json`` and ``/tmp/sysinfo/*`` are runtime generated and not
   present in firmware images.
-- For embedded targets, the **only authoritative board identity**
-  pre-installation is the DTB in the kernel.
-- DTB extraction is feasible but non-trivial: kernels may be compressed
-  and DTBs at variable offsets.
-- x86 is a fundamental exception: no board concept exists, images are
+- For embedded targets without ``fwtool`` metadata, the **only
+  authoritative board identity** pre-installation is the DTB in the
+  kernel.
+- ``x86`` is a fundamental exception: no board concept exists, images are
   target wide.
-- ``Rootfs`` images (``*-squashfs-rootfs.img``) are **not suitable for
+- ``rootfs`` images (``*-squashfs-rootfs.img``) are **not suitable for
   upgrades** and should not be treated as fully valid.
 - A draft/unconfirmed workflow ensures the system remains safe while
   extraction runs or fails.
@@ -296,26 +321,32 @@ Downsides and challenges
 Open questions for contributors
 +++++++++++++++++++++++++++++++
 
-1. **DTB extraction details**: How exactly should ``binwalk`` (or your
-   proposed tool) locate and extract DTBs across different target
-   families? What are the failure modes and how do we handle them?
+1. **Non-``sysupgrade`` images**: How should we handle images without
+   ``fwtool`` metadata (``x86``, ``armvirt`` disk images, and potentially
+   other targets)? Are there other compile targets that produce disk
+   images instead of ``sysupgrade`` images? What is the best approach for
+   these cases?
 2. **Manual override workflow**: Design the complete admin UI flow for
    when extraction fails. What does the user see? How do they enter
    metadata manually? How do we validate their input?
 3. **Cross-version compatibility**: OpenWrt versions from 18.06 to 24.10
-   may have different formats. How do we handle this? Should we detect the
-   version and adjust extraction logic?
+   may have different metadata formats. How do we handle this? Should we
+   detect the version and adjust extraction logic?
 4. **Downloading fw images for testing**: Best practices for downloading
    test images: part of test setup or separate command? How to handle
    caching efficiently?
-5. **Decompression limits**: What's a reasonable default for maximum
-   decompressed size? How do we detect compression bombs early?
+5. **Decompression limits**: For fallback methods requiring decompression,
+   what's a reasonable default for maximum decompressed size? How do we
+   detect compression bombs early?
 6. **Status UI**: What should the admin interface look like for showing
    analysis status? Status badges? Progress indicators? How do we
    communicate "this image is being analyzed" vs "this needs your
    attention"?
 7. **Error granularity**: How detailed should failure messages be?
    Technical details for admins vs. user-friendly summaries?
+8. **Derivatives and non OpenWrt firmware**: How do you intend to
+   structure the code so that each Upgrader Class has its own metadata
+   extraction logic?
 
 Prerequisites to work on this project
 +++++++++++++++++++++++++++++++++++++
