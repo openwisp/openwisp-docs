@@ -1039,3 +1039,164 @@ Expected Outcomes
 - Comprehensive **documentation**, including setup guides and best
   practices.
 - A **short tutorial video** demonstrating installation and usage.
+
+Persistent & Scheduled Firmware Upgrades
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2023/firmware.jpg
+
+.. important::
+
+    Languages and technologies used: **Python**, **Django**, **Celery**,
+    **REST API**, **JavaScript**.
+
+    **Mentors**: *Federico Capoano*, *TBA*.
+
+    **Project size**: 350 hours.
+
+    **Difficulty rate**: medium.
+
+This project aims to enhance `OpenWISP Firmware Upgrader
+<https://github.com/openwisp/openwisp-firmware-upgrader>`__ with two
+complementary features that improve reliability and operational
+flexibility for mass firmware upgrades: **persistent retries** for offline
+devices (`#379
+<https://github.com/openwisp/openwisp-firmware-upgrader/issues/379>`__)
+and **scheduled execution** for planned maintenance windows (`#380
+<https://github.com/openwisp/openwisp-firmware-upgrader/issues/380>`__).
+
+Currently, firmware upgrades in OpenWISP happen immediately via Celery
+tasks. If a device is offline at the moment of upgrade, the task fails and
+requires manual retry. In large deployments, this becomes unmanageable.
+Additionally, network operators need the ability to schedule upgrades
+during low-usage windows without manual intervention at execution time.
+
+Expected outcomes
++++++++++++++++++
+
+Introduce support for **persistent mass upgrades** that automatically
+retry for offline devices and **scheduled mass upgrades** that execute at
+a user-defined future time.
+
+1. **Persistent mass upgrades** (`#379
+   <https://github.com/openwisp/openwisp-firmware-upgrader/issues/379>`__)
+
+   Mass upgrade operations should be able to retry indefinitely for
+   devices that are offline at the initial execution time.
+
+   - Add a ``persistent`` boolean field to mass upgrade operations
+     (visible in admin and REST API, checked by default, immutable after
+     creation).
+   - Track retry count and scheduled retry time in the
+     ``UpgradeOperation`` model.
+   - Implement **device online detection**:
+
+     - Prefer using the ``health_status_changed`` signal from OpenWISP
+       Monitoring (with mocking for testing).
+     - Fallback: periodic retries with randomized exponential backoff
+       (configurable, max once every 12 hours).
+
+   - Implement **retry strategy**:
+
+     - Randomized exponential backoff with indefinite retries.
+     - Periodic reminders (default every 2 months) via
+       ``generic_notification`` to admins about devices still pending
+       upgrade, with links filtering pending devices.
+     - Continue until admin cancels or all devices are upgraded.
+
+   - **Integration with Celery**: Use a new Celery task to "wake up"
+     pending upgrades, with randomized delays to prevent system overload.
+   - **Failure handling**: Use ``generic_notification`` for failures
+     requiring attention (devices offline too long, upgrade errors).
+   - **Edge cases**: Handle concurrent signal triggers, ensure only one
+     upgrade per device, no rollback support needed.
+
+2. **Scheduled mass upgrades** (`#380
+   <https://github.com/openwisp/openwisp-firmware-upgrader/issues/380>`__)
+
+   Allow users to schedule mass upgrades for future execution.
+
+   - **UI**: Add optional datetime scheduling on mass upgrade confirmation
+     page. Default is immediate execution unless a future datetime is set.
+   - **Validation**: Scheduled datetime must be:
+
+     - In the future
+     - Respect minimum delay (e.g., 10 minutes)
+     - Not exceed maximum horizon (e.g., 6 months)
+
+   - **Timezone handling**: User input in browser timezone, storage in
+     UTC, server timezone clearly indicated in UI.
+   - **Status model**: Extend to include ``scheduled`` state with
+     transitions: scheduled → running, scheduled → canceled, scheduled →
+     failed.
+   - **Execution model**: Use Celery Beat periodic task (every minute) to
+     scan and execute due upgrades. **Avoid Celery eta/countdown** for
+     reliability with far-future tasks.
+   - **Runtime validation**: Re-evaluate devices, permissions, firmware
+     availability at execution time. Cancel with error if all targets
+     become invalid.
+   - **Conflict prevention**: Prevent creating conflicting mass upgrades
+     (scheduled or immediate) when one is already pending.
+   - **Notifications**: Send ``generic_notification`` when scheduled
+     upgrades start and complete.
+
+3. **Combined features**
+
+   Scheduled upgrades should also support persistence. A scheduled upgrade
+   that starts but has offline devices should continue retrying according
+   to the persistence logic.
+
+4. **General requirements**
+
+   - Operations editable only while in ``scheduled`` status.
+   - Clear exposure of scheduled status and datetime in admin list, detail
+     view, and REST API.
+   - Full feature parity between Django admin and REST API.
+
+5. **Testing and documentation**
+
+   - Test coverage **must not decrease** from current levels.
+   - **Browser tests** for the scheduling UI and admin interface workflows
+     are required.
+   - Documentation has to be kept up to date, including:
+
+     - Usage instructions for persistent and scheduled upgrades.
+     - Updated screenshots reflecting UI changes.
+     - One short example usage video per each feature.
+
+Prerequisites to work on this project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate a solid understanding of:
+
+- **Python**, **Django**, and **JavaScript**.
+- REST APIs and background task processing (Celery, Celery Beat).
+- Timezone handling and datetime management.
+- Experience with `OpenWISP Firmware Upgrader
+  <https://github.com/openwisp/openwisp-firmware-upgrader>`__ is
+  essential. Contributions or resolved issues in this repository are
+  considered strong evidence of the required proficiency.
+
+Open questions for contributors
++++++++++++++++++++++++++++++++
+
+1. **Persistence implementation**: What is the optimal database schema for
+   tracking persistent upgrade state while maintaining compatibility with
+   existing upgrade operation models?
+2. **Scheduling mechanism**: How exactly should the Celery Beat periodic
+   task be configured to reliably detect and execute due scheduled
+   upgrades without performance issues?
+3. **Timezone UX**: What is the best way to handle timezone display and
+   input in the admin interface to minimize user confusion?
+4. **Backoff strategy**: What are the optimal parameters for randomized
+   exponential backoff (initial delay, max delay, randomization factor)?
+5. **Conflict detection**: How should conflicting operations be detected
+   and prevented? What defines a "conflict"?
+6. **Monitoring integration**: How exactly should the
+   ``health_status_changed`` signal from OpenWISP Monitoring be integrated
+   for optimal online detection?
+7. **Notification frequency**: What are the optimal default periods for
+   reminder notifications about pending persistent upgrades?
+8. **Edge case handling**: How should edge cases be handled, such as
+   devices that are offline for months, or mass upgrades with very large
+   device counts?
