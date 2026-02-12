@@ -251,7 +251,7 @@ To handle these differences, this module uses the concept of an **Upgrader
 Class**. Therefore, the logic described here should be implemented in a
 similar object-oriented structure, allowing for customization, extension,
 or complete override if needed. Each upgrader class must have a related
-meta-data extraction class.
+metadata extraction class.
 
 Benefits
 ++++++++
@@ -286,7 +286,7 @@ Additional context and research findings
   ``sysupgrade`` images for years via the ``fwtool`` utility. This
   metadata is reliable and contains all essential information (OS
   identifier, target, board, supported devices).
-- **``Sysupgrade`` vs disk images**: Only ``sysupgrade`` images contain
+- **``sysupgrade`` vs disk images**: Only ``sysupgrade`` images contain
   ``fwtool`` metadata. ``x86`` and ``armvirt`` images are disk images and
   lack this metadata. Contributors should investigate whether other
   compile targets produce disk images.
@@ -297,7 +297,7 @@ Additional context and research findings
   kernel.
 - ``x86`` is a fundamental exception: no board concept exists, images are
   target wide.
-- ``Rootfs`` images (``*-squashfs-rootfs.img``) are **not suitable for
+- ``rootfs`` images (``*-squashfs-rootfs.img``) are **not suitable for
   upgrades** and should not be treated as fully valid.
 - A draft/unconfirmed workflow ensures the system remains safe while
   extraction runs or fails.
@@ -322,10 +322,10 @@ Open questions for contributors
 +++++++++++++++++++++++++++++++
 
 1. **Non-``sysupgrade`` images**: How should we handle images without
-   ``fwtool`` metadata (````x86````, ``armvirt`` disk images, and
-   potentially other targets)? Are there other compile targets that
-   produce disk images instead of ``sysupgrade`` images? What is the best
-   approach for these cases?
+   ``fwtool`` metadata (``x86``, ``armvirt`` disk images, and potentially
+   other targets)? Are there other compile targets that produce disk
+   images instead of ``sysupgrade`` images? What is the best approach for
+   these cases?
 2. **Manual override workflow**: Design the complete admin UI flow for
    when extraction fails. What does the user see? How do they enter
    metadata manually? How do we validate their input?
