@@ -1200,3 +1200,495 @@ Open questions for contributors
 8. **Edge case handling**: How should edge cases be handled, such as
    devices that are offline for months, or mass upgrades with very large
    device counts?
+
+.. _gsoc16-resource-aware-priority-scheduling:
+
+Resource Aware Priority Task Scheduling for OpenWISP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/gsoc/ideas/2026/celery-priority-resource-aware.png
+
+.. important::
+
+    Languages and technologies used: **Python**, **Django**, **Celery**,
+    **gevent**.
+
+    **Mentors**: *Federico Capoano*, *TBA*.
+
+    **Project size**: 350 hours.
+
+    **Difficulty rate**: medium/hard.
+
+This project aims to improve task execution in OpenWISP Monitoring by
+implementing resource-aware priority scheduling and migrating I/O-bound
+tasks to gevent for better concurrency.
+
+The deliverable is a reusable Python package for priority scheduling that
+benefits the entire Celery ecosystem, plus OpenWISP Monitoring running
+efficiently with gevent.
+
+Problem Statement
++++++++++++++++++
+
+OpenWISP currently runs multiple Celery workers, typically assigning one
+worker per queue. This approach ensures that high priority operations such
+as network management tasks are not blocked by lower priority workloads
+like monitoring or housekeeping. However, this architecture introduces
+several challenges:
+
+- Deployment complexity increases due to multiple workers and queue
+  assignments.
+- Scaling requires manual tuning of worker concurrency
+  (``--autoscale=X,Y`` values must be guessed).
+- Small deployments waste resources because workers may remain idle.
+- Large deployments require predicting capacity in advance.
+- No automatic adjustment based on actual system resources (CPU, memory).
+- With the constant growth of networks, users need OpenWISP to be able to
+  manage more devices with the same resources.
+
+**OpenWISP Monitoring specifically** performs thousands of I/O-bound tasks
+(ping checks, HTTP requests, device polling) that could benefit from high
+concurrency via gevent, but currently uses blocking operations (``fping``)
+that prevent this.
+
+The project will create a resource and priority aware scheduler that works
+well in OpenWISP with the gevent/thread execution pools.
+
+Project Goals
++++++++++++++
+
+The contributor will design and implement a scheduling system with the
+following capabilities:
+
+1. **Priority Aware Scheduling**
+
+   - Reserve guaranteed execution capacity for high-priority tasks.
+   - Allow lower-priority tasks to use unused reserved capacity.
+   - Prevent starvation: every priority tier gets execution slots.
+   - Provide configurable priority classes (e.g., critical, high, normal,
+     low).
+
+2. **Resource Aware Autoscaling**
+
+   - Dynamically adjust worker concurrency based on CPU and memory usage.
+   - Maintain configurable resource headroom (e.g., keep 20% CPU free).
+   - Eliminate need for administrators to guess ``--autoscale`` values.
+   - Learn average resource consumption per task over time.
+
+3. **Standalone Reusable Package**
+
+   - We'll create a new repository: ``celery-elastic-priority`` (or
+     similar name) which will be a standalone Python package.
+   - It must work with both gevent (most common for I/O-bound tasks) and
+     thread (this is what we currently use now) execution pools.
+   - Document extension points for other pools (future work).
+   - Publish to PyPI with comprehensive documentation.
+
+4. **OpenWISP Monitoring Migration to gevent**
+
+   - Replace blocking operations (``fping``) with gevent-compatible
+     alternatives (``icmplib``).
+   - Migrate monitoring tasks to run with gevent pool.
+   - Configure two workers: one gevent (monitoring tasks) + one thread
+     (blocking operations if needed).
+   - Demonstrate resource-aware priority scheduling in production use.
+
+**Note**: The project accepts that some tasks may require thread pool. The
+goal is to maximize gevent usage for I/O-bound monitoring tasks, not to
+force everything into a single worker.
+
+Inspiration
++++++++++++
+
+Part of this project is inspired by `celery-resource-autoscaler
+<https://github.com/jcushman/celery-resource-autoscaler/>`_, which
+demonstrated that resource-based autoscaling works in practice. That
+project has been abandoned and needs modernization for Celery 5.x+.
+
+The contributor needs to:
+
+1. Study the resource monitoring approach from celery-resource-autoscaler
+2. Test if the core concept still works with modern Celery (5.3+)
+3. Identify what integration points (bootsteps, signals) are stable
+4. Implement priority-aware capacity reservation (the novel contribution)
+
+Technical Constraints
++++++++++++++++++++++
+
+The solution should:
+
+- **Primary focus**: gevent pool (OpenWISP Monitoring's I/O-bound
+  workload)
+- **Use stable Celery APIs**: bootsteps, signals, documented extension
+  points
+- **Accept pool-specific code**: Being gevent-specific is acceptable for a
+  production-quality implementation
+- **Document extension points**: Show how the design could be adapted to
+  thread/``prefork`` pools (documentation only, not implementation)
+- **Remain maintainable**: Target Celery 5.3+ compatibility, test across
+  versions
+- **GIL Consideration**: Since gevent is single-threaded, the contributor
+  must identify the "diminishing returns" point where adding more
+  concurrency stops improving throughput.
+
+**Realistic Expectation**: Some Celery internals will need to be used. The
+goal is to minimize reliance on undocumented/unstable APIs, not to avoid
+internals entirely.
+
+Proposed Architecture
++++++++++++++++++++++
+
+This is research-driven engineering. The technical approach is unknown and
+must be validated by the contributor.
+
+The document contains proposed solutions (e.g., ``icmplib`` for ping,
+specific architecture patterns). These are examples, not the expected
+final approach. Contributors are expected to challenge assumptions,
+validate feasibility with experiments, and propose better alternatives if
+evidence supports them.
+
+Choosing the right architecture based on evidence is part of the
+deliverable.
+
+The system consists of three components:
+
+::
+
+    Broker → Worker → Priority Scheduler → Gevent Pool
+                              ↑
+                     Resource Monitor
+
+**Component 1: Resource Monitor**
+
+Tracks system resources and calculates safe worker capacity. Includes an
+optional hard cap for production deployments:
+
+.. code-block:: python
+
+    class ResourceMonitor:
+        def __init__(self, max_cpu_percent=80, max_memory_percent=85, max_concurrency=None):
+            self.max_cpu = max_cpu_percent
+            self.max_memory = max_memory_percent
+            self.max_concurrency = max_concurrency  # Optional hard cap for production
+
+        def get_available_capacity(self):
+            """Returns how many additional workers can be spawned"""
+            current_cpu = psutil.cpu_percent()
+            current_memory = psutil.virtual_memory().percent
+
+            # Calculate headroom and convert to worker count
+            available = self.calculate_safe_workers(
+                cpu_headroom=self.max_cpu - current_cpu,
+                mem_headroom=self.max_memory - current_memory,
+            )
+
+            # Apply hard cap if configured
+            if self.max_concurrency is not None:
+                available = min(available, self.max_concurrency)
+
+            return available
+
+**Component 2: Resource Autoscaler**
+
+Dynamically adjusts total worker concurrency:
+
+.. code-block:: python
+
+    class ResourceAutoscaler:
+        def adjust_concurrency(self):
+            available = self.monitor.get_available_capacity()
+            pending = self.get_pending_task_count()
+
+            if pending > 0 and available > 10:
+                self.scale_up(workers_to_add=min(available, pending // 2))
+            elif self.utilization < 0.3:
+                self.scale_down()
+
+**Component 3: Priority Scheduler**
+
+Allocates workers across priority tiers:
+
+.. code-block:: python
+
+    class PriorityScheduler:
+        def __init__(self, priorities, total_concurrency):
+            # priorities = {'critical': 20%, 'high': 30%, ...}
+            self.pools = self._create_priority_pools(total_concurrency)
+
+        def execute_task(self, task):
+            priority = self._get_task_priority(task)
+            pool = self.pools[priority]
+            return pool.spawn(task)
+
+        def adjust_to_new_total(self, new_total):
+            # Called when autoscaler changes capacity
+            for priority, config in self.priorities.items():
+                new_size = int(new_total * config["reserve_percent"] / 100)
+                self.pools[priority].maxsize = new_size
+
+The contributor will research the best integration approach (bootsteps,
+custom consumer, worker hooks) during the community bonding period and
+document the decision.
+
+Migrating OpenWISP Monitoring to gevent
++++++++++++++++++++++++++++++++++++++++
+
+Running Celery with gevent provides high concurrency for I/O-bound tasks
+but introduces several challenges that must be addressed.
+
+Common Pitfalls for gevent + Celery + Django
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**1. Monkey-patching Order**
+
+- Must patch before importing Django/other libraries.
+- Use ``celery worker --pool=gevent`` (Celery handles patching
+  automatically).
+- Patching too late causes random blocking behavior.
+
+**2. Database Connection Handling**
+
+- Django's persistent connections (``CONN_MAX_AGE > 0``) + gevent can
+  cause deadlocks.
+- ``greenlets`` share the same thread, confusing Django's thread-local
+  connections.
+- **Django 5.1+ with PostgreSQL**: It seems that ``psycopg3`` with native
+  connection pooling is the recommended solution. This only works with
+  PostgreSQL and it does NOT work with ``psycopg2``, MySQL, SQLite, or
+  other backends.
+- **Solution for other databases or earlier Django**: Set
+  ``CONN_MAX_AGE=0`` or use a gevent-aware connection pool.
+
+**3. Blocking Operations**
+
+- File I/O on slow filesystems (NFS, network drives) still blocks.
+- ``subprocess`` calls block unless using gevent-compatible methods.
+- **OpenWISP Monitoring specific**: ``fping`` subprocess calls block
+  ``greenlets``.
+
+Replacing fping with gevent-compatible ICMP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The monitoring module currently uses ``fping`` for network checks. This
+must be replaced with a gevent-compatible alternative. The ``icmplib``
+library provides non-privileged ping capabilities:
+
+.. code-block:: python
+
+    from gevent import monkey
+
+    monkey.patch_all()
+
+    import gevent
+    from icmplib import ping
+
+
+    def ping_host(host):
+        # Uses ICMP datagram sockets (no root required)
+        result = ping(host, count=10, interval=0.2, privileged=False)
+        return {"host": host, "avg_rtt": result.avg_rtt, "packet_loss": result.packet_loss}
+
+
+    # Concurrent pings with gevent
+    hosts = ["192.168.1.1", "10.0.0.1"]
+    jobs = [gevent.spawn(ping_host, host) for host in hosts]
+    gevent.joinall(jobs)
+    results = [job.value for job in jobs]
+
+**System Configuration**: Using ``icmplib`` with ``privileged=False``
+requires one-time ``sysctl`` configuration:
+
+.. code-block:: bash
+
+    # Allow unprivileged ICMP sockets
+    sudo sysctl -w net.ipv4.ping_group_range="0 2147483647"
+
+    # Make persistent in /etc/sysctl.conf
+    net.ipv4.ping_group_range = 0 2147483647
+
+The contributor should verify this works reliably with gevent and provides
+equivalent functionality to fping.
+
+Expected Outcomes
++++++++++++++++++
+
+The project will deliver working implementations across multiple
+repositories:
+
+**Core Package: celery-elastic-priority**
+
+- Standalone Python package published to PyPI.
+- Resource monitor, autoscaler, and priority scheduler components.
+- 95%+ test coverage.
+- Comprehensive documentation (API reference, examples, migration guide).
+- CI/CD with automated testing using the last 2 stable Celery versions
+  available.
+- Design document explaining architecture decisions.
+
+**OpenWISP Monitoring**
+
+- Replace ``fping`` with ``icmplib`` for ping checks.
+- Ensure all monitoring tasks are gevent-compatible.
+- Configuration for gevent worker with priority scheduling.
+- **All existing tests must pass**, coverage must not decrease.
+- Documentation updates for gevent deployment.
+
+**Ansible Role: ansible-openwisp2**
+
+- Configure two workers:
+
+  - Worker 1: gevent pool for monitoring tasks (with priority scheduling)
+  - Worker 2: thread pool for any remaining blocking tasks (if needed)
+
+- Task routing configuration separating gevent-safe vs blocking tasks.
+- Documentation for the new deployment approach.
+- **All existing tests must pass**.
+
+**Benchmarking & Analysis**
+
+- Performance comparison: multi-worker vs priority-scheduled workers.
+- Resource utilization measurements (CPU, memory, task throughput).
+- gevent vs thread pool performance for monitoring workloads.
+- Analysis of trade-offs and limitations (documented in design doc).
+
+**Documentation & Media**
+
+- Design document produced after initial research (community bonding).
+- Updated documentation across affected repositories.
+- Short demo video (5-10 minutes) for YouTube/blog.
+
+**General Requirements**
+
+- **Test Coverage**: All new code must have tests. Existing tests must
+  continue to pass. Target 95%+ coverage for new package.
+- **Documentation**: All changes must be documented.
+- **Code Quality**: Follow OpenWISP coding standards.
+- **Communication**: Daily progress updates, active participation in
+  community discussions, responsive to mentor feedback.
+- **Video Demo**: Once completed, create 5-10 minute demo video for
+  YouTube showing the system working and explaining benefits.
+
+.. _success-criteria:
+
+Success Criteria (Measurable)
++++++++++++++++++++++++++++++
+
+The project aims to meet these observable capabilities:
+
+**Priority Scheduling**
+
+- High-priority tasks should have better latency than lower-priority tasks
+  under load.
+- Reserved capacity is configurable per priority tier.
+- No starvation: Every priority tier receives execution capacity under
+  normal load.
+
+**Resource Autoscaling**
+
+- Worker concurrency adjusts automatically based on CPU and memory usage.
+- System maintains configured resource headroom.
+
+**OpenWISP Monitoring with gevent**
+
+- Monitoring tasks run successfully with gevent pool.
+- Remaining blocking tasks use thread pool worker.
+- Ping checks provide comparable results to the current implementation.
+
+**Package Quality**
+
+- Test coverage: **95%+**.
+- Documentation: API reference, quickstart, migration guide.
+- Compatibility: Works with Celery 5.3+ and Python 3.9+.
+- Published to PyPI with automated CI/CD.
+
+**Performance Benchmarks**
+
+- Measure resource utilization (CPU, memory, task throughput).
+- Compare gevent vs thread pool performance for monitoring tasks.
+- Document findings in design document.
+
+.. _midterm-pass-conditions:
+
+Midterm Pass Conditions
++++++++++++++++++++++++
+
+Midterm passes only if the contributor delivers:
+
+1. **Working Prototype**: A working prototype demonstrating priority
+   scheduling and gevent compatibility.
+2. **OpenWISP Monitoring Changes**: Changes to openwisp-monitoring to
+   support gevent (e.g., replacing ``fping`` with ``icmplib``).
+3. **Ansible Role Changes**: Changes to ansible-openwisp2 to deploy the
+   new work done up to now in staging, which will help us to test it and
+   validate it.
+
+Project Approach
+++++++++++++++++
+
+The project follows an iterative approach with clear checkpoints:
+
+**Research Phase (Community Bonding)**
+
+- Finalize architecture decisions
+- Build proof-of-concept
+- Get mentor approval to proceed
+- **Checkpoint**: Design document + working PoC code
+
+**Implementation Phase (Coding Period)**
+
+See :ref:`midterm-pass-conditions` and :ref:`success-criteria` for
+detailed requirements.
+
+Prerequisites to Work on This Project
++++++++++++++++++++++++++++++++++++++
+
+Applicants must demonstrate solid understanding of:
+
+- **Python** (decorators, context managers, async concepts).
+- **Django** and database connection handling.
+- **Celery** (tasks, workers, pools, routing).
+- **gevent** or similar ``greenlet``-based concurrency.
+- **OpenWISP Monitoring** module (at least basic familiarity).
+
+**Strong Evidence of Required Proficiency**:
+
+- Prior contributions to OpenWISP repositories (especially
+  openwisp-monitoring).
+- Demonstrated understanding of concurrent programming
+  (portfolio/projects).
+- Past contributions in projects which made use of background queues and
+  concurrency.
+
+**Application Requirements**:
+
+- Propose specific technical approach for priority scheduling integration.
+- Demonstrate understanding of gevent pitfalls and solutions.
+- Include preliminary research on the open questions listed above.
+- Show examples of prior work with Celery, Django, or concurrent systems.
+
+Open Questions for Contributors
++++++++++++++++++++++++++++++++
+
+During the application and community bonding phases, contributors should
+research and propose solutions for:
+
+1. **Monitoring Tasks Inventory**: Create complete list of blocking vs
+   non-blocking operations in openwisp-monitoring. Are there any tasks
+   besides fping that need thread pool?
+2. **Integration Strategy**: Should priority scheduling use Celery
+   bootsteps, custom consumer, worker middleware, or a combination? What
+   are the trade-offs for maintainability and stability?
+3. **Dynamic Pool Resizing**: What is the safest way to resize gevent
+   pools at runtime? How does this interact with Celery's prefetch
+   behavior?
+4. **Capacity Borrowing**: Should lower-priority tasks be allowed to
+   temporarily use high-priority reserved capacity when idle? If so, how
+   to implement safely without breaking guarantees?
+5. **Task Priority Assignment**: How should tasks declare their priority?
+   Custom task headers, routing keys, task decorators, or configuration?
+6. **Database Connection Limits**: How will the Priority Scheduler detect
+   and handle database connection exhaustion? Should the autoscaler scale
+   down or pause when connections are near the limit?
+
+Contributors should include preliminary research on these questions in
+their application to demonstrate understanding of the problem space.
