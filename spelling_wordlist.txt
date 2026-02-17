@@ -26,6 +26,7 @@ browsable
 bugfix
 bugfixes
 campus
+cancelled
 captcha
 cd
 certbot
