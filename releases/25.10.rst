@@ -31,18 +31,18 @@ Highlights
 **Key improvements to usability and features**
 
 - Introduced a dedicated `notification preferences page
-  <https://openwisp.io/docs/dev/notifications/user/notification-preferences.html>`__
+  <https://openwisp.io/docs/25.10/notifications/user/notification-preferences.html>`__
   and `organization-level settings
-  <https://openwisp.io/docs/dev/notifications/user/notification-preferences.html#organization-settings>`__.
+  <https://openwisp.io/docs/25.10/notifications/user/notification-preferences.html#organization-settings>`__.
 - Added `batching of email notifications
-  <https://openwisp.io/docs/dev/notifications/user/web-email-notifications.html#email-batches>`__
+  <https://openwisp.io/docs/25.10/notifications/user/web-email-notifications.html#email-batches>`__
   to reduce notification noise.
 - Added **WiFi Clients check** in Monitoring for AP load tracking. `Refer
   to docs
   <https://openwisp.io/docs/25.10/monitoring/user/checks.html#wifi-clients-check>`__.
 - Added **Simultaneous-Use** support in RADIUS with improved CoA handling.
   `Refer to docs
-  <https://openwisp.io/docs/25.10/radius/user/simultaneous-use.html>`__.
+  <https://openwisp.io/docs/25.10/radius/user/simultaneous_use.html>`__.
 
 ----
 
