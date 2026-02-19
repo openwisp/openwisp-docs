@@ -102,6 +102,7 @@ geo
 geocoding
 geodjango
 geoip
+GeoJSON
 geolocation
 Geospatial
 gevent
