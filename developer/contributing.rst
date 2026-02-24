@@ -39,8 +39,8 @@ Check out these two kanban boards:
   and reviewed by more seasoned contributors.
 
 If there's anything you don't understand regarding the board or a specific
-github issue, don't hesitate to ask questions in our `general chat
-<https://matrix.to/#/#openwisp_general:gitter.im>`_.
+github issue, don't hesitate to ask questions in our `dev channel
+<https://matrix.to/#/#openwisp_development:gitter.im>`_.
 
 **You don't need to wait for the issue to be assigned to you.** Just check
 if there is anyone else actively working on it (e.g.: an open pull request
@@ -109,36 +109,40 @@ Create a new branch for your patch, use a self-descriptive name, e.g.:
 
 .. _openwisp_commit_message_style_guidelines:
 
-2. Commit message style guidelines
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. Commit message conventions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Please follow our commit message style conventions**.
+.. warning::
 
-If the issue is present on Github, use following commit style:
+    The commit message conventions described in this section are enforced
+    by automated checks in the CI builds and can be easily followed by
+    using the ``openwisp-commit`` tool described in :ref:`Commit message
+    checks <utils_commit_message_checks>`.
+
+When working on issues picked from the boards mentioned in the beginning
+of this document, please use the following commit message conventions:
 
 .. code-block::
 
-    [module/file/feature] Short description #<issue-number>
+    [feature/change/fix/chores] Short description #<issue-number>
 
     Long description here.
-    Fixes #<issue-number>
+    Closes #<issue-number>
 
 Here's a real world commit message example from `one of our modules
-<https://github.com/openwisp/django-netjsonconfig/commit/7a5dad9f97e708b89149c2765f8298c5a94b652b>`_:
+<https://github.com/openwisp/openwisp-controller/commit/4eec3234864b5102b575c71a043513ef038975a0>`_:
 
 .. code-block::
 
-    [admin] Fixed VPN context in preview #57
+    [fix] Fixed perennial "modified" state #213
 
-    Fortunately it was just a frontend JS issue.
-    The preview instance was getting the UUID of the Device
-    object instead of the Config object, and that prevented
-    the system from finding the associated VPN and fill the
-    context VPN keys correctly.
+    The status of Config objects will only be updated if
+    the checksum changes, whether it's because of a
+    change in the config, device or any related templates.
 
-    Fixes #57
+    Closes #213
 
-Moreover, keep in mind the following guidelines:
+Moreover, keep the following guidelines in mind:
 
 - commits should be descriptive in nature, the message should explain the
   nature of the change
@@ -149,11 +153,10 @@ Moreover, keep in mind the following guidelines:
 - after pushing your branch code, make a pull-request of that
   corresponding change of yours which should contain a descriptive message
   and mention the issue number as suggested in the example above
-- make sure to send one pull request for each feature. Whenever changes
-  are requested during reviews, please send new commits (do not amend
-  previous commits), if multiple commits are present in a single pull
-  request, they will be squashed in a single commit by the maintainers
-  before merging
+- make sure to send one pull request for each change. Whenever changes are
+  requested during reviews, please send new commits (do not amend previous
+  commits), if multiple commits are present in a single pull request, they
+  will be squashed in a single commit by the maintainers before merging
 - in case of big features in which multiple related features/changes needs
   to be implemented, multiple commits (one commit per feature) in a single
   PR are acceptable.
@@ -173,7 +176,7 @@ now on we will shorten it often to just *PR*):
   our required tests and style checks
 - if the tests fail for some reason, try to fix them and if you get stuck
   seek our help on `our communication channels
-  <http://openwisp.org/support.html>`_
+  <http://openwisp.org/support/>`_
 - if the tests pass, maintainers will review the PR and may ask you to
   improve details or changes, please be patient: creating a good quality
   open source project takes a bit of sweat and effort; ensure to follow up

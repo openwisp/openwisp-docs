@@ -8,6 +8,7 @@
 
 import argparse
 import os
+import shutil
 import subprocess
 from copy import deepcopy
 
@@ -265,12 +266,66 @@ def git_is_on_branch(repo_path):
     return result.stdout.strip() != "HEAD"
 
 
-def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
+def clone_or_update_repo(
+    name,
+    branch,
+    dir_name,
+    skip_fetch=False,
+    owner="openwisp",
+    dest=None,
+    version_name=None,
+):
     """
     Clone or update a repository based on the module name and branch provided.
     If the repository already exists, update it. Otherwise, clone the repository.
+    The resulting directory is then symlinked internally.
+    If skip_fetch=True is passed, git fetching/cloning
+    is skipped and only symlink is performed.
     """
     repository = f"{owner}/{name}"
+    # Support for building with local changes
+    if name == "openwisp-docs":
+        # Ensure staging-dir is a real, empty directory
+        if os.path.islink("staging-dir") or os.path.isfile("staging-dir"):
+            os.unlink("staging-dir")
+        elif os.path.isdir("staging-dir"):
+            shutil.rmtree("staging-dir")
+    # If dev version, copy all doc files to the staging dir
+    if name == "openwisp-docs" and version_name == "dev":
+        os.makedirs("staging-dir", exist_ok=True)
+        base_dir = "docs" if os.path.isdir("docs") else "."
+        exclude_items = ("staging-dir", "modules", "version_switcher")
+        for item in os.listdir(base_dir):
+            is_dir = os.path.isdir(os.path.join(base_dir, item))
+            if any(
+                (
+                    # not a dir nor a rst file, nor the spelling wordlist
+                    all(
+                        (
+                            not is_dir,
+                            not item.endswith(".rst"),
+                            item != "spelling_wordlist.txt",
+                        )
+                    ),
+                    # it's a dir but not designed to contain rst files
+                    is_dir and item.startswith((".", "_")),
+                    # in the exclude list
+                    item in exclude_items,
+                )
+            ):
+                continue
+            # skip virtual environments (detect with pyvenv.cfg)
+            if os.path.isdir(os.path.join(base_dir, item)) and os.path.exists(
+                os.path.join(base_dir, item, "pyvenv.cfg")
+            ):
+                continue
+            src_path = os.path.abspath(os.path.join(base_dir, item))
+            dest_path = os.path.join("staging-dir", item)
+            if os.path.islink(dest_path):
+                os.unlink(dest_path)
+            if not os.path.exists(dest_path):
+                os.symlink(src_path, dest_path)
+        return
     if os.environ.get("SSH"):
         # SSH cloning is a convenient option for local development, as it
         # allows you to commit changes directly to the repository, but it
@@ -281,19 +336,36 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
         repo_url = f"git@github.com:{repository}.git"
     else:
         repo_url = f"https://github.com/{repository}.git"
+    # update if dir exists, otherwise clone
     clone_path = os.path.abspath(os.path.join("modules", dir_name))
-
-    if os.path.exists(clone_path):
+    # Using refs/heads/ prefix and --no-tags to explicitly fetch branches only, not tags
+    branch_ref = f"refs/heads/{branch}:refs/remotes/origin/{branch}"
+    if os.path.exists(clone_path) and not skip_fetch:
         print(f"Repository '{name}' already exists. Updating...")
         subprocess.run(
-            ["git", "fetch", "origin", f"refs/heads/{branch}:refs/heads/{branch}"],
+            # Update remote-tracking ref (avoid fetching into checked-out branch)
+            [
+                "git",
+                "fetch",
+                "--no-tags",
+                "origin",
+                branch_ref,
+            ],
             cwd=clone_path,
             check=True,
         )
         # "-c advice.detachedHead=false" is used to suppress the warning
         # about being in a detached HEAD state when checking out tags.
         subprocess.run(
-            ["git", "-c", "advice.detachedHead=false", "checkout", f"refs/heads/{branch}"],
+            [
+                "git",
+                "-c",
+                "advice.detachedHead=false",
+                "checkout",
+                "-B",
+                branch,
+                "FETCH_HEAD",
+            ],
             cwd=clone_path,
             check=True,
         )
@@ -303,8 +375,12 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
         # During local development, we attempt to pull updates, but only if the
         # current HEAD is on a branch (i.e., not detached, such as when on a tag).
         if not os.environ.get("PRODUCTION", False) and git_is_on_branch(clone_path):
-            subprocess.run(["git", "pull"], cwd=clone_path, check=True)
-    else:
+            subprocess.run(
+                ["git", "pull", "origin", "--no-tags", branch_ref],
+                cwd=clone_path,
+                check=True,
+            )
+    elif not skip_fetch:
         print(f"Cloning repository '{name}'...")
         subprocess.run(
             [
@@ -313,12 +389,17 @@ def clone_or_update_repo(name, branch, dir_name, owner="openwisp", dest=None):
                 "--depth",
                 "1",
                 "--no-single-branch",
+                "--no-tags",
                 "--branch",
                 branch,
                 repo_url,
                 clone_path,
             ],
             check=True,
+        )
+    elif skip_fetch and not os.path.exists(clone_path):
+        raise FileNotFoundError(
+            f'Repository "{name}" not found at {clone_path}; run without SKIP_FETCH=1 first.'
         )
     # Create a symlink to either the 'docs' directory inside the cloned repository
     # or to the entire repository if no 'docs' directory exists.
@@ -352,11 +433,15 @@ def main():
         help="comma separated modules to build"
         "in the format of <version:module-name>:<branch>:<dir-name>:<repository-owner>",
     )
+    parser.add_argument(
+        "--skip-fetch",
+        action="store_true",
+        default=False,
+        help="skip fetching/cloning repositories (useful for quick iteration while editing docs)",
+    )
     args = parser.parse_args()
-
     with open("config.yml") as f:
         config = yaml.safe_load(f)
-
     build_versions = get_build_versions(config["versions"], args.version)
     stable_version = get_stable_version(build_versions)
     docs_root = ""
@@ -366,11 +451,10 @@ def main():
         docs_root = "/docs"
         html_base_url = "https://openwisp.io"
         build_dir = f"{build_dir}{docs_root}"
-
+    # loop over versions and build each one by one
     for version in build_versions:
         version_name = version["name"]
         module_dirs = []
-
         # Modules which are configured to be included in all the builds
         default_modules = (
             config["modules"] if not version.get("overwrite_modules") else []
@@ -384,7 +468,6 @@ def main():
             version_modules=version_modules,
             overridden_modules=overridden_modules,
         )
-
         # If a module does not define a branch,
         # it will fallback to the version_branch.
         version_branch = version.get("module_branch", version["name"])
@@ -392,11 +475,14 @@ def main():
         clone_or_update_repo(
             name="openwisp-docs",
             branch=docs_branch,
+            skip_fetch=args.skip_fetch,
             dir_name="openwisp-docs",
+            version_name=version_name,
         )
         for module in modules:
             clone_or_update_repo(
                 branch=module.pop("branch", version_branch),
+                skip_fetch=args.skip_fetch,
                 **module,
             )
             module_dirs.append(module["dir_name"])
@@ -421,13 +507,11 @@ def main():
         # Remove all temporary directories
         for dir in module_dirs:
             remove_symlink(dir)
-
     # Generate the index.html file which redirects to the stable version.
     env = Environment(loader=FileSystemLoader("_static"))
     template = env.get_template("index.jinja2")
     with open(f"{build_dir}/index.html", "w") as f:
         f.write(template.render(stable_version=stable_version, docs_root=docs_root))
-
     # Create a symbolic link for the stable version
     subprocess.run(
         [

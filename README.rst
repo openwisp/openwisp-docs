@@ -31,25 +31,18 @@ Requirements: Python >= 3.9.
 
     # This command will generate the documentation in all formats - HTML, PDF and ePUB
     make build
-
     # The ``formats`` argument is a comma separated list of formats to build,
     # e.g. ``formats=html,pdf,epub``. The default is to build all available
     # formats, which currently are ``html``, ``pdf`` and ``epub``.
     make build formats=pdf,html
-
     # This command is a shortcut for generating only HTML documentation during
     # development, since building PDF and ePUB takes time. It also supports
     # the VERSION argument.
     make build_html
-
     # Build only the dev version in HTML format
     make build VERSION=dev FORMATS=html
-
-..
-    note:
-
-    Please refer the "`build options" <#build-options>`_section of this
-    configuration for a complete reference of the available options.
+    # Quickly rebuild, useful during iteration
+    make build VERSION=dev FORMATS=html SKIP_FETCH=1
 
 5. Open the generated HTML files in your browser.
 
@@ -169,6 +162,30 @@ instead of HTTPS. For example:
 .. code-block:: shell
 
     SSH=1 make build
+
+Skipping repository fetch for quick iteration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When actively editing documentation, you may want to skip the
+fetch/clone/update operations to speed up the build process. This is
+especially useful when you have already cloned the repositories and want
+to quickly rebuild the documentation after making local changes.
+
+To skip all repository operations, use the ``SKIP_FETCH`` argument:
+
+.. code-block:: shell
+
+    make build SKIP_FETCH=1
+
+Or for HTML-only builds:
+
+.. code-block:: shell
+
+    make build_html SKIP_FETCH=1
+
+**Note**: Using ``SKIP_FETCH`` requires that the repositories have already been
+    cloned in a previous build. If the repositories don't exist, the build
+    will fail.
 
 Spell check
 ~~~~~~~~~~~
