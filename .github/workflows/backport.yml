@@ -41,3 +41,4 @@ jobs:
     secrets:
       app_id: ${{ secrets.OPENWISP_BOT_APP_ID }}
       private_key: ${{ secrets.OPENWISP_BOT_PRIVATE_KEY }}
+
