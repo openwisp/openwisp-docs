@@ -235,6 +235,7 @@ prefetch
 preinstall
 prepend
 prepended
+prerequisites
 preserve
 preuniversity
 procd
