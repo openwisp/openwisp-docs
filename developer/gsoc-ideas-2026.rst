@@ -690,7 +690,7 @@ device, following the same lifecycle semantics as existing OpenVPN client
 certificates.
 
 - Assignment generates a new certificate
-- Unassignment deletes the certificate
+- Unassignment revokes the certificate
 - Renewal regenerates the certificate
 - No standalone certificates are generated without device assignment
 
