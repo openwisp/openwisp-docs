@@ -59,7 +59,7 @@ Automatic Extraction of OpenWrt Firmware Image Metadata
     Languages and technologies used: **Python**, **Django**, **Celery**,
     **OpenWrt**, **REST API**.
 
-    **Mentors**: *Federico Capoano*, *TBA*.
+    **Mentors**: *Federico Capoano*, *Alexandre Vincent*, *Sankalp*.
 
     **Project size**: 350 hours.
 
@@ -371,7 +371,7 @@ WiFi Login Pages Modernization
     Languages and technologies used: **JavaScript**, **Node.js**,
     **React**.
 
-    **Mentors**: *Federico Capoano*, *Gagan Deep*.
+    **Mentors**: *Federico Capoano*, *Sankalp*, *Gagan Deep*.
 
     **Project size**: 175 hours (medium).
 
@@ -527,7 +527,8 @@ Mass Commands
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**, **WebSockets**, **REST API**.
 
-    **Mentors**: *Gagan Deep*, *Purhan Kaushik*, *Kapil Bansal*.
+    **Mentors**: *Federico Capoano*, *Gagan Deep*, *Sankalp*, *Kapil
+    Bansal*.
 
     **Project size**: 350 hours.
 
@@ -614,7 +615,7 @@ X.509 Certificate Generator Templates
     Languages and technologies used: **Python**, **Django**,
     **JavaScript**.
 
-    **Mentors**: *Federico Capoano*, *Aryaman*, *Nitesh Sinha*.
+    **Mentors**: *Federico Capoano*, *Aryaman*.
 
     **Project size**: 175 hours.
 
@@ -790,7 +791,8 @@ Add more timeseries database clients to OpenWISP Monitoring
     Languages and technologies used: **Python**, **Django**, **InfluxDB**,
     **Elasticsearch**.
 
-    **Mentors**: *Gagan Deep*, *Aryaman*, *Sankalp*.
+    **Mentors**: *Federico Capoano*, *Clément Beaujoin*, *Aryaman*,
+    *Sankalp*, *Gagan Deep*.
 
     **Project size**: 350 hours.
 
@@ -1050,7 +1052,7 @@ Persistent & Scheduled Firmware Upgrades
     Languages and technologies used: **Python**, **Django**, **Celery**,
     **REST API**, **JavaScript**.
 
-    **Mentors**: *Federico Capoano*, *TBA*.
+    **Mentors**: *Federico Capoano*, *Gagan Deep*.
 
     **Project size**: 350 hours.
 
@@ -1213,7 +1215,7 @@ Resource Aware Priority Task Scheduling for OpenWISP
     Languages and technologies used: **Python**, **Django**, **Celery**,
     **gevent**.
 
-    **Mentors**: *Federico Capoano*, *TBA*.
+    **Mentors**: *Federico Capoano*, *Gagan Deep*.
 
     **Project size**: 350 hours.
 
