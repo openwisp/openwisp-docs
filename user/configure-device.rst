@@ -44,29 +44,23 @@ VirtualBox Virtual Machine
 Install the OpenWISP OpenWrt Agents
 -----------------------------------
 
-We recommend installing the latest versions of the OpenWISP packages.
-Download them onto your device from `downloads.openwisp.io
-<http://downloads.openwisp.io/>`__ and then install them as follows:
+Install the OpenWISP agents on OpenWrt with:
 
 .. code-block::
 
-    cd /tmp
+    # openwrt >= 25.12
+    apk update
+    apk install openwisp-config openwisp-monitoring
 
-    # WARNING: the URL may change over time, so verify the correct URL
-    # from downloads.openwisp.io
-
-    wget https://downloads.openwisp.io/openwisp-config/latest/openwisp-config_1.1.0-1_all.ipk
-    wget https://downloads.openwisp.io/openwisp-monitoring/latest/netjson-monitoring_0.2.1-1_all.ipk
-    wget https://downloads.openwisp.io/openwisp-monitoring/latest/openwisp-monitoring_0.2.1-1_all.ipk
-    opkg install ./openwisp-config_1.1.0-1_all.ipk
-    opkg install ./netjson-monitoring_0.2.1-1_all.ipk
-    opkg install ./openwisp-monitoring_0.2.1-1_all.ipk
+    # openwrt <= 24.10
+    opkg update
+    opkg install openwisp-config openwisp-monitoring
 
 .. note::
 
-    If ``wget`` doesn't work (e.g., SSL issues), you can use ``curl`` or
-    alternatively download the packages onto your machine and upload them
-    to your device via ``scp``.
+    To use the latest features available, we recommend downloading and
+    installing the latest builds published on `downloads.openwisp.io
+    <https://downloads.openwisp.io/>`__.
 
 Once the agents are installed on your OpenWrt device, let's ensure they
 can connect to OpenWISP successfully.
