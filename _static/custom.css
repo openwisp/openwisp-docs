@@ -4,6 +4,8 @@
 :root {
   --text-color: #0f1729;
   --background-color: #ffffff;
+  --link-reference-color: #06102d;
+  --link-reference-hover-color: #4d608d;
   --link-color: #b15210;
   --link-hover-color: #e36914;
   --button-color: var(--link-hover-color);
@@ -21,8 +23,10 @@
 html.dark {
   --text-color: #e0e0e0;
   --background-color: #020614;
+  --link-reference-color: #fff2e9;
+  --link-reference-hover-color: #ffc7a7;
   --link-color: #ff9d5c;
-  --link-hover-color: #ee7f31;
+  --link-hover-color: #fcb382;
   --button-color: #ef7f2f;
   --button-hover-color: var(--link-color);
   --admonition-bg: #2c2c2c;
@@ -170,19 +174,16 @@ code.download {
 
 #content a:not(.toc-backref),
 #right-sidebar ul li a[data-current="true"] {
-  color: var(--link-color) !important;
+  color: var(--link-reference-color) !important;
+}
+#content .toctree-wrapper a.reference {
+  color: var(--link-reference-color) !important;
 }
 #content a:not(.toc-backref, .image-reference):hover {
-  filter: brightness(135%);
+  color: var(--link-reference-hover-color) !important;
 }
-#content a:not(.toc-backref, .image-reference):visited {
-  filter: brightness(80%);
-}
-html.dark #content a:not(.toc-backref, .image-reference):hover {
-  filter: brightness(120%);
-}
-html.dark #content a:not(.toc-backref, .image-reference):visited {
-  filter: brightness(90%);
+#content .toctree-wrapper a.reference:hover {
+  color: var(--link-reference-hover-color) !important;
 }
 
 #content .admonition a {
@@ -192,16 +193,6 @@ html.dark #content a:not(.toc-backref, .image-reference):visited {
 
 #content .toctree-wrapper {
   line-height: 1.5rem;
-}
-
-#content .toctree-wrapper a.reference {
-  color: var(--text-color) !important;
-}
-#content .toctree-wrapper a.reference:hover {
-  filter: brightness(300%);
-}
-#content .toctree-wrapper a.reference:visited {
-  filter: none;
 }
 
 a.rounded-md,
