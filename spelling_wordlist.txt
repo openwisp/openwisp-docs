@@ -256,6 +256,7 @@ quickstart
 RADIUS
 radsec
 reassociation
+rebasing
 reconnection
 redis
 redux
@@ -292,6 +293,7 @@ standardization
 stylelint
 subclasses
 subdirectory
+subfield
 subnet
 subnets
 Subnets
