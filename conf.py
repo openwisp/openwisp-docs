@@ -19,6 +19,7 @@
 import os
 import sys
 from datetime import date
+from pathlib import Path
 
 import yaml
 
@@ -89,6 +90,8 @@ exclude_patterns = [
     ".DS_Store",
     "modules/*",
     "*/README.rst",
+    "partials/*",
+    "*/partials/*",
 ]
 
 # The reST default role (used for this markup: `text`) to use for all
@@ -502,3 +505,25 @@ pdf_stylesheets = ["sphinx", "a4", "_styles/pdf-style"]
 epub_basename = f"OpenWISP-{version}"
 
 nitpicky = True
+
+
+def write_pygments_dark_css(app, exception):
+    """Write the dark Pygments stylesheet expected by Sphinx 9.
+
+    sphinxawesome-theme appends dark styles to pygments.css, but Sphinx 9
+    links pygments_dark.css separately when a dark Pygments style is set.
+    """
+    if exception or app.builder.format != "html":
+        return
+    dark_highlighter = getattr(app.builder, "dark_highlighter", None)
+    if dark_highlighter is None:
+        return
+    static_dir = Path(app.outdir) / "_static"
+    static_dir.mkdir(exist_ok=True)
+    (static_dir / "pygments_dark.css").write_text(
+        dark_highlighter.get_stylesheet(), encoding="utf-8"
+    )
+
+
+def setup(app):
+    app.connect("build-finished", write_pygments_dark_css)

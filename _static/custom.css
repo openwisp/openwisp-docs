@@ -314,6 +314,9 @@ header.sticky > .container > .md\:flex {
   margin: 0;
   width: 100%;
 }
+header.sticky .text-sm {
+  line-height: inherit;
+}
 header.sticky nav.items-center {
   margin: 0 auto;
 }
@@ -327,6 +330,11 @@ header.sticky nav.items-center a {
 header.sticky nav.items-center a:hover,
 header.sticky nav.items-center a:focus {
   color: var(--link-hover-color);
+}
+
+/* minor correction of first menu item right margin */
+header.sticky nav.items-center > a:first-child {
+  margin-right: 5px;
 }
 
 footer p {
