@@ -332,9 +332,11 @@ header.sticky nav.items-center a:focus {
   color: var(--link-hover-color);
 }
 
-/* minor correction of first menu item right margin */
-header.sticky nav.items-center > a:first-child {
-  margin-right: 5px;
+header.sticky nav.items-center a {
+  margin-right: 0.85rem;
+}
+header.sticky nav.items-center > a {
+  margin-right: 1.1rem;
 }
 
 footer p {
