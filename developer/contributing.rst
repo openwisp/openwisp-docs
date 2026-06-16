@@ -8,6 +8,15 @@ We are glad and thankful that you want to contribute to OpenWISP.
     Please read these guidelines carefully, it will help to save precious
     time for everyone involved.
 
+.. warning::
+
+    Contributions which shift the burden of understanding, implementation,
+    testing, and review entirely onto maintainers are not acceptable. This
+    includes abusing AI tools to generate pull requests which the
+    contributor does not fully understand, explain, maintain, and test.
+    Please read the :ref:`Anti AI Spam Policy <anti_spam_policy>` before
+    opening a pull request.
+
 **Table of Contents:**
 
 .. contents::

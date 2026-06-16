@@ -33,6 +33,8 @@ captcha
 cd
 certbot
 changelog
+chatbot
+chatbots
 checksum
 checksums
 Chilli
