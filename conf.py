@@ -508,10 +508,13 @@ nitpicky = True
 
 
 def write_pygments_dark_css(app, exception):
-    """Write the dark Pygments stylesheet expected by Sphinx 9.
+    """Re-scope the dark Pygments palette under the theme's `.dark` class.
 
-    sphinxawesome-theme appends dark styles to pygments.css, but Sphinx 9
-    links pygments_dark.css separately when a dark Pygments style is set.
+    Runs on ``build-finished`` for HTML builds: drops the
+    ``@media (prefers-color-scheme: dark)`` block from ``pygments.css`` so only
+    the light palette remains, then appends the dark palette scoped under
+    ``.dark .highlight``. The separately linked ``pygments_dark.css`` is emptied
+    so it cannot apply the dark palette on its own.
     """
     if exception or app.builder.format != "html":
         return
@@ -520,9 +523,16 @@ def write_pygments_dark_css(app, exception):
         return
     static_dir = Path(app.outdir) / "_static"
     static_dir.mkdir(exist_ok=True)
-    (static_dir / "pygments_dark.css").write_text(
-        dark_highlighter.get_stylesheet(), encoding="utf-8"
-    )
+    pygments_css = static_dir / "pygments.css"
+    if not pygments_css.exists():
+        return
+    light = pygments_css.read_text(encoding="utf-8")
+    light = light.split("@media (prefers-color-scheme: dark)", 1)[0].rstrip()
+    dark = dark_highlighter.get_formatter().get_style_defs(".dark .highlight")
+    pygments_css.write_text(light + "\n" + dark + "\n", encoding="utf-8")
+    # Neutralize the separately media-linked dark stylesheet so it cannot apply
+    # the dark palette based on the OS preference.
+    (static_dir / "pygments_dark.css").write_text("", encoding="utf-8")
 
 
 def setup(app):
