@@ -387,3 +387,19 @@ Mesh Networking
   during rollouts (e.g., coordinated radio channel adjustments).
 - **Dynamic Topology Mapping**: Utilize monitoring data from mesh
   interfaces to generate real-time topology maps of the active network.
+
+Security Hardening
+------------------
+
+- **Device Auto-Registration**: The current shared secret for new device
+  registration is effective for small setups but lacks the granularity
+  expected in enterprise environments. The goal is to research and adopt
+  stronger authentication mechanisms comparable to those available in
+  enterprise network management systems, reducing the risk of unauthorized
+  hardware joining the network if a static secret is compromised.
+- **Passphrase-Protected SSH Keys**: To mitigate the risk of unauthorized
+  use of SSH keys stored within the system, OpenWISP will explore
+  passphrase-based or comparable approaches. The goal is to ensure that,
+  even if a key file is accessed, it remains protected by an additional
+  credential or equivalent safeguard, adding another layer of protection
+  for remote device management.
