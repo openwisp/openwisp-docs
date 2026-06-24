@@ -274,10 +274,3 @@ Logos and Graphic material
            src="https://github.com/openwisp/openwisp2-docs/blob/master/assets/design/openwisp-logo.svg?raw=true"
            style="background:#000;padding:25px;margin-bottom:24px" />
     </div>
-
-:download:`OpenWISP Logo (Black Foreground, with openwisp.org)
-</assets/design/openwisp.org.svg>`
-
-.. image:: /assets/design/openwisp.org.svg
-    :align: center
-    :alt: openwisp
