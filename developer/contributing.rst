@@ -3,11 +3,6 @@ Contributing guidelines
 
 We are glad and thankful that you want to contribute to OpenWISP.
 
-.. important::
-
-    Please read these guidelines carefully, it will help to save precious
-    time for everyone involved.
-
 .. warning::
 
     Contributions which shift the burden of understanding, implementation,
