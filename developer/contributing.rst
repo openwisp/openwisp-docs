@@ -5,12 +5,10 @@ We are glad and thankful that you want to contribute to OpenWISP.
 
 .. warning::
 
-    Contributions which shift the burden of understanding, implementation,
-    testing, and review entirely onto maintainers are not acceptable. This
-    includes abusing AI tools to generate pull requests which the
-    contributor does not fully understand, explain, maintain, and test.
-    Please read the :ref:`Anti AI Spam Policy <anti_spam_policy>` before
-    opening a pull request.
+    AI assisted contributions which shift the burden of understanding,
+    implementation, testing, and review entirely onto maintainers are not
+    acceptable. Please read the :ref:`Anti AI Spam Policy
+    <anti_spam_policy>` before opening a pull request.
 
 **Table of Contents:**
 
@@ -29,6 +27,8 @@ use `the development channel
 channels share feedback, share your OpenWISP derivative work, ask
 questions or announce your intentions.
 
+.. _openwisp_look_for_open_issues:
+
 Look for open issues
 --------------------
 
@@ -46,8 +46,22 @@ If there's anything you don't understand regarding the board or a specific
 github issue, don't hesitate to ask questions in our `dev channel
 <https://matrix.to/#/#openwisp_development:gitter.im>`_.
 
-**You don't need to wait for the issue to be assigned to you.** Just check
-if there is anyone else actively working on it (e.g.: an open pull request
+New or occasional contributors must verify that **the issue has been
+validated by maintainers** before opening a pull request.
+
+This also applies to issues you opened yourself: **wait until a maintainer
+has acknowledged and validated the issue before opening a pull request for
+it**.
+
+In OpenWISP, **an issue is considered validated when it has any issue
+label** except ``invalid`` or ``wontfix``.
+
+**Some issues are not suited to beginners**. These are clearly marked with
+a prominent warning at the beginning and must be avoided by beginners.
+
+**If the issue has already been validated by a maintainer, you don't need
+to wait for it to be assigned to you before working on it.** Just check if
+there is anyone else actively working on it (e.g.: an open pull request
 with recent activity). If nobody else is actively working on it, **just
 announce your intention to work on it by leaving a comment in the issue**.
 
