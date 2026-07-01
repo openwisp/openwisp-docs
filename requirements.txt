@@ -1,5 +1,5 @@
 sphinx~=9.1.0
-sphinxawesome-theme~=6.0.2
+sphinxawesome-theme~=6.0.5
 svglib
 rst2pdf
 pypandoc~=1.17
