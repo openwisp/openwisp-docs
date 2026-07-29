@@ -2,6 +2,7 @@ ableist
 acknowledgement
 ai
 allauth
+amd
 analytics
 ansible
 api
@@ -330,6 +331,7 @@ Uncomment
 unencrypted
 unmanaged
 Unmark
+unreferenced
 unregister
 unregistering
 unselect

@@ -59,7 +59,7 @@ conditions are met**:
 - it is open
 - it belongs to a repository in the OpenWISP organization
 - it has at least one label other than ``invalid`` or ``wontfix``
-- it is assigned to either the `OpenWISP Contributor's Board
+- it is added to either the `OpenWISP Contributor's Board
   <https://github.com/orgs/openwisp/projects/42/views/1>`_ or the
   `OpenWISP Priorities for next releases
   <https://github.com/orgs/openwisp/projects/37/views/1>`_ board
@@ -200,7 +200,8 @@ now on we will shorten it often to just *PR*):
 - write a concise description of the PR and link its validated issue using
   ``Fixes #ISSUE_NUMBER``, ``Closes #ISSUE_NUMBER``, or ``Related to
   #ISSUE_NUMBER``. To link an issue in another OpenWISP repository, use
-  ``openwisp/repository#ISSUE_NUMBER`` or its GitHub issue URL
+  ``Fixes openwisp/repository#ISSUE_NUMBER`` or ``Fixes
+  https://github.com/openwisp/repository/issues/ISSUE_NUMBER``
 - after submitting your PR, check back again whether your PR has passed
   our required tests and style checks
 - if the tests fail for some reason, try to fix them and if you get stuck
