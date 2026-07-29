@@ -53,8 +53,16 @@ This also applies to issues you opened yourself: **wait until a maintainer
 has acknowledged and validated the issue before opening a pull request for
 it**.
 
-In OpenWISP, **an issue is considered validated when it has any issue
-label** except ``invalid`` or ``wontfix``.
+In OpenWISP, **an issue is considered validated when all of the following
+conditions are met**:
+
+- it is open
+- it belongs to a repository in the OpenWISP organization
+- it has at least one label other than ``invalid`` or ``wontfix``
+- it is assigned to either the `OpenWISP Contributor's Board
+  <https://github.com/orgs/openwisp/projects/42/views/1>`_ or the
+  `OpenWISP Priorities for next releases
+  <https://github.com/orgs/openwisp/projects/37/views/1>`_ board
 
 **Some issues are not suited to beginners**. These are clearly marked with
 a prominent warning at the beginning and must be avoided by beginners.
@@ -189,7 +197,10 @@ now on we will shorten it often to just *PR*):
   "New Pull Request"
 - check the changes tab and review the changes again to ensure everything
   is correct
-- write a concise description of the PR, if an issue exists for
+- write a concise description of the PR and link its validated issue using
+  ``Fixes #ISSUE_NUMBER``, ``Closes #ISSUE_NUMBER``, or ``Related to
+  #ISSUE_NUMBER``. To link an issue in another OpenWISP repository, use
+  ``openwisp/repository#ISSUE_NUMBER`` or its GitHub issue URL
 - after submitting your PR, check back again whether your PR has passed
   our required tests and style checks
 - if the tests fail for some reason, try to fix them and if you get stuck
@@ -200,6 +211,15 @@ now on we will shorten it often to just *PR*):
   open source project takes a bit of sweat and effort; ensure to follow up
   with this type of operations
 - once everything is fine with us we'll merge your PR
+
+For external contributors, automation validates the linked issue. Owners,
+organization members, and repository collaborators are exempt. If the
+issue link is missing or does not refer to a validated issue, the PR
+receives the ``invalid`` label and one comment explaining the problem.
+Updating the PR description with a valid link removes the label. If the PR
+remains invalid, it is closed 24 hours after that comment. This does not
+change the stale-PR policy: ordinary stale PRs are not automatically
+closed.
 
 4. Avoiding unnecessary changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
