@@ -239,71 +239,13 @@ setting your editor as follows:
 Coding Style Conventions
 ------------------------
 
-1. Python code conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Each repository defines style conventions appropriate to its languages and
+tools. Run ``./run-qa-checks`` from the repository's top-level directory
+to verify your changes. This script runs the relevant automated QA checks,
+and CI rejects pull requests that do not pass them.
 
-OpenWISP follows `PEP 8 -- Style Guide for Python Code
-<https://www.python.org/dev/peps/pep-0008/>`_ and several other style
-conventions which can be enforced by using the following tools:
-
-- ``openwisp-qa-format``: this command is shipped in :doc:`openwisp-utils
-  </utils/developer/qa-checks>`, a dependency used in every OpenWISP
-  python module, it formats the Python code according to the OpenWISP
-  style conventions, it's based on popular tools like: `isort
-  <http://isort.readthedocs.io/en/latest/>`_ and `black
-  <https://black.readthedocs.io/en/stable/>`_ (**please do not run black
-  directly** but always call ``openwisp-qa-format``)
-- ``./run-qa-checks``: it's a script present in the top level directory of
-  each OpenWISP module and performs all the QA checks that are specific to
-  each module. It mainly calls the ``openwisp-qa-check`` command, which
-  performs several common QA checks used across all OpenWISP modules to
-  ensure consistency (including `flake8
-  <http://flake8.pycqa.org/en/latest/>`_), for more info consult the
-  documentation of :doc:`openwisp-qa-check </utils/developer/qa-checks>`.
-
-.. important::
-
-    QA checks defined in the ``run-qa-checks`` script are also executed in
-    CI builds. These builds will fail if any QA check fails.
-
-    To resolve QA check failures, run ``openwisp-qa-format`` and apply
-    manual fixes if necessary, until ``./run-qa-checks`` completes without
-    errors.
-
-.. note::
-
-    If you want to learn more about our usage of python and django, we
-    suggest reading :doc:`../developer/hacking-openwisp-python-django`.
-
-2. CSS and Javascript code conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-OpenWISP follows CSS and JavaScript coding conventions enforced by the
-`Prettier <https://prettier.io>`_ code formatting tool.
-
-The Prettier formatter is used by the :doc:`openwisp-qa-format
-</utils/developer/qa-checks>` tool and by the `./run-qa-checks` script
-located in the top-level directory of each repository.
-
-.. important::
-
-    QA checks defined in the ``run-qa-checks`` script are also executed in
-    CI builds. These builds will fail if any QA check fails.
-
-    To resolve QA check failures, run ``openwisp-qa-format`` and apply
-    manual fixes if necessary, until ``./run-qa-checks`` completes without
-    errors.
-
-3. OpenWrt related conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-OpenWISP follows the standard OpenWrt coding style conventions of OpenWrt:
-
-- `Working with Patches <https://wiki.openwrt.org/doc/devel/patches>`_
-- `Naming patches
-  <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_
-- `Adding new files
-  <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
+Follow the repository's ``AGENTS.md`` file for formatting guidance and any
+required automatic formatting tools.
 
 Thank You
 ---------
