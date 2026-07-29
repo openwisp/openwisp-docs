@@ -53,8 +53,16 @@ This also applies to issues you opened yourself: **wait until a maintainer
 has acknowledged and validated the issue before opening a pull request for
 it**.
 
-In OpenWISP, **an issue is considered validated when it has any issue
-label** except ``invalid`` or ``wontfix``.
+In OpenWISP, **an issue is considered validated when all of the following
+conditions are met**:
+
+- it is open
+- it belongs to a repository in the OpenWISP organization
+- it has at least one label other than ``invalid`` or ``wontfix``
+- it is added to either the `OpenWISP Contributor's Board
+  <https://github.com/orgs/openwisp/projects/42/views/1>`_ or the
+  `OpenWISP Priorities for next releases
+  <https://github.com/orgs/openwisp/projects/37/views/1>`_ board
 
 **Some issues are not suited to beginners**. These are clearly marked with
 a prominent warning at the beginning and must be avoided by beginners.
@@ -189,7 +197,11 @@ now on we will shorten it often to just *PR*):
   "New Pull Request"
 - check the changes tab and review the changes again to ensure everything
   is correct
-- write a concise description of the PR, if an issue exists for
+- write a concise description of the PR and link its validated issue using
+  ``Fixes #ISSUE_NUMBER``, ``Closes #ISSUE_NUMBER``, or ``Related to
+  #ISSUE_NUMBER``. To link an issue in another OpenWISP repository, use
+  ``Fixes openwisp/repository#ISSUE_NUMBER`` or ``Fixes
+  https://github.com/openwisp/repository/issues/ISSUE_NUMBER``
 - after submitting your PR, check back again whether your PR has passed
   our required tests and style checks
 - if the tests fail for some reason, try to fix them and if you get stuck
@@ -200,6 +212,15 @@ now on we will shorten it often to just *PR*):
   open source project takes a bit of sweat and effort; ensure to follow up
   with this type of operations
 - once everything is fine with us we'll merge your PR
+
+For external contributors, automation validates the linked issue. Owners,
+organization members, and repository collaborators are exempt. If the
+issue link is missing or does not refer to a validated issue, the PR
+receives the ``invalid`` label and one comment explaining the problem.
+Updating the PR description with a valid link removes the label. If the PR
+remains invalid, it is closed 24 hours after that comment. This does not
+change the stale-PR policy: ordinary stale PRs are not automatically
+closed.
 
 4. Avoiding unnecessary changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -219,71 +240,13 @@ setting your editor as follows:
 Coding Style Conventions
 ------------------------
 
-1. Python code conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Each repository defines style conventions appropriate to its languages and
+tools. Run ``./run-qa-checks`` from the repository's top-level directory
+to verify your changes. This script runs the relevant automated QA checks,
+and CI rejects pull requests that do not pass them.
 
-OpenWISP follows `PEP 8 -- Style Guide for Python Code
-<https://www.python.org/dev/peps/pep-0008/>`_ and several other style
-conventions which can be enforced by using the following tools:
-
-- ``openwisp-qa-format``: this command is shipped in :doc:`openwisp-utils
-  </utils/developer/qa-checks>`, a dependency used in every OpenWISP
-  python module, it formats the Python code according to the OpenWISP
-  style conventions, it's based on popular tools like: `isort
-  <http://isort.readthedocs.io/en/latest/>`_ and `black
-  <https://black.readthedocs.io/en/stable/>`_ (**please do not run black
-  directly** but always call ``openwisp-qa-format``)
-- ``./run-qa-checks``: it's a script present in the top level directory of
-  each OpenWISP module and performs all the QA checks that are specific to
-  each module. It mainly calls the ``openwisp-qa-check`` command, which
-  performs several common QA checks used across all OpenWISP modules to
-  ensure consistency (including `flake8
-  <http://flake8.pycqa.org/en/latest/>`_), for more info consult the
-  documentation of :doc:`openwisp-qa-check </utils/developer/qa-checks>`.
-
-.. important::
-
-    QA checks defined in the ``run-qa-checks`` script are also executed in
-    CI builds. These builds will fail if any QA check fails.
-
-    To resolve QA check failures, run ``openwisp-qa-format`` and apply
-    manual fixes if necessary, until ``./run-qa-checks`` completes without
-    errors.
-
-.. note::
-
-    If you want to learn more about our usage of python and django, we
-    suggest reading :doc:`../developer/hacking-openwisp-python-django`.
-
-2. CSS and Javascript code conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-OpenWISP follows CSS and JavaScript coding conventions enforced by the
-`Prettier <https://prettier.io>`_ code formatting tool.
-
-The Prettier formatter is used by the :doc:`openwisp-qa-format
-</utils/developer/qa-checks>` tool and by the `./run-qa-checks` script
-located in the top-level directory of each repository.
-
-.. important::
-
-    QA checks defined in the ``run-qa-checks`` script are also executed in
-    CI builds. These builds will fail if any QA check fails.
-
-    To resolve QA check failures, run ``openwisp-qa-format`` and apply
-    manual fixes if necessary, until ``./run-qa-checks`` completes without
-    errors.
-
-3. OpenWrt related conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-OpenWISP follows the standard OpenWrt coding style conventions of OpenWrt:
-
-- `Working with Patches <https://wiki.openwrt.org/doc/devel/patches>`_
-- `Naming patches
-  <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_
-- `Adding new files
-  <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
+Follow the repository's ``AGENTS.md`` file for formatting guidance and any
+required automatic formatting tools.
 
 Thank You
 ---------
