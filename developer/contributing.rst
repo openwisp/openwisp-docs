@@ -172,6 +172,11 @@ Moreover, keep the following guidelines in mind:
 
 - commits should be descriptive in nature, the message should explain the
   nature of the change
+- add an explanatory commit body for substantial changes, new features, or
+  non-obvious bug fixes; the subject of ``[feature]``, ``[change]``,
+  ``[change!]``, ``[deps]``, and ``[fix]`` commits, including scoped
+  variants, is automatically included in the changelog, so write it in
+  clear, user-friendly, past-tense language
 - make sure to follow the code style used in the module you are
   contributing to
 - before committing and pushing the changes, test the code both manually
