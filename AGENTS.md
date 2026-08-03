@@ -20,10 +20,11 @@ If instructions conflict, repository config and CI workflows win first, docs nex
 
 ## Development Notes
 
-- Keep changes focused. Avoid unrelated rewrites, formatting churn, and broad style changes.
 - Preserve headings, anchors, cross-references, versioned links, include directives, image paths, and public URLs unless explicitly required.
 - Be careful with release notes, version switcher behavior, generated files, spell-check word lists, and module documentation copied from upstream repos.
 - Avoid unnecessary blank lines inside directive blocks, literal blocks, and helper functions.
+- Prefer short, precise names that rely on their nearest meaningful scope. Do not repeat a feature, domain object, or namespace already named by the containing module, class, or function. For example, prefer `EstimatedLocation.refresh()` over `EstimatedLocation.refresh_estimated_location()`. Repeat that context only when the name is used outside that scope or is needed to distinguish genuinely different concepts. When a concise name cannot express a necessary distinction, use a concise docstring to describe it rather than encoding it in an excessively long name.
+- Before adding a comment or docstring, ask whether it conveys information a reader cannot reasonably infer from clear code, names, and surrounding scope. Add a concise comment when it explains a non-obvious reason, constraint, compatibility or security requirement, side effect, or unavoidable complexity. In opaque syntax or domain-specific code, especially shell scripts, a comment may also explain what the code does. Do not add comments that merely restate adjacent code one-to-one.
 - Update navigation and index files when adding, moving, or removing pages.
 
 ## Testing and QA
@@ -31,14 +32,25 @@ If instructions conflict, repository config and CI workflows win first, docs nex
 - Add or update docs examples and references for behavior changes.
 - For documentation bug fixes, reproduce the broken build, link, warning, or rendered output when feasible before changing it.
 - Use targeted docs builds while iterating, then run the documented full QA/build command before considering the change complete.
-- Run `./run-qa-checks` when present. Treat failures as blocking unless confirmed unrelated and reported.
+- Treat QA failures as blocking unless confirmed unrelated and reported.
 
 ## Security Notes
 
 - Watch for leaked secrets, unsafe links, stale security guidance, broken HTTPS links, and instructions that encourage insecure deployments.
 - Preserve safe handling around downloads, install commands, credentials, tokens, TLS material, and production configuration examples.
-- Write comments only when they explain why code or docs structure is shaped a certain way. Put comments before the relevant block instead of scattering them inside it.
 
 ## Troubleshooting
 
-- If setup, QA, spelling, links, or docs builds fail, check docs first, then compare with CI. If commands diverge, follow CI.
+- If documentation and CI commands differ, use CI for verification and report the exact documentation path, CI workflow path, and differing commands. Do not change the documentation until the user explicitly chooses one of these actions: update the named documentation file in the current change because the divergence was caused by that change, or leave it unchanged for a separate follow-up. Never decide that scope distinction independently.
+
+## Contributing Guidelines
+
+- Before editing, inspect the relevant implementation, tests, documentation, and configuration. Follow existing repository patterns and do not invent behavior or requirements.
+- Keep each contribution focused and change only the lines necessary for its goal. Do not include unrelated refactors, formatting churn, or generated and dependency-file changes unless explicitly required.
+- Add or update focused tests for every behavior change. In repositories without a dedicated automated test suite, use the documented build and QA workflow as the equivalent behavior verification. For bug fixes, first reproduce the failure with a regression test when the repository's test setup allows it.
+- Run the relevant targeted tests, builds, and documented QA checks, including `./run-qa-checks` when provided. Do not claim a change is complete when verification fails; report the failure or blocker.
+- When requirements, intended behavior, or an unexpected failure are unclear, stop and seek clarification instead of making speculative changes.
+- When starting work on a new issue, create a new branch from `master`. Use `issues/<issue-number>-<short-title>` for issue work; otherwise, use a short, descriptive branch name.
+- Commit messages must be descriptive and use past tense. Past tense is a writing guideline that agents and contributors must follow; it is not checked automatically. For issue work, use an allowed prefix and a capitalized, past-tense subject ending with `#<issue-number>`, for example `[fix] Fixed perennial "modified" state #213`. Repeat the issue reference in the body with `Fixes`, `Closes`, `Resolves`, or `Related to` as appropriate. Use `openwisp-commit --check` to validate the structural commit convention and `cz -n cz_openwisp info` to view the allowed prefixes and message structure. If the repository's declared QA dependency predates these commands, install the development version with `pip install --upgrade "openwisp-utils[qa] @ https://github.com/openwisp/openwisp-utils/archive/refs/heads/master.tar.gz"` in the development environment.
+- Add an explanatory commit body only for substantial changes, new features, or non-obvious bug fixes. The releaser automatically publishes the subject of `[feature]`, `[change]`, `[change!]`, `[deps]`, and `[fix]` commits, including scoped variants, in the changelog. Write those subjects in clear, user-friendly language suitable for release notes.
+- Send new commits in response to review feedback instead of amending existing commits.
