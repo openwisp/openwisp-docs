@@ -31,7 +31,8 @@ If instructions conflict, repository config and CI workflows win first, docs nex
 
 - Add or update docs examples and references for behavior changes.
 - For documentation bug fixes, reproduce the broken build, link, warning, or rendered output when feasible before changing it.
-- Use targeted docs builds while iterating, then run the documented full QA/build command before considering the change complete.
+- While iterating, run `make build VERSION=dev FORMATS=html`. Add `SKIP_FETCH=1` only when module repositories have already been fetched or updated by a previous build.
+- Run `./run-qa-checks` as the full QA command before considering the change complete.
 - Treat QA failures as blocking unless confirmed unrelated and reported.
 
 ## Security Notes
@@ -47,7 +48,6 @@ If instructions conflict, repository config and CI workflows win first, docs nex
 
 - Before editing, inspect the relevant implementation, tests, documentation, and configuration. Follow existing repository patterns and do not invent behavior or requirements.
 - Keep each contribution focused and change only the lines necessary for its goal. Do not include unrelated refactors, formatting churn, or generated and dependency-file changes unless explicitly required.
-- Add or update focused tests for every behavior change. In repositories without a dedicated automated test suite, use the documented build and QA workflow as the equivalent behavior verification. For bug fixes, first reproduce the failure with a regression test when the repository's test setup allows it.
 - Run the relevant targeted tests, builds, and documented QA checks, including `./run-qa-checks` when provided. Do not claim a change is complete when verification fails; report the failure or blocker.
 - When requirements, intended behavior, or an unexpected failure are unclear, stop and seek clarification instead of making speculative changes.
 - When starting work on a new issue, create a new branch from `master`. Use `issues/<issue-number>-<short-title>` for issue work; otherwise, use a short, descriptive branch name.
