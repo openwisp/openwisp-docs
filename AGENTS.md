@@ -49,6 +49,7 @@ If instructions conflict, repository config and CI workflows win first, docs nex
 - Add or update docs examples and references for behavior changes.
 - For documentation bug fixes, reproduce the broken build, link, warning, or rendered output when feasible before changing it.
 - While iterating, run `make build VERSION=dev FORMATS=html`. Add `SKIP_FETCH=1` only when module repositories have already been fetched or updated by a previous build.
+- Keep helpers and classes used by only one test method inside that method. Promote them to class or module scope only when genuinely reused.
 
 ## Security Notes
 
