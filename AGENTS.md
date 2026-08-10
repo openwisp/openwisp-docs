@@ -34,7 +34,7 @@ If instructions conflict, repository config and CI workflows win first, docs nex
 - Add an explanatory commit body only for substantial changes, new features, or non-obvious bug fixes. The releaser automatically publishes the subject of `[feature]`, `[change]`, `[change!]`, `[deps]`, and `[fix]` commits, including scoped variants, in the changelog. Write those subjects in clear, user-friendly language suitable for release notes.
 - Send new commits in response to review feedback instead of amending existing commits.
 
-## Development Notes
+## Development Rules
 
 - Preserve headings, anchors, cross-references, versioned links, include directives, image paths, and public URLs unless explicitly required.
 - Edit local content or source module documentation, then rebuild instead of editing `_build/` or `staging-dir/` directly.
@@ -51,7 +51,7 @@ If instructions conflict, repository config and CI workflows win first, docs nex
 - While iterating, run `make build VERSION=dev FORMATS=html`. Add `SKIP_FETCH=1` only when module repositories have already been fetched or updated by a previous build.
 - Keep helpers and classes used by only one test method inside that method. Promote them to class or module scope only when genuinely reused.
 
-## Security Notes
+## Security Rules
 
 - Watch for leaked secrets, unsafe links, stale security guidance, broken HTTPS links, and instructions that encourage insecure deployments.
 - Preserve safe handling around downloads, install commands, credentials, tokens, TLS material, and production configuration examples.
