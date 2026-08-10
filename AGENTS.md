@@ -36,6 +36,7 @@ If instructions conflict, repository config and CI workflows win first, docs nex
 
 ## Development Rules
 
+- Follow the DRY principle: do not duplicate information or code across files.
 - Preserve headings, anchors, cross-references, versioned links, include directives, image paths, and public URLs unless explicitly required.
 - Edit local content or source module documentation, then rebuild instead of editing `_build/` or `staging-dir/` directly.
 - Be careful with release notes, version switcher behavior, generated files, spell-check word lists, and module documentation copied from upstream repos.
