@@ -84,6 +84,23 @@ entry barrier for new users.
 - **Facilitate the setup of VPN automations**: See :ref:`OpenWISP VPN
   Deployer Linux Package GSoC 2026 Project Idea <gsoc-2026-vpn-deployer>`
   for more information.
+- **Module-provided default settings**: Let each OpenWISP module define
+  sensible defaults without requiring installers to copy them into the
+  project settings. Define clear rules for defaults that interact or
+  conflict across modules. See `openwisp-utils issue #408
+  <https://github.com/openwisp/openwisp-utils/issues/408>`_.
+- **Persistent installation data**: Store small pieces of internal setup
+  data in the database, such as the UUID of the management VPN selected by
+  an installer and the version of the setup steps already completed. This
+  data will help installers run safely more than once without relying on
+  mutable names or cache storage. See `openwisp-utils issue #741
+  <https://github.com/openwisp/openwisp-utils/issues/741>`_.
+- **Web interface for selected settings**: Allow administrators to change
+  a carefully selected set of settings without editing deployment files.
+  Only settings designed to be read at runtime will be available; settings
+  needed during application startup and sensitive values will remain in
+  deployment configuration. See `openwisp-utils issue #742
+  <https://github.com/openwisp/openwisp-utils/issues/742>`_.
 
 Agent Improvements
 ------------------
