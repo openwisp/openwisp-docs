@@ -35,6 +35,7 @@ certbot
 changelog
 chatbot
 chatbots
+ChatGPT
 checksum
 checksums
 Chilli
@@ -102,6 +103,7 @@ fping
 freeradius
 frontend
 Geckodriver
+Gemini
 geo
 geocoding
 geodjango
@@ -190,6 +192,7 @@ MiB
 middleware
 Mikrotik
 minification
+minify
 misconfiguration
 mixin
 mixins
@@ -297,6 +300,7 @@ ssh
 SSID
 ssl
 standardization
+staticfiles
 stylelint
 subclasses
 subdirectory
