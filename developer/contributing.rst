@@ -29,8 +29,10 @@ questions or announce your intentions.
 
 .. _openwisp_look_for_open_issues:
 
-Look for open issues
---------------------
+Look for "validated" issues
+---------------------------
+
+Not all issues are suited to new contributors.
 
 Check out these two kanban boards:
 
@@ -72,6 +74,11 @@ to wait for it to be assigned to you before working on it.** Just check if
 there is anyone else actively working on it (e.g.: an open pull request
 with recent activity). If nobody else is actively working on it, **just
 announce your intention to work on it by leaving a comment in the issue**.
+
+.. warning::
+
+    Pull requests from external contributors that do not link a validated
+    issue are automatically flagged as invalid and closed after 24 hours.
 
 Priorities for the next release
 -------------------------------
