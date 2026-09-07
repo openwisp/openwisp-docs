@@ -35,6 +35,7 @@ certbot
 changelog
 chatbot
 chatbots
+ChatGPT
 checksum
 checksums
 Chilli
@@ -102,6 +103,7 @@ fping
 freeradius
 frontend
 Geckodriver
+Gemini
 geo
 geocoding
 geodjango
@@ -139,6 +141,7 @@ https
 ifconfig
 influxDB
 Integrations
+integrations
 Integrators
 involved
 IoT
@@ -189,6 +192,7 @@ MiB
 middleware
 Mikrotik
 minification
+minify
 misconfiguration
 mixin
 mixins
@@ -235,6 +239,7 @@ pppd
 pptp
 pre
 precompiled
+precompressed
 preconfiguration
 preconfigured
 prefetch
@@ -295,6 +300,7 @@ ssh
 SSID
 ssl
 standardization
+staticfiles
 stylelint
 subclasses
 subdirectory
@@ -303,6 +309,7 @@ subnet
 subnets
 Subnets
 Supervisord
+swappable
 Swapper
 sync
 syslog
