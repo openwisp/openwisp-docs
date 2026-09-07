@@ -139,6 +139,7 @@ https
 ifconfig
 influxDB
 Integrations
+integrations
 Integrators
 involved
 IoT
@@ -235,6 +236,7 @@ pppd
 pptp
 pre
 precompiled
+precompressed
 preconfiguration
 preconfigured
 prefetch
@@ -303,6 +305,7 @@ subnet
 subnets
 Subnets
 Supervisord
+swappable
 Swapper
 sync
 syslog
