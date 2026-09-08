@@ -817,112 +817,115 @@ Dependencies
 - Bumped ``black`` to 26.5.1 (``>=25.1,<26.6``)
 
   Updates the requirements on `black <https://github.com/psf/black>`__ to
-  permit the latest version. - `Release notes
-  <https://github.com/psf/black/releases>`__ - `Changelog
-  <https://github.com/psf/black/blob/main/CHANGES.md>`__ - `Commits
-  <https://github.com/psf/black/compare/25.1.0...26.5.1>`__
+  permit the latest version. See the `release notes
+  <https://github.com/psf/black/releases>`__, `changelog
+  <https://github.com/psf/black/blob/main/CHANGES.md>`__, and `commit
+  comparison <https://github.com/psf/black/compare/25.1.0...26.5.1>`__.
 
 - Bumped ``celery`` to 5.6.1 (``~=5.6.1``)
 
   Updates the requirements on `celery
-  <https://github.com/celery/celery>`__ to permit the latest version. -
-  `Release notes <https://github.com/celery/celery/releases>`__ -
-  `Changelog <https://github.com/celery/celery/blob/main/Changelog.rst>`__
-  - `Commits <https://github.com/celery/celery/compare/v5.5.3...v5.6.1>`__
+  <https://github.com/celery/celery>`__ to permit the latest version. See
+  the `release notes <https://github.com/celery/celery/releases>`__,
+  `changelog
+  <https://github.com/celery/celery/blob/main/Changelog.rst>`__, and
+  `commit comparison
+  <https://github.com/celery/celery/compare/v5.5.3...v5.6.1>`__.
 
 - Bumped ``djangorestframework`` to 3.17.1 (``~=3.17.1``)
 
   Updates the requirements on `djangorestframework
   <https://github.com/encode/django-rest-framework>`__ to permit the
-  latest version. - `Release notes
-  <https://github.com/encode/django-rest-framework/releases>`__ - `Commits
-  <https://github.com/encode/django-rest-framework/compare/3.16.0...3.17.1>`__
+  latest version. See the `release notes
+  <https://github.com/encode/django-rest-framework/releases>`__ and
+  `commit comparison
+  <https://github.com/encode/django-rest-framework/compare/3.16.0...3.17.1>`__.
 
 - Bumped ``git-cliff`` to 2.13.1 (``~=2.13.1``)
 
   Updates the requirements on `git-cliff
-  <https://github.com/orhun/git-cliff>`__ to permit the latest version. -
-  `Release notes <https://github.com/orhun/git-cliff/releases>`__ -
-  `Changelog
-  <https://github.com/orhun/git-cliff/blob/main/CHANGELOG.md>`__ -
-  `Commits
-  <https://github.com/orhun/git-cliff/compare/v2.10.0...v2.13.1>`__
+  <https://github.com/orhun/git-cliff>`__ to permit the latest version.
+  See the `release notes <https://github.com/orhun/git-cliff/releases>`__,
+  `changelog
+  <https://github.com/orhun/git-cliff/blob/main/CHANGELOG.md>`__, and
+  `commit comparison
+  <https://github.com/orhun/git-cliff/compare/v2.10.0...v2.13.1>`__.
 
 - Bumped ``isort`` to 8.0.1 (``>=6.0.1,<8.1.0``)
 
   Updates the requirements on `isort <https://github.com/PyCQA/isort>`__
-  to permit the latest version. - `Release notes
-  <https://github.com/PyCQA/isort/releases>`__ - `Changelog
-  <https://github.com/PyCQA/isort/blob/main/CHANGES.rst>`__ - `Commits
-  <https://github.com/PyCQA/isort/compare/6.0.1...8.0.1>`__
+  to permit the latest version. See the `release notes
+  <https://github.com/PyCQA/isort/releases>`__, `changelog
+  <https://github.com/PyCQA/isort/blob/main/CHANGES.rst>`__, and `commit
+  comparison <https://github.com/PyCQA/isort/compare/6.0.1...8.0.1>`__.
 
 - Bumped ``pytest-asyncio`` to 1.4.0 (``>=1.3.0,<1.5.0``)
 
-  Updates the requirements on `pytest-django
-  <https://github.com/pytest-dev/pytest-django>`__ to permit the latest
-  version. - `Release notes
-  <https://github.com/pytest-dev/pytest-django/releases>`__ - `Changelog
-  <https://github.com/pytest-dev/pytest-django/blob/main/docs/changelog.rst>`__
-  - `Commits
-  <https://github.com/pytest-dev/pytest-django/compare/v4.10.0...v4.12.0>`__
+  Updates the requirements on `pytest-asyncio
+  <https://github.com/pytest-dev/pytest-asyncio>`__ to permit the latest
+  version. See the `release notes
+  <https://github.com/pytest-dev/pytest-asyncio/releases>`__ and `commit
+  comparison
+  <https://github.com/pytest-dev/pytest-asyncio/compare/v0.24.0...v1.4.0>`__.
 
 - Bumped ``selenium`` to 4.46.0 (``>=4.32,<4.47``)
 
   Updates the requirements on `selenium
   <https://github.com/SeleniumHQ/Selenium>`__ to permit the latest
-  version. - `Release notes
-  <https://github.com/SeleniumHQ/Selenium/releases>`__ - `Changelog
-  <https://github.com/SeleniumHQ/Selenium/blob/main/Changelog.rst>`__ -
-  `Commits
-  <https://github.com/SeleniumHQ/Selenium/compare/selenium-4.10.0...selenium-4.46.0>`__
+  version. See the `release notes
+  <https://github.com/SeleniumHQ/Selenium/releases>`__, `changelog
+  <https://github.com/SeleniumHQ/Selenium/blob/main/Changelog.rst>`__, and
+  `commit comparison
+  <https://github.com/SeleniumHQ/Selenium/compare/selenium-4.10.0...selenium-4.46.0>`__.
 
 - Bumped ``tblib`` to 3.2.2 (``~=3.2.2``)
 
   Updates the requirements on `tblib
   <https://github.com/ionelmc/python-tblib>`__ to permit the latest
-  version. - `Release notes
-  <https://github.com/ionelmc/python-tblib/releases>`__ - `Changelog
-  <https://github.com/ionelmc/python-tblib/blob/master/CHANGELOG.rst>`__ -
-  `Commits
-  <https://github.com/ionelmc/python-tblib/compare/v3.1.0...v3.2.2>`__
+  version. See the `release notes
+  <https://github.com/ionelmc/python-tblib/releases>`__, `changelog
+  <https://github.com/ionelmc/python-tblib/blob/master/CHANGELOG.rst>`__,
+  and `commit comparison
+  <https://github.com/ionelmc/python-tblib/compare/v3.1.0...v3.2.2>`__.
 
 - Bumped ``django-filter`` to 26.1 (``>=25.1,<27.0``)
 
   Updates the requirements on `django-filter
   <https://github.com/carltongibson/django-filter>`__ to permit the latest
-  version. - `Release notes <https://github.com/django-filter/releases>`__
-  - `Changelog <https://github.com/django-filter/blob/main/CHANGES.rst>`__
-  - `Commits <https://github.com/django-filter/compare/25.1...26.1>`__
+  version. See the `release notes
+  <https://github.com/django-filter/releases>`__, `changelog
+  <https://github.com/django-filter/blob/main/CHANGES.rst>`__, and `commit
+  comparison <https://github.com/django-filter/compare/25.1...26.1>`__.
 
 - Bumped ``coverage`` to 7.15.2 (``>=7.10.0,<7.16.0``)
 
   Updates the requirements on `coverage
   <https://github.com/coveragepy/coveragepy>`__ to permit the latest
-  version. - `Release notes
-  <https://github.com/coveragepy/coveragepy/releases>`__ - `Changelog
-  <https://github.com/coveragepy/coverage/blob/main/CHANGES.rst>`__ -
-  `Commits
-  <https://github.com/coveragepy/coverage/compare/7.10.0...7.15.2>`__
+  version. See the `release notes
+  <https://github.com/coveragepy/coveragepy/releases>`__, `changelog
+  <https://github.com/coveragepy/coverage/blob/main/CHANGES.rst>`__, and
+  `commit comparison
+  <https://github.com/coveragepy/coverage/compare/7.10.0...7.15.2>`__.
 
 - Bumped ``docstrfmt`` to 2.2.0 (``>=2.0.0,<2.3.0``)
 
   Updates the requirements on `docstrfmt
   <https://github.com/LilSpazJoekp/docstrfmt>`__ to permit the latest
-  version. - `Release notes
-  <https://github.com/LilSpazJoekp/docstrfmt/releases>`__ - `Changelog
-  <https://github.com/LilSpazJoekp/docstrfmt/blob/master/CHANGES.rst>`__ -
-  `Commits
-  <https://github.com/LilSpazJoekp/docstrfmt/compare/v2.0.0...v2.2.0>`__
+  version. See the `release notes
+  <https://github.com/LilSpazJoekp/docstrfmt/releases>`__, `changelog
+  <https://github.com/LilSpazJoekp/docstrfmt/blob/master/CHANGES.rst>`__,
+  and `commit comparison
+  <https://github.com/LilSpazJoekp/docstrfmt/compare/v2.0.0...v2.2.0>`__.
 
 - Bumped ``google-genai`` to 2.7.0 (``>=1.62.0,<3.0.0``)
 
   Updates the requirements on `google-genai
   <https://github.com/googleapis/python-genai>`__ to permit the latest
-  version. - `Release notes
-  <https://github.com/googleapis/python-genai/releases>`__ - `Changelog
-  <https://github.com/googleapis/python-genai/blob/main/CHANGELOG.md>`__ -
-  `Commits
-  <https://github.com/googleapis/python-genai/compare/v1.62.0...v2.7.0>`__
+  version. See the `release notes
+  <https://github.com/googleapis/python-genai/releases>`__, `changelog
+  <https://github.com/googleapis/python-genai/blob/main/CHANGELOG.md>`__,
+  and `commit comparison
+  <https://github.com/googleapis/python-genai/compare/v1.62.0...v2.7.0>`__.
 
 - Bumped ``django-minify-compress-staticfiles`` to 1.1.1
 
@@ -933,11 +936,11 @@ Dependencies
 
   Updates the requirements on `pytest-django
   <https://github.com/pytest-dev/pytest-django>`__ to permit the latest
-  version. - `Release notes
-  <https://github.com/pytest-dev/pytest-django/releases>`__ - `Changelog
-  <https://github.com/pytest-dev/pytest-django/blob/main/docs/changelog.rst>`__
-  - `Commits
-  <https://github.com/pytest-dev/pytest-django/compare/v4.10.0...v4.12.0>`__
+  version. See the `release notes
+  <https://github.com/pytest-dev/pytest-django/releases>`__, `changelog
+  <https://github.com/pytest-dev/pytest-django/blob/main/docs/changelog.rst>`__,
+  and `commit comparison
+  <https://github.com/pytest-dev/pytest-django/compare/v4.10.0...v4.12.0>`__.
 
 Bugfixes
 ~~~~~~~~
@@ -1054,38 +1057,38 @@ Other changes
 Dependencies
 ++++++++++++
 
-- Added ``@babel/runtime`` ``^7.28.6`` `
+- Added ``@babel/runtime`` `^7.28.6
   <https://github.com/babel/babel/releases/tag/v7.28.6>`__.
-- Added ``@sentry/node`` ``^10.40.0`` `
-  <https://github.com/getsentry/sentry-javascript/releases/tag/v10.40.0>`__.
-- Bumped ``axios`` from ``^1.10.0`` to ``^1.13.2`` `
+- Added ``@sentry/node`` `^10.40.0
+  <https://github.com/getsentry/sentry-javascript/releases/tag/10.40.0>`__.
+- Bumped ``axios`` from ``^1.10.0`` to `^1.13.2
   <https://github.com/axios/axios/blob/v1.x/CHANGELOG.md>`__.
-- Bumped ``concurrently`` from ``^8.2.1`` to ``^10.0.5`` `
+- Bumped ``concurrently`` from ``^8.2.1`` to `^10.0.5
   <https://github.com/open-cli-tools/concurrently/releases/tag/v10.0.5>`__.
-- Bumped ``core-js`` from ``^3.19.0`` to ``^3.47.0`` `
+- Bumped ``core-js`` from ``^3.19.0`` to `^3.47.0
   <https://core-js.io/changelog>`__.
-- Bumped ``deepmerge`` from ``^4.2.2`` to ``^4.3.1`` `
+- Bumped ``deepmerge`` from ``^4.2.2`` to `^4.3.1
   <https://github.com/TehShrike/deepmerge/blob/master/changelog.md>`__.
-- Bumped ``dompurify`` from ``^3.0.6`` to ``^3.3.3`` `
+- Bumped ``dompurify`` from ``^3.0.6`` to `^3.3.3
   <https://github.com/cure53/DOMPurify/releases/tag/3.3.3>`__.
 - Bumped ``duration-formatter`` from ``^1.0.7`` to ``^1.1.1``.
-- Bumped ``express`` from ``^5.1.0`` to ``^5.2.1`` `
+- Bumped ``express`` from ``^5.1.0`` to `^5.2.1
   <https://github.com/expressjs/express/releases/tag/v5.2.1>`__.
-- Bumped ``fs-extra`` from ``^11.1.0`` to ``^11.3.3`` `
+- Bumped ``fs-extra`` from ``^11.1.0`` to `^11.3.3
   <https://github.com/jprichardson/node-fs-extra/blob/master/CHANGELOG.md>`__.
-- Bumped ``inquirer`` from ``^8.1.1`` to ``^14.0.2`` `
+- Bumped ``inquirer`` from ``^8.1.1`` to `^14.0.2
   <https://github.com/SBoudrias/Inquirer.js/releases/tag/inquirer%4014.0.2>`__.
-- Bumped ``jsdom`` from ``^22.1.0`` to ``^30.0.1`` `
+- Bumped ``jsdom`` from ``^22.1.0`` to `^30.0.1
   <https://github.com/jsdom/jsdom/releases/tag/v30.0.1>`__.
-- Bumped ``marked`` from ``^16.3.0`` to ``^18.0.4`` `
+- Bumped ``marked`` from ``^16.3.0`` to `^18.0.4
   <https://github.com/markedjs/marked/releases/tag/v18.0.4>`__.
-- Bumped ``node-plop`` from ``^0.32.0`` to ``^0.32.3`` `
+- Bumped ``node-plop`` from ``^0.32.0`` to `^0.32.3
   <https://github.com/plopjs/plop/releases/tag/node-plop%400.32.3>`__.
-- Replaced ``pretty-bytes`` ``^7.0.0`` with ``filesize`` ``^11.0.13`` `
+- Replaced ``pretty-bytes`` ``^7.0.0`` with ``filesize`` `^11.0.13
   <https://github.com/avoidwork/filesize.js/blob/master/CHANGELOG.md>`__.
-- Bumped ``qs`` from ``^6.9.4`` to ``^6.14.0`` `
+- Bumped ``qs`` from ``^6.9.4`` to `^6.14.0
   <https://github.com/ljharb/qs/blob/main/CHANGELOG.md>`__.
-- Bumped ``ttag`` from ``^1.7.24`` to ``^1.8.12`` `
+- Bumped ``ttag`` from ``^1.7.24`` to `^1.8.12
   <https://ttag.js.org/docs/changelog.html>`__.
 
 Bugfixes
