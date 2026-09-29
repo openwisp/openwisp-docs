@@ -17,6 +17,7 @@ backends
 backhaul
 backoff
 backport
+backports
 backward
 benchmarking
 bind
@@ -70,6 +71,7 @@ datasets
 davide
 debian
 deployer
+deprioritized
 devops
 differently
 django
@@ -89,6 +91,7 @@ embeddable
 env
 Eventbrite
 explicative
+exploitability
 extensibility
 favicon
 features
@@ -169,6 +172,7 @@ jsondoc
 jsoninfo
 kanban
 ker
+keyring
 kubernetes
 letsencrypt
 lifecycle
@@ -194,6 +198,7 @@ Mikrotik
 minification
 minify
 misconfiguration
+mitigations
 mixin
 mixins
 modularity
@@ -343,8 +348,10 @@ Unmark
 unreferenced
 unregister
 unregistering
+unsanitized
 unselect
 untrusted
+unvalidated
 upgrader
 upgraders
 uptime
