@@ -3,7 +3,7 @@ Security Advisories
 
 Published OpenWISP security advisories are listed below, newest first.
 Follow the GitHub advisory links for affected and fixed versions,
-mitigations, and required operator actions.
+mitigations, and required actions.
 
 - **2026-09-15, OpenWISP RADIUS (GHSA-pfx3-4m53-g475):** `SMS verification
   bypasses destination and IP restrictions

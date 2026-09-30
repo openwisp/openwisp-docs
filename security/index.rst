@@ -1,5 +1,5 @@
-Security Resources
-==================
+Security Policy
+===============
 
 This section documents our security policy, reporting process, threat
 model, incident response process, and published advisories.

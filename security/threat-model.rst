@@ -30,8 +30,9 @@ compromised managed devices, and attackers with access to network traffic.
 Compromised maintainer accounts or publishing systems can also put users
 at risk through malicious releases or downloads.
 
-Restricted registration and trusted operators can reduce exposure, but do
-not remove the need to consider stolen credentials or compromised devices.
+Restricted registration and trusted network administrators can reduce
+exposure, but do not remove the need to consider stolen credentials or
+compromised devices.
 
 Trust Boundaries
 ----------------
@@ -115,10 +116,11 @@ Two-factor authentication (2FA) is mandatory for OpenWISP GitHub
 organization members and package-publishing accounts wherever supported
 (e.g., PyPI and Ansible Galaxy).
 
-Operator Responsibilities
--------------------------
+Network Administrator Responsibilities
+--------------------------------------
 
-Operators are responsible for securing their deployments, including:
+Network administrators are responsible for securing their deployments,
+including:
 
 - Keeping OpenWISP and its dependencies updated and following
   :doc:`advisories`.
