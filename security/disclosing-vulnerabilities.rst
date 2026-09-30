@@ -19,11 +19,15 @@ assessment work.
 requests, or community discussions.** Security reports bypass the normal
 public contribution process.
 
-After validation, maintainers will direct you to the affected repository's
-private vulnerability reporting workflow, where enabled, or create a
-private draft GitHub advisory and invite you to collaborate. A private
-report or draft advisory is not a published advisory: keep it private
-until coordinated disclosure.
+After validation, maintainers will direct validated vulnerabilities to the
+affected repository's private vulnerability reporting workflow, where
+enabled, or create a private draft GitHub advisory and invite you to
+collaborate. A private report or draft advisory is not a published
+advisory: keep it private until coordinated disclosure.
+
+For a validated compromise without a related software vulnerability, the
+OpenWISP Security Incident Response Team will follow the
+:doc:`incident-response-plan`.
 
 Scope and Coordination
 ----------------------
