@@ -8,10 +8,12 @@ Disclosing Vulnerabilities
 Reporting a Security Issue
 --------------------------
 
-Send suspected vulnerabilities to security@openwisp.io, a private mailing
-list. You do not need to identify the correct repository first. Email is
-preferred because the list is simpler for the team to manage and allows
-maintainers to share initial assessment work.
+Send suspected vulnerabilities and suspected compromises of
+OpenWISP-controlled accounts, services, or releases to
+security@openwisp.io, a private mailing list. You do not need to identify
+the correct repository first. Email is preferred because the list is
+simpler for the team to manage and allows maintainers to share initial
+assessment work.
 
 **Do not report undisclosed vulnerabilities in public issues, pull
 requests, or community discussions.** Security reports bypass the normal
