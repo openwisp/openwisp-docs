@@ -22,7 +22,7 @@ Handling a Software Vulnerability
    outcome to the reporter.
 3. **Coordinate the response.** For a valid issue, collaborate privately
    through the relevant GitHub advisory workflow and prioritize by actual
-   impact. Involve upstream maintainers for dependency issues.
+   impact.
 4. **Prepare a fix.** Develop and review the fix, add appropriate
    regression tests, and identify mitigations where a release cannot be
    immediate. Keep pre-release fixes confidential where feasible.
@@ -64,8 +64,3 @@ basis:
    downloads to avoid, what to replace, and whether credentials need
    rotation. Use the project website and mailing list as appropriate; do
    not wait for a software patch or CVE when neither is relevant.
-
-If there is no software vulnerability to track, a public incident notice
-can be more appropriate than a GitHub vulnerability advisory. This process
-is limited to OpenWISP-controlled assets; it is not a commitment to
-investigate or recover third-party deployments.

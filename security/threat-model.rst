@@ -19,8 +19,8 @@ Assets to Protect
   certificate authority private keys.
 - The availability and integrity of network management, monitoring, and
   authentication services.
-- Project repositories, release artifacts, websites, and the accounts and
-  automation used to publish them.
+- Project repositories, CI workflows, release artifacts, websites, and the
+  accounts and automation used to publish them.
 
 Potential Attackers
 -------------------
@@ -30,8 +30,13 @@ compromised managed devices, and attackers with access to network traffic.
 Compromised maintainer accounts or publishing systems can also put users
 at risk through malicious releases or downloads.
 
-Restricted registration and trusted operators can reduce exposure, but do
-not remove the need to consider stolen credentials or compromised devices.
+Contributors can also be attackers. A malicious pull request can introduce
+code that reaches a published release if it is merged without sufficient
+understanding and review.
+
+Restricted registration and trusted network administrators can reduce
+exposure, but do not remove the need to consider stolen credentials or
+compromised devices.
 
 Trust Boundaries
 ----------------
@@ -89,36 +94,51 @@ Authenticated users and compromised devices can cause this as well as
 unauthenticated clients. Assess resource limits, request rates, and
 workload isolation at both the application and deployment levels.
 
-Deployment and Publishing Infrastructure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Deployment Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The deployment administrator controls the server, database, installed
 code, and service credentials. Application permissions do not protect
 against an attacker who already controls that infrastructure.
 
-Project release and website infrastructure forms a separate trust
-boundary. Compromise of publishing access can distribute malicious code or
-redirect downloads without a defect in the OpenWISP application. The
-team's response is covered in :doc:`incident-response-plan`.
+.. _project_publishing_infrastructure:
 
-OpenWISP release tags are immutable, protecting existing tags from being
-changed to point to different code. This does not prevent an attacker with
-compromised publishing access from publishing a malicious new release.
+Project Publishing Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Malicious dependencies or compromised build workflows can also introduce
-malicious code into releases. Immutable tags alone do not establish that
-the referenced code, dependencies, or build artifacts are safe. Review
-dependency and workflow changes, limit build credentials and permissions,
-and verify the origin and integrity of release artifacts.
+OpenWISP publishes source code, release files and downloads, the website,
+and documentation. An attacker can introduce malicious code or content by:
+
+- submitting a malicious pull request that is merged without sufficient
+  understanding and review, especially when maintainers are under
+  pressure;
+- compromising a maintainer GitHub account to change source code or
+  project settings;
+- compromising CI workflows or publishing infrastructure to alter
+  releases, downloads, the website, or documentation;
+- compromising a dependency used by OpenWISP.
+
+The team's response is covered in :doc:`incident-response-plan`.
+
+Mitigations
++++++++++++
+
+OpenWISP release tags are immutable: an existing tag cannot be changed to
+point to different code. This does not prevent an attacker with publishing
+access from creating a new malicious release.
+
+AI-assisted security reviews can help identify risks, but they do not
+replace careful maintainer evaluation of every pull request.
 
 Two-factor authentication (2FA) is mandatory for OpenWISP GitHub
 organization members and package-publishing accounts wherever supported
 (e.g., PyPI and Ansible Galaxy).
 
-Operator Responsibilities
--------------------------
+Network Administrator Responsibilities
+--------------------------------------
 
-Operators are responsible for securing their deployments, including:
+Network administrators are responsible for securing their deployments,
+including:
 
 - Keeping OpenWISP and its dependencies updated and following
   :doc:`advisories`.

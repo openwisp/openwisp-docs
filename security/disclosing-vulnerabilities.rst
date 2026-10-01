@@ -8,29 +8,29 @@ Disclosing Vulnerabilities
 Reporting a Security Issue
 --------------------------
 
-Send suspected vulnerabilities to security@openwisp.io, a private mailing
-list. You do not need to identify the correct repository first. Email is
-preferred because the list is simpler for the team to manage and allows
-maintainers to share initial assessment work.
+Send suspected vulnerabilities and suspected compromises of
+OpenWISP-controlled accounts, services, or releases to
+security@openwisp.io, a private mailing list. You do not need to identify
+the correct repository first. Email is preferred because the list is
+simpler for the team to manage and allows maintainers to share initial
+assessment work.
 
 **Do not report undisclosed vulnerabilities in public issues, pull
 requests, or community discussions.** Security reports bypass the normal
 public contribution process.
 
-After validation, maintainers will direct you to the affected repository's
-private vulnerability reporting workflow, where enabled, or create a
-private draft GitHub advisory and invite you to collaborate. A private
-report or draft advisory is not a published advisory: keep it private
-until coordinated disclosure.
+After validation, maintainers will direct validated vulnerabilities to the
+affected repository's private vulnerability reporting workflow, where
+enabled, or create a private draft GitHub advisory and invite you to
+collaborate. A private report or draft advisory is not a published
+advisory: keep it private until coordinated disclosure.
 
-Ordinary support questions and questions about published advisories belong
-in the `OpenWISP mailing list
-<https://groups.google.com/d/forum/openwisp>`__. Contact the operator for
-incidents affecting an independently hosted deployment, unless they reveal
-an underlying OpenWISP vulnerability.
+For a validated compromise without a related software vulnerability, the
+OpenWISP Security Incident Response Team will follow the
+:doc:`incident-response-plan`.
 
-Scope and Responsibilities
---------------------------
+Scope and Coordination
+----------------------
 
 This policy covers OpenWISP-maintained software and project-controlled
 infrastructure, including accounts and tools used to publish releases. All
@@ -39,18 +39,7 @@ OpenWISP modules and OpenWISP-maintained libraries listed on the
 
 The OpenWISP Security Incident Response Team consists of maintainers
 designated to handle reports sent to security@openwisp.io. The team
-coordinates validation, remediation, and disclosure, involving maintainers
-of affected components as needed.
-
-Operators are responsible for securing their independently hosted OpenWISP
-deployments. Developers of third-party applications built using OpenWISP
-are responsible for maintaining those applications. Neither exclusion
-prevents reporting a vulnerability in the underlying OpenWISP software.
-
-Third-party libraries and services OpenWISP depends on are upstream
-dependencies. We coordinate relevant issues with their maintainers and
-address affected OpenWISP integrations or dependency requirements as
-needed, but do not undertake maintenance of third-party code.
+coordinates validation, remediation, and disclosure.
 
 Information to Include
 ----------------------
@@ -125,9 +114,8 @@ Maintainers assess reports using the following criteria:
   services, the exploit conditions, and evidence of active exploitation.
   Maintainers determine validity and priority, not report labels or
   scanner scores.
-- **Responsibility:** whether the defect is in OpenWISP, an upstream
-  dependency, or a third-party application. An underlying OpenWISP defect
-  is not excluded merely because a downstream application exposed it.
+- **Scope:** whether the issue affects OpenWISP-maintained software or
+  project-controlled infrastructure.
 
 Validating input received by OpenWISP endpoints can be OpenWISP's
 responsibility; reports are not excluded simply because they involve
@@ -240,6 +228,6 @@ advisory does not automatically receive a CVE.
 We notify the `OpenWISP mailing list
 <https://groups.google.com/d/forum/openwisp>`__ whenever an advisory is
 published. Announcements include a short impact summary, affected and
-fixed versions, any required operator action, and the canonical advisory
-link. Publication is coordinated across affected components when an issue
-spans repositories.
+fixed versions, any required action, and the canonical advisory link.
+Publication is coordinated across affected components when an issue spans
+repositories.
