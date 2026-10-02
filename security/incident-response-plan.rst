@@ -4,9 +4,8 @@ Incident Response Plan
 .. note::
 
     This is internal guidance for the OpenWISP Security Incident Response
-    Team defined in :doc:`disclosing-vulnerabilities`. To report a
-    suspected vulnerability, follow :doc:`disclosing-vulnerabilities`
-    instead.
+    Team; to report a suspected vulnerability, see
+    :doc:`disclosing-vulnerabilities`.
 
 .. contents:: **Table of Contents**:
     :backlinks: none
