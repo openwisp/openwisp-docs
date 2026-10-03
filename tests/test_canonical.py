@@ -25,7 +25,7 @@ class CanonicalTests(unittest.TestCase):
             loader=ChoiceLoader(
                 [
                     DictLoader({"!layout.html": "{% block linktags %}{% endblock %}"}),
-                    FileSystemLoader(Path(__file__).parent / "_templates"),
+                    FileSystemLoader(Path(__file__).parent.parent / "_templates"),
                 ]
             )
         )
