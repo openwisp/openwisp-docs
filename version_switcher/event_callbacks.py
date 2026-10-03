@@ -39,3 +39,16 @@ def set_version_context(app, pagename, templatename, context, doctree):
     except KeyError as error:
         if pagename not in ["404", "genindex", "search"]:
             raise error
+    version = context["current_ow_version"]
+    stable = context["stable_version"]
+    if version == stable or stable in context["ow_versions"]:
+        version = "stable"
+    if pagename == "index":
+        path = ""
+    elif pagename.endswith("/index"):
+        path = pagename[:-5]
+    else:
+        path = f"{pagename}.html"
+    context["canonical_url"] = (
+        f'{context["html_baseurl"]}{context["docs_root"]}/{version}/{path}'
+    )

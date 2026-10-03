@@ -14,6 +14,8 @@ openwisp-qa-check \
     --csslinter \
     --jslinter
 
+python -m unittest discover
+
 echo ''
 echo 'Build documentation to look for syntax errors'
 make build

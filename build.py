@@ -443,7 +443,7 @@ def main():
     with open("config.yml") as f:
         config = yaml.safe_load(f)
     build_versions = get_build_versions(config["versions"], args.version)
-    stable_version = get_stable_version(build_versions)
+    stable_version = get_stable_version(config["versions"])
     docs_root = ""
     html_base_url = ""
     build_dir = "_build"
@@ -507,6 +507,9 @@ def main():
         # Remove all temporary directories
         for dir in module_dirs:
             remove_symlink(dir)
+    # Partial builds must not repoint the stable alias or root redirect.
+    if not any(version["name"] == stable_version for version in build_versions):
+        return
     # Generate the index.html file which redirects to the stable version.
     env = Environment(loader=FileSystemLoader("_static"))
     template = env.get_template("index.jinja2")
@@ -516,7 +519,7 @@ def main():
     subprocess.run(
         [
             "ln",
-            "-rsf",
+            "-rsfT",
             f"{build_dir}/{stable_version}",
             f"{build_dir}/stable",
         ],

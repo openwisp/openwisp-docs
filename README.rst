@@ -202,3 +202,12 @@ Need help?
   <http://www.sphinx-doc.org/en/stable/tutorial.html>`_.
 - Feel free to post any doubt or comment through our `support channels
   <http://openwisp.org/support.html>`_.
+
+Canonical URLs
+--------------
+
+- All versions, including ``dev``, canonicalize to ``/docs/stable/`` when
+  the same page path exists in the latest stable release.
+- Pages absent from stable keep their versioned canonical URLs.
+- Index pages use directory URLs instead of ``index.html``.
+- Rebuild all versions to populate the page map and update canonical tags.

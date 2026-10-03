@@ -448,7 +448,6 @@ epub_exclude_files = ["search.html"]
 #
 # epub_use_index = True
 
-notfound_urls_prefix = "/docs/dev/"
 notfound_context = {
     "title": "Page not found",
     "body": (
@@ -469,6 +468,7 @@ version = os.environ.get("OPENWISP2_VERSION", "dev")
 release = version
 
 docs_root = os.environ.get("DOCS_ROOT", "")
+notfound_urls_prefix = f"{docs_root}/{version}/"
 html_context = {
     "current_ow_version": version,
     "ow_versions": [],
