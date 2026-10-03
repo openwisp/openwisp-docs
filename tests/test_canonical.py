@@ -1,6 +1,7 @@
 import json
 import os
 import runpy
+import subprocess
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -35,6 +36,15 @@ class CanonicalTests(unittest.TestCase):
                 version_dir.mkdir()
                 build.create_stable_alias(build_dir, version)
                 self.assertEqual(stable_alias.resolve(), version_dir)
+
+    def test_stable_alias_failure_is_propagated(self):
+        error = subprocess.CalledProcessError(1, ["ln"])
+        with (
+            TemporaryDirectory() as temporary_directory,
+            patch.object(build.subprocess, "run", side_effect=error),
+        ):
+            with self.assertRaisesRegex(subprocess.CalledProcessError, "ln"):
+                build.create_stable_alias(temporary_directory, "26.09")
 
     def test_notfound_urls_prefix_uses_current_version(self):
         with patch.dict(
