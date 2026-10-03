@@ -5,7 +5,9 @@
 <meta property="og:image" content="{{ html_baseurl }}{{ docs_root }}/{{ current_ow_version }}/_static/docs-og.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="480" />
+{% if canonical_url %}
 <link rel="canonical" href="{{ canonical_url }}" />
+{% endif %}
 {% endblock %}
 
 {% block scripts %}

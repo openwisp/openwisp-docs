@@ -3,6 +3,7 @@ import os
 import runpy
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 from unittest.mock import mock_open, patch
 
@@ -13,6 +14,28 @@ from version_switcher.event_callbacks import set_version_context
 
 
 class CanonicalTests(unittest.TestCase):
+    def test_canonical_is_omitted_without_context(self):
+        env = Environment(
+            loader=ChoiceLoader(
+                [
+                    DictLoader({"!layout.html": "{% block linktags %}{% endblock %}"}),
+                    FileSystemLoader(Path(__file__).parent.parent / "_templates"),
+                ]
+            )
+        )
+        html = env.get_template("layout.html").render()
+        self.assertNotIn('rel="canonical"', html)
+
+    def test_stable_alias_is_replaced(self):
+        with TemporaryDirectory() as temporary_directory:
+            build_dir = Path(temporary_directory)
+            stable_alias = build_dir / "stable"
+            for version in ["25.10", "26.09"]:
+                version_dir = build_dir / version
+                version_dir.mkdir()
+                build.create_stable_alias(build_dir, version)
+                self.assertEqual(stable_alias.resolve(), version_dir)
+
     def test_notfound_urls_prefix_uses_current_version(self):
         with patch.dict(
             os.environ, {"OPENWISP2_VERSION": "22.05", "DOCS_ROOT": "/docs"}

@@ -256,6 +256,18 @@ def remove_symlink(dest):
         os.unlink(dest)
 
 
+def create_stable_alias(build_dir, stable_version):
+    subprocess.run(
+        [
+            "ln",
+            "-rsfT",
+            f"{build_dir}/{stable_version}",
+            f"{build_dir}/stable",
+        ],
+        check=True,
+    )
+
+
 def git_is_on_branch(repo_path):
     result = subprocess.run(
         ["git", "rev-parse", "--abbrev-ref", "HEAD"],
@@ -516,15 +528,7 @@ def main():
     with open(f"{build_dir}/index.html", "w") as f:
         f.write(template.render(stable_version=stable_version, docs_root=docs_root))
     # Create a symbolic link for the stable version
-    subprocess.run(
-        [
-            "ln",
-            "-rsfT",
-            f"{build_dir}/{stable_version}",
-            f"{build_dir}/stable",
-        ],
-        check=True,
-    )
+    create_stable_alias(build_dir, stable_version)
 
 
 if __name__ == "__main__":
