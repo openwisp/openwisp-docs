@@ -125,9 +125,8 @@ for this device under :doc:`System Defined Variables
     :alt: System Defined Variables
 
 Voila! You can now use these variables in configuration of the device.
-Refer to `How to use configuration variables
-<#how-to-use-configuration-variables>`_ section of this documentation to
-learn how to use configuration variables.
+Refer to :doc:`How to use configuration variables
+<./configuration-variables>` to learn how to use configuration variables.
 
 Important notes for using Subnet Division
 -----------------------------------------
