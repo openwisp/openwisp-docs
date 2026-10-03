@@ -47,9 +47,9 @@ If there's anything you don't understand regarding the board or a specific
 github issue, don't hesitate to ask questions in our `dev channel
 <https://matrix.to/#/#openwisp_development:gitter.im>`_.
 
-Contributors who are not members of the OpenWISP organization must verify
-that **the issue has been validated by maintainers** before opening a pull
-request.
+Contributors who are neither members of the OpenWISP organization nor
+repository collaborators must verify that **the issue has been validated
+by maintainers** before opening a pull request.
 
 You are welcome to open bug reports, but **wait until a maintainer has
 validated the issue before opening a pull request for it**.
@@ -76,9 +76,10 @@ announce your intention to work on it by leaving a comment in the issue**.
 
 .. warning::
 
-    For contributors who are not members of the OpenWISP organization,
-    pull requests that do not target a validated issue are automatically
-    flagged as invalid and closed after 24 hours.
+    For contributors who are neither members of the OpenWISP organization
+    nor repository collaborators, pull requests that do not target a
+    validated issue are automatically flagged as invalid and closed after
+    24 hours.
 
 Priorities for the next release
 -------------------------------
@@ -123,13 +124,10 @@ Create a descriptively named branch from an up-to-date ``master``, e.g.:
 
 .. warning::
 
-    The commit message conventions described in this section are enforced
-    by automated checks in the CI builds and can be easily followed by
-    using the ``openwisp-commit`` tool described in :ref:`Commit message
-    checks <utils_commit_message_checks>`.
-
-After creating a commit, run ``openwisp-commit --check`` to validate its
-message. This checks only the latest commit.
+    The required commit message format is enforced by automated checks in
+    the CI builds. Use ``openwisp-commit --check`` to check the latest
+    commit message, as described in :ref:`Commit message checks
+    <utils_commit_message_checks>`.
 
 When working on issues picked from the boards mentioned in the beginning
 of this document, please use the following commit message conventions:
@@ -156,6 +154,7 @@ Here's a real world commit message example from `one of our modules
 
 Moreover, keep the following guidelines in mind:
 
+- write all commit messages in clear, descriptive, past-tense language
 - add an explanatory commit body for substantial changes, new features, or
   non-obvious bug fixes; the subject of ``[feature]``, ``[change]``,
   ``[change!]``, ``[deps]``, and ``[fix]`` commits, including scoped
