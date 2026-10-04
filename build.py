@@ -256,6 +256,18 @@ def remove_symlink(dest):
         os.unlink(dest)
 
 
+def create_stable_alias(build_dir, stable_version):
+    subprocess.run(
+        [
+            "ln",
+            "-rsfT",
+            f"{build_dir}/{stable_version}",
+            f"{build_dir}/stable",
+        ],
+        check=True,
+    )
+
+
 def git_is_on_branch(repo_path):
     result = subprocess.run(
         ["git", "rev-parse", "--abbrev-ref", "HEAD"],
@@ -443,7 +455,7 @@ def main():
     with open("config.yml") as f:
         config = yaml.safe_load(f)
     build_versions = get_build_versions(config["versions"], args.version)
-    stable_version = get_stable_version(build_versions)
+    stable_version = get_stable_version(config["versions"])
     docs_root = ""
     html_base_url = ""
     build_dir = "_build"
@@ -507,21 +519,16 @@ def main():
         # Remove all temporary directories
         for dir in module_dirs:
             remove_symlink(dir)
+    # Partial builds must not repoint the stable alias or root redirect.
+    if not any(version["name"] == stable_version for version in build_versions):
+        return
     # Generate the index.html file which redirects to the stable version.
     env = Environment(loader=FileSystemLoader("_static"))
     template = env.get_template("index.jinja2")
     with open(f"{build_dir}/index.html", "w") as f:
         f.write(template.render(stable_version=stable_version, docs_root=docs_root))
     # Create a symbolic link for the stable version
-    subprocess.run(
-        [
-            "ln",
-            "-rsf",
-            f"{build_dir}/{stable_version}",
-            f"{build_dir}/stable",
-        ],
-        check=True,
-    )
+    create_stable_alias(build_dir, stable_version)
 
 
 if __name__ == "__main__":
