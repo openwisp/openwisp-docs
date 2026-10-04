@@ -19,13 +19,12 @@ We are glad and thankful that you want to contribute to OpenWISP.
 Introduce yourself
 ------------------
 
-It won't hurt to join `our main communication channel
-<https://matrix.to/#/#openwisp_general:gitter.im>`_ and introduce
-yourself, although to coordinate with one another on technical matters we
-use `the development channel
-<https://matrix.to/#/#openwisp_development:gitter.im>`_. Use these two
-channels share feedback, share your OpenWISP derivative work, ask
-questions or announce your intentions.
+We strongly recommend joining `the development channel
+<https://matrix.to/#/#openwisp_development:gitter.im>`_ to ask technical
+questions and coordinate contributions. You are also welcome to introduce
+yourself in `our main communication channel
+<https://matrix.to/#/#openwisp_general:gitter.im>`_, share feedback, or
+tell us about your OpenWISP derivative work.
 
 .. _openwisp_look_for_open_issues:
 
@@ -48,12 +47,12 @@ If there's anything you don't understand regarding the board or a specific
 github issue, don't hesitate to ask questions in our `dev channel
 <https://matrix.to/#/#openwisp_development:gitter.im>`_.
 
-New or occasional contributors must verify that **the issue has been
-validated by maintainers** before opening a pull request.
+Contributors who are neither members of the OpenWISP organization nor
+repository collaborators must verify that **the issue has been validated
+by maintainers** before opening a pull request.
 
-This also applies to issues you opened yourself: **wait until a maintainer
-has acknowledged and validated the issue before opening a pull request for
-it**.
+You are welcome to open bug reports, but **wait until a maintainer has
+validated the issue before opening a pull request for it**.
 
 In OpenWISP, **an issue is considered validated when all of the following
 conditions are met**:
@@ -77,8 +76,10 @@ announce your intention to work on it by leaving a comment in the issue**.
 
 .. warning::
 
-    Pull requests from external contributors that do not link a validated
-    issue are automatically flagged as invalid and closed after 24 hours.
+    For contributors who are neither members of the OpenWISP organization
+    nor repository collaborators, pull requests that do not target a
+    validated issue are automatically flagged as invalid and closed after
+    24 hours.
 
 Priorities for the next release
 -------------------------------
@@ -86,59 +87,35 @@ Priorities for the next release
 When we are close to releasing a new major version of OpenWISP, we will
 encourage all contributors to focus on the **To Do** column of the
 `OpenWISP Priorities for next releases
-<https://github.com/orgs/openwisp/projects/37/views/1>`_ board and filter
-the issues according to their expertise:
+<https://github.com/orgs/openwisp/projects/37/views/1>`_ board.
 
-- **Newcomer**: filter by `Good first issue
-  <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=good+first+issue>`_
-  or `Hacktoberfest
-  <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=hacktoberfest>`_.
-- **Expert**: filter by `Important
-  <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=important>`_.
+Newcomers can filter by `Good first issue
+<https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=good+first+issue>`_.
 
 Setup
 -----
 
-Once you have chosen an issue to work on, read the documentation section
-of the module you want to contribute to, follow the setup instructions,
-each module has its own specific developer installation instructions which
-we highly advise to read carefully.
+Once you have chosen an issue, follow the developer installation
+instructions in the documentation of the module you want to contribute to.
 
 .. important::
 
     For a complete list of the OpenWISP modules, refer to
     :doc:`/general/architecture`.
 
-How to commit your changes properly
------------------------------------
-
-Our main development branch is master, it's our central development
-branch.
-
-You should open a pull request on github. The pull request will be merged
-only once the CI build completes successfully (automated tests, code
-coverage check, QA checks, etc.) and after project maintainers have
-reviewed and tested it.
-
-You can run QA checks locally by running ``./run-qa-checks`` in the top
-level directory of the repository you're working on. Every OpenWISP module
-should have this script (if a module doesn't have it, please open an issue
-on github).
+Submitting changes
+------------------
 
 1. Branch naming guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a new branch for your patch, use a self-descriptive name, e.g.:
+Create a descriptively named branch from an up-to-date ``master``, e.g.:
 
 .. code-block::
 
+    git checkout master
     git pull origin master
-    # if there's an issue your patch addresses
     git checkout -b issues/48-issue-title-shortened
-
-    # if there is no issue for your branch, (we suggest creating one anyway)
-    # use a descriptive name
-    git checkout -b autoregistration
 
 .. _openwisp_commit_message_style_guidelines:
 
@@ -147,10 +124,10 @@ Create a new branch for your patch, use a self-descriptive name, e.g.:
 
 .. warning::
 
-    The commit message conventions described in this section are enforced
-    by automated checks in the CI builds and can be easily followed by
-    using the ``openwisp-commit`` tool described in :ref:`Commit message
-    checks <utils_commit_message_checks>`.
+    The required commit message format is enforced by automated checks in
+    the CI builds. Use ``openwisp-commit --check`` to check the latest
+    commit message, as described in :ref:`Commit message checks
+    <utils_commit_message_checks>`.
 
 When working on issues picked from the boards mentioned in the beginning
 of this document, please use the following commit message conventions:
@@ -177,8 +154,7 @@ Here's a real world commit message example from `one of our modules
 
 Moreover, keep the following guidelines in mind:
 
-- commits should be descriptive in nature, the message should explain the
-  nature of the change
+- write all commit messages in clear, descriptive, past-tense language
 - add an explanatory commit body for substantial changes, new features, or
   non-obvious bug fixes; the subject of ``[feature]``, ``[change]``,
   ``[change!]``, ``[deps]``, and ``[fix]`` commits, including scoped
@@ -188,22 +164,15 @@ Moreover, keep the following guidelines in mind:
   contributing to
 - before committing and pushing the changes, test the code both manually
   and automatically with the automated test suite if applicable
-- after pushing your branch code, make a pull-request of that
-  corresponding change of yours which should contain a descriptive message
-  and mention the issue number as suggested in the example above
-- make sure to send one pull request for each change. Whenever changes are
-  requested during reviews, please send new commits (do not amend previous
-  commits), if multiple commits are present in a single pull request, they
-  will be squashed in a single commit by the maintainers before merging
-- in case of big features in which multiple related features/changes needs
-  to be implemented, multiple commits (one commit per feature) in a single
-  PR are acceptable.
 
 3. Pull-Request guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After pushing your changes to your fork, prepare a new Pull Request (from
-now on we will shorten it often to just *PR*):
+Send one pull request (PR) for each focused change. For bigger PRs
+involving multiple related features or changes, multiple commits (one per
+feature or change) are acceptable.
+
+After pushing your changes to your fork, prepare a PR:
 
 - from your forked repository of the project select your branch and click
   "New Pull Request"
@@ -219,20 +188,11 @@ now on we will shorten it often to just *PR*):
 - if the tests fail for some reason, try to fix them and if you get stuck
   seek our help on `our communication channels
   <http://openwisp.org/support/>`_
-- if the tests pass, maintainers will review the PR and may ask you to
-  improve details or changes, please be patient: creating a good quality
-  open source project takes a bit of sweat and effort; ensure to follow up
-  with this type of operations
-- once everything is fine with us we'll merge your PR
-
-For external contributors, automation validates the linked issue. Owners,
-organization members, and repository collaborators are exempt. If the
-issue link is missing or does not refer to a validated issue, the PR
-receives the ``invalid`` label and one comment explaining the problem.
-Updating the PR description with a valid link removes the label. If the PR
-remains invalid, it is closed 24 hours after that comment. This does not
-change the stale-PR policy: ordinary stale PRs are not automatically
-closed.
+- if the tests pass, maintainers will review the PR; respond to their
+  feedback and push requested changes as new commits (do not amend
+  previous commits)
+- once the checks pass and maintainers approve the PR, we will merge it,
+  squashing multiple commits into one
 
 4. Avoiding unnecessary changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -256,6 +216,10 @@ Each repository defines style conventions appropriate to its languages and
 tools. Run ``./run-qa-checks`` from the repository's top-level directory
 to verify your changes. This script runs the relevant automated QA checks,
 and CI rejects pull requests that do not pass them.
+
+We recommend running ``openwisp-pre-push-hook --install`` in the
+repository to run ``./run-qa-checks --pre-push`` automatically before each
+push and block the push if the checks fail.
 
 Follow the repository's ``AGENTS.md`` file for formatting guidance and any
 required automatic formatting tools.
