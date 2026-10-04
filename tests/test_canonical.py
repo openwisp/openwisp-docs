@@ -75,6 +75,37 @@ class CanonicalTests(unittest.TestCase):
             ("22.05", "search", ["dev", "26.09"], "stable/search.html"),
             ("dev", "user/new", ["dev"], "dev/user/new.html"),
             ("dev", "user/index", ["dev", "26.09"], "stable/user/"),
+            ("26.09", "security/index", ["dev", "26.09"], "dev/security/"),
+            (
+                "22.05",
+                "security/disclosing-vulnerabilities",
+                ["dev", "22.05", "26.09"],
+                "dev/security/disclosing-vulnerabilities.html",
+            ),
+            (
+                "dev",
+                "security/future-policy",
+                ["dev"],
+                "dev/security/future-policy.html",
+            ),
+            (
+                "22.05",
+                "general/code-of-conduct",
+                ["dev", "22.05", "26.09"],
+                "dev/general/code-of-conduct.html",
+            ),
+            (
+                "26.09",
+                "developer/contributing",
+                ["dev", "26.09"],
+                "dev/developer/contributing.html",
+            ),
+            (
+                "22.05",
+                "security-extra/example",
+                ["22.05", "26.09"],
+                "stable/security-extra/example.html",
+            ),
         ]
         for version, page, versions, expected in cases:
             with self.subTest(version=version, page=page):
