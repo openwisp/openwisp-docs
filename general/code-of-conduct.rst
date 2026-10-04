@@ -33,9 +33,8 @@ Examples include:
 - **Artificial issue-to-pull-request workflows:** workflows created mainly
   to score contributions rather than solve a validated project need;
 - **Unsolicited or unvalidated pull requests:** pull requests without a
-  related issue, or targeting issues that have not been opened,
-  acknowledged, or :ref:`validated by maintainers
-  <openwisp_look_for_open_issues>`;
+  related issue, or targeting issues that have not been :ref:`validated by
+  maintainers <openwisp_look_for_open_issues>`;
 - **Incomplete, unsafe, or poorly understood pull requests:** pull
   requests that are incomplete, untested, or insecure, or that the
   contributor cannot adequately explain;
