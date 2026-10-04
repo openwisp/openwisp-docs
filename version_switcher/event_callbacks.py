@@ -41,12 +41,18 @@ def set_version_context(app, pagename, templatename, context, doctree):
             raise error
     # Canonical URLs:
     # - All versions, including dev, use stable when the page exists there.
+    # - Security, contributing, and code of conduct pages always use dev.
     # - Pages absent from stable keep their versioned URLs.
     # - Index pages use directory URLs rather than index.html.
     # - Rebuild all versions to populate the page map before generating HTML.
     version = context["current_ow_version"]
     stable = context["stable_version"]
-    if version == stable or stable in context["ow_versions"]:
+    if pagename.startswith("security/") or pagename in [
+        "developer/contributing",
+        "general/code-of-conduct",
+    ]:
+        version = "dev"
+    elif version == stable or stable in context["ow_versions"]:
         version = "stable"
     if pagename == "index":
         path = ""
