@@ -9,4 +9,4 @@ Tutorials
     ./hotspot.rst
     ./wpa-enterprise-eap-ttls-pap.rst
     ./mesh.rst
-    ./openwisp-pro-cloud-images/index.rst
+    ./openwisp-pro/index.rst

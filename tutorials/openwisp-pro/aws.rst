@@ -29,8 +29,8 @@ Review the product information, usage instructions, and pricing before
 subscribing.
 
 Choose **Continue to Subscribe**, review the terms and conditions, and
-choose **Accept Terms**. Once the subscription has been processed, choose
-**Continue to Configuration** to prepare the image for launch.
+choose **Accept Contract**. Once the subscription has been processed,
+choose **Continue to Configuration** to prepare the image for launch.
 
 Configure and launch the instance
 ---------------------------------

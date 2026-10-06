@@ -366,6 +366,7 @@ uWSGI
 validator
 verifiers
 virtualbox
+virtualized
 VNI
 vpn
 vpns
