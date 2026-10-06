@@ -73,6 +73,7 @@ davide
 debian
 deployer
 deprioritized
+deterministically
 devops
 differently
 django
@@ -144,6 +145,7 @@ http
 https
 ifconfig
 influxDB
+installable
 Integrations
 integrations
 Integrators
