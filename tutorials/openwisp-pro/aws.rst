@@ -1,6 +1,11 @@
 Deploying OpenWISP Pro on AWS
 =============================
 
+.. image:: https://openwisp-pro-public-info-637703784297-us-east-1-an.s3.us-east-1.amazonaws.com/openwisp-pro-aws-architecture.png
+    :target: https://openwisp-pro-public-info-637703784297-us-east-1-an.s3.us-east-1.amazonaws.com/openwisp-pro-aws-architecture.png
+    :alt: OpenWISP Pro AWS architecture
+    :align: center
+
 **OpenWISP Pro** is a cloud image that you can launch from AWS
 Marketplace. This tutorial walks you through subscribing to the image,
 launching an Amazon EC2 instance, and configuring network access so that
