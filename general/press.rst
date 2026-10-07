@@ -118,6 +118,24 @@ Blog Posts
 Google Summer of Code Blog Posts
 --------------------------------
 
+2026 Contributors
+~~~~~~~~~~~~~~~~~
+
+- `X.509 Certificate Generator Templates
+  <https://openwisp.org/blog/gsoc-2026-x509-certificate-generator-templates/>`_
+  by *Sarthak Tyagi*.
+- `Adding More Time-Series Database Backends to OpenWISP Monitoring
+  <https://openwisp.org/blog/gsoc-2026-adding-more-time-series-database-backends-to-openwisp-monitoring/>`_
+  by *Pushpit Kamboj*.
+- `Automatic Extraction of OpenWrt Firmware Image Metadata
+  <https://openwisp.org/blog/gsoc-2026-automatic-extraction-of-openwrt-firmware-image-metadata/>`_
+  by *Mohammed Atif*.
+- `Mass Commands <https://openwisp.org/blog/gsoc-2026-mass-commands/>`_ by
+  *Deepanshu Sahu*.
+- `Persistent and Scheduled Mass Firmware Upgrades
+  <https://openwisp.org/blog/gsoc-2026-persistent-and-scheduled-mass-firmware-upgrades/>`_
+  by *Eeshu Yadav*.
+
 2025 Contributors
 ~~~~~~~~~~~~~~~~~
 
