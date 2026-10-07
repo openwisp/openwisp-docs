@@ -45,6 +45,7 @@ Chromedriver
 ci
 cidr
 cli
+CloudWatch
 CoA
 codebase
 codemods
@@ -124,6 +125,7 @@ GitHub
 gitlab
 Gmail
 googleapis
+gp
 GPT
 greenlets
 groupname
@@ -364,10 +366,12 @@ utils
 uwsgi
 uWSGI
 validator
+vCPUs
 verifiers
 virtualbox
 virtualized
 VNI
+VPC
 vpn
 vpns
 vxlan
