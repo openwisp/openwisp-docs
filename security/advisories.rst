@@ -5,6 +5,16 @@ Published OpenWISP security advisories and historical security fixes are
 listed below, most recent first. Follow the links for details and upgrade
 guidance.
 
+- **2026-10-15, OpenWISP RADIUS (GHSA-83gw-w3g2-6658):** `CSV batch
+  imports can attach and delete users from other organizations
+  <https://github.com/openwisp/openwisp-radius/security/advisories/GHSA-83gw-w3g2-6658>`_.
+- **2026-10-15, OpenWISP Controller (GHSA-4f2x-pxjx-h8m3):** `Stored XSS
+  in template names can execute in administrator sessions
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-4f2x-pxjx-h8m3>`_.
+- **2026-10-15, OpenWISP Controller (GHSA-39c4-xj33-j8j3):**
+  `Device-location updates can access and transfer locations across
+  organizations
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-39c4-xj33-j8j3>`_.
 - **2026-09-15, OpenWISP RADIUS (GHSA-pfx3-4m53-g475):** `SMS verification
   bypasses destination and IP restrictions
   <https://github.com/openwisp/openwisp-radius/security/advisories/GHSA-pfx3-4m53-g475>`_.
