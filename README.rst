@@ -194,6 +194,33 @@ Spell check
 
     make spellcheck
 
+Quality assurance
+-----------------
+
+The QA checks require Node.js, npm, and Prettier. Install Prettier with:
+
+.. code-block:: shell
+
+    npm install -g prettier
+
+Run the quick static QA checks with:
+
+.. code-block:: shell
+
+    ./run-qa-checks
+
+Build all documentation versions and output formats with:
+
+.. code-block:: shell
+
+    make build
+
+After a completed build, validate its generated links and PDF files with:
+
+.. code-block:: shell
+
+    make build-qa-check
+
 Need help?
 ----------
 

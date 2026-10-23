@@ -42,8 +42,14 @@ jobs:
       - name: Run tests
         run: ./runtests
 
-      - name: QA checks, Build, Validate links (no 404s allowed), Check PDF
-        run: PRODUCTION=1 ./run-qa-checks
+      - name: Run QA checks
+        run: ./run-qa-checks
+
+      - name: Build documentation
+        run: PRODUCTION=1 make build
+
+      - name: Validate documentation build
+        run: PRODUCTION=1 make build-qa-check
 
       - name: Setup Google Cloud
         if: ${{ github.event_name=='push' }}
