@@ -5,6 +5,21 @@ Published OpenWISP security advisories and historical security fixes are
 listed below, most recent first. Follow the links for details and upgrade
 guidance.
 
+- **2026-10-23, OpenWISP RADIUS (GHSA-hvmx-g7m2-vqx8):** `FreeRADIUS API
+  can trust attacker-controlled forwarded IP addresses
+  <https://github.com/openwisp/openwisp-radius/security/advisories/GHSA-hvmx-g7m2-vqx8>`_.
+- **2026-10-23, OpenWISP Controller (GHSA-2x7f-qxwh-m483):** `Django admin
+  allows cross-organization configuration access with a known UUID
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-2x7f-qxwh-m483>`_.
+- **2026-10-23, OpenWISP Controller (GHSA-5c5w-h9xc-3mq5):** `REST API
+  allows cross-organization configuration download with a known UUID
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-5c5w-h9xc-3mq5>`_.
+- **2026-10-23, OpenWISP Controller (GHSA-rcf7-q946-fvpg):** `Shell
+  injection in OpenWrt change_password() via unsanitized password fields
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-rcf7-q946-fvpg>`_.
+- **2026-10-23, OpenWISP Controller (GHSA-9gh4-xw24-9xh5):** `CA CRL REST
+  API does not scope requests to managed organizations
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-9gh4-xw24-9xh5>`_.
 - **2026-10-15, OpenWISP RADIUS (GHSA-83gw-w3g2-6658):** `CSV batch
   imports can attach and delete users from other organizations
   <https://github.com/openwisp/openwisp-radius/security/advisories/GHSA-83gw-w3g2-6658>`_.
