@@ -89,7 +89,7 @@ build_html:
 
 .PHONY: build-qa-check
 build-qa-check:
-	./run-build-checks
+	VERSION="$(VERSION)" ./run-build-checks
 
 .PHONY: html
 html:

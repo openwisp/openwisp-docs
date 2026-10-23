@@ -203,6 +203,13 @@ The QA checks require Node.js, npm, and Prettier. Install Prettier with:
 
     npm install -g prettier
 
+The PDF validation step also requires ``pdfinfo``, which is provided by the
+Poppler utilities. On Debian or Ubuntu, install it with:
+
+.. code-block:: shell
+
+    sudo apt-get install poppler-utils
+
 Run the quick static QA checks with:
 
 .. code-block:: shell
