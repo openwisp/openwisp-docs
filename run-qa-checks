@@ -9,11 +9,17 @@ openwisp-qa-check \
     --skip-isort \
     --skip-flake8 \
     --skip-black \
-    --skip-checkendline
+    --skip-checkendline \
+    --skip-checkrst
 
 # Check only tracked source assets, not generated documentation or fetched modules.
-git ls-files -z -- '*.css' '*.js' '*.md' '*.yaml' '*.yml' |
+git ls-files -z --cached --others --exclude-standard -- \
+    '*.css' '*.js' '*.md' '*.yaml' '*.yml' |
     xargs -0r prettier --check --print-width 88
+
+git ls-files -z --cached --others --exclude-standard -- '*.py' '*.rst' |
+    xargs -0r docstrfmt --no-docstring-trailing-line -i -c -l 74 \
+        -s "=-~+^\"'.:"
 
 python sort_spelling_wordlist.py --qa || \
   (echo "Spelling Vocabulary not up to date"; exit 1)
