@@ -12,14 +12,15 @@ openwisp-qa-check \
     --skip-checkendline \
     --skip-checkrst
 
-# Check only tracked source assets, not generated documentation or fetched modules.
+# Check tracked and unignored source assets, not generated documentation or
+# fetched modules.
 git ls-files -z --cached --others --exclude-standard -- \
     '*.css' '*.js' '*.md' '*.yaml' '*.yml' |
-    xargs -0r prettier --check --print-width 88
+    xargs -0r prettier --check --print-width 88 --
 
 git ls-files -z --cached --others --exclude-standard -- '*.py' '*.rst' |
     xargs -0r docstrfmt --no-docstring-trailing-line -i -c -l 74 \
-        -s "=-~+^\"'.:"
+        -s "=-~+^\"'.:" --
 
 python sort_spelling_wordlist.py --qa || \
   (echo "Spelling Vocabulary not up to date"; exit 1)
