@@ -17,9 +17,14 @@ guidance.
 - **2026-10-23, OpenWISP Controller (GHSA-rcf7-q946-fvpg):** `Shell
   injection in OpenWrt change_password() via unsanitized password fields
   <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-rcf7-q946-fvpg>`_.
-- **2026-10-23, OpenWISP Controller (GHSA-9gh4-xw24-9xh5):** `CA CRL REST
-  API does not scope requests to managed organizations
+- **2026-10-23, OpenWISP Controller (GHSA-9gh4-xw24-9xh5):**
+  `CVE-2026-116677 <https://www.cve.org/CVERecord?id=CVE-2026-116677>`_.
+  `CA CRL REST API does not scope requests to managed organizations
   <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-9gh4-xw24-9xh5>`_.
+  Fixed in 1.3.2. The practical severity is low because exploitation
+  requires an authenticated organization manager with CA view permission and
+  affects deployments that enable ``DJANGO_X509_CRL_PROTECTED``. CRLs are
+  public by default through the standard django-x509 download endpoint.
 - **2026-10-15, OpenWISP RADIUS (GHSA-83gw-w3g2-6658):** `CSV batch
   imports can attach and delete users from other organizations
   <https://github.com/openwisp/openwisp-radius/security/advisories/GHSA-83gw-w3g2-6658>`_.
