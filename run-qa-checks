@@ -3,7 +3,6 @@
 set -e
 
 # openwisp-utils checks
-# This is done first to ignore build directories for openwisp-utils checks
 openwisp-qa-check \
     --skip-checkmigrations \
     --skip-checkmakemigrations\
@@ -11,32 +10,17 @@ openwisp-qa-check \
     --skip-flake8 \
     --skip-black \
     --skip-checkendline \
-    --csslinter \
-    --jslinter
+    --skip-checkrst
 
-echo ''
-echo 'Build documentation to look for syntax errors'
-make build
+# Check tracked and unignored source assets, not generated documentation or
+# fetched modules.
+git ls-files -z --cached --others --exclude-standard -- \
+    '*.css' '*.js' '*.md' '*.yaml' '*.yml' |
+    xargs -0r prettier --check --print-width 88 --
 
-# check for broken link
-cd _build/
-python -m http.server 8001 &> /dev/null & pid=$!
-sleep 4
-BASE_URL="http://localhost:8001"
-if [ -n "${PRODUCTION:-}" ]; then
-    BASE_URL="$BASE_URL/docs/"
-fi
-pylinkvalidate.py "$BASE_URL/dev/" \
-    -w 4 -m process
-kill "${pid}"
-cd ..
-
-# Verify PDFs are valid
-find _build/ -type f -name "*.pdf" | while read -r pdf; do
-    if ! pdfinfo "$pdf"; then
-        echo "$pdf is broken"
-    fi
-done
+git ls-files -z --cached --others --exclude-standard -- '*.py' '*.rst' |
+    xargs -0r docstrfmt --no-docstring-trailing-line -i -c -l 74 \
+        -s "=-~+^\"'.:" --
 
 python sort_spelling_wordlist.py --qa || \
   (echo "Spelling Vocabulary not up to date"; exit 1)

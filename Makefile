@@ -20,6 +20,7 @@ help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  build         to build the documentation in all formats (PDF, HTML and ePUB)"
 	@echo "  build_html    to build the documentation in HTML format only"
+	@echo "  build-qa-check to validate links and PDFs from a completed documentation build"
 	@echo "  release_notes to generate the release notes for a specific version (default: 25.10). Use 'make changelog VERSION=XX' to specify."
 	@echo ""
 	@echo "Build arguments:"
@@ -85,6 +86,10 @@ build:
 .PHONY: build_html
 build_html:
 	make build FORMATS=html $(ARGS)
+
+.PHONY: build-qa-check
+build-qa-check:
+	VERSION="$(VERSION)" ./run-build-checks
 
 .PHONY: html
 html:

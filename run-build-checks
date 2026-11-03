@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+echo ''
+echo 'Validate generated documentation'
+cd _build/
+python -m http.server 8001 --bind 127.0.0.1 &> /dev/null & pid=$!
+trap 'kill "${pid}" || true' EXIT
+sleep 4
+if ! kill -0 "${pid}" 2> /dev/null; then
+    echo 'Failed to start the documentation server' >&2
+    exit 1
+fi
+BASE_URL="http://127.0.0.1:8001"
+if [ -n "${PRODUCTION:-}" ]; then
+    BASE_URL="$BASE_URL/docs/"
+fi
+pylinkvalidate.py "$BASE_URL/${VERSION:-dev}/" \
+    -d 10 -w 4 -m process
+
+# Verify PDFs are valid
+while IFS= read -r pdf; do
+    if ! pdfinfo "$pdf"; then
+        echo "$pdf is broken"
+        exit 1
+    fi
+done < <(find . -type f -name "*.pdf")
