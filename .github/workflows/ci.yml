@@ -26,7 +26,7 @@ jobs:
       fail-fast: false
 
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
@@ -57,7 +57,7 @@ jobs:
 
       - name: Setup Google Cloud
         if: ${{ github.event_name == 'push' && github.repository == 'openwisp/openwisp-docs' }}
-        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
         with:
           credentials_json: ${{ secrets.GCS_DOWNLOADS_SERVICE_ACCOUNT_JSON }}
           project_id: ${{ secrets.GCS_PROJECT_ID }}
@@ -65,7 +65,7 @@ jobs:
 
       - name: Set up Cloud SDK
         if: ${{ github.event_name == 'push' && github.repository == 'openwisp/openwisp-docs' }}
-        uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3
+        uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3.0.1
 
       - name: Deploy pages to openwisp.io/docs
         if: ${{ github.event_name == 'push' && github.repository == 'openwisp/openwisp-docs' }}
@@ -84,7 +84,7 @@ jobs:
     steps:
       - name: Authenticate to Google Cloud
         if: ${{ github.event_name == 'push' && github.repository == 'openwisp/openwisp-docs' }}
-        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
         with:
           credentials_json: ${{ secrets.GCS_DOWNLOADS_SERVICE_ACCOUNT_JSON }}
           project_id: ${{ secrets.GCS_PROJECT_ID }}
@@ -92,7 +92,7 @@ jobs:
 
       - name: Invalid CDN cache on GCP
         if: ${{ github.event_name == 'push' && github.repository == 'openwisp/openwisp-docs' }}
-        uses: stefanodotit/github-actions-invalidate-gcp-cdn@3c397edee5224cac3626b36b876b7a0a9464b9b4 # v1
+        uses: stefanodotit/github-actions-invalidate-gcp-cdn@3c397edee5224cac3626b36b876b7a0a9464b9b4 # v1.0.0
         with:
           load_balancer_name: ${{ secrets.GCS_MAIN_LOAD_BALANCER_NAME }}
           host: openwisp.io
