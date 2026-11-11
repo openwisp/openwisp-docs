@@ -35,6 +35,7 @@ cd ..
 find _build/ -type f -name "*.pdf" | while read -r pdf; do
     if ! pdfinfo "$pdf"; then
         echo "$pdf is broken"
+        exit 1
     fi
 done
 
