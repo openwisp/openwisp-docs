@@ -50,6 +50,7 @@ commitizen
 config
 configs
 configuration
+cooldown
 Coova
 copied
 copyable
