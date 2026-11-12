@@ -22,12 +22,17 @@ class PdfCheckTests(unittest.TestCase):
                 bin_dir.mkdir()
                 for command in [
                     "openwisp-qa-check",
-                    "make",
                     "sleep",
                 ]:
                     stub = bin_dir / command
                     stub.write_text("#!/bin/sh\nexit 0\n")
                     stub.chmod(0o755)
+                make = bin_dir / "make"
+                make.write_text(
+                    '#!/bin/sh\nmkdir -p _build\ncp "$VALID_PDF" "_build/valid file.pdf"\n'
+                    'if [ "$BROKEN_PDF" = 1 ]; then touch "_build/broken file.pdf"; fi\n'
+                )
+                make.chmod(0o755)
                 link_check = bin_dir / "pylinkvalidate.py"
                 link_check.write_text('#!/bin/sh\ntouch "$LINK_CHECK_MARKER"\n')
                 link_check.chmod(0o755)
@@ -36,14 +41,10 @@ class PdfCheckTests(unittest.TestCase):
                     '#!/bin/sh\nif [ "$1" = "-m" ]; then exec /usr/bin/sleep 60; fi\n'
                 )
                 python.chmod(0o755)
-                build_dir = root / "_build"
-                build_dir.mkdir()
-                pdf = build_dir / "valid file.pdf"
+                pdf = root / "valid file.pdf"
                 document = canvas.Canvas(str(pdf))
                 document.drawString(100, 700, "Valid PDF")
                 document.save()
-                if broken:
-                    (build_dir / "broken file.pdf").touch()
                 result = subprocess.run(
                     [str(script)],
                     cwd=root,
@@ -51,6 +52,8 @@ class PdfCheckTests(unittest.TestCase):
                         **os.environ,
                         "PATH": f'{bin_dir}:{os.environ["PATH"]}',
                         "LINK_CHECK_MARKER": str(root / "link-checked"),
+                        "VALID_PDF": str(pdf),
+                        "BROKEN_PDF": str(int(broken)),
                     },
                     capture_output=True,
                     text=True,
