@@ -29,7 +29,9 @@ class PdfCheckTests(unittest.TestCase):
                 build_dir = root / "_build"
                 build_dir.mkdir()
                 link_check = bin_dir / "pylinkvalidate.py"
-                link_check.write_text('#!/bin/sh\ntouch "$LINK_CHECK_MARKER"\n')
+                link_check.write_text(
+                    '#!/bin/sh\nprintf "%s\\n" "$@" > "$LINK_CHECK_MARKER"\n'
+                )
                 link_check.chmod(0o755)
                 python = bin_dir / "python"
                 python.write_text(
@@ -61,3 +63,4 @@ class PdfCheckTests(unittest.TestCase):
                 else:
                     self.assertEqual(result.returncode, 0, result.stderr)
                     self.assertTrue((root / "link-checked").exists())
+                    self.assertNotIn("-d\n", (root / "link-checked").read_text())
