@@ -18,6 +18,7 @@ git ls-files -z --cached --others --exclude-standard -- \
     '*.css' '*.js' '*.md' '*.yaml' '*.yml' |
     xargs -0r prettier --check --print-width 88 --
 
+# Check reStructuredText and Python docstring formatting in source files.
 git ls-files -z --cached --others --exclude-standard -- '*.py' '*.rst' |
     xargs -0r docstrfmt --no-docstring-trailing-line -i -c -l 74 \
         -s "=-~+^\"'.:" --

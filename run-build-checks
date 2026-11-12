@@ -5,19 +5,6 @@ set -e
 echo ''
 echo 'Validate generated documentation'
 cd _build/
-python -m http.server 8001 --bind 127.0.0.1 &> /dev/null & pid=$!
-trap 'kill "${pid}" || true' EXIT
-sleep 4
-if ! kill -0 "${pid}" 2> /dev/null; then
-    echo 'Failed to start the documentation server' >&2
-    exit 1
-fi
-BASE_URL="http://127.0.0.1:8001"
-if [ -n "${PRODUCTION:-}" ]; then
-    BASE_URL="$BASE_URL/docs/"
-fi
-pylinkvalidate.py "$BASE_URL/${VERSION:-dev}/" \
-    -d 10 -w 4 -m process
 
 # Verify PDFs are valid
 while IFS= read -r pdf; do
@@ -26,3 +13,20 @@ while IFS= read -r pdf; do
         exit 1
     fi
 done < <(find . -type f -name "*.pdf")
+
+# Serve the build locally for link validation and stop the server on exit.
+python -m http.server 8001 --bind 127.0.0.1 &> /dev/null & pid=$!
+trap 'kill "${pid}" || true' EXIT
+sleep 4
+if ! kill -0 "${pid}" 2> /dev/null; then
+    echo 'Failed to start the documentation server' >&2
+    exit 1
+fi
+
+# Crawl the selected version under the appropriate build root.
+BASE_URL="http://127.0.0.1:8001"
+if [ -n "${PRODUCTION:-}" ]; then
+    BASE_URL="$BASE_URL/docs/"
+fi
+pylinkvalidate.py "$BASE_URL/${VERSION:-dev}/" \
+    -d 10 -w 4 -m process
