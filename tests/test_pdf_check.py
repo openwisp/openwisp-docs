@@ -8,6 +8,11 @@ from reportlab.pdfgen import canvas
 
 
 class PdfCheckTests(unittest.TestCase):
+    """Run the QA script with unrelated commands stubbed.
+
+    Valid PDFs pass to link validation; broken PDFs must fail beforehand.
+    """
+
     def test_qa_rejects_broken_pdfs(self):
         script = Path(__file__).resolve().parent.parent / "run-qa-checks"
         for broken in [False, True]:
@@ -18,12 +23,14 @@ class PdfCheckTests(unittest.TestCase):
                 for command in [
                     "openwisp-qa-check",
                     "make",
-                    "pylinkvalidate.py",
                     "sleep",
                 ]:
                     stub = bin_dir / command
                     stub.write_text("#!/bin/sh\nexit 0\n")
                     stub.chmod(0o755)
+                link_check = bin_dir / "pylinkvalidate.py"
+                link_check.write_text('#!/bin/sh\ntouch "$LINK_CHECK_MARKER"\n')
+                link_check.chmod(0o755)
                 python = bin_dir / "python"
                 python.write_text(
                     '#!/bin/sh\nif [ "$1" = "-m" ]; then exec /usr/bin/sleep 60; fi\n'
@@ -40,7 +47,11 @@ class PdfCheckTests(unittest.TestCase):
                 result = subprocess.run(
                     [str(script)],
                     cwd=root,
-                    env={**os.environ, "PATH": f'{bin_dir}:{os.environ["PATH"]}'},
+                    env={
+                        **os.environ,
+                        "PATH": f'{bin_dir}:{os.environ["PATH"]}',
+                        "LINK_CHECK_MARKER": str(root / "link-checked"),
+                    },
                     capture_output=True,
                     text=True,
                     timeout=15,
@@ -48,5 +59,7 @@ class PdfCheckTests(unittest.TestCase):
                 if broken:
                     self.assertNotEqual(result.returncode, 0, result.stdout)
                     self.assertIn("broken file.pdf is broken", result.stdout)
+                    self.assertFalse((root / "link-checked").exists())
                 else:
                     self.assertEqual(result.returncode, 0, result.stderr)
+                    self.assertTrue((root / "link-checked").exists())

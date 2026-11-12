@@ -18,6 +18,14 @@ echo ''
 echo 'Build documentation to look for syntax errors'
 make build
 
+# Verify PDFs are valid
+find _build/ -type f -name "*.pdf" | while read -r pdf; do
+    if ! pdfinfo "$pdf"; then
+        echo "$pdf is broken"
+        exit 1
+    fi
+done
+
 # check for broken link
 cd _build/
 python -m http.server 8001 &> /dev/null & pid=$!
@@ -30,14 +38,6 @@ pylinkvalidate.py "$BASE_URL/dev/" \
     -w 4 -m process
 kill "${pid}"
 cd ..
-
-# Verify PDFs are valid
-find _build/ -type f -name "*.pdf" | while read -r pdf; do
-    if ! pdfinfo "$pdf"; then
-        echo "$pdf is broken"
-        exit 1
-    fi
-done
 
 python sort_spelling_wordlist.py --qa || \
   (echo "Spelling Vocabulary not up to date"; exit 1)
