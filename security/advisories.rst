@@ -5,6 +5,24 @@ Published OpenWISP security advisories and historical security fixes are
 listed below, most recent first. Follow the links for details and upgrade
 guidance.
 
+- **2026-11-13, OpenWISP Users (GHSA-7h4r-39v5-q7cq):** `Organization
+  managers can change an owner's membership
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-7h4r-39v5-q7cq>`_.
+- **2026-11-13, OpenWISP Users (GHSA-qx7x-g6rx-5g3g):** `User password API
+  bypasses configured password validators
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-qx7x-g6rx-5g3g>`_.
+- **2026-11-13, OpenWISP Users (GHSA-97jh-j6hw-4389):** `User management
+  API bypasses organization owner protections
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-97jh-j6hw-4389>`_.
+- **2026-11-13, OpenWISP Users (GHSA-x794-gqv9-rffh):** `Organization
+  deactivation can retain cached authorization
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-x794-gqv9-rffh>`_.
+- **2026-11-13, OpenWISP Users (GHSA-p9mp-fxhh-hmfw):** `OrganizationUser
+  admin enables cross-organization account takeover
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-p9mp-fxhh-hmfw>`_.
+- **2026-11-13, OpenWISP Users (GHSA-q66j-wp8j-5hf5):** `Bulk user actions
+  bypass organization owner protections
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-q66j-wp8j-5hf5>`_.
 - **2026-10-23, OpenWISP RADIUS (GHSA-hvmx-g7m2-vqx8):** `FreeRADIUS API
   can trust attacker-controlled forwarded IP addresses
   <https://github.com/openwisp/openwisp-radius/security/advisories/GHSA-hvmx-g7m2-vqx8>`_.
