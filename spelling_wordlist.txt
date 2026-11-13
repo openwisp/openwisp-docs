@@ -54,6 +54,7 @@ commitizen
 config
 configs
 configuration
+cooldown
 Coova
 copied
 copyable
@@ -305,6 +306,7 @@ serializer
 serializers
 several
 significant
+signup
 Softether
 spammy
 spatialite
