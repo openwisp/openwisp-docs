@@ -10,8 +10,8 @@ Deploying OpenWISP Pro on AWS
 
 **OpenWISP Pro** is a cloud image that you can launch from AWS
 Marketplace. This tutorial walks you through subscribing to the image,
-deploying it either manually or with a CloudFormation template, and
-configuring OpenWISP.
+deploying it with a CloudFormation template or manually, and configuring
+OpenWISP.
 
 .. important::
 
@@ -42,8 +42,79 @@ choose **Continue to Configuration** to prepare the image for launch. You
 need an AWS account that can launch EC2 instances. The CloudFormation path
 also requires permission to create a stack and its resources.
 
-Choose one of the following deployment paths. Both use the same SSH and
-post-launch configuration procedure.
+.. note::
+
+    We recommend :ref:`deploying with CloudFormation
+    <openwisp_pro_aws_cloudformation>` to create the AWS resources
+    automatically.
+
+.. _openwisp_pro_aws_cloudformation:
+
+Deploy with a CloudFormation template
+-------------------------------------
+
+Use this path to have CloudFormation create an EC2 instance, security
+group, and Elastic IP address for you. You provide an existing VPC, public
+subnet, key pair, and DNS records. The template uses the Marketplace image
+and does not create IAM roles, IAM policies, or key pairs. After creating
+the stack, :ref:`connect to the instance using SSH <openwisp_pro_aws_ssh>`
+and :ref:`configure OpenWISP Pro <openwisp_pro_aws_configure>`.
+
+1. On **Continue to Configuration**, choose the **CloudFormation
+   template** delivery method, software version, and Region. Continue to
+   launch and open the supplied template in the CloudFormation console.
+2. Enter a stack name and review the template parameters:
+
+   - ``OpenWISPAMI``: use the Marketplace-provided image value.
+     Marketplace may display this as an SSM parameter rather than an image
+     ID.
+   - ``VpcId``: select your existing VPC.
+   - ``SubnetId``: select a public subnet in that VPC. It must route
+     internet-bound IPv4 traffic to an internet gateway and assign a
+     public IPv4 address to the instance.
+   - ``NetworkMode``: keep ``ipv4`` for IPv4-only or choose ``dual_stack``
+     to assign an IPv6 address as well. Dual-stack requires IPv6 CIDRs on
+     the VPC and subnet and a ``::/0`` route to the internet gateway. See
+     AWS guidance to `configure IPv6 for your VPC
+     <https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html>`_.
+     The template does not modify your VPC, subnet, or routes.
+   - ``VpnCidr``: controls the IPv4 source allowed to connect to OpenVPN.
+     It defaults to ``0.0.0.0/0``. Change it if only known networks should
+     be able to establish VPN connections.
+   - ``KeyName``: select your existing regional EC2 key pair. This is its
+     name, not the contents of its private key.
+   - ``InstanceType``: select an x86-64 instance type that suits your
+     workload and is available in the selected Availability Zone.
+
+3. Review the stack details and create the stack. Wait for
+   ``CREATE_COMPLETE``. If creation fails, inspect the **Events** tab
+   before retrying. Check instance type availability, subnet/VPC matching,
+   and permissions.
+4. Open the stack's **Outputs** tab. ``InstanceId`` identifies the EC2
+   instance; ``ElasticIpAddress`` is its static public IPv4 address.
+5. Locate ``InstanceId`` in the EC2 console and wait for **Running** and
+   passing status checks. Point dashboard, API, and any separate VPN DNS
+   records to ``ElasticIpAddress`` before running the configuration
+   wizard.
+6. Continue to :ref:`connect to the instance using SSH
+   <openwisp_pro_aws_ssh>` and configure OpenWISP. Stack creation does not
+   run the interactive wizard or establish application readiness.
+
+The template creates a security group and an Elastic IP address. Review
+and adjust the security group rules in the EC2 console to meet your access
+policy. Do not allocate a second Elastic IP for this deployment path; the
+stack already creates one.
+
+With ``dual_stack``, find the assigned IPv6 address in the EC2 console's
+instance networking details. Publish DNS AAAA records only after testing
+HTTPS and any required VPN connectivity from an IPv6 client. Keep DNS A
+records pointing to the Elastic IP. The IPv6 address is not an Elastic IP
+and can change when the instance is replaced.
+
+Choose the network mode at initial launch. Changing ``NetworkMode``
+replaces the instance, rather than simply changing its security group. Do
+not change it on an existing deployment without a verified backup and
+data/settings migration procedure.
 
 Launch an EC2 instance manually
 -------------------------------
@@ -156,68 +227,7 @@ For instructions, see the AWS guide to `associate an Elastic IP address
 with an instance
 <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-eips.html>`_.
 
-Deploy with a CloudFormation template
--------------------------------------
-
-Use this path to have CloudFormation create an EC2 instance, security
-group, and Elastic IP address for you. You provide an existing VPC,
-subnet, key pair, and DNS records. The template uses the Marketplace image
-and does not create IAM roles, IAM policies, or key pairs.
-
-1. On **Continue to Configuration**, choose the **CloudFormation
-   template** delivery method, software version, and Region. Continue to
-   launch and open the supplied template in the CloudFormation console.
-2. Enter a stack name and review the template parameters:
-
-   - ``OpenWISPAMI``: use the Marketplace-provided image value.
-     Marketplace may display this as an SSM parameter rather than an image
-     ID.
-   - ``VpcId``: select your existing VPC.
-   - ``SubnetId``: select a public subnet in that VPC. It must route
-     internet-bound IPv4 traffic to an internet gateway and assign a
-     public IPv4 address to the instance.
-   - ``NetworkMode``: keep ``ipv4`` for IPv4-only or choose ``dual_stack``
-     to assign an IPv6 address as well. Dual-stack requires IPv6 CIDRs on
-     the VPC and subnet and a ``::/0`` route to the internet gateway. See
-     AWS guidance to `configure IPv6 for your VPC
-     <https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html>`_.
-     The template does not modify your VPC, subnet, or routes.
-   - ``VpnCidr``: controls the IPv4 source allowed to connect to OpenVPN.
-     It defaults to ``0.0.0.0/0``. Change it if only known networks should
-     be able to establish VPN connections.
-   - ``KeyName``: select your existing regional EC2 key pair. This is its
-     name, not the contents of its private key.
-   - ``InstanceType``: select an x86-64 instance type that suits your
-     workload and is available in the selected Availability Zone.
-
-3. Review the stack details and create the stack. Wait for
-   ``CREATE_COMPLETE``. If creation fails, inspect the **Events** tab
-   before retrying. Check instance type availability, subnet/VPC matching,
-   and permissions.
-4. Open the stack's **Outputs** tab. ``InstanceId`` identifies the EC2
-   instance; ``ElasticIpAddress`` is its static public IPv4 address.
-5. Locate ``InstanceId`` in the EC2 console and wait for **Running** and
-   passing status checks. Point dashboard, API, and any separate VPN DNS
-   records to ``ElasticIpAddress`` before running the configuration
-   wizard.
-6. Follow the shared SSH and configuration steps below. Stack creation
-   does not run the interactive wizard or establish application readiness.
-
-The template creates a security group and an Elastic IP address. Review
-and adjust the security group rules in the EC2 console to meet your access
-policy. Do not allocate a second Elastic IP for this deployment path; the
-stack already creates one.
-
-With ``dual_stack``, find the assigned IPv6 address in the EC2 console's
-instance networking details. Publish DNS AAAA records only after testing
-HTTPS and any required VPN connectivity from an IPv6 client. Keep DNS A
-records pointing to the Elastic IP. The IPv6 address is not an Elastic IP
-and can change when the instance is replaced.
-
-Choose the network mode at initial launch. Changing ``NetworkMode``
-replaces the instance, rather than simply changing its security group. Do
-not change it on an existing deployment without a verified backup and
-data/settings migration procedure.
+.. _openwisp_pro_aws_ssh:
 
 Connect to the instance using SSH
 ---------------------------------
@@ -234,6 +244,8 @@ prompt:
     :align: center
 
     The OpenWISP Pro welcome message before configuration.
+
+.. _openwisp_pro_aws_configure:
 
 Configure OpenWISP Pro
 ----------------------
