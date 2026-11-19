@@ -5,6 +5,12 @@ Published OpenWISP security advisories and historical security fixes are
 listed below, most recent first. Follow the links for details and upgrade
 guidance.
 
+- **2026-11-19, Docker OpenWISP 26.09.5:** `Updated Nginx to 1.31.9 to
+  address security vulnerabilities
+  <https://github.com/openwisp/docker-openwisp/releases/tag/26.09.5>`_.
+- **2026-11-17, Docker OpenWISP 26.09.3:** `Updated Brotli to address
+  CVE-2026-111497 in the decoder
+  <https://github.com/openwisp/docker-openwisp/releases/tag/26.09.3>`_.
 - **2026-11-13, OpenWISP Users (GHSA-7h4r-39v5-q7cq):** `Organization
   managers can change an owner's membership
   <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-7h4r-39v5-q7cq>`_.
