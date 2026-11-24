@@ -60,9 +60,16 @@ class CiInstallerTests(unittest.TestCase):
     def test_default_installs_both_phases(self):
         result, calls = self.run_script()
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(len(calls), 5)
-        self.assertEqual(calls[0], "sudo apt update")
-        self.assertEqual(calls[-1], "python -m pip install -U -r requirements.txt")
+        self.assertEqual(
+            calls,
+            [
+                "sudo apt update",
+                "sudo apt install -y libcairo2-dev poppler-utils",
+                "sudo npm install -g prettier",
+                "python -m pip install -U pip wheel setuptools",
+                "python -m pip install -U -r requirements.txt",
+            ],
+        )
 
     def test_failures_stop_later_commands(self):
         for command in (
