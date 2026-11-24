@@ -19,6 +19,8 @@ jobs:
   test:
     name: Build documentation
     runs-on: ubuntu-24.04
+    env:
+      AI_REVIEW_SYSTEM_DEPS: "true"
     permissions:
       contents: read
 
