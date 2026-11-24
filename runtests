@@ -1,5 +1,20 @@
 #!/bin/bash
-
+# Run all documentation tests or a selected test file.
 set -e
-
-python -m unittest discover tests
+flags=()
+selector=
+for argument in "$@"; do
+    case "$argument" in
+        -v|-q) flags+=("$argument"); continue ;;
+    esac
+    if [[ ! "$argument" =~ ^tests/test_[[:alnum:]_]+\.py$ ]] ||
+       [ -n "$selector" ] || [ -L "$argument" ] || [ ! -f "$argument" ]; then
+        echo "Unsupported test argument: $argument" >&2
+        exit 2
+    fi
+    selector=${argument#tests/}
+done
+if [ -n "$selector" ]; then
+    exec python -m unittest discover -s tests -p "$selector" "${flags[@]}"
+fi
+exec python -m unittest discover tests "${flags[@]}"
