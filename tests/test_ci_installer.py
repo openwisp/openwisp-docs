@@ -18,6 +18,7 @@ class CiInstallerTests(unittest.TestCase):
                 command = path / name
                 command.write_text(
                     f'#!/bin/sh\nprintf "%s\\n" "{name} $*" >> "$CALLS"\n'
+                    f'[ "${{FAIL_MATCH:-}}" != "{name} $*" ] || exit 17\n'
                 )
                 command.chmod(0o755)
             env = os.environ.copy()
@@ -55,3 +56,20 @@ class CiInstallerTests(unittest.TestCase):
                 "python -m pip install -U -r requirements.txt",
             ],
         )
+
+    def test_default_installs_both_phases(self):
+        result, calls = self.run_script()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(len(calls), 5)
+        self.assertEqual(calls[0], "sudo apt update")
+        self.assertEqual(calls[-1], "python -m pip install -U -r requirements.txt")
+
+    def test_failures_stop_later_commands(self):
+        for command in (
+            "sudo apt install -y libcairo2-dev poppler-utils",
+            "python -m pip install -U pip wheel setuptools",
+        ):
+            with self.subTest(command=command):
+                result, calls = self.run_script(FAIL_MATCH=command)
+                self.assertEqual(result.returncode, 17)
+                self.assertEqual(calls[-1], command)
