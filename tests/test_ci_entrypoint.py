@@ -80,6 +80,7 @@ class CiEntrypointTests(unittest.TestCase):
             root = Path(directory)
             shutil.copy2(ROOT / "runtests", root / "runtests")
             (root / "tests").mkdir()
+            (root / "other.py").touch()
             (root / "tests" / "test_canonical.py").symlink_to(root / "other.py")
             result = self.run_script("tests/test_canonical.py", root=root)
         self.assertEqual(result.returncode, 2)
