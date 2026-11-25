@@ -84,6 +84,23 @@ entry barrier for new users.
 - **Facilitate the setup of VPN automations**: See :ref:`OpenWISP VPN
   Deployer Linux Package GSoC 2026 Project Idea <gsoc-2026-vpn-deployer>`
   for more information.
+- **Module-provided default settings**: Let each OpenWISP module define
+  sensible defaults without requiring installers to copy them into the
+  project settings. Define clear rules for defaults that interact or
+  conflict across modules. See `openwisp-utils issue #408
+  <https://github.com/openwisp/openwisp-utils/issues/408>`_.
+- **Persistent installation data**: Store small pieces of internal setup
+  data in the database, such as the UUID of the management VPN selected by
+  an installer and the version of the setup steps already completed. This
+  data will help installers run safely more than once without relying on
+  mutable names or cache storage. See `openwisp-utils issue #741
+  <https://github.com/openwisp/openwisp-utils/issues/741>`_.
+- **Web interface for selected settings**: Allow administrators to change
+  a carefully selected set of settings without editing deployment files.
+  Only settings designed to be read at runtime will be available; settings
+  needed during application startup and sensitive values will remain in
+  deployment configuration. See `openwisp-utils issue #742
+  <https://github.com/openwisp/openwisp-utils/issues/742>`_.
 
 Agent Improvements
 ------------------
@@ -387,3 +404,19 @@ Mesh Networking
   during rollouts (e.g., coordinated radio channel adjustments).
 - **Dynamic Topology Mapping**: Utilize monitoring data from mesh
   interfaces to generate real-time topology maps of the active network.
+
+Security Hardening
+------------------
+
+- **Device Auto-Registration**: The current shared secret for new device
+  registration is effective for small setups but lacks the granularity
+  expected in enterprise environments. The goal is to research and adopt
+  stronger authentication mechanisms comparable to those available in
+  enterprise network management systems, reducing the risk of unauthorized
+  hardware joining the network if a static secret is compromised.
+- **Passphrase-Protected SSH Keys**: To mitigate the risk of unauthorized
+  use of SSH keys stored within the system, OpenWISP will explore
+  passphrase-based or comparable approaches. The goal is to ensure that,
+  even if a key file is accessed, it remains protected by an additional
+  credential or equivalent safeguard, adding another layer of protection
+  for remote device management.

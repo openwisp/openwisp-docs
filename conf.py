@@ -19,6 +19,7 @@
 import os
 import sys
 from datetime import date
+from pathlib import Path
 
 import yaml
 
@@ -84,11 +85,14 @@ language = "en"
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = [
     "README.rst",
+    "CONTRIBUTING.rst",
     "_build",
     "Thumbs.db",
     ".DS_Store",
     "modules/*",
     "*/README.rst",
+    "partials/*",
+    "*/partials/*",
 ]
 
 # The reST default role (used for this markup: `text`) to use for all
@@ -130,7 +134,7 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 html_theme = "sphinxawesome_theme"
-html_favicon = "assets/design/favicon.png"
+html_favicon = "assets/design/favicon.svg"
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -444,7 +448,6 @@ epub_exclude_files = ["search.html"]
 #
 # epub_use_index = True
 
-notfound_urls_prefix = "/docs/dev/"
 notfound_context = {
     "title": "Page not found",
     "body": (
@@ -465,6 +468,7 @@ version = os.environ.get("OPENWISP2_VERSION", "dev")
 release = version
 
 docs_root = os.environ.get("DOCS_ROOT", "")
+notfound_urls_prefix = f"{docs_root}/{version}/"
 html_context = {
     "current_ow_version": version,
     "ow_versions": [],
@@ -502,3 +506,35 @@ pdf_stylesheets = ["sphinx", "a4", "_styles/pdf-style"]
 epub_basename = f"OpenWISP-{version}"
 
 nitpicky = True
+
+
+def write_pygments_dark_css(app, exception):
+    """Re-scope the dark Pygments palette under the theme's `.dark` class.
+
+    Runs on ``build-finished`` for HTML builds: drops the
+    ``@media (prefers-color-scheme: dark)`` block from ``pygments.css`` so only
+    the light palette remains, then appends the dark palette scoped under
+    ``.dark .highlight``. The separately linked ``pygments_dark.css`` is emptied
+    so it cannot apply the dark palette on its own.
+    """
+    if exception or app.builder.format != "html":
+        return
+    dark_highlighter = getattr(app.builder, "dark_highlighter", None)
+    if dark_highlighter is None:
+        return
+    static_dir = Path(app.outdir) / "_static"
+    static_dir.mkdir(exist_ok=True)
+    pygments_css = static_dir / "pygments.css"
+    if not pygments_css.exists():
+        return
+    light = pygments_css.read_text(encoding="utf-8")
+    light = light.split("@media (prefers-color-scheme: dark)", 1)[0].rstrip()
+    dark = dark_highlighter.get_formatter().get_style_defs(".dark .highlight")
+    pygments_css.write_text(light + "\n" + dark + "\n", encoding="utf-8")
+    # Neutralize the separately media-linked dark stylesheet so it cannot apply
+    # the dark palette based on the OS preference.
+    (static_dir / "pygments_dark.css").write_text("", encoding="utf-8")
+
+
+def setup(app):
+    app.connect("build-finished", write_pygments_dark_css)

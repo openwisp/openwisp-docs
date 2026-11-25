@@ -1,0 +1,86 @@
+Security Advisories
+===================
+
+Published OpenWISP security advisories and historical security fixes are
+listed below, most recent first. Follow the links for details and upgrade
+guidance.
+
+- **2026-11-19, Docker OpenWISP 26.09.5:** `Updated Nginx to 1.31.9 to
+  address security vulnerabilities
+  <https://github.com/openwisp/docker-openwisp/releases/tag/26.09.5>`_.
+- **2026-11-17, Docker OpenWISP 26.09.3:** `Updated Brotli to address
+  CVE-2026-111497 in the decoder
+  <https://github.com/openwisp/docker-openwisp/releases/tag/26.09.3>`_.
+- **2026-11-13, OpenWISP Users (GHSA-7h4r-39v5-q7cq):** `Organization
+  managers can change an owner's membership
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-7h4r-39v5-q7cq>`_.
+- **2026-11-13, OpenWISP Users (GHSA-qx7x-g6rx-5g3g):** `User password API
+  bypasses configured password validators
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-qx7x-g6rx-5g3g>`_.
+- **2026-11-13, OpenWISP Users (GHSA-97jh-j6hw-4389):** `User management
+  API bypasses organization owner protections
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-97jh-j6hw-4389>`_.
+- **2026-11-13, OpenWISP Users (GHSA-x794-gqv9-rffh):** `Organization
+  deactivation can retain cached authorization
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-x794-gqv9-rffh>`_.
+- **2026-11-13, OpenWISP Users (GHSA-p9mp-fxhh-hmfw):** `OrganizationUser
+  admin enables cross-organization account takeover
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-p9mp-fxhh-hmfw>`_.
+- **2026-11-13, OpenWISP Users (GHSA-q66j-wp8j-5hf5):** `Bulk user actions
+  bypass organization owner protections
+  <https://github.com/openwisp/openwisp-users/security/advisories/GHSA-q66j-wp8j-5hf5>`_.
+- **2026-10-23, OpenWISP RADIUS (GHSA-hvmx-g7m2-vqx8):** `FreeRADIUS API
+  can trust attacker-controlled forwarded IP addresses
+  <https://github.com/openwisp/openwisp-radius/security/advisories/GHSA-hvmx-g7m2-vqx8>`_.
+- **2026-10-23, OpenWISP Controller (GHSA-2x7f-qxwh-m483):** `Django admin
+  allows cross-organization configuration access with a known UUID
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-2x7f-qxwh-m483>`_.
+- **2026-10-23, OpenWISP Controller (GHSA-5c5w-h9xc-3mq5):** `REST API
+  allows cross-organization configuration download with a known UUID
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-5c5w-h9xc-3mq5>`_.
+- **2026-10-23, OpenWISP Controller (GHSA-rcf7-q946-fvpg):** `Shell
+  injection in OpenWrt change_password() via unsanitized password fields
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-rcf7-q946-fvpg>`_.
+- **2026-10-23, OpenWISP Controller (GHSA-9gh4-xw24-9xh5):**
+  `CVE-2026-116677 <https://www.cve.org/CVERecord?id=CVE-2026-116677>`_.
+  `CA CRL REST API does not scope requests to managed organizations
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-9gh4-xw24-9xh5>`_.
+  Fixed in 1.3.2. The practical severity is low because exploitation
+  requires an authenticated organization manager with CA view permission
+  and affects deployments that enable ``DJANGO_X509_CRL_PROTECTED``. CRLs
+  are public by default through the standard django-x509 download
+  endpoint.
+- **2026-10-15, OpenWISP RADIUS (GHSA-83gw-w3g2-6658):** `CSV batch
+  imports can attach and delete users from other organizations
+  <https://github.com/openwisp/openwisp-radius/security/advisories/GHSA-83gw-w3g2-6658>`_.
+- **2026-10-15, OpenWISP Controller (GHSA-4f2x-pxjx-h8m3):** `Stored XSS
+  in template names can execute in administrator sessions
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-4f2x-pxjx-h8m3>`_.
+- **2026-10-15, OpenWISP Controller (GHSA-39c4-xj33-j8j3):**
+  `Device-location updates can access and transfer locations across
+  organizations
+  <https://github.com/openwisp/openwisp-controller/security/advisories/GHSA-39c4-xj33-j8j3>`_.
+- **2026-09-15, OpenWISP RADIUS (GHSA-pfx3-4m53-g475):** `SMS verification
+  bypasses destination and IP restrictions
+  <https://github.com/openwisp/openwisp-radius/security/advisories/GHSA-pfx3-4m53-g475>`_.
+- **2026-06-15, OpenWISP IPAM (GHSA-x287-5c68-36wp):** `Broken
+  object-level authorization allows exporting another organization's
+  subnet and IP addresses
+  <https://github.com/openwisp/openwisp-ipam/security/advisories/GHSA-x287-5c68-36wp>`_.
+- **2024-08-20, OpenWISP WiFi Login Pages:** `Replaced the compromised
+  polyfill.io script source to prevent malicious JavaScript delivery
+  <https://groups.google.com/g/openwisp/c/4nfhep0lFIg>`_.
+- **2022-06-28, OpenWISP Users 1.0.2:** `Updated django-allauth to fix
+  social-account linking CSRF and password-reset rate-limit bypasses
+  <https://github.com/openwisp/openwisp-users/blob/1.0.2/CHANGES.rst#version-102-2022-06-28>`_.
+- **2021-07-01, Ansible OpenWISP and Docker OpenWISP:** `Fixed nginx alias
+  path traversal exposing files outside the static and media directories
+  <https://groups.google.com/g/openwisp/c/jnyGtkH0eIY>`_.
+- **2021-04-09, OpenWISP Controller:** `Fixed internal HTTP endpoints
+  exposing other organizations' UUIDs and sensitive information
+  <https://groups.google.com/g/openwisp/c/lxcwmV5onm0>`_.
+
+Announcements are also sent to the `OpenWISP mailing list
+<https://groups.google.com/d/forum/openwisp>`_. To report a new suspected
+vulnerability privately, follow the instructions in
+:doc:`disclosing-vulnerabilities`.

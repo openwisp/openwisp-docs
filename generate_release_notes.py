@@ -292,8 +292,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "version",
         nargs="?",
-        default="25.10",
-        help="The release version from config.yml. Defaults to '25.10'.",
+        default="26.09",
+        help="The release version from config.yml. Defaults to '26.09'.",
     )
     args = parser.parse_args()
     main(args.version)

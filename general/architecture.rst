@@ -79,6 +79,9 @@ Server Side
   - `django-rest-framework-gis
     <https://github.com/openwisp/django-rest-framework-gis>`__: Adds GIS
     capabilities to Django REST Framework.
+  - `django-flat-json-widget
+    <https://github.com/openwisp/django-flat-json-widget>`__: Provides a
+    widget for editing JSON keys and values in context and default values.
 
 - :doc:`OpenWISP Monitoring </monitoring/index>`: Monitors and tracks
   device metrics like ping success rate, packet loss, round trip time,
@@ -90,13 +93,16 @@ Server Side
   other popular networking software like OpenVPN. It can visualize network
   graphs and save daily snapshots for future viewing.
 
-  This module relies on two libraries developed and maintained by
+  This module relies on three libraries developed and maintained by
   OpenWISP:
 
   - `netdiff <https://github.com/openwisp/netdiff>`__: Parses network
     topology.
   - `netjsongraph.js <https://github.com/openwisp/netjsongraph.js>`__: A
     JavaScript library for visualizing network graphs.
+  - `django-flat-json-widget
+    <https://github.com/openwisp/django-flat-json-widget>`__: Provides a
+    widget for editing JSON keys and values in user properties.
 
 - :doc:`OpenWISP Firmware Upgrader </firmware-upgrader/index>`: Provides a
   firmware upgrade solution for OpenWrt and potentially other embedded
@@ -114,6 +120,15 @@ Server Side
   shared by all OpenWISP Python modules. Includes many utilities for QA
   checks and automated testing, heavily used in continuous integration
   builds of most OpenWISP GitHub repositories.
+
+  This module relies on the following Django package developed and
+  maintained by OpenWISP:
+
+  - `django-minify-compress-staticfiles
+    <https://github.com/openwisp/django-minify-compress-staticfiles>`__:
+    Provides static file minification and compression during
+    ``collectstatic``.
+
 - :doc:`OpenWISP WiFi Login Pages </wifi-login-pages/index>`: A
   configurable login page and self registration app for WiFi Hotspot
   services, offering features like login, sign up, social login, SMS

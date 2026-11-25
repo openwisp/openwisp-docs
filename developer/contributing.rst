@@ -3,10 +3,12 @@ Contributing guidelines
 
 We are glad and thankful that you want to contribute to OpenWISP.
 
-.. important::
+.. warning::
 
-    Please read these guidelines carefully, it will help to save precious
-    time for everyone involved.
+    AI assisted contributions which shift the burden of understanding,
+    implementation, testing, and review entirely onto maintainers are not
+    acceptable. Please read the :ref:`Anti AI Spam Policy
+    <anti_spam_policy>` before opening a pull request.
 
 **Table of Contents:**
 
@@ -17,16 +19,19 @@ We are glad and thankful that you want to contribute to OpenWISP.
 Introduce yourself
 ------------------
 
-It won't hurt to join `our main communication channel
-<https://matrix.to/#/#openwisp_general:gitter.im>`_ and introduce
-yourself, although to coordinate with one another on technical matters we
-use `the development channel
-<https://matrix.to/#/#openwisp_development:gitter.im>`_. Use these two
-channels share feedback, share your OpenWISP derivative work, ask
-questions or announce your intentions.
+We strongly recommend joining `the development channel
+<https://matrix.to/#/#openwisp_development:gitter.im>`_ to ask technical
+questions and coordinate contributions. You are also welcome to introduce
+yourself in `our main communication channel
+<https://matrix.to/#/#openwisp_general:gitter.im>`_, share feedback, or
+tell us about your OpenWISP derivative work.
 
-Look for open issues
---------------------
+.. _openwisp_look_for_open_issues:
+
+Look for "validated" issues
+---------------------------
+
+Not all issues are suited to new contributors.
 
 Check out these two kanban boards:
 
@@ -42,10 +47,39 @@ If there's anything you don't understand regarding the board or a specific
 github issue, don't hesitate to ask questions in our `dev channel
 <https://matrix.to/#/#openwisp_development:gitter.im>`_.
 
-**You don't need to wait for the issue to be assigned to you.** Just check
-if there is anyone else actively working on it (e.g.: an open pull request
+Contributors who are neither members of the OpenWISP organization nor
+repository collaborators must verify that **the issue has been validated
+by maintainers** before opening a pull request.
+
+You are welcome to open bug reports, but **wait until a maintainer has
+validated the issue before opening a pull request for it**.
+
+In OpenWISP, **an issue is considered validated when all of the following
+conditions are met**:
+
+- it is open
+- it belongs to a repository in the OpenWISP organization
+- it has at least one label other than ``invalid`` or ``wontfix``
+- it is added to either the `OpenWISP Contributor's Board
+  <https://github.com/orgs/openwisp/projects/42/views/1>`_ or the
+  `OpenWISP Priorities for next releases
+  <https://github.com/orgs/openwisp/projects/37/views/1>`_ board
+
+**Some issues are not suited to beginners**. These are clearly marked with
+a prominent warning at the beginning and must be avoided by beginners.
+
+**If the issue has already been validated by a maintainer, you don't need
+to wait for it to be assigned to you before working on it.** Just check if
+there is anyone else actively working on it (e.g.: an open pull request
 with recent activity). If nobody else is actively working on it, **just
 announce your intention to work on it by leaving a comment in the issue**.
+
+.. warning::
+
+    For contributors who are neither members of the OpenWISP organization
+    nor repository collaborators, pull requests that do not target a
+    validated issue are automatically flagged as invalid and closed after
+    24 hours.
 
 Priorities for the next release
 -------------------------------
@@ -53,59 +87,35 @@ Priorities for the next release
 When we are close to releasing a new major version of OpenWISP, we will
 encourage all contributors to focus on the **To Do** column of the
 `OpenWISP Priorities for next releases
-<https://github.com/orgs/openwisp/projects/37/views/1>`_ board and filter
-the issues according to their expertise:
+<https://github.com/orgs/openwisp/projects/37/views/1>`_ board.
 
-- **Newcomer**: filter by `Good first issue
-  <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=good+first+issue>`_
-  or `Hacktoberfest
-  <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=hacktoberfest>`_.
-- **Expert**: filter by `Important
-  <https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=important>`_.
+Newcomers can filter by `Good first issue
+<https://github.com/orgs/openwisp/projects/37/views/1?sliceBy%5BcolumnId%5D=Labels&sliceBy%5Bvalue%5D=good+first+issue>`_.
 
 Setup
 -----
 
-Once you have chosen an issue to work on, read the documentation section
-of the module you want to contribute to, follow the setup instructions,
-each module has its own specific developer installation instructions which
-we highly advise to read carefully.
+Once you have chosen an issue, follow the developer installation
+instructions in the documentation of the module you want to contribute to.
 
 .. important::
 
     For a complete list of the OpenWISP modules, refer to
     :doc:`/general/architecture`.
 
-How to commit your changes properly
------------------------------------
-
-Our main development branch is master, it's our central development
-branch.
-
-You should open a pull request on github. The pull request will be merged
-only once the CI build completes successfully (automated tests, code
-coverage check, QA checks, etc.) and after project maintainers have
-reviewed and tested it.
-
-You can run QA checks locally by running ``./run-qa-checks`` in the top
-level directory of the repository you're working on. Every OpenWISP module
-should have this script (if a module doesn't have it, please open an issue
-on github).
+Submitting changes
+------------------
 
 1. Branch naming guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a new branch for your patch, use a self-descriptive name, e.g.:
+Create a descriptively named branch from an up-to-date ``master``, e.g.:
 
 .. code-block::
 
+    git checkout master
     git pull origin master
-    # if there's an issue your patch addresses
     git checkout -b issues/48-issue-title-shortened
-
-    # if there is no issue for your branch, (we suggest creating one anyway)
-    # use a descriptive name
-    git checkout -b autoregistration
 
 .. _openwisp_commit_message_style_guidelines:
 
@@ -114,10 +124,10 @@ Create a new branch for your patch, use a self-descriptive name, e.g.:
 
 .. warning::
 
-    The commit message conventions described in this section are enforced
-    by automated checks in the CI builds and can be easily followed by
-    using the ``openwisp-commit`` tool described in :ref:`Commit message
-    checks <utils_commit_message_checks>`.
+    The required commit message format is enforced by automated checks in
+    the CI builds. Use ``openwisp-commit --check`` to check the latest
+    commit message, as described in :ref:`Commit message checks
+    <utils_commit_message_checks>`.
 
 When working on issues picked from the boards mentioned in the beginning
 of this document, please use the following commit message conventions:
@@ -144,44 +154,45 @@ Here's a real world commit message example from `one of our modules
 
 Moreover, keep the following guidelines in mind:
 
-- commits should be descriptive in nature, the message should explain the
-  nature of the change
+- write all commit messages in clear, descriptive, past-tense language
+- add an explanatory commit body for substantial changes, new features, or
+  non-obvious bug fixes; the subject of ``[feature]``, ``[change]``,
+  ``[change!]``, ``[deps]``, and ``[fix]`` commits, including scoped
+  variants, is automatically included in the changelog, so write it in
+  clear, user-friendly, past-tense language
 - make sure to follow the code style used in the module you are
   contributing to
 - before committing and pushing the changes, test the code both manually
   and automatically with the automated test suite if applicable
-- after pushing your branch code, make a pull-request of that
-  corresponding change of yours which should contain a descriptive message
-  and mention the issue number as suggested in the example above
-- make sure to send one pull request for each change. Whenever changes are
-  requested during reviews, please send new commits (do not amend previous
-  commits), if multiple commits are present in a single pull request, they
-  will be squashed in a single commit by the maintainers before merging
-- in case of big features in which multiple related features/changes needs
-  to be implemented, multiple commits (one commit per feature) in a single
-  PR are acceptable.
 
 3. Pull-Request guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After pushing your changes to your fork, prepare a new Pull Request (from
-now on we will shorten it often to just *PR*):
+Send one pull request (PR) for each focused change. For bigger PRs
+involving multiple related features or changes, multiple commits (one per
+feature or change) are acceptable.
+
+After pushing your changes to your fork, prepare a PR:
 
 - from your forked repository of the project select your branch and click
   "New Pull Request"
 - check the changes tab and review the changes again to ensure everything
   is correct
-- write a concise description of the PR, if an issue exists for
+- write a concise description of the PR and link its validated issue using
+  ``Fixes #ISSUE_NUMBER``, ``Closes #ISSUE_NUMBER``, or ``Related to
+  #ISSUE_NUMBER``. To link an issue in another OpenWISP repository, use
+  ``Fixes openwisp/repository#ISSUE_NUMBER`` or ``Fixes
+  https://github.com/openwisp/repository/issues/ISSUE_NUMBER``
 - after submitting your PR, check back again whether your PR has passed
   our required tests and style checks
 - if the tests fail for some reason, try to fix them and if you get stuck
   seek our help on `our communication channels
   <http://openwisp.org/support/>`_
-- if the tests pass, maintainers will review the PR and may ask you to
-  improve details or changes, please be patient: creating a good quality
-  open source project takes a bit of sweat and effort; ensure to follow up
-  with this type of operations
-- once everything is fine with us we'll merge your PR
+- if the tests pass, maintainers will review the PR; respond to their
+  feedback and push requested changes as new commits (do not amend
+  previous commits)
+- once the checks pass and maintainers approve the PR, we will merge it,
+  squashing multiple commits into one
 
 4. Avoiding unnecessary changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -201,71 +212,17 @@ setting your editor as follows:
 Coding Style Conventions
 ------------------------
 
-1. Python code conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Each repository defines style conventions appropriate to its languages and
+tools. Run ``./run-qa-checks`` from the repository's top-level directory
+to verify your changes. This script runs the relevant automated QA checks,
+and CI rejects pull requests that do not pass them.
 
-OpenWISP follows `PEP 8 -- Style Guide for Python Code
-<https://www.python.org/dev/peps/pep-0008/>`_ and several other style
-conventions which can be enforced by using the following tools:
+We recommend running ``openwisp-pre-push-hook --install`` in the
+repository to run ``./run-qa-checks --pre-push`` automatically before each
+push and block the push if the checks fail.
 
-- ``openwisp-qa-format``: this command is shipped in :doc:`openwisp-utils
-  </utils/developer/qa-checks>`, a dependency used in every OpenWISP
-  python module, it formats the Python code according to the OpenWISP
-  style conventions, it's based on popular tools like: `isort
-  <http://isort.readthedocs.io/en/latest/>`_ and `black
-  <https://black.readthedocs.io/en/stable/>`_ (**please do not run black
-  directly** but always call ``openwisp-qa-format``)
-- ``./run-qa-checks``: it's a script present in the top level directory of
-  each OpenWISP module and performs all the QA checks that are specific to
-  each module. It mainly calls the ``openwisp-qa-check`` command, which
-  performs several common QA checks used across all OpenWISP modules to
-  ensure consistency (including `flake8
-  <http://flake8.pycqa.org/en/latest/>`_), for more info consult the
-  documentation of :doc:`openwisp-qa-check </utils/developer/qa-checks>`.
-
-.. important::
-
-    QA checks defined in the ``run-qa-checks`` script are also executed in
-    CI builds. These builds will fail if any QA check fails.
-
-    To resolve QA check failures, run ``openwisp-qa-format`` and apply
-    manual fixes if necessary, until ``./run-qa-checks`` completes without
-    errors.
-
-.. note::
-
-    If you want to learn more about our usage of python and django, we
-    suggest reading :doc:`../developer/hacking-openwisp-python-django`.
-
-2. CSS and Javascript code conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-OpenWISP follows CSS and JavaScript coding conventions enforced by the
-`Prettier <https://prettier.io>`_ code formatting tool.
-
-The Prettier formatter is used by the :doc:`openwisp-qa-format
-</utils/developer/qa-checks>` tool and by the `./run-qa-checks` script
-located in the top-level directory of each repository.
-
-.. important::
-
-    QA checks defined in the ``run-qa-checks`` script are also executed in
-    CI builds. These builds will fail if any QA check fails.
-
-    To resolve QA check failures, run ``openwisp-qa-format`` and apply
-    manual fixes if necessary, until ``./run-qa-checks`` completes without
-    errors.
-
-3. OpenWrt related conventions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-OpenWISP follows the standard OpenWrt coding style conventions of OpenWrt:
-
-- `Working with Patches <https://wiki.openwrt.org/doc/devel/patches>`_
-- `Naming patches
-  <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_
-- `Adding new files
-  <https://wiki.openwrt.org/doc/devel/patches#naming_patches>`_.
+Follow the repository's ``AGENTS.md`` file for formatting guidance and any
+required automatic formatting tools.
 
 Thank You
 ---------
