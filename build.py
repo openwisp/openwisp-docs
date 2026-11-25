@@ -508,7 +508,7 @@ def main():
         for dir in module_dirs:
             remove_symlink(dir)
     # Generate the index.html file which redirects to the stable version.
-    env = Environment(loader=FileSystemLoader("_static"))
+    env = Environment(loader=FileSystemLoader("_static"), autoescape=True)
     template = env.get_template("index.jinja2")
     with open(f"{build_dir}/index.html", "w") as f:
         f.write(template.render(stable_version=stable_version, docs_root=docs_root))
