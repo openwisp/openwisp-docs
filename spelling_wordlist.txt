@@ -21,6 +21,7 @@ backport
 backports
 backward
 balancer
+behaviour
 benchmarking
 bind
 bitbucket
@@ -32,6 +33,7 @@ bugfix
 bugfixes
 campus
 cancelled
+Cancelling
 captcha
 cd
 certbot
@@ -105,6 +107,7 @@ filesystem
 filesystems
 firewalld
 firmware
+firmwareless
 firmwares
 formatter
 fping
@@ -283,6 +286,7 @@ reconnection
 redis
 redux
 reflashed
+reflashing
 releaser
 Releaser
 repo
@@ -323,6 +327,7 @@ subfield
 subnet
 subnets
 Subnets
+subpackages
 Supervisord
 swappable
 Swapper
