@@ -240,4 +240,5 @@ Need help?
 Tests
 -----
 
-Run unit tests with ``./runtests``.
+Run unit tests with ``./runtests``. Pass a test file such as
+``tests/test_canonical.py`` for a focused run.

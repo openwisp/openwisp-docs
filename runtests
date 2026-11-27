@@ -1,5 +1,34 @@
-#!/bin/bash
+#!/usr/bin/env python3
+"""Run all documentation tests or a selected test file."""
 
-set -e
+import os
+import sys
+from pathlib import Path
 
-python -m unittest discover tests
+from openwisp_utils.test.runner import InvalidTestArgument, parse_test_files
+
+
+def main():
+    try:
+        files, flags = parse_test_files(
+            sys.argv[1:], allowed_flags=("-v", "-q"), max_files=1
+        )
+    except InvalidTestArgument as error:
+        print(error, file=sys.stderr)
+        return 2
+    if files:
+        arguments = [
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            Path(files[0].group(0)).name,
+            *flags,
+        ]
+    else:
+        arguments = ["discover", "tests", *flags]
+    os.execvp("python", ["python", "-m", "unittest", *arguments])
+
+
+if __name__ == "__main__":
+    sys.exit(main())
